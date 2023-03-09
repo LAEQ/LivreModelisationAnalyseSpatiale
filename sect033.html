@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.3 Forme d’un semis de points | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
+  <meta name="description" content="Mettre le description du cours." />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.3 Forme d’un semis de points | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/images/introduction/ImageCouverture.png" />
+  <meta property="og:description" content="Mettre le description du cours." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.3 Forme d’un semis de points | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  
+  <meta name="twitter:description" content="Mettre le description du cours." />
+  <meta name="twitter:image" content="/images/introduction/ImageCouverture.png" />
+
+<meta name="author" content="Philippe Apparicio, département de géomatique appliquée, Université de Sherbrooke" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sect032.html"/>
+<link rel="next" href="sect034.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/quizlib.min.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GMQ405 : modélisation et analyse spatiale</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bienvenue</a></li>
+<li class="chapter" data-level="" data-path="préface.html"><a href="préface.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="sect001.html"><a href="sect001.html"><i class="fa fa-check"></i>Un manuel sous la forme d’une ressource éducative libre</a></li>
+<li class="chapter" data-level="" data-path="sect002.html"><a href="sect002.html"><i class="fa fa-check"></i>Comment lire ce manuel?</a></li>
+<li class="chapter" data-level="" data-path="sect003B.html"><a href="sect003B.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
+<li class="chapter" data-level="" data-path="sect004.html"><a href="sect004.html"><i class="fa fa-check"></i>Structure du livre</a></li>
+<li class="chapter" data-level="" data-path="sect005.html"><a href="sect005.html"><i class="fa fa-check"></i>Pourquoi faut-il programmer en géomatique appliquée et utiliser R?</a></li>
+<li class="chapter" data-level="" data-path="sect006.html"><a href="sect006.html"><i class="fa fa-check"></i>Remerciements</a></li>
+</ul></li>
+<li class="part"><span><b>I Découverte de R</b></span></li>
+<li class="chapter" data-level="1" data-path="chap01.html"><a href="chap01.html"><i class="fa fa-check"></i><b>1</b> Manipulation des données spatiales dans R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="sect011.html"><a href="sect011.html"><i class="fa fa-check"></i><b>1.1</b> Importation de données géographiques</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="sect011.html"><a href="sect011.html#sect0111"><i class="fa fa-check"></i><b>1.1.1</b> Importation de données vectorielles</a></li>
+<li class="chapter" data-level="1.1.2" data-path="sect011.html"><a href="sect011.html#sect0112"><i class="fa fa-check"></i><b>1.1.2</b> Importation de données raster</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="sect012.html"><a href="sect012.html"><i class="fa fa-check"></i><b>1.2</b> Manipulation de données vectorielles</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="sect012.html"><a href="sect012.html#sect0121"><i class="fa fa-check"></i><b>1.2.1</b> Fonctions relatives à la projection cartographique</a></li>
+<li class="chapter" data-level="1.2.2" data-path="sect012.html"><a href="sect012.html#sect0122"><i class="fa fa-check"></i><b>1.2.2</b> Fonctions d’opérations géométriques sur une couche</a></li>
+<li class="chapter" data-level="1.2.3" data-path="sect012.html"><a href="sect012.html#sect01213"><i class="fa fa-check"></i><b>1.2.3</b> Fonctions d’opérations géométriques entre deux couches</a></li>
+<li class="chapter" data-level="1.2.4" data-path="sect012.html"><a href="sect012.html#sect0124"><i class="fa fa-check"></i><b>1.2.4</b> Fonctions de mesures géométriques et de récupération des coordonnées géographiques</a></li>
+<li class="chapter" data-level="1.2.5" data-path="sect012.html"><a href="sect012.html#sect0125"><i class="fa fa-check"></i><b>1.2.5</b> Jointures spatiales</a></li>
+<li class="chapter" data-level="1.2.6" data-path="sect012.html"><a href="sect012.html#sect0126"><i class="fa fa-check"></i><b>1.2.6</b> Requêtes spatiales</a></li>
+<li class="chapter" data-level="1.2.7" data-path="sect012.html"><a href="sect012.html#sect0127"><i class="fa fa-check"></i><b>1.2.7</b> Manipulation des données attributaires</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données raster</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Moisaïquage et découpage d’images</a></li>
+<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributives sur des images</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="sect014.html"><a href="sect014.html#sect0141"><i class="fa fa-check"></i><b>1.4.1</b> Exportation de données vectorielles <code>sf</code></a></li>
+<li class="chapter" data-level="1.4.2" data-path="sect014.html"><a href="sect014.html#sect0142"><i class="fa fa-check"></i><b>1.4.2</b> Exportation de données raster</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="sect015.html"><a href="sect015.html"><i class="fa fa-check"></i><b>1.5</b> Cartographie avec R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="sect015.html"><a href="sect015.html#sect0151"><i class="fa fa-check"></i><b>1.5.1</b> Manipulation des couches géométriques</a></li>
+<li class="chapter" data-level="1.5.2" data-path="sect015.html"><a href="sect015.html#sect0152"><i class="fa fa-check"></i><b>1.5.2</b> Cartes interactives</a></li>
+<li class="chapter" data-level="1.5.3" data-path="sect015.html"><a href="sect015.html#sect0153"><i class="fa fa-check"></i><b>1.5.3</b> Mise en page d’une carte</a></li>
+<li class="chapter" data-level="1.5.4" data-path="sect015.html"><a href="sect015.html#sect0154"><i class="fa fa-check"></i><b>1.5.4</b> Exportation d’une carte</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="sect016.html"><a href="sect016.html"><i class="fa fa-check"></i><b>1.6</b> Exercices de révision</a></li>
+<li class="chapter" data-level="1.7" data-path="sect017.html"><a href="sect017.html"><i class="fa fa-check"></i><b>1.7</b> Quiz de révision du chapitre</a></li>
+</ul></li>
+<li class="part"><span><b>II Autocorrélation spatiale</b></span></li>
+<li class="chapter" data-level="2" data-path="chap02.html"><a href="chap02.html"><i class="fa fa-check"></i><b>2</b> Autocorrélation spatiale</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sect021.html"><a href="sect021.html"><i class="fa fa-check"></i><b>2.1</b> Notion d’autocorrélation spatiale</a></li>
+<li class="chapter" data-level="2.2" data-path="sect022.html"><a href="sect022.html"><i class="fa fa-check"></i><b>2.2</b> Matrices de pondérations spatiales</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="sect022.html"><a href="sect022.html#sect0221"><i class="fa fa-check"></i><b>2.2.1</b> Matrices de contiguïté</a></li>
+<li class="chapter" data-level="2.2.2" data-path="sect022.html"><a href="sect022.html#sect0222"><i class="fa fa-check"></i><b>2.2.2</b> Matrices de proximité spatiale</a></li>
+<li class="chapter" data-level="2.2.3" data-path="sect022.html"><a href="sect022.html#sect0223"><i class="fa fa-check"></i><b>2.2.3</b> Standardisation des matrices de pondérations spatiales en ligne</a></li>
+<li class="chapter" data-level="2.2.4" data-path="sect022.html"><a href="sect022.html#sect0224"><i class="fa fa-check"></i><b>2.2.4</b> Construction de matrices de pondérations spatiales dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="sect023.html"><a href="sect023.html#sect0231"><i class="fa fa-check"></i><b>2.3.1</b> Statistique du <em>I</em> de Moran</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Mise en œuvre dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="sect024.html"><a href="sect024.html"><i class="fa fa-check"></i><b>2.4</b> Autocorrélation spatiale locale</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids</a></li>
+<li class="chapter" data-level="2.4.2" data-path="sect024.html"><a href="sect024.html#sect0242"><i class="fa fa-check"></i><b>2.4.2</b> Version locale du <em>I</em> de Moran</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Nuage de points du <em>I</em> de Moran d’Anselin</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="sect025.html"><a href="sect025.html"><i class="fa fa-check"></i><b>2.5</b> Exercices de révision</a></li>
+<li class="chapter" data-level="2.6" data-path="sect026.html"><a href="sect026.html"><i class="fa fa-check"></i><b>2.6</b> Quiz de révision du chapitre</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap03.html"><a href="chap03.html"><i class="fa fa-check"></i><b>3</b> Méthodes de répartition ponctuelle</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sect031.html"><a href="sect031.html"><i class="fa fa-check"></i><b>3.1</b> Fréquence et densité des points dans l’espace d’étude</a></li>
+<li class="chapter" data-level="3.2" data-path="sect032.html"><a href="sect032.html"><i class="fa fa-check"></i><b>3.2</b> Analyse centrographique</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sect032.html"><a href="sect032.html#sect0311"><i class="fa fa-check"></i><b>3.2.1</b> Paramètres de tendance centrale d’un semis de points</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sect032.html"><a href="sect032.html#sect0312"><i class="fa fa-check"></i><b>3.2.2</b> Paramètres de dispersion d’un semis de points</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sect032.html"><a href="sect032.html#sect0313"><i class="fa fa-check"></i><b>3.2.3</b> Mise en œuvre de l’analyse centrographique dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sect033.html"><a href="sect033.html"><i class="fa fa-check"></i><b>3.3</b> Forme d’un semis de points</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sect033.html"><a href="sect033.html#sect0331"><i class="fa fa-check"></i><b>3.3.1</b> Méthode du plus proche voisin</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthodes des quadrats</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="sect034.html"><a href="sect034.html"><i class="fa fa-check"></i><b>3.4</b> Identification des agrégats spatiaux</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="sect034.html"><a href="sect034.html#sect0341"><i class="fa fa-check"></i><b>3.4.1</b> Cartographie de la densité dans une maille irrégulière</a></li>
+<li class="chapter" data-level="3.4.2" data-path="sect034.html"><a href="sect034.html#sect0342"><i class="fa fa-check"></i><b>3.4.2</b> Cartographie de la densité dans une maille régulière</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="sect035.html"><a href="sect035.html"><i class="fa fa-check"></i><b>3.5</b> Exercices de révision</a></li>
+<li class="chapter" data-level="3.6" data-path="sect036.html"><a href="sect036.html"><i class="fa fa-check"></i><b>3.6</b> Quiz de révision du chapitre</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap04.html"><a href="chap04.html"><i class="fa fa-check"></i><b>4</b> Méthodes d’identification des agrégations spatiaux et spatio-temporels</a></li>
+<li class="chapter" data-level="5" data-path="chap05.html"><a href="chap05.html"><i class="fa fa-check"></i><b>5</b> Modélisation et analyses de réseau routiers</a></li>
+<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Introduction aux modèles de régression spatiale</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Modèles spatiaux autorégressifs</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Les différents modèles</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Quel modèle choisir?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Autres approches de modélisation</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Modèles généralisées additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> GAM avec <em>random markov field</em></a></li>
+<li class="chapter" data-level="6.2.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>6.2.3</b> Modèle SEVM (<em>Spatial eigenvector mapping</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> Modèles géographiquement pondérées</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Modèles GWR classique</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Modèles GWR mixte</a></li>
+<li class="chapter" data-level="6.3.3" data-path="sect063.html"><a href="sect063.html#sect0633"><i class="fa fa-check"></i><b>6.3.3</b> Modèle MGWR</a></li>
+<li class="chapter" data-level="6.3.4" data-path="sect063.html"><a href="sect063.html#sect0634"><i class="fa fa-check"></i><b>6.3.4</b> Modèles MGWR avec autocorrélation spatiale (MGWRSAR)</a></li>
+<li class="chapter" data-level="6.3.5" data-path="sect063.html"><a href="sect063.html#sect0635"><i class="fa fa-check"></i><b>6.3.5</b> Extension des modèles GWR pour des variables binaires et de comptages</a></li>
+<li class="chapter" data-level="6.3.6" data-path="sect063.html"><a href="sect063.html#sect0636"><i class="fa fa-check"></i><b>6.3.6</b> Autres extensions de la GWR : un aperçu</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Introduction aux méthodes de classification spatiale</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Bref retour sur les méthodes de classification non-supervisées</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Classification ascendante hiérarchique</a></li>
+<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> <em>K-means</em></a></li>
+<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> <em>Fuzzy c-means</em></a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Classifications spatiales</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em> (SFCM)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes déterministes</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Interpolation polynomiale locale</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Interpolation de l’inverse à la distance - <em>IDW</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes géostatistiques</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Krigeage simple</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> Krigeage universel</a></li>
+<li class="chapter" data-level="8.2.3" data-path="sect082.html"><a href="sect082.html#sect0823"><i class="fa fa-check"></i><b>8.2.3</b> Co-krigeage</a></li>
+<li class="chapter" data-level="8.2.4" data-path="sect082.html"><a href="sect082.html#sect0824"><i class="fa fa-check"></i><b>8.2.4</b> Krigeage résiduel</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="sect083.html"><a href="sect083.html"><i class="fa fa-check"></i><b>8.3</b> Exercices de révision</a></li>
+<li class="chapter" data-level="8.4" data-path="sect084.html"><a href="sect084.html"><i class="fa fa-check"></i><b>8.4</b> Quiz de révision du chapitre</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Analyse spatiale par l’analyse d’images</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Fonctions mathématiques, booléennes, relationnelles et conditionnelles sur les images</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Fonctions mathématiques</a></li>
+<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Fonctions booléennes</a></li>
+<li class="chapter" data-level="9.1.3" data-path="sect091.html"><a href="sect091.html#sect0913"><i class="fa fa-check"></i><b>9.1.3</b> Fonctions relationnelles</a></li>
+<li class="chapter" data-level="9.1.4" data-path="sect091.html"><a href="sect091.html#sect0914"><i class="fa fa-check"></i><b>9.1.4</b> Fonctions conditionnelles</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Fonctions locales, focales, zonales et globales sur les images</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Fonctions locales</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Fonctions focales</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Fonctions zonales</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Fonctions globales</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Fonctions de surface</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sect093.html"><a href="sect093.html#sect0931"><i class="fa fa-check"></i><b>9.3.1</b> Élevation</a></li>
+<li class="chapter" data-level="9.3.2" data-path="sect093.html"><a href="sect093.html#sect0932"><i class="fa fa-check"></i><b>9.3.2</b> Pente</a></li>
+<li class="chapter" data-level="9.3.3" data-path="sect093.html"><a href="sect093.html#sect0933"><i class="fa fa-check"></i><b>9.3.3</b> Ombrage</a></li>
+<li class="chapter" data-level="9.3.4" data-path="sect093.html"><a href="sect093.html#sect0934"><i class="fa fa-check"></i><b>9.3.4</b> Visibilité</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Données spatiotemporelles en mode image</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="sect094.html"><a href="sect094.html#fichier-netcdf"><i class="fa fa-check"></i><b>9.4.1</b> Fichier <em>netCDF</em></a></li>
+<li class="chapter" data-level="9.4.2" data-path="sect094.html"><a href="sect094.html#exemples-applicatifs"><i class="fa fa-check"></i><b>9.4.2</b> Exemples applicatifs</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="sect095.html"><a href="sect095.html"><i class="fa fa-check"></i><b>9.5</b> Exercices de révision</a></li>
+<li class="chapter" data-level="9.6" data-path="sect096.html"><a href="sect096.html"><i class="fa fa-check"></i><b>9.6</b> Quiz de révision du chapitre</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>10</b> Correction des exercices</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="sect1001.html"><a href="sect1001.html"><i class="fa fa-check"></i><b>10.1</b> Exercices du chapitre 1</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="sect1001.html"><a href="sect1001.html#sect10011"><i class="fa fa-check"></i><b>10.1.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.1.2" data-path="sect1001.html"><a href="sect1001.html#sect10012"><i class="fa fa-check"></i><b>10.1.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.1.3" data-path="sect1001.html"><a href="sect1001.html#sect10013"><i class="fa fa-check"></i><b>10.1.3</b> Exercice 3</a></li>
+<li class="chapter" data-level="10.1.4" data-path="sect1001.html"><a href="sect1001.html#sect10014"><i class="fa fa-check"></i><b>10.1.4</b> Exercice 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="sect1002.html"><a href="sect1002.html"><i class="fa fa-check"></i><b>10.2</b> Exercices du chapitre 2</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="sect1002.html"><a href="sect1002.html#sect10021"><i class="fa fa-check"></i><b>10.2.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.2.2" data-path="sect1002.html"><a href="sect1002.html#sect10022"><i class="fa fa-check"></i><b>10.2.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.2.3" data-path="sect1002.html"><a href="sect1002.html#sect10023"><i class="fa fa-check"></i><b>10.2.3</b> Exercice 3</a></li>
+<li class="chapter" data-level="10.2.4" data-path="sect1002.html"><a href="sect1002.html#sect10024"><i class="fa fa-check"></i><b>10.2.4</b> Exercice 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="sect1003.html"><a href="sect1003.html"><i class="fa fa-check"></i><b>10.3</b> Exercices du chapitre 3</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="sect1003.html"><a href="sect1003.html#sect10031"><i class="fa fa-check"></i><b>10.3.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.3.2" data-path="sect1003.html"><a href="sect1003.html#sect10032"><i class="fa fa-check"></i><b>10.3.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.3.3" data-path="sect1003.html"><a href="sect1003.html#sect10033"><i class="fa fa-check"></i><b>10.3.3</b> Exercice 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="sect1004.html"><a href="sect1004.html"><i class="fa fa-check"></i><b>10.4</b> Exercices du chapitre 4</a></li>
+<li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
+<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
+<li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a></li>
+<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a></li>
+<li class="chapter" data-level="10.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>10.9</b> Exercices du chapitre 9</a></li>
+<li class="chapter" data-level="10.10" data-path="sect1011.html"><a href="sect1011.html"><i class="fa fa-check"></i><b>10.10</b> Exercices du chapitre 11</a></li>
+<li class="chapter" data-level="10.11" data-path="sect1012.html"><a href="sect1012.html"><i class="fa fa-check"></i><b>10.11</b> Excercice du chapitre 12</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes de cours GMQ405 :
+Modélisation et analyse spatiale</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sect033" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Forme d’un semis de points<a href="sect033.html#sect033" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Étudier la forme d’un semis de points, c’est vouloir décrire l’arrangement spatial et l’espacement des points dans une région donnée. Autrement dit, l’objectif est donc de répondre à la question suivante : comment se répartissent les points dans une région donnée? Nous distinguons habituellement trois types de distribution spatiale d’un semis de points figure <a href="sect033.html#fig:FormeSemisDePoints3Types">3.10</a> :</p>
+<ol style="list-style-type: decimal">
+<li><strong>Distribution dispersée</strong> quand les points du semis sont régulièrement espacés.</li>
+<li><strong>Distribution aléatoire</strong> quand la distribution des points n’est nullement guidée par des considérations géographiques. Autrement dit, chaque point du semis a la même probabilité d’être situé dans n’importe quelle partie de la zone d’étude.</li>
+<li><strong>Distribution concentrée</strong> quand il existe des regroupements des points dans une ou plusieurs parties de la région d’étude. Par exemple, les musées et les théatres sont habituellement concentrés dans les parties centrales des métropoles.</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FormeSemisDePoints3Types"></span>
+<img src="images/Chap03/FigureTroisTypesDistributions.png" alt="Trois types de distribution spatiales d'un semis de points" width="65%" />
+<p class="caption">
+Figure 3.10: Trois types de distribution spatiales d’un semis de points
+</p>
+</div>
+<div class="bloc_attention">
+<p><strong>Il existe deux grandes familles pour décrire la forme d’un semis de points :</strong></p>
+<ol style="list-style-type: decimal">
+<li>Celles basées sur la distance (l’indice du plus proche voisins, fonctions <em>K</em> et <em>L</em> de Ripley) (section <a href="sect033.html#sect0331">3.3.1</a>).</li>
+<li>Celles basées sur la densité (méthode des quadrats avec différents tests statistiques) (section <a href="sect033.html#sect0332">3.3.2</a>).</li>
+</ol>
+</div>
+<div id="sect0331" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Méthode du plus proche voisin<a href="sect033.html#sect0331" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Le principe de base de cette méthode est fort simple et se décompose en quatre étapes :</p>
+<ol style="list-style-type: decimal">
+<li><p>Mesurer pour chaque point du semis, la distance le séparant du point le plus proche, puis calculer la distance moyenne du point le plus proche (équation <a href="sect033.html#eq:PlusProcheVoisinRobs">(3.20)</a>).</p></li>
+<li><p>Calculer la moyenne attendue du point le plus proche pour une dispersion aléatoire (équation <a href="sect033.html#eq:PlusProcheVoisinR">(3.22)</a>).</p></li>
+<li><p>Calculer l’indice du plus proche voisin, soit le ratio entre la distance observée et la distance aléatoire (équation <a href="sect033.html#eq:PlusProcheVoisinRExp">(3.21)</a>). L’indice <em>R</em> s’interprète alors comme suit :</p>
+<ul>
+<li>Si <em>R</em> est égale à 1, la dispersion du semis de points est aléatoire.</li>
+<li>Si <em>R</em> est inférieur à 1, la distribution du semis de points tend vers la concentration (avec une concentration absolue quand <em>R</em>=0; tous les points ont les mêmes coordonnées géographiques)</li>
+<li>Si <em>R</em> est supérieur à 1, la distribution du semis de points tend vers la dispersion.</li>
+</ul></li>
+<li><p>Calculer les valeurs de <em>Z</em> et <em>p</em> pour déterminer si la valeur de <em>R</em> obtenue est significative (équation <a href="sect033.html#eq:PlusProcheVoisinZ">(3.23)</a>).</p></li>
+</ol>
+<p><span class="math display" id="eq:PlusProcheVoisinRobs">\[\begin{equation}  
+R_{o}= \frac{\sum_{i=1}^n d_i}{n}
+\tag{3.20}
+\end{equation}\]</span>
+</p>
+<p><span class="math display" id="eq:PlusProcheVoisinRExp">\[\begin{equation}  
+R_{a}= \frac{1}{2 \sqrt{(n/S)}}
+\tag{3.21}
+\end{equation}\]</span>
+</p>
+<p><span class="math display" id="eq:PlusProcheVoisinR">\[\begin{equation}  
+R = \frac{R_{o}}{R_{a}}
+\tag{3.22}
+\end{equation}\]</span>
+</p>
+<p><span class="math display" id="eq:PlusProcheVoisinZ">\[\begin{equation}  
+Z = \frac{R_o-R_a}{SE} \text{, } SE = \frac{0.26136}{\sqrt{(n^2/S)}} \text{ avec :}
+\tag{3.23}
+\end{equation}\]</span>
+</p>
+<ul>
+<li><span class="math inline">\(n\)</span>, nombre de points.</li>
+<li><span class="math inline">\(d_i\)</span>, distance séparant le point <em>i</em> de son voisin le plus proche.</li>
+<li><span class="math inline">\(S\)</span>, Superficie de l’espace d’étude.</li>
+</ul>
+<p>Le code ci-dessous permet de mettre en œuvre la méthode du plus proche voisin pour les méfaits pour les quatre années.</p>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="sect033.html#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
+<span id="cb294-2"><a href="sect033.html#cb294-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb294-3"><a href="sect033.html#cb294-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Indice du plus proche voisin : R observé</span></span>
+<span id="cb294-4"><a href="sect033.html#cb294-4" aria-hidden="true" tabindex="-1"></a><span class="co"># le paramètre k indique le nombre de plus proches voisins</span></span>
+<span id="cb294-5"><a href="sect033.html#cb294-5" aria-hidden="true" tabindex="-1"></a>Robs2019 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">nndist</span>(<span class="fu">st_coordinates</span>(M2019),<span class="at">k=</span><span class="dv">1</span>))</span>
+<span id="cb294-6"><a href="sect033.html#cb294-6" aria-hidden="true" tabindex="-1"></a>Robs2020 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">nndist</span>(<span class="fu">st_coordinates</span>(M2020),<span class="at">k=</span><span class="dv">1</span>))</span>
+<span id="cb294-7"><a href="sect033.html#cb294-7" aria-hidden="true" tabindex="-1"></a>Robs2021 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">nndist</span>(<span class="fu">st_coordinates</span>(M2021),<span class="at">k=</span><span class="dv">1</span>))</span>
+<span id="cb294-8"><a href="sect033.html#cb294-8" aria-hidden="true" tabindex="-1"></a>Robs2022 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">nndist</span>(<span class="fu">st_coordinates</span>(M2022),<span class="at">k=</span><span class="dv">1</span>))</span>
+<span id="cb294-9"><a href="sect033.html#cb294-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Indice du plus proche voisin : R attendu (distribution aléatoire) (équation 3.21)</span></span>
+<span id="cb294-10"><a href="sect033.html#cb294-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Attention, il faut spéficier S, la superficie de l&#39;espace d&#39;étude</span></span>
+<span id="cb294-11"><a href="sect033.html#cb294-11" aria-hidden="true" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span>  <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Arrondissements.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb294-12"><a href="sect033.html#cb294-12" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">st_area</span>(<span class="fu">st_union</span>(Arrondissements)))</span>
+<span id="cb294-13"><a href="sect033.html#cb294-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre de points par année</span></span>
+<span id="cb294-14"><a href="sect033.html#cb294-14" aria-hidden="true" tabindex="-1"></a>N2019 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(M2019)</span>
+<span id="cb294-15"><a href="sect033.html#cb294-15" aria-hidden="true" tabindex="-1"></a>N2020 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(M2020)</span>
+<span id="cb294-16"><a href="sect033.html#cb294-16" aria-hidden="true" tabindex="-1"></a>N2021 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(M2021)</span>
+<span id="cb294-17"><a href="sect033.html#cb294-17" aria-hidden="true" tabindex="-1"></a>N2022 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(M2022)</span>
+<span id="cb294-18"><a href="sect033.html#cb294-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul de Ra</span></span>
+<span id="cb294-19"><a href="sect033.html#cb294-19" aria-hidden="true" tabindex="-1"></a>Ra2019 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">sqrt</span>(N2019 <span class="sc">/</span> S))</span>
+<span id="cb294-20"><a href="sect033.html#cb294-20" aria-hidden="true" tabindex="-1"></a>Ra2020 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">sqrt</span>(N2020 <span class="sc">/</span> S))</span>
+<span id="cb294-21"><a href="sect033.html#cb294-21" aria-hidden="true" tabindex="-1"></a>Ra2021 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">sqrt</span>(N2021 <span class="sc">/</span> S))</span>
+<span id="cb294-22"><a href="sect033.html#cb294-22" aria-hidden="true" tabindex="-1"></a>Ra2022 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">sqrt</span>(N2022 <span class="sc">/</span> S))</span>
+<span id="cb294-23"><a href="sect033.html#cb294-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculons le R</span></span>
+<span id="cb294-24"><a href="sect033.html#cb294-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un dataframe</span></span>
+<span id="cb294-25"><a href="sect033.html#cb294-25" aria-hidden="true" tabindex="-1"></a>IndicePPV <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="st">&quot;2019&quot;</span>, <span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2022&quot;</span>),</span>
+<span id="cb294-26"><a href="sect033.html#cb294-26" aria-hidden="true" tabindex="-1"></a>                               <span class="at">points =</span> <span class="fu">c</span>(N2019, N2020, N2021, N2022),</span>
+<span id="cb294-27"><a href="sect033.html#cb294-27" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Superficie =</span> <span class="fu">c</span>(S, S, S, S),</span>
+<span id="cb294-28"><a href="sect033.html#cb294-28" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Robs =</span> <span class="fu">c</span>(Robs2019, Robs2020, Robs2021, Robs2022),</span>
+<span id="cb294-29"><a href="sect033.html#cb294-29" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Rattendu =</span> <span class="fu">c</span>(Ra2019, Ra2020, Ra2021, Ra2022))</span>
+<span id="cb294-30"><a href="sect033.html#cb294-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul du R (équation 3.22)</span></span>
+<span id="cb294-31"><a href="sect033.html#cb294-31" aria-hidden="true" tabindex="-1"></a>IndicePPV<span class="sc">$</span>R <span class="ot">&lt;-</span> IndicePPV<span class="sc">$</span>Robs <span class="sc">/</span> IndicePPV<span class="sc">$</span>Rattendu</span>
+<span id="cb294-32"><a href="sect033.html#cb294-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul du Z (équation 3.23)</span></span>
+<span id="cb294-33"><a href="sect033.html#cb294-33" aria-hidden="true" tabindex="-1"></a>IndicePPV<span class="sc">$</span>SE <span class="ot">&lt;-</span> <span class="fl">0.26136</span> <span class="sc">/</span> <span class="fu">sqrt</span>(IndicePPV<span class="sc">$</span>points<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> IndicePPV<span class="sc">$</span>Superficie)</span>
+<span id="cb294-34"><a href="sect033.html#cb294-34" aria-hidden="true" tabindex="-1"></a>IndicePPV<span class="sc">$</span>Z <span class="ot">&lt;-</span> (IndicePPV<span class="sc">$</span>Robs <span class="sc">-</span> IndicePPV<span class="sc">$</span>Rattendu) <span class="sc">/</span> IndicePPV<span class="sc">$</span>SE</span>
+<span id="cb294-35"><a href="sect033.html#cb294-35" aria-hidden="true" tabindex="-1"></a>IndicePPV<span class="sc">$</span>P <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">pnorm</span>(<span class="at">q=</span><span class="fu">abs</span>(IndicePPV<span class="sc">$</span>Z), <span class="at">lower.tail=</span>F),<span class="dv">3</span>)</span>
+<span id="cb294-36"><a href="sect033.html#cb294-36" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(IndicePPV)</span></code></pre></div>
+<pre><code>##     id points Superficie     Robs Rattendu         R       SE         Z P
+## 1 2019    251  742458568 358.0698 859.9422 0.4163882 28.37276 -17.68853 0
+## 2 2020    383  742458568 261.8578 696.1563 0.3761481 18.59416 -23.35672 0
+## 3 2021    344  742458568 323.3806 734.5594 0.4402376 20.70221 -19.86158 0
+## 4 2022    220  742458568 357.7262 918.5330 0.3894538 32.37073 -17.32450 0</code></pre>
+<p><strong>Interprétation des résultats</strong></p>
+<p>Analysons les différentes colonnes du tableau <a href="sect033.html#tab:TableauMPPV">3.3</a> :</p>
+<ul>
+<li><strong>points (n) :</strong> il y a respectivement 251, 393, 344 et 220 méfaits pour les années 2019 à 2022.</li>
+<li><strong><em>R</em> observé :</strong> en moyenne, un méfait est distant de 358, 262, 323 et 258 mètres du méfait le plus proche pour les quatre années.</li>
+<li><strong><em>R</em> attendu :</strong> pour une distribution aléatoire, un méfait devrait être distant du méfait le plus proche de 860, 696, 735, et 919 mètres.</li>
+<li><strong>Indice du plus proche voisin :</strong> toutes les valeurs sont inférieures à 1, indiquant des distributions spatiales concentrées. La concentration est la plus forte pour l’année 2020 (R = 0,376).</li>
+<li><strong>valeur de <em>p</em> :</strong> toutes les valeurs sont égales à 0, signalant que les résultats sont significatifs.</li>
+</ul>
+<table>
+<caption>
+<span id="tab:TableauMPPV">Tableau 3.3: </span>Résultats de la méthode du plus proche voisin pour les méfait par année
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Année
+</th>
+<th style="text-align:center;">
+points (n)
+</th>
+<th style="text-align:center;">
+<em>R</em> observé
+</th>
+<th style="text-align:center;">
+<em>R</em> attendu
+</th>
+<th style="text-align:center;">
+Indice plus proche voisin
+</th>
+<th style="text-align:center;">
+Erreur standard
+</th>
+<th style="text-align:center;">
+Z
+</th>
+<th style="text-align:center;">
+<em>p</em>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+251
+</td>
+<td style="text-align:center;">
+358
+</td>
+<td style="text-align:center;">
+860
+</td>
+<td style="text-align:center;">
+0,416
+</td>
+<td style="text-align:center;">
+28,373
+</td>
+<td style="text-align:center;">
+-17,689
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2020
+</td>
+<td style="text-align:center;">
+383
+</td>
+<td style="text-align:center;">
+262
+</td>
+<td style="text-align:center;">
+696
+</td>
+<td style="text-align:center;">
+0,376
+</td>
+<td style="text-align:center;">
+18,594
+</td>
+<td style="text-align:center;">
+-23,357
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2021
+</td>
+<td style="text-align:center;">
+344
+</td>
+<td style="text-align:center;">
+323
+</td>
+<td style="text-align:center;">
+735
+</td>
+<td style="text-align:center;">
+0,440
+</td>
+<td style="text-align:center;">
+20,702
+</td>
+<td style="text-align:center;">
+-19,862
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2022
+</td>
+<td style="text-align:center;">
+220
+</td>
+<td style="text-align:center;">
+358
+</td>
+<td style="text-align:center;">
+919
+</td>
+<td style="text-align:center;">
+0,389
+</td>
+<td style="text-align:center;">
+32,371
+</td>
+<td style="text-align:center;">
+-17,325
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p>Notez qu’il est possible aussi de construire un graphique pour le <em>R</em> observé avec plusieurs voisins, tel que réalisé avec la syntaxe ci-dessous avec <em>k</em> = 1 à 50 (figure <a href="sect033.html#fig:IndicePlusProchVoisin150">3.11</a>).</p>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="sect033.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="co"># k = 1 à 50</span></span>
+<span id="cb296-2"><a href="sect033.html#cb296-2" aria-hidden="true" tabindex="-1"></a>Robs2019N1_50 <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">nndist</span>(<span class="fu">st_coordinates</span>(M2019), <span class="at">k=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="dv">2</span>, <span class="at">FUN=</span>mean)</span>
+<span id="cb296-3"><a href="sect033.html#cb296-3" aria-hidden="true" tabindex="-1"></a>Robs2020N1_50 <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">nndist</span>(<span class="fu">st_coordinates</span>(M2020), <span class="at">k=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="dv">2</span>, <span class="at">FUN=</span>mean)</span>
+<span id="cb296-4"><a href="sect033.html#cb296-4" aria-hidden="true" tabindex="-1"></a>Robs2021N1_50 <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">nndist</span>(<span class="fu">st_coordinates</span>(M2021), <span class="at">k=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="dv">2</span>, <span class="at">FUN=</span>mean)</span>
+<span id="cb296-5"><a href="sect033.html#cb296-5" aria-hidden="true" tabindex="-1"></a>Robs2022N1_50 <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">nndist</span>(<span class="fu">st_coordinates</span>(M2022), <span class="at">k=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="dv">2</span>, <span class="at">FUN=</span>mean)</span>
+<span id="cb296-6"><a href="sect033.html#cb296-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Enregistrement dans des dataframe</span></span>
+<span id="cb296-7"><a href="sect033.html#cb296-7" aria-hidden="true" tabindex="-1"></a>Robs2019N1_50 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">An=</span><span class="st">&quot;2019&quot;</span>, <span class="at">Voisins=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(Robs2019N1_50), <span class="at">Robs=</span>Robs2019N1_50)</span>
+<span id="cb296-8"><a href="sect033.html#cb296-8" aria-hidden="true" tabindex="-1"></a>Robs2020N1_50 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">An=</span><span class="st">&quot;2020&quot;</span>, <span class="at">Voisins=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(Robs2020N1_50), <span class="at">Robs=</span>Robs2020N1_50)</span>
+<span id="cb296-9"><a href="sect033.html#cb296-9" aria-hidden="true" tabindex="-1"></a>Robs2021N1_50 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">An=</span><span class="st">&quot;2021&quot;</span>, <span class="at">Voisins=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(Robs2021N1_50), <span class="at">Robs=</span>Robs2021N1_50)</span>
+<span id="cb296-10"><a href="sect033.html#cb296-10" aria-hidden="true" tabindex="-1"></a>Robs2022N1_50 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">An=</span><span class="st">&quot;2022&quot;</span>, <span class="at">Voisins=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(Robs2022N1_50), <span class="at">Robs=</span>Robs2022N1_50)</span>
+<span id="cb296-11"><a href="sect033.html#cb296-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Combinaison des dataframe en un seul</span></span>
+<span id="cb296-12"><a href="sect033.html#cb296-12" aria-hidden="true" tabindex="-1"></a>RobsN1_50 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Robs2019N1_50, Robs2020N1_50, Robs2021N1_50, Robs2022N1_50)</span>
+<span id="cb296-13"><a href="sect033.html#cb296-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Création du graphique</span></span>
+<span id="cb296-14"><a href="sect033.html#cb296-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(RobsN1_50)<span class="sc">+</span></span>
+<span id="cb296-15"><a href="sect033.html#cb296-15" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Voisins, <span class="at">y =</span> Robs, <span class="at">color =</span> An))<span class="sc">+</span></span>
+<span id="cb296-16"><a href="sect033.html#cb296-16" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Voisins, <span class="at">y =</span> Robs, <span class="at">color =</span> An))<span class="sc">+</span></span>
+<span id="cb296-17"><a href="sect033.html#cb296-17" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nombre de voisins&quot;</span>,</span>
+<span id="cb296-18"><a href="sect033.html#cb296-18" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="st">&quot;Robs - Distance en mètres&quot;</span>,</span>
+<span id="cb296-19"><a href="sect033.html#cb296-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">color =</span> <span class="st">&quot;Année&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:IndicePlusProchVoisin150"></span>
+<img src="GMQ405_files/figure-html/IndicePlusProchVoisin150-1.png" alt="Distance au plus proche voisin de 1 à 50" width="85%" />
+<p class="caption">
+Figure 3.11: Distance au plus proche voisin de 1 à 50
+</p>
+</div>
+</div>
+<div id="sect0332" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Méthodes des quadrats<a href="sect033.html#sect0332" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sect03231" class="section level4 hasAnchor" number="3.3.2.1">
+<h4><span class="header-section-number">3.3.2.1</span> Principe de base<a href="sect033.html#sect03231" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Le principe de base de la méthode des quadrats peut être décomposé en trois étapes :</p>
+<ol style="list-style-type: decimal">
+<li>Superposer à la région d’étude comprenant le semis de points un ensemble de <strong>quadrats</strong> (habituellement une grille régulière formée d’un ensemble de carrés).</li>
+<li>Compter le nombre de points compris dans chacun des quadrats. De la sorte, certains quadrats ne comprennent aucun point tandis que d’autres en contiennent un, deux, trois points, etc. Nous obtenons ainsi une table des fréquences.</li>
+<li>Réaliser des tests statistiques à partir des fréquences observées et théoriques pour qualifier la distribution du semis de points (test de Kolomogorov-Smirnov, test du khi-deux ou méthode Monte-Carlo).</li>
+</ol>
+</div>
+<div id="sect03252" class="section level4 hasAnchor" number="3.3.2.2">
+<h4><span class="header-section-number">3.3.2.2</span> Forme, distribution et taille des quadrats<a href="sect033.html#sect03252" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Il est possible de paramètrer les quadrats selon leur forme, leur distribution et leur taille. Habituellement, la forme retenue par les quadrats est le carré, mais d’autres formes géométriques peuvent être utilisées comme l’hexagone et plus rarement le cercle. La distribution des quadrats peut aussi être soit régulière, soit aléatoire (figure <a href="sect033.html#fig:FormeQuadrats">3.12</a>). Notez que dans le cas d’un cercle, le maillage ne peut être qu’irrégulier puisque certains points risqueraient de ne pas être contenus dans un cercle pour un maillage régulier.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FormeQuadrats"></span>
+<img src="images/Chap03/FormesQuadrats.png" alt="Types et distributions de quadrats" width="75%" />
+<p class="caption">
+Figure 3.12: Types et distributions de quadrats
+</p>
+</div>
+<p>Bien entendu, les résultats varieront selon la taille des quadrats. Par exemple, dans le cas d’une distribution spatiale concentrée d’un semis de points, diminuer la taille des quadrats risque d’augmenter la perception de la dispersion. Certains auteurs proposent alors une formule pour déterminer la superficie optimale du quadrat <span class="citation">(<a href="#ref-wong2005statistical" role="doc-biblioref">Wong et Lee 2005</a>; <a href="#ref-mitchel2005esri" role="doc-biblioref">Mitchel et al. 2005</a>)</span> :</p>
+<p><span class="math display" id="eq:TailleQuadrat">\[\begin{equation}  
+S_q = \frac{2S}{n}
+\tag{3.24}
+\end{equation}\]</span>
+</p>
+<p><span class="math display" id="eq:TailleQuadratLongueur">\[\begin{equation}  
+l_q = \sqrt{S_q} \text{ et } r_q = \sqrt{\frac{S_q}{\pi}} \text{ et } l_a = \sqrt{ \frac{2S_q}{3 \sqrt{3}}} \text{ avec :}
+\tag{3.25}
+\end{equation}\]</span>
+</p>
+<ul>
+<li><span class="math inline">\(S_q\)</span>, superficie du quadrat.</li>
+<li><span class="math inline">\(n\)</span>, nombre de points dans le semis.</li>
+<li><span class="math inline">\(l_q\)</span>, longueur du côté si la forme du quadrat est un carré.</li>
+<li><span class="math inline">\(r_q\)</span>, longueur du rayon si la forme du quadrat est une cercle.</li>
+<li><span class="math inline">\(l_a\)</span>, la longueur du côté d’un hexagone régulier.</li>
+</ul>
+</div>
+<div id="sect03253" class="section level4 hasAnchor" number="3.3.2.3">
+<h4><span class="header-section-number">3.3.2.3</span> Tests statistiques<a href="sect033.html#sect03253" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Construction du tableau de fréquences observées et théoriques</strong></p>
+<p>Une fois quadrats créés, il suffit de compter le nombre de points compris dans chacun d’eux. Une distribution spatiale concentrée à l’extrême se traduirait par la localisation de tous les points du semis d’un seul quadrat, tandis que pour une distribution dispersée maximale se traduira par le fait que tous les quadrats contiennent le même nombre de points. Par la suite, nous construisons un tableau de fréquence.</p>
+<p>Prenons deux situations à la figure <a href="sect033.html#fig:FormeQuadratsExemple">3.13</a> :</p>
+<ol style="list-style-type: decimal">
+<li><strong>A. Une distribution dispersée</strong>, puisque les points sont présents dans la plupart des quadrats.</li>
+<li><strong>B. Une distribution concentrée</strong>, puisque les points sont localisés dans quelques quadrats.</li>
+</ol>
+<p>Notez que pour les deux situtations, nous avons 42 points (<span class="math inline">\(n\)</span>) et 36 quadrats (<span class="math inline">\(k\)</span>), soit une moyenne de 1,167 points par quadrat (<span class="math inline">\(\lambda = n / k = 42 / 36 = 1,167\)</span>). Détaillons les différentes colonnes du tableau de fréquences observées et théoriques :</p>
+<ul>
+<li><strong>Fréquences observées (<span class="math inline">\(f_o\)</span>) :</strong> pour la situation A, nous avons 16 quadrats qui ne comprennent aucun point, 4 quadrats avec 1 point, 10 quadrats avec 2 points et finalement 6 quadrats avec 2 points. À l’inverse, pour la situation B, 27 quadrats sur les 36 ne comprennent aucun point, suggérant ainsi une concentration plus forte!</li>
+<li><strong>Proportions observées :</strong> simplement les fréquences observées divisées par le nombre total de quadrats (par exemple, <span class="math inline">\(16 / 36 = 0,444\)</span> pour A).</li>
+<li><strong>Proportions théoriques :</strong> à partir de la loi de probabilité de Poisson (équation <a href="sect033.html#eq:QuadratPoisson">(3.26)</a>), il est possible les proportions théoriques que nous devrions avoir si les points étaient distribués aléatoirement. Pas de panique avec la lecture de la formule, nous verrons qu’il existe une fonction pour la calculer facilement dans R. Nous calculons aussi les <strong>proportions théoriques cumulées</strong>.</li>
+<li><strong>Fréquences théoriques :</strong> les fréquences théoriques sont simplement les proportions théoriques multipliées par le nombre de quadrats (par exemple, <span class="math inline">\(0.311 \times 36 = 11.196\)</span>).</li>
+</ul>
+<p><span class="math display" id="eq:QuadratPoisson">\[\begin{equation}  
+p(x = k )= \frac{\lambda^k e^{-\lambda}}{x!}\text{ avec :}
+\tag{3.26}
+\end{equation}\]</span>
+</p>
+<p><span class="math inline">\(\lambda \text{ (lambda)} = n / k\)</span>, soit le nombre moyen de points (<span class="math inline">\(n\)</span>) par quadrat (<span class="math inline">\(k\)</span>); <span class="math inline">\(x\)</span>, le nombre de points dans le quadrat (0, 1, 2, etc.); <span class="math inline">\(!x\)</span>, la factorielle d’un nombre (par exemple, <span class="math inline">\(!3 = 1 \times 2 \times 3 = 6\)</span>); <span class="math inline">\(e\)</span>, la constante de l’Euler, soit <span class="math inline">\(exp(1) = 2.718282\)</span>.</p>
+<p>À partir de ce tableau des fréquences observées et théoriques, nous pouvons calculer les tests de Kolomogorov-Smirnov et du khi-deux.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FormeQuadratsExemple"></span>
+<img src="images/Chap03/FormesQuadratsExemple.png" alt="Illustrations des tests statistiques sur les quadrats" width="100%" />
+<p class="caption">
+Figure 3.13: Illustrations des tests statistiques sur les quadrats
+</p>
+</div>
+<p><strong>Test statistique de Kolomogorov-Smirnov</strong></p>
+<p>Ce test se décompose en six étapes :</p>
+<ol style="list-style-type: decimal">
+<li>Formuler l’hypothèse nulle stipulant que les fréquences observées et théoriques ne sont pas statistiquement différente (<span class="math inline">\(H_0\)</span>).</li>
+<li>Choisir un seuil de signification (par exemple, <span class="math inline">\(\alpha = 0.05\)</span>).</li>
+<li>Calculer la différence absolue entre les proportions cumulées observées et théoriques.</li>
+<li>Calculer la statistique <span class="math inline">\(D\)</span>, soit la plus forte valeur des différences absolues entre les fréquences cumulées observées et théoriques (équation <a href="sect033.html#eq:DValeurKS">(3.27)</a>).</li>
+<li>Calculer la valeur critique pour une distribution aléatoire avec un seuil de signification <span class="math inline">\(\alpha\)</span> (équation <a href="sect033.html#eq:DValeurKSCritique">(3.28)</a>).<br />
+</li>
+<li>Comparer les valeurs de <span class="math inline">\(D\)</span> et de <span class="math inline">\(D_{\alpha = 0.05}\)</span> :
+<ul>
+<li>Si <span class="math inline">\(D = D_{\alpha = 0.05}\)</span>, la distribution est aléatoire.</li>
+<li>Si <span class="math inline">\(D &lt; D_{\alpha = 0.05}\)</span>, la distribution est dispersée.</li>
+<li>Si <span class="math inline">\(D &gt; D_{\alpha = 0.05}\)</span>, la distribution est concentrée. Plus la valeur de <span class="math inline">\(D\)</span> est élevée, plus de distribution spatiale du semis de points est concentrée.</li>
+</ul></li>
+</ol>
+<p><span class="math display" id="eq:DValeurKS">\[\begin{equation}  
+D = \text{max}\lvert poi_{cumulé} - pti_{cumulé} \rvert
+\tag{3.27}
+\end{equation}\]</span>
+</p>
+<p><span class="math display" id="eq:DValeurKSCritique">\[\begin{equation}  
+D_{\alpha = 0.05}= \frac{1.36}{\sqrt{m}}\text{ avec }
+\tag{3.28}
+\end{equation}\]</span>
+</p>
+<p><span class="math inline">\(m\)</span> étant le nombre total de quadrats; <span class="math inline">\(poi_{cumulé}\)</span> et <span class="math inline">\(pti_{cumulé}\)</span> les proportions cumulées observées et théoriques.</p>
+<p>Appliquons cette démarche du test de Kolomogorov-Smirnov aux deux distributions de la figure <a href="sect033.html#fig:FormeQuadratsExemple">3.13</a> :</p>
+<ul>
+<li><span class="math inline">\(D_{\alpha = 0.05}= \frac{1.36}{\sqrt{36}}=0.210\)</span></li>
+<li>pour la situation A, <span class="math inline">\(D = 0.133\)</span>, donc <span class="math inline">\(D &lt; D_{\alpha = 0.05}\)</span>, alors la distribution est significativement dispersée.</li>
+<li>pour la situation B, <span class="math inline">\(D = 0.439\)</span>, donc <span class="math inline">\(D &gt; D_{\alpha = 0.05}\)</span>, alors la distribution est significativement concentrée.</li>
+</ul>
+<p><strong>Test statistique du khi-deux</strong></p>
+<p>Ce test se décompose en six étapes :</p>
+<ol style="list-style-type: decimal">
+<li>Formuler l’hypothèse nulle stipulant que la distributions des fréquences observées dans les quadrats suit a une distribution de Poisson (<span class="math inline">\(H_0\)</span>).</li>
+<li>Calculer le khi-deux (équation <a href="sect033.html#eq:KhiDeux">(3.29)</a>).</li>
+<li>Comparer la valeur du khi-deux obtenue avec celle khi-deux théorique (<span class="math inline">\(\chi^2_{\alpha,dl}\)</span>) avec <span class="math inline">\(k-1\)</span> degrés de libertés (<span class="math inline">\(dl\)</span>) et un seuil de signification <span class="math inline">\(\alpha\)</span> (0,05 par exemple).</li>
+<li>Si <span class="math inline">\(\chi^2 &gt; \chi^2_{\alpha,dl}\)</span>, alors l’hypothèse nulle est rejetée.</li>
+</ol>
+<p><span class="math display" id="eq:KhiDeux">\[\begin{equation}  
+\chi^2 = \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i}\text{ avec }
+\tag{3.29}
+\end{equation}\]</span>
+</p>
+<p><span class="math inline">\(O_i\)</span> et <span class="math inline">\(E_i\)</span> étant respectivement les fréquences observée et attendue pour <span class="math inline">\(i\)</span> (quadrat avec 0 point, 1, 2, etc.).</p>
+<p>Pour les deux situations, le khi-deux calculé est supérieur au khi-deux théorique avec un seuil <span class="math inline">\(\alpha\)</span> de 0,001 et 35 degrés de liberté. Par conséquent, les deux distributions ne sont pas aléatoires.</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="sect033.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.95</span>,  <span class="at">df=</span><span class="dv">35</span>, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 49.802</code></pre>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="sect033.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.99</span>,  <span class="at">df=</span><span class="dv">35</span>, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 57.342</code></pre>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="sect033.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.999</span>,  <span class="at">df=</span><span class="dv">35</span>, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 66.619</code></pre>
+<div class="bloc_attention">
+<p><strong>Pas de panique!</strong></p>
+<p>Vous n’êtes pas familier avec la loi des probabilité de Poisson et le test du khi-deux, retenez simplement la démarche générale, nous allons utiliser des fonctions qui vont vous faciliter la vie dans R!</p>
+</div>
+</div>
+<div id="sect03254" class="section level4 hasAnchor" number="3.3.2.4">
+<h4><span class="header-section-number">3.3.2.4</span> Mise en œuvre dans R<a href="sect033.html#sect03254" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La syntaxe dessous permet de déterminer la superficie optimale des quadrats en fonction du nombre de points (méfaits pour l’année 2020) et de la superficie de l’espace d’étude.</p>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="sect033.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
+<span id="cb303-2"><a href="sect033.html#cb303-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Taille des quadrats</span></span>
+<span id="cb303-3"><a href="sect033.html#cb303-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre de points</span></span>
+<span id="cb303-4"><a href="sect033.html#cb303-4" aria-hidden="true" tabindex="-1"></a>npoints <span class="ot">&lt;-</span> <span class="fu">nrow</span>(M2020)</span>
+<span id="cb303-5"><a href="sect033.html#cb303-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Superficie de l&#39;espace d&#39;étude</span></span>
+<span id="cb303-6"><a href="sect033.html#cb303-6" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">st_area</span>(<span class="fu">st_union</span>(Arrondissements)))</span>
+<span id="cb303-7"><a href="sect033.html#cb303-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Superficie du quadrat (équation 3.24)</span></span>
+<span id="cb303-8"><a href="sect033.html#cb303-8" aria-hidden="true" tabindex="-1"></a>Sq <span class="ot">&lt;-</span> (<span class="dv">2</span><span class="sc">*</span>S) <span class="sc">/</span> npoints</span>
+<span id="cb303-9"><a href="sect033.html#cb303-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Longueur du carré et du côté de l&#39;hexagone régulier (équation 3.25)</span></span>
+<span id="cb303-10"><a href="sect033.html#cb303-10" aria-hidden="true" tabindex="-1"></a>lq <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(Sq)</span>
+<span id="cb303-11"><a href="sect033.html#cb303-11" aria-hidden="true" tabindex="-1"></a>la <span class="ot">&lt;-</span> <span class="fu">sqrt</span>( (<span class="dv">2</span><span class="sc">*</span>Sq) <span class="sc">/</span> (<span class="dv">3</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">3</span>)))</span>
+<span id="cb303-12"><a href="sect033.html#cb303-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Trouver la longueur du coté du carré dans lequel est compris l&#39;hexagone </span></span>
+<span id="cb303-13"><a href="sect033.html#cb303-13" aria-hidden="true" tabindex="-1"></a>cellsizeHex <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">sqrt</span>(Sq<span class="sc">/</span>((<span class="dv">3</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>))) <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb303-14"><a href="sect033.html#cb303-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Nombre de points = &quot;</span>, npoints,</span>
+<span id="cb303-15"><a href="sect033.html#cb303-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Superficie (éq. 3.24) = &quot;</span>, Sq,</span>
+<span id="cb303-16"><a href="sect033.html#cb303-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Longueur du côté du carré (éq. 3.25) = &quot;</span>, lq, </span>
+<span id="cb303-17"><a href="sect033.html#cb303-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Longueur du côté du l&#39;hexagone (éq. 3.25) = &quot;</span>, la,</span>
+<span id="cb303-18"><a href="sect033.html#cb303-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Longueur du côté du carré dans lequel est compris l&#39;hexagone = &quot;</span>, cellsizeHex, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Nombre de points =  383 
+## Superficie (éq. 3.24) =  3877068 
+## Longueur du côté du carré (éq. 3.25) =  1969.027 
+## Longueur du côté du l&#39;hexagone (éq. 3.25) =  1221.591 
+## Longueur du côté du carré dans lequel est compris l&#39;hexagone =  2115.857</code></pre>
+<p>Nous pouvons ensuite créer deux couches avec des quadrats carrés et hexagonaux avec la fonction <code>st_make_grid</code> du <em>package</em> <code>sf</code>. Repérez le paramètre <code>square</code> dans la fonction <code>st_make_grid</code> : écrire <code>square = TRUE</code> pour obtenir des carrés et <code>square = FALSE</code> pour des hexagones réguliers.</p>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="sect033.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création des quadrats</span></span>
+<span id="cb305-2"><a href="sect033.html#cb305-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Géométrie pour l&#39;espace d&#39;étude</span></span>
+<span id="cb305-3"><a href="sect033.html#cb305-3" aria-hidden="true" tabindex="-1"></a>EspaceEtude <span class="ot">&lt;-</span> <span class="fu">st_geometry</span>(<span class="fu">st_union</span>(Arrondissements))</span>
+<span id="cb305-4"><a href="sect033.html#cb305-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Création des carrés</span></span>
+<span id="cb305-5"><a href="sect033.html#cb305-5" aria-hidden="true" tabindex="-1"></a>Carres.sf <span class="ot">&lt;-</span> <span class="fu">st_make_grid</span>(EspaceEtude, </span>
+<span id="cb305-6"><a href="sect033.html#cb305-6" aria-hidden="true" tabindex="-1"></a>                     lq,  </span>
+<span id="cb305-7"><a href="sect033.html#cb305-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">crs =</span> <span class="fu">st_crs</span>(Arrondissements),</span>
+<span id="cb305-8"><a href="sect033.html#cb305-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">what  =</span> <span class="st">&quot;polygons&quot;</span>,</span>
+<span id="cb305-9"><a href="sect033.html#cb305-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">square =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb305-10"><a href="sect033.html#cb305-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Création des hexagones</span></span>
+<span id="cb305-11"><a href="sect033.html#cb305-11" aria-hidden="true" tabindex="-1"></a>Hexagones.sf <span class="ot">&lt;-</span> <span class="fu">st_make_grid</span>(EspaceEtude, </span>
+<span id="cb305-12"><a href="sect033.html#cb305-12" aria-hidden="true" tabindex="-1"></a>                     cellsizeHex,  </span>
+<span id="cb305-13"><a href="sect033.html#cb305-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">crs =</span> <span class="fu">st_crs</span>(Arrondissements),</span>
+<span id="cb305-14"><a href="sect033.html#cb305-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">what  =</span> <span class="st">&quot;polygons&quot;</span>,</span>
+<span id="cb305-15"><a href="sect033.html#cb305-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">square =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb305-16"><a href="sect033.html#cb305-16" aria-hidden="true" tabindex="-1"></a>Carres.sf <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="at">idCarre =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(<span class="fu">lengths</span>(Carres.sf)), Carres.sf)</span>
+<span id="cb305-17"><a href="sect033.html#cb305-17" aria-hidden="true" tabindex="-1"></a>Hexagones.sf <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="at">idHex =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(<span class="fu">lengths</span>(Hexagones.sf)), Hexagones.sf)</span>
+<span id="cb305-18"><a href="sect033.html#cb305-18" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Superficie (éq. 3.24) = &quot;</span>, Sq,</span>
+<span id="cb305-19"><a href="sect033.html#cb305-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Vérifier les superficies des carrés est des hexagones&quot;</span>,</span>
+<span id="cb305-20"><a href="sect033.html#cb305-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Superficie des carrés =&quot;</span>, <span class="fu">as.numeric</span>(<span class="fu">st_area</span>(Carres.sf[<span class="dv">1</span>,])),</span>
+<span id="cb305-21"><a href="sect033.html#cb305-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Superficie des hexagones = &quot;</span>, <span class="fu">as.numeric</span>(<span class="fu">st_area</span>(Hexagones.sf[<span class="dv">1</span>,])), </span>
+<span id="cb305-22"><a href="sect033.html#cb305-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Les superficies sont bien égales!</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Superficie (éq. 3.24) =  3877068 
+## Vérifier les superficies des carrés est des hexagones 
+## Superficie des carrés = 3877068 
+## Superficie des hexagones =  3877068 Les superficies sont bien égales!</code></pre>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="sect033.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Visualisation</span></span>
+<span id="cb307-2"><a href="sect033.html#cb307-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb307-3"><a href="sect033.html#cb307-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">tm_shape</span>(Hexagones.sf)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb307-4"><a href="sect033.html#cb307-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">tm_shape</span>(Carres.sf)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb307-5"><a href="sect033.html#cb307-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">tm_shape</span>(Arrondissements)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb307-6"><a href="sect033.html#cb307-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_shape</span>(M2019)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;green&quot;</span>, <span class="at">size=</span><span class="fl">0.15</span>)<span class="sc">+</span></span>
+<span id="cb307-7"><a href="sect033.html#cb307-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="GMQ405_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+<p>La figure ci-dessous permet de constater que certains carrés et hexagones n’intersectent pas l’espace d’étude. Par conséquent, nous allons les supprimer puis calculer le nombre de points par carré et par hexagone.</p>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="sect033.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Suppression des carrées qui n&#39;intersectent pas les quatre arrondissements</span></span>
+<span id="cb308-2"><a href="sect033.html#cb308-2" aria-hidden="true" tabindex="-1"></a>RequeteSpatiale <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(Carres.sf, </span>
+<span id="cb308-3"><a href="sect033.html#cb308-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">st_union</span>(Arrondissements), <span class="at">sparse =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb308-4"><a href="sect033.html#cb308-4" aria-hidden="true" tabindex="-1"></a>Carres.sf<span class="sc">$</span>Intersect <span class="ot">&lt;-</span> RequeteSpatiale[, <span class="dv">1</span>]</span>
+<span id="cb308-5"><a href="sect033.html#cb308-5" aria-hidden="true" tabindex="-1"></a>Carres.sf <span class="ot">&lt;-</span> Carres.sf[Carres.sf<span class="sc">$</span>Intersect<span class="sc">==</span> <span class="cn">TRUE</span>, ]</span>
+<span id="cb308-6"><a href="sect033.html#cb308-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Suppression des hexagones qui n&#39;intersectent pas les quatre arrondissements</span></span>
+<span id="cb308-7"><a href="sect033.html#cb308-7" aria-hidden="true" tabindex="-1"></a>RequeteSpatiale <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(Hexagones.sf, </span>
+<span id="cb308-8"><a href="sect033.html#cb308-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">st_union</span>(Arrondissements), <span class="at">sparse =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb308-9"><a href="sect033.html#cb308-9" aria-hidden="true" tabindex="-1"></a>Hexagones.sf<span class="sc">$</span>Intersect <span class="ot">&lt;-</span> RequeteSpatiale[, <span class="dv">1</span>]</span>
+<span id="cb308-10"><a href="sect033.html#cb308-10" aria-hidden="true" tabindex="-1"></a>Hexagones.sf <span class="ot">&lt;-</span> Hexagones.sf[Hexagones.sf<span class="sc">$</span>Intersect<span class="sc">==</span> <span class="cn">TRUE</span>, ]</span>
+<span id="cb308-11"><a href="sect033.html#cb308-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Jointure spatiale : compter le nombre de méfaits de 2020 dans les carrés et les hexagones</span></span>
+<span id="cb308-12"><a href="sect033.html#cb308-12" aria-hidden="true" tabindex="-1"></a>Carres.sf<span class="sc">$</span>Mefaits2020    <span class="ot">=</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(Carres.sf, M2020))</span>
+<span id="cb308-13"><a href="sect033.html#cb308-13" aria-hidden="true" tabindex="-1"></a>Hexagones.sf<span class="sc">$</span>Mefaits2020 <span class="ot">=</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(Hexagones.sf, M2020))</span>
+<span id="cb308-14"><a href="sect033.html#cb308-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Tableau de fréquences</span></span>
+<span id="cb308-15"><a href="sect033.html#cb308-15" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Carres.sf<span class="sc">$</span>Mefaits2020)</span></code></pre></div>
+<pre><code>## 
+##   0   1   2   3   4   5   6   7   8   9  10  11  13  20  25  48  68 
+## 170  22   9   3   9   2   2   2   2   1   1   3   1   2   1   1   1</code></pre>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="sect033.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Hexagones.sf<span class="sc">$</span>Mefaits2020)</span></code></pre></div>
+<pre><code>## 
+##   0   1   2   3   4   5   6   7   8   9  12  15  16  17  18  22  31  76 
+## 173  22  13   1   7   2   4   1   4   1   1   2   1   1   1   1   1   1</code></pre>
+<p>Visualisons les résultats à la figure <a href="sect033.html#fig:fig2PointsCarresHex">3.14</a>. Il y a clairement une tendance à la concentration puisque de nombreux quadrats ne contiennent aucun point.</p>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="sect033.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Visualisation</span></span>
+<span id="cb312-2"><a href="sect033.html#cb312-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb312-3"><a href="sect033.html#cb312-3" aria-hidden="true" tabindex="-1"></a>Carte1 <span class="ot">=</span></span>
+<span id="cb312-4"><a href="sect033.html#cb312-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(<span class="fu">subset</span>(Carres.sf, Mefaits2020 <span class="sc">==</span> <span class="dv">0</span>))<span class="sc">+</span></span>
+<span id="cb312-5"><a href="sect033.html#cb312-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;gray90&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>, <span class="at">lwd =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb312-6"><a href="sect033.html#cb312-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_shape</span>(<span class="fu">subset</span>(Carres.sf, Mefaits2020<span class="sc">!=</span> <span class="dv">0</span>))<span class="sc">+</span></span>
+<span id="cb312-7"><a href="sect033.html#cb312-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;Mefaits2020&quot;</span>, <span class="at">style=</span><span class="st">&quot;cont&quot;</span>, <span class="at">title=</span><span class="st">&quot;Nombre&quot;</span>, </span>
+<span id="cb312-8"><a href="sect033.html#cb312-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>, <span class="at">lwd =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb312-9"><a href="sect033.html#cb312-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_shape</span>(Arrondissements)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;black&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb312-10"><a href="sect033.html#cb312-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb312-11"><a href="sect033.html#cb312-11" aria-hidden="true" tabindex="-1"></a>Carte2 <span class="ot">=</span></span>
+<span id="cb312-12"><a href="sect033.html#cb312-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(<span class="fu">subset</span>(Hexagones.sf, Mefaits2020 <span class="sc">==</span> <span class="dv">0</span>))<span class="sc">+</span></span>
+<span id="cb312-13"><a href="sect033.html#cb312-13" aria-hidden="true" tabindex="-1"></a>     <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;gray90&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>, <span class="at">lwd =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb312-14"><a href="sect033.html#cb312-14" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_shape</span>(<span class="fu">subset</span>(Hexagones.sf, Mefaits2020<span class="sc">!=</span> <span class="dv">0</span>))<span class="sc">+</span></span>
+<span id="cb312-15"><a href="sect033.html#cb312-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;Mefaits2020&quot;</span>, <span class="at">style=</span><span class="st">&quot;cont&quot;</span>, <span class="at">title=</span><span class="st">&quot;Nombre&quot;</span>,</span>
+<span id="cb312-16"><a href="sect033.html#cb312-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>, <span class="at">lwd =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb312-17"><a href="sect033.html#cb312-17" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_shape</span>(Arrondissements)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;black&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb312-18"><a href="sect033.html#cb312-18" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb312-19"><a href="sect033.html#cb312-19" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte1, Carte2)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig2PointsCarresHex"></span>
+<img src="GMQ405_files/figure-html/fig2PointsCarresHex-1.png" alt="Nombre de méfaits dans les deux géométries de quadrats" width="85%" />
+<p class="caption">
+Figure 3.14: Nombre de méfaits dans les deux géométries de quadrats
+</p>
+</div>
+<p>Nous pouvons maintenant construire le tableau de fréquences et calculer les différents tests statistiques. La syntaxe ci-dessous génère le tableau de fréquences et applique <strong>le test de Kolmogorov-Smirnov</strong>.</p>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="sect033.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Construction du tableau de fréquences</span></span>
+<span id="cb313-2"><a href="sect033.html#cb313-2" aria-hidden="true" tabindex="-1"></a>TabFreq <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(Carres.sf<span class="sc">$</span>Mefaits2020))</span>
+<span id="cb313-3"><a href="sect033.html#cb313-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(TabFreq) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Npoints&quot;</span>,<span class="st">&quot;Fo&quot;</span>)</span>
+<span id="cb313-4"><a href="sect033.html#cb313-4" aria-hidden="true" tabindex="-1"></a>TabFreq<span class="sc">$</span>Npoints <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(TabFreq<span class="sc">$</span>Npoints))</span>
+<span id="cb313-5"><a href="sect033.html#cb313-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul pour les fréquences observées (fo)</span></span>
+<span id="cb313-6"><a href="sect033.html#cb313-6" aria-hidden="true" tabindex="-1"></a>TabFreq<span class="sc">$</span>Fo.pro <span class="ot">&lt;-</span> TabFreq<span class="sc">$</span>Fo <span class="sc">/</span> <span class="fu">sum</span>(TabFreq<span class="sc">$</span>Fo)</span>
+<span id="cb313-7"><a href="sect033.html#cb313-7" aria-hidden="true" tabindex="-1"></a>TabFreq<span class="sc">$</span>Fo.proCum <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(TabFreq<span class="sc">$</span>Fo.pro)</span>
+<span id="cb313-8"><a href="sect033.html#cb313-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul pour les fréquences théoriques</span></span>
+<span id="cb313-9"><a href="sect033.html#cb313-9" aria-hidden="true" tabindex="-1"></a>npoints <span class="ot">&lt;-</span> <span class="fu">sum</span>(TabFreq<span class="sc">$</span>Npoints<span class="sc">*</span>TabFreq<span class="sc">$</span>Fo)</span>
+<span id="cb313-10"><a href="sect033.html#cb313-10" aria-hidden="true" tabindex="-1"></a>nquadrats <span class="ot">&lt;-</span> <span class="fu">sum</span>(TabFreq<span class="sc">$</span>Fo)</span>
+<span id="cb313-11"><a href="sect033.html#cb313-11" aria-hidden="true" tabindex="-1"></a>Lambda <span class="ot">&lt;-</span> npoints <span class="sc">/</span> nquadrats</span>
+<span id="cb313-12"><a href="sect033.html#cb313-12" aria-hidden="true" tabindex="-1"></a>TabFreq<span class="sc">$</span>Ft.pro <span class="ot">&lt;-</span> <span class="fu">dpois</span>(TabFreq<span class="sc">$</span>Npoints, <span class="at">lambda=</span> Lambda)</span>
+<span id="cb313-13"><a href="sect033.html#cb313-13" aria-hidden="true" tabindex="-1"></a>TabFreq<span class="sc">$</span>Ft.proCum <span class="ot">&lt;-</span> <span class="fu">ppois</span>(TabFreq<span class="sc">$</span>Npoints, <span class="at">lambda=</span> Lambda, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb313-14"><a href="sect033.html#cb313-14" aria-hidden="true" tabindex="-1"></a>TabFreq<span class="sc">$</span>Ft <span class="ot">&lt;-</span> TabFreq<span class="sc">$</span>Ft.pro <span class="sc">*</span> TabFreq<span class="sc">$</span>Npoints</span>
+<span id="cb313-15"><a href="sect033.html#cb313-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Différences absolues entre les fréquences observées et théoriques cumulées</span></span>
+<span id="cb313-16"><a href="sect033.html#cb313-16" aria-hidden="true" tabindex="-1"></a>TabFreq<span class="sc">$</span>Difffoft <span class="ot">&lt;-</span> <span class="fu">abs</span>(TabFreq<span class="sc">$</span>Fo.proCum <span class="sc">-</span> TabFreq<span class="sc">$</span>Ft.proCum)</span>
+<span id="cb313-17"><a href="sect033.html#cb313-17" aria-hidden="true" tabindex="-1"></a><span class="co">#calcul de D et Da</span></span>
+<span id="cb313-18"><a href="sect033.html#cb313-18" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">max</span>(TabFreq<span class="sc">$</span>Difffoft)</span>
+<span id="cb313-19"><a href="sect033.html#cb313-19" aria-hidden="true" tabindex="-1"></a>Da <span class="ot">&lt;-</span> <span class="fl">1.36</span> <span class="sc">/</span> <span class="fu">sqrt</span>(nquadrats) <span class="co"># avec p à 0,05</span></span>
+<span id="cb313-20"><a href="sect033.html#cb313-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Diagnostic</span></span>
+<span id="cb313-21"><a href="sect033.html#cb313-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (D<span class="sc">&gt;</span>Da){</span>
+<span id="cb313-22"><a href="sect033.html#cb313-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;D =&quot;</span>,<span class="fu">round</span>(D,<span class="dv">3</span>),<span class="st">&quot; et Da =&quot;</span>, <span class="fu">round</span>(Da,<span class="dv">3</span>),</span>
+<span id="cb313-23"><a href="sect033.html#cb313-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;</span><span class="sc">\n</span><span class="st">D &gt; Da avec p =0,05, alors la distribution tend vers la concentration.&quot;</span>)</span>
+<span id="cb313-24"><a href="sect033.html#cb313-24" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb313-25"><a href="sect033.html#cb313-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;D =&quot;</span>,<span class="fu">round</span>(D,<span class="dv">3</span>),<span class="st">&quot; et Da =&quot;</span>, <span class="fu">round</span>(Da,<span class="dv">3</span>),</span>
+<span id="cb313-26"><a href="sect033.html#cb313-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;</span><span class="sc">\n</span><span class="st">D &lt; Da avec p =0,05, alors la distribution tend vers la dispersion.&quot;</span>)</span>
+<span id="cb313-27"><a href="sect033.html#cb313-27" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## D = 0.541  et Da = 0.089 
+## D &gt; Da avec p =0,05, alors la distribution tend vers la concentration.</code></pre>
+<p>Le <em>package</em> <code>spatstat</code> permet de réaliser différents tests avec la fonction <code>quadrat.test</code>. Pour ce faire, il faut préalablement convertir les données dans les formats utilisées par ce <em>package</em> (<code>ppp</code>, <code>owin</code> et <code>tess</code>).</p>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="sect033.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Conversion des points au format ppp</span></span>
+<span id="cb315-2"><a href="sect033.html#cb315-2" aria-hidden="true" tabindex="-1"></a>M2020.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(M2020)[,<span class="dv">1</span>],</span>
+<span id="cb315-3"><a href="sect033.html#cb315-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">st_coordinates</span>(M2020)[,<span class="dv">2</span>],</span>
+<span id="cb315-4"><a href="sect033.html#cb315-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">window =</span> <span class="fu">as.owin</span>(Arrondissements), </span>
+<span id="cb315-5"><a href="sect033.html#cb315-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">check =</span> T)</span>
+<span id="cb315-6"><a href="sect033.html#cb315-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Conversion des quadrats carrés ou hexagonaux en objet owin</span></span>
+<span id="cb315-7"><a href="sect033.html#cb315-7" aria-hidden="true" tabindex="-1"></a>quadrats <span class="ot">&lt;-</span> <span class="fu">as</span>(<span class="fu">st_geometry</span>(Carres.sf), <span class="st">&quot;Spatial&quot;</span>) </span>
+<span id="cb315-8"><a href="sect033.html#cb315-8" aria-hidden="true" tabindex="-1"></a>FenetresC <span class="ot">&lt;-</span> <span class="fu">lapply</span>(quadrats<span class="sc">@</span>polygons,<span class="cf">function</span>(x){</span>
+<span id="cb315-9"><a href="sect033.html#cb315-9" aria-hidden="true" tabindex="-1"></a>  coords <span class="ot">&lt;-</span> x<span class="sc">@</span>Polygons[[<span class="dv">1</span>]]<span class="sc">@</span>coords</span>
+<span id="cb315-10"><a href="sect033.html#cb315-10" aria-hidden="true" tabindex="-1"></a>  coords<span class="ot">&lt;-</span>coords[<span class="fu">nrow</span>(coords)<span class="sc">:</span><span class="dv">1</span>,]</span>
+<span id="cb315-11"><a href="sect033.html#cb315-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">owin</span>(<span class="at">poly =</span> coords)})</span>
+<span id="cb315-12"><a href="sect033.html#cb315-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb315-13"><a href="sect033.html#cb315-13" aria-hidden="true" tabindex="-1"></a>quadrats <span class="ot">&lt;-</span> <span class="fu">as</span>(<span class="fu">st_geometry</span>(Hexagones.sf), <span class="st">&quot;Spatial&quot;</span>) </span>
+<span id="cb315-14"><a href="sect033.html#cb315-14" aria-hidden="true" tabindex="-1"></a>FenetresH <span class="ot">&lt;-</span> <span class="fu">lapply</span>(quadrats<span class="sc">@</span>polygons,<span class="cf">function</span>(x){</span>
+<span id="cb315-15"><a href="sect033.html#cb315-15" aria-hidden="true" tabindex="-1"></a>  coords <span class="ot">&lt;-</span> x<span class="sc">@</span>Polygons[[<span class="dv">1</span>]]<span class="sc">@</span>coords</span>
+<span id="cb315-16"><a href="sect033.html#cb315-16" aria-hidden="true" tabindex="-1"></a>  coords<span class="ot">&lt;-</span>coords[<span class="fu">nrow</span>(coords)<span class="sc">:</span><span class="dv">1</span>,]</span>
+<span id="cb315-17"><a href="sect033.html#cb315-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">owin</span>(<span class="at">poly =</span> coords)})</span>
+<span id="cb315-18"><a href="sect033.html#cb315-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Ces fenêtres sont ensuite converties en un objet tess (tesselation)</span></span>
+<span id="cb315-19"><a href="sect033.html#cb315-19" aria-hidden="true" tabindex="-1"></a>TessalationC <span class="ot">&lt;-</span> <span class="fu">as.tess</span>(FenetresC)</span>
+<span id="cb315-20"><a href="sect033.html#cb315-20" aria-hidden="true" tabindex="-1"></a>TessalationH <span class="ot">&lt;-</span> <span class="fu">as.tess</span>(FenetresH)</span></code></pre></div>
+<p>Nous pouvons calculer différentes tests avec la fonction <code>quadrat.test</code>.
+Dans un premier temps, nous vérifieons si <strong>la distribution est dispersée</strong> avec la méthode Monte-Carlo et 999 permutations (<code>alternative ="regular"</code>). Que ce soit avec les quadrats carrés ou hexagonaux, la valeur de <em>p</em> est égale à 0. Cela signifie qu’on est à 100% certain que la distribution n’est pas dispersée.</p>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="sect033.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Réalisation des différents test du khi-deux</span></span>
+<span id="cb316-2"><a href="sect033.html#cb316-2" aria-hidden="true" tabindex="-1"></a><span class="co"># test pour une distribution dispersée (Carrés)</span></span>
+<span id="cb316-3"><a href="sect033.html#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Test pour une distribution dispersée avec les quadrats carrées&quot;</span>)</span></code></pre></div>
+<pre><code>## Test pour une distribution dispersée avec les quadrats carrées</code></pre>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="sect033.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat.test</span>(M2020.ppp, <span class="at">tess =</span> TessalationC,</span>
+<span id="cb318-2"><a href="sect033.html#cb318-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">method =</span> <span class="st">&quot;MonteCarlo&quot;</span>, <span class="at">nsim =</span> <span class="dv">999</span>,</span>
+<span id="cb318-3"><a href="sect033.html#cb318-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alternative =</span><span class="st">&quot;regular&quot;</span>)  <span class="co"># dispersée</span></span></code></pre></div>
+<pre><code>## 
+##  Conditional Monte Carlo test of CSR using quadrat counts
+##  Test statistic: Pearson X2 statistic
+## 
+## data:  M2020.ppp
+## X2 = 5458.2, p-value = 1
+## alternative hypothesis: regular
+## 
+## Quadrats: 232 tiles (irregular windows)</code></pre>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="sect033.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Test pour une distribution dispersée avec les quadrats hexagonaux&quot;</span>)</span></code></pre></div>
+<pre><code>## Test pour une distribution dispersée avec les quadrats hexagonaux</code></pre>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="sect033.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat.test</span>(M2020.ppp, <span class="at">tess =</span> TessalationH,</span>
+<span id="cb322-2"><a href="sect033.html#cb322-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">method =</span> <span class="st">&quot;MonteCarlo&quot;</span>, <span class="at">nsim =</span> <span class="dv">999</span>,</span>
+<span id="cb322-3"><a href="sect033.html#cb322-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alternative =</span><span class="st">&quot;regular&quot;</span>)  <span class="co"># dispersée</span></span></code></pre></div>
+<pre><code>## 
+##  Conditional Monte Carlo test of CSR using quadrat counts
+##  Test statistic: Pearson X2 statistic
+## 
+## data:  M2020.ppp
+## X2 = 5470.2, p-value = 1
+## alternative hypothesis: regular
+## 
+## Quadrats: 237 tiles (irregular windows)</code></pre>
+<p>Dans un second temps, nous vérifieons <strong>la distribution est concentrée</strong> toujours avec la méthode Monte-Carlo et 999 permutations (<code>alternative ="clustered"</code>). Que ce soit avec les quadrats carrés ou hexagonaux, la valeur de <em>p</em> est égale à 0,001. Cela signifie qu’il y a moins de 1% de chances que la distribution concentrée soit due hasard!</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="sect033.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test pour une distribution concentrée</span></span>
+<span id="cb324-2"><a href="sect033.html#cb324-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Test pour une distribution concentrée avec les quadrats carrées&quot;</span>)</span></code></pre></div>
+<pre><code>## Test pour une distribution concentrée avec les quadrats carrées</code></pre>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="sect033.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat.test</span>(M2020.ppp, <span class="at">tess =</span> TessalationC,</span>
+<span id="cb326-2"><a href="sect033.html#cb326-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">method =</span> <span class="st">&quot;MonteCarlo&quot;</span>, <span class="at">nsim =</span> <span class="dv">999</span>,</span>
+<span id="cb326-3"><a href="sect033.html#cb326-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alternative =</span><span class="st">&quot;clustered&quot;</span>) <span class="co"># concentrée</span></span></code></pre></div>
+<pre><code>## 
+##  Conditional Monte Carlo test of CSR using quadrat counts
+##  Test statistic: Pearson X2 statistic
+## 
+## data:  M2020.ppp
+## X2 = 5458.2, p-value = 0.001
+## alternative hypothesis: clustered
+## 
+## Quadrats: 232 tiles (irregular windows)</code></pre>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="sect033.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Test pour une distribution concentrée avec les quadrats hexagonaux&quot;</span>)</span></code></pre></div>
+<pre><code>## Test pour une distribution concentrée avec les quadrats hexagonaux</code></pre>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="sect033.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat.test</span>(M2020.ppp, <span class="at">tess =</span> TessalationH,</span>
+<span id="cb330-2"><a href="sect033.html#cb330-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">method =</span> <span class="st">&quot;MonteCarlo&quot;</span>, <span class="at">nsim =</span> <span class="dv">999</span>,</span>
+<span id="cb330-3"><a href="sect033.html#cb330-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alternative =</span><span class="st">&quot;clustered&quot;</span>) <span class="co"># concentrée</span></span></code></pre></div>
+<pre><code>## 
+##  Conditional Monte Carlo test of CSR using quadrat counts
+##  Test statistic: Pearson X2 statistic
+## 
+## data:  M2020.ppp
+## X2 = 5470.2, p-value = 0.001
+## alternative hypothesis: clustered
+## 
+## Quadrats: 237 tiles (irregular windows)</code></pre>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-mitchel2005esri" class="csl-entry">
+Mitchel, Andy et al. 2005. <em>The ESRI Guide to GIS analysis, Volume 2: Spartial measurements and statistics</em>. ESRI press.
+</div>
+<div id="ref-wong2005statistical" class="csl-entry">
+Wong, David WS et Jay Lee. 2005. <em>Statistical analysis of geographic information with ArcView GIS and ArcGIS</em>. Wiley.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sect032.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sect034.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["GMQ405.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
