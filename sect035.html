@@ -175,7 +175,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="sect001.html"><a href="sect001.html"><i class="fa fa-check"></i>Un manuel sous la forme d’une ressource éducative libre</a></li>
 <li class="chapter" data-level="" data-path="sect002.html"><a href="sect002.html"><i class="fa fa-check"></i>Comment lire ce manuel?</a></li>
-<li class="chapter" data-level="" data-path="sect003B.html"><a href="sect003B.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
+<li class="chapter" data-level="" data-path="sect003.html"><a href="sect003.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
 <li class="chapter" data-level="" data-path="sect004.html"><a href="sect004.html"><i class="fa fa-check"></i>Structure du livre</a></li>
 <li class="chapter" data-level="" data-path="sect005.html"><a href="sect005.html"><i class="fa fa-check"></i>Pourquoi faut-il programmer en géomatique appliquée et utiliser R?</a></li>
 <li class="chapter" data-level="" data-path="sect006.html"><a href="sect006.html"><i class="fa fa-check"></i>Remerciements</a></li>
@@ -201,7 +201,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données raster</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Moisaïquage et découpage d’images</a></li>
-<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributives sur des images</a></li>
+<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaire sur des images</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
 <ul>
@@ -438,7 +438,7 @@ Modélisation et analyse spatiale</a>
 <span id="cb342-7"><a href="sect035.html#cb342-7" aria-hidden="true" tabindex="-1"></a>Acc2021 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Incidents, Incidents<span class="sc">$</span>DESCRIPTIO <span class="sc">%in%</span> </span>
 <span id="cb342-8"><a href="sect035.html#cb342-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">c</span>(<span class="st">&quot;Accident avec blessés&quot;</span>, <span class="st">&quot;Accident mortel&quot;</span>)</span>
 <span id="cb342-9"><a href="sect035.html#cb342-9" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">&amp;</span> ANNEE<span class="sc">==</span><span class="dv">2021</span>)</span>
-<span id="cb342-10"><a href="sect035.html#cb342-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Nous nous assurons que les deux couches aient la même projection cartographique</span></span>
+<span id="cb342-10"><a href="sect035.html#cb342-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Nous nous assurons que les deux couches ont la même projection cartographique</span></span>
 <span id="cb342-11"><a href="sect035.html#cb342-11" aria-hidden="true" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(SR, <span class="fu">st_crs</span>(Acc2021))</span>
 <span id="cb342-12"><a href="sect035.html#cb342-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du nombre d&#39;incidents par SR </span></span>
 <span id="cb342-13"><a href="sect035.html#cb342-13" aria-hidden="true" tabindex="-1"></a>SR<span class="sc">$</span>Acc2021 <span class="ot">&lt;-</span> À compléter</span>

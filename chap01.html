@@ -175,7 +175,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="sect001.html"><a href="sect001.html"><i class="fa fa-check"></i>Un manuel sous la forme d’une ressource éducative libre</a></li>
 <li class="chapter" data-level="" data-path="sect002.html"><a href="sect002.html"><i class="fa fa-check"></i>Comment lire ce manuel?</a></li>
-<li class="chapter" data-level="" data-path="sect003B.html"><a href="sect003B.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
+<li class="chapter" data-level="" data-path="sect003.html"><a href="sect003.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
 <li class="chapter" data-level="" data-path="sect004.html"><a href="sect004.html"><i class="fa fa-check"></i>Structure du livre</a></li>
 <li class="chapter" data-level="" data-path="sect005.html"><a href="sect005.html"><i class="fa fa-check"></i>Pourquoi faut-il programmer en géomatique appliquée et utiliser R?</a></li>
 <li class="chapter" data-level="" data-path="sect006.html"><a href="sect006.html"><i class="fa fa-check"></i>Remerciements</a></li>
@@ -201,7 +201,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données raster</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Moisaïquage et découpage d’images</a></li>
-<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributives sur des images</a></li>
+<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaire sur des images</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
 <ul>
@@ -405,7 +405,7 @@ Modélisation et analyse spatiale</a>
             <section class="normal" id="section-">
 <div id="chap01" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapitre 1</span> Manipulation des données spatiales dans R<a href="chap01.html#chap01" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Dans ce chapitre, nous verrons comment importer, manipuler et cartographier des données spatiales dans R. Pour une description plus détaillée du langage de programmation R – objets et expression, opérateurs, structures de données (vecteurs, matrices, <em>arrays</em>, <em>Dataframe</em>), importation et manipulation de données –, vous pourrez lire le chapitre intitulé <a href="https://laeq.github.io/LivreMethoQuantBolR/chap01.html"><em>Prise en main avec R</em></a> <span class="citation">(<a href="#ref-RBoldAir" role="doc-biblioref">Apparicio et Gelb 2022</a>)</span>.</p>
+<p>Dans ce chapitre, nous regarderons comment importer, manipuler et cartographier des données spatiales dans R. Pour une description plus détaillée du langage de programmation R – objets et expression, opérateurs, structures de données (vecteurs, matrices, <em>arrays</em>, <em>DataFrame</em>), importation et manipulation de données –, vous lisez le chapitre intitulé <a href="https://laeq.github.io/LivreMethoQuantBolR/chap01.html"><em>Prise en main avec R</em></a> <span class="citation">(<a href="#ref-RBoldAir" role="doc-biblioref">Apparicio et Gelb 2022</a>)</span>.</p>
 <div class="bloc_package">
 <p>Dans ce chapitre, nous utilisons les <em>packages</em> suivants :</p>
 <ul>
@@ -419,11 +419,11 @@ Modélisation et analyse spatiale</a>
 <li>Pour cartographier des données :
 <ul>
 <li><code>tmap</code> est certainement le meilleur <em>package</em>.</li>
-<li><code>ggplot2</code> est un <em>package</em> pour construire des graphiques qui peut être aussi utilisé pour la visualiser des données spatiales.</li>
+<li><code>ggplot2</code> est un <em>package</em> pour construire des graphiques qui peut être aussi utilisé pour visualiser des données spatiales.</li>
 <li><code>RColorBrewer</code> pour sélectionner une palette de couleur.</li>
 <li><code>ggpurb</code> pour combiner des graphiques et des cartes.</li>
 </ul></li>
-<li>Pour importer des tables attributives :
+<li>Pour importer des tables attributaires :
 <ul>
 <li><code>foreign</code> pour importer des fichiers dBase.</li>
 <li><code>xlsx</code> pour importer des fichiers Excel.</li>

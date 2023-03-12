@@ -175,7 +175,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="sect001.html"><a href="sect001.html"><i class="fa fa-check"></i>Un manuel sous la forme d’une ressource éducative libre</a></li>
 <li class="chapter" data-level="" data-path="sect002.html"><a href="sect002.html"><i class="fa fa-check"></i>Comment lire ce manuel?</a></li>
-<li class="chapter" data-level="" data-path="sect003B.html"><a href="sect003B.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
+<li class="chapter" data-level="" data-path="sect003.html"><a href="sect003.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
 <li class="chapter" data-level="" data-path="sect004.html"><a href="sect004.html"><i class="fa fa-check"></i>Structure du livre</a></li>
 <li class="chapter" data-level="" data-path="sect005.html"><a href="sect005.html"><i class="fa fa-check"></i>Pourquoi faut-il programmer en géomatique appliquée et utiliser R?</a></li>
 <li class="chapter" data-level="" data-path="sect006.html"><a href="sect006.html"><i class="fa fa-check"></i>Remerciements</a></li>
@@ -201,7 +201,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données raster</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Moisaïquage et découpage d’images</a></li>
-<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributives sur des images</a></li>
+<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaire sur des images</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
 <ul>
@@ -925,11 +925,11 @@ S=1-\frac{E_1 \cap E_2 \cap E_3 \cap \text{…} \cap E_n}{E_1 \cup E_2 \cup E_3 
 \tag{3.19}
 \end{equation}\]</span>
 </p>
-<p><strong>Voyons un exemple concret</strong> : calculons l’indice de Wong <span class="citation">(<a href="#ref-wong1999geostatistics" role="doc-biblioref">1999</a>)</span> (équation <a href="sect032.html#eq:WongIndice2Groupes">(3.18)</a>) pour les ellipses de distance standard pondérées par les effectifs de propriétaires et de locataires par secteur de recensement pour la Ville de Sherbrooke en 2021 (figure <a href="sect032.html#fig:CarteProprioLoctaires">3.5</a>). D’emblée, nous constatons que les locataires ont une distribution plus dispersée que celle des locataires beaucoup plus présents dans le centre de la Ville.</p>
+<p><strong>Voyons un exemple concret</strong> : calculons l’indice de Wong <span class="citation">(<a href="#ref-wong1999geostatistics" role="doc-biblioref">1999</a>)</span> (équation <a href="sect032.html#eq:WongIndice2Groupes">(3.18)</a>) pour les ellipses de distance standard pondérées par les effectifs de propriétaires et de locataires par secteur de recensement pour la ville de Sherbrooke en 2021 (figure <a href="sect032.html#fig:CarteProprioLoctaires">3.5</a>). D’emblée, nous constatons que les locataires ont une distribution plus dispersée que celle des locataires beaucoup plus présents dans le centre de la Ville.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CarteProprioLoctaires"></span>
-<img src="GMQ405_files/figure-html/CarteProprioLoctaires-1.png" alt="Propriétaires et locataires dans la Ville de Sherbrooke (avec ellipse de distance standard), 2021" width="85%" />
+<img src="GMQ405_files/figure-html/CarteProprioLoctaires-1.png" alt="Propriétaires et locataires dans la ville de Sherbrooke (avec ellipse de distance standard), 2021" width="85%" />
 <p class="caption">
-Figure 3.5: Propriétaires et locataires dans la Ville de Sherbrooke (avec ellipse de distance standard), 2021
+Figure 3.5: Propriétaires et locataires dans la ville de Sherbrooke (avec ellipse de distance standard), 2021
 </p>
 </div>
 <p>Quelques lignes de code suffisent pour obtenir l’indice de Wong <span class="citation">(<a href="#ref-wong1999geostatistics" role="doc-biblioref">1999</a>)</span>.</p>
@@ -950,7 +950,7 @@ Figure 3.5: Propriétaires et locataires dans la Ville de Sherbrooke (avec ellip
 <h3><span class="header-section-number">3.2.3</span> Mise en œuvre de l’analyse centrographique dans R<a href="sect032.html#sect0313" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="sect03131" class="section level4 hasAnchor" number="3.2.3.1">
 <h4><span class="header-section-number">3.2.3.1</span> Calcul de mesures non pondérées<a href="sect032.html#sect03131" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour illuster la mise en œuvre des différentes mesures de l’analyse centrographique dans R, nous utilisons un jeu de données ouvertes sur les <a href="https://donneesouvertes-sherbrooke.opendata.arcgis.com/datasets/64d19d62f0804f5896e4b24c32aea49d_0/explore?location=45.403468%2C-71.960143%2C12.00">indicents de sécurité publique de la Ville de Sherbrooke</a>. Dans la syntaxe ci-dessous, nous importons les données et constituons une couche <code>sf</code> par année (2019 à 2022) et extrayons les coordonnées géographiques.</p>
+<p>Pour illuster la mise en œuvre des différentes mesures de l’analyse centrographique dans R, nous utilisons un jeu de données ouvertes sur les <a href="https://donneesouvertes-sherbrooke.opendata.arcgis.com/datasets/64d19d62f0804f5896e4b24c32aea49d_0/explore?location=45.403468%2C-71.960143%2C12.00">indicents de sécurité publique de la ville de Sherbrooke</a>. Dans la syntaxe ci-dessous, nous importons les données et constituons une couche <code>sf</code> par année (2019 à 2022) et extrayons les coordonnées géographiques.</p>
 <div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="sect032.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb278-2"><a href="sect032.html#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
 <span id="cb278-3"><a href="sect032.html#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des données </span></span>
@@ -970,9 +970,9 @@ Figure 3.5: Propriétaires et locataires dans la Ville de Sherbrooke (avec ellip
 <span id="cb278-17"><a href="sect032.html#cb278-17" aria-hidden="true" tabindex="-1"></a>xy<span class="fl">.2022</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2022)</span></code></pre></div>
 <p>Les méfaits par année sont présentées à la figure <a href="sect032.html#fig:CarteMefaits">3.6</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CarteMefaits"></span>
-<img src="GMQ405_files/figure-html/CarteMefaits-1.png" alt="Localisation des méfaits par année, Ville de Sherbrooke), 2021" width="85%" />
+<img src="GMQ405_files/figure-html/CarteMefaits-1.png" alt="Localisation des méfaits par année, ville de Sherbrooke), 2021" width="85%" />
 <p class="caption">
-Figure 3.6: Localisation des méfaits par année, Ville de Sherbrooke), 2021
+Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke), 2021
 </p>
 </div>
 <p><strong>Centre moyen</strong></p>
@@ -1203,7 +1203,7 @@ Figure 3.7: Représentations de la dispersions des méfaits pour les quatre ann�
 </div>
 <div id="sect03132" class="section level4 hasAnchor" number="3.2.3.2">
 <h4><span class="header-section-number">3.2.3.2</span> Calcul de mesures pondérées<a href="sect032.html#sect03132" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour illuster le calcul des mesures pondérées, nous utilisons des données sur les effectifs du premier et du dernier déciles de revenu après impôt des familles économiques pour les secteurs de recensement de la Ville de Sherbrooke en 2021 (figure <a href="sect032.html#fig:CartesDecilesPremierDernier">3.8</a>).</p>
+<p>Pour illuster le calcul des mesures pondérées, nous utilisons des données sur les effectifs du premier et du dernier déciles de revenu après impôt des familles économiques pour les secteurs de recensement de la ville de Sherbrooke en 2021 (figure <a href="sect032.html#fig:CartesDecilesPremierDernier">3.8</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartesDecilesPremierDernier"></span>
 <img src="GMQ405_files/figure-html/CartesDecilesPremierDernier-1.png" alt="Déciles extrêmes de revenu après impôt des familles économiques" width="85%" />
 <p class="caption">

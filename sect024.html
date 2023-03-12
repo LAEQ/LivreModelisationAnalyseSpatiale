@@ -175,7 +175,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="sect001.html"><a href="sect001.html"><i class="fa fa-check"></i>Un manuel sous la forme d’une ressource éducative libre</a></li>
 <li class="chapter" data-level="" data-path="sect002.html"><a href="sect002.html"><i class="fa fa-check"></i>Comment lire ce manuel?</a></li>
-<li class="chapter" data-level="" data-path="sect003B.html"><a href="sect003B.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
+<li class="chapter" data-level="" data-path="sect003.html"><a href="sect003.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
 <li class="chapter" data-level="" data-path="sect004.html"><a href="sect004.html"><i class="fa fa-check"></i>Structure du livre</a></li>
 <li class="chapter" data-level="" data-path="sect005.html"><a href="sect005.html"><i class="fa fa-check"></i>Pourquoi faut-il programmer en géomatique appliquée et utiliser R?</a></li>
 <li class="chapter" data-level="" data-path="sect006.html"><a href="sect006.html"><i class="fa fa-check"></i>Remerciements</a></li>
@@ -201,7 +201,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données raster</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Moisaïquage et découpage d’images</a></li>
-<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributives sur des images</a></li>
+<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaire sur des images</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
 <ul>
@@ -459,7 +459,7 @@ avec :</p>
 <p>Avec la palette <code>-RdBu</code>, les points froids et les points chauds sont respectivement bleus et rouges comme les pastilles de votre robinet! Bref, un beau travail de plomberie!</p>
 <p>Pour un rappel sur la cote Z et les valeurs de <em>p</em> associées, vous pouvez consulter <a href="https://pro.arcgis.com/fr/pro-app/latest/tool-reference/spatial-statistics/what-is-a-z-score-what-is-a-p-value.htm">ce lien</a>.</p>
 </div>
-<p>La syntaxe ci-dessous calcule les deux statistiques locales avec <code>localG</code> et <code>localG_perm</code> pour le revenu moyen des ménages pour les aires de diffusion de 2021 de la Ville de Sherbrooke.</p>
+<p>La syntaxe ci-dessous calcule les deux statistiques locales avec <code>localG</code> et <code>localG_perm</code> pour le revenu moyen des ménages pour les aires de diffusion de 2021 de la ville de Sherbrooke.</p>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="sect024.html#cb254-1" aria-hidden="true" tabindex="-1"></a>Rook1 <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
 <span id="cb254-2"><a href="sect024.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de pondérations</span></span>
 <span id="cb254-3"><a href="sect024.html#cb254-3" aria-hidden="true" tabindex="-1"></a>W.RookG    <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook1, <span class="at">zero.policy=</span><span class="cn">TRUE</span>)</span>
@@ -479,10 +479,10 @@ avec :</p>
 ## -4.04870 -1.88689 -0.13297 -0.03841  1.54641  4.10379</code></pre>
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="sect024.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localGetis.MC999)</span></code></pre></div>
 <pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -3.81093 -1.62489 -0.09841 -0.03756  1.38077  3.98173</code></pre>
+## -3.80753 -1.69261 -0.12292 -0.03878  1.42069  3.86842</code></pre>
 <div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="sect024.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localGetis.StarMC999)</span></code></pre></div>
 <pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -3.97842 -1.88194 -0.12547 -0.06629  1.47463  4.05046</code></pre>
+## -4.06773 -1.86300 -0.15398 -0.06383  1.46430  4.01892</code></pre>
 <p>Cartographions ces valeurs et repérons les regroupements de valeurs significativement fortes et faibles avec les statistiques de Getis et Ord (figures <a href="sect024.html#fig:GetisLocaleClassique">2.17</a> et <a href="sect024.html#fig:GetisLocaleMC">2.18</a>). Les quatre cartes sont très semblables et permettent de repérer un regroupement de valeurs faibles dans le centre-ville et un autre de valeurs fortes dans l’est de la Ville.</p>
 <div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="sect024.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrons les résultats dans deux nouveaux champs de la couche des AD</span></span>
 <span id="cb262-2"><a href="sect024.html#cb262-2" aria-hidden="true" tabindex="-1"></a>AD.DR<span class="sc">$</span>RevMed_localGetis <span class="ot">&lt;-</span> localGetis</span>
@@ -609,26 +609,26 @@ I_i = \frac{(x_i-\bar{X})\Sigma_{j=1}^n w_{ij}(x_j-\bar{X})}
 ##  Max.   :0.9833048</code></pre>
 <div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="sect024.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localMoranI.mc)</span></code></pre></div>
 <pre><code>##        Ii                E.Ii               Var.Ii               Z.Ii        
-##  Min.   :-0.90053   Min.   :-0.052032   Min.   :0.0000003   Min.   :-1.9910  
-##  1st Qu.: 0.08313   1st Qu.:-0.008567   1st Qu.:0.0386209   1st Qu.: 0.4406  
-##  Median : 0.49029   Median :-0.001167   Median :0.1365610   Median : 1.4436  
-##  Mean   : 0.61678   Mean   :-0.002985   Mean   :0.2183222   Mean   : 1.2385  
-##  3rd Qu.: 0.97602   3rd Qu.: 0.003731   3rd Qu.:0.2607722   3rd Qu.: 2.1339  
-##  Max.   : 3.37625   Max.   : 0.068599   Max.   :1.8744943   Max.   : 3.8982  
-##  Pr(z != E(Ii))      Pr(z != E(Ii)) Sim Pr(folded) Sim      Skewness       
-##  Min.   :0.0000969   Min.   :0.0020     Min.   :0.0010   Min.   :-0.41188  
-##  1st Qu.:0.0328473   1st Qu.:0.0220     1st Qu.:0.0110   1st Qu.:-0.22425  
-##  Median :0.1142862   Median :0.1300     Median :0.0650   Median :-0.08481  
-##  Mean   :0.2495569   Mean   :0.2553     Mean   :0.1277   Mean   :-0.01367  
-##  3rd Qu.:0.3965330   3rd Qu.:0.4180     3rd Qu.:0.2090   3rd Qu.: 0.20429  
-##  Max.   :0.9998100   Max.   :0.9980     Max.   :0.4990   Max.   : 0.42312  
+##  Min.   :-0.90053   Min.   :-0.047366   Min.   :0.0000002   Min.   :-1.9028  
+##  1st Qu.: 0.08313   1st Qu.:-0.010069   1st Qu.:0.0366681   1st Qu.: 0.4692  
+##  Median : 0.49029   Median :-0.001709   Median :0.1372345   Median : 1.4447  
+##  Mean   : 0.61678   Mean   :-0.003712   Mean   :0.2199953   Mean   : 1.2420  
+##  3rd Qu.: 0.97602   3rd Qu.: 0.003700   3rd Qu.:0.2616968   3rd Qu.: 2.1697  
+##  Max.   : 3.37625   Max.   : 0.036665   Max.   :1.8842024   Max.   : 4.0300  
+##  Pr(z != E(Ii))      Pr(z != E(Ii)) Sim Pr(folded) Sim      Skewness        
+##  Min.   :0.0000558   Min.   :0.0020     Min.   :0.0010   Min.   :-0.386447  
+##  1st Qu.:0.0300287   1st Qu.:0.0220     1st Qu.:0.0110   1st Qu.:-0.217486  
+##  Median :0.1203880   Median :0.1260     Median :0.0630   Median :-0.082548  
+##  Mean   :0.2491172   Mean   :0.2536     Mean   :0.1268   Mean   :-0.006617  
+##  3rd Qu.:0.3998081   3rd Qu.:0.4120     3rd Qu.:0.2060   3rd Qu.: 0.213746  
+##  Max.   :0.9980480   Max.   :0.9940     Max.   :0.4970   Max.   : 0.411198  
 ##     Kurtosis       
-##  Min.   :-0.58893  
-##  1st Qu.:-0.28732  
-##  Median :-0.19140  
-##  Mean   :-0.18403  
-##  3rd Qu.:-0.08192  
-##  Max.   : 0.42353</code></pre>
+##  Min.   :-0.54861  
+##  1st Qu.:-0.26757  
+##  Median :-0.17062  
+##  Mean   :-0.16268  
+##  3rd Qu.:-0.07016  
+##  Max.   : 0.41708</code></pre>
 <p>Avec la cartographie du <em>I</em> de Moran local, nous repérons localement l’autocorrélation spatiale positive (valeurs similaires, fortes ou faibles localement) et l’autocorrélation spatiale négative (valeurs dissemblables localement) (figure <a href="sect024.html#fig:Chap02CartoIMoranLocal">2.19</a>).</p>
 <div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="sect024.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Ajout de champs pour le I de Moran local</span></span>
 <span id="cb268-2"><a href="sect024.html#cb268-2" aria-hidden="true" tabindex="-1"></a>AD.DR<span class="sc">$</span>RevMed_IlocalMoran.MC999 <span class="ot">&lt;-</span> localMoranI.mc[, <span class="dv">1</span>]</span>

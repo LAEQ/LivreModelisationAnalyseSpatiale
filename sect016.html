@@ -175,7 +175,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="sect001.html"><a href="sect001.html"><i class="fa fa-check"></i>Un manuel sous la forme d’une ressource éducative libre</a></li>
 <li class="chapter" data-level="" data-path="sect002.html"><a href="sect002.html"><i class="fa fa-check"></i>Comment lire ce manuel?</a></li>
-<li class="chapter" data-level="" data-path="sect003B.html"><a href="sect003B.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
+<li class="chapter" data-level="" data-path="sect003.html"><a href="sect003.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
 <li class="chapter" data-level="" data-path="sect004.html"><a href="sect004.html"><i class="fa fa-check"></i>Structure du livre</a></li>
 <li class="chapter" data-level="" data-path="sect005.html"><a href="sect005.html"><i class="fa fa-check"></i>Pourquoi faut-il programmer en géomatique appliquée et utiliser R?</a></li>
 <li class="chapter" data-level="" data-path="sect006.html"><a href="sect006.html"><i class="fa fa-check"></i>Remerciements</a></li>
@@ -201,7 +201,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données raster</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Moisaïquage et découpage d’images</a></li>
-<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributives sur des images</a></li>
+<li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaire sur des images</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
 <ul>
@@ -406,16 +406,16 @@ Modélisation et analyse spatiale</a>
 <div id="sect016" class="section level2 hasAnchor" number="1.6">
 <h2><span class="header-section-number">1.6</span> Exercices de révision<a href="sect016.html#sect016" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="bloc_exercice">
-<p><strong>Exercice 1.</strong> Découpez les rues de l’arrondissement des Nations de la Ville de Sherbrooke. Complétez le code ci-dessous avec les étapes suivantes :</p>
+<p><strong>Exercice 1.</strong> Découpez les rues de l’arrondissement des Nations de la ville de Sherbrooke. Complétez le code ci-dessous avec les étapes suivantes :</p>
 <ul>
-<li><p>Requête attributive pour créer un objet <code>sf</code> avec uniquement l’arrondissement des Nations à partir de la couche <code>Arrondissements</code> et le champ <code>NOM</code> (voir la section <a href="sect012.html#sect01274">1.2.7.4</a>).</p></li>
+<li><p>Requête attributaire pour créer un objet <code>sf</code> avec uniquement l’arrondissement des Nations à partir de la couche <code>Arrondissements</code> et le champ <code>NOM</code> (voir la section <a href="sect012.html#sect01274">1.2.7.4</a>).</p></li>
 <li><p>Découpez les rues (<code>Rues</code>) sur le nouvel objet <code>sf</code> (voir la section <a href="sect012.html#sect01213">1.2.3</a>).</p></li>
 </ul>
 <div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="sect016.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb199-2"><a href="sect016.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des deux couches</span></span>
 <span id="cb199-3"><a href="sect016.html#cb199-3" aria-hidden="true" tabindex="-1"></a>Arrond <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/chap01/shp/Arrondissements.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb199-4"><a href="sect016.html#cb199-4" aria-hidden="true" tabindex="-1"></a>Rues <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/chap01/shp/Segments_de_rue.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb199-5"><a href="sect016.html#cb199-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Requête attributive : création d&#39;un objet sf pour l&#39;arrondissement des Nations</span></span>
+<span id="cb199-5"><a href="sect016.html#cb199-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Requête attributaire : création d&#39;un objet sf pour l&#39;arrondissement des Nations</span></span>
 <span id="cb199-6"><a href="sect016.html#cb199-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Arrond<span class="sc">$</span>NOM)</span>
 <span id="cb199-7"><a href="sect016.html#cb199-7" aria-hidden="true" tabindex="-1"></a>Arrond.DesNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(À compléter)</span>
 <span id="cb199-8"><a href="sect016.html#cb199-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Découper les rues avec le polygone de l&#39;arrondissement des nations</span></span>
@@ -423,7 +423,7 @@ Modélisation et analyse spatiale</a>
 <p>Correction à la section <a href="sect1001.html#sect10011">10.1.1</a>.</p>
 </div>
 <div class="bloc_exercice">
-<p><strong>Exercice 2.</strong> Calculez un nouveau champ (<code>DistHVKM</code>) dans la couche des aires de diffusion (AD) (<code>AD.RMRSherb</code>) qui représente la distance en kilomètres entre l’Hôtel de ville de Sherbrooke et les points des AD. Puis, cartographiez le champ <code>DistHVKM</code> en quatre classes selon la méthode de discrétisation par quantiles. Complétez le code ci-dessous avec les étapes suivantes :</p>
+<p><strong>Exercice 2.</strong> Calculez un nouveau champ (<code>DistHVKM</code>) dans la couche des aires de diffusion (AD) (<code>AD.RMRSherb</code>) qui représente la distance en kilomètres entre l’hôtel de ville de Sherbrooke et les points des AD. Puis, cartographiez le champ <code>DistHVKM</code> en quatre classes selon la méthode de discrétisation par quantiles. Complétez le code ci-dessous avec les étapes suivantes :</p>
 <ul>
 <li><p>Ajout d’un champ pour la distance (<code>DistHVKM</code>) dans la couche <code>AD.RMRSherb</code> (voir la section <a href="sect012.html#sect0124">1.2.4</a>).</p></li>
 <li><p>Cartographiez le champ <code>DistHVKM</code> en quatre classes selon la méthode des quantiles (voir la section <a href="sect015.html#sect01515">1.5.1.5</a>).</p></li>
@@ -433,12 +433,12 @@ Modélisation et analyse spatiale</a>
 <span id="cb200-3"><a href="sect016.html#cb200-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des deux couches</span></span>
 <span id="cb200-4"><a href="sect016.html#cb200-4" aria-hidden="true" tabindex="-1"></a>AD.RMRSherb <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap01/gpkg/Recen2021Sherbrooke.gpkg&quot;</span>, </span>
 <span id="cb200-5"><a href="sect016.html#cb200-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">layer =</span> <span class="st">&quot;SherbAD&quot;</span>, <span class="at">quiet =</span> T)</span>
-<span id="cb200-6"><a href="sect016.html#cb200-6" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span>, <span class="at">Nom =</span> <span class="st">&quot;Hotel de Ville&quot;</span>,</span>
+<span id="cb200-6"><a href="sect016.html#cb200-6" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span>, <span class="at">Nom =</span> <span class="st">&quot;Hôtel de ville&quot;</span>,</span>
 <span id="cb200-7"><a href="sect016.html#cb200-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">lon =</span> <span class="sc">-</span><span class="fl">71.89306</span>, <span class="at">lat =</span> <span class="fl">45.40417</span>)</span>
 <span id="cb200-8"><a href="sect016.html#cb200-8" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(HotelVille, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>,<span class="st">&quot;lat&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
 <span id="cb200-9"><a href="sect016.html#cb200-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Changement de projection avant de s&#39;assurer que les deux couches aient la même</span></span>
 <span id="cb200-10"><a href="sect016.html#cb200-10" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(HotelVille, <span class="fu">st_crs</span>(AD.RMRSherb))</span>
-<span id="cb200-11"><a href="sect016.html#cb200-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Ajout d&#39;un champ pour la distance en km à l&#39;Hôtel de ville pour les secteurs de recensement</span></span>
+<span id="cb200-11"><a href="sect016.html#cb200-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Ajout d&#39;un champ pour la distance en km à l&#39;hôtel de ville pour les secteurs de recensement</span></span>
 <span id="cb200-12"><a href="sect016.html#cb200-12" aria-hidden="true" tabindex="-1"></a>AD.RMRSherb<span class="sc">$</span>DistHVKM <span class="ot">&lt;-</span> À compléter</span>
 <span id="cb200-13"><a href="sect016.html#cb200-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie en quatre classes selon les quantiles</span></span>
 <span id="cb200-14"><a href="sect016.html#cb200-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
@@ -450,16 +450,16 @@ Modélisation et analyse spatiale</a>
 <div class="bloc_exercice">
 <p><strong>Exercice 3.</strong> Importez une couche <em>shapefile</em> pour les divisions de recensement et calculez la densité de population (nombre d’habitants au km<sup>2</sup>). Complétez le code ci-dessous avec les étapes suivantes :</p>
 <ul>
-<li><p>Jointure attributive entre la couche <code>DR.Qc</code> et la table <code>DR.Data</code> (voir la section <a href="sect012.html#sect01272">1.2.7.2</a>).</p></li>
+<li><p>Jointure attributaire entre la couche <code>DR.Qc</code> et la table <code>DR.Data</code> (voir la section <a href="sect012.html#sect01272">1.2.7.2</a>).</p></li>
 <li><p>Calculer du champ <code>HabKm2</code>, soit la division entre les champs <code>DRpop_2021</code> et <code>SUPTERRE</code> (voir la section <a href="sect015.html#sect01515">1.5.1.5</a>).</p></li>
 </ul>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="sect016.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb201-2"><a href="sect016.html#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des division de recensement du Québec</span></span>
+<span id="cb201-2"><a href="sect016.html#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des divisions de recensement du Québec</span></span>
 <span id="cb201-3"><a href="sect016.html#cb201-3" aria-hidden="true" tabindex="-1"></a>DR.Qc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap01/gpkg/Recen2021Sherbrooke.gpkg&quot;</span>, </span>
 <span id="cb201-4"><a href="sect016.html#cb201-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">layer =</span> <span class="st">&quot;DivisionsRecens2021&quot;</span>, <span class="at">quiet =</span> T)</span>
 <span id="cb201-5"><a href="sect016.html#cb201-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation du fichier csv des division de recensement</span></span>
 <span id="cb201-6"><a href="sect016.html#cb201-6" aria-hidden="true" tabindex="-1"></a>DR.Data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/chap01/tables/DRQC2021.csv&quot;</span>)</span>
-<span id="cb201-7"><a href="sect016.html#cb201-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Jointure attributive avec le champ IDUGD</span></span>
+<span id="cb201-7"><a href="sect016.html#cb201-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Jointure attributaire avec le champ IDUGD</span></span>
 <span id="cb201-8"><a href="sect016.html#cb201-8" aria-hidden="true" tabindex="-1"></a>DR.Qc <span class="ot">&lt;-</span> A compléter</span>
 <span id="cb201-9"><a href="sect016.html#cb201-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Il y a déjà deux champs dans la table pour calculer la densité de population :</span></span>
 <span id="cb201-10"><a href="sect016.html#cb201-10" aria-hidden="true" tabindex="-1"></a><span class="do">## SUPTERRE : superficie en km2</span></span>
@@ -472,7 +472,7 @@ Modélisation et analyse spatiale</a>
 <div class="bloc_exercice">
 <p><strong>Exercice 4.</strong> Vous recevez les coordonnées en degrés (WGS84, EPSG : 4326) : -71.91688, 45.37579. Créez un point pour cette localisation et calculez la distance la séparant du tronçon autoroutier le plus proche. Complétez le code ci-dessous avec les étapes suivantes :</p>
 <ul>
-<li><p>Requête attributive pour créer un objet <code>sf</code> avec uniquement les tronçons autoroutiers à partir de la couche <code>Rues</code> et le champ <code>TYPESEGMEN</code> (voir la section <a href="sect012.html#sect01274">1.2.7.4</a>).</p></li>
+<li><p>Requête attributaire pour créer un objet <code>sf</code> avec uniquement les tronçons autoroutiers à partir de la couche <code>Rues</code> et le champ <code>TYPESEGMEN</code> (voir la section <a href="sect012.html#sect01274">1.2.7.4</a>).</p></li>
 <li><p>Trouvez l’identifiant du tronçon le plus proche avec la fonction <code>st_nearest_feature</code> (voir la section <a href="sect012.html#sect0126">1.2.6</a>).</p></li>
 </ul>
 <div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="sect016.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
