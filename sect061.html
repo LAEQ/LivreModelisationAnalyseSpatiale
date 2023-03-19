@@ -186,7 +186,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.1" data-path="sect011.html"><a href="sect011.html"><i class="fa fa-check"></i><b>1.1</b> Importation de données géographiques</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="sect011.html"><a href="sect011.html#sect0111"><i class="fa fa-check"></i><b>1.1.1</b> Importation de données vectorielles</a></li>
-<li class="chapter" data-level="1.1.2" data-path="sect011.html"><a href="sect011.html#sect0112"><i class="fa fa-check"></i><b>1.1.2</b> Importation de données raster</a></li>
+<li class="chapter" data-level="1.1.2" data-path="sect011.html"><a href="sect011.html#sect0112"><i class="fa fa-check"></i><b>1.1.2</b> Importation de données <em>raster</em></a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="sect012.html"><a href="sect012.html"><i class="fa fa-check"></i><b>1.2</b> Manipulation de données vectorielles</a>
 <ul>
@@ -206,7 +206,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
 <ul>
 <li class="chapter" data-level="1.4.1" data-path="sect014.html"><a href="sect014.html#sect0141"><i class="fa fa-check"></i><b>1.4.1</b> Exportation de données vectorielles <code>sf</code></a></li>
-<li class="chapter" data-level="1.4.2" data-path="sect014.html"><a href="sect014.html#sect0142"><i class="fa fa-check"></i><b>1.4.2</b> Exportation de données raster</a></li>
+<li class="chapter" data-level="1.4.2" data-path="sect014.html"><a href="sect014.html#sect0142"><i class="fa fa-check"></i><b>1.4.2</b> Exportation de données <em>raster</em></a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="sect015.html"><a href="sect015.html"><i class="fa fa-check"></i><b>1.5</b> Cartographie avec R</a>
 <ul>
@@ -338,13 +338,14 @@ div.csl-indent {
 <li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> <em>K-means</em></a></li>
 <li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> <em>Fuzzy c-means</em></a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Classifications spatiales</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification par agrégation intégrant une constrainte spatiale</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Classifications spatiales</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em> (SFCM)</a></li>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> <em>Spatial fuzzy c-means</em> (SFCM)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Exercices de révision</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
 <ul>
@@ -447,11 +448,11 @@ Modélisation et analyse spatiale</a>
 <h2><span class="header-section-number">6.1</span> Modèles spatiaux autorégressifs<a href="sect061.html#sect061" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="sect0611" class="section level3 hasAnchor" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> Les différents modèles<a href="sect061.html#sect0611" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="slx.-spatial-lag-sur-les-variables-exogènes-sect06111" class="section level4 hasAnchor" number="6.1.1.1">
-<h4><span class="header-section-number">6.1.1.1</span> <em>SLX. Spatial lag</em> sur les variables exogènes {##sect06111}<a href="sect061.html#slx.-spatial-lag-sur-les-variables-exogènes-sect06111" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="sect06111" class="section level4 hasAnchor" number="6.1.1.1">
+<h4><span class="header-section-number">6.1.1.1</span> <em>SLX. Spatial lag</em> sur les variables exogènes<a href="sect061.html#sect06111" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="slm.-spatial-lag-model-sect06112" class="section level4 hasAnchor" number="6.1.1.2">
-<h4><span class="header-section-number">6.1.1.2</span> <em>SLM. Spatial Lag Model</em> {##sect06112}<a href="sect061.html#slm.-spatial-lag-model-sect06112" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="sect06112" class="section level4 hasAnchor" number="6.1.1.2">
+<h4><span class="header-section-number">6.1.1.2</span> <em>SLM. Spatial Lag Model</em><a href="sect061.html#sect06112" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
 <div id="sect06113" class="section level4 hasAnchor" number="6.1.1.3">
 <h4><span class="header-section-number">6.1.1.3</span> <em>SEM. Spatial Error Model</em><a href="sect061.html#sect06113" class="anchor-section" aria-label="Anchor link to header"></a></h4>
