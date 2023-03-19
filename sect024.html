@@ -279,7 +279,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="sect042.html"><a href="sect042.html#sect0421"><i class="fa fa-check"></i><b>4.2.1</b> Objectifs de la méthode, types d’analyses, de modèles et d’agrégats</a></li>
 <li class="chapter" data-level="4.2.2" data-path="sect042.html"><a href="sect042.html#sect0422"><i class="fa fa-check"></i><b>4.2.2</b> Principes de base de la méthode</a></li>
-<li class="chapter" data-level="4.2.3" data-path="sect042.html"><a href="sect042.html#sect0423"><i class="fa fa-check"></i><b>4.2.3</b> Mise en oeuvre dans R</a></li>
+<li class="chapter" data-level="4.2.3" data-path="sect042.html"><a href="sect042.html#sect043"><i class="fa fa-check"></i><b>4.2.3</b> Mise en oeuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="sect044.html"><a href="sect044.html"><i class="fa fa-check"></i><b>4.3</b> Exercices de révision</a></li>
 <li class="chapter" data-level="4.4" data-path="sect045.html"><a href="sect045.html"><i class="fa fa-check"></i><b>4.4</b> Quiz de révision du chapitre</a></li>
@@ -520,10 +520,10 @@ avec :</p>
 ## -4.04870 -1.88689 -0.13297 -0.03841  1.54641  4.10379</code></pre>
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="sect024.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localGetis.MC999)</span></code></pre></div>
 <pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -3.84824 -1.69434 -0.09283 -0.04992  1.37829  3.64757</code></pre>
+## -3.81991 -1.67748 -0.05765 -0.04095  1.37997  3.79430</code></pre>
 <div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="sect024.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localGetis.StarMC999)</span></code></pre></div>
 <pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -4.00148 -1.87461 -0.13811 -0.06714  1.44437  3.95066</code></pre>
+## -4.06758 -1.87550 -0.18072 -0.06075  1.45468  4.04622</code></pre>
 <p>Cartographions ces valeurs et repérons les regroupements de valeurs significativement fortes et faibles avec les statistiques de Getis et Ord (figures <a href="sect024.html#fig:GetisLocaleClassique">2.17</a> et <a href="sect024.html#fig:GetisLocaleMC">2.18</a>). Les quatre cartes sont très semblables et permettent de repérer un regroupement de valeurs faibles dans le centre-ville et un autre de valeurs fortes dans l’est de la Ville.</p>
 <div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="sect024.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrons les résultats dans deux nouveaux champs de la couche des AD</span></span>
 <span id="cb262-2"><a href="sect024.html#cb262-2" aria-hidden="true" tabindex="-1"></a>AD.DR<span class="sc">$</span>RevMed_localGetis <span class="ot">&lt;-</span> localGetis</span>
@@ -650,26 +650,26 @@ I_i = \frac{(x_i-\bar{X})\Sigma_{j=1}^n w_{ij}(x_j-\bar{X})}
 ##  Max.   :0.9833048</code></pre>
 <div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="sect024.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localMoranI.mc)</span></code></pre></div>
 <pre><code>##        Ii                E.Ii               Var.Ii               Z.Ii        
-##  Min.   :-0.90053   Min.   :-0.075894   Min.   :0.0000003   Min.   :-1.9954  
-##  1st Qu.: 0.08313   1st Qu.:-0.009219   1st Qu.:0.0389902   1st Qu.: 0.4673  
-##  Median : 0.49029   Median :-0.001332   Median :0.1330433   Median : 1.4079  
-##  Mean   : 0.61678   Mean   :-0.003970   Mean   :0.2178646   Mean   : 1.2413  
-##  3rd Qu.: 0.97602   3rd Qu.: 0.002224   3rd Qu.:0.2629795   3rd Qu.: 2.1926  
-##  Max.   : 3.37625   Max.   : 0.052333   Max.   :1.7978326   Max.   : 4.0225  
-##  Pr(z != E(Ii))      Pr(z != E(Ii)) Sim Pr(folded) Sim      Skewness        
-##  Min.   :0.0000576   Min.   :0.002      Min.   :0.0010   Min.   :-0.423240  
-##  1st Qu.:0.0283348   1st Qu.:0.022      1st Qu.:0.0110   1st Qu.:-0.214667  
-##  Median :0.1248834   Median :0.140      Median :0.0700   Median :-0.090220  
-##  Mean   :0.2485367   Mean   :0.253      Mean   :0.1265   Mean   :-0.008765  
-##  3rd Qu.:0.3963806   3rd Qu.:0.390      3rd Qu.:0.1950   3rd Qu.: 0.210113  
-##  Max.   :0.9981344   Max.   :0.992      Max.   :0.4960   Max.   : 0.439901  
+##  Min.   :-0.90053   Min.   :-0.102941   Min.   :0.0000003   Min.   :-1.9492  
+##  1st Qu.: 0.08313   1st Qu.:-0.009388   1st Qu.:0.0380591   1st Qu.: 0.4284  
+##  Median : 0.49029   Median :-0.002112   Median :0.1389438   Median : 1.4575  
+##  Mean   : 0.61678   Mean   :-0.003662   Mean   :0.2186669   Mean   : 1.2378  
+##  3rd Qu.: 0.97602   3rd Qu.: 0.003395   3rd Qu.:0.2599324   3rd Qu.: 2.1628  
+##  Max.   : 3.37625   Max.   : 0.080274   Max.   :1.8759587   Max.   : 3.8380  
+##  Pr(z != E(Ii))     Pr(z != E(Ii)) Sim Pr(folded) Sim      Skewness       
+##  Min.   :0.000124   Min.   :0.0020     Min.   :0.0010   Min.   :-0.44253  
+##  1st Qu.:0.030554   1st Qu.:0.0240     1st Qu.:0.0120   1st Qu.:-0.22098  
+##  Median :0.124731   Median :0.1300     Median :0.0660   Median :-0.11485  
+##  Mean   :0.248418   Mean   :0.2526     Mean   :0.1263   Mean   :-0.01322  
+##  3rd Qu.:0.389916   3rd Qu.:0.3880     3rd Qu.:0.1940   3rd Qu.: 0.22070  
+##  Max.   :0.982243   Max.   :0.9900     Max.   :0.4950   Max.   : 0.40652  
 ##     Kurtosis       
-##  Min.   :-0.55151  
-##  1st Qu.:-0.26261  
-##  Median :-0.18548  
-##  Mean   :-0.17389  
-##  3rd Qu.:-0.08837  
-##  Max.   : 0.30950</code></pre>
+##  Min.   :-0.56280  
+##  1st Qu.:-0.26043  
+##  Median :-0.16759  
+##  Mean   :-0.15906  
+##  3rd Qu.:-0.05989  
+##  Max.   : 0.30750</code></pre>
 <p>Avec la cartographie du <em>I</em> de Moran local, nous repérons localement l’autocorrélation spatiale positive (valeurs similaires, fortes ou faibles localement) et l’autocorrélation spatiale négative (valeurs dissemblables localement) (figure <a href="sect024.html#fig:Chap02CartoIMoranLocal">2.19</a>).</p>
 <div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="sect024.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Ajout de champs pour le I de Moran local</span></span>
 <span id="cb268-2"><a href="sect024.html#cb268-2" aria-hidden="true" tabindex="-1"></a>AD.DR<span class="sc">$</span>RevMed_IlocalMoran.MC999 <span class="ot">&lt;-</span> localMoranI.mc[, <span class="dv">1</span>]</span>
