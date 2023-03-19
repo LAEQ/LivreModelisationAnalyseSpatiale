@@ -186,7 +186,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.1" data-path="sect011.html"><a href="sect011.html"><i class="fa fa-check"></i><b>1.1</b> Importation de données géographiques</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="sect011.html"><a href="sect011.html#sect0111"><i class="fa fa-check"></i><b>1.1.1</b> Importation de données vectorielles</a></li>
-<li class="chapter" data-level="1.1.2" data-path="sect011.html"><a href="sect011.html#sect0112"><i class="fa fa-check"></i><b>1.1.2</b> Importation de données raster</a></li>
+<li class="chapter" data-level="1.1.2" data-path="sect011.html"><a href="sect011.html#sect0112"><i class="fa fa-check"></i><b>1.1.2</b> Importation de données <em>raster</em></a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="sect012.html"><a href="sect012.html"><i class="fa fa-check"></i><b>1.2</b> Manipulation de données vectorielles</a>
 <ul>
@@ -206,7 +206,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
 <ul>
 <li class="chapter" data-level="1.4.1" data-path="sect014.html"><a href="sect014.html#sect0141"><i class="fa fa-check"></i><b>1.4.1</b> Exportation de données vectorielles <code>sf</code></a></li>
-<li class="chapter" data-level="1.4.2" data-path="sect014.html"><a href="sect014.html#sect0142"><i class="fa fa-check"></i><b>1.4.2</b> Exportation de données raster</a></li>
+<li class="chapter" data-level="1.4.2" data-path="sect014.html"><a href="sect014.html#sect0142"><i class="fa fa-check"></i><b>1.4.2</b> Exportation de données <em>raster</em></a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="sect015.html"><a href="sect015.html"><i class="fa fa-check"></i><b>1.5</b> Cartographie avec R</a>
 <ul>
@@ -338,13 +338,14 @@ div.csl-indent {
 <li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> <em>K-means</em></a></li>
 <li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> <em>Fuzzy c-means</em></a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Classifications spatiales</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification par agrégation intégrant une constrainte spatiale</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Classifications spatiales</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em> (SFCM)</a></li>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> <em>Spatial fuzzy c-means</em> (SFCM)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Exercices de révision</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
 <ul>
@@ -509,7 +510,7 @@ Relisez au besoin la section <a href="sect011.html#sect011142">1.1.1.4.2</a>.
 <table>
 <tr>
 <td>
-<label>simple feature geometry (sfg): géométrie d’une observation</label>
+<label>simple feature geometry (sfg) : géométrie d’une observation</label>
 </td>
 <td>
 <input type="checkbox" name="q1" value="1"/>
@@ -517,7 +518,7 @@ Relisez au besoin la section <a href="sect011.html#sect011142">1.1.1.4.2</a>.
 </tr>
 <tr>
 <td>
-<label>simple feature column (sfc): liste toutes les géométries d’une couche</label>
+<label>simple feature column (sfc) : liste toutes les géométries d’une couche</label>
 </td>
 <td>
 <input type="checkbox" name="q1" value="2"/>
@@ -525,7 +526,7 @@ Relisez au besoin la section <a href="sect011.html#sect011142">1.1.1.4.2</a>.
 </tr>
 <tr>
 <td>
-<label>data.fame : données attributives</label>
+<label>data.fame : données attributaires</label>
 </td>
 <td>
 <input type="checkbox" name="q1" value="3"/>
@@ -533,7 +534,7 @@ Relisez au besoin la section <a href="sect011.html#sect011142">1.1.1.4.2</a>.
 </tr>
 <tr>
 <td>
-<label>raster: données images</label>
+<label>raster : données images</label>
 </td>
 <td>
 <input type="checkbox" name="q1" value="4"/>
@@ -583,7 +584,7 @@ Relisez au besoin le début de la section <a href="sect012.html#sect0121">1.2.1<
 Laquelle de ces fonctions n’est pas une fonction géométrique sur une couche?
 </div>
 <div>
-Relisez au besoin la section <a href="#sect0123"><strong>??</strong></a>.
+Relisez au besoin la section <a href="sect012.html#sect0122">1.2.2</a>.
 </div>
 <div class="quizlib-question-answers">
 <table>
