@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 Matrices de pondérations spatiales | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
+  <title>2.2 Matrices de pondération spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 Matrices de pondérations spatiales | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta property="og:title" content="2.2 Matrices de pondération spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/introduction/ImageCouverture.png" />
   <meta property="og:description" content="Mettre le description du cours." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 Matrices de pondérations spatiales | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta name="twitter:title" content="2.2 Matrices de pondération spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   
   <meta name="twitter:description" content="Mettre le description du cours." />
   <meta name="twitter:image" content="/images/introduction/ImageCouverture.png" />
@@ -200,7 +200,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Moisaïquage et découpage d’images</a></li>
+<li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
@@ -222,12 +222,12 @@ div.csl-indent {
 <li class="chapter" data-level="2" data-path="chap02.html"><a href="chap02.html"><i class="fa fa-check"></i><b>2</b> Autocorrélation spatiale</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="sect021.html"><a href="sect021.html"><i class="fa fa-check"></i><b>2.1</b> Notion d’autocorrélation spatiale</a></li>
-<li class="chapter" data-level="2.2" data-path="sect022.html"><a href="sect022.html"><i class="fa fa-check"></i><b>2.2</b> Matrices de pondérations spatiales</a>
+<li class="chapter" data-level="2.2" data-path="sect022.html"><a href="sect022.html"><i class="fa fa-check"></i><b>2.2</b> Matrices de pondération spatiale</a>
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="sect022.html"><a href="sect022.html#sect0221"><i class="fa fa-check"></i><b>2.2.1</b> Matrices de contiguïté</a></li>
 <li class="chapter" data-level="2.2.2" data-path="sect022.html"><a href="sect022.html#sect0222"><i class="fa fa-check"></i><b>2.2.2</b> Matrices de proximité spatiale</a></li>
-<li class="chapter" data-level="2.2.3" data-path="sect022.html"><a href="sect022.html#sect0223"><i class="fa fa-check"></i><b>2.2.3</b> Standardisation des matrices de pondérations spatiales en ligne</a></li>
-<li class="chapter" data-level="2.2.4" data-path="sect022.html"><a href="sect022.html#sect0224"><i class="fa fa-check"></i><b>2.2.4</b> Construction de matrices de pondérations spatiales dans R</a></li>
+<li class="chapter" data-level="2.2.3" data-path="sect022.html"><a href="sect022.html#sect0223"><i class="fa fa-check"></i><b>2.2.3</b> Standardisation des matrices de pondération spatiale en ligne</a></li>
+<li class="chapter" data-level="2.2.4" data-path="sect022.html"><a href="sect022.html#sect0224"><i class="fa fa-check"></i><b>2.2.4</b> Construction de matrices de pondération spatiale dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
@@ -445,12 +445,12 @@ Modélisation et analyse spatiale</a>
 
             <section class="normal" id="section-">
 <div id="sect022" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Matrices de pondérations spatiales<a href="sect022.html#sect022" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Les mesures d’autocorrélation spatiale visent à vérifier si les entités spatiales contiguës ou proches ont tendance à être semblables (autocorrélation positive) ou dissemblables (autocorrélation négative) en fonction d’un phénomène donné (en fonction d’une variable). Il convient donc avant tout de définir la manière à partir de mesurer la relation d’adjacence ou de proximité entre deux entités spatiales.</p>
-<p>Il existe huit principales matrices de pondérations spatiales regroupées en deux grandes catégories : celles de contiguïté (basée sur l’adjacence) et celles de proximité (basées sur la distance) (tableau <a href="sect022.html#tab:TabMatricesSpatiales">2.1</a>). Lorsque la couche géographique est composée de points, seules les matrices de proximité peuvent être utilisées.</p>
+<h2><span class="header-section-number">2.2</span> Matrices de pondération spatiale<a href="sect022.html#sect022" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Les mesures d’autocorrélation spatiale visent à vérifier si les entités spatiales contiguës ou proches ont tendance à être semblables (autocorrélation positive) ou dissemblables (autocorrélation négative) en fonction d’un phénomène donné (en fonction d’une variable). Il convient donc avant tout de définir la manière de mesurer la relation d’adjacence ou de proximité entre deux entités spatiales.</p>
+<p>Il existe huit principales matrices de pondération spatiale regroupées en deux grandes catégories : celles de contiguïté (basées sur l’adjacence) et celles de proximité (basées sur la distance) (tableau <a href="sect022.html#tab:TabMatricesSpatiales">2.1</a>). Lorsque la couche géographique est composée de points, seules les matrices de proximité peuvent être utilisées.</p>
 <table>
 <caption>
-<span id="tab:TabMatricesSpatiales">Tableau 2.1: </span>Matrices de pondérations spatiales selon la géométrie
+<span id="tab:TabMatricesSpatiales">Tableau 2.1: </span>Matrices de pondération spatiale selon la géométrie
 </caption>
 <thead>
 <tr>
@@ -474,28 +474,12 @@ Raster
 <tbody>
 <tr grouplength="4">
 <td colspan="5" style="border-bottom: 1px solid;">
-<strong>Matrices de contiguïté (basée sur l’adjacence)</strong>
+<strong>Matrices de contiguïté (basées sur l’adjacence)</strong>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Partage d’un nœud (Queen)
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-X
-</td>
-<td style="text-align:center;">
-X
-</td>
-<td style="text-align:center;">
-X
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Partage d’un segment (Rook)
+Partage d’un nœud (<em>Queen</em>)
 </td>
 <td style="text-align:center;">
 </td>
@@ -511,7 +495,7 @@ X
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Partage d’un nœud et ordre d’adjacence (Queen)
+Partage d’un segment (<em>Rook</em>)
 </td>
 <td style="text-align:center;">
 </td>
@@ -527,7 +511,23 @@ X
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Partage d’un segment et ordre d’adjacence (Rook)
+Partage d’un nœud et ordre d’adjacence (<em>Queen</em>)
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+X
+</td>
+<td style="text-align:center;">
+X
+</td>
+<td style="text-align:center;">
+X
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Partage d’un segment et ordre d’adjacence (<em>Rook</em>)
 </td>
 <td style="text-align:center;">
 </td>
@@ -618,9 +618,9 @@ X
 </table>
 <div id="sect0221" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Matrices de contiguïté<a href="sect022.html#sect0221" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>La relation d’adjacence (de contiguïté) vise à déterminer si deux entités spatiales sont ou non voisines selon le partage soit d’un nœud, soit d’un segment (frontière commune). La contiguïté est liée à la notion de topologie qui prend en compte les relations de voisinage entre des entités spatiales, sans tenir compte de leurs tailles et de leurs formes géométriques. Elle peut être représentée à partir d’une <strong>matrice de contiguïté</strong> (avec une valeur de 1 quand deux entités sont voisines et 0 pour une situation inverse) ou d’un <strong>graphe</strong> (formé de points représentant les entités spatiales et de lignes reliant les entités voisines) (figure <a href="sect022.html#fig:Chap02Contiguity1">2.3</a>).</p>
+<p>La relation d’adjacence (de contiguïté) vise à déterminer si deux entités spatiales sont ou non voisines selon le partage soit d’un nœud, soit d’un segment (frontière commune). La contiguïté est liée à la notion de topologie qui prend en compte les relations de voisinage entre des entités spatiales, sans tenir compte de leurs tailles et de leurs formes géométriques. Elle peut être représentée à partir d’une <strong>matrice de contiguïté</strong> (avec une valeur de 1 quand deux entités sont voisines et de 0 pour une situation inverse) ou d’un <strong>graphe</strong> (formé de points représentant les entités spatiales et de lignes reliant les entités voisines) (figure <a href="sect022.html#fig:Chap02Contiguity1">2.3</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Chap02Contiguity1"></span>
-<img src="images/Chap02/FigureTopologie.png" alt="Relation topologique entre des entités spatiales polygonales" width="50%" />
+<img src="images/Chap02/FigureTopologie.png" alt="Relation topologique entre des entités spatiales polygonales" width="65%" />
 <p class="caption">
 Figure 2.3: Relation topologique entre des entités spatiales polygonales
 </p>
@@ -645,9 +645,9 @@ Figure 2.4: Relations de voisinage et évaluation de la contiguïté
 </div>
 <div class="bloc_astuce">
 <p><strong>Applicabilité des ordres d’adjacence</strong></p>
-<p>Les matrices d’adjacence sont souvent utilisées dans les analyses de diffusion spatiale. Prenons un exemple concret : imaginons que le polygone en gris à la figure <a href="sect022.html#fig:Chap02Contiguity2">2.4</a> est un parc. Nous pourrions évaluer le prix moyen des maisons dans les îlots qui font face au parc (ordre 1), toutes choses étant égales par ailleurs (superficie du terrain, superficie habitable, nombre de pièces, etc.). Puis, nous pourrions comparer ce prix moyen à ceux calculés pour les ordres suivants. Il est probable que le prix au premier ordre soit significativement plus élevé qu’au deuxième voire troisième ordre. Autre exemple, nous pourrions réaliser un exercice similaire pour des maisons dans des îlots adjacents à un tronçon autoroutier. La relation est probablement inverse : un prix moyen plus bas à l’ordre 1 comparativement aux ordres suivants.</p>
+<p>Les matrices d’adjacence sont souvent utilisées dans les analyses de diffusion spatiale. Prenons un exemple concret : imaginons que le polygone en gris à la figure <a href="sect022.html#fig:Chap02Contiguity2">2.4</a> est un parc. Nous pourrions évaluer le prix moyen des maisons dans les îlots qui font face au parc (ordre 1), toutes choses étant égales par ailleurs (superficie du terrain, superficie habitable, nombre de pièces, etc.). Puis, nous pourrions comparer ce prix moyen à ceux calculés pour les ordres suivants. Il est probable que le prix au premier ordre soit significativement plus élevé qu’au deuxième ordre, voire au troisième ordre. Autre exemple, nous pourrions réaliser un exercice similaire pour des maisons dans des îlots adjacents à un tronçon autoroutier. La relation est probablement inverse : un prix moyen plus bas à l’ordre 1 comparativement aux ordres suivants.</p>
 </div>
-<p>Habituellement appelée dénommée <span class="math inline">\(W\)</span>, la matrice de contiguïté est binaire tant selon le partage d’un nœud (<em>Queen</em> en anglais) (équation <a href="sect022.html#eq:ContiguiteQueen">(2.1)</a>) que d’un segment commun (<em>Rook</em> en anglais) (équation <a href="sect022.html#eq:ContiguiteRook">(2.2)</a>).</p>
+<p>Habituellement appelée <span class="math inline">\(W\)</span>, la matrice de contiguïté est binaire selon le partage tant d’un nœud (<em>Queen</em> en anglais) (équation <a href="sect022.html#eq:ContiguiteQueen">(2.1)</a>) que d’un segment commun (<em>Rook</em> en anglais) (équation <a href="sect022.html#eq:ContiguiteRook">(2.2)</a>).</p>
 <p><span class="math display" id="eq:ContiguiteQueen">\[\begin{equation}  
 w_{ij} =
 \begin{cases}
@@ -667,7 +667,7 @@ w_{ij} =
 \end{equation}\]</span>
 </p>
 <div class="bloc_exercice">
-<p>Petit conseil pour la partie A : une matrice de contiguïté est symétrique c’est-à-dire que si le polygone A est voisin du polygone B alors B est voisin de A! Par conséquent, pour gagner du temps, complétez une ligne et transposez-la en colonne.</p>
+<p>Petit conseil pour la partie A : une matrice de contiguïté est symétrique c’est-à-dire que si le polygone A est voisin du polygone B, alors B est voisin de A! Par conséquent, pour gagner du temps, complétez une ligne et transposez-la en colonne.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ExoMatriceDeContiguiteCorrection"></span>
 <img src="images/Chap02/ExoMatriceDeContiguite.png" alt="Exercice sur la contiguïté et les ordres d'adjacence" width="80%" />
 <p class="caption">
@@ -681,10 +681,10 @@ Figure 2.5: Exercice sur la contiguïté et les ordres d’adjacence
 <h3><span class="header-section-number">2.2.2</span> Matrices de proximité spatiale<a href="sect022.html#sect0222" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="sect02221" class="section level4 hasAnchor" number="2.2.2.1">
 <h4><span class="header-section-number">2.2.2.1</span> Bref retour sur les différents types de distance<a href="sect022.html#sect02221" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour calculer des mesures d’autocorrélation spatiale, il est aussi possible d’utiliser des matrices de pondérations spatiales basées sur la proximité spatiale. Cette fois, nous ne cherchons pas à vérifier si les entités spatiales adjacentes se ressemblent, mais plutôt à vérifier si les entités spatiales proches les unes des autres se ressemblent. Pour ce faire, il convient de calculer les distances entre les entités spatiales.</p>
-<p>Pour construire une matrice de pondérations spatiales selon la proximité, plusieurs types de distance peuvent être utilisés <span class="citation">(<a href="#ref-2017_1" role="doc-biblioref">Apparicio et al. 2017</a>)</span> : certaines sont cartésiennes, d’autres, dites réticulaires, sont calculées à partir d’un réseau de rues (figure <a href="sect022.html#fig:Chap02TypesDistances">2.6</a>).</p>
-<p>Les distances cartésiennes – euclidienne et de Manhattan (équations <a href="sect022.html#eq:DistEuc">(2.3)</a> et <a href="sect022.html#eq:DistManh">(2.4)</a>) – sont facilement calculables à partir des coordonnées géographiques (<em>x</em>,<em>y</em>) dans un SIG ou dans n’importe quel logiciel tableur, de statistique ou de gestion de base de données, etc. Pour cela, la couche géographique doit être dans un système de projection plane. La distance euclidienne représente ainsi la distance à vol d’oiseau entre deux points tandis que la distance de Manhattan est la somme des deux côtés formant l’angle droit d’un triangle rectangle (l’hypoténuse, le plus grand des côtés du triangle, étant la distance euclidienne) (figure <a href="sect022.html#fig:Chap02TypesDistances">2.6</a>.a). Si la projection de la couche est sphérique (longitude/longitude), il convient d’utiliser la formule de haversine (basée sur la trigonométrie sphérique) pour obtenir la distance à vol d’oiseau (équation <a href="sect022.html#eq:DistLongLat">(2.5)</a>).</p>
-<p>Par contre, tel que leurs noms l’indiquent, les distances réticulaires nécessitent un réseau de rues dans un SIG (notamment avec l’extension <em>Network Analyst</em> d’ArcGIS Pro) ou dans R (notamment avec le <em>package</em> R5R) pour calculer le chemin le plus rapide (chapitre <a href="chap05.html#chap05">5</a>).</p>
+<p>Pour calculer des mesures d’autocorrélation spatiale, nous pouvons aussi utiliser des matrices de pondération spatiale basées sur la proximité spatiale. Cette fois, nous ne cherchons pas à vérifier si les entités spatiales adjacentes se ressemblent, mais plutôt à vérifier si les entités spatiales proches les unes des autres se ressemblent. Pour ce faire, nous devons calculer les distances entre les entités spatiales.</p>
+<p>Pour construire une matrice de pondération spatiale selon la proximité, nous pouvons utiliser plusieurs types de distance <span class="citation">(<a href="#ref-2017_1" role="doc-biblioref">Apparicio et al. 2017</a>)</span> : certaines sont cartésiennes, d’autres, dites réticulaires, sont calculées à partir d’un réseau de rues (figure <a href="sect022.html#fig:Chap02TypesDistances">2.6</a>).</p>
+<p>Les distances cartésiennes – euclidienne et de Manhattan (équations <a href="sect022.html#eq:DistEuc">(2.3)</a> et <a href="sect022.html#eq:DistManh">(2.4)</a>) – sont facilement calculables à partir des coordonnées géographiques (<em>x</em>,<em>y</em>) dans un SIG ou dans n’importe quel logiciel tableur, de statistique ou de gestion de base de données, etc. Pour cela, la couche géographique doit être dans un système de projection plane. La distance euclidienne représente ainsi la distance à vol d’oiseau entre deux points tandis que la distance de Manhattan est la somme des deux côtés formant l’angle droit d’un triangle rectangle (l’hypoténuse, le plus grand des côtés du triangle, étant la distance euclidienne) (figure <a href="sect022.html#fig:Chap02TypesDistances">2.6</a>.a). Si la projection de la couche est sphérique (longitude/latitude), il convient d’utiliser la formule de haversine (basée sur la trigonométrie sphérique) pour obtenir la distance à vol d’oiseau (équation <a href="sect022.html#eq:DistLongLat">(2.5)</a>).</p>
+<p>Par contre, comme leurs noms l’indiquent, les distances réticulaires nécessitent un réseau de rues dans un SIG (notamment avec l’extension <em>Network Analyst</em> d’ArcGIS Pro) ou dans R (notamment avec le <em>package</em> R5R) pour calculer le chemin le plus rapide (chapitre <a href="chap05.html#chap05">5</a>).</p>
 <p><span class="math display" id="eq:DistEuc">\[\begin{equation}  
 d_{ij} = \sqrt{(x_i-x_j)^2+(y_i-y_j)^2}
 \tag{2.3}
@@ -717,9 +717,9 @@ w_{ij} =
 \tag{2.6}
 \end{equation}\]</span> </p>
 <p>avec <span class="math inline">\(d_{ij}\)</span> étant la distance entre les entités spatiales <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span>, et <span class="math inline">\(\bar{d}\)</span> étant un seuil de distance maximal fixé par la personne utilisatrice (par exemple, 500 mètres).</p>
-<p>En guise d’exemple, à la figure <a href="sect022.html#fig:FigConnectivite">2.7</a>, seuls les polygones en jaune seraient considérés comme voisins du polygone bleu avec un seuil de distance maximal fixé à 2,5 kilomètres (valeur de 1); ceux en rose se verraient affecter la valeur de 0.</p>
+<p>En guise d’exemple, à la figure <a href="sect022.html#fig:FigConnectivite">2.7</a>, seuls les polygones jaunes seraient considérés comme voisins du polygone bleu avec un seuil de distance maximal fixé à 2,5 kilomètres (valeur de 1); ceux roses se verraient affecter la valeur de 0.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigConnectivite"></span>
-<img src="images/Chap02/FigureConnectivite.png" alt="Illustration de la connectivité basée sur la distance" width="40%" />
+<img src="images/Chap02/FigureConnectivite.png" alt="Illustration de la connectivité basée sur la distance" width="65%" />
 <p class="caption">
 Figure 2.7: Illustration de la connectivité basée sur la distance
 </p>
@@ -727,10 +727,10 @@ Figure 2.7: Illustration de la connectivité basée sur la distance
 </div>
 <div id="sect02223" class="section level4 hasAnchor" number="2.2.2.3">
 <h4><span class="header-section-number">2.2.2.3</span> Matrices basées sur la distance<a href="sect022.html#sect02223" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>À partir d’une matrice de distance entre les entités spatiales, les pondérations peuvent être calculées avec l’inverse de la distance (<span class="math inline">\(1/d_{ij}\)</span>) ou l’inverse de la distance au carré (<span class="math inline">\(1/d_{ij^2}\)</span>) (équation <a href="sect022.html#eq:MatriceDistance1">(2.7)</a>). Analysons le graphique à la figure <a href="sect022.html#fig:PonderationInvDistInvDist2">2.8</a> :</p>
+<p>À partir d’une matrice de distance entre les entités spatiales, les pondérations peuvent être calculées avec l’inverse de la distance (<span class="math inline">\(1/d_{ij}\)</span>) ou l’inverse de la distance au carré (<span class="math inline">\(1/d_{ij^2}\)</span>) (équation <a href="sect022.html#eq:MatriceDistance1">(2.7)</a>). Analysons le graphique à la figure <a href="sect022.html#fig:PonderationInvDistInvDist2">2.8</a>.</p>
 <ul>
-<li>Premièrement, nous constatons que plus la distance est grande, plus la valeur de la pondération sera faible et inversement. De la sorte, nous accordons un rôle plus important aux entités spatiales proches les unes des autres que celles éloignées.</li>
-<li>Deuxièmement, les pondérations chutent beaucoup plus rapidement avec l’inverse de la distance au carré que l’inverse de la distance. Autrement dit, le recours à une matrice de pondération calculée avec l’inverse de la distance au carré aura comme effet d’accorder un poids plus important aux entités géographiques très proches.</li>
+<li>Premièrement, nous constatons que plus la distance est grande, plus la valeur de la pondération est faible et inversement. De la sorte, nous accordons un rôle plus important aux entités spatiales proches les unes des autres que celles éloignées.</li>
+<li>Deuxièmement, les pondérations chutent beaucoup plus rapidement avec l’inverse de la distance au carré qu’avec l’inverse de la distance. Autrement dit, le recours à une matrice de pondération calculée avec l’inverse de la distance au carré a comme effet d’accorder un poids plus important aux entités géographiques très proches.</li>
 </ul>
 <p><span class="math display" id="eq:MatriceDistance1">\[\begin{equation}  
 w_{ij} =
@@ -749,7 +749,7 @@ Figure 2.8: Comparaison des matrices inverse de la distance et inverse de la dis
 </div>
 <div class="bloc_aller_loin">
 <p><strong>Pondération avec l’exponentielle inverse</strong></p>
-<p>Dans un excellent livre intitulé <em>Économétrie spatiale appliquée des microdonnées</em>, Jean Dubé et Diego Legros <span class="citation">(<a href="#ref-dube2014econometrie" role="doc-biblioref">2014</a>)</span> proposent de transformer la matrice des distances avec l’inverse de l’exponentielle (ou exponentielle négative de la distance) (équation <a href="sect022.html#eq:MatriceDistancEexp">(2.8)</a>). Comparativement à l’inverse de la distance au carré, cela fait chuter encore plus rapidement les pondérations.</p>
+<p>Dans un excellent livre intitulé <em>Économétrie spatiale appliquée des microdonnées</em>, Jean Dubé et Diego Legros <span class="citation">(<a href="#ref-dube2014econometrie" role="doc-biblioref">2014</a>)</span> proposent de transformer la matrice des distances avec l’inverse de l’exponentielle (ou l’exponentielle négative de la distance) (équation <a href="sect022.html#eq:MatriceDistancEexp">(2.8)</a>). Comparativement à l’inverse de la distance au carré, cette opération fait chuter encore plus rapidement les pondérations.</p>
 <p><span class="math display" id="eq:MatriceDistancEexp">\[\begin{equation}  
 w_{ij} =
 \begin{cases}
@@ -759,7 +759,7 @@ w_{ij} =
 \tag{2.8}
 \end{equation}\]</span> </p>
 </div>
-<p>Notez que l’équation <a href="sect022.html#eq:MatriceDistance1">(2.7)</a> peut être légèrement modifiée en introduisant un seuil maximal de la distance au-delà duquel les pondérations sont mises à 0 (équation <a href="sect022.html#eq:MatriceDistance2">(2.9)</a>). Autrement dit, cela permet de ne pas tenir compte des entités spatiales distantes à plus d’un seuil fixé par l’analyste. Cela est particulièrement intéressant lorsque vous analysez un phénomène dont la diffusion (ou propagation) cesse ou est très minime au-delà d’une certaine distance. Par exemple, pour la propagation du bruit routier, le seuil de 300 mètres est souvent utilisé. Par conséquent, une mesure d’autocorrélation spatiale sur des mesures de bruit routier devrait probablement recourir à un seuil maximal de 300 mètres. Autre exemple, la superficie du territoire vital diffère selon les espèces animales (cerf, caribou, ours et loup, par exemple). Par conséquent, une ou un biologiste calculant des mesures d’autocorrélation spatiale risque aussi de fixer un seuil maximal qui sera différent selon l’espèce étudiée.</p>
+<p>Notez que l’équation <a href="sect022.html#eq:MatriceDistance1">(2.7)</a> peut être légèrement modifiée en introduisant un seuil maximal de la distance au-delà duquel les pondérations sont mises à 0 (équation <a href="sect022.html#eq:MatriceDistance2">(2.9)</a>). Autrement dit, cela permet de ne pas tenir compte des entités spatiales distantes à plus d’un seuil fixé par l’analyste, ce qui est particulièrement intéressant lorsque vous analysez un phénomène dont la diffusion (ou propagation) cesse ou est très minime au-delà d’une certaine distance. Par exemple, pour la propagation du bruit routier, le seuil de 300 mètres est souvent utilisé. Par conséquent, une mesure d’autocorrélation spatiale sur des mesures de bruit routier devrait probablement recourir à un seuil maximal de 300 mètres. Autre exemple, la superficie du territoire vital diffère selon les espèces animales (cerf, caribou, ours et loup, par exemple). Par conséquent, une ou un biologiste calculant des mesures d’autocorrélation spatiale risque aussi de fixer un seuil maximal différent selon l’espèce étudiée.</p>
 <p><span class="math display" id="eq:MatriceDistance2">\[\begin{equation}  
 w_{ij} =
 \begin{cases}
@@ -771,22 +771,22 @@ w_{ij} =
 \end{equation}\]</span> </p>
 <div class="bloc_astuce">
 <p><strong>Calculer le rayon maximal à partir d’une aire</strong></p>
-<p>Admettons que la superficie du territoire vital d’une espèce soit de 50 hectares, soit 0,5 km<sup>2</sup> ou 500 000 m<sup>2</sup>. La formule bien connue pour calculer la superficie d’un cercle est : <span class="math inline">\(S = \pi r^2\)</span> avec <span class="math inline">\(S\)</span> et <span class="math inline">\(r\)</span> étant respectivement la superficie et le rayon. Par conséquent, celle du rayon est égale à : <span class="math inline">\(r = \sqrt{\frac{S}{\pi}}\)</span>. Pour trouver le rayon, il suffira de taper <code>sqrt(500000 / pi)</code> dans la console de R et obtenir ainsi une distance de <code>398.9423</code> qui pourrait être arrondie à 400 mètres.</p>
+<p>Admettons que la superficie du territoire vital d’une espèce soit de 50 hectares, soit 0,5 km<sup>2</sup> ou 500 000 m<sup>2</sup>. La formule bien connue pour calculer la superficie d’un cercle est <span class="math inline">\(S = \pi r^2\)</span> avec <span class="math inline">\(S\)</span> et <span class="math inline">\(r\)</span> étant respectivement la superficie et le rayon. Par conséquent, celle du rayon est <span class="math inline">\(r = \sqrt{\frac{S}{\pi}}\)</span>. Pour trouver le rayon, vous devez taper <code>sqrt(500000 / pi)</code> dans la console de R et obtenir ainsi une distance de <code>398.9423</code> qui pourrait être arrondie à 400 mètres.</p>
 </div>
 </div>
 <div id="sect02224" class="section level4 hasAnchor" number="2.2.2.4">
 <h4><span class="header-section-number">2.2.2.4</span> Matrices selon le critère des plus proches voisins<a href="sect022.html#sect02224" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Une autre façon très utilisée de définir une matrice de proximité à partir d’une matrice de distance consiste à retenir uniquement les <em>n</em> plus proches voisins. La matrice est aussi binaire avec les valeurs de 1 si les observations qui sont parmi les <em>n</em> plus proches de l’entité spatiale <span class="math inline">\(i\)</span>.</p>
+<p>Une autre façon très utilisée pour définir une matrice de proximité à partir d’une matrice de distance consiste à retenir uniquement les <em>n</em> plus proches voisins. La matrice est aussi binaire avec les valeurs de 1 si les observations sont parmi les <em>n</em> plus proches de l’entité spatiale <span class="math inline">\(i\)</span> et de 0 pour une situation inverse.</p>
 </div>
 </div>
 <div id="sect0223" class="section level3 hasAnchor" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Standardisation des matrices de pondérations spatiales en ligne<a href="sect022.html#sect0223" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Il est recommandé de standardiser les matrices de pondérations en ligne. La somme de la matrice de pondération sera alors égale au nombre d’entités spatiales de la couche géographique.</p>
+<h3><span class="header-section-number">2.2.3</span> Standardisation des matrices de pondération spatiale en ligne<a href="sect022.html#sect0223" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Il est recommandé de standardiser les matrices de pondération en ligne. La somme de la matrice de pondération sera alors égale au nombre d’entités spatiales de la couche géographique.</p>
 <div class="bloc_attention">
 <p><strong>Quel est l’intérêt de la standardisation?</strong></p>
-<p>Nous verrons dans les sections suivantes que ces matrices sont utilisées pour évaluer le degré d’autocorrélation spatiale globale et locale. Or, il est fréquent de comparer les valeurs des mesures d’autocorrélation spatiale obtenues avec différentes matrices d’adjacence et de proximité (contiguïté selon le partage d’un nœud, d’une frontière commune; inverse de la distance, inverse de la distance au carré, etc.). Autrement dit, la standardisation des matrices de pondérations spatiales permet de vérifier si le degré de (dis)ressemblance des entités spatiales en fonction d’une variable donnée est plus fort avec une matrice de contiguïté, d’inverse de la distance ou encore d’inverse de la distance au carré, etc.</p>
+<p>Nous verrons dans les sections suivantes que ces matrices sont utilisées pour évaluer le degré d’autocorrélation spatiale globale et locale. Or, il est fréquent de comparer les valeurs des mesures d’autocorrélation spatiale obtenues avec différentes matrices d’adjacence et de proximité (contiguïté selon le partage d’un nœud, d’une frontière commune; inverse de la distance, inverse de la distance au carré, etc.). Autrement dit, la standardisation des matrices de pondération spatiale permet de vérifier si le degré de (dis)ressemblance des entités spatiales en fonction d’une variable donnée est plus fort avec une matrice de contiguïté, d’inverse de la distance ou encore d’inverse de la distance au carré, etc.</p>
 </div>
-<p>Pour illustrer comment est réalisée une standardisation, nous utilisons une couche géographique comprenant peu d’entités spatiales, soit celle des quatre arrondissements de la ville de Sherbrooke (figure <a href="sect022.html#fig:FigArrond">2.9</a>).</p>
+<p>Pour illustrer comment réaliser une standardisation, nous utilisons une couche géographique comprenant peu d’entités spatiales, soit celle des quatre arrondissements de la ville de Sherbrooke (figure <a href="sect022.html#fig:FigArrond">2.9</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigArrond"></span>
 <img src="images/Chap02/Arrondissements.png" alt="Arrondissements de la ville de Sherbrooke" width="50%" />
 <p class="caption">
@@ -795,17 +795,17 @@ Figure 2.9: Arrondissements de la ville de Sherbrooke
 </div>
 <p>Au tableau <a href="sect022.html#tab:StandardisationMatrice">2.2</a>, différentes matrices de contiguïté et de distance ont été calculées, puis standardisées. Voici comment interpréter les différentes sections du tableau :</p>
 <ul>
-<li><p><strong>Contiguïté selon le partage d’une frontière commune.</strong> La valeur de 1 signale que deux arrondissements sont voisins, sinon la valeur est à 0. Tel qu’indiqué aux équations <a href="sect022.html#eq:ContiguiteQueen">(2.1)</a> et <a href="sect022.html#eq:ContiguiteRook">(2.2)</a>, un arrondissement ne peut être voisin de lui-même (ex.: valeur de 0 pour la cellule <code>Bro.</code> et <code>Bro.</code>). L’arrondissement de Brompton–Rock Forest–Saint-Élie–Deauville (<code>Bro.</code>) a deux voisins, soit ceux des Nations et de Fleurimont (<code>Nat.</code> et <code>Fle.</code>), tel qu’indiqué par la valeur 2 dans la colonne <code>total</code>. Par contre, les arrondissements des Nations et de Fleurimont sont voisins de tous les autres (valeur de 3 dans la colonne <code>total</code>).</p></li>
+<li><p><strong>Contiguïté selon le partage d’une frontière commune.</strong> La valeur de 1 signale que deux arrondissements sont voisins, sinon la valeur est à 0. Tel qu’indiqué aux équations <a href="sect022.html#eq:ContiguiteQueen">(2.1)</a> et <a href="sect022.html#eq:ContiguiteRook">(2.2)</a>, un arrondissement ne peut être voisin de lui-même (ex.: valeur de 0 pour la cellule <code>Bro.</code> et <code>Bro.</code>). L’arrondissement de Brompton–Rock Forest–Saint-Élie–Deauville (<code>Bro.</code>) a deux voisins, soit ceux des Nations et de Fleurimont (<code>Nat.</code> et <code>Fle.</code>), comme indiqué par la valeur 2 dans la colonne <code>total</code>. Par contre, les arrondissements des Nations et de Fleurimont sont voisins de tous les autres (valeur de 3 dans la colonne <code>total</code>).</p></li>
 <li><p><strong>Standardisation de la matrice de contiguïté.</strong> Il suffit de diviser chaque valeur de la matrice de contiguïté par la somme de la ligne correspondante. De la sorte, la somme de chaque ligne est égale à 1 et la somme de l’ensemble des valeurs de la matrice est égale au nombre d’entités spatiales (ici 4).</p></li>
 <li><p><strong>Distance (km).</strong> Nous avons calculé la distance euclidienne en kilomètres entre les centroïdes des arrondissements.</p></li>
 <li><p><strong>Inverse de la distance.</strong> Les valeurs sont obtenues avec la formule <span class="math inline">\(1/_{dij}\)</span>. Par exemple, entre <code>Bro.</code> et <code>Nat.</code>, nous avons <span class="math inline">\(1/7,9930 = 0,1251\)</span>.</p></li>
 <li><p><strong>Inverse de la distance au carré.</strong> Les valeurs sont obtenues avec la formule <span class="math inline">\(1/_{dij^2}\)</span>. Par exemple, entre <code>Bro.</code> et <code>Nat.</code>, nous avons <span class="math inline">\(1/7,9930^2 = 0,0160\)</span>.</p></li>
-<li><p><strong>Standardisation de l’inverse de la distance.</strong> Comme précédemment, il suffit de diviser chaque valeur de la matrice par la somme de la ligne correspondante. Par exemple, pour <code>Bro.</code> et <code>Nat.</code>, nous avons <span class="math inline">\(0,1251 / 0,3241 = 0,3860\)</span>. Remarquez la somme des lignes est bien égale à 1.</p></li>
-<li><p><strong>Standardisation de l’inverse de la distance au carré.</strong> Comme précédemment, il suffit de diviser chaque valeur de la matrice par la somme de la ligne correspondante. Par exemple, pour <code>Bro.</code> et <code>Nat.</code>, nous avons <span class="math inline">\(0,0160 / 0,0360 = 0,4440\)</span>. Remarquez la somme des lignes est bien égale à 1.</p></li>
+<li><p><strong>Standardisation de l’inverse de la distance.</strong> Comme précédemment, il suffit de diviser chaque valeur de la matrice par la somme de la ligne correspondante. Par exemple, pour <code>Bro.</code> et <code>Nat.</code>, nous avons <span class="math inline">\(0,1251 / 0,3241 = 0,3860\)</span>. Remarquez que la somme des lignes est bien égale à 1.</p></li>
+<li><p><strong>Standardisation de l’inverse de la distance au carré.</strong> Comme précédemment, il suffit de diviser chaque valeur de la matrice par la somme de la ligne correspondante. Par exemple, pour <code>Bro.</code> et <code>Nat.</code>, nous avons <span class="math inline">\(0,0160 / 0,0360 = 0,4440\)</span>. Remarquez que la somme des lignes est bien égale à 1.</p></li>
 </ul>
 <table>
 <caption>
-<span id="tab:StandardisationMatrice">Tableau 2.2: </span>Standardisation de matrices de pondérations spatiales
+<span id="tab:StandardisationMatrice">Tableau 2.2: </span>Standardisation de matrices de pondération spatiale
 </caption>
 <thead>
 <tr>
@@ -1425,27 +1425,27 @@ Fle.
 </table>
 </div>
 <div id="sect0224" class="section level3 hasAnchor" number="2.2.4">
-<h3><span class="header-section-number">2.2.4</span> Construction de matrices de pondérations spatiales dans R<a href="sect022.html#sect0224" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">2.2.4</span> Construction de matrices de pondération spatiale dans R<a href="sect022.html#sect0224" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="bloc_attention">
 <p><strong>Construction des matrices dans R  avec le <em>package</em> <code>spdep</code></strong>.</p>
 <p>Le package <code>spdep</code> dispose de différentes fonctions pour construire des matrices de contiguïté, de connectivité et de distance :</p>
 <ul>
-<li><code>poly2nb</code> pour des matrices de contiguïté (section <a href="sect022.html#sect02241">2.2.4.1</a>)</li>
-<li><code>nblag</code> et <code>nblag_cumul</code> des matrices de contiguïté avec des ordres d’adjacence (section <a href="sect022.html#sect02242">2.2.4.2</a>)</li>
-<li><code>dnearneigh</code> pour des matrices de connectivité (section <a href="sect022.html#sect02243">2.2.4.3</a>)</li>
-<li><code>as.matrix(dist(coords))</code> et <code>mat2listw</code> pour créer des matrices de distance (section <a href="sect022.html#sect02244">2.2.4.4</a>)</li>
-<li><code>knn2nb</code> des matrices selon le critère des plus proches voisins (section <a href="sect022.html#sect02245">2.2.4.5</a>)</li>
+<li><code>poly2nb</code> pour des matrices de contiguïté (section <a href="sect022.html#sect02241">2.2.4.1</a>);</li>
+<li><code>nblag</code> et <code>nblag_cumul</code> pour des matrices de contiguïté avec des ordres d’adjacence (section <a href="sect022.html#sect02242">2.2.4.2</a>);</li>
+<li><code>dnearneigh</code> pour des matrices de connectivité (section <a href="sect022.html#sect02243">2.2.4.3</a>);</li>
+<li><code>as.matrix(dist(coords))</code> et <code>mat2listw</code> pour des matrices de distance (section <a href="sect022.html#sect02244">2.2.4.4</a>);</li>
+<li><code>knn2nb</code> des matrices selon le critère des plus proches voisins (section <a href="sect022.html#sect02245">2.2.4.5</a>).</li>
 </ul>
 </div>
 <div id="sect02241" class="section level4 hasAnchor" number="2.2.4.1">
-<h4><span class="header-section-number">2.2.4.1</span> Matrices de pondérations spatiales selon la contiguïté<a href="sect022.html#sect02241" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour créer des matrices de pondérations spatiales selon la contiguïté décrites à la section <a href="sect022.html#sect0221">2.2.1</a>, nous utilisons deux fonctions du <em>package</em> <code>spdep</code> :</p>
+<h4><span class="header-section-number">2.2.4.1</span> Matrices de pondération spatiale selon la contiguïté<a href="sect022.html#sect02241" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Pour créer des matrices de pondération spatiale selon la contiguïté décrites à la section <a href="sect022.html#sect0221">2.2.1</a>, nous utilisons deux fonctions du <em>package</em> <code>spdep</code> :</p>
 <ul>
 <li><p><code>poly2nb(Nom de l'objet sf, queen=TRUE)</code> crée une matrice de contiguïté sous la forme d’une classe <code>nb</code> (<em>A neighbours list with class nb</em>). Avec le paramètre <code>queen=TRUE</code>, la contiguïté est évaluée selon le partage d’un nœud; avec <code>queen=FALSE</code>, la contiguïté est évaluée selon le partage d’un segment (frontière). La matrice spatiale comprend une ligne par secteur de recensement avec les index des polygones adjacents. Par exemple, <code>Queen[[1]]</code> renvoie la liste des polygones voisins à la première entité spatiale, soit <code>2 14 15 16 23 32</code>, c’est-à-dire six voisins.</p></li>
-<li><p><code>nb2listw(objet nb, zero.policy=TRUE, style = "W")</code> crée une matrice de pondérations spatiales à partir de n’importe quelle matrice spatiale (de contiguïté ou de distance). Le <code>paramètre style = "W"</code>, qui est par défaut, permet de standardiser la matrice en ligne. Par exemple, <code>W.Queen$weights[[1]]</code> renvoie les valeurs de pondérations pour la première entité spatiale, soit <code>0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667</code> (<span class="math inline">\(0.1666667 = 1 / 6 \text{ voisins}\)</span>). Pour obtenir une matrice non standardisée, il faudrait écrire <code>style = "B"</code>, alors <code>W.Queen$weights[[1]]</code> renverrait les valeurs de <code>1 1 1 1 1 1</code>.</p></li>
+<li><p><code>nb2listw(objet nb, zero.policy=TRUE, style = "W")</code> crée une matrice de pondération spatiale à partir de n’importe quelle matrice spatiale (de contiguïté ou de distance). Le <code>paramètre style = "W"</code>, qui est par défaut, permet de standardiser la matrice en ligne. Par exemple, <code>W.Queen$weights[[1]]</code> renvoie les valeurs des pondérations pour la première entité spatiale, soit <code>0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667</code> (0,1666667 = 1 / 6 voisins). Pour obtenir une matrice non standardisée, vous devez écrire <code>style = "B"</code>, alors <code>W.Queen$weights[[1]]</code> renverra les valeurs de <code>1 1 1 1 1 1</code>.</p></li>
 </ul>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="sect022.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)    <span class="co"># pour importer des couches géographiques</span></span>
-<span id="cb203-2"><a href="sect022.html#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep) <span class="co"># pour construire les matrices de pondérations</span></span>
+<span id="cb203-2"><a href="sect022.html#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep) <span class="co"># pour construire les matrices de pondération</span></span>
 <span id="cb203-3"><a href="sect022.html#cb203-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des secteurs de recensement de la ville de Sherbrooke</span></span>
 <span id="cb203-4"><a href="sect022.html#cb203-4" aria-hidden="true" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
 <span id="cb203-5"><a href="sect022.html#cb203-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbSRDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
@@ -1455,19 +1455,19 @@ Fle.
 <span id="cb203-9"><a href="sect022.html#cb203-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage de la première ligne de la matrice</span></span>
 <span id="cb203-10"><a href="sect022.html#cb203-10" aria-hidden="true" tabindex="-1"></a>Queen[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## [1]  2 14 15 16 23 32</code></pre>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="sect022.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Création de la matrice des pondérations avec une standardisation en ligne</span></span>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="sect022.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Création de la matrice de pondération avec une standardisation en ligne</span></span>
 <span id="cb205-2"><a href="sect022.html#cb205-2" aria-hidden="true" tabindex="-1"></a>W.Queen <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Queen, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb205-3"><a href="sect022.html#cb205-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage de la première ligne des pondérations</span></span>
 <span id="cb205-4"><a href="sect022.html#cb205-4" aria-hidden="true" tabindex="-1"></a>W.Queen<span class="sc">$</span>weights[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## [1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667</code></pre>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="sect022.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;La somme de la première ligne de la matrice des pondérations est égale à&quot;</span>,</span>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="sect022.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;La somme de la première ligne de la matrice de pondération est égale à&quot;</span>,</span>
 <span id="cb207-2"><a href="sect022.html#cb207-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(W.Queen<span class="sc">$</span>weights[[<span class="dv">1</span>]]))</span></code></pre></div>
-<pre><code>## La somme de la première ligne de la matrice des pondérations est égale à 1</code></pre>
+<pre><code>## La somme de la première ligne de la matrice de pondération est égale à 1</code></pre>
 <div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="sect022.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice selon le partage d&#39;un segment (Rook)</span></span>
 <span id="cb209-2"><a href="sect022.html#cb209-2" aria-hidden="true" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(SR, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
 <span id="cb209-3"><a href="sect022.html#cb209-3" aria-hidden="true" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb209-4"><a href="sect022.html#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  Comparaison des deux matrices de contiguïté</span></span>
-<span id="cb209-5"><a href="sect022.html#cb209-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultat de la matrice des pondérations (queen)</span></span>
+<span id="cb209-5"><a href="sect022.html#cb209-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultat de la matrice de pondération (Queen)</span></span>
 <span id="cb209-6"><a href="sect022.html#cb209-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(W.Queen)</span></code></pre></div>
 <pre><code>## Characteristics of weights list object:
 ## Neighbour list object:
@@ -1488,7 +1488,7 @@ Fle.
 ## Weights constants summary:
 ##    n   nn S0      S1       S2
 ## W 50 2500 50 20.3056 205.5251</code></pre>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="sect022.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultat de la matrice des pondérations (rook)</span></span>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="sect022.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultat de la matrice de pondération (Rook)</span></span>
 <span id="cb211-2"><a href="sect022.html#cb211-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(W.Rook)</span></code></pre></div>
 <pre><code>## Characteristics of weights list object:
 ## Neighbour list object:
@@ -1523,14 +1523,14 @@ Fle.
 <p><img src="GMQ405_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
 </div>
 <div id="sect02242" class="section level4 hasAnchor" number="2.2.4.2">
-<h4><span class="header-section-number">2.2.4.2</span> Matrices de pondérations spatiales selon la contiguïté et un ordre d’adjacence<a href="sect022.html#sect02242" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">2.2.4.2</span> Matrices de pondération spatiale selon la contiguïté et un ordre d’adjacence<a href="sect022.html#sect02242" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Pour décrire la construction des matrices de contiguïté avec un ordre d’adjacence (décrites à la section <a href="sect022.html#sect0221">2.2.1</a>), nous utilisons une couche géographique comprenant peu d’entités spatiales, soit celle des quatre arrondissements de la ville de Sherbrooke (figure 1). Le code ci-dessous permet d’obtenir les résultats suivants :</p>
 <ul>
 <li><code>Rook &lt;- poly2nb(Arrondissements, queen=TRUE)</code>: matrice d’ordre 1 selon le partage d’un segment.</li>
 <li><code>str(Rook)</code>: pour chaque arrondissement, la liste des arrondissements adjacents d’ordre 1.</li>
 <li><code>Rook.Ordre2 &lt;- nblag(Rook, 2)</code>: création d’une matrice d’ordre 2 avec la fonction <code>nblag</code>.</li>
 <li><code>str(Rook.Ordre2[[1]])</code>: liste des voisins d’ordre 1. Bien entendu, le résultat est identique à <code>str(Rook)</code>.</li>
-<li><code>str(Rook.Ordre2[[2]])</code>: liste des voisins à l’ordre 2.</li>
+<li><code>str(Rook.Ordre2[[2]])</code>: liste des voisins d’ordre 2.</li>
 <li><code>Rook.Ordre2Cumule &lt;- nblag_cumul(Rook.Ordre2)</code> fusion des deux listes en une seule avec la fonction <code>nblag_cumul</code>.</li>
 </ul>
 <div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="sect022.html#cb214-1" aria-hidden="true" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/chap02/Arrondissements.shp&quot;</span>, <span class="at">quiet=</span>T)</span>
@@ -1581,7 +1581,7 @@ Fle.
 ##  - attr(*, &quot;region.id&quot;)= chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
 ##  - attr(*, &quot;call&quot;)= language nblag_cumul(nblags = Rook.Ordre2)
 ##  - attr(*, &quot;class&quot;)= chr &quot;nb&quot;</code></pre>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="sect022.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de la matrice de pondérations spatiales standardisée</span></span>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="sect022.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de la matrice de pondération spatiale standardisée</span></span>
 <span id="cb222-2"><a href="sect022.html#cb222-2" aria-hidden="true" tabindex="-1"></a>WRook.Ordre2Cumule <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook.Ordre2Cumule, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
 <p>La figure <a href="sect022.html#fig:FigArrondOrdre1et2">2.10</a> permet de constater qu’au second ordre, chacun des arrondissements est relié aux trois autres.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigArrondOrdre1et2"></span>
@@ -1602,25 +1602,25 @@ Figure 2.10: Adjacence de premier et de second ordre
 </div>
 <div id="sect02243" class="section level4 hasAnchor" number="2.2.4.3">
 <h4><span class="header-section-number">2.2.4.3</span> Matrice de connectivité (matrice distance binaire)<a href="sect022.html#sect02243" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>La fonction <code>dnearneigh(sf points, d1=, d2=)</code> crée une matrice de connectivité (décrite à la section <a href="sect022.html#sect0222">2.2.2</a>) à partir d’une couche de points. Les paramètres <code>d1</code> et <code>d2</code> permettent de spécifier le rayon de recherche (ex. : avec <code>d1 = 0, d2 = 2500</code>, le seuil maximal de distance est de 2500 mètres).</p>
+<p>La fonction <code>dnearneigh(sf points, d1=, d2=)</code> crée une matrice de connectivité (décrite à la section <a href="sect022.html#sect0222">2.2.2</a>) à partir d’une couche de points. Les paramètres <code>d1</code> et <code>d2</code> permettent de spécifier le rayon de recherche (ex. : avec <code>d1 = 0</code> et <code>d2 = 2500</code>, le seuil maximal de distance est de 2500 mètres).</p>
 <p>Si votre couche <code>sf</code> comprend des <code>lignes</code> ou des <code>polygones</code>, utilisez la fonction <code>st_centroid</code> ou <code>st_point_on_surface()</code> pour les convertir en points (section <a href="sect012.html#sect0122">1.2.2</a>).</p>
 <div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="sect022.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Conversion des polygones en points avec st_centroid</span></span>
 <span id="cb224-2"><a href="sect022.html#cb224-2" aria-hidden="true" tabindex="-1"></a>SR.centroides <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(SR)</span>
 <span id="cb224-3"><a href="sect022.html#cb224-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice binaire avec un seuil de 2500 mètres</span></span>
 <span id="cb224-4"><a href="sect022.html#cb224-4" aria-hidden="true" tabindex="-1"></a>Connect2500m <span class="ot">&lt;-</span> <span class="fu">dnearneigh</span>(SR.centroides, <span class="at">d1 =</span> <span class="dv">0</span>, <span class="at">d2 =</span> <span class="dv">2500</span>)</span>
-<span id="cb224-5"><a href="sect022.html#cb224-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de pondérations spatiales standardisées en ligne</span></span>
+<span id="cb224-5"><a href="sect022.html#cb224-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de pondération spatiale standardisées en ligne</span></span>
 <span id="cb224-6"><a href="sect022.html#cb224-6" aria-hidden="true" tabindex="-1"></a>W.Connect2500m <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Connect2500m, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
 </div>
 <div id="sect02244" class="section level4 hasAnchor" number="2.2.4.4">
-<h4><span class="header-section-number">2.2.4.4</span> Matrices de pondérations spatiales selon l’inverse de la distance et l’inverse de la distance au carré<a href="sect022.html#sect02244" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Dans la section <a href="sect022.html#sect0223">2.2.3</a>, nous avons présenté les matrices de l’inverse de la distance et de l’inverse de la distance au carré. Le code ci-dessous qui permet de les créer comprend les étapes suivantes :</p>
+<h4><span class="header-section-number">2.2.4.4</span> Matrices de pondération spatiale selon l’inverse de la distance et l’inverse de la distance au carré<a href="sect022.html#sect02244" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dans la section <a href="sect022.html#sect0223">2.2.3</a>, nous avons présenté les matrices de l’inverse de la distance et de l’inverse de la distance au carré. Le code ci-dessous, qui permet de les créer, comprend les étapes suivantes :</p>
 <ul>
 <li>Récupération des coordonnées géographiques des entités spatiales.</li>
 <li>Création de la matrice de distance euclidienne <span class="math inline">\(n \times n\)</span> (<span class="math inline">\(n\)</span> étant le nombre d’entités spatiales de la couche).</li>
 <li>Calcul des matrices d’inverse de la distance et d’inverse de la distance au carré.</li>
 <li>Standardisation de ces deux matrices et transformation dans des objets <code>listw</code> avec la fonction <code>mat2listw</code>.</li>
 </ul>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="sect022.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées des centroides des entités spatiales</span></span>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="sect022.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées des centroïdes des entités spatiales</span></span>
 <span id="cb225-2"><a href="sect022.html#cb225-2" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(SR.centroides)</span>
 <span id="cb225-3"><a href="sect022.html#cb225-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de la matrice de distance</span></span>
 <span id="cb225-4"><a href="sect022.html#cb225-4" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(coords, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>))</span>
@@ -1629,7 +1629,7 @@ Figure 2.10: Adjacence de premier et de second ordre
 <span id="cb225-7"><a href="sect022.html#cb225-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices inverse de la distance et inverse de la distance au carré</span></span>
 <span id="cb225-8"><a href="sect022.html#cb225-8" aria-hidden="true" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, distances)</span>
 <span id="cb225-9"><a href="sect022.html#cb225-9" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, distances)</span>
-<span id="cb225-10"><a href="sect022.html#cb225-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondérations spatiales standardisées en ligne</span></span>
+<span id="cb225-10"><a href="sect022.html#cb225-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
 <span id="cb225-11"><a href="sect022.html#cb225-11" aria-hidden="true" tabindex="-1"></a>W_InvDistances  <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
 <span id="cb225-12"><a href="sect022.html#cb225-12" aria-hidden="true" tabindex="-1"></a>W_InvDistances2 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
 <span id="cb225-13"><a href="sect022.html#cb225-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Visualisation des valeurs des pondération pour la première entité spatiale</span></span>
@@ -1644,11 +1644,11 @@ Figure 2.10: Adjacence de premier et de second ordre
 <pre><code>## [1] 1</code></pre>
 <div class="bloc_astuce">
 <p><strong>Intégration d’autres types de distance</strong></p>
-<p>À la section <a href="sect022.html#sect02221">2.2.2.1</a>, nous avons vu que plusieurs types de distances peuvent être utilisés : cartésiennes (euclidienne et de Manhattan) et réticulaires (chemin le plus rapide à pied, à vélo, en automobile et transport en commun).</p>
-<p>Pour construire une matrice de distance de Manhattan, il suffit de changer la valeur du paramètre <code>method</code> de la fonction <code>dist</code> comme suit : <code>as.matrix(dist(coords, method = "manhattan"))</code>.</p>
-<p>Pour intégrer une distance réticulaire, il suffit de la calculer, soit dans R (chapitre <a href="chap06.html#chap06">6</a>), soit dans un logiciel SIG (ArcGIS Pro avec l’extension Network Analyst par exemple) et de l’importer dans R. Le reste du code sera alors identique.</p>
+<p>À la section <a href="sect022.html#sect02221">2.2.2.1</a>, nous avons vu que plusieurs types de distances peuvent être utilisés : cartésiennes (euclidienne et de Manhattan) et réticulaires (chemin le plus rapide à pied, à vélo, en automobile et en transport en commun).</p>
+<p>Pour construire une matrice de distance de Manhattan, vous devez changer la valeur du paramètre <code>method</code> de la fonction <code>dist</code> comme suit : <code>as.matrix(dist(coords, method = "manhattan"))</code>.</p>
+<p>Pour intégrer une distance réticulaire, vous devez la calculer, soit dans R (chapitre <a href="chap06.html#chap06">6</a>), soit dans un logiciel SIG (ArcGIS Pro avec l’extension Network Analyst par exemple) et l’importer dans R. Le reste du code sera alors identique.</p>
 </div>
-<p>Nous avons vu qu’il est possible d’utiliser une matrice de distance en fixant une distance maximale au-delà duquel les pondérations seront mises à 0 (équation <a href="sect022.html#eq:MatriceDistance2">(2.9)</a> à la section <a href="sect022.html#sect02221">2.2.2.1</a>). Le code ci-dessous permet de créer des matrices de pondération standardisées avec l’inverse de la distance et l’inverse de la distance au carré avec des seuils de 2500 et 5000 mètres.</p>
+<p>Nous avons vu qu’il est possible d’utiliser une matrice de distance en fixant une distance maximale au-delà de laquelle les pondérations sont mises à 0 (équation <a href="sect022.html#eq:MatriceDistance2">(2.9)</a> à la section <a href="sect022.html#sect02221">2.2.2.1</a>). Le code ci-dessous permet de créer des matrices de pondération standardisées avec l’inverse de la distance et l’inverse de la distance au carré avec des seuils de 2500 et de 5000 mètres.</p>
 <div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="sect022.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées des centroïdes des entités spatiales</span></span>
 <span id="cb229-2"><a href="sect022.html#cb229-2" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(SR.centroides)</span>
 <span id="cb229-3"><a href="sect022.html#cb229-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de la matrice de distance</span></span>
@@ -1658,7 +1658,7 @@ Figure 2.10: Adjacence de premier et de second ordre
 <span id="cb229-7"><a href="sect022.html#cb229-7" aria-hidden="true" tabindex="-1"></a>InvDistances<span class="fl">.5000</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
 <span id="cb229-8"><a href="sect022.html#cb229-8" aria-hidden="true" tabindex="-1"></a>InvDistances2<span class="fl">.2500</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
 <span id="cb229-9"><a href="sect022.html#cb229-9" aria-hidden="true" tabindex="-1"></a>InvDistances2<span class="fl">.5000</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb229-10"><a href="sect022.html#cb229-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondérations spatiales standardisées en ligne</span></span>
+<span id="cb229-10"><a href="sect022.html#cb229-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
 <span id="cb229-11"><a href="sect022.html#cb229-11" aria-hidden="true" tabindex="-1"></a>W_InvDistances<span class="fl">.2500</span> <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
 <span id="cb229-12"><a href="sect022.html#cb229-12" aria-hidden="true" tabindex="-1"></a>W_InvDistances<span class="fl">.5000</span> <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
 <span id="cb229-13"><a href="sect022.html#cb229-13" aria-hidden="true" tabindex="-1"></a>W_InvDistances2<span class="fl">.2500</span> <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
@@ -1713,14 +1713,14 @@ Figure 2.10: Adjacence de premier et de second ordre
 ## W 39 1521 39 12.11283 162.9801</code></pre>
 <div class="bloc_attention">
 <p><strong>Réduction de la taille des matrices de distance</strong></p>
-<p>Plusieurs logiciels (notamment ArcGIS Pro et GeoDa) réduisent par défaut la taille des matrices de distance de la façon suivante : 1) construction d’une matrice de distance uniquement pour l’entité la plus proche (la matrice résultante est donc dimension <span class="math inline">\(n \times 1\)</span>); 2) obtention de la distance maximale dans cette matrice, soit la distance la plus grande entre une entité spatiale et celle la plus proche; 3) construction de la matrice de distance finale avec comme seuil la distance maximale obtenue à l’étape précédente.</p>
-<p>Cela procure deux avantages importants :</p>
+<p>Plusieurs logiciels (notamment ArcGIS Pro et GeoDa) réduisent par défaut la taille des matrices de distance de la façon suivante : 1) construction d’une matrice de distance uniquement pour l’entité la plus proche (la matrice résultante est donc de dimension <span class="math inline">\(n \times 1\)</span>); 2) obtention de la distance maximale dans cette matrice, soit la distance la plus grande entre une entité spatiale et celle la plus proche; 3) construction de la matrice de distance finale avec comme seuil la distance maximale obtenue à l’étape précédente.</p>
+<p>Cette réduction deux avantages importants :</p>
 <ul>
-<li><strong>Une réduction considérable des temps de calcul</strong>, surtout pour les couches géographiques comprenant un nombre très élevé d’entités spatiales. Par exemple, avec une couche de 50 entités spatiales, la matrice des distances comprendra 2500 valeurs (50 <span class="math inline">\(\times\)</span> 50 = 2500) tandis qu’avec 1000 entités spatiales, elle en comprendra un million (100 <span class="math inline">\(\times\)</span> 100 = 1000000).</li>
-<li>Tel que décrit plus haut, <strong>éviter d’avoir une matrice de distance avec des entités spatiales sans voisins</strong>, ce qui a un impact négatif sur les mesures d’autocorrélation spatiale.</li>
+<li><strong>Une diminution considérable des temps de calcul</strong>, surtout pour les couches géographiques comprenant un nombre très élevé d’entités spatiales. Par exemple, avec une couche de 50 entités spatiales, la matrice des distances comprendra 2500 valeurs (50 <span class="math inline">\(\times\)</span> 50 = 2500) tandis qu’avec 1000 entités spatiales, elle en comprendra un million (1000 <span class="math inline">\(\times\)</span> 1000 = 1000000).</li>
+<li>Comme décrit plus haut, il est préférable d’<strong>éviter d’avoir une matrice de distance avec des entités spatiales sans voisins</strong>, puisque cela a un impact négatif sur les mesures d’autocorrélation spatiale.</li>
 </ul>
 </div>
-<p>La syntaxe ci-dessous permet ainsi de construire des matrices de pondérations (inverse de la distance et inverse de la distance au carré) à partir de la distance maximale et un SR et son voisin le plus proche.</p>
+<p>La syntaxe ci-dessous permet ainsi de construire des matrices de pondération (inverse de la distance et inverse de la distance au carré) à partir de la distance maximale et un SR et son voisin le plus proche.</p>
 <div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="sect022.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées des centroïdes des entités spatiales</span></span>
 <span id="cb234-2"><a href="sect022.html#cb234-2" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(SR.centroides)</span>
 <span id="cb234-3"><a href="sect022.html#cb234-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Trouver le plus proche voisin</span></span>
@@ -1745,12 +1745,12 @@ Figure 2.10: Adjacence de premier et de second ordre
 <span id="cb238-7"><a href="sect022.html#cb238-7" aria-hidden="true" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x))</span>
 <span id="cb238-8"><a href="sect022.html#cb238-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Inverse de la distance au carré</span></span>
 <span id="cb238-9"><a href="sect022.html#cb238-9" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb238-10"><a href="sect022.html#cb238-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondérations spatiales standardisées en ligne</span></span>
+<span id="cb238-10"><a href="sect022.html#cb238-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
 <span id="cb238-11"><a href="sect022.html#cb238-11" aria-hidden="true" tabindex="-1"></a>W_InvDistances  <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb238-12"><a href="sect022.html#cb238-12" aria-hidden="true" tabindex="-1"></a>W_InvDistances2 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances2, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
 </div>
 <div id="sect02245" class="section level4 hasAnchor" number="2.2.4.5">
-<h4><span class="header-section-number">2.2.4.5</span> Matrices de pondérations spatiales selon le critère des plus proches voisins<a href="sect022.html#sect02245" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">2.2.4.5</span> Matrices de pondération spatiale selon le critère des plus proches voisins<a href="sect022.html#sect02245" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>La fonction <code>knearneigh</code> du <em>package</em> <code>spdep</code> crée des matrices de distance selon le critère des plus proches voisins (décrit à la section <a href="sect022.html#sect02224">2.2.2.4</a>), dont le nombre est fixé avec le paramètre <code>k</code>.</p>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="sect022.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques des centroides des polygones</span></span>
 <span id="cb239-2"><a href="sect022.html#cb239-2" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(SR))</span>
@@ -1759,12 +1759,12 @@ Figure 2.10: Adjacence de premier et de second ordre
 <span id="cb239-5"><a href="sect022.html#cb239-5" aria-hidden="true" tabindex="-1"></a>k3 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">3</span>))</span>
 <span id="cb239-6"><a href="sect022.html#cb239-6" aria-hidden="true" tabindex="-1"></a>k4 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">4</span>))</span>
 <span id="cb239-7"><a href="sect022.html#cb239-7" aria-hidden="true" tabindex="-1"></a>k5 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">5</span>))</span>
-<span id="cb239-8"><a href="sect022.html#cb239-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondérations spatiales standardisées en ligne</span></span>
+<span id="cb239-8"><a href="sect022.html#cb239-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
 <span id="cb239-9"><a href="sect022.html#cb239-9" aria-hidden="true" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k2, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb239-10"><a href="sect022.html#cb239-10" aria-hidden="true" tabindex="-1"></a>W.k3 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k3, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb239-11"><a href="sect022.html#cb239-11" aria-hidden="true" tabindex="-1"></a>W.k4 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k4, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb239-12"><a href="sect022.html#cb239-12" aria-hidden="true" tabindex="-1"></a>W.k5 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k5, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
-<p>La syntaxe ci-dessous permet de comparer les matrices des plus proches voisins de k=2 à 5. (figure <a href="sect022.html#fig:FigPlusProcheVoisins">2.11</a>).</p>
+<p>La syntaxe ci-dessous permet de comparer les matrices des plus proches voisins de <em>k</em> = 2 à 5 (figure <a href="sect022.html#fig:FigPlusProcheVoisins">2.11</a>).</p>
 <div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="sect022.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
 <span id="cb240-2"><a href="sect022.html#cb240-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(SR), <span class="at">border=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;wheat&quot;</span>)</span>
 <span id="cb240-3"><a href="sect022.html#cb240-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(k2, coords, <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
@@ -1782,9 +1782,9 @@ Figure 2.10: Adjacence de premier et de second ordre
 <span id="cb240-15"><a href="sect022.html#cb240-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(k5, coords, <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
 <span id="cb240-16"><a href="sect022.html#cb240-16" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">&quot;k = 5&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigPlusProcheVoisins"></span>
-<img src="images/Chap02/FigurePlusProcheVoisins.png" alt="Matrices selon le critère de plus proches voisins" width="100%" />
+<img src="images/Chap02/FigurePlusProcheVoisins.png" alt="Matrices selon le critère des plus proches voisins" width="100%" />
 <p class="caption">
-Figure 2.11: Matrices selon le critère de plus proches voisins
+Figure 2.11: Matrices selon le critère des plus proches voisins
 </p>
 </div>
 </div>

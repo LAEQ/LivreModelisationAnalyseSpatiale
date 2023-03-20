@@ -200,7 +200,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Moisaïquage et découpage d’images</a></li>
+<li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="sect014.html"><a href="sect014.html"><i class="fa fa-check"></i><b>1.4</b> Exportation de données spatiales de R vers des formats géographiques</a>
@@ -222,12 +222,12 @@ div.csl-indent {
 <li class="chapter" data-level="2" data-path="chap02.html"><a href="chap02.html"><i class="fa fa-check"></i><b>2</b> Autocorrélation spatiale</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="sect021.html"><a href="sect021.html"><i class="fa fa-check"></i><b>2.1</b> Notion d’autocorrélation spatiale</a></li>
-<li class="chapter" data-level="2.2" data-path="sect022.html"><a href="sect022.html"><i class="fa fa-check"></i><b>2.2</b> Matrices de pondérations spatiales</a>
+<li class="chapter" data-level="2.2" data-path="sect022.html"><a href="sect022.html"><i class="fa fa-check"></i><b>2.2</b> Matrices de pondération spatiale</a>
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="sect022.html"><a href="sect022.html#sect0221"><i class="fa fa-check"></i><b>2.2.1</b> Matrices de contiguïté</a></li>
 <li class="chapter" data-level="2.2.2" data-path="sect022.html"><a href="sect022.html#sect0222"><i class="fa fa-check"></i><b>2.2.2</b> Matrices de proximité spatiale</a></li>
-<li class="chapter" data-level="2.2.3" data-path="sect022.html"><a href="sect022.html#sect0223"><i class="fa fa-check"></i><b>2.2.3</b> Standardisation des matrices de pondérations spatiales en ligne</a></li>
-<li class="chapter" data-level="2.2.4" data-path="sect022.html"><a href="sect022.html#sect0224"><i class="fa fa-check"></i><b>2.2.4</b> Construction de matrices de pondérations spatiales dans R</a></li>
+<li class="chapter" data-level="2.2.3" data-path="sect022.html"><a href="sect022.html#sect0223"><i class="fa fa-check"></i><b>2.2.3</b> Standardisation des matrices de pondération spatiale en ligne</a></li>
+<li class="chapter" data-level="2.2.4" data-path="sect022.html"><a href="sect022.html#sect0224"><i class="fa fa-check"></i><b>2.2.4</b> Construction de matrices de pondération spatiale dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
@@ -450,7 +450,7 @@ Modélisation et analyse spatiale</a>
 <h3><span class="header-section-number">2.3.1</span> Statistique du <em>I</em> de Moran<a href="sect023.html#sect0231" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="sect02311" class="section level4 hasAnchor" number="2.3.1.1">
 <h4><span class="header-section-number">2.3.1.1</span> Formulation du <em>I</em> de Moran<a href="sect023.html#sect02311" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour évaluer le degré d’autocorrélation spatiale d’une variable continue, les deux principales statistiques utilisées sont le <em>I</em> de Moran <span class="citation">(<a href="#ref-moran1950test" role="doc-biblioref">1950</a>)</span> et le <em>c</em> de Geary <span class="citation">(<a href="#ref-geary1954contiguity" role="doc-biblioref">1954</a>)</span>. Puisqu’elles renvoient une seule valeur pour la variable continue de la couche géographique étudiée, elles sont qualifiées de mesures globales de l’autocorrélation spatiale, par opposition aux mesures locales qui renvoient une valeur par entité spatiale (section <a href="sect024.html#sect024">2.4</a>). Nous présenterons ici uniquement le <em>I</em> de Moran pour deux raisons principales. Premièrement, étant basée sur la covariance, son interprétation est bien plus facile que le <em>c</em> de Geary (basé la variance des écarts), c’est-à-dire qu’elle est très similaire au bien connu <a href="https://laeq.github.io/LivreMethoQuantBolR/sect043.html">coefficient de corrélation</a> <span class="citation">(<a href="#ref-RBoldAir" role="doc-biblioref">Apparicio et Gelb 2022</a>)</span>. Deuxièmement, elle constitue la mesure la plus utilisée. Le <em>I</em> de Moran s’écrit :</p>
+<p>Pour évaluer le degré d’autocorrélation spatiale d’une variable continue, les deux principales statistiques utilisées sont le <em>I</em> de Moran <span class="citation">(<a href="#ref-moran1950test" role="doc-biblioref">1950</a>)</span> et le <em>c</em> de Geary <span class="citation">(<a href="#ref-geary1954contiguity" role="doc-biblioref">1954</a>)</span>. Puisqu’elles renvoient une seule valeur pour la variable continue de la couche géographique étudiée, elles sont qualifiées de mesures globales de l’autocorrélation spatiale, par opposition aux mesures locales qui renvoient une valeur par entité spatiale (section <a href="sect024.html#sect024">2.4</a>). Nous présentons ici uniquement le <em>I</em> de Moran pour deux raisons principales. Premièrement, étant basée sur la covariance, son interprétation est bien plus facile que celle du <em>c</em> de Geary (basé sur la variance des écarts), c’est-à-dire qu’elle est très similaire au bien connu <a href="https://laeq.github.io/LivreMethoQuantBolR/sect043.html">coefficient de corrélation</a> <span class="citation">(<a href="#ref-RBoldAir" role="doc-biblioref">Apparicio et Gelb 2022</a>)</span>. Deuxièmement, elle constitue la mesure la plus utilisée. Le <em>I</em> de Moran s’écrit :</p>
 <p><span class="math display" id="eq:MoranIa">\[\begin{equation}  
 I = \frac{n}{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}} \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma_{i=1}^n (x_i-\bar{x})^2} \text{ avec :}
 \tag{2.10}
@@ -459,23 +459,23 @@ I = \frac{n}{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}} \frac{\Sigma_{i=1}^n \Sigma_{
 <ul>
 <li><em>n</em>, le nombre d’entités spatiales dans la couche géographique;</li>
 <li><span class="math inline">\(w_{ij}\)</span>, la valeur de la pondération spatiale entre les entités spatiales <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span>;</li>
-<li><span class="math inline">\(x_i\)</span> et <span class="math inline">\(x_j\)</span>, les valeurs de variable continue pour les entités spatiales <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span>;</li>
+<li><span class="math inline">\(x_i\)</span> et <span class="math inline">\(x_j\)</span>, les valeurs de la variable continue pour les entités spatiales <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span>;</li>
 <li><span class="math inline">\(\bar{x}\)</span>, la valeur moyenne de la variable <span class="math inline">\(X\)</span> à l’étude.</li>
 </ul>
 <div class="bloc_notes">
 <p><strong>Standardisation de la matrice de pondération et <em>I</em> de Moran</strong></p>
-<p>Nous avons vu que si la matrice de pondérations spatiales est standardisée en ligne (section <a href="sect022.html#sect0223">2.2.3</a>), alors chaque ligne de la matrice vaut 1 et la somme de l’ensemble des valeurs de la matrice est égale au nombre d’entités spatiales (<span class="math inline">\(n\)</span>). Or, dans l’équation <a href="sect023.html#eq:MoranIa">(2.10)</a>, <span class="math inline">\(\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}\)</span> représente la somme des pondérations de la matrice, soit <span class="math inline">\(n\)</span> si elles sont standardisées en ligne. Puisque <span class="math inline">\(\frac{n}{n}=1\)</span>, alors l’équation du <em>I</em> de Moran est simplifié comme suit :</p>
+<p>Nous avons vu que si la matrice de pondération spatiale est standardisée en ligne (section <a href="sect022.html#sect0223">2.2.3</a>), alors chaque ligne de la matrice vaut 1 et la somme de l’ensemble des valeurs de la matrice est égale au nombre d’entités spatiales (<span class="math inline">\(n\)</span>). Or, dans l’équation <a href="sect023.html#eq:MoranIa">(2.10)</a>, <span class="math inline">\(\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}\)</span> représente la somme des pondérations de la matrice, soit <span class="math inline">\(n\)</span> si elles sont standardisées en ligne. Puisque <span class="math inline">\(\frac{n}{n}=1\)</span>, alors l’équation du <em>I</em> de Moran est simplifié comme suit :</p>
 <p><span class="math display" id="eq:MoranIb">\[\begin{equation}  
 I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma_{i=1}^n (x_i-\bar{x})^2}
 \tag{2.11}
 \end{equation}\]</span>
 </p>
-<p>Tel qu’évoqué dans la section <a href="sect022.html#sect0223">2.2.3</a>, cela démontre l’intérêt de la standardisation : la comparaison des valeurs de <em>I</em> de Moran obtenues avec différentes matrices de contiguïté afin de sélectionner (éventuellement) celle avec laquelle la dépendance spatiale est la plus forte.</p>
+<p>Comme évoqué dans la section <a href="sect022.html#sect0223">2.2.3</a>, cela démontre l’intérêt de la standardisation : la comparaison des valeurs du <em>I</em> de Moran obtenues avec différentes matrices de contiguïté afin de sélectionner (éventuellement) celle avec laquelle la dépendance spatiale est la plus forte.</p>
 </div>
 </div>
 <div id="sect02312" class="section level4 hasAnchor" number="2.3.1.2">
 <h4><span class="header-section-number">2.3.1.2</span> Interprétation du <em>I</em> de Moran<a href="sect023.html#sect02312" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Avec une matrice standardisée, la statistique de <em>I</em> de Moran varie de -1 à 1 et s’interprète de la façon suivante :</p>
+<p>Avec une matrice standardisée, la statistique du <em>I</em> de Moran varie de -1 à 1 et s’interprète de la façon suivante :</p>
 <ul>
 <li>quand <span class="math inline">\(I&gt;0\)</span>, l’autocorrélation est positive, c’est-à-dire que les entités géographiques ont tendance à se ressembler d’autant plus qu’elles sont voisines ou proches;</li>
 <li>quand <span class="math inline">\(I=0\)</span>, l’autocorrélation est nulle et la contiguïté ou la proximité spatiale des zones ne joue donc aucun rôle;</li>
@@ -484,7 +484,7 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 </div>
 <div id="sect02313" class="section level4 hasAnchor" number="2.3.1.3">
 <h4><span class="header-section-number">2.3.1.3</span> Significativité du <em>I</em> de Moran<a href="sect023.html#sect02313" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Comme pour le coefficient de corrélation calculée entre deux variables, il est possible de tester la significativité de la valeur de <em>I</em> de Moran obtenu. Sans détailler les calculs de significativité, notez qu’il existe trois manières de tester la significativité :</p>
+<p>Comme pour le coefficient de corrélation calculé entre deux variables, il est possible de tester la significativité de la valeur du <em>I</em> de Moran obtenu. Sans que nous détaillons les calculs de significativité, notez qu’il existe trois manières de tester la significativité :</p>
 <ul>
 <li>selon l’hypothèse de la normalité</li>
 <li>selon l’hypothèse de la randomisation</li>
@@ -492,7 +492,7 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 </ul>
 <div class="bloc_aller_loin">
 <p><strong>Comment calculer les trois tests de significativité du <em>I</em> de Moran?</strong></p>
-<p>Pour une description détaillée du calcul des trois tests, vous pourrez consulter l’ouvrage de Jean Dubé et Diego Legros <span class="citation">(<a href="#ref-dube2014econometrie" role="doc-biblioref">2014</a>)</span>.</p>
+<p>Pour une description détaillée du calcul des trois tests, consultez l’ouvrage de Jean Dubé et Diego Legros <span class="citation">(<a href="#ref-dube2014econometrie" role="doc-biblioref">2014</a>)</span>.</p>
 </div>
 </div>
 </div>
@@ -502,14 +502,14 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 <p><strong>Calcul du <em>I</em> de Moran dans R</strong></p>
 <p>Pour illustrer le calcul de <em>I</em> de Moran dans R, nous utilisons une couche des aires de diffusion (AD) de la ville de Sherbrooke. Les étapes suivantes sont réalisées :</p>
 <ol style="list-style-type: decimal">
-<li>Construire une panoplie de matrices de pondérations spatiales selon la contiguïté, la connectivité, la proximité et le critère des plus proches voisins.</li>
+<li>Construire une panoplie de matrices de pondération spatiale selon la contiguïté, la connectivité, la proximité et le critère des plus proches voisins.</li>
 <li>Comparer les valeurs de significativité (<em>p</em>) pour une variable continue (<code>HabKm2</code>).</li>
 <li>Pour cette même variable, trouver avec quelle matrice la valeur du <em>I</em> de Moran est la plus forte.</li>
 <li>Comparer les valeurs de <em>I</em> de Moran calculées sur plusieurs variables.</li>
 </ol>
 </div>
 <div id="sect02321" class="section level4 hasAnchor" number="2.3.2.1">
-<h4><span class="header-section-number">2.3.2.1</span> Étape 1. Construction des matrices de pondérations spatiales<a href="sect023.html#sect02321" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">2.3.2.1</span> Étape 1. Construction des matrices de pondération spatiale<a href="sect023.html#sect02321" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="sect023.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb241-2"><a href="sect023.html#cb241-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
 <span id="cb241-3"><a href="sect023.html#cb241-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des aires de diffusion de la ville de Sherbrooke</span></span>
@@ -524,7 +524,7 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 <span id="cb241-12"><a href="sect023.html#cb241-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook)</span></span>
 <span id="cb241-13"><a href="sect023.html#cb241-13" aria-hidden="true" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
 <span id="cb241-14"><a href="sect023.html#cb241-14" aria-hidden="true" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-15"><a href="sect023.html#cb241-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook) et ordres d&#39;adjacence 2 à 5</span></span>
+<span id="cb241-15"><a href="sect023.html#cb241-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook) et ordres d&#39;adjacence de 2 à 5</span></span>
 <span id="cb241-16"><a href="sect023.html#cb241-16" aria-hidden="true" tabindex="-1"></a>Rook2 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">2</span>))</span>
 <span id="cb241-17"><a href="sect023.html#cb241-17" aria-hidden="true" tabindex="-1"></a>Rook3 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">3</span>))</span>
 <span id="cb241-18"><a href="sect023.html#cb241-18" aria-hidden="true" tabindex="-1"></a>Rook4 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">4</span>))</span>
@@ -549,7 +549,7 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 <span id="cb241-37"><a href="sect023.html#cb241-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices inverse de la distance et inverse de la distance au carré</span></span>
 <span id="cb241-38"><a href="sect023.html#cb241-38" aria-hidden="true" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, distances)</span>
 <span id="cb241-39"><a href="sect023.html#cb241-39" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, distances)</span>
-<span id="cb241-40"><a href="sect023.html#cb241-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondérations spatiales standardisées en ligne</span></span>
+<span id="cb241-40"><a href="sect023.html#cb241-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
 <span id="cb241-41"><a href="sect023.html#cb241-41" aria-hidden="true" tabindex="-1"></a>W.InvDistances  <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
 <span id="cb241-42"><a href="sect023.html#cb241-42" aria-hidden="true" tabindex="-1"></a>W.InvDistances2 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
 <span id="cb241-43"><a href="sect023.html#cb241-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de différentes matrices avec différents seuils</span></span>
@@ -578,15 +578,15 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 <span id="cb241-66"><a href="sect023.html#cb241-66" aria-hidden="true" tabindex="-1"></a>k3 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">3</span>))</span>
 <span id="cb241-67"><a href="sect023.html#cb241-67" aria-hidden="true" tabindex="-1"></a>k4 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">4</span>))</span>
 <span id="cb241-68"><a href="sect023.html#cb241-68" aria-hidden="true" tabindex="-1"></a>k5 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">5</span>))</span>
-<span id="cb241-69"><a href="sect023.html#cb241-69" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondérations spatiales standardisées en ligne</span></span>
+<span id="cb241-69"><a href="sect023.html#cb241-69" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
 <span id="cb241-70"><a href="sect023.html#cb241-70" aria-hidden="true" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k2, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb241-71"><a href="sect023.html#cb241-71" aria-hidden="true" tabindex="-1"></a>W.k3 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k3, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb241-72"><a href="sect023.html#cb241-72" aria-hidden="true" tabindex="-1"></a>W.k4 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k4, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
 <span id="cb241-73"><a href="sect023.html#cb241-73" aria-hidden="true" tabindex="-1"></a>W.k5 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k5, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
 </div>
 <div id="sect02322" class="section level4 hasAnchor" number="2.3.2.2">
-<h4><span class="header-section-number">2.3.2.2</span> Étape 2. Calcul de <em>I</em> de Moran et des trois tests de significativité<a href="sect023.html#sect02322" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Nous allons calculer la statistique du <em>I</em> de Moran sur la variable continue cartographiée à la figure <a href="sect023.html#fig:CartoADDRSherbrooke">2.12</a>.</p>
+<h4><span class="header-section-number">2.3.2.2</span> Étape 2. Calcul du <em>I</em> de Moran et des trois tests de significativité<a href="sect023.html#sect02322" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Calculons la statistique du <em>I</em> de Moran sur la variable continue cartographiée à la figure <a href="sect023.html#fig:CartoADDRSherbrooke">2.12</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoADDRSherbrooke"></span>
 <img src="GMQ405_files/figure-html/CartoADDRSherbrooke-1.png" alt="Densité de population, aires de diffusion de la ville de Sherbrooke" width="85%" />
 <p class="caption">
@@ -608,11 +608,11 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 <li><code>moran.mc(ObjetSf$Variable, listw=MatriceW, zero.policy=TRUE, nsim=999)</code></li>
 </ul></li>
 </ul>
-<p>Bien entendu, dans les sorties des trois méthodes, la valeur du <em>I</em> de Moran sera la même, contrairement à la valeur de <em>p</em> qui peut varier.</p>
+<p>Bien entendu, dans les sorties des trois méthodes, la valeur du <em>I</em> de Moran est la même, contrairement à la valeur de <em>p</em> qui peut varier.</p>
 <div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="sect023.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb242-2"><a href="sect023.html#cb242-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice des pondérations spatiales</span></span>
+<span id="cb242-2"><a href="sect023.html#cb242-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
 <span id="cb242-3"><a href="sect023.html#cb242-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
-<span id="cb242-4"><a href="sect023.html#cb242-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">FALSE</span>) <span class="co"># significativité selon selon l’hypothèse de la normalité</span></span></code></pre></div>
+<span id="cb242-4"><a href="sect023.html#cb242-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">FALSE</span>) <span class="co"># significativité selon l’hypothèse de la normalité</span></span></code></pre></div>
 <pre><code>## 
 ##  Moran I test under normality
 ## 
@@ -625,9 +625,9 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 ## Moran I statistic       Expectation          Variance 
 ##       0.433714579      -0.004032258       0.001394035</code></pre>
 <div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="sect023.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb244-2"><a href="sect023.html#cb244-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice des pondérations spatiales</span></span>
+<span id="cb244-2"><a href="sect023.html#cb244-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
 <span id="cb244-3"><a href="sect023.html#cb244-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
-<span id="cb244-4"><a href="sect023.html#cb244-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">TRUE</span>)  <span class="co"># significativité selon selon l’hypothèse de la randomisation</span></span></code></pre></div>
+<span id="cb244-4"><a href="sect023.html#cb244-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">TRUE</span>)  <span class="co"># significativité selon l’hypothèse de la randomisation</span></span></code></pre></div>
 <pre><code>## 
 ##  Moran I test under randomisation
 ## 
@@ -640,7 +640,7 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 ## Moran I statistic       Expectation          Variance 
 ##       0.433714579      -0.004032258       0.001385364</code></pre>
 <div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="sect023.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,            <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb246-2"><a href="sect023.html#cb246-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">listw=</span>W.Queen,           <span class="co"># nom de la matrice des pondérations spatiales </span></span>
+<span id="cb246-2"><a href="sect023.html#cb246-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">listw=</span>W.Queen,           <span class="co"># nom de la matrice de pondération spatiale </span></span>
 <span id="cb246-3"><a href="sect023.html#cb246-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
 <span id="cb246-4"><a href="sect023.html#cb246-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">nsim=</span><span class="dv">999</span>)                <span class="co"># 999 permutations</span></span></code></pre></div>
 <pre><code>## 
@@ -653,17 +653,17 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 ## statistic = 0.43371, observed rank = 1000, p-value = 0.001
 ## alternative hypothesis: greater</code></pre>
 <p>Nous allons calculer la mesure du <em>I</em> de Moran sur la variable continue cartographiée à la figure <a href="sect023.html#fig:FigIMoranLoiNormale">2.13</a>.</p>
-<p>La statistique du <em>I</em> de Moran (<em>I</em> = 0,43, <em>p</em>&lt;0,001) indique que la variable <em>densité de population</em> a une forte autocorrélation spatiale positive (figure <a href="sect023.html#fig:FigIMoranLoiNormale">2.13</a>), avec des valeurs fortes dans les aires de diffusion contiguës dans la partie centrale de la Ville et des valeurs faibles dans les aires de diffusion contiguës dans les secteurs périphériques (figure <a href="sect023.html#fig:CartoADDRSherbrooke">2.12</a>).</p>
+<p>La statistique du <em>I</em> de Moran (<em>I</em> = 0,43, <em>p</em> &lt; 0,001) indique que la variable <em>densité de population</em> a une forte autocorrélation spatiale positive (figure <a href="sect023.html#fig:FigIMoranLoiNormale">2.13</a>), avec des valeurs fortes dans les aires de diffusion contiguës dans la partie centrale de la ville et des valeurs faibles dans les aires de diffusion contiguës dans les secteurs périphériques (figure <a href="sect023.html#fig:CartoADDRSherbrooke">2.12</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigIMoranLoiNormale"></span>
-<img src="images/Chap02/IdeMoran.png" alt="Résultats du I de Moran selon l'hypothèse de la loi normale" width="80%" />
+<img src="images/Chap02/IdeMoran.png" alt="Résultats du *I* de Moran selon l'hypothèse de la loi normale" width="80%" />
 <p class="caption">
-Figure 2.13: Résultats du I de Moran selon l’hypothèse de la loi normale
+Figure 2.13: Résultats du <em>I</em> de Moran selon l’hypothèse de la loi normale
 </p>
 </div>
 </div>
 <div id="sect02323" class="section level4 hasAnchor" number="2.3.2.3">
 <h4><span class="header-section-number">2.3.2.3</span> Étape 3. Identification de la plus forte autocorrélation spatiale selon les différentes matrices<a href="sect023.html#sect02323" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>La syntaxe ci-dessous permet de calculer la statistique du <em>I</em> de Moran avec plusieurs matrices de pondérations spatiales.</p>
+<p>La syntaxe ci-dessous permet de calculer la statistique du <em>I</em> de Moran avec plusieurs matrices de pondération spatiale.</p>
 <div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="sect023.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;un vecteur pour les noms des matrices</span></span>
 <span id="cb248-2"><a href="sect023.html#cb248-2" aria-hidden="true" tabindex="-1"></a>VecteurMatrices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;W.Queen&quot;</span>, <span class="st">&quot;W.Rook&quot;</span>, <span class="st">&quot;W.Rook2&quot;</span>, <span class="st">&quot;W.Rook3&quot;</span>, <span class="st">&quot;W.Rook4&quot;</span>, <span class="st">&quot;W.Rook5&quot;</span>,</span>
 <span id="cb248-3"><a href="sect023.html#cb248-3" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.Connect2500m&quot;</span>,</span>
@@ -680,7 +680,7 @@ Figure 2.13: Résultats du I de Moran selon l’hypothèse de la loi normale
 <span id="cb248-14"><a href="sect023.html#cb248-14" aria-hidden="true" tabindex="-1"></a>                      W.InvDistances_2500, W.InvDistances2_2500,</span>
 <span id="cb248-15"><a href="sect023.html#cb248-15" aria-hidden="true" tabindex="-1"></a>                      W.InvDistances2_2500, W.InvDistances2_5000,</span>
 <span id="cb248-16"><a href="sect023.html#cb248-16" aria-hidden="true" tabindex="-1"></a>                      W.k2, W.k3, W.k4, W.k5)</span>
-<span id="cb248-17"><a href="sect023.html#cb248-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour I de Moran et la valeur de p</span></span>
+<span id="cb248-17"><a href="sect023.html#cb248-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
 <span id="cb248-18"><a href="sect023.html#cb248-18" aria-hidden="true" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
 <span id="cb248-19"><a href="sect023.html#cb248-19" aria-hidden="true" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
 <span id="cb248-20"><a href="sect023.html#cb248-20" aria-hidden="true" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
@@ -694,7 +694,7 @@ Figure 2.13: Résultats du I de Moran selon l’hypothèse de la loi normale
 <span id="cb248-28"><a href="sect023.html#cb248-28" aria-hidden="true" tabindex="-1"></a>   MoranI[i]<span class="ot">&lt;-</span>Test<span class="sc">$</span>statistic</span>
 <span id="cb248-29"><a href="sect023.html#cb248-29" aria-hidden="true" tabindex="-1"></a>   Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
 <span id="cb248-30"><a href="sect023.html#cb248-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb248-31"><a href="sect023.html#cb248-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un dataframe avec les valeurs du I de Moran et de p</span></span>
+<span id="cb248-31"><a href="sect023.html#cb248-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
 <span id="cb248-32"><a href="sect023.html#cb248-32" aria-hidden="true" tabindex="-1"></a>MoranData1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Matrices=</span>VecteurMatrices,</span>
 <span id="cb248-33"><a href="sect023.html#cb248-33" aria-hidden="true" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
 <span id="cb248-34"><a href="sect023.html#cb248-34" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
@@ -723,14 +723,14 @@ Figure 2.13: Résultats du I de Moran selon l’hypothèse de la loi normale
 <ul>
 <li>D’emblée, signalons que toutes les valeurs sont positives et significatives, témoignant d’une autocorrélation spatiale positive.</li>
 <li>Concernant les <strong>matrices de contiguïté</strong>, la dépendance spatiale est plus forte selon le partage d’un segment que d’un nœud (0,4497 contre 0,4337). Par conséquent, si nous devons choisir une matrice de contiguïté, il serait préférable d’utiliser celle définie selon le partage d’une chaîne (<em>Rook</em>).</li>
-<li>Sans surprise, plus nous ajoutons des <strong>ordres d’adjacence</strong>, plus la valeur de la statistique de <em>I</em> de Moran est faible, passant de 0,3251 à 0,0713 du deuxième au cinquième ordre.</li>
+<li>Sans surprise, plus nous ajoutons des <strong>ordres d’adjacence</strong>, plus la valeur de la statistique du <em>I</em> de Moran est faible, passant de 0,3251 à 0,0713 du deuxième au cinquième ordre.</li>
 <li>La valeur du <em>I</em> de Moran avec une <strong>matrice de connectivité</strong> avec 2500 mètres est de 0,2558. Elle est plus faible que celles de l’inverse de la distance et l’inverse de la distance au carré avec le même seuil de 2500 mètres (0,3212 et 0,4035).</li>
 <li>Concernant les <strong>matrices de proximité</strong>, la méthode de l’inverse de la distance au carré qui accorde un poids plus important aux entités spatiales très proches (comparativement à l’inverse de la distance) renvoie des valeurs toujours plus élevées, et ce, que la matrice soit complète ou réduite. Aussi, les matrices de distance réduites présentent toujours des valeurs plus fortes que celles complètes.</li>
-<li>Concernant les matrices <strong>selon le critère des plus proches voisins</strong>, l’autocorrélation spatiale diminue légèrement de k=2 à k=5. D’ailleurs, la valeur la plus forte est pour deux voisins (<em>I</em> = 0,5107). Toutefois, retenir uniquement deux voisins est discutable puisque les AD sont très majoritairement contiguës à plus de deux autres AD (sur les 249 AD, seuls 9 sont contiguës à deux autres AD selon le partage d’un segment). Pour le vérifier, tapez <code>summary(W.Rook)</code> et analysez le tableau sous la ligne <code>Link number distribution</code>.</li>
+<li>Concernant les matrices <strong>selon le critère des plus proches voisins</strong>, l’autocorrélation spatiale diminue légèrement de <em>k</em> = 2 à <em>k</em> = 5. D’ailleurs, la valeur la plus forte est pour deux voisins (<em>I</em> = 0,5107). Toutefois, retenir uniquement deux voisins est discutable puisque les AD sont très majoritairement contiguës à plus de deux autres AD (sur les 249 AD, seuls 9 sont contiguës à deux autres AD selon le partage d’un segment). Pour le vérifier, tapez <code>summary(W.Rook)</code> et analysez le tableau sous la ligne <code>Link number distribution</code>.</li>
 </ul>
 <table>
 <caption>
-<span id="tab:TableauIMoranMatrices">Tableau 2.3: </span>Résultats du I de Moran selon les différentes matrices
+<span id="tab:TableauIMoranMatrices">Tableau 2.3: </span>Résultats du <em>I</em> de Moran selon les différentes matrices
 </caption>
 <thead>
 <tr>
@@ -741,7 +741,7 @@ Nom
 Description
 </th>
 <th style="text-align:center;">
-I de Moran
+<em>I</em> de Moran
 </th>
 <th style="text-align:center;">
 p (999 permutations)
@@ -864,7 +864,7 @@ W.Connect2500m
 </tr>
 <tr grouplength="2">
 <td colspan="4" style="border-bottom: 1px solid;">
-<strong>Matrices de distance (complète)</strong>
+<strong>Matrices de distance (complètes)</strong>
 </td>
 </tr>
 <tr>
@@ -897,7 +897,7 @@ Inverse de la distance au carré
 </tr>
 <tr grouplength="2">
 <td colspan="4" style="border-bottom: 1px solid;">
-<strong>Matrices de distance (réduite)</strong>
+<strong>Matrices de distance (réduites)</strong>
 </td>
 </tr>
 <tr>
@@ -919,7 +919,7 @@ Inverse de la distance
 W_InvDistances2Reduite
 </td>
 <td style="text-align:left;">
-Inverse de la distance
+Inverse de la distance au carré
 </td>
 <td style="text-align:center;">
 0,3884
@@ -938,7 +938,7 @@ Inverse de la distance
 W.InvDistances_2500
 </td>
 <td style="text-align:left;">
-Inverse de la distance (2500 m)
+Inverse de la distance (2500 mètres)
 </td>
 <td style="text-align:center;">
 0,3212
@@ -952,7 +952,7 @@ Inverse de la distance (2500 m)
 W.InvDistances_5000
 </td>
 <td style="text-align:left;">
-Inverse de la distance (5000 m)
+Inverse de la distance (5000 mètres)
 </td>
 <td style="text-align:center;">
 0,4035
@@ -966,7 +966,7 @@ Inverse de la distance (5000 m)
 W.InvDistances2_2500
 </td>
 <td style="text-align:left;">
-Inverse de la dist. au carré (2500 m)
+Inverse de la distance au carré (2500 mètres)
 </td>
 <td style="text-align:center;">
 0,4035
@@ -980,7 +980,7 @@ Inverse de la dist. au carré (2500 m)
 W.InvDistances2_5000
 </td>
 <td style="text-align:left;">
-Inverse de la dist. au carré (5000 m)
+Inverse de la distance au carré (5000 mètres)
 </td>
 <td style="text-align:center;">
 0,3499
@@ -999,7 +999,7 @@ Inverse de la dist. au carré (5000 m)
 W.k2
 </td>
 <td style="text-align:left;">
-k = 2
+<em>k</em> = 2
 </td>
 <td style="text-align:center;">
 0,5107
@@ -1013,7 +1013,7 @@ k = 2
 W.k3
 </td>
 <td style="text-align:left;">
-k = 3
+<em>k</em> = 3
 </td>
 <td style="text-align:center;">
 0,4446
@@ -1027,7 +1027,7 @@ k = 3
 W.k4
 </td>
 <td style="text-align:left;">
-k = 4
+<em>k</em> = 4
 </td>
 <td style="text-align:center;">
 0,4480
@@ -1041,7 +1041,7 @@ k = 4
 W.k5
 </td>
 <td style="text-align:left;">
-k = 5
+<em>k</em> = 5
 </td>
 <td style="text-align:center;">
 0,4387
@@ -1053,25 +1053,25 @@ k = 5
 </tbody>
 </table>
 <p><strong>Quelle est la matrice avec laquelle la dépendance spatiale de la variable est la plus forte?</strong></p>
-<p>Pour la trouver, nous construisons un graphique avec les valeurs de <em>I</em> du Moran triées par ordre décroissant. La valeur la plus forte est obtenue avec la matrice selon les deux plus proches voisins, suivie de la matrice <em>Rook</em>. Quoiqu’il en soit, il serait plus judicieux de privilégier la matrice de contiguïté selon le partage d’un segment tel qu’expliqué plus haut.</p>
+<p>Pour la trouver, nous construisons un graphique avec les valeurs du <em>I</em> de Moran triées par ordre décroissant. La valeur la plus forte est obtenue avec la matrice selon les deux plus proches voisins, suivie de la matrice <em>Rook</em>. Quoiqu’il en soit, il serait plus judicieux de privilégier la matrice de contiguïté selon le partage d’un segment comme expliqué plus haut.</p>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="sect023.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb250-2"><a href="sect023.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData1, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
 <span id="cb250-3"><a href="sect023.html#cb250-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
 <span id="cb250-4"><a href="sect023.html#cb250-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
 <span id="cb250-5"><a href="sect023.html#cb250-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
 <span id="cb250-6"><a href="sect023.html#cb250-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
-<span id="cb250-7"><a href="sect023.html#cb250-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Matrice de pondérations spatiales&quot;</span>) <span class="sc">+</span></span>
+<span id="cb250-7"><a href="sect023.html#cb250-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Matrice de pondération spatiale&quot;</span>) <span class="sc">+</span></span>
 <span id="cb250-8"><a href="sect023.html#cb250-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
 <span id="cb250-9"><a href="sect023.html#cb250-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:loliplotMoran1"></span>
-<img src="GMQ405_files/figure-html/loliplotMoran1-1.png" alt="Graphique avec les valeurs de I de Moran selon les différentes matrices de pondérations spatiales" width="75%" />
+<img src="GMQ405_files/figure-html/loliplotMoran1-1.png" alt="Graphique avec les valeurs du *I* de Moran selon les différentes matrices de pondération spatiale" width="75%" />
 <p class="caption">
-Figure 2.14: Graphique avec les valeurs de I de Moran selon les différentes matrices de pondérations spatiales
+Figure 2.14: Graphique avec les valeurs du <em>I</em> de Moran selon les différentes matrices de pondération spatiale
 </p>
 </div>
 </div>
 <div id="sect02324" class="section level4 hasAnchor" number="2.3.2.4">
-<h4><span class="header-section-number">2.3.2.4</span> Étape 4. Comparaison des valeurs de <em>I</em> de Moran pour plusieurs variables avec la même matrice<a href="sect023.html#sect02324" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">2.3.2.4</span> Étape 4. Comparaison des valeurs du <em>I</em> de Moran pour plusieurs variables avec la même matrice<a href="sect023.html#sect02324" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>La syntaxe ci-dessous permet de calculer la statistique du <em>I</em> de Moran pour plusieurs variables (figure <a href="sect023.html#fig:CarteQuatreVariables">2.15</a>) avec la même matrice de pondération spatiale (ici, matrice de contiguïté selon le partage d’un segment).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CarteQuatreVariables"></span>
 <img src="GMQ405_files/figure-html/CarteQuatreVariables-1.png" alt="Quatre variables sélectionnées pour les AD de la ville de Sherbrooke" width="85%" />
@@ -1097,7 +1097,7 @@ Figure 2.15: Quatre variables sélectionnées pour les AD de la ville de Sherbro
 <span id="cb251-16"><a href="sect023.html#cb251-16" aria-hidden="true" tabindex="-1"></a>  VarName[i]<span class="ot">&lt;-</span>e</span>
 <span id="cb251-17"><a href="sect023.html#cb251-17" aria-hidden="true" tabindex="-1"></a>  Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
 <span id="cb251-18"><a href="sect023.html#cb251-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb251-19"><a href="sect023.html#cb251-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un dataframe avec les valeurs du I de Moran et de p</span></span>
+<span id="cb251-19"><a href="sect023.html#cb251-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
 <span id="cb251-20"><a href="sect023.html#cb251-20" aria-hidden="true" tabindex="-1"></a>MoranData2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Variable=</span>listeVars,</span>
 <span id="cb251-21"><a href="sect023.html#cb251-21" aria-hidden="true" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
 <span id="cb251-22"><a href="sect023.html#cb251-22" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
@@ -1118,9 +1118,9 @@ Figure 2.15: Quatre variables sélectionnées pour les AD de la ville de Sherbro
 <span id="cb253-8"><a href="sect023.html#cb253-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
 <span id="cb253-9"><a href="sect023.html#cb253-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:loliplotMoran2"></span>
-<img src="GMQ405_files/figure-html/loliplotMoran2-1.png" alt="Graphique avec les valeurs de I de Moran pour les quatre variables" width="75%" />
+<img src="GMQ405_files/figure-html/loliplotMoran2-1.png" alt="Graphique avec les valeurs du *I* de Moran pour les quatre variables" width="75%" />
 <p class="caption">
-Figure 2.16: Graphique avec les valeurs de I de Moran pour les quatre variables
+Figure 2.16: Graphique avec les valeurs du <em>I</em> de Moran pour les quatre variables
 </p>
 </div>
 </div>
