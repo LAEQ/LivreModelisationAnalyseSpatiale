@@ -255,7 +255,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.3" data-path="sect033.html"><a href="sect033.html"><i class="fa fa-check"></i><b>3.3</b> Forme d’un semis de points</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="sect033.html"><a href="sect033.html#sect0331"><i class="fa fa-check"></i><b>3.3.1</b> Méthode du plus proche voisin</a></li>
-<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthodes des quadrats</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthode des quadrats</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="sect034.html"><a href="sect034.html"><i class="fa fa-check"></i><b>3.4</b> Identification des agrégats spatiaux</a>
 <ul>
@@ -446,7 +446,7 @@ Modélisation et analyse spatiale</a>
             <section class="normal" id="section-">
 <div id="sect034" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Identification des agrégats spatiaux<a href="sect034.html#sect034" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Pour repérer les concentrations d’un semis de points dans une région, nous cartographions la densité des points soit dans une maille soit irrégulière, soit régulière.</p>
+<p>Pour repérer les concentrations d’un semis de points dans une région, nous cartographions la densité des points dans une maille soit irrégulière, soit régulière.</p>
 <div id="sect0341" class="section level3 hasAnchor" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> Cartographie de la densité dans une maille irrégulière<a href="sect034.html#sect0341" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Une maille irrégulière est habituellement un découpage administratif comme les MRC du Québec ou les arrondissements d’une ville.</p>
@@ -487,7 +487,7 @@ Figure 3.15: Densité des méfaits par secteurs de recensement, ville de Sherbro
 <ol style="list-style-type: decimal">
 <li>Juxtaposer une grille de cellules sur l’espace d’étude, soit les pixels d’une image de <em>n</em> mètres de côté (par exemple, 50 mètres).</li>
 <li>Pour chaque pixel, juxtaposer une zone de recherche de <em>n</em> mètres de rayon (1000 mètres par exemple) et calculer le nombre de points présents dans cette zone de recherche.</li>
-<li>Calculer la densité à partir d’une fonction simple (appelée habituellement fonction uniforme) ou d’une fonction de densité (<em>kernel</em>). Pour une fonction simple, nous divisons simplement le nombre de points présents dans la zone de recherche par la superficie de la zone, soit <span class="math inline">\(πr^2\)</span>; cette approche est toutefois peu recommandée puisque vous accordée la même pondération à chaque point situé de la zone d’influence! Pour une fonction de densité (<em>kernel</em>) (équation <a href="sect034.html#eq:KernelDensity">(3.30)</a>), nous accordons une pondération à chacun des points compris dans la zone de recherche : plus le point est proche du centre de la cellule, plus son poids est important dans l’estimation de la densité.</li>
+<li>Calculer la densité à partir d’une fonction simple (appelée habituellement fonction uniforme) ou d’une fonction de densité (<em>kernel</em>). Pour une fonction simple, nous divisons simplement le nombre de points présents dans la zone de recherche par la superficie de la zone, soit <span class="math inline">\(πr^2\)</span>; cette approche est toutefois peu recommandée puisqu’elle accorde la même pondération à chaque point situé de la zone d’influence! En utilisant une fonction de densité (<em>kernel</em>) (équation <a href="sect034.html#eq:KernelDensity">(3.30)</a>), nous accordons une pondération à chacun des points compris dans la zone de recherche : plus le point est proche du centre de la cellule, plus son poids est important dans l’estimation de la densité.</li>
 </ol>
 <p><span class="math display" id="eq:KernelDensity">\[\begin{equation}  
 \lambda(s) = \sum_{i=1}^n \frac{1}{\pi r^2} k\biggl(\frac{d_{si}}{r}\biggl)\text{ avec }
@@ -498,20 +498,20 @@ Figure 3.15: Densité des méfaits par secteurs de recensement, ville de Sherbro
 <li><span class="math inline">\(\lambda(s)\)</span>, estimation de la densité à la localisation <span class="math inline">\(s\)</span>.</li>
 <li><span class="math inline">\(r\)</span>, rayon de la zone de recherche.</li>
 <li><span class="math inline">\(d_{is}\)</span>, distance entre la localisation <span class="math inline">\(s\)</span> et le point <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(k\)</span>, fonction <em>kernel</em> définissant la pondération à accorder au ratio <span class="math inline">\(\frac{d_{si}}{r}\)</span> quand <span class="math inline">\(0 &lt; d_{si} \leq r\)</span>. Si <span class="math inline">\(d_{si} &gt; r\)</span> alors <span class="math inline">\(k(d_{si}/r) = 0\)</span>.</li>
+<li><span class="math inline">\(k\)</span>, fonction <em>kernel</em> définissant la pondération à accorder au ratio <span class="math inline">\(\frac{d_{si}}{r}\)</span> quand <span class="math inline">\(0 &lt; d_{si} \leq r\)</span>. Si <span class="math inline">\(d_{si} &gt; r\)</span>, alors <span class="math inline">\(k(d_{si}/r) = 0\)</span>.</li>
 </ul>
-<p>Il existe différentes fonctions <em>kernel</em> pour obtenir les pondérations des points. Tel qu’illustré à la figure <a href="sect034.html#fig:IllustationKernel">3.16</a>, l’idée générale est que plus la distance entre la localisation est le point augmente (<span class="math inline">\(d_{si}\)</span>), plus la pondération <span class="math inline">\(k(d_{si}/r)\)</span> de l’équation <a href="sect034.html#eq:KernelDensity">(3.30)</a> est faible.</p>
+<p>Il existe différentes fonctions <em>kernel</em> pour obtenir les pondérations des points. Telle qu’illustrée à la figure <a href="sect034.html#fig:IllustationKernel">3.16</a>, l’idée générale est que plus la distance entre la localisation et le point augmente (<span class="math inline">\(d_{si}\)</span>), plus la pondération <span class="math inline">\(k(d_{si}/r)\)</span> de l’équation <a href="sect034.html#eq:KernelDensity">(3.30)</a> est faible.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:IllustationKernel"></span>
-<img src="images/Chap03/IlustratorKernel.png" alt="Principe de la fonction *kernel* pour définir lees pondérations des points voisins dans la zone d'influence" width="100%" />
+<img src="images/Chap03/IlustratorKernel.png" alt="Principe de la fonction *kernel* pour définir les pondérations des points voisins dans la zone d'influence" width="100%" />
 <p class="caption">
-Figure 3.16: Principe de la fonction <em>kernel</em> pour définir lees pondérations des points voisins dans la zone d’influence
+Figure 3.16: Principe de la fonction <em>kernel</em> pour définir les pondérations des points voisins dans la zone d’influence
 </p>
 </div>
 <div class="bloc_astuce">
 <p><strong>Les différentes fonctions <em>kernel</em> (<em>kernel</em>) d’estimation de la densité</strong></p>
 <p>Pour une description des différentes fonctions <em>kernel</em>, <a href="https://fr.wikipedia.org/wiki/Noyau_(statistiques)">consultez le lien suivant</a>. Notez que l’outil <em>Carte de chaleur (estimation par noyau)</em> de QGIS inclut plusieurs fonctions <em>kernel</em> alors que l’outil <em>Kernel Density</em> d’ArcGIS Pro utilise uniquement la fonction quadratique. Finalement, la fonction <code>density.ppp</code> du <em>package</em> <code>spatstat</code> intègre quatre fonctions.</p>
 <p><strong>Influence de la forme du noyau (de la fonction <em>kernel</em>)</strong></p>
-<p>Excepté la fonction uniforme, la plupart des auteurs s’entendent sur le fait que le choix de fonction <em>kernel</em> a relativement peu d’influence sur le résultat final comparativement au choix du rayon d’influence.</p>
+<p>Excepté la fonction uniforme, la plupart des auteurs s’entendent sur le fait que le choix de fonctions <em>kernel</em> a relativement peu d’influence sur le résultat final comparativement au choix du rayon d’influence.</p>
 <table>
 <caption>
 <span id="tab:TableauFonctionsKernel">Tableau 3.4: </span>Fonctions <em>kernel</em> disponibles selon différents logiciels
@@ -648,12 +648,12 @@ X
 </div>
 <div id="sect03422" class="section level4 hasAnchor" number="3.4.2.2">
 <h4><span class="header-section-number">3.4.2.2</span> Mise en œuvre du KDE dans R<a href="sect034.html#sect03422" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour calculer la densité dans une maille régulière (KDE), il est possible d’utiliser deux <em>packages</em> :</p>
+<p>Pour calculer la densité dans une maille régulière (KDE), vous pouvez utiliser deux <em>packages</em> :</p>
 <ol style="list-style-type: decimal">
-<li><code>SpatialKDE</code>, un <em>package</em> proposé très récemment qui reprend le code de l’outil <em>Carte de chaleur (estimation par noyau)</em> de QGIS <span class="citation">(<a href="#ref-SpatialKDEPackage" role="doc-biblioref">Caha 2023</a>)</span>. Autrement, vous obtiendrez les mêmes fonctionnalités et résultats qu’avec QGIS. Pour un exemple d’utilisation, vous pourrez consulter <a href="https://cran.r-project.org/web/packages/SpatialKDE/vignettes/SpatialKDE.html">cette vignette</a>.</li>
+<li><code>SpatialKDE</code>, un <em>package</em> proposé très récemment qui reprend le code de l’outil <em>Carte de chaleur (estimation par noyau)</em> de QGIS <span class="citation">(<a href="#ref-SpatialKDEPackage" role="doc-biblioref">Caha 2023</a>)</span>. Vous obtiendrez donc les mêmes fonctionnalités et résultats qu’avec QGIS. Pour un exemple d’utilisation, consultez <a href="https://cran.r-project.org/web/packages/SpatialKDE/vignettes/SpatialKDE.html">cette vignette</a>.</li>
 <li><code>spatstat</code>, soit le <em>package</em> le plus complet pour réaliser des analyses de répartition ponctuelle <span class="citation">(<a href="#ref-spatstatPackage" role="doc-biblioref">Baddeley et Turner 2005</a>; <a href="#ref-baddeley2015spatial" role="doc-biblioref">Baddeley, Rubak et Turner 2015</a>)</span>. Par conséquent, nous privilégions son utilisation dans les exemple ci-dessous.</li>
 </ol>
-<p>Afin d’expliquer comment réaliser un KDE dans R, nous utilisons les accidents survenus dans l’arrondissement des Nations. Notez que nous retenons uniquement cet arrondissement et non l’ensemble de la Ville afin d’accélérer les temps de calculs.</p>
+<p>Afin d’expliquer comment réaliser un KDE dans R, nous utilisons les accidents survenus dans l’arrondissement des Nations. Notez que nous retenons uniquement cet arrondissement et non l’ensemble de la ville afin d’accélérer les temps de calculs.</p>
 <div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="sect034.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb333-2"><a href="sect034.html#cb333-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
 <span id="cb333-3"><a href="sect034.html#cb333-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
@@ -667,7 +667,7 @@ X
 <span id="cb333-11"><a href="sect034.html#cb333-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Pour accélérer les calculs, nous retenons uniquement l&#39;arrondissement des Nations</span></span>
 <span id="cb333-12"><a href="sect034.html#cb333-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Couche pour l&#39;arrondissement des Nations</span></span>
 <span id="cb333-13"><a href="sect034.html#cb333-13" aria-hidden="true" tabindex="-1"></a>ArrDesNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(Arrondissements, NOM <span class="sc">==</span> <span class="st">&quot;Arrondissement des Nations&quot;</span>)</span>
-<span id="cb333-14"><a href="sect034.html#cb333-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Sélection des accidents localisés dans l&#39;arrondissement Des Nations</span></span>
+<span id="cb333-14"><a href="sect034.html#cb333-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Sélection des accidents localisés dans l&#39;arrondissement des Nations</span></span>
 <span id="cb333-15"><a href="sect034.html#cb333-15" aria-hidden="true" tabindex="-1"></a>RequeteSpatiale <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(Accidents, ArrDesNations, <span class="at">sparse =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb333-16"><a href="sect034.html#cb333-16" aria-hidden="true" tabindex="-1"></a>Accidents<span class="sc">$</span>Nations <span class="ot">&lt;-</span> RequeteSpatiale[, <span class="dv">1</span>]</span>
 <span id="cb333-17"><a href="sect034.html#cb333-17" aria-hidden="true" tabindex="-1"></a>AccNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(Accidents, Accidents<span class="sc">$</span>Nations <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
@@ -700,13 +700,13 @@ X
 <p>Puis, il faut définir la taille des pixels et le rayon d’influence (<em>bandwidth</em> en anglais) :</p>
 <ul>
 <li>Plus la taille des pixels est réduite, plus la taille de l’image résultante est grande et les calculs longs à réaliser.</li>
-<li>Le choix du rayon est aussi délicat. Trop petit, les résultats seront trop détaillés avec des valeurs très faibles. À l’inverse, un rayon trop grand aura comme effet de lisser les résultats et de masquer des disparités locales.</li>
+<li>Le choix du rayon est aussi délicat. Avec un rayon trop petit, les résultats sont trop détaillés avec des valeurs très faibles. À l’inverse, un rayon trop grand a comme effet de lisser les résultats et de masquer des disparités locales.</li>
 </ul>
 <div class="bloc_astuce">
 <p><strong>Ratio entre la taille du pixel et la taille du rayon d’influence</strong>.</p>
-<p>Assurez que la taille du pixel soit bien inférieure à celle du rayon d’influence afin d’obtenir des résultats précis. À notre connaissance, il n’existe pas de règle pour optimiser la valeur ratio entre la taille du pixel et la taille du rayon d’influence. Assurez que la taille du pixel soit au moins dix fois plus petite que celle du rayon.</p>
+<p>Assurez-vous que la taille du pixel soit bien inférieure (au moins dix fois plus petite) à celle du rayon d’influence afin d’obtenir des résultats précis. À notre connaissance, il n’existe pas de règle pour optimiser la valeur ratio entre la taille du pixel et la taille du rayon d’influence.</p>
 </div>
-<p>Il existe plusieurs algorithmes pour sélectionner la valeur optimale du rayon d’influence qui sont implémentés dans le <em>package</em> <code>spatstat</code> avec les fonctions <code>bw.diggle</code>, <code>bw.ppl</code>, <code>bw.scott</code> et <code>bw.CvL</code>. À la lecture des résultats ci-dessous, la valeur du rayon proposée par l’algorithme de Diggle semble bien trop petite et celle du critère de Cronie et van Lieshout bien trop grande. Le rayon optimal est certainement compris entre 700 et 750 mètres. Par conséquent, nous allons retenir une taille de pixel de 50 mètres et la valeur du rayon optimisée par la fonction <code>bw.ppl</code>.</p>
+<p>Plusieurs algorithmes permettant de sélectionner la valeur optimale du rayon d’influence sont implémentés dans le <em>package</em> <code>spatstat</code> avec les fonctions <code>bw.diggle</code>, <code>bw.ppl</code>, <code>bw.scott</code> et <code>bw.CvL</code>. À la lecture des résultats ci-dessous, la valeur du rayon proposée par l’algorithme de Diggle semble bien trop petite et celle du critère de Cronie et van Lieshout bien trop grande. Le rayon optimal est certainement compris entre 700 et 750 mètres. Par conséquent, nous retenons une taille de pixel de 50 mètres et la valeur du rayon optimisée par la fonction <code>bw.ppl</code>.</p>
 <div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="sect034.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Diggle :&quot;</span>, <span class="fu">bw.diggle</span>(AccN2020.ppp),</span>
 <span id="cb335-2"><a href="sect034.html#cb335-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Maximum de vraissemblance :&quot;</span>, <span class="fu">bw.ppl</span>(AccN2020.ppp),</span>
 <span id="cb335-3"><a href="sect034.html#cb335-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Critère de Scott 1 :&quot;</span>, <span class="fu">bw.scott</span>(AccN2020.ppp)[<span class="dv">1</span>],</span>
@@ -736,7 +736,7 @@ X
 <span id="cb338-10"><a href="sect034.html#cb338-10" aria-hidden="true" tabindex="-1"></a>kdeD <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;disc&quot;</span>)</span>
 <span id="cb338-11"><a href="sect034.html#cb338-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Conversion en raster </span></span>
 <span id="cb338-12"><a href="sect034.html#cb338-12" aria-hidden="true" tabindex="-1"></a><span class="co"># étant donné que les valeurs sont exprimées en nombre de points par m2,</span></span>
-<span id="cb338-13"><a href="sect034.html#cb338-13" aria-hidden="true" tabindex="-1"></a><span class="co"># nous les multiplieons par 1000000 pour obtenir une densité au km2.</span></span>
+<span id="cb338-13"><a href="sect034.html#cb338-13" aria-hidden="true" tabindex="-1"></a><span class="co"># nous les multiplions par 1 000 000 pour obtenir une densité au km2.</span></span>
 <span id="cb338-14"><a href="sect034.html#cb338-14" aria-hidden="true" tabindex="-1"></a>RkdeG <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeG)<span class="sc">*</span><span class="dv">1000000</span></span>
 <span id="cb338-15"><a href="sect034.html#cb338-15" aria-hidden="true" tabindex="-1"></a>RkdeQ <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ)<span class="sc">*</span><span class="dv">1000000</span></span>
 <span id="cb338-16"><a href="sect034.html#cb338-16" aria-hidden="true" tabindex="-1"></a>RkdeE <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeE)<span class="sc">*</span><span class="dv">1000000</span></span>
@@ -825,7 +825,7 @@ Figure 3.18: Comparaison des résultats du KDE selon le rayon d’influence
 </div>
 <div id="sect034223" class="section level5 hasAnchor" number="3.4.2.2.3">
 <h5><span class="header-section-number">3.4.2.2.3</span> Comparaison entre différentes années<a href="sect034.html#sect034223" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Bien entendu, pour une même jeu de données, il est possible de représenter la densité pour différentes années (figure <a href="sect034.html#fig:CartoTemporelleKernels">3.19</a>).</p>
+<p>Bien entendu, pour un même jeu de données, il est possible de représenter la densité pour différentes années (figure <a href="sect034.html#fig:CartoTemporelleKernels">3.19</a>).</p>
 <div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="sect034.html#cb340-1" aria-hidden="true" tabindex="-1"></a>kde2019 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2019.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
 <span id="cb340-2"><a href="sect034.html#cb340-2" aria-hidden="true" tabindex="-1"></a>kde2020 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
 <span id="cb340-3"><a href="sect034.html#cb340-3" aria-hidden="true" tabindex="-1"></a>kde2021 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2021.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>

@@ -255,7 +255,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.3" data-path="sect033.html"><a href="sect033.html"><i class="fa fa-check"></i><b>3.3</b> Forme d’un semis de points</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="sect033.html"><a href="sect033.html#sect0331"><i class="fa fa-check"></i><b>3.3.1</b> Méthode du plus proche voisin</a></li>
-<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthodes des quadrats</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthode des quadrats</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="sect034.html"><a href="sect034.html"><i class="fa fa-check"></i><b>3.4</b> Identification des agrégats spatiaux</a>
 <ul>
@@ -446,10 +446,10 @@ Modélisation et analyse spatiale</a>
             <section class="normal" id="section-">
 <div id="sect032" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Analyse centrographique<a href="sect032.html#sect032" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>L’analyse centrographique est une approche qui a été largement utilisée durant les décennies 1990 et 2000. Son utilisation est parfois critiquée pour deux raisons principales : 1) elle ne décrit que partiellement le semis de points; 2) aucun test d’inférence n’est calculé. Quoiqu’il en soit, elle permet d’explorer les données avant de se lancer dans des analyses plus avancées.</p>
+<p>L’analyse centrographique est une approche qui a été largement utilisée durant les décennies 1990 et 2000. Son utilisation est parfois critiquée pour deux raisons principales : 1) elle ne décrit que partiellement le semis de points; 2) aucun test d’inférence n’est calculé. Quoi qu’il en soit, elle permet d’explorer les données avant de se lancer dans des analyses plus avancées.</p>
 <div class="bloc_notes">
 <p><strong>Utilisation de l’analyse centrographique au Québec et dans le monde francophone</strong></p>
-<p>Marius Thériault (géographe et professeur émérite à l’université Laval) a largement contribué à la popularité de l’analyse centrographique au Québec et ailleurs. Il est le créateur de <em>MapStat</em>, un module MapBasic intégré dans le logiciel SIG MapInfo permettant de réaliser une analyse centrographique avant même qu’elle soit implémentée dans ArcGIS. En guise d’exemple, vous pourrez consulter ces deux études utilisant l’analyse centrographique calculée avec <em>MapStat</em> <span class="citation">(<a href="#ref-lopez2015evolution" role="doc-biblioref">López Castro, Thériault et Vandersmissen 2015</a>; <a href="#ref-barbonne2007dynamique" role="doc-biblioref">Barbonne, Villeneuve et Thériault 2007</a>)</span>.</p>
+<p>Marius Thériault (géographe et professeur émérite à l’Université Laval) a largement contribué à la popularité de l’analyse centrographique au Québec et ailleurs. Il est le créateur de <em>MapStat</em>, un module MapBasic intégré dans le logiciel SIG MapInfo permettant de réaliser une analyse centrographique avant même qu’elle soit implémentée dans ArcGIS. En guise d’exemple, les deux études suivantes utilisent l’analyse centrographique calculée avec <em>MapStat</em> <span class="citation">(<a href="#ref-lopez2015evolution" role="doc-biblioref">López Castro, Thériault et Vandersmissen 2015</a>; <a href="#ref-barbonne2007dynamique" role="doc-biblioref">Barbonne, Villeneuve et Thériault 2007</a>)</span>. Consultez-les au besoin.</p>
 </div>
 <div id="sect0311" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Paramètres de tendance centrale d’un semis de points<a href="sect032.html#sect0311" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -466,9 +466,9 @@ Modélisation et analyse spatiale</a>
 <li><span class="math inline">\(n\)</span>, le nombre de points dans la couche géographique.</li>
 <li><span class="math inline">\(x_i\)</span> et <span class="math inline">\(y_j\)</span>, les coordonnées géographiques du point <span class="math inline">\(i\)</span>.</li>
 </ul>
-<p>Il est possible de calculer le centre moyen en pondérant chacun des points du semis avec la valeur d’une variable donnée (équation <a href="sect032.html#eq:CentreMoyenPonderee">(3.2)</a>). Ainsi, l’importance accordée à chacun des points n’est pas la même. Par exemple, nous pourrions calculer le centre moyen pondéré (<span class="math inline">\(cmp\)</span>) des cliniques médicales d’une ville en pondérant chaque clinique par le nombre de médecins, ou encore le point moyen des hôpitaux pondéré par le nombre de lits. Autre exemple, avec un jeu de données sur les arbres dans une érablière, nous pourrions utiliser une pondération basée sur le DHP (diamètre à la hauteur poitrine) afin d’accorder un poids plus important aux arbres de plus « grand volume ».</p>
+<p>Il est possible de calculer le centre moyen en pondérant chacun des points du semis avec la valeur d’une variable donnée (équation <a href="sect032.html#eq:CentreMoyenPonderee">(3.2)</a>). Ainsi, l’importance accordée à chacun des points n’est pas la même. Par exemple, nous pourrions calculer le centre moyen pondéré (<span class="math inline">\(cmp\)</span>) des cliniques médicales d’une ville en pondérant chaque clinique par le nombre de médecins, ou encore le point moyen des hôpitaux pondéré par le nombre de lits. Autre exemple, avec un jeu de données sur les arbres dans une érablière, nous pourrions utiliser une pondération basée sur le DHP (diamètre à la hauteur de la poitrine) afin d’accorder un poids plus important aux arbres de plus « grand volume ».</p>
 <div class="bloc_notes">
-<p><strong>Pour un rappel sur le calcul d’une moyenne pondérée</strong>, vous consultez la section intitulée <a href="https://laeq.github.io/LivreMethoQuantBolR/sect027.html">statistiques descriptives pondérées</a> <span class="citation">(<a href="#ref-RBoldAir" role="doc-biblioref">Apparicio et Gelb 2022</a>)</span>.</p>
+<p><strong>Pour un rappel sur le calcul d’une moyenne pondérée</strong>, consultez la section intitulée <a href="https://laeq.github.io/LivreMethoQuantBolR/sect027.html"><em>Statistiques descriptives pondérées</em></a> <span class="citation">(<a href="#ref-RBoldAir" role="doc-biblioref">Apparicio et Gelb 2022</a>)</span>.</p>
 </div>
 <p><span class="math display" id="eq:CentreMoyenPonderee">\[\begin{equation}  
 (\bar{x}_{cmp}, \bar{y}_{cmp}) = \Biggl( \frac{\Sigma_{i=1}^n w_ix_i}{\Sigma_{i=1}^nw_i}, \frac{\Sigma_{i=1}^n w_iy_i}{\Sigma_{i=1}^nw_i}\Biggl) \text{ avec :}
@@ -500,7 +500,7 @@ Modélisation et analyse spatiale</a>
 </div>
 <div id="sect03112" class="section level4 hasAnchor" number="3.2.1.2">
 <h4><span class="header-section-number">3.2.1.2</span> Point central<a href="sect032.html#sect03112" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Le point central d’un semis de points (<span class="math inline">\(pc\)</span>) est celui qui minimise la somme des distances le séparant à tous les autres points (équation <a href="sect032.html#eq:PointCentral">(3.5)</a>). Bien entendu, il est aussi possible de calculer le point central pondéré (<span class="math inline">\(pcp\)</span>) (équation <a href="sect032.html#eq:PointCentralW">(3.6)</a>).</p>
+<p>Le point central d’un semis de points (<span class="math inline">\(pc\)</span>) est celui qui minimise la somme des distances le séparant de tous les autres points (équation <a href="sect032.html#eq:PointCentral">(3.5)</a>). Bien entendu, il est aussi possible de calculer le point central pondéré (<span class="math inline">\(pcp\)</span>) (équation <a href="sect032.html#eq:PointCentralW">(3.6)</a>).</p>
 <p><span class="math display" id="eq:PointCentral">\[\begin{equation}  
 \text{Min}\Biggl(\Sigma_{i=1}^n \sqrt{(x_i-x_j)^2+(y_i-y_j)^2}\Biggl)\text{; avec }i \ne j
 \tag{3.5}
@@ -515,7 +515,7 @@ Modélisation et analyse spatiale</a>
 <p><strong>Différence entre point central et centre moyen</strong></p>
 <p>Contrairement au centre moyen, le point central fait partie du semis de points initial.</p>
 <p><strong>Utilité du point central pondéré</strong></p>
-<p>Imaginez que des personnes étudiantes en géographie et en géomatique de toutes les universités du Québec souhaitent organiser une rencontre en présence. Calculer le point central, pondéré par le nombre de personnes étudiantes par établissement participant à la rencontre, permettra d’identifier l’université la plus centrale. Idéalement, il faudrait calculer ce point central pondéré avec la distance réticulaire.</p>
+<p>Imaginez que des personnes étudiantes en géographie et en géomatique de toutes les universités du Québec souhaitent organiser une rencontre en présence. Calculer le point central, pondéré par le nombre de personnes étudiantes par établissement participant à la rencontre, permet d’identifier l’université la plus centrale. Idéalement, il faudrait calculer ce point central pondéré avec la distance réticulaire.</p>
 </div>
 </div>
 </div>
@@ -523,17 +523,17 @@ Modélisation et analyse spatiale</a>
 <h3><span class="header-section-number">3.2.2</span> Paramètres de dispersion d’un semis de points<a href="sect032.html#sect0312" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="sect03121" class="section level4 hasAnchor" number="3.2.2.1">
 <h4><span class="header-section-number">3.2.2.1</span> Distance standard et distance standard pondérée<a href="sect032.html#sect03121" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>En statistique univariée, l’écart-type (équation <a href="sect032.html#eq:ecartype">(3.7)</a>) est une mesure dispersion bien connue : plus la valeur de l’écart-type est élevée, plus la dispersion des valeurs de la variable autour de la moyenne (<span class="math inline">\(\mu\)</span>) est importante.</p>
+<p>En statistique univariée, l’écart-type (équation <a href="sect032.html#eq:ecartype">(3.7)</a>) est une mesure de dispersion bien connue : plus la valeur de l’écart-type est élevée, plus la dispersion des valeurs de la variable autour de la moyenne (<span class="math inline">\(\mu\)</span>) est importante.</p>
 <p><span class="math display" id="eq:ecartype">\[\begin{equation}  
 \sigma=\sqrt{\frac{\sum_{i=1}^n (x_{i}-\mu)^2}{n}}
 \tag{3.7}
 \end{equation}\]</span>
 </p>
 <div class="bloc_notes">
-<p><strong>Pour un rappel sur l’écart-type</strong>, consultez la section intitulée <a href="https://laeq.github.io/LivreMethoQuantBolR/sect025.html#sect0253">paramètres de dispersion</a> <span class="citation">(<a href="#ref-RBoldAir" role="doc-biblioref">Apparicio et Gelb 2022</a>)</span>.</p>
+<p><strong>Pour un rappel sur l’écart-type</strong>, consultez la section intitulée <a href="https://laeq.github.io/LivreMethoQuantBolR/sect025.html#sect0253"><em>Paramètres de dispersion</em></a> <span class="citation">(<a href="#ref-RBoldAir" role="doc-biblioref">Apparicio et Gelb 2022</a>)</span>.</p>
 </div>
 <p><strong>Distance standard (pondérée ou non) des <em>X</em> et des <em>Y</em></strong></p>
-<p>De manière analogue à l’écart-type, nous pouvons calculons la distance standard pour les coordonnées <em>X</em> et pour les coordonnées <em>Y</em> des points, soit l’écart moyen respectif au centre moyen (équation <a href="sect032.html#eq:distancestandardxy">(3.8)</a>) ou au centre moyen pondéré (équation <a href="sect032.html#eq:distancestandardxyw">(3.9)</a>).</p>
+<p>De manière analogue à l’écart-type, nous pouvons calculer la distance standard pour les coordonnées <em>X</em> et pour les coordonnées <em>Y</em> des points, soit l’écart moyen respectif au centre moyen (équation <a href="sect032.html#eq:distancestandardxy">(3.8)</a>) ou au centre moyen pondéré (équation <a href="sect032.html#eq:distancestandardxyw">(3.9)</a>).</p>
 <p><span class="math display" id="eq:distancestandardxy">\[\begin{equation}  
 \sigma_x=\sqrt{\frac{\sum_{i=1}^n (x_{i}-\bar{x}_{cm})^2}{n}} \text{ et }
 \sigma_y=\sqrt{\frac{\sum_{i=1}^n (y_{i}-\bar{y}_{cm})^2}{n}}
@@ -546,7 +546,7 @@ Modélisation et analyse spatiale</a>
 \end{equation}\]</span>
 </p>
 <p><strong>Distance standard (pondérée ou non)</strong></p>
-<p>Nous pouvons aussi calculer la distance standard (<span class="math inline">\(ds\)</span>) sans ou avec pondération (équations <a href="sect032.html#eq:distancestandard">(3.10)</a> et <a href="sect032.html#eq:distancestandardw">(3.11)</a>). Plus elle sera forte, plus les points seront dispersés autour du centre moyen ou du centre moyen pondéré. Inversement, une faible distance standard traduit une concentration des points autour du centre moyen.</p>
+<p>Nous pouvons aussi calculer la distance standard (<span class="math inline">\(ds\)</span>) sans ou avec pondération (équations <a href="sect032.html#eq:distancestandard">(3.10)</a> et <a href="sect032.html#eq:distancestandardw">(3.11)</a>). Plus elle est forte, plus les points sont dispersés autour du centre moyen ou du centre moyen pondéré. Inversement, une faible distance standard traduit une concentration de points autour du centre moyen.</p>
 <p><span class="math display" id="eq:distancestandard">\[\begin{equation}  
 ds=\sqrt{\frac{\sum_{i=1}^n (x_{i}-\bar{x}_{cm})^2}{n} + \frac{\sum_{i=1}^n (y_{i}-\bar{y}_{cm})^2}{n}}
 \tag{3.10}
@@ -571,31 +571,31 @@ ds_w=\sqrt{\frac{\sum_{i=1}^n w_i(x_{i}-\bar{x}_{cmp})^2}{\sum_{i=1}^n w_i} + \f
 </div>
 <div id="sect03122" class="section level4 hasAnchor" number="3.2.2.2">
 <h4><span class="header-section-number">3.2.2.2</span> Représenter la dispersion : cercle de distance standard et ellipse<a href="sect032.html#sect03122" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>La dispersion d’un semis de points peut être représentée quatre manières différentes :</p>
+<p>La dispersion d’un semis de points peut être représentée de quatre manières différentes :</p>
 <ol style="list-style-type: decimal">
-<li><p>Une enveloppe convexe des points décrite la section <a href="sect012.html#sect01225">1.2.2.5</a>.</p></li>
-<li><p>Un rectangle centrée sur le centre moyen avec les déviations des coordonnées <em>X</em> et <em>Y</em> pondérées ou non (équations <a href="sect032.html#eq:distancestandardxy">(3.8)</a> et <a href="sect032.html#eq:distancestandardxyw">(3.9)</a> décrites précédemment). Dans le cas de données comprenant l’élévation, la forme géométrique sera un parallélépipède rectangle.</p></li>
-<li><p>Un cercle de rayon de distance standard ou pondérée ou non (équations <a href="sect032.html#eq:distancestandard">(3.10)</a> et <a href="sect032.html#eq:distancestandardw">(3.11)</a> décrites précédemment). Dans le cas de données comprenant l’élévation, la forme géométrique sera une sphère de rayon de distance standard.</p></li>
-<li><p>Une ellipse de distance standard pondérée ou non. Dans le cas de données comprenant l’élévation, la forme géométrique sera un ellipsoïde.</p></li>
+<li><p>Une enveloppe convexe des points décrite à la section <a href="sect012.html#sect01225">1.2.2.5</a>.</p></li>
+<li><p>Un rectangle centrée sur le centre moyen avec les déviations des coordonnées <em>X</em> et <em>Y</em> pondérées ou non (équations <a href="sect032.html#eq:distancestandardxy">(3.8)</a> et <a href="sect032.html#eq:distancestandardxyw">(3.9)</a> décrites précédemment). Dans le cas de données comprenant l’élévation, la forme géométrique est un parallélépipède rectangle.</p></li>
+<li><p>Un cercle de rayon de distance standard pondérée ou non (équations <a href="sect032.html#eq:distancestandard">(3.10)</a> et <a href="sect032.html#eq:distancestandardw">(3.11)</a> décrites précédemment). Dans le cas de données comprenant l’élévation, la forme géométrique est une sphère de rayon de distance standard.</p></li>
+<li><p>Une ellipse de distance standard pondérée ou non. Dans le cas de données comprenant l’élévation, la forme géométrique est un ellipsoïde.</p></li>
 </ol>
-<p><strong>Prenons un jeu de données fictives</strong> pour décrire ces quatre représentations graphiques. Imaginons que nous avons réalisé de l’observation dans le parc de la Larentie à Sherbrooke pour comprendre son utilisation. Pour collecter des données sur la localisation des personnes utilisatrices, nous aurions pu utiliser un questionnaire dans ArcGIS Survey 123. La figure <a href="sect032.html#fig:PointsB">3.1</a> illustre la localisation de dix personnes (points rouges).</p>
+<p><strong>Prenons un jeu de données fictives</strong> pour décrire ces quatre représentations graphiques. Imaginons que nous avons observé le parc de la Laurentie à Sherbrooke pour comprendre son utilisation. Pour collecter des données sur la localisation des personnes utilisatrices, nous aurions pu utiliser un questionnaire dans ArcGIS Survey 123. La figure <a href="sect032.html#fig:PointsB">3.1</a> illustre la localisation de dix personnes (points rouges).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:PointsB"></span>
-<img src="images/Chap03/CartePointsB.png" alt="Données fictives sur des personnes utilisatrices d'un parc de la Larentie à Sherbrooke" width="100%" />
+<img src="images/Chap03/CartePointsB.png" alt="Données fictives sur des personnes utilisatrices du parc de la Laurentie à Sherbrooke" width="100%" />
 <p class="caption">
-Figure 3.1: Données fictives sur des personnes utilisatrices d’un parc de la Larentie à Sherbrooke
+Figure 3.1: Données fictives sur des personnes utilisatrices du parc de la Laurentie à Sherbrooke
 </p>
 </div>
 <p>À partir de ces dix points, nous obtenons :</p>
 <ul>
-<li><p>Les coordonnées du <strong>centre moyen</strong> qui sont égales à (-8 007 869, 5 685 921), soit simplement les moyennes des coordonnées <em>X</em> et <em>Y</em> des dix observations.</p></li>
+<li><p>Les coordonnées du <strong>centre moyen</strong> qui sont égales à -8 007 869 et 5 685 921, soit simplement les moyennes des coordonnées <em>X</em> et <em>Y</em> des dix observations.</p></li>
 <li><p>L’<strong>enveloppe convexe des points</strong> qui contient tous les points.</p></li>
-<li><p><strong>Le rectangle construit avec les déviations standard des <em>X</em> et des <em>Y</em></strong> qui est centrée sur le centre moyen. À partir de ce point, nous ajoutons à l’est et à l’ouest la valeur de la distance standard des <em>X</em> et au nord et au sud celle des <em>Y</em>. Les valeurs de ces distances standards sont égales à 32,60 et 52,20 mètres (voir les calculs au tableau <a href="sect032.html#tab:DonneesFictivesCasB">3.2</a>).</p></li>
+<li><p><strong>Le rectangle construit avec les déviations standards des <em>X</em> et des <em>Y</em></strong> qui est centré sur le centre moyen. À partir de ce point, nous ajoutons à l’est et à l’ouest la valeur de la distance standard des <em>X</em> et au nord et au sud celle des <em>Y</em>. Les valeurs de ces distances standards sont égales à 32,60 et 52,20 mètres (voir les calculs au tableau <a href="sect032.html#tab:DonneesFictivesCasB">3.2</a>).</p></li>
 <li><p>La <strong>distance standard</strong> est égale à 61,59 mètres (voir les calculs au tableau <a href="sect032.html#tab:DonneesFictivesCasB">3.2</a>). À partir de cette distance, nous traçons le cercle ayant comme rayon la distance standard.</p></li>
 <li><p>L’<strong>ellipse de déviation de distance standard</strong> (figure <a href="sect032.html#fig:ExplicationEllipse">3.2</a>).</p></li>
 </ul>
 <table>
 <caption>
-<span id="tab:DonneesFictivesCasB">Tableau 3.2: </span>Calcul des distances standard des X et des Y et la distance standard
+<span id="tab:DonneesFictivesCasB">Tableau 3.2: </span>Calcul des distances standards des X et des Y et de la distance standard
 </caption>
 <thead>
 <tr>
@@ -884,20 +884,20 @@ Figure 3.2: Trois éléments composant une ellipse
 </div>
 <div class="bloc_attention">
 <p><strong>Calcul des ellipses : des résultats qui varient d’un logiciel à l’autre…</strong></p>
-<p>Étonnamment, il existe plusieurs solutions pour tracer une ellipse. Pour une discussion détaillée de ces différentes solutions, vous pourez lire le <a href="https://portailsig.org/content/qgis-des-ellipses-de-deviation-standard-sde-un-plugin-standard-deviational-ellipse-des-scrip.html">court texte très intéressant de Martin Leroux</a>.</p>
+<p>Étonnamment, il existe plusieurs solutions pour tracer une ellipse. Pour une discussion détaillée de ces différentes solutions, lisez le <a href="https://portailsig.org/content/qgis-des-ellipses-de-deviation-standard-sde-un-plugin-standard-deviational-ellipse-des-scrip.html">court texte très intéressant de Martin Leroux</a>.</p>
 <ul>
 <li>Ellipse de Yuill <span class="citation">(<a href="#ref-tveitesde" role="doc-biblioref">Tveite 2020</a>)</span>.</li>
 <li>Ellipse basée sur la covariance implémentée dans <a href="https://pro.arcgis.com/en/pro-app/3.0/tool-reference/spatial-statistics/h-how-directional-distribution-standard-deviationa.htm">ArcGIS Pro</a>.</li>
-<li>Ellipse de distance standard implémentée dans le <a href="https://www.icpsr.umich.edu/CrimeStat/">logiciel CrimeStat</a>.</li>
-<li>Ellipse avec la correction proposée Wang et ses collègues <span class="citation">(<a href="#ref-wang2015confidence" role="doc-biblioref">2015</a>)</span>.</li>
+<li>Ellipse de distance standard implémentée dans le logiciel <a href="https://www.icpsr.umich.edu/CrimeStat/">CrimeStat</a>.</li>
+<li>Ellipse avec la correction proposée par Wang et ses collègues <span class="citation">(<a href="#ref-wang2015confidence" role="doc-biblioref">2015</a>)</span>.</li>
 </ul>
-<p>Il est à noter qu’un plugin QGIS intitulé <em>The QGIS Standard Deviational Ellipse Plugin</em> <span class="citation">(<a href="#ref-tveitesde" role="doc-biblioref">Tveite 2020</a>)</span> intègre plusieurs de ces méthodes. Les résultats varient ainsi d’un logiciel à l’autre dépendamment de la méthode implémentée. Autrement dit, pour un même jeu de données ponctuelles, l’ellipse ne sera pas la même dans ArcGIS Pro, ArcMap 9.3, ArcMap 10.x et QGIS.</p>
+<p>Il est à noter qu’un plugin QGIS intitulé <em>The QGIS Standard Deviational Ellipse Plugin</em> <span class="citation">(<a href="#ref-tveitesde" role="doc-biblioref">Tveite 2020</a>)</span> intègre plusieurs de ces méthodes. Les résultats varient ainsi d’un logiciel à l’autre dépendamment de la méthode implémentée. Autrement dit, pour un même jeu de données ponctuelles, l’ellipse n’est pas la même dans ArcGIS Pro, ArcMap 9.3, ArcMap 10.x et QGIS.</p>
 <p><strong>Quoi faire alors?</strong></p>
-<p>Quel que soit la méthode utilisée, l’ellipse sera toujours centrée sur le point moyen et aura toujours le même angle de rotation. Par contre, la taille de l’ellipse (superficie) va varier. Par conséquent, si vous souhaitez comparer des ellipses différentes, assurez-vous toujours quelles soient toutes obtenus dans le même logiciel et la même solution.</p>
+<p>Quelle que soit la méthode utilisée, l’ellipse est toujours centrée sur le point moyen et a toujours le même angle de rotation. Par contre, la taille de l’ellipse (superficie) varie. Par conséquent, si vous souhaitez comparer des ellipses différentes, assurez-vous toujours qu’elles sont toutes obtenues dans le même logiciel et avec la même solution.</p>
 </div>
 <div class="bloc_aller_loin">
 <p><strong>Calcul de l’ellipse selon la méthode implémentée dans CrimeStat</strong></p>
-<p>Ned Levine <span class="citation">(<a href="#ref-levine2006crime" role="doc-biblioref">2006</a>; <a href="#ref-levine2021crimestat" role="doc-biblioref">2021</a>)</span> ayant développé le <a href="https://www.icpsr.umich.edu/CrimeStat/">logiciel CrimeStat</a> propose les formulations suivantes pour le calcul d’une ellipse :</p>
+<p>Ned Levine <span class="citation">(<a href="#ref-levine2006crime" role="doc-biblioref">2006</a>; <a href="#ref-levine2021crimestat" role="doc-biblioref">2021</a>)</span> ayant développé le logiciel <a href="https://www.icpsr.umich.edu/CrimeStat/">CrimeStat</a> propose les formulations suivantes pour le calcul d’une ellipse :</p>
 <p><span class="math display" id="eq:CrimeStatRotation">\[\begin{equation}  
 \theta = \frac{\text{arctan} \Biggl\{ \Bigl(\sum_{i=1}^nx_d^2-\sum_{i=1}^ny_d^2 \Bigl)+  \Bigr[\Bigl(\sum_{i=1}^nx_d^2-\sum_{i=1}^ny_d^2 \Bigl)^2 + 4 \Bigl(\sum_{i=1}^nx_dy_d \Bigl)^2\Bigr]^{1/2} \Biggl\}} {2 \sum_{i=1}^nx_dy_d}
 \tag{3.14}
@@ -921,7 +921,7 @@ l_x=2\sigma_x \text{ et }l_y=2\sigma_y \text{ et }S_e=\pi\sigma_x\sigma_y
 </p>
 <p>avec <span class="math inline">\(l_x\)</span>, <span class="math inline">\(l_y\)</span> et <span class="math inline">\(S_e\)</span> étant les longueurs de axes <em>X</em> et <em>Y</em> et la superficie de l’ellipse.</p>
 </div>
-<p>Prenons quatre situations fictives de répartition de dix personnes utilisatrices du parc de la Larentie à Sherbrooke :</p>
+<p>Prenons quatre situations fictives de répartition de dix personnes utilisatrices du parc de la Laurentie à Sherbrooke :</p>
 <ul>
 <li><strong>Situation A</strong>. Les observations sont concentrées autour de l’aire de jeu.</li>
 <li><strong>Situation B</strong>. Les observations sont dispersées dans la partie est du parc.</li>
@@ -929,12 +929,12 @@ l_x=2\sigma_x \text{ et }l_y=2\sigma_y \text{ et }S_e=\pi\sigma_x\sigma_y
 <li><strong>Situation D</strong>. Les observations sont concentrées dans la partie nord du parc, excepté deux observations au sud.</li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:PointsABCD"></span>
-<img src="images/Chap03/CartePointsABCD.png" alt="Données fictives sur des personnes utilisatrices d'un parc de la Larentie à Sherbrooke (quatre situations)" width="100%" />
+<img src="images/Chap03/CartePointsABCD.png" alt="Données fictives sur des personnes utilisatrices du parc de la Laurentie à Sherbrooke (quatre situations)" width="100%" />
 <p class="caption">
-Figure 3.3: Données fictives sur des personnes utilisatrices d’un parc de la Larentie à Sherbrooke (quatre situations)
+Figure 3.3: Données fictives sur des personnes utilisatrices du parc de la Laurentie à Sherbrooke (quatre situations)
 </p>
 </div>
-<p>Les cercles et les ellipses distance standard (D.s.) centrée au centre moyen (C.m.) sont représentées à la (figure <a href="sect032.html#fig:EllipsesCercleABCD">3.4</a>).</p>
+<p>Les cercles et les ellipses de distance standard (<span class="math inline">\(ds\)</span>) centrés au centre moyen (<span class="math inline">\(cm\)</span>) sont représentés à la (figure <a href="sect032.html#fig:EllipsesCercleABCD">3.4</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:EllipsesCercleABCD"></span>
 <img src="images/Chap03/CartePointsABCD_DS.png" alt="Ellipse et cercle de distance standard pour les quatre situations" width="100%" />
 <p class="caption">
@@ -944,15 +944,15 @@ Figure 3.4: Ellipse et cercle de distance standard pour les quatre situations
 </div>
 <div id="sect03123" class="section level4 hasAnchor" number="3.2.2.3">
 <h4><span class="header-section-number">3.2.2.3</span> Comparaison de la dispersion de deux semis de points dans deux régions différentes<a href="sect032.html#sect03123" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour comparer la dispersion de deux semis de points situés dans des régions de taille différente, il convient de supprimer les effets de taille des deux régions. Pour ce faire, il suffit de diviser la <strong>distance standard</strong> ou la <strong>distance standard pondérée</strong> par la superficie de la région. Cette approche est donc très similaire au <a href="https://laeq.github.io/LivreMethoQuantBolR/sect025.html#sect0253">coefficient de variation</a> en statistique univariée, soit le rapport entre l’écart-type et la moyenne.</p>
-<p>Par exemple, imaginons que nous souhaitons comparer les dispersions des personnes utilisatrices du parc de la Larentie (0,078 ha) et parc du Mont-Bellevue (409 ha). Inévitablement, la valeur de la distance standard sera plus forte pour le parc du Mont-Bellevue que celle du parc de la Larentie. Il faudrait alors les diviser par leurs superficies respectives.</p>
+<p>Pour comparer la dispersion de deux semis de points situés dans des régions de taille différente, il convient de supprimer les effets de taille des deux régions. Pour ce faire, nous divisons la <strong>distance standard</strong> ou la <strong>distance standard pondérée</strong> par la superficie de la région. Cette approche est donc très similaire au <a href="https://laeq.github.io/LivreMethoQuantBolR/sect025.html#sect0253">coefficient de variation</a> en statistique univariée, soit le rapport entre l’écart-type et la moyenne.</p>
+<p>Par exemple, si nous comparons les dispersions des personnes utilisatrices du parc de la Laurentie (0,078 ha) et parc du Mont-Bellevue (409 ha). Inévitablement, la valeur de la distance standard est plus forte pour le parc du Mont-Bellevue que celle du parc de la Laurentie. Il faut donc diviser chaque distance standard par la superficie associée.</p>
 </div>
 <div id="sect03124" class="section level4 hasAnchor" number="3.2.2.4">
 <h4><span class="header-section-number">3.2.2.4</span> Comparaison de la dispersion de deux semis de points dans la même région<a href="sect032.html#sect03124" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour comparer la distribution spatiale deux semis de points situés dans la même région, nous pouvons comparer leurs cercles ou leurs ellipses respectives (par exemple, des points représentant des accidents l’été versus l’hiver ou encore de deux espèces végétales sur le même territoire).</p>
-<p>Une démarche similaire peut être appliquée à deux groupes de population rattachées à des entités polygonales : ils ont la même distribution spatiale si leurs ellipses de distance pondérée se juxtaposent significativement. David W.S. Wong <span class="citation">(<a href="#ref-wong1999geostatistics" role="doc-biblioref">1999</a>)</span> propose d’ailleurs un indice dénommée <em>S</em> basé sur la comparaison des deux ellipses (équation <a href="sect032.html#eq:WongIndice2Groupes">(3.18)</a>). Le numérateur représente la surface d’intersection entre les deux ellipses tandis que le dénominateur représente leur surface d’union. L’indice varie de 0 à 1, soit respectivement d’une similitude parfaite à une dissemblance la plus grande entre les deux distributions spatiales :</p>
+<p>Pour comparer la distribution spatiale de deux semis de points situés dans la même région, nous comparons leur cercle ou leur ellipse respective (par exemple, des points représentant des accidents l’été versus l’hiver ou encore deux espèces végétales sur le même territoire).</p>
+<p>Une démarche similaire peut être appliquée à deux groupes de population rattachées à des entités polygonales : ils ont la même distribution spatiale si les deux ellipses de distance pondérée se juxtaposent significativement. David W.S. Wong <span class="citation">(<a href="#ref-wong1999geostatistics" role="doc-biblioref">1999</a>)</span> propose d’ailleurs un indice dénommé <em>S</em> basé sur la comparaison des deux ellipses (équation <a href="sect032.html#eq:WongIndice2Groupes">(3.18)</a>). Le numérateur représente la surface d’intersection entre les deux ellipses tandis que le dénominateur représente leur surface d’union. L’indice varie de 0 à 1, soit respectivement d’une similitude parfaite à une dissemblance la plus grande entre les deux distributions spatiales :</p>
 <ul>
-<li>Si deux groupes de population ont des distributions spatiales identiques, leurs ellipses sont les mêmes et donc <span class="math inline">\(E_i \cap E_j = E_i \cup E_j = 1\)</span> et <span class="math inline">\(S_{ij} = 1 - 1 = 0\)</span>.</li>
+<li>Si deux groupes de population ont des distributions spatiales identiques, les ellipses sont les mêmes et donc <span class="math inline">\(E_i \cap E_j = E_i \cup E_j = 1\)</span> et <span class="math inline">\(S_{ij} = 1 - 1 = 0\)</span>.</li>
 <li>Si les deux groupes de population ont des distributions spatiales totalement différentes, les ellipses ne se touchent pas, alors <span class="math inline">\(E_i \cap E_j = 0\)</span> et la valeur de <span class="math inline">\(S = 1 - 0 = 1\)</span>.</li>
 </ul>
 <p>Bien évidemment, cet indice peut être étendu pour comparer les distributions de plus de deux groupes de population simultanément (équation <a href="sect032.html#eq:WongIndiceNGroupes">(3.19)</a>).</p>
@@ -966,7 +966,7 @@ S=1-\frac{E_1 \cap E_2 \cap E_3 \cap \text{…} \cap E_n}{E_1 \cup E_2 \cup E_3 
 \tag{3.19}
 \end{equation}\]</span>
 </p>
-<p><strong>Voyons un exemple concret</strong> : calculons l’indice de Wong <span class="citation">(<a href="#ref-wong1999geostatistics" role="doc-biblioref">1999</a>)</span> (équation <a href="sect032.html#eq:WongIndice2Groupes">(3.18)</a>) pour les ellipses de distance standard pondérées par les effectifs de propriétaires et de locataires par secteur de recensement pour la ville de Sherbrooke en 2021 (figure <a href="sect032.html#fig:CarteProprioLoctaires">3.5</a>). D’emblée, nous constatons que les locataires ont une distribution plus dispersée que celle des locataires beaucoup plus présents dans le centre de la Ville.</p>
+<p><strong>Voyons un exemple concret</strong> : calculons l’indice de Wong <span class="citation">(<a href="#ref-wong1999geostatistics" role="doc-biblioref">1999</a>)</span> (équation <a href="sect032.html#eq:WongIndice2Groupes">(3.18)</a>) pour les ellipses de distances standards pondérées par les effectifs de propriétaires et de locataires par secteur de recensement pour la ville de Sherbrooke en 2021 (figure <a href="sect032.html#fig:CarteProprioLoctaires">3.5</a>). D’emblée, nous constatons que les propriétaires ont une distribution plus dispersée que celle des locataires beaucoup plus présents dans le centre de la ville.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CarteProprioLoctaires"></span>
 <img src="GMQ405_files/figure-html/CarteProprioLoctaires-1.png" alt="Propriétaires et locataires dans la ville de Sherbrooke (avec ellipse de distance standard), 2021" width="85%" />
 <p class="caption">
@@ -991,7 +991,7 @@ Figure 3.5: Propriétaires et locataires dans la ville de Sherbrooke (avec ellip
 <h3><span class="header-section-number">3.2.3</span> Mise en œuvre de l’analyse centrographique dans R<a href="sect032.html#sect0313" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="sect03131" class="section level4 hasAnchor" number="3.2.3.1">
 <h4><span class="header-section-number">3.2.3.1</span> Calcul de mesures non pondérées<a href="sect032.html#sect03131" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour illuster la mise en œuvre des différentes mesures de l’analyse centrographique dans R, nous utilisons un jeu de données ouvertes sur les <a href="https://donneesouvertes-sherbrooke.opendata.arcgis.com/datasets/64d19d62f0804f5896e4b24c32aea49d_0/explore?location=45.403468%2C-71.960143%2C12.00">indicents de sécurité publique de la ville de Sherbrooke</a>. Dans la syntaxe ci-dessous, nous importons les données et constituons une couche <code>sf</code> par année (2019 à 2022) et extrayons les coordonnées géographiques.</p>
+<p>Pour illustrer la mise en œuvre des différentes mesures de l’analyse centrographique dans R, nous utilisons un jeu de données ouvertes sur les <a href="https://donneesouvertes-sherbrooke.opendata.arcgis.com/datasets/64d19d62f0804f5896e4b24c32aea49d_0/explore?location=45.403468%2C-71.960143%2C12.00">indicents de sécurité publique de la ville de Sherbrooke</a>. Dans la syntaxe ci-dessous, nous importons les données et constituons une couche <code>sf</code> par année (2019 à 2022) et extrayons les coordonnées géographiques.</p>
 <div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="sect032.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb278-2"><a href="sect032.html#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
 <span id="cb278-3"><a href="sect032.html#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des données </span></span>
@@ -1009,15 +1009,15 @@ Figure 3.5: Propriétaires et locataires dans la ville de Sherbrooke (avec ellip
 <span id="cb278-15"><a href="sect032.html#cb278-15" aria-hidden="true" tabindex="-1"></a>xy<span class="fl">.2020</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2020)</span>
 <span id="cb278-16"><a href="sect032.html#cb278-16" aria-hidden="true" tabindex="-1"></a>xy<span class="fl">.2021</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2021)</span>
 <span id="cb278-17"><a href="sect032.html#cb278-17" aria-hidden="true" tabindex="-1"></a>xy<span class="fl">.2022</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2022)</span></code></pre></div>
-<p>Les méfaits par année sont présentées à la figure <a href="sect032.html#fig:CarteMefaits">3.6</a>.</p>
+<p>Les méfaits par année sont présentés à la figure <a href="sect032.html#fig:CarteMefaits">3.6</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CarteMefaits"></span>
-<img src="GMQ405_files/figure-html/CarteMefaits-1.png" alt="Localisation des méfaits par année, ville de Sherbrooke), 2021" width="85%" />
+<img src="GMQ405_files/figure-html/CarteMefaits-1.png" alt="Localisation des méfaits par année, ville de Sherbrooke, 2021" width="85%" />
 <p class="caption">
-Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke), 2021
+Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke, 2021
 </p>
 </div>
 <p><strong>Centre moyen</strong></p>
-<p>Avec la fonction <code>mean</code>, nous pouvons calculer les valeurs moyennes sur les coordonnées <em>X</em> et <em>Y</em>, puis créer un objet <code>sf</code> avec les centre moyens.</p>
+<p>Avec la fonction <code>mean</code>, nous pouvons calculer les valeurs moyennes sur les coordonnées <em>X</em> et <em>Y</em>, puis créer un objet <code>sf</code> avec les centres moyens.</p>
 <div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="sect032.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Récupération de la projection cartographique dans une variable</span></span>
 <span id="cb279-2"><a href="sect032.html#cb279-2" aria-hidden="true" tabindex="-1"></a>ProjCarto <span class="ot">=</span> <span class="fu">st_crs</span>(Mefaits)</span>
 <span id="cb279-3"><a href="sect032.html#cb279-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du centre moyen pour une année (2019)</span></span>
@@ -1056,7 +1056,7 @@ Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke), 2021
 <span id="cb283-5"><a href="sect032.html#cb283-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection du point avec plus petite distance à tous les autres</span></span>
 <span id="cb283-6"><a href="sect032.html#cb283-6" aria-hidden="true" tabindex="-1"></a>PointCentral2019 <span class="ot">&lt;-</span> <span class="fu">subset</span>(M2019, M2019<span class="sc">$</span>DistATous<span class="sc">==</span><span class="fu">min</span>(M2019<span class="sc">$</span>DistATous))</span></code></pre></div>
 <p><strong>Distance standard sur les coordonnées <em>X</em> et <em>Y</em> et distance standard combinée</strong></p>
-<p>La syntaxe permet de calculer les trois distances standard.</p>
+<p>La syntaxe permet de calculer les trois distances standards.</p>
 <div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="sect032.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul de la distance standard pour une année (2019)</span></span>
 <span id="cb284-2"><a href="sect032.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Distance standard sur les coordonnées X et Y</span></span>
 <span id="cb284-3"><a href="sect032.html#cb284-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
@@ -1066,7 +1066,7 @@ Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke), 2021
 <span id="cb286-2"><a href="sect032.html#cb286-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span> </span>
 <span id="cb286-3"><a href="sect032.html#cb286-3" aria-hidden="true" tabindex="-1"></a>            (xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 6465.275</code></pre>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="sect032.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul pour toutes les années et enregistrement dans des nouveaux champ des centre moyen</span></span>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="sect032.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul pour toutes les années et enregistrement des centres moyens dans de nouveaux champs</span></span>
 <span id="cb288-2"><a href="sect032.html#cb288-2" aria-hidden="true" tabindex="-1"></a>CentreMoyen<span class="sc">$</span>DS.X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
 <span id="cb288-3"><a href="sect032.html#cb288-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2020</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
 <span id="cb288-4"><a href="sect032.html#cb288-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2021</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
@@ -1098,14 +1098,14 @@ Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke), 2021
 ## 3  2021 -8004607 5684184 POINT (-8004607 5684184) 4777.511 3297.866 5805.216
 ## 4  2022 -8004922 5684208 POINT (-8004922 5684208) 5078.058 3158.500 5980.200</code></pre>
 <p><strong>Représentations graphiques de la dispersion</strong></p>
-<p>Une fois la couche <code>sf</code> des centres moyens avec les trois champs pour la distance standard créer, il suffit de tracer un rectangle et un cercle de distance standard.</p>
+<p>Une fois que la couche <code>sf</code> des centres moyens avec les trois champs pour la distance standard est créée, il suffit de tracer un rectangle et un cercle de distance standard.</p>
 <div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="sect032.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Enveloppe convexe</span></span>
 <span id="cb290-2"><a href="sect032.html#cb290-2" aria-hidden="true" tabindex="-1"></a>sf.Enveloppes <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(<span class="at">Id=</span><span class="fu">c</span>(<span class="st">&quot;2019&quot;</span>, <span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2022&quot;</span>)),</span>
 <span id="cb290-3"><a href="sect032.html#cb290-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">geometry =</span> <span class="fu">c</span>(<span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2019)),</span>
 <span id="cb290-4"><a href="sect032.html#cb290-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2020)),</span>
 <span id="cb290-5"><a href="sect032.html#cb290-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2021)),</span>
 <span id="cb290-6"><a href="sect032.html#cb290-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2022))))</span>
-<span id="cb290-7"><a href="sect032.html#cb290-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Rectangle avec les distances standard sur les coordonnées X et Y</span></span>
+<span id="cb290-7"><a href="sect032.html#cb290-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Rectangle avec les distances standards sur les coordonnées X et Y</span></span>
 <span id="cb290-8"><a href="sect032.html#cb290-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Fonction pour tracer le rectangle</span></span>
 <span id="cb290-9"><a href="sect032.html#cb290-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param MoyX coordonnées X du centre moyen.</span></span>
 <span id="cb290-10"><a href="sect032.html#cb290-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param MoyY coordonnées Y du centre moyen.</span></span>
@@ -1236,22 +1236,22 @@ Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke), 2021
 ## 4  66.98773 SigmaY SigmaX POLYGON ((-7997847 5687212,...</code></pre>
 <p>Les quatre représentations de la dispersion sont présentées à la figure <a href="sect032.html#fig:RepresentationDispersion">3.7</a> : 1) enveloppe convexe (gris), 2) cercle de distance standard (bleu), 3) rectangle de distance standard sur les X et Y (noir) et 4) ellipse de distance standard (rouge).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:RepresentationDispersion"></span>
-<img src="GMQ405_files/figure-html/RepresentationDispersion-1.png" alt="Représentations de la dispersions des méfaits pour les quatre années" width="85%" />
+<img src="GMQ405_files/figure-html/RepresentationDispersion-1.png" alt="Représentations de la dispersion des méfaits pour les quatre années" width="85%" />
 <p class="caption">
-Figure 3.7: Représentations de la dispersions des méfaits pour les quatre années
+Figure 3.7: Représentations de la dispersion des méfaits pour les quatre années
 </p>
 </div>
 </div>
 <div id="sect03132" class="section level4 hasAnchor" number="3.2.3.2">
 <h4><span class="header-section-number">3.2.3.2</span> Calcul de mesures pondérées<a href="sect032.html#sect03132" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour illuster le calcul des mesures pondérées, nous utilisons des données sur les effectifs du premier et du dernier déciles de revenu après impôt des familles économiques pour les secteurs de recensement de la ville de Sherbrooke en 2021 (figure <a href="sect032.html#fig:CartesDecilesPremierDernier">3.8</a>).</p>
+<p>Pour illustrer le calcul des mesures pondérées, nous utilisons des données sur les effectifs du premier et du dernier déciles de revenu après impôt des familles économiques pour les secteurs de recensement de la ville de Sherbrooke en 2021 (figure <a href="sect032.html#fig:CartesDecilesPremierDernier">3.8</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartesDecilesPremierDernier"></span>
 <img src="GMQ405_files/figure-html/CartesDecilesPremierDernier-1.png" alt="Déciles extrêmes de revenu après impôt des familles économiques" width="85%" />
 <p class="caption">
 Figure 3.8: Déciles extrêmes de revenu après impôt des familles économiques
 </p>
 </div>
-<p>La syntaxe suivante permet d’importer et de structurer les données. puis de calculer les différentes mesures (centre moyen pondéré et distance standard pondéré).</p>
+<p>La syntaxe suivante permet d’importer et de structurer les données. puis de calculer les différentes mesures (centre moyen pondéré et distance standard pondérée).</p>
 <div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="sect032.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation et struturation des données</span></span>
 <span id="cb293-2"><a href="sect032.html#cb293-2" aria-hidden="true" tabindex="-1"></a>dfdecile <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/chap03/DataDecilesSR.csv&quot;</span>, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span>
 <span id="cb293-3"><a href="sect032.html#cb293-3" aria-hidden="true" tabindex="-1"></a>dfdecile<span class="sc">$</span>SRIDU <span class="ot">&lt;-</span> <span class="fu">substr</span>(dfdecile<span class="sc">$</span>SRIDU, <span class="dv">1</span>, <span class="dv">10</span>)</span>
@@ -1259,7 +1259,7 @@ Figure 3.8: Déciles extrêmes de revenu après impôt des familles économiques
 <span id="cb293-5"><a href="sect032.html#cb293-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbSRDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
 <span id="cb293-6"><a href="sect032.html#cb293-6" aria-hidden="true" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">merge</span>(SR[,<span class="fu">c</span>(<span class="st">&quot;SRIDU&quot;</span>)], dfdecile, <span class="at">by =</span> <span class="st">&quot;SRIDU&quot;</span>)</span>
 <span id="cb293-7"><a href="sect032.html#cb293-7" aria-hidden="true" tabindex="-1"></a>ProjCarto <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(SR)</span>
-<span id="cb293-8"><a href="sect032.html#cb293-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques des secteur de recensement</span></span>
+<span id="cb293-8"><a href="sect032.html#cb293-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques des secteurs de recensement</span></span>
 <span id="cb293-9"><a href="sect032.html#cb293-9" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_point_on_surface</span>(SR))</span>
 <span id="cb293-10"><a href="sect032.html#cb293-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Pondérations pour les deux déciles</span></span>
 <span id="cb293-11"><a href="sect032.html#cb293-11" aria-hidden="true" tabindex="-1"></a>wd1  <span class="ot">&lt;-</span> SR<span class="sc">$</span>D1</span>
@@ -1267,7 +1267,7 @@ Figure 3.8: Déciles extrêmes de revenu après impôt des familles économiques
 <span id="cb293-13"><a href="sect032.html#cb293-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Sommes des pondérations</span></span>
 <span id="cb293-14"><a href="sect032.html#cb293-14" aria-hidden="true" tabindex="-1"></a>swd1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(wd1)</span>
 <span id="cb293-15"><a href="sect032.html#cb293-15" aria-hidden="true" tabindex="-1"></a>swd10 <span class="ot">&lt;-</span> <span class="fu">sum</span>(wd10)</span>
-<span id="cb293-16"><a href="sect032.html#cb293-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du centre pondérée</span></span>
+<span id="cb293-16"><a href="sect032.html#cb293-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du centre pondéré</span></span>
 <span id="cb293-17"><a href="sect032.html#cb293-17" aria-hidden="true" tabindex="-1"></a>XmoyD1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">1</span>]<span class="sc">*</span>wd1) <span class="sc">/</span> swd1</span>
 <span id="cb293-18"><a href="sect032.html#cb293-18" aria-hidden="true" tabindex="-1"></a>XmoyD10 <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">1</span>]<span class="sc">*</span>wd10) <span class="sc">/</span> swd10</span>
 <span id="cb293-19"><a href="sect032.html#cb293-19" aria-hidden="true" tabindex="-1"></a>YmoyD1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">2</span>]<span class="sc">*</span>wd1) <span class="sc">/</span> swd1</span>
@@ -1278,104 +1278,19 @@ Figure 3.8: Déciles extrêmes de revenu après impôt des familles économiques
 <span id="cb293-24"><a href="sect032.html#cb293-24" aria-hidden="true" tabindex="-1"></a>                          <span class="at">CMwx =</span> <span class="fu">c</span>(XmoyD1, XmoyD10),  </span>
 <span id="cb293-25"><a href="sect032.html#cb293-25" aria-hidden="true" tabindex="-1"></a>                          <span class="at">CMwy =</span> <span class="fu">c</span>(YmoyD1, YmoyD10))</span>
 <span id="cb293-26"><a href="sect032.html#cb293-26" aria-hidden="true" tabindex="-1"></a>CentreMoyenPond <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(CentreMoyenPond, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> ProjCarto)</span>
-<span id="cb293-27"><a href="sect032.html#cb293-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul de la distance standard pondéré</span></span>
+<span id="cb293-27"><a href="sect032.html#cb293-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul de la distance standard pondérée</span></span>
 <span id="cb293-28"><a href="sect032.html#cb293-28" aria-hidden="true" tabindex="-1"></a>sdD1  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(wd1<span class="sc">*</span>(xy[,<span class="dv">1</span>]<span class="sc">-</span> XmoyD1)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1) <span class="sc">+</span> (<span class="fu">sum</span>(wd1<span class="sc">*</span>(xy[,<span class="dv">2</span>]<span class="sc">-</span> YmoyD1)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1))</span>
 <span id="cb293-29"><a href="sect032.html#cb293-29" aria-hidden="true" tabindex="-1"></a>sdD10 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(wd10<span class="sc">*</span>(xy[,<span class="dv">1</span>]<span class="sc">-</span> XmoyD10)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1) <span class="sc">+</span> (<span class="fu">sum</span>(wd10<span class="sc">*</span>(xy[,<span class="dv">2</span>]<span class="sc">-</span> YmoyD10)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd10))</span>
-<span id="cb293-30"><a href="sect032.html#cb293-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Zones tampon</span></span>
+<span id="cb293-30"><a href="sect032.html#cb293-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Zones tampons</span></span>
 <span id="cb293-31"><a href="sect032.html#cb293-31" aria-hidden="true" tabindex="-1"></a>CentreMoyenPond<span class="sc">$</span>SDw <span class="ot">&lt;-</span> <span class="fu">c</span>(sdD1, sdD10)</span>
 <span id="cb293-32"><a href="sect032.html#cb293-32" aria-hidden="true" tabindex="-1"></a>sf.CercleDSW <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(CentreMoyenPond, <span class="at">dist =</span> CentreMoyenPond<span class="sc">$</span>SDw)</span>
-<span id="cb293-33"><a href="sect032.html#cb293-33" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb293-34"><a href="sect032.html#cb293-34" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb293-35"><a href="sect032.html#cb293-35" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;distances&quot; &lt;- function(centre.xy=centre, destmat=activities){</span></span>
-<span id="cb293-36"><a href="sect032.html#cb293-36" aria-hidden="true" tabindex="-1"></a><span class="co">#   di &lt;- sqrt( (destmat[,1] - centre.xy[1])^2 + (destmat[,2] - centre.xy[2])^2) </span></span>
-<span id="cb293-37"><a href="sect032.html#cb293-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   return(di)</span></span>
-<span id="cb293-38"><a href="sect032.html#cb293-38" aria-hidden="true" tabindex="-1"></a><span class="co"># }  </span></span>
-<span id="cb293-39"><a href="sect032.html#cb293-39" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb293-40"><a href="sect032.html#cb293-40" aria-hidden="true" tabindex="-1"></a><span class="co"># ## Ellipse de distance standard</span></span>
-<span id="cb293-41"><a href="sect032.html#cb293-41" aria-hidden="true" tabindex="-1"></a><span class="co"># #&#39; Calcul de l&#39;ellipse</span></span>
-<span id="cb293-42"><a href="sect032.html#cb293-42" aria-hidden="true" tabindex="-1"></a><span class="co"># #&#39; @param id identifiant de l&#39;ellipse.</span></span>
-<span id="cb293-43"><a href="sect032.html#cb293-43" aria-hidden="true" tabindex="-1"></a><span class="co"># #&#39; @param pointsxy coordonnées X et Y.</span></span>
-<span id="cb293-44"><a href="sect032.html#cb293-44" aria-hidden="true" tabindex="-1"></a><span class="co"># #&#39; @param w pondération.</span></span>
-<span id="cb293-45"><a href="sect032.html#cb293-45" aria-hidden="true" tabindex="-1"></a><span class="co"># #&#39; @param crs projection cartographique.</span></span>
-<span id="cb293-46"><a href="sect032.html#cb293-46" aria-hidden="true" tabindex="-1"></a><span class="co"># #&#39;</span></span>
-<span id="cb293-47"><a href="sect032.html#cb293-47" aria-hidden="true" tabindex="-1"></a><span class="co"># CreateEllipseW &lt;- function(id=1, pointsxy, w=NA, crs){</span></span>
-<span id="cb293-48"><a href="sect032.html#cb293-48" aria-hidden="true" tabindex="-1"></a><span class="co"># ## Centre moyen</span></span>
-<span id="cb293-49"><a href="sect032.html#cb293-49" aria-hidden="true" tabindex="-1"></a><span class="co">#   if(length(w)!=1){</span></span>
-<span id="cb293-50"><a href="sect032.html#cb293-50" aria-hidden="true" tabindex="-1"></a><span class="co">#     # pondéré</span></span>
-<span id="cb293-51"><a href="sect032.html#cb293-51" aria-hidden="true" tabindex="-1"></a><span class="co">#     mean.x &lt;- sum(pointsxy[,1]*w) / sum(w)</span></span>
-<span id="cb293-52"><a href="sect032.html#cb293-52" aria-hidden="true" tabindex="-1"></a><span class="co">#     mean.y &lt;- sum(pointsxy[,2]*w) / sum(w)</span></span>
-<span id="cb293-53"><a href="sect032.html#cb293-53" aria-hidden="true" tabindex="-1"></a><span class="co">#   }</span></span>
-<span id="cb293-54"><a href="sect032.html#cb293-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   else{</span></span>
-<span id="cb293-55"><a href="sect032.html#cb293-55" aria-hidden="true" tabindex="-1"></a><span class="co">#     # non pondéré</span></span>
-<span id="cb293-56"><a href="sect032.html#cb293-56" aria-hidden="true" tabindex="-1"></a><span class="co">#     mean.x &lt;- mean(pointsxy[,1])</span></span>
-<span id="cb293-57"><a href="sect032.html#cb293-57" aria-hidden="true" tabindex="-1"></a><span class="co">#     mean.y &lt;- mean(pointsxy[,2])  </span></span>
-<span id="cb293-58"><a href="sect032.html#cb293-58" aria-hidden="true" tabindex="-1"></a><span class="co">#   }</span></span>
-<span id="cb293-59"><a href="sect032.html#cb293-59" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(c(mean.x, mean.y))</span></span>
-<span id="cb293-60"><a href="sect032.html#cb293-60" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
-<span id="cb293-61"><a href="sect032.html#cb293-61" aria-hidden="true" tabindex="-1"></a><span class="co">#   # distances aux centre moyen</span></span>
-<span id="cb293-62"><a href="sect032.html#cb293-62" aria-hidden="true" tabindex="-1"></a><span class="co">#   # dist &lt;- sqrt((pointsxy[,1] - mean.x)^2 + (pointsxy[,2] - mean.y)^2)</span></span>
-<span id="cb293-63"><a href="sect032.html#cb293-63" aria-hidden="true" tabindex="-1"></a><span class="co">#   dist &lt;- distances(c(mean.x, mean.y), pointsxy)</span></span>
-<span id="cb293-64"><a href="sect032.html#cb293-64" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(dist)</span></span>
-<span id="cb293-65"><a href="sect032.html#cb293-65" aria-hidden="true" tabindex="-1"></a><span class="co">#   # print(&quot;ALLO&quot;)</span></span>
-<span id="cb293-66"><a href="sect032.html#cb293-66" aria-hidden="true" tabindex="-1"></a><span class="co">#   # dist &lt;- sqrt((pointsxy[,1] - mean.x)^2 + (pointsxy[,2] - mean.y)^2)</span></span>
-<span id="cb293-67"><a href="sect032.html#cb293-67" aria-hidden="true" tabindex="-1"></a><span class="co">#   # print(dist)</span></span>
-<span id="cb293-68"><a href="sect032.html#cb293-68" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb293-69"><a href="sect032.html#cb293-69" aria-hidden="true" tabindex="-1"></a><span class="co">#   # distance standard x et y</span></span>
-<span id="cb293-70"><a href="sect032.html#cb293-70" aria-hidden="true" tabindex="-1"></a><span class="co">#   if(length(w)!=1){</span></span>
-<span id="cb293-71"><a href="sect032.html#cb293-71" aria-hidden="true" tabindex="-1"></a><span class="co">#     # pondéré</span></span>
-<span id="cb293-72"><a href="sect032.html#cb293-72" aria-hidden="true" tabindex="-1"></a><span class="co">#     SDD &lt;- sqrt(sum((w*dist^2)/((sum(w))- 2)))</span></span>
-<span id="cb293-73"><a href="sect032.html#cb293-73" aria-hidden="true" tabindex="-1"></a><span class="co">#   }</span></span>
-<span id="cb293-74"><a href="sect032.html#cb293-74" aria-hidden="true" tabindex="-1"></a><span class="co">#   else{</span></span>
-<span id="cb293-75"><a href="sect032.html#cb293-75" aria-hidden="true" tabindex="-1"></a><span class="co">#     # non pondéré</span></span>
-<span id="cb293-76"><a href="sect032.html#cb293-76" aria-hidden="true" tabindex="-1"></a><span class="co">#     SDD &lt;- sqrt(sum(dist^2/(length(dist) - 2)))  </span></span>
-<span id="cb293-77"><a href="sect032.html#cb293-77" aria-hidden="true" tabindex="-1"></a><span class="co">#   }  </span></span>
-<span id="cb293-78"><a href="sect032.html#cb293-78" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(SDD)</span></span>
-<span id="cb293-79"><a href="sect032.html#cb293-79" aria-hidden="true" tabindex="-1"></a><span class="co">#   exit</span></span>
-<span id="cb293-80"><a href="sect032.html#cb293-80" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
-<span id="cb293-81"><a href="sect032.html#cb293-81" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Coordonnées</span></span>
-<span id="cb293-82"><a href="sect032.html#cb293-82" aria-hidden="true" tabindex="-1"></a><span class="co">#   B &lt;- min(sigmax, sigmay)</span></span>
-<span id="cb293-83"><a href="sect032.html#cb293-83" aria-hidden="true" tabindex="-1"></a><span class="co">#   A &lt;- max(sigmax, sigmay)</span></span>
-<span id="cb293-84"><a href="sect032.html#cb293-84" aria-hidden="true" tabindex="-1"></a><span class="co">#   d2 &lt;- (A - B) * (A + B)</span></span>
-<span id="cb293-85"><a href="sect032.html#cb293-85" aria-hidden="true" tabindex="-1"></a><span class="co">#   phi &lt;- 2 * pi * seq(0, 1, len = 360)</span></span>
-<span id="cb293-86"><a href="sect032.html#cb293-86" aria-hidden="true" tabindex="-1"></a><span class="co">#   sp &lt;- sin(phi)</span></span>
-<span id="cb293-87"><a href="sect032.html#cb293-87" aria-hidden="true" tabindex="-1"></a><span class="co">#   cp &lt;- cos(phi)</span></span>
-<span id="cb293-88"><a href="sect032.html#cb293-88" aria-hidden="true" tabindex="-1"></a><span class="co">#   r &lt;- sigmax * sigmay/sqrt(B^2 + d2 * sp^2)</span></span>
-<span id="cb293-89"><a href="sect032.html#cb293-89" aria-hidden="true" tabindex="-1"></a><span class="co">#   xy &lt;- r * cbind(cp, sp)</span></span>
-<span id="cb293-90"><a href="sect032.html#cb293-90" aria-hidden="true" tabindex="-1"></a><span class="co">#   al &lt;- (90 - theta) * pi/180</span></span>
-<span id="cb293-91"><a href="sect032.html#cb293-91" aria-hidden="true" tabindex="-1"></a><span class="co">#   ca &lt;- cos(al)</span></span>
-<span id="cb293-92"><a href="sect032.html#cb293-92" aria-hidden="true" tabindex="-1"></a><span class="co">#   sa &lt;- sin(al)</span></span>
-<span id="cb293-93"><a href="sect032.html#cb293-93" aria-hidden="true" tabindex="-1"></a><span class="co">#   coordsSDE &lt;- xy %*% rbind(c(ca, sa), c(-sa, ca)) + </span></span>
-<span id="cb293-94"><a href="sect032.html#cb293-94" aria-hidden="true" tabindex="-1"></a><span class="co">#                 cbind(rep(mean.x, 360), rep(mean.y, 360))</span></span>
-<span id="cb293-95"><a href="sect032.html#cb293-95" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Polygone</span></span>
-<span id="cb293-96"><a href="sect032.html#cb293-96" aria-hidden="true" tabindex="-1"></a><span class="co">#   EllPoly &lt;- st_polygon(list(as.matrix(coordsSDE)))</span></span>
-<span id="cb293-97"><a href="sect032.html#cb293-97" aria-hidden="true" tabindex="-1"></a><span class="co">#   ellipse &lt;- st_sfc(EllPoly, crs=crs)</span></span>
-<span id="cb293-98"><a href="sect032.html#cb293-98" aria-hidden="true" tabindex="-1"></a><span class="co">#   ellipse &lt;- st_sf(data.frame(Id=id,</span></span>
-<span id="cb293-99"><a href="sect032.html#cb293-99" aria-hidden="true" tabindex="-1"></a><span class="co">#                                CMx = mean.x,</span></span>
-<span id="cb293-100"><a href="sect032.html#cb293-100" aria-hidden="true" tabindex="-1"></a><span class="co">#                                CMy = mean.y,</span></span>
-<span id="cb293-101"><a href="sect032.html#cb293-101" aria-hidden="true" tabindex="-1"></a><span class="co">#                                Sigmax = sigmax,</span></span>
-<span id="cb293-102"><a href="sect032.html#cb293-102" aria-hidden="true" tabindex="-1"></a><span class="co">#                                Sigmay = sigmay,</span></span>
-<span id="cb293-103"><a href="sect032.html#cb293-103" aria-hidden="true" tabindex="-1"></a><span class="co">#                                Lx = 2*sigmax,</span></span>
-<span id="cb293-104"><a href="sect032.html#cb293-104" aria-hidden="true" tabindex="-1"></a><span class="co">#                                Ly = 2*sigmay,</span></span>
-<span id="cb293-105"><a href="sect032.html#cb293-105" aria-hidden="true" tabindex="-1"></a><span class="co">#                                Aire = pi*sigmax*sigmay,</span></span>
-<span id="cb293-106"><a href="sect032.html#cb293-106" aria-hidden="true" tabindex="-1"></a><span class="co">#                                Theta = theta,</span></span>
-<span id="cb293-107"><a href="sect032.html#cb293-107" aria-hidden="true" tabindex="-1"></a><span class="co">#                                ThetaCorr =Theta.Corr,</span></span>
-<span id="cb293-108"><a href="sect032.html#cb293-108" aria-hidden="true" tabindex="-1"></a><span class="co">#                                Major = Major,</span></span>
-<span id="cb293-109"><a href="sect032.html#cb293-109" aria-hidden="true" tabindex="-1"></a><span class="co">#                                Minor = Minor),</span></span>
-<span id="cb293-110"><a href="sect032.html#cb293-110" aria-hidden="true" tabindex="-1"></a><span class="co">#                      geometry = ellipse)</span></span>
-<span id="cb293-111"><a href="sect032.html#cb293-111" aria-hidden="true" tabindex="-1"></a><span class="co">#   return(ellipse)</span></span>
-<span id="cb293-112"><a href="sect032.html#cb293-112" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
-<span id="cb293-113"><a href="sect032.html#cb293-113" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb293-114"><a href="sect032.html#cb293-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Ed1  &lt;- CreateEllipseW(id=&quot;2019&quot;,  pointsxy = xy, w = wd1, crs = ProjCarto)</span></span>
-<span id="cb293-115"><a href="sect032.html#cb293-115" aria-hidden="true" tabindex="-1"></a><span class="co"># Ed10 &lt;- CreateEllipseW(id=&quot;2020&quot;,  pointsxy = xy, w = wd10, crs = ProjCarto)</span></span>
-<span id="cb293-116"><a href="sect032.html#cb293-116" aria-hidden="true" tabindex="-1"></a><span class="co"># sf.EllipseW &lt;- rbind(Ed1, Ed10)</span></span>
-<span id="cb293-117"><a href="sect032.html#cb293-117" aria-hidden="true" tabindex="-1"></a><span class="co"># head(sf.EllipseW)</span></span>
-<span id="cb293-118"><a href="sect032.html#cb293-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb293-119"><a href="sect032.html#cb293-119" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb293-120"><a href="sect032.html#cb293-120" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Arrondissements)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">lwd =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span><span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;wheat&quot;</span>)<span class="sc">+</span></span>
-<span id="cb293-121"><a href="sect032.html#cb293-121" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(CentreMoyenPond) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;gray&quot;</span>)<span class="sc">+</span></span>
-<span id="cb293-122"><a href="sect032.html#cb293-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(sf.CercleDSW) <span class="sc">+</span></span>
-<span id="cb293-123"><a href="sect032.html#cb293-123" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">lwd =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;Decile&quot;</span>, <span class="at">border.col=</span><span class="st">&quot;black&quot;</span>, <span class="at">alpha=</span>.<span class="dv">3</span>)<span class="sc">+</span>               </span>
-<span id="cb293-124"><a href="sect032.html#cb293-124" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">frame=</span>F, <span class="at">title =</span> <span class="st">&quot;2019&quot;</span>)</span></code></pre></div>
+<span id="cb293-33"><a href="sect032.html#cb293-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb293-34"><a href="sect032.html#cb293-34" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb293-35"><a href="sect032.html#cb293-35" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Arrondissements)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">lwd =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span><span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;wheat&quot;</span>)<span class="sc">+</span></span>
+<span id="cb293-36"><a href="sect032.html#cb293-36" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(CentreMoyenPond) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;gray&quot;</span>)<span class="sc">+</span></span>
+<span id="cb293-37"><a href="sect032.html#cb293-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(sf.CercleDSW) <span class="sc">+</span></span>
+<span id="cb293-38"><a href="sect032.html#cb293-38" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">lwd =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;Decile&quot;</span>, <span class="at">border.col=</span><span class="st">&quot;black&quot;</span>, <span class="at">alpha=</span>.<span class="dv">3</span>, <span class="at">title=</span><span class="st">&quot;Décile&quot;</span>)<span class="sc">+</span>               </span>
+<span id="cb293-39"><a href="sect032.html#cb293-39" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">frame=</span>F, <span class="at">title =</span> <span class="st">&quot;2019&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:MesuresPonderees"></span>
 <img src="GMQ405_files/figure-html/MesuresPonderees-1.png" alt="Déciles extrêmes de revenu après impôt des familles économiques" width="85%" />
 <p class="caption">

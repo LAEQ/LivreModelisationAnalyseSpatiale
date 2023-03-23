@@ -255,7 +255,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.3" data-path="sect033.html"><a href="sect033.html"><i class="fa fa-check"></i><b>3.3</b> Forme d’un semis de points</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="sect033.html"><a href="sect033.html#sect0331"><i class="fa fa-check"></i><b>3.3.1</b> Méthode du plus proche voisin</a></li>
-<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthodes des quadrats</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthode des quadrats</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="sect034.html"><a href="sect034.html"><i class="fa fa-check"></i><b>3.4</b> Identification des agrégats spatiaux</a>
 <ul>
@@ -484,7 +484,7 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 </div>
 <div id="sect02313" class="section level4 hasAnchor" number="2.3.1.3">
 <h4><span class="header-section-number">2.3.1.3</span> Significativité du <em>I</em> de Moran<a href="sect023.html#sect02313" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Comme pour le coefficient de corrélation calculé entre deux variables, il est possible de tester la significativité de la valeur du <em>I</em> de Moran obtenu. Sans que nous détaillons les calculs de significativité, notez qu’il existe trois manières de tester la significativité :</p>
+<p>Comme pour le coefficient de corrélation calculé entre deux variables, il est possible de tester la significativité de la valeur du <em>I</em> de Moran obtenu. Sans que nous détaillions les calculs de significativité, notez qu’il existe trois manières de tester la significativité :</p>
 <ul>
 <li>selon l’hypothèse de la normalité</li>
 <li>selon l’hypothèse de la randomisation</li>
@@ -724,8 +724,8 @@ Figure 2.13: Résultats du <em>I</em> de Moran selon l’hypothèse de la loi no
 <li>D’emblée, signalons que toutes les valeurs sont positives et significatives, témoignant d’une autocorrélation spatiale positive.</li>
 <li>Concernant les <strong>matrices de contiguïté</strong>, la dépendance spatiale est plus forte selon le partage d’un segment que d’un nœud (0,4497 contre 0,4337). Par conséquent, si nous devons choisir une matrice de contiguïté, il serait préférable d’utiliser celle définie selon le partage d’une chaîne (<em>Rook</em>).</li>
 <li>Sans surprise, plus nous ajoutons des <strong>ordres d’adjacence</strong>, plus la valeur de la statistique du <em>I</em> de Moran est faible, passant de 0,3251 à 0,0713 du deuxième au cinquième ordre.</li>
-<li>La valeur du <em>I</em> de Moran avec une <strong>matrice de connectivité</strong> avec 2500 mètres est de 0,2558. Elle est plus faible que celles de l’inverse de la distance et l’inverse de la distance au carré avec le même seuil de 2500 mètres (0,3212 et 0,4035).</li>
-<li>Concernant les <strong>matrices de proximité</strong>, la méthode de l’inverse de la distance au carré qui accorde un poids plus important aux entités spatiales très proches (comparativement à l’inverse de la distance) renvoie des valeurs toujours plus élevées, et ce, que la matrice soit complète ou réduite. Aussi, les matrices de distance réduites présentent toujours des valeurs plus fortes que celles complètes.</li>
+<li>La valeur du <em>I</em> de Moran avec une <strong>matrice de connectivité</strong> avec 2500 mètres est de 0,2558. Elle est plus faible que celles de l’inverse de la distance et l’inverse de la distance au carré, avec le même seuil de 2500 mètres (0,3212 et 0,4035).</li>
+<li>Concernant les <strong>matrices de proximité</strong>, la méthode de l’inverse de la distance au carré, qui accorde un poids plus important aux entités spatiales très proches (comparativement à l’inverse de la distance), renvoie des valeurs toujours plus élevées, et ce, que la matrice soit complète ou réduite. Aussi, les matrices de distance réduites présentent toujours des valeurs plus fortes que celles complètes.</li>
 <li>Concernant les matrices <strong>selon le critère des plus proches voisins</strong>, l’autocorrélation spatiale diminue légèrement de <em>k</em> = 2 à <em>k</em> = 5. D’ailleurs, la valeur la plus forte est pour deux voisins (<em>I</em> = 0,5107). Toutefois, retenir uniquement deux voisins est discutable puisque les AD sont très majoritairement contiguës à plus de deux autres AD (sur les 249 AD, seuls 9 sont contiguës à deux autres AD selon le partage d’un segment). Pour le vérifier, tapez <code>summary(W.Rook)</code> et analysez le tableau sous la ligne <code>Link number distribution</code>.</li>
 </ul>
 <table>
@@ -853,7 +853,7 @@ Ordre 5
 W.Connect2500m
 </td>
 <td style="text-align:left;">
-2500 mètre
+2500 mètres
 </td>
 <td style="text-align:center;">
 0,2558
@@ -1053,7 +1053,7 @@ W.k5
 </tbody>
 </table>
 <p><strong>Quelle est la matrice avec laquelle la dépendance spatiale de la variable est la plus forte?</strong></p>
-<p>Pour la trouver, nous construisons un graphique avec les valeurs du <em>I</em> de Moran triées par ordre décroissant. La valeur la plus forte est obtenue avec la matrice selon les deux plus proches voisins, suivie de la matrice <em>Rook</em>. Quoiqu’il en soit, il serait plus judicieux de privilégier la matrice de contiguïté selon le partage d’un segment comme expliqué plus haut.</p>
+<p>Pour la trouver, nous construisons un graphique avec les valeurs du <em>I</em> de Moran triées par ordre décroissant. La valeur la plus forte est obtenue avec la matrice selon les deux plus proches voisins, suivie de la matrice <em>Rook</em>. Quoi qu’il en soit, il serait plus judicieux de privilégier la matrice de contiguïté selon le partage d’un segment comme expliqué plus haut.</p>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="sect023.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb250-2"><a href="sect023.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData1, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
 <span id="cb250-3"><a href="sect023.html#cb250-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
@@ -1081,7 +1081,7 @@ Figure 2.15: Quatre variables sélectionnées pour les AD de la ville de Sherbro
 </div>
 <div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="sect023.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour les variables à analyser</span></span>
 <span id="cb251-2"><a href="sect023.html#cb251-2" aria-hidden="true" tabindex="-1"></a>listeVars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;PctLog1960_Av&quot;</span>, <span class="st">&quot;RevMedMenage&quot;</span> , <span class="st">&quot;PctProprieta&quot;</span>, <span class="st">&quot;PctPop0_14&quot;</span>)</span>
-<span id="cb251-3"><a href="sect023.html#cb251-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour I de Moran et la valeur de p</span></span>
+<span id="cb251-3"><a href="sect023.html#cb251-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
 <span id="cb251-4"><a href="sect023.html#cb251-4" aria-hidden="true" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
 <span id="cb251-5"><a href="sect023.html#cb251-5" aria-hidden="true" tabindex="-1"></a>VarName <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
 <span id="cb251-6"><a href="sect023.html#cb251-6" aria-hidden="true" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
@@ -1107,7 +1107,7 @@ Figure 2.15: Quatre variables sélectionnées pour les AD de la ville de Sherbro
 ## 2  RevMedMenage  0.6168   0.001
 ## 3  PctProprieta  0.6028   0.001
 ## 4    PctPop0_14  0.4474   0.001</code></pre>
-<p>De nouveau, en quelques lignes de code, il est aisé de réaliser un graphique pour comparer les valeurs de <em>I</em> de Moran pour les différentes variables (figure <a href="sect023.html#fig:loliplotMoran2">2.16</a>).</p>
+<p>De nouveau, en quelques lignes de code, il est aisé de réaliser un graphique pour comparer les valeurs du <em>I</em> de Moran pour les différentes variables (figure <a href="sect023.html#fig:loliplotMoran2">2.16</a>).</p>
 <div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="sect023.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb253-2"><a href="sect023.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData2, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
 <span id="cb253-3"><a href="sect023.html#cb253-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>

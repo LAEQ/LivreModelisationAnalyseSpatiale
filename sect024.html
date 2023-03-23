@@ -255,7 +255,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.3" data-path="sect033.html"><a href="sect033.html"><i class="fa fa-check"></i><b>3.3</b> Forme d’un semis de points</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="sect033.html"><a href="sect033.html#sect0331"><i class="fa fa-check"></i><b>3.3.1</b> Méthode du plus proche voisin</a></li>
-<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthodes des quadrats</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>3.3.2</b> Méthode des quadrats</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="sect034.html"><a href="sect034.html"><i class="fa fa-check"></i><b>3.4</b> Identification des agrégats spatiaux</a>
 <ul>
@@ -449,7 +449,7 @@ Modélisation et analyse spatiale</a>
 <p>Nous avons vu que les statistiques d’autocorrélation globale comme le <em>I</em> de Moran renvoie une valeur pour l’ensemble de l’espace d’étude. Une fois démontrée la présence d’autocorrélation spatiale (positive ou négative), il est pertinent de réaliser une analyse de l’autocorrélation spatiale locale afin de vérifier si chaque entité spatiale est significativement (dis)semblable à celles voisines ou proches. Comme l’indique le terme <em>locale</em>, les mesures d’autocorrélation spatiale locale renvoient des valeurs pour chacune des entités spatiales.</p>
 <div id="sect0241" class="section level3 hasAnchor" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Statistiques locales de Getis et Ord : repérer les points chauds et froids<a href="sect024.html#sect0241" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Les statistiques locales de Getis et Ord <span class="citation">(<a href="#ref-getis1992analysis" role="doc-biblioref">Getis et Ord 1992</a>; <a href="#ref-ord1995local" role="doc-biblioref">Ord et Getis 1995</a>)</span> permettent d’évaluer la similarité d’une entité spatiale avec celles voisines ou proches. Autrement dit, elles nous informent si les valeurs fortes et les valeurs faibles d’une variable continue se regroupent significativement dans l’espace, et ce, avec n’importe quel type de matrice de contiguïté, de proximité, de plus proches voisins, etc. Cartographier ces statistiques permet alors de vérifier simultanément l’existence d’agrégats spatiaux de valeurs fortes (<strong>points chauds</strong>) et d’agrégats spatiaux de valeurs faibles (<strong>points froids</strong>).</p>
+<p>Les statistiques locales de Getis et Ord permettent d’évaluer la similarité d’une entité spatiale avec celles voisines ou proches <span class="citation">(<a href="#ref-getis1992analysis" role="doc-biblioref">Getis et Ord 1992</a>; <a href="#ref-ord1995local" role="doc-biblioref">Ord et Getis 1995</a>)</span>. Autrement dit, elles nous informent si les valeurs fortes et les valeurs faibles d’une variable continue se regroupent significativement dans l’espace, et ce, avec n’importe quel type de matrice de contiguïté, de proximité, de plus proches voisins, etc. Cartographier ces statistiques permet alors de vérifier simultanément l’existence d’agrégats spatiaux de valeurs fortes (<strong>points chauds</strong>) et d’agrégats spatiaux de valeurs faibles (<strong>points froids</strong>).</p>
 <p>Il existe deux versions légèrement différentes de ces mesures locales <span class="citation">(<a href="#ref-getis1992analysis" role="doc-biblioref">Getis et Ord 1992</a>; <a href="#ref-ord1995local" role="doc-biblioref">Ord et Getis 1995</a>)</span> :</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(G_i\)</span> tient compte uniquement des entités voisines ou proches à l’entité spatiale <span class="math inline">\(i\)</span>. Ainsi, <span class="math inline">\(\Sigma_{j=1}^n w_{ij}x_j\)</span> représente la moyenne pondérée (par les poids de la matrice de pondération spatiale standardisée en ligne) de la variable continue <span class="math inline">\(X\)</span> dans les entités voisines ou proches.</p></li>
@@ -477,7 +477,7 @@ avec :</p>
 <li><p><em>n</em>, le nombre d’entités spatiales dans la couche géographique;</p></li>
 <li><p><span class="math inline">\(w_{ij}\)</span>, la valeur de la pondération spatiale entre les entités spatiales <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span>;</p></li>
 <li><p><span class="math inline">\(x_j\)</span>, la valeur de variable continue <span class="math inline">\(X\)</span> pour l’entité spatiale <span class="math inline">\(j\)</span>;</p></li>
-<li><p><span class="math inline">\(\bar{x^*}\)</span>, la valeur moyenne de la variable pour toutes les observations.</p></li>
+<li><p><span class="math inline">\(\bar{x^*}\)</span>, la valeur moyenne de la variable pour toutes les observations;</p></li>
 <li><p><span class="math inline">\(\bar{x_i}\)</span>, la valeur moyenne de la variable pour toutes les observations sauf <span class="math inline">\(i\)</span>.</p></li>
 </ul>
 <div class="bloc_astuce">
@@ -505,7 +505,7 @@ avec :</p>
 <span id="cb254-2"><a href="sect024.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de pondération</span></span>
 <span id="cb254-3"><a href="sect024.html#cb254-3" aria-hidden="true" tabindex="-1"></a>W.RookG    <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook1, <span class="at">zero.policy=</span><span class="cn">TRUE</span>)</span>
 <span id="cb254-4"><a href="sect024.html#cb254-4" aria-hidden="true" tabindex="-1"></a>W.RookStar <span class="ot">&lt;-</span><span class="fu">nb2listw</span>(<span class="fu">include.self</span>(Rook1), <span class="at">zero.policy=</span><span class="cn">TRUE</span>) <span class="co"># matrice incluant elle-même</span></span>
-<span id="cb254-5"><a href="sect024.html#cb254-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du Z(Gi) et Z(Gi*)</span></span>
+<span id="cb254-5"><a href="sect024.html#cb254-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du Z(Gi) et du Z(Gi*)</span></span>
 <span id="cb254-6"><a href="sect024.html#cb254-6" aria-hidden="true" tabindex="-1"></a>localGetis     <span class="ot">&lt;-</span> <span class="fu">localG</span>(AD.DR<span class="sc">$</span>RevMedMenage, W.RookG)</span>
 <span id="cb254-7"><a href="sect024.html#cb254-7" aria-hidden="true" tabindex="-1"></a>localGetisStar <span class="ot">&lt;-</span> <span class="fu">localG</span>(AD.DR<span class="sc">$</span>RevMedMenage, W.RookStar)</span>
 <span id="cb254-8"><a href="sect024.html#cb254-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul avec la méthode Monte-Carlo (999 permutations)</span></span>
@@ -520,10 +520,10 @@ avec :</p>
 ## -4.04870 -1.88689 -0.13297 -0.03841  1.54641  4.10379</code></pre>
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="sect024.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localGetis.MC999)</span></code></pre></div>
 <pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -3.80238 -1.64318 -0.10652 -0.04291  1.42135  3.90981</code></pre>
+## -3.76711 -1.62385 -0.09262 -0.03812  1.40147  3.89759</code></pre>
 <div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="sect024.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localGetis.StarMC999)</span></code></pre></div>
 <pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -4.06071 -1.87237 -0.17310 -0.06546  1.49315  4.04360</code></pre>
+## -3.93459 -1.87358 -0.15445 -0.06492  1.46975  4.05172</code></pre>
 <p>Cartographions ces valeurs et repérons les regroupements de valeurs significativement fortes et faibles avec les statistiques de Getis et Ord (figures <a href="sect024.html#fig:GetisLocaleClassique">2.17</a> et <a href="sect024.html#fig:GetisLocaleMC">2.18</a>). Les quatre cartes sont très semblables et permettent de repérer un regroupement de valeurs faibles dans le centre-ville et un autre de valeurs fortes dans l’est de la ville.</p>
 <div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="sect024.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrons les résultats dans deux nouveaux champs de la couche des AD</span></span>
 <span id="cb262-2"><a href="sect024.html#cb262-2" aria-hidden="true" tabindex="-1"></a>AD.DR<span class="sc">$</span>RevMed_localGetis <span class="ot">&lt;-</span> localGetis</span>
@@ -625,10 +625,10 @@ I_i = \frac{(x_i-\bar{X})\Sigma_{j=1}^n w_{ij}(x_j-\bar{X})}
 <p>Pour comprendre les différentes variantes pour tester la significativité <span class="citation">(<a href="#ref-anselin1995local" role="doc-biblioref">Anselin 1995</a>; <a href="#ref-sokal1998local" role="doc-biblioref">Sokal, Oden et Thomson 1998</a>)</span>, consultez Bivand et Wong <span class="citation">(<a href="#ref-bivand2018comparing" role="doc-biblioref">2018</a>)</span> ou l’ouvrage de Dubé et Legros <span class="citation">(<a href="#ref-dube2014econometrie" role="doc-biblioref">2014</a>)</span>.</p>
 </div>
 <p>Le calcul du <em>I</em> de Moran local s’opère avec les fonctions <code>localmoran</code> et <code>localMoranI.mc</code> du <em>package</em> <code>spdep</code> (voir la syntaxe ci-dessous). Comme pour la version globale, les résultats du <em>I</em> de Moran local sont les mêmes pour les deux fonctions, seules les valeurs de <em>p</em> peuvent varier.</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="sect024.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul de I de Moran</span></span>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="sect024.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du I de Moran</span></span>
 <span id="cb264-2"><a href="sect024.html#cb264-2" aria-hidden="true" tabindex="-1"></a>localMoranI <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(AD.DR<span class="sc">$</span>RevMedMenage,  <span class="co"># variable</span></span>
 <span id="cb264-3"><a href="sect024.html#cb264-3" aria-hidden="true" tabindex="-1"></a>                          W.Rook)              <span class="co"># matrice de pondération spatiale</span></span>
-<span id="cb264-4"><a href="sect024.html#cb264-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul de I de Moran avec la méthode Monte-Carlo</span></span>
+<span id="cb264-4"><a href="sect024.html#cb264-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du I de Moran avec la méthode Monte-Carlo</span></span>
 <span id="cb264-5"><a href="sect024.html#cb264-5" aria-hidden="true" tabindex="-1"></a>localMoranI.mc <span class="ot">&lt;-</span> <span class="fu">localmoran_perm</span>(AD.DR<span class="sc">$</span>RevMedMenage, <span class="co"># variable</span></span>
 <span id="cb264-6"><a href="sect024.html#cb264-6" aria-hidden="true" tabindex="-1"></a>                             W.Rook,                  <span class="co"># matrice de pondération spatiale</span></span>
 <span id="cb264-7"><a href="sect024.html#cb264-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">nsim =</span> <span class="dv">999</span>)              <span class="co"># nombre de permutations       </span></span>
@@ -650,26 +650,26 @@ I_i = \frac{(x_i-\bar{X})\Sigma_{j=1}^n w_{ij}(x_j-\bar{X})}
 ##  Max.   :0.9833048</code></pre>
 <div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="sect024.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(localMoranI.mc)</span></code></pre></div>
 <pre><code>##        Ii                E.Ii               Var.Ii               Z.Ii        
-##  Min.   :-0.90053   Min.   :-0.085043   Min.   :0.0000003   Min.   :-1.9718  
-##  1st Qu.: 0.08313   1st Qu.:-0.009758   1st Qu.:0.0378123   1st Qu.: 0.4551  
-##  Median : 0.49029   Median :-0.001495   Median :0.1333548   Median : 1.4295  
-##  Mean   : 0.61678   Mean   :-0.004251   Mean   :0.2187766   Mean   : 1.2410  
-##  3rd Qu.: 0.97602   3rd Qu.: 0.003396   3rd Qu.:0.2531673   3rd Qu.: 2.1688  
-##  Max.   : 3.37625   Max.   : 0.034070   Max.   :1.9178071   Max.   : 3.9136  
-##  Pr(z != E(Ii))      Pr(z != E(Ii)) Sim Pr(folded) Sim      Skewness        
-##  Min.   :0.0000909   Min.   :0.0020     Min.   :0.0010   Min.   :-0.402751  
-##  1st Qu.:0.0300961   1st Qu.:0.0220     1st Qu.:0.0110   1st Qu.:-0.206372  
-##  Median :0.1257359   Median :0.1320     Median :0.0660   Median :-0.082433  
-##  Mean   :0.2498744   Mean   :0.2553     Mean   :0.1277   Mean   :-0.003358  
-##  3rd Qu.:0.4067943   3rd Qu.:0.4020     3rd Qu.:0.2010   3rd Qu.: 0.210838  
-##  Max.   :0.9812329   Max.   :1.0000     Max.   :0.5000   Max.   : 0.464612  
+##  Min.   :-0.90053   Min.   :-0.138088   Min.   :0.0000003   Min.   :-1.9123  
+##  1st Qu.: 0.08313   1st Qu.:-0.009181   1st Qu.:0.0375357   1st Qu.: 0.4456  
+##  Median : 0.49029   Median :-0.001333   Median :0.1362281   Median : 1.4288  
+##  Mean   : 0.61678   Mean   :-0.004198   Mean   :0.2172078   Mean   : 1.2405  
+##  3rd Qu.: 0.97602   3rd Qu.: 0.003501   3rd Qu.:0.2547589   3rd Qu.: 2.1999  
+##  Max.   : 3.37625   Max.   : 0.043981   Max.   :1.7978903   Max.   : 3.8513  
+##  Pr(z != E(Ii))      Pr(z != E(Ii)) Sim Pr(folded) Sim      Skewness       
+##  Min.   :0.0001175   Min.   :0.0020     Min.   :0.0010   Min.   :-0.40467  
+##  1st Qu.:0.0278126   1st Qu.:0.0240     1st Qu.:0.0120   1st Qu.:-0.20771  
+##  Median :0.1238283   Median :0.1320     Median :0.0660   Median :-0.08066  
+##  Mean   :0.2482565   Mean   :0.2534     Mean   :0.1267   Mean   :-0.01279  
+##  3rd Qu.:0.4060599   3rd Qu.:0.4080     3rd Qu.:0.2040   3rd Qu.: 0.20780  
+##  Max.   :0.9580240   Max.   :0.9960     Max.   :0.4980   Max.   : 0.42929  
 ##     Kurtosis      
-##  Min.   :-0.5560  
-##  1st Qu.:-0.2750  
-##  Median :-0.1884  
-##  Mean   :-0.1748  
-##  3rd Qu.:-0.0773  
-##  Max.   : 0.2578</code></pre>
+##  Min.   :-0.4838  
+##  1st Qu.:-0.2843  
+##  Median :-0.1830  
+##  Mean   :-0.1803  
+##  3rd Qu.:-0.0798  
+##  Max.   : 0.3485</code></pre>
 <p>Avec la cartographie du <em>I</em> de Moran local, nous repérons localement l’autocorrélation spatiale positive (valeurs similaires, fortes ou faibles localement) et l’autocorrélation spatiale négative (valeurs dissemblables localement) (figure <a href="sect024.html#fig:Chap02CartoIMoranLocal">2.19</a>).</p>
 <div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="sect024.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Ajout de champs pour le I de Moran local</span></span>
 <span id="cb268-2"><a href="sect024.html#cb268-2" aria-hidden="true" tabindex="-1"></a>AD.DR<span class="sc">$</span>RevMed_IlocalMoran.MC999 <span class="ot">&lt;-</span> localMoranI.mc[, <span class="dv">1</span>]</span>
@@ -805,7 +805,7 @@ Figure 2.21: Nuage de points du <em>I</em> de Moran d’Anselin
 <span id="cb269-68"><a href="sect024.html#cb269-68" aria-hidden="true" tabindex="-1"></a>           <span class="at">titreAxeX =</span> <span class="st">&quot;ZX : Revenu médian des ménages centré réduit&quot;</span>,</span>
 <span id="cb269-69"><a href="sect024.html#cb269-69" aria-hidden="true" tabindex="-1"></a>           <span class="at">titreAxeY =</span> <span class="st">&quot;WZ : Variable ZX spatialement décalée&quot;</span>,</span>
 <span id="cb269-70"><a href="sect024.html#cb269-70" aria-hidden="true" tabindex="-1"></a>           <span class="at">AfficheAide=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<p>Reste à déterminer si l’autocorrélation spatiale locale pour ces quatre quadrants est significative. Rien de plus simple, il suffit d’utiliser la valeur de <em>p</em> du <em>I</em> de Moran (section <a href="sect024.html#sect0242">2.4.2</a>). Nous choisissons un seuil de signification (habituellement p = 0,05) et obtenons ainsi la typologie comprenant cinq catégories :</p>
+<p>Reste à déterminer si l’autocorrélation spatiale locale pour ces quatre quadrants est significative. Rien de plus simple, il suffit d’utiliser la valeur de <em>p</em> du <em>I</em> de Moran (section <a href="sect024.html#sect0242">2.4.2</a>). Nous choisissons un seuil de signification (habituellement <em>p</em> = 0,05) et obtenons ainsi la typologie comprenant cinq catégories :</p>
 <ul>
 <li>Autocorrélation spatiale locale positive et significative (p &lt; 0,05).
 <ol style="list-style-type: decimal">
@@ -830,7 +830,7 @@ Figure 2.21: Nuage de points du <em>I</em> de Moran d’Anselin
 <span id="cb270-6"><a href="sect024.html#cb270-6" aria-hidden="true" tabindex="-1"></a>localMoranI   <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(AD.DR<span class="sc">$</span>RevMedMenage, W.Rook)</span>
 <span id="cb270-7"><a href="sect024.html#cb270-7" aria-hidden="true" tabindex="-1"></a><span class="co">#localMoranI.mc   &lt;- localmoran_perm(AD.DR$RevMedMenage, W.Rook, n=999)</span></span>
 <span id="cb270-8"><a href="sect024.html#cb270-8" aria-hidden="true" tabindex="-1"></a>plocalMoranI  <span class="ot">&lt;-</span> localMoranI[, <span class="dv">5</span>]</span>
-<span id="cb270-9"><a href="sect024.html#cb270-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Choix un seuil de signification</span></span>
+<span id="cb270-9"><a href="sect024.html#cb270-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Choix d&#39;un seuil de signification</span></span>
 <span id="cb270-10"><a href="sect024.html#cb270-10" aria-hidden="true" tabindex="-1"></a>signif <span class="ot">=</span> <span class="fl">0.05</span></span>
 <span id="cb270-11"><a href="sect024.html#cb270-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Construction de la typologie</span></span>
 <span id="cb270-12"><a href="sect024.html#cb270-12" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;1. HH&quot;</span>, <span class="cn">NA</span>)</span>
