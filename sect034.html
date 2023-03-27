@@ -651,7 +651,7 @@ X
 <p>Pour calculer la densité dans une maille régulière (KDE), vous pouvez utiliser deux <em>packages</em> :</p>
 <ol style="list-style-type: decimal">
 <li><code>SpatialKDE</code>, un <em>package</em> proposé très récemment qui reprend le code de l’outil <em>Carte de chaleur (estimation par noyau)</em> de QGIS <span class="citation">(<a href="#ref-SpatialKDEPackage" role="doc-biblioref">Caha 2023</a>)</span>. Vous obtiendrez donc les mêmes fonctionnalités et résultats qu’avec QGIS. Pour un exemple d’utilisation, consultez <a href="https://cran.r-project.org/web/packages/SpatialKDE/vignettes/SpatialKDE.html">cette vignette</a>.</li>
-<li><code>spatstat</code>, soit le <em>package</em> le plus complet pour réaliser des analyses de répartition ponctuelle <span class="citation">(<a href="#ref-spatstatPackage" role="doc-biblioref">Baddeley et Turner 2005</a>; <a href="#ref-baddeley2015spatial" role="doc-biblioref">Baddeley, Rubak et Turner 2015</a>)</span>. Par conséquent, nous privilégions son utilisation dans les exemple ci-dessous.</li>
+<li><code>spatstat</code>, soit le <em>package</em> le plus complet pour réaliser des analyses de répartition ponctuelle <span class="citation">(<a href="#ref-spatstatPackage" role="doc-biblioref">Baddeley et Turner 2005</a>; <a href="#ref-baddeley2015spatial" role="doc-biblioref">Baddeley, Rubak et Turner 2015</a>)</span>. Par conséquent, nous privilégions son utilisation dans les exemples ci-dessous.</li>
 </ol>
 <p>Afin d’expliquer comment réaliser un KDE dans R, nous utilisons les accidents survenus dans l’arrondissement des Nations. Notez que nous retenons uniquement cet arrondissement et non l’ensemble de la ville afin d’accélérer les temps de calculs.</p>
 <div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="sect034.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -871,7 +871,7 @@ Figure 3.19: Comparaison des résultats du KDE selon le rayon d’influence
 </div>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-baddeley2015spatial" class="csl-entry">
 Baddeley, Adrian, Ege Rubak et Rolf Turner. 2015. <em>Spatial point patterns: methodology and applications with R</em>. CRC press.

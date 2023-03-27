@@ -453,9 +453,9 @@ Modélisation et analyse spatiale</a>
 <li><strong>Distribution concentrée</strong> quand il existe des regroupements des points dans une ou plusieurs parties de la région d’étude. Par exemple, les musées et les théâtres sont habituellement concentrés dans les parties centrales des métropoles.</li>
 </ol>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FormeSemisDePoints3Types"></span>
-<img src="images/Chap03/FigureTroisTypesDistributions.png" alt="Trois types de distribution spatiales d'un semis de points" width="65%" />
+<img src="images/Chap03/FigureTroisTypesDistributions.png" alt="Trois types de distribution spatiale d'un semis de points" width="65%" />
 <p class="caption">
-Figure 3.10: Trois types de distribution spatiales d’un semis de points
+Figure 3.10: Trois types de distribution spatiale d’un semis de points
 </p>
 </div>
 <div class="bloc_attention">
@@ -910,7 +910,7 @@ D_{\alpha = \text{0,05}}= \frac{\text{1,36}}{\sqrt{m}}\text{ avec }
 <span id="cb307-7"><a href="sect033.html#cb307-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="GMQ405_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <p>La figure ci-dessus permet de constater que certains carrés et hexagones n’intersectent pas l’espace d’étude. Par conséquent, nous allons les supprimer puis calculer le nombre de points par carré et par hexagone.</p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="sect033.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Suppression des carrées qui n&#39;intersectent pas les quatre arrondissements</span></span>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="sect033.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Suppression des carrés qui n&#39;intersectent pas les quatre arrondissements</span></span>
 <span id="cb308-2"><a href="sect033.html#cb308-2" aria-hidden="true" tabindex="-1"></a>RequeteSpatiale <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(Carres.sf, </span>
 <span id="cb308-3"><a href="sect033.html#cb308-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">st_union</span>(Arrondissements), <span class="at">sparse =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb308-4"><a href="sect033.html#cb308-4" aria-hidden="true" tabindex="-1"></a>Carres.sf<span class="sc">$</span>Intersect <span class="ot">&lt;-</span> RequeteSpatiale[, <span class="dv">1</span>]</span>
@@ -1009,12 +1009,12 @@ Figure 3.14: Nombre de méfaits dans les deux géométries de quadrats
 <span id="cb315-18"><a href="sect033.html#cb315-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Ces fenêtres sont ensuite converties en un objet tess (tesselation)</span></span>
 <span id="cb315-19"><a href="sect033.html#cb315-19" aria-hidden="true" tabindex="-1"></a>TessalationC <span class="ot">&lt;-</span> <span class="fu">as.tess</span>(FenetresC)</span>
 <span id="cb315-20"><a href="sect033.html#cb315-20" aria-hidden="true" tabindex="-1"></a>TessalationH <span class="ot">&lt;-</span> <span class="fu">as.tess</span>(FenetresH)</span></code></pre></div>
-<p>Nous pouvons calculer différentes tests avec la fonction <code>quadrat.test</code>.
-Dans un premier temps, nous vérifions si <strong>la distribution est dispersée</strong> avec la méthode Monte-Carlo et 999 permutations (<code>alternative ="regular"</code>). Que ce soit avec les quadrats carrés ou hexagonaux, la valeur de <em>p</em> est égale à 0. Cela signifie que nous sommes 100% certains que la distribution n’est pas dispersée.</p>
+<p>Nous pouvons calculer différents tests avec la fonction <code>quadrat.test</code>.
+Dans un premier temps, nous vérifions si <strong>la distribution est dispersée</strong> avec la méthode Monte-Carlo et 999 permutations (<code>alternative ="regular"</code>). Que ce soit avec les quadrats carrés ou hexagonaux, la valeur de <em>p</em> est égale à 0. Cela signifie que nous sommes 100 % certains que la distribution n’est pas dispersée.</p>
 <div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="sect033.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Réalisation des différents tests du khi-deux</span></span>
 <span id="cb316-2"><a href="sect033.html#cb316-2" aria-hidden="true" tabindex="-1"></a><span class="co"># test pour une distribution dispersée (Carrés)</span></span>
-<span id="cb316-3"><a href="sect033.html#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Test pour une distribution dispersée avec les quadrats carrées&quot;</span>)</span></code></pre></div>
-<pre><code>## Test pour une distribution dispersée avec les quadrats carrées</code></pre>
+<span id="cb316-3"><a href="sect033.html#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Test pour une distribution dispersée avec les quadrats carrés&quot;</span>)</span></code></pre></div>
+<pre><code>## Test pour une distribution dispersée avec les quadrats carrés</code></pre>
 <div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="sect033.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat.test</span>(M2020.ppp, <span class="at">tess =</span> TessalationC,</span>
 <span id="cb318-2"><a href="sect033.html#cb318-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">method =</span> <span class="st">&quot;MonteCarlo&quot;</span>, <span class="at">nsim =</span> <span class="dv">999</span>,</span>
 <span id="cb318-3"><a href="sect033.html#cb318-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alternative =</span><span class="st">&quot;regular&quot;</span>)  <span class="co"># dispersée</span></span></code></pre></div>
@@ -1074,7 +1074,7 @@ Dans un premier temps, nous vérifions si <strong>la distribution est dispersée
 </div>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-mitchel2005esri" class="csl-entry">
 Mitchel, Andy et al. 2005. <em>The ESRI Guide to GIS analysis, Volume 2: Spartial measurements and statistics</em>. ESRI press.
