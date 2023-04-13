@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.3 Autocorrélation spatiale globale | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.3 Autocorrélation spatiale globale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
@@ -51,16 +51,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -103,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -269,11 +269,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="sect041.html"><a href="sect041.html"><i class="fa fa-check"></i><b>4.1</b> Agrégats d’entités spatiales ponctuelles</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN</a></li>
-<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> HDBSCAN</a></li>
-<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0413"><i class="fa fa-check"></i><b>4.1.3</b> OPTICS</a></li>
-<li class="chapter" data-level="4.1.4" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.4</b> Agrégats spatio-temporels : ST-DBSCAN</a></li>
-<li class="chapter" data-level="4.1.5" data-path="sect041.html"><a href="sect041.html#sect0415"><i class="fa fa-check"></i><b>4.1.5</b> Mise en oeuvre dans R</a></li>
+<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN : agrégats spatiaux</a></li>
+<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> ST-DBSCAN : agrégats spatio-temporels</a></li>
+<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="sect042.html"><a href="sect042.html"><i class="fa fa-check"></i><b>4.2</b> Méthodes de balayage de Kulldorff</a>
 <ul>
@@ -510,79 +508,79 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 </div>
 <div id="sect02321" class="section level4 hasAnchor" number="2.3.2.1">
 <h4><span class="header-section-number">2.3.2.1</span> Étape 1. Construction des matrices de pondération spatiale<a href="sect023.html#sect02321" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="sect023.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb241-2"><a href="sect023.html#cb241-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb241-3"><a href="sect023.html#cb241-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des aires de diffusion de la ville de Sherbrooke</span></span>
-<span id="cb241-4"><a href="sect023.html#cb241-4" aria-hidden="true" tabindex="-1"></a>AD.DR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
-<span id="cb241-5"><a href="sect023.html#cb241-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbADDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb241-6"><a href="sect023.html#cb241-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb241-7"><a href="sect023.html#cb241-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de contiguïté</span></span>
-<span id="cb241-8"><a href="sect023.html#cb241-8" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################</span></span>
-<span id="cb241-9"><a href="sect023.html#cb241-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un nœud (Queen)</span></span>
-<span id="cb241-10"><a href="sect023.html#cb241-10" aria-hidden="true" tabindex="-1"></a>Queen <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">TRUE</span>)</span>
-<span id="cb241-11"><a href="sect023.html#cb241-11" aria-hidden="true" tabindex="-1"></a>W.Queen <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Queen, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-12"><a href="sect023.html#cb241-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook)</span></span>
-<span id="cb241-13"><a href="sect023.html#cb241-13" aria-hidden="true" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
-<span id="cb241-14"><a href="sect023.html#cb241-14" aria-hidden="true" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-15"><a href="sect023.html#cb241-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook) et ordres d&#39;adjacence de 2 à 5</span></span>
-<span id="cb241-16"><a href="sect023.html#cb241-16" aria-hidden="true" tabindex="-1"></a>Rook2 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">2</span>))</span>
-<span id="cb241-17"><a href="sect023.html#cb241-17" aria-hidden="true" tabindex="-1"></a>Rook3 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">3</span>))</span>
-<span id="cb241-18"><a href="sect023.html#cb241-18" aria-hidden="true" tabindex="-1"></a>Rook4 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">4</span>))</span>
-<span id="cb241-19"><a href="sect023.html#cb241-19" aria-hidden="true" tabindex="-1"></a>Rook5 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">5</span>))</span>
-<span id="cb241-20"><a href="sect023.html#cb241-20" aria-hidden="true" tabindex="-1"></a>W.Rook2 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook2, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-21"><a href="sect023.html#cb241-21" aria-hidden="true" tabindex="-1"></a>W.Rook3 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook3, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-22"><a href="sect023.html#cb241-22" aria-hidden="true" tabindex="-1"></a>W.Rook4 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook4, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-23"><a href="sect023.html#cb241-23" aria-hidden="true" tabindex="-1"></a>W.Rook5 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook5, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-24"><a href="sect023.html#cb241-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb241-25"><a href="sect023.html#cb241-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de connectivité</span></span>
-<span id="cb241-26"><a href="sect023.html#cb241-26" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################</span></span>
-<span id="cb241-27"><a href="sect023.html#cb241-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice binaire avec un seuil de 2500 mètres</span></span>
-<span id="cb241-28"><a href="sect023.html#cb241-28" aria-hidden="true" tabindex="-1"></a>Connect2500m <span class="ot">&lt;-</span>   <span class="fu">dnearneigh</span>(<span class="fu">st_centroid</span>(AD.DR), <span class="at">d1 =</span> <span class="dv">0</span>, <span class="at">d2 =</span> <span class="dv">2500</span>)</span>
-<span id="cb241-29"><a href="sect023.html#cb241-29" aria-hidden="true" tabindex="-1"></a>W.Connect2500m <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Connect2500m, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-30"><a href="sect023.html#cb241-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb241-31"><a href="sect023.html#cb241-31" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de proximité</span></span>
-<span id="cb241-32"><a href="sect023.html#cb241-32" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################</span></span>
-<span id="cb241-33"><a href="sect023.html#cb241-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques et matrice de distance</span></span>
-<span id="cb241-34"><a href="sect023.html#cb241-34" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(AD.DR))</span>
-<span id="cb241-35"><a href="sect023.html#cb241-35" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(coords, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>))</span>
-<span id="cb241-36"><a href="sect023.html#cb241-36" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(distances) <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb241-37"><a href="sect023.html#cb241-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices inverse de la distance et inverse de la distance au carré</span></span>
-<span id="cb241-38"><a href="sect023.html#cb241-38" aria-hidden="true" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, distances)</span>
-<span id="cb241-39"><a href="sect023.html#cb241-39" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, distances)</span>
-<span id="cb241-40"><a href="sect023.html#cb241-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
-<span id="cb241-41"><a href="sect023.html#cb241-41" aria-hidden="true" tabindex="-1"></a>W.InvDistances  <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-42"><a href="sect023.html#cb241-42" aria-hidden="true" tabindex="-1"></a>W.InvDistances2 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-43"><a href="sect023.html#cb241-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de différentes matrices avec différents seuils</span></span>
-<span id="cb241-44"><a href="sect023.html#cb241-44" aria-hidden="true" tabindex="-1"></a>InvDistances<span class="fl">.2500</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
-<span id="cb241-45"><a href="sect023.html#cb241-45" aria-hidden="true" tabindex="-1"></a>InvDistances<span class="fl">.5000</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
-<span id="cb241-46"><a href="sect023.html#cb241-46" aria-hidden="true" tabindex="-1"></a>InvDistances2<span class="fl">.2500</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb241-47"><a href="sect023.html#cb241-47" aria-hidden="true" tabindex="-1"></a>InvDistances2<span class="fl">.5000</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb241-48"><a href="sect023.html#cb241-48" aria-hidden="true" tabindex="-1"></a>W.InvDistances_2500 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-49"><a href="sect023.html#cb241-49" aria-hidden="true" tabindex="-1"></a>W.InvDistances_5000 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-50"><a href="sect023.html#cb241-50" aria-hidden="true" tabindex="-1"></a>W.InvDistances2_2500 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-51"><a href="sect023.html#cb241-51" aria-hidden="true" tabindex="-1"></a>W.InvDistances2_5000 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-52"><a href="sect023.html#cb241-52" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de distance réduite standardisée</span></span>
-<span id="cb241-53"><a href="sect023.html#cb241-53" aria-hidden="true" tabindex="-1"></a>k1 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords))</span>
-<span id="cb241-54"><a href="sect023.html#cb241-54" aria-hidden="true" tabindex="-1"></a>plusprochevoisin.max <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">unlist</span>(<span class="fu">nbdists</span>(k1,coords)))</span>
-<span id="cb241-55"><a href="sect023.html#cb241-55" aria-hidden="true" tabindex="-1"></a>Voisins.DistMax <span class="ot">&lt;-</span> <span class="fu">dnearneigh</span>(coords, <span class="dv">0</span>, plusprochevoisin.max)                            </span>
-<span id="cb241-56"><a href="sect023.html#cb241-56" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">nbdists</span>(Voisins.DistMax, coords)</span>
-<span id="cb241-57"><a href="sect023.html#cb241-57" aria-hidden="true" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x))</span>
-<span id="cb241-58"><a href="sect023.html#cb241-58" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb241-59"><a href="sect023.html#cb241-59" aria-hidden="true" tabindex="-1"></a>W_InvDistancesReduite  <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-60"><a href="sect023.html#cb241-60" aria-hidden="true" tabindex="-1"></a>W_InvDistances2Reduite <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances2, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-61"><a href="sect023.html#cb241-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb241-62"><a href="sect023.html#cb241-62" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice selon le critère des plus proches voisins</span></span>
-<span id="cb241-63"><a href="sect023.html#cb241-63" aria-hidden="true" tabindex="-1"></a><span class="do">#####################################################</span></span>
-<span id="cb241-64"><a href="sect023.html#cb241-64" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices des plus proches voisins de 2 à 5</span></span>
-<span id="cb241-65"><a href="sect023.html#cb241-65" aria-hidden="true" tabindex="-1"></a>k2 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">2</span>))</span>
-<span id="cb241-66"><a href="sect023.html#cb241-66" aria-hidden="true" tabindex="-1"></a>k3 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">3</span>))</span>
-<span id="cb241-67"><a href="sect023.html#cb241-67" aria-hidden="true" tabindex="-1"></a>k4 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">4</span>))</span>
-<span id="cb241-68"><a href="sect023.html#cb241-68" aria-hidden="true" tabindex="-1"></a>k5 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">5</span>))</span>
-<span id="cb241-69"><a href="sect023.html#cb241-69" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
-<span id="cb241-70"><a href="sect023.html#cb241-70" aria-hidden="true" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k2, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-71"><a href="sect023.html#cb241-71" aria-hidden="true" tabindex="-1"></a>W.k3 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k3, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-72"><a href="sect023.html#cb241-72" aria-hidden="true" tabindex="-1"></a>W.k4 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k4, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb241-73"><a href="sect023.html#cb241-73" aria-hidden="true" tabindex="-1"></a>W.k5 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k5, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="sect023.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb242-2"><a href="sect023.html#cb242-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb242-3"><a href="sect023.html#cb242-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des aires de diffusion de la ville de Sherbrooke</span></span>
+<span id="cb242-4"><a href="sect023.html#cb242-4" aria-hidden="true" tabindex="-1"></a>AD.DR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
+<span id="cb242-5"><a href="sect023.html#cb242-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbADDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb242-6"><a href="sect023.html#cb242-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-7"><a href="sect023.html#cb242-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de contiguïté</span></span>
+<span id="cb242-8"><a href="sect023.html#cb242-8" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################</span></span>
+<span id="cb242-9"><a href="sect023.html#cb242-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un nœud (Queen)</span></span>
+<span id="cb242-10"><a href="sect023.html#cb242-10" aria-hidden="true" tabindex="-1"></a>Queen <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">TRUE</span>)</span>
+<span id="cb242-11"><a href="sect023.html#cb242-11" aria-hidden="true" tabindex="-1"></a>W.Queen <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Queen, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-12"><a href="sect023.html#cb242-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook)</span></span>
+<span id="cb242-13"><a href="sect023.html#cb242-13" aria-hidden="true" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
+<span id="cb242-14"><a href="sect023.html#cb242-14" aria-hidden="true" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-15"><a href="sect023.html#cb242-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook) et ordres d&#39;adjacence de 2 à 5</span></span>
+<span id="cb242-16"><a href="sect023.html#cb242-16" aria-hidden="true" tabindex="-1"></a>Rook2 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">2</span>))</span>
+<span id="cb242-17"><a href="sect023.html#cb242-17" aria-hidden="true" tabindex="-1"></a>Rook3 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">3</span>))</span>
+<span id="cb242-18"><a href="sect023.html#cb242-18" aria-hidden="true" tabindex="-1"></a>Rook4 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">4</span>))</span>
+<span id="cb242-19"><a href="sect023.html#cb242-19" aria-hidden="true" tabindex="-1"></a>Rook5 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">5</span>))</span>
+<span id="cb242-20"><a href="sect023.html#cb242-20" aria-hidden="true" tabindex="-1"></a>W.Rook2 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook2, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-21"><a href="sect023.html#cb242-21" aria-hidden="true" tabindex="-1"></a>W.Rook3 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook3, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-22"><a href="sect023.html#cb242-22" aria-hidden="true" tabindex="-1"></a>W.Rook4 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook4, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-23"><a href="sect023.html#cb242-23" aria-hidden="true" tabindex="-1"></a>W.Rook5 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook5, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-24"><a href="sect023.html#cb242-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-25"><a href="sect023.html#cb242-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de connectivité</span></span>
+<span id="cb242-26"><a href="sect023.html#cb242-26" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################</span></span>
+<span id="cb242-27"><a href="sect023.html#cb242-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice binaire avec un seuil de 2500 mètres</span></span>
+<span id="cb242-28"><a href="sect023.html#cb242-28" aria-hidden="true" tabindex="-1"></a>Connect2500m <span class="ot">&lt;-</span>   <span class="fu">dnearneigh</span>(<span class="fu">st_centroid</span>(AD.DR), <span class="at">d1 =</span> <span class="dv">0</span>, <span class="at">d2 =</span> <span class="dv">2500</span>)</span>
+<span id="cb242-29"><a href="sect023.html#cb242-29" aria-hidden="true" tabindex="-1"></a>W.Connect2500m <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Connect2500m, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-30"><a href="sect023.html#cb242-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-31"><a href="sect023.html#cb242-31" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de proximité</span></span>
+<span id="cb242-32"><a href="sect023.html#cb242-32" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################</span></span>
+<span id="cb242-33"><a href="sect023.html#cb242-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques et matrice de distance</span></span>
+<span id="cb242-34"><a href="sect023.html#cb242-34" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(AD.DR))</span>
+<span id="cb242-35"><a href="sect023.html#cb242-35" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(coords, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>))</span>
+<span id="cb242-36"><a href="sect023.html#cb242-36" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(distances) <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb242-37"><a href="sect023.html#cb242-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices inverse de la distance et inverse de la distance au carré</span></span>
+<span id="cb242-38"><a href="sect023.html#cb242-38" aria-hidden="true" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, distances)</span>
+<span id="cb242-39"><a href="sect023.html#cb242-39" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, distances)</span>
+<span id="cb242-40"><a href="sect023.html#cb242-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
+<span id="cb242-41"><a href="sect023.html#cb242-41" aria-hidden="true" tabindex="-1"></a>W.InvDistances  <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-42"><a href="sect023.html#cb242-42" aria-hidden="true" tabindex="-1"></a>W.InvDistances2 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-43"><a href="sect023.html#cb242-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de différentes matrices avec différents seuils</span></span>
+<span id="cb242-44"><a href="sect023.html#cb242-44" aria-hidden="true" tabindex="-1"></a>InvDistances<span class="fl">.2500</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
+<span id="cb242-45"><a href="sect023.html#cb242-45" aria-hidden="true" tabindex="-1"></a>InvDistances<span class="fl">.5000</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
+<span id="cb242-46"><a href="sect023.html#cb242-46" aria-hidden="true" tabindex="-1"></a>InvDistances2<span class="fl">.2500</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb242-47"><a href="sect023.html#cb242-47" aria-hidden="true" tabindex="-1"></a>InvDistances2<span class="fl">.5000</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb242-48"><a href="sect023.html#cb242-48" aria-hidden="true" tabindex="-1"></a>W.InvDistances_2500 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-49"><a href="sect023.html#cb242-49" aria-hidden="true" tabindex="-1"></a>W.InvDistances_5000 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-50"><a href="sect023.html#cb242-50" aria-hidden="true" tabindex="-1"></a>W.InvDistances2_2500 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-51"><a href="sect023.html#cb242-51" aria-hidden="true" tabindex="-1"></a>W.InvDistances2_5000 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-52"><a href="sect023.html#cb242-52" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de distance réduite standardisée</span></span>
+<span id="cb242-53"><a href="sect023.html#cb242-53" aria-hidden="true" tabindex="-1"></a>k1 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords))</span>
+<span id="cb242-54"><a href="sect023.html#cb242-54" aria-hidden="true" tabindex="-1"></a>plusprochevoisin.max <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">unlist</span>(<span class="fu">nbdists</span>(k1,coords)))</span>
+<span id="cb242-55"><a href="sect023.html#cb242-55" aria-hidden="true" tabindex="-1"></a>Voisins.DistMax <span class="ot">&lt;-</span> <span class="fu">dnearneigh</span>(coords, <span class="dv">0</span>, plusprochevoisin.max)                            </span>
+<span id="cb242-56"><a href="sect023.html#cb242-56" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">nbdists</span>(Voisins.DistMax, coords)</span>
+<span id="cb242-57"><a href="sect023.html#cb242-57" aria-hidden="true" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x))</span>
+<span id="cb242-58"><a href="sect023.html#cb242-58" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb242-59"><a href="sect023.html#cb242-59" aria-hidden="true" tabindex="-1"></a>W_InvDistancesReduite  <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-60"><a href="sect023.html#cb242-60" aria-hidden="true" tabindex="-1"></a>W_InvDistances2Reduite <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances2, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-61"><a href="sect023.html#cb242-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-62"><a href="sect023.html#cb242-62" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice selon le critère des plus proches voisins</span></span>
+<span id="cb242-63"><a href="sect023.html#cb242-63" aria-hidden="true" tabindex="-1"></a><span class="do">#####################################################</span></span>
+<span id="cb242-64"><a href="sect023.html#cb242-64" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices des plus proches voisins de 2 à 5</span></span>
+<span id="cb242-65"><a href="sect023.html#cb242-65" aria-hidden="true" tabindex="-1"></a>k2 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">2</span>))</span>
+<span id="cb242-66"><a href="sect023.html#cb242-66" aria-hidden="true" tabindex="-1"></a>k3 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">3</span>))</span>
+<span id="cb242-67"><a href="sect023.html#cb242-67" aria-hidden="true" tabindex="-1"></a>k4 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">4</span>))</span>
+<span id="cb242-68"><a href="sect023.html#cb242-68" aria-hidden="true" tabindex="-1"></a>k5 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">5</span>))</span>
+<span id="cb242-69"><a href="sect023.html#cb242-69" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
+<span id="cb242-70"><a href="sect023.html#cb242-70" aria-hidden="true" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k2, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-71"><a href="sect023.html#cb242-71" aria-hidden="true" tabindex="-1"></a>W.k3 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k3, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-72"><a href="sect023.html#cb242-72" aria-hidden="true" tabindex="-1"></a>W.k4 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k4, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb242-73"><a href="sect023.html#cb242-73" aria-hidden="true" tabindex="-1"></a>W.k5 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k5, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
 </div>
 <div id="sect02322" class="section level4 hasAnchor" number="2.3.2.2">
 <h4><span class="header-section-number">2.3.2.2</span> Étape 2. Calcul du <em>I</em> de Moran et des trois tests de significativité<a href="sect023.html#sect02322" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -609,10 +607,10 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 </ul></li>
 </ul>
 <p>Bien entendu, dans les sorties des trois méthodes, la valeur du <em>I</em> de Moran est la même, contrairement à la valeur de <em>p</em> qui peut varier.</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="sect023.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb242-2"><a href="sect023.html#cb242-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
-<span id="cb242-3"><a href="sect023.html#cb242-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
-<span id="cb242-4"><a href="sect023.html#cb242-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">FALSE</span>) <span class="co"># significativité selon l’hypothèse de la normalité</span></span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="sect023.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
+<span id="cb243-2"><a href="sect023.html#cb243-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
+<span id="cb243-3"><a href="sect023.html#cb243-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
+<span id="cb243-4"><a href="sect023.html#cb243-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">FALSE</span>) <span class="co"># significativité selon l’hypothèse de la normalité</span></span></code></pre></div>
 <pre><code>## 
 ##  Moran I test under normality
 ## 
@@ -624,10 +622,10 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 ## sample estimates:
 ## Moran I statistic       Expectation          Variance 
 ##       0.433714579      -0.004032258       0.001394035</code></pre>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="sect023.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb244-2"><a href="sect023.html#cb244-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
-<span id="cb244-3"><a href="sect023.html#cb244-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
-<span id="cb244-4"><a href="sect023.html#cb244-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">TRUE</span>)  <span class="co"># significativité selon l’hypothèse de la randomisation</span></span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="sect023.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
+<span id="cb245-2"><a href="sect023.html#cb245-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
+<span id="cb245-3"><a href="sect023.html#cb245-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
+<span id="cb245-4"><a href="sect023.html#cb245-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">TRUE</span>)  <span class="co"># significativité selon l’hypothèse de la randomisation</span></span></code></pre></div>
 <pre><code>## 
 ##  Moran I test under randomisation
 ## 
@@ -639,10 +637,10 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 ## sample estimates:
 ## Moran I statistic       Expectation          Variance 
 ##       0.433714579      -0.004032258       0.001385364</code></pre>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="sect023.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,            <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb246-2"><a href="sect023.html#cb246-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">listw=</span>W.Queen,           <span class="co"># nom de la matrice de pondération spatiale </span></span>
-<span id="cb246-3"><a href="sect023.html#cb246-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
-<span id="cb246-4"><a href="sect023.html#cb246-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">nsim=</span><span class="dv">999</span>)                <span class="co"># 999 permutations</span></span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="sect023.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,            <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
+<span id="cb247-2"><a href="sect023.html#cb247-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">listw=</span>W.Queen,           <span class="co"># nom de la matrice de pondération spatiale </span></span>
+<span id="cb247-3"><a href="sect023.html#cb247-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
+<span id="cb247-4"><a href="sect023.html#cb247-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">nsim=</span><span class="dv">999</span>)                <span class="co"># 999 permutations</span></span></code></pre></div>
 <pre><code>## 
 ##  Monte-Carlo simulation of Moran I
 ## 
@@ -664,41 +662,41 @@ Figure 2.13: Résultats du <em>I</em> de Moran selon l’hypothèse de la loi no
 <div id="sect02323" class="section level4 hasAnchor" number="2.3.2.3">
 <h4><span class="header-section-number">2.3.2.3</span> Étape 3. Identification de la plus forte autocorrélation spatiale selon les différentes matrices<a href="sect023.html#sect02323" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>La syntaxe ci-dessous permet de calculer la statistique du <em>I</em> de Moran avec plusieurs matrices de pondération spatiale.</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="sect023.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;un vecteur pour les noms des matrices</span></span>
-<span id="cb248-2"><a href="sect023.html#cb248-2" aria-hidden="true" tabindex="-1"></a>VecteurMatrices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;W.Queen&quot;</span>, <span class="st">&quot;W.Rook&quot;</span>, <span class="st">&quot;W.Rook2&quot;</span>, <span class="st">&quot;W.Rook3&quot;</span>, <span class="st">&quot;W.Rook4&quot;</span>, <span class="st">&quot;W.Rook5&quot;</span>,</span>
-<span id="cb248-3"><a href="sect023.html#cb248-3" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.Connect2500m&quot;</span>,</span>
-<span id="cb248-4"><a href="sect023.html#cb248-4" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances&quot;</span>, <span class="st">&quot;W.InvDistances2&quot;</span>,</span>
-<span id="cb248-5"><a href="sect023.html#cb248-5" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W_InvDistancesReduite&quot;</span>, <span class="st">&quot;W_InvDistances2Reduite&quot;</span>,</span>
-<span id="cb248-6"><a href="sect023.html#cb248-6" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances_2500&quot;</span>, <span class="st">&quot;W.InvDistances_5000&quot;</span>,</span>
-<span id="cb248-7"><a href="sect023.html#cb248-7" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances2_2500&quot;</span>,<span class="st">&quot;W.InvDistances2_5000&quot;</span>,</span>
-<span id="cb248-8"><a href="sect023.html#cb248-8" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.k2&quot;</span>, <span class="st">&quot;W.k3&quot;</span>, <span class="st">&quot;W.k4&quot;</span>, <span class="st">&quot;W.k5&quot;</span>)</span>
-<span id="cb248-9"><a href="sect023.html#cb248-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;une liste pour toutes les matrices</span></span>
-<span id="cb248-10"><a href="sect023.html#cb248-10" aria-hidden="true" tabindex="-1"></a>ListeMatrices <span class="ot">&lt;-</span> <span class="fu">list</span>(W.Queen, W.Rook, W.Rook2, W.Rook3, W.Rook4, W.Rook5,</span>
-<span id="cb248-11"><a href="sect023.html#cb248-11" aria-hidden="true" tabindex="-1"></a>                      W.Connect2500m,</span>
-<span id="cb248-12"><a href="sect023.html#cb248-12" aria-hidden="true" tabindex="-1"></a>                      W.InvDistances, W.InvDistances2,</span>
-<span id="cb248-13"><a href="sect023.html#cb248-13" aria-hidden="true" tabindex="-1"></a>                      W_InvDistancesReduite, W_InvDistances2Reduite,</span>
-<span id="cb248-14"><a href="sect023.html#cb248-14" aria-hidden="true" tabindex="-1"></a>                      W.InvDistances_2500, W.InvDistances2_2500,</span>
-<span id="cb248-15"><a href="sect023.html#cb248-15" aria-hidden="true" tabindex="-1"></a>                      W.InvDistances2_2500, W.InvDistances2_5000,</span>
-<span id="cb248-16"><a href="sect023.html#cb248-16" aria-hidden="true" tabindex="-1"></a>                      W.k2, W.k3, W.k4, W.k5)</span>
-<span id="cb248-17"><a href="sect023.html#cb248-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
-<span id="cb248-18"><a href="sect023.html#cb248-18" aria-hidden="true" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb248-19"><a href="sect023.html#cb248-19" aria-hidden="true" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb248-20"><a href="sect023.html#cb248-20" aria-hidden="true" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb248-21"><a href="sect023.html#cb248-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Boucle pour calculer le I de Moran avec la liste des matrices</span></span>
-<span id="cb248-22"><a href="sect023.html#cb248-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (e <span class="cf">in</span> ListeMatrices){</span>
-<span id="cb248-23"><a href="sect023.html#cb248-23" aria-hidden="true" tabindex="-1"></a>   i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb248-24"><a href="sect023.html#cb248-24" aria-hidden="true" tabindex="-1"></a>   Test <span class="ot">&lt;-</span><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,</span>
-<span id="cb248-25"><a href="sect023.html#cb248-25" aria-hidden="true" tabindex="-1"></a>                   <span class="at">listw=</span>e, </span>
-<span id="cb248-26"><a href="sect023.html#cb248-26" aria-hidden="true" tabindex="-1"></a>                   <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
-<span id="cb248-27"><a href="sect023.html#cb248-27" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nsim=</span><span class="dv">999</span>)</span>
-<span id="cb248-28"><a href="sect023.html#cb248-28" aria-hidden="true" tabindex="-1"></a>   MoranI[i]<span class="ot">&lt;-</span>Test<span class="sc">$</span>statistic</span>
-<span id="cb248-29"><a href="sect023.html#cb248-29" aria-hidden="true" tabindex="-1"></a>   Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
-<span id="cb248-30"><a href="sect023.html#cb248-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb248-31"><a href="sect023.html#cb248-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
-<span id="cb248-32"><a href="sect023.html#cb248-32" aria-hidden="true" tabindex="-1"></a>MoranData1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Matrices=</span>VecteurMatrices,</span>
-<span id="cb248-33"><a href="sect023.html#cb248-33" aria-hidden="true" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
-<span id="cb248-34"><a href="sect023.html#cb248-34" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
-<span id="cb248-35"><a href="sect023.html#cb248-35" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(MoranData1)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="sect023.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;un vecteur pour les noms des matrices</span></span>
+<span id="cb249-2"><a href="sect023.html#cb249-2" aria-hidden="true" tabindex="-1"></a>VecteurMatrices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;W.Queen&quot;</span>, <span class="st">&quot;W.Rook&quot;</span>, <span class="st">&quot;W.Rook2&quot;</span>, <span class="st">&quot;W.Rook3&quot;</span>, <span class="st">&quot;W.Rook4&quot;</span>, <span class="st">&quot;W.Rook5&quot;</span>,</span>
+<span id="cb249-3"><a href="sect023.html#cb249-3" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.Connect2500m&quot;</span>,</span>
+<span id="cb249-4"><a href="sect023.html#cb249-4" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances&quot;</span>, <span class="st">&quot;W.InvDistances2&quot;</span>,</span>
+<span id="cb249-5"><a href="sect023.html#cb249-5" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W_InvDistancesReduite&quot;</span>, <span class="st">&quot;W_InvDistances2Reduite&quot;</span>,</span>
+<span id="cb249-6"><a href="sect023.html#cb249-6" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances_2500&quot;</span>, <span class="st">&quot;W.InvDistances_5000&quot;</span>,</span>
+<span id="cb249-7"><a href="sect023.html#cb249-7" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances2_2500&quot;</span>,<span class="st">&quot;W.InvDistances2_5000&quot;</span>,</span>
+<span id="cb249-8"><a href="sect023.html#cb249-8" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;W.k2&quot;</span>, <span class="st">&quot;W.k3&quot;</span>, <span class="st">&quot;W.k4&quot;</span>, <span class="st">&quot;W.k5&quot;</span>)</span>
+<span id="cb249-9"><a href="sect023.html#cb249-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;une liste pour toutes les matrices</span></span>
+<span id="cb249-10"><a href="sect023.html#cb249-10" aria-hidden="true" tabindex="-1"></a>ListeMatrices <span class="ot">&lt;-</span> <span class="fu">list</span>(W.Queen, W.Rook, W.Rook2, W.Rook3, W.Rook4, W.Rook5,</span>
+<span id="cb249-11"><a href="sect023.html#cb249-11" aria-hidden="true" tabindex="-1"></a>                      W.Connect2500m,</span>
+<span id="cb249-12"><a href="sect023.html#cb249-12" aria-hidden="true" tabindex="-1"></a>                      W.InvDistances, W.InvDistances2,</span>
+<span id="cb249-13"><a href="sect023.html#cb249-13" aria-hidden="true" tabindex="-1"></a>                      W_InvDistancesReduite, W_InvDistances2Reduite,</span>
+<span id="cb249-14"><a href="sect023.html#cb249-14" aria-hidden="true" tabindex="-1"></a>                      W.InvDistances_2500, W.InvDistances2_2500,</span>
+<span id="cb249-15"><a href="sect023.html#cb249-15" aria-hidden="true" tabindex="-1"></a>                      W.InvDistances2_2500, W.InvDistances2_5000,</span>
+<span id="cb249-16"><a href="sect023.html#cb249-16" aria-hidden="true" tabindex="-1"></a>                      W.k2, W.k3, W.k4, W.k5)</span>
+<span id="cb249-17"><a href="sect023.html#cb249-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
+<span id="cb249-18"><a href="sect023.html#cb249-18" aria-hidden="true" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb249-19"><a href="sect023.html#cb249-19" aria-hidden="true" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb249-20"><a href="sect023.html#cb249-20" aria-hidden="true" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb249-21"><a href="sect023.html#cb249-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Boucle pour calculer le I de Moran avec la liste des matrices</span></span>
+<span id="cb249-22"><a href="sect023.html#cb249-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (e <span class="cf">in</span> ListeMatrices){</span>
+<span id="cb249-23"><a href="sect023.html#cb249-23" aria-hidden="true" tabindex="-1"></a>   i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb249-24"><a href="sect023.html#cb249-24" aria-hidden="true" tabindex="-1"></a>   Test <span class="ot">&lt;-</span><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,</span>
+<span id="cb249-25"><a href="sect023.html#cb249-25" aria-hidden="true" tabindex="-1"></a>                   <span class="at">listw=</span>e, </span>
+<span id="cb249-26"><a href="sect023.html#cb249-26" aria-hidden="true" tabindex="-1"></a>                   <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
+<span id="cb249-27"><a href="sect023.html#cb249-27" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb249-28"><a href="sect023.html#cb249-28" aria-hidden="true" tabindex="-1"></a>   MoranI[i]<span class="ot">&lt;-</span>Test<span class="sc">$</span>statistic</span>
+<span id="cb249-29"><a href="sect023.html#cb249-29" aria-hidden="true" tabindex="-1"></a>   Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
+<span id="cb249-30"><a href="sect023.html#cb249-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb249-31"><a href="sect023.html#cb249-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
+<span id="cb249-32"><a href="sect023.html#cb249-32" aria-hidden="true" tabindex="-1"></a>MoranData1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Matrices=</span>VecteurMatrices,</span>
+<span id="cb249-33"><a href="sect023.html#cb249-33" aria-hidden="true" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
+<span id="cb249-34"><a href="sect023.html#cb249-34" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
+<span id="cb249-35"><a href="sect023.html#cb249-35" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(MoranData1)</span></code></pre></div>
 <pre><code>##                  Matrices    MoranIs Pvalues
 ## 1                 W.Queen 0.43371458   0.001
 ## 2                  W.Rook 0.44970946   0.001
@@ -1054,15 +1052,15 @@ W.k5
 </table>
 <p><strong>Quelle est la matrice avec laquelle la dépendance spatiale de la variable est la plus forte?</strong></p>
 <p>Pour la trouver, nous construisons un graphique avec les valeurs du <em>I</em> de Moran triées par ordre décroissant. La valeur la plus forte est obtenue avec la matrice selon les deux plus proches voisins, suivie de la matrice <em>Rook</em>. Quoi qu’il en soit, il serait plus judicieux de privilégier la matrice de contiguïté selon le partage d’un segment comme expliqué plus haut.</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="sect023.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb250-2"><a href="sect023.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData1, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
-<span id="cb250-3"><a href="sect023.html#cb250-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
-<span id="cb250-4"><a href="sect023.html#cb250-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
-<span id="cb250-5"><a href="sect023.html#cb250-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
-<span id="cb250-6"><a href="sect023.html#cb250-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
-<span id="cb250-7"><a href="sect023.html#cb250-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Matrice de pondération spatiale&quot;</span>) <span class="sc">+</span></span>
-<span id="cb250-8"><a href="sect023.html#cb250-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
-<span id="cb250-9"><a href="sect023.html#cb250-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="sect023.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb251-2"><a href="sect023.html#cb251-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData1, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
+<span id="cb251-3"><a href="sect023.html#cb251-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
+<span id="cb251-4"><a href="sect023.html#cb251-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
+<span id="cb251-5"><a href="sect023.html#cb251-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
+<span id="cb251-6"><a href="sect023.html#cb251-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
+<span id="cb251-7"><a href="sect023.html#cb251-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Matrice de pondération spatiale&quot;</span>) <span class="sc">+</span></span>
+<span id="cb251-8"><a href="sect023.html#cb251-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
+<span id="cb251-9"><a href="sect023.html#cb251-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:loliplotMoran1"></span>
 <img src="GMQ405_files/figure-html/loliplotMoran1-1.png" alt="Graphique avec les valeurs du *I* de Moran selon les différentes matrices de pondération spatiale" width="75%" />
 <p class="caption">
@@ -1079,44 +1077,44 @@ Figure 2.14: Graphique avec les valeurs du <em>I</em> de Moran selon les différ
 Figure 2.15: Quatre variables sélectionnées pour les AD de la ville de Sherbrooke
 </p>
 </div>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="sect023.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour les variables à analyser</span></span>
-<span id="cb251-2"><a href="sect023.html#cb251-2" aria-hidden="true" tabindex="-1"></a>listeVars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;PctLog1960_Av&quot;</span>, <span class="st">&quot;RevMedMenage&quot;</span> , <span class="st">&quot;PctProprieta&quot;</span>, <span class="st">&quot;PctPop0_14&quot;</span>)</span>
-<span id="cb251-3"><a href="sect023.html#cb251-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
-<span id="cb251-4"><a href="sect023.html#cb251-4" aria-hidden="true" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb251-5"><a href="sect023.html#cb251-5" aria-hidden="true" tabindex="-1"></a>VarName <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb251-6"><a href="sect023.html#cb251-6" aria-hidden="true" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb251-7"><a href="sect023.html#cb251-7" aria-hidden="true" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb251-8"><a href="sect023.html#cb251-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Boucle pour calculer le I de Moran pour les différentes variables</span></span>
-<span id="cb251-9"><a href="sect023.html#cb251-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (e <span class="cf">in</span> listeVars){</span>
-<span id="cb251-10"><a href="sect023.html#cb251-10" aria-hidden="true" tabindex="-1"></a>  i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb251-11"><a href="sect023.html#cb251-11" aria-hidden="true" tabindex="-1"></a>  Test <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(AD.DR[[e]],</span>
-<span id="cb251-12"><a href="sect023.html#cb251-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">listw=</span>W.Rook,</span>
-<span id="cb251-13"><a href="sect023.html#cb251-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">zero.policy=</span><span class="cn">TRUE</span>,</span>
-<span id="cb251-14"><a href="sect023.html#cb251-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nsim=</span><span class="dv">999</span>)</span>
-<span id="cb251-15"><a href="sect023.html#cb251-15" aria-hidden="true" tabindex="-1"></a>  MoranI[i]<span class="ot">&lt;-</span><span class="fu">round</span>(Test<span class="sc">$</span>statistic,<span class="dv">4</span>)</span>
-<span id="cb251-16"><a href="sect023.html#cb251-16" aria-hidden="true" tabindex="-1"></a>  VarName[i]<span class="ot">&lt;-</span>e</span>
-<span id="cb251-17"><a href="sect023.html#cb251-17" aria-hidden="true" tabindex="-1"></a>  Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
-<span id="cb251-18"><a href="sect023.html#cb251-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb251-19"><a href="sect023.html#cb251-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
-<span id="cb251-20"><a href="sect023.html#cb251-20" aria-hidden="true" tabindex="-1"></a>MoranData2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Variable=</span>listeVars,</span>
-<span id="cb251-21"><a href="sect023.html#cb251-21" aria-hidden="true" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
-<span id="cb251-22"><a href="sect023.html#cb251-22" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
-<span id="cb251-23"><a href="sect023.html#cb251-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(MoranData2)</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="sect023.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour les variables à analyser</span></span>
+<span id="cb252-2"><a href="sect023.html#cb252-2" aria-hidden="true" tabindex="-1"></a>listeVars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;PctLog1960_Av&quot;</span>, <span class="st">&quot;RevMedMenage&quot;</span> , <span class="st">&quot;PctProprieta&quot;</span>, <span class="st">&quot;PctPop0_14&quot;</span>)</span>
+<span id="cb252-3"><a href="sect023.html#cb252-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
+<span id="cb252-4"><a href="sect023.html#cb252-4" aria-hidden="true" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb252-5"><a href="sect023.html#cb252-5" aria-hidden="true" tabindex="-1"></a>VarName <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb252-6"><a href="sect023.html#cb252-6" aria-hidden="true" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb252-7"><a href="sect023.html#cb252-7" aria-hidden="true" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb252-8"><a href="sect023.html#cb252-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Boucle pour calculer le I de Moran pour les différentes variables</span></span>
+<span id="cb252-9"><a href="sect023.html#cb252-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (e <span class="cf">in</span> listeVars){</span>
+<span id="cb252-10"><a href="sect023.html#cb252-10" aria-hidden="true" tabindex="-1"></a>  i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb252-11"><a href="sect023.html#cb252-11" aria-hidden="true" tabindex="-1"></a>  Test <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(AD.DR[[e]],</span>
+<span id="cb252-12"><a href="sect023.html#cb252-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">listw=</span>W.Rook,</span>
+<span id="cb252-13"><a href="sect023.html#cb252-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">zero.policy=</span><span class="cn">TRUE</span>,</span>
+<span id="cb252-14"><a href="sect023.html#cb252-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb252-15"><a href="sect023.html#cb252-15" aria-hidden="true" tabindex="-1"></a>  MoranI[i]<span class="ot">&lt;-</span><span class="fu">round</span>(Test<span class="sc">$</span>statistic,<span class="dv">4</span>)</span>
+<span id="cb252-16"><a href="sect023.html#cb252-16" aria-hidden="true" tabindex="-1"></a>  VarName[i]<span class="ot">&lt;-</span>e</span>
+<span id="cb252-17"><a href="sect023.html#cb252-17" aria-hidden="true" tabindex="-1"></a>  Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
+<span id="cb252-18"><a href="sect023.html#cb252-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb252-19"><a href="sect023.html#cb252-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
+<span id="cb252-20"><a href="sect023.html#cb252-20" aria-hidden="true" tabindex="-1"></a>MoranData2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Variable=</span>listeVars,</span>
+<span id="cb252-21"><a href="sect023.html#cb252-21" aria-hidden="true" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
+<span id="cb252-22"><a href="sect023.html#cb252-22" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
+<span id="cb252-23"><a href="sect023.html#cb252-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(MoranData2)</span></code></pre></div>
 <pre><code>##        Variable MoranIs Pvalues
 ## 1 PctLog1960_Av  0.7071   0.001
 ## 2  RevMedMenage  0.6168   0.001
 ## 3  PctProprieta  0.6028   0.001
 ## 4    PctPop0_14  0.4474   0.001</code></pre>
 <p>De nouveau, en quelques lignes de code, il est aisé de réaliser un graphique pour comparer les valeurs du <em>I</em> de Moran pour les différentes variables (figure <a href="sect023.html#fig:loliplotMoran2">2.16</a>).</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="sect023.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb253-2"><a href="sect023.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData2, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
-<span id="cb253-3"><a href="sect023.html#cb253-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>
-<span id="cb253-4"><a href="sect023.html#cb253-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>
-<span id="cb253-5"><a href="sect023.html#cb253-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
-<span id="cb253-6"><a href="sect023.html#cb253-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
-<span id="cb253-7"><a href="sect023.html#cb253-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Variable continue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb253-8"><a href="sect023.html#cb253-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
-<span id="cb253-9"><a href="sect023.html#cb253-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="sect023.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb254-2"><a href="sect023.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData2, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
+<span id="cb254-3"><a href="sect023.html#cb254-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>
+<span id="cb254-4"><a href="sect023.html#cb254-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>
+<span id="cb254-5"><a href="sect023.html#cb254-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
+<span id="cb254-6"><a href="sect023.html#cb254-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
+<span id="cb254-7"><a href="sect023.html#cb254-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Variable continue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb254-8"><a href="sect023.html#cb254-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
+<span id="cb254-9"><a href="sect023.html#cb254-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:loliplotMoran2"></span>
 <img src="GMQ405_files/figure-html/loliplotMoran2-1.png" alt="Graphique avec les valeurs du *I* de Moran pour les quatre variables" width="75%" />
 <p class="caption">

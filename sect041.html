@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.1 Agrégats d’entités spatiales ponctuelles | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.1 Agrégats d’entités spatiales ponctuelles | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
@@ -51,16 +51,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -103,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -269,11 +269,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="sect041.html"><a href="sect041.html"><i class="fa fa-check"></i><b>4.1</b> Agrégats d’entités spatiales ponctuelles</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN</a></li>
-<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> HDBSCAN</a></li>
-<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0413"><i class="fa fa-check"></i><b>4.1.3</b> OPTICS</a></li>
-<li class="chapter" data-level="4.1.4" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.4</b> Agrégats spatio-temporels : ST-DBSCAN</a></li>
-<li class="chapter" data-level="4.1.5" data-path="sect041.html"><a href="sect041.html#sect0415"><i class="fa fa-check"></i><b>4.1.5</b> Mise en oeuvre dans R</a></li>
+<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN : agrégats spatiaux</a></li>
+<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> ST-DBSCAN : agrégats spatio-temporels</a></li>
+<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="sect042.html"><a href="sect042.html"><i class="fa fa-check"></i><b>4.2</b> Méthodes de balayage de Kulldorff</a>
 <ul>
@@ -447,19 +445,153 @@ Modélisation et analyse spatiale</a>
 <div id="sect041" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Agrégats d’entités spatiales ponctuelles<a href="sect041.html#sect041" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="sect0411" class="section level3 hasAnchor" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> DBSCAN<a href="sect041.html#sect0411" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">4.1.1</span> DBSCAN : agrégats spatiaux<a href="sect041.html#sect0411" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="bloc_objectif">
+<p>Dans le chapitre précédent portant sur les <em>méthodes de répartition ponctuelles</em>, nous avons abordé la méthode KDE permettant de cartographier la densité de points dans une maille régulière (section <a href="sect022.html#sect022">2.2</a>). La carte de chaleur obtenue avec le KDE représente les valeurs de densité (variable continue) pour les pixels couvrant le territoire à l’étude.</p>
+<p>Avec l’algorithme DBSCAN <span class="citation">(<a href="#ref-DBSCAN1996" role="doc-biblioref">Ester et al. 1996</a>)</span>, l’objectif visé est différent : il s’agit d’identifier des agrégats spatiaux d’évènements ponctuels dans un territoire donné (par exemple, des cas des maladies, des accidents, des espèces fauniques ou végétales, des crimes, etc.). Autrement dit, il s’agit d’identifier plusieurs régions du territoire à l’étude dans lesquelles la densité de points est forte.</p>
+<p>Concrètement, si la méthode KDE renvoie une variable continue pour l’ensemble du territoire, l’algorithme DBSCAN renvoit une variable qualitative uniquement pour les points du jeu de données.</p>
+</div>
+<div id="sect04111" class="section level4 hasAnchor" number="4.1.1.1">
+<h4><span class="header-section-number">4.1.1.1</span> Fonctionnement de DBSCAN<a href="sect041.html#sect04111" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>DBSCAN (<em><strong>D</strong>ensity-<strong>B</strong>ased <strong>S</strong>patial <strong>C</strong>lustering of <strong>A</strong>pplications with <strong>N</strong>oise</em>) est un algorithme de classification non supervisée qui regroupe des observations en fonction de <strong>leur densité</strong> dans un espace à deux, trois ou <em>n</em> dimensions <span class="citation">(<a href="#ref-DBSCAN1996" role="doc-biblioref">Ester et al. 1996</a>)</span>. Comme pour toute autre méthode de classification non supervisée, ces dimensions sont des variables. Par conséquent, en appliquant DBSCAN sur les coordonnées géographiques d’entités ponctuelles 2D (<em>x</em>, <em>y</em>) ou 3D (<em>x</em>, <em>y</em>, <em>z</em>), nous classifions les points du jeu de données.</p>
+<p>Prenons un jeu de données fictives (figure <a href="sect041.html#fig:DonnesFictivesDBSCAN">4.1</a>.a). À l’œil nu, nous identifions clairement cinq régions distinctes avec une forte densité de points et des zones de faible densité; ces dernières étant représentées par les points noirs (figure <a href="sect041.html#fig:DonnesFictivesDBSCAN">4.1</a>.b).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:DonnesFictivesDBSCAN"></span>
+<img src="GMQ405_files/figure-html/DonnesFictivesDBSCAN-1.png" alt="Jeu de données fictives et classification DBSCAN avec cinq classes" width="75%" />
+<p class="caption">
+Figure 4.1: Jeu de données fictives et classification DBSCAN avec cinq classes
+</p>
+</div>
+<p>L’intérêt majeur de l’algorithme DBSCAN est qu’il est basé sur la <strong>densité des points</strong> et non sur la <strong>distance entre les points</strong> comme les algorithmes classiques de classification non supervisée que sont les k-moyennes, k-médianes, k-médoïdes ou la classification ascendante hiérarchique. Tel qu’illustré à la figure <a href="sect041.html#fig:AutresMethodesClassifNonSuperv">4.2</a>, utiliser la distance pour identifier cinq groupes de points renvoient des résultats peu convaincants. D’une part, tous les points appartiennent à une classe, sans séparer les régions de fortes et de faibles densité. D’autre part, les algorithmes classiques basés sur la distance ne parviennent pas à bien identifier les deux agrégats circulaires (bleu et rouge à la figure <a href="sect041.html#fig:DonnesFictivesDBSCAN">4.1</a>.b) et parfois linéaires (vert et mauve à la figure <a href="sect041.html#fig:DonnesFictivesDBSCAN">4.1</a>.b).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:AutresMethodesClassifNonSuperv"></span>
+<img src="GMQ405_files/figure-html/AutresMethodesClassifNonSuperv-1.png" alt="Classification avec d'autres algorithmes basée sur la distance" width="75%" />
+<p class="caption">
+Figure 4.2: Classification avec d’autres algorithmes basée sur la distance
+</p>
+</div>
+<p>L’algorithme DBSCAN comprend deux paramètres qui doivent être définis par la personne utilisatrice :</p>
+<ul>
+<li><strong>Le rayon de recherche</strong>, dénommé <span class="math inline">\(\epsilon\)</span> (epsilon), habituellement basé sur la distance euclidienne. Les distances de Manhattan ou réticulaires peuvent aussi être utilisées.</li>
+<li><strong>Le nombre minimum de points</strong>, dénommé <span class="math inline">\(MinPts\)</span>, requis pour former un agrégat, un regroupement (<em>cluster</em> en anglais).</li>
+</ul>
+<div class="bloc_notes">
+<p><strong>Avantage de DBSCAN : nul besoin de spécifier le nombre d’agrégats (<em>clusters</em>)!</strong></p>
+<p>Comparativement à d’autres méthodes de classification non supervisées comme les k-moyennes, k-médianes, k-médoïdes, DBSCAN ne requiert pas de spécifier le nombre de classes à identifier dans le jeu de données. Autrement dit, appliqué à des géométries ponctuelles, l’algorithme DBSCAN détecte autant d’agrégats spatiaux que nécessaires en fonction des valeurs des deux paramètres (<span class="math inline">\(\epsilon\)</span> et <span class="math inline">\(MinPts\)</span>).</p>
+</div>
+<p>À la figure <a href="sect041.html#fig:TypesPointsDBSCAN">4.3</a>, nous appliquons l’algorithme DBSCAN à un semis de points avec un rayon de recherche de 500 mètres (<span class="math inline">\(\epsilon=500\)</span>) et un nombre minimum de cinq points (<span class="math inline">\(MinPts = 5\)</span>). Dans un premier temps, l’algorithme distingue trois types de points :</p>
+<ol style="list-style-type: decimal">
+<li>des <strong>points centraux</strong> (<em>core points</em> en anglais) qui ont au moins cinq points dans un rayon de 500 mètres (points rouges).</li>
+<li>des <strong>points frontières</strong> (<em>border points</em>) qui ont moins de cinq points dans un rayon de 500 mètres, mais qui sont inclus dans la zone tampon de 500 mètre d’un point central (points bleus).</li>
+<li>des <strong>points aberrants</strong> (<em>noise points</em>) qui ont moins de cinq points dans un rayon de 500 mètres et qui ne sont pas inclus dans la zone tampon d’un point central (points noirs).</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:TypesPointsDBSCAN"></span>
+<img src="images/Chap04/DbscanTypesPoints.png" alt="Trois types de points identifiés par l'algorithme DBSCAN" width="75%" />
+<p class="caption">
+Figure 4.3: Trois types de points identifiés par l’algorithme DBSCAN
+</p>
+</div>
+<p>Par la suite, les étapes de l’algorithme sont les suivantes :</p>
+<ul>
+<li><strong>Étape 1.</strong> Formation du premier agrégat
+<ul>
+<li>Nous tirons au hasard un point central et l’assignons au premier agrégat (groupe ou <em>cluster</em>).</li>
+<li>Puis, les points compris dans la zone tampon du premier point central sont ajoutés à ce premier agrégat.</li>
+<li>De façon itérative, nous étendons l’agrégat avec les points centraux ou frontières qui sont compris dans les zones tampons des points ajoutés précédemment.</li>
+</ul></li>
+<li><strong>Étape 2.</strong> Formation d’autres agrégats
+<ul>
+<li>Lorsque le premier agrégat est complété, nous tirons au hasard un autre point central n’appartenant pas au premier agrégat.</li>
+<li>Nous appliquons la même démarche qu’à l’étape 1 pour étendre et compléter cet autre agrégat.</li>
+<li>Les deux sous-étapes ci-dessus sont répétées jusqu’à que tous les points centraux et frontières soient assignés à un agrégat.</li>
+</ul></li>
+</ul>
+<p>Nous obtenons ainsi <em>k</em> agrégats (valeurs de 1 à <em>k</em>) tandis que les points aberrants sont affectés à la même classe (valeur de 0 habituellement). Appliqué au semis de points, DBSCAN a détecté deux agrégats et quatre points aberrants (figure <a href="sect041.html#fig:ResultatsDBSCAN">4.4</a>)</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ResultatsDBSCAN"></span>
+<img src="images/Chap04/DbscanResultats.png" alt="Résultats de l'algorithme DBSCAN" width="75%" />
+<p class="caption">
+Figure 4.4: Résultats de l’algorithme DBSCAN
+</p>
+</div>
+</div>
+<div id="sect04112" class="section level4 hasAnchor" number="4.1.1.2">
+<h4><span class="header-section-number">4.1.1.2</span> Sensibilité et optimisation des paramètres de DBSCAN<a href="sect041.html#sect04112" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Les résultats de l’algorithme de DBSCAN varient en fonction de ses deux paramètres, soit le rayon de recherche (<span class="math inline">\(\epsilon\)</span>) et le nombre minimum de points (<span class="math inline">\(MinPts\)</span>).</p>
+<p>Concernant le paramètre <span class="math inline">\(\epsilon\)</span>, plus sa valeur est réduite, plus le nombre de points identifiés comme aberrants est important. Inversement, plus elle est grande, plus le nombre d’agrégats diminue. En guise d’illustration, faisons varier la valeur du rayon en maintenant à cinq le nombre minimum de points :</p>
+<ul>
+<li>Avec un rayon de 250 mètres, quatre agrégats sont identifiés tandis que 29 points sont considérés comme du bruit (figure <a href="sect041.html#fig:VariationResultatsDBSCAN">4.5</a>.a).</li>
+<li>Avec un rayon de 500 mètres, la solution semble plus optimale avec deux agrégats et cinq points aberrants (figure <a href="sect041.html#fig:VariationResultatsDBSCAN">4.5</a>.b).</li>
+<li>Avec un rayon de 1000 mètres, deux agrégats sont aussi identifiés. Par contre, il ne reste plus qu’un point aberrant. Par conséquent, quatre points qui, à l’œil nu, sont très éloignés d’un agrégat y sont pourtant affectés (figure <a href="sect041.html#fig:VariationResultatsDBSCAN">4.5</a>.c).</li>
+<li>Avec un rayon de 1500 mètres, tous les points sont affectés à un et un seul agrégat (figure <a href="sect041.html#fig:VariationResultatsDBSCAN">4.5</a>.d).</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:VariationResultatsDBSCAN"></span>
+<img src="images/Chap04/DbscanResultatsVariation.png" alt="Variations de résultats de l'algorithme DBSCAN selon la taille du rayon" width="75%" />
+<p class="caption">
+Figure 4.5: Variations de résultats de l’algorithme DBSCAN selon la taille du rayon
+</p>
+</div>
+<p>Concernant le paramètre <span class="math inline">\(MinPts\)</span>, plusieurs règles de pouce (à la louche) ont été proposés pour fixer sa valeur :</p>
+<ul>
+<li><span class="math inline">\(MinPts \geq dim(D) + 1\)</span>, c’est-à-dire que sa valeur doit être minimalement égale au nombre de dimensions plus un (variables) du jeu de données.</li>
+<li><span class="math inline">\(MinPts = dim(D) \times 2\)</span>, c’est-à dire que le nombre de points devrait être égal à deux fois le nombre de dimensions du tableau <span class="citation">(<a href="#ref-sander1998density" role="doc-biblioref">Sander et al. 1998</a>)</span>.</li>
+<li><span class="math inline">\(MinPts = 4\)</span> quand le jeu de données ne comprend que deux dimensions <span class="citation">(<a href="#ref-DBSCAN1996" role="doc-biblioref">Ester et al. 1996</a>)</span>, soit un critère qui s’applique à des géométries ponctuelles 2D.</li>
+</ul>
+<p>Une fois fixé le nombre minimal de points, nous pouvons optimiser la valeur du rayon de recherche de la façon suivante :</p>
+<ul>
+<li>Pour chacun des points, nous calculons la distance au <em>k</em><sup>ième</sup> point le plus proche.</li>
+<li>Nous trions les valeurs obtenues pour construire un graphique en courbe.</li>
+<li>Dans ce graphique, le <em>critère du coude</em> est utilisé pour repérer la ou les valeurs signalant un décrochement dans la courbe. À la lecture de la figure <a href="sect041.html#fig:KPlusProcheDbScan">4.6</a>, les valeurs d’epsilon (<span class="math inline">\(\epsilon\)</span>) à retenir pourraient être 300, 350, 425 et 450 mètres.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:KPlusProcheDbScan"></span>
+<img src="GMQ405_files/figure-html/KPlusProcheDbScan-1.png" alt="Optimisation de la valeur d'epsilon" width="65%" />
+<p class="caption">
+Figure 4.6: Optimisation de la valeur d’epsilon
+</p>
+</div>
+<p>Si vous repérez plusieurs seuils de distance dans le graphique des distances au <em>k</em> plus proche voisin, réalisez et comparez les résultats des DBSCAN avec ces valeurs d’epsilon. À la figure <a href="sect041.html#fig:DbscanResultatsOptimatisationEpsilon">4.7</a>, nous constatons que les résultats avec des seuils de 425 et 450 sont identiques et semblent optimaux. Par contre, la solution avec un rayon de 350 mètres identifie deux points aberrants qui pourraient être intégrés au deuxième agrégat tandis que celle avec un rayon de 300 mètres identifie un agrégat supplémentaire, mais classifie de nombreux points comme aberrants.</p>
+<div class="bloc_attention">
+<p><strong>Quel résultat choisir parmi les quatre solutions?</strong></p>
+<p>Comme pour toute analyse de classification, votre choix peut être objectif et reposer uniquement sur des indicateurs statistiques (ici le graphique des distance au <em>k</em> plus proche voisin). Il devrait aussi s’appuyer sur vos connaissance du terrain. Selon vous, l’identification d’un troisième agrégat avec une valeur d’epsilon fixée à 350 mètres pourrait refléter une réalité terrain particulièrement intéressante qui motiverait fortement le choix de cette solution.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:DbscanResultatsOptimatisationEpsilon"></span>
+<img src="images/Chap04/DbscanResultatsOptimatisationEpsilon.png" alt="Comparaison de solutions DBSCAN avec différentes valeurs d'epsilon" width="75%" />
+<p class="caption">
+Figure 4.7: Comparaison de solutions DBSCAN avec différentes valeurs d’epsilon
+</p>
+</div>
+<div class="bloc_aller_loin">
+<p><strong>Autres algorithmes de classification non supervisés basées sur la densité</strong></p>
+<p>Bien que DBSCAN soit certainement l’algorithme le plus utilisé, d’autres algorithmes basés sur la densité peuvent être utilisés pour détecter des agrégats spatiaux de points, notamment :</p>
+<ul>
+<li>HDBSCAN (<em><strong>H</strong>ierarchical <strong>D</strong>ensity-<strong>B</strong>ased <strong>S</strong>patial <strong>C</strong>lustering of <strong>A</strong>pplications with <strong>N</strong>oise</em>) <span class="citation">(<a href="#ref-HDBSCAN2013" role="doc-biblioref">Campello, Moulavi et Sander 2013</a>)</span>. Brièvement, cette version modifiée de DBSCAN permet d’obtenir une hiérarchie de partitions, comme dans une classification ascendante hiérarchique.</li>
+<li>OPTICS (<em><strong>O</strong>rdering <strong>P</strong>oints <strong>T</strong>o <strong>I</strong>dentify the <strong>C</strong>lustering <strong>S</strong>tructure</em>) <span class="citation">(<a href="#ref-HDBSCAN2013" role="doc-biblioref">Campello, Moulavi et Sander 2013</a>)</span>. À titre de rappel, l’algorithme DBSCAN a deux paramètres, soit le nombre minimal de points (<span class="math inline">\(MinPts\)</span>) et la distance de voisinage (<span class="math inline">\(\epsilon\)</span>). Avec OPTICS, le second paramètre n’a pas besoin d’être spécifié. Succintement, pour chaque point du jeu de données, il utilise la distance au <span class="math inline">\(k\)</span> (<span class="math inline">\(MinPts\)</span>) plus proche voisin.</li>
+</ul>
+</div>
+</div>
 </div>
 <div id="sect0412" class="section level3 hasAnchor" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> HDBSCAN<a href="sect041.html#sect0412" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">4.1.2</span> ST-DBSCAN : agrégats spatio-temporels<a href="sect041.html#sect0412" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="sect0413" class="section level3 hasAnchor" number="4.1.3">
-<h3><span class="header-section-number">4.1.3</span> OPTICS<a href="sect041.html#sect0413" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sect0414" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Mise en œuvre dans R<a href="sect041.html#sect0414" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>package</em> <code>dbscan</code> <span class="citation">(<a href="#ref-dbscanPackage1" role="doc-biblioref">Hahsler et Piekenbrock 2022</a>; <a href="#ref-dbscanPackage2" role="doc-biblioref">Hahsler, Piekenbrock et Doran 2019</a>)</span>.</p>
+<p><a href="https://donnees.montreal.ca/ville-de-montreal/collisions-routieres" class="uri">https://donnees.montreal.ca/ville-de-montreal/collisions-routieres</a></p>
 </div>
-<div id="sect0414" class="section level3 hasAnchor" number="4.1.4">
-<h3><span class="header-section-number">4.1.4</span> Agrégats spatio-temporels : ST-DBSCAN<a href="sect041.html#sect0414" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="sect0415" class="section level3 hasAnchor" number="4.1.5">
-<h3><span class="header-section-number">4.1.5</span> Mise en oeuvre dans R<a href="sect041.html#sect0415" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-HDBSCAN2013" class="csl-entry">
+Campello, Ricardo JGB, Davoud Moulavi et Jörg Sander. 2013. <span>« Density-based clustering based on hierarchical density estimates. »</span> In <em>Advances in Knowledge Discovery and Data Mining: 17th Pacific-Asia Conference, PAKDD 2013, Gold Coast, Australia, April 14-17, 2013, Proceedings, Part II 17</em>, 160‑172. s.n. <a href="http://dx.doi.org/10.1007/978-3-642-37456-2_14">http://dx.doi.org/10.1007/978-3-642-37456-2_14</a>.
+</div>
+<div id="ref-DBSCAN1996" class="csl-entry">
+Ester, Martin, Hans-Peter Kriegel, Jörg Sander et Xiaowei Xu. 1996. <span>« A density-based algorithm for discovering clusters in large spatial databases with noise. »</span> In <em>Proceedings of the Second International Conference on Knowledge Discovery and Data Mining (KDD-96)</em>, 96:226‑231. 34. s.n. <a href="https://dl.acm.org/doi/10.5555/3001460.3001507">https://dl.acm.org/doi/10.5555/3001460.3001507</a>.
+</div>
+<div id="ref-dbscanPackage1" class="csl-entry">
+Hahsler, Michael et Matthew Piekenbrock. 2022. <em>dbscan: Density-Based Spatial Clustering of Applications with Noise (DBSCAN) and Related Algorithms</em>. s.n. <a href="https://CRAN.R-project.org/package=dbscan">https://CRAN.R-project.org/package=dbscan</a>.
+</div>
+<div id="ref-dbscanPackage2" class="csl-entry">
+Hahsler, Michael, Matthew Piekenbrock et Derek Doran. 2019. <span>« <span>dbscan</span>: Fast Density-Based Clustering with <span>R</span>. »</span> <em>Journal of Statistical Software</em> 91 (1): 1‑30. doi:<a href="https://doi.org/10.18637/jss.v091.i01">https://doi.org/10.18637/jss.v091.i01</a>.
+</div>
+<div id="ref-sander1998density" class="csl-entry">
+Sander, Jörg, Martin Ester, Hans-Peter Kriegel et Xiaowei Xu. 1998. <span>« Density-based clustering in spatial databases: The algorithm gdbscan and its applications. »</span> <em>Data mining and knowledge discovery</em> 2: 169‑194.
 </div>
 </div>
             </section>

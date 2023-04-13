@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.5 Exercices de révision | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.5 Exercices de révision | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
@@ -51,16 +51,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -103,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -269,11 +269,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="sect041.html"><a href="sect041.html"><i class="fa fa-check"></i><b>4.1</b> Agrégats d’entités spatiales ponctuelles</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN</a></li>
-<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> HDBSCAN</a></li>
-<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0413"><i class="fa fa-check"></i><b>4.1.3</b> OPTICS</a></li>
-<li class="chapter" data-level="4.1.4" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.4</b> Agrégats spatio-temporels : ST-DBSCAN</a></li>
-<li class="chapter" data-level="4.1.5" data-path="sect041.html"><a href="sect041.html#sect0415"><i class="fa fa-check"></i><b>4.1.5</b> Mise en oeuvre dans R</a></li>
+<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN : agrégats spatiaux</a></li>
+<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> ST-DBSCAN : agrégats spatio-temporels</a></li>
+<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="sect042.html"><a href="sect042.html"><i class="fa fa-check"></i><b>4.2</b> Méthodes de balayage de Kulldorff</a>
 <ul>
@@ -454,56 +452,56 @@ Modélisation et analyse spatiale</a>
 <li>Matrice de pondération spatiale selon le critère des plus proches voisins (<em>k</em> = 2) (voir la section <a href="sect022.html#sect02245">2.2.4.5</a>).</li>
 </ul>
 <p>Complétez le code ci-dessous.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="sect025.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb273-2"><a href="sect025.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb273-3"><a href="sect025.html#cb273-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb273-4"><a href="sect025.html#cb273-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des secteurs de recensement</span></span>
-<span id="cb273-5"><a href="sect025.html#cb273-5" aria-hidden="true" tabindex="-1"></a>SRQc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/exercice/RMRQuebecSR2021.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb273-6"><a href="sect025.html#cb273-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb273-7"><a href="sect025.html#cb273-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice selon le partage d&#39;un segment (Rook)</span></span>
-<span id="cb273-8"><a href="sect025.html#cb273-8" aria-hidden="true" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb273-9"><a href="sect025.html#cb273-9" aria-hidden="true" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb273-10"><a href="sect025.html#cb273-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb273-11"><a href="sect025.html#cb273-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées des centroïdes des entités spatiales</span></span>
-<span id="cb273-12"><a href="sect025.html#cb273-12" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(SRQc))</span>
-<span id="cb273-13"><a href="sect025.html#cb273-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb273-14"><a href="sect025.html#cb273-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de l&#39;inverse de la distance réduite</span></span>
-<span id="cb273-15"><a href="sect025.html#cb273-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Trouver le plus proche voisin avec la fonction knn2nb</span></span>
-<span id="cb273-16"><a href="sect025.html#cb273-16" aria-hidden="true" tabindex="-1"></a>k1 <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb273-17"><a href="sect025.html#cb273-17" aria-hidden="true" tabindex="-1"></a>plusprochevoisin.max <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">unlist</span>(<span class="fu">nbdists</span>(k1,coords)))</span>
-<span id="cb273-18"><a href="sect025.html#cb273-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Voisins les plus proches avec le seuil de distance maximal</span></span>
-<span id="cb273-19"><a href="sect025.html#cb273-19" aria-hidden="true" tabindex="-1"></a>Voisins.DistMax <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb273-20"><a href="sect025.html#cb273-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Distances avec le seuil maximum</span></span>
-<span id="cb273-21"><a href="sect025.html#cb273-21" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb273-22"><a href="sect025.html#cb273-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Inverse de la distance au carré</span></span>
-<span id="cb273-23"><a href="sect025.html#cb273-23" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb273-24"><a href="sect025.html#cb273-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrices de pondération spatiale standardisées en ligne</span></span>
-<span id="cb273-25"><a href="sect025.html#cb273-25" aria-hidden="true" tabindex="-1"></a>W_InvDistances2 <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb273-26"><a href="sect025.html#cb273-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb273-27"><a href="sect025.html#cb273-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice des plus proches voisins avec k = 2</span></span>
-<span id="cb273-28"><a href="sect025.html#cb273-28" aria-hidden="true" tabindex="-1"></a>k2 <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb273-29"><a href="sect025.html#cb273-29" aria-hidden="true" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  À compléter</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="sect025.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb274-2"><a href="sect025.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb274-3"><a href="sect025.html#cb274-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb274-4"><a href="sect025.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des secteurs de recensement</span></span>
+<span id="cb274-5"><a href="sect025.html#cb274-5" aria-hidden="true" tabindex="-1"></a>SRQc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/exercice/RMRQuebecSR2021.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb274-6"><a href="sect025.html#cb274-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-7"><a href="sect025.html#cb274-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice selon le partage d&#39;un segment (Rook)</span></span>
+<span id="cb274-8"><a href="sect025.html#cb274-8" aria-hidden="true" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb274-9"><a href="sect025.html#cb274-9" aria-hidden="true" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb274-10"><a href="sect025.html#cb274-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-11"><a href="sect025.html#cb274-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées des centroïdes des entités spatiales</span></span>
+<span id="cb274-12"><a href="sect025.html#cb274-12" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(SRQc))</span>
+<span id="cb274-13"><a href="sect025.html#cb274-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-14"><a href="sect025.html#cb274-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice de l&#39;inverse de la distance réduite</span></span>
+<span id="cb274-15"><a href="sect025.html#cb274-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Trouver le plus proche voisin avec la fonction knn2nb</span></span>
+<span id="cb274-16"><a href="sect025.html#cb274-16" aria-hidden="true" tabindex="-1"></a>k1 <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb274-17"><a href="sect025.html#cb274-17" aria-hidden="true" tabindex="-1"></a>plusprochevoisin.max <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">unlist</span>(<span class="fu">nbdists</span>(k1,coords)))</span>
+<span id="cb274-18"><a href="sect025.html#cb274-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Voisins les plus proches avec le seuil de distance maximal</span></span>
+<span id="cb274-19"><a href="sect025.html#cb274-19" aria-hidden="true" tabindex="-1"></a>Voisins.DistMax <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb274-20"><a href="sect025.html#cb274-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Distances avec le seuil maximum</span></span>
+<span id="cb274-21"><a href="sect025.html#cb274-21" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb274-22"><a href="sect025.html#cb274-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Inverse de la distance au carré</span></span>
+<span id="cb274-23"><a href="sect025.html#cb274-23" aria-hidden="true" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb274-24"><a href="sect025.html#cb274-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrices de pondération spatiale standardisées en ligne</span></span>
+<span id="cb274-25"><a href="sect025.html#cb274-25" aria-hidden="true" tabindex="-1"></a>W_InvDistances2 <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb274-26"><a href="sect025.html#cb274-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-27"><a href="sect025.html#cb274-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Matrice des plus proches voisins avec k = 2</span></span>
+<span id="cb274-28"><a href="sect025.html#cb274-28" aria-hidden="true" tabindex="-1"></a>k2 <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb274-29"><a href="sect025.html#cb274-29" aria-hidden="true" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  À compléter</span></code></pre></div>
 <p>Correction à la section <a href="sect1002.html#sect10022">10.2.2</a>.</p>
 </div>
 <div class="bloc_exercice">
 <p><strong>Exercice 3.</strong> Calculez le <em>I</em> de Moran global pour la variable <code>D1pct</code> (pourcentage du premier décile de revenu des familles économiques) de la couche <code>SRQc</code> avec les différentes matrices de pondération spatiale (voir la section <a href="sect023.html#sect02322">2.3.2.2</a>). Complétez le code ci-dessous.</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="sect025.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb274-2"><a href="sect025.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb274-3"><a href="sect025.html#cb274-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb274-4"><a href="sect025.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie de la variable</span></span>
-<span id="cb274-5"><a href="sect025.html#cb274-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(SRQc)<span class="sc">+</span></span>
-<span id="cb274-6"><a href="sect025.html#cb274-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;D1pct&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Premier décile de revenu (%)&quot;</span>,</span>
-<span id="cb274-7"><a href="sect025.html#cb274-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;quantile&quot;</span>, <span class="at">n=</span><span class="dv">5</span>, <span class="at">palette=</span><span class="st">&quot;Greens&quot;</span>)<span class="sc">+</span></span>
-<span id="cb274-8"><a href="sect025.html#cb274-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)<span class="sc">+</span><span class="fu">tm_scale_bar</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>))</span>
-<span id="cb274-9"><a href="sect025.html#cb274-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb274-10"><a href="sect025.html#cb274-10" aria-hidden="true" tabindex="-1"></a><span class="do">## I de Moran avec la méthode Monte-Carlo avec 999 permutations</span></span>
-<span id="cb274-11"><a href="sect025.html#cb274-11" aria-hidden="true" tabindex="-1"></a><span class="co"># utilisez la fonction moran.mc</span></span>
-<span id="cb274-12"><a href="sect025.html#cb274-12" aria-hidden="true" tabindex="-1"></a><span class="co"># avec la matrice W.Rook</span></span>
-<span id="cb274-13"><a href="sect025.html#cb274-13" aria-hidden="true" tabindex="-1"></a>À compléter</span>
-<span id="cb274-14"><a href="sect025.html#cb274-14" aria-hidden="true" tabindex="-1"></a><span class="co"># avec la matrice W_InvDistances2Reduite</span></span>
-<span id="cb274-15"><a href="sect025.html#cb274-15" aria-hidden="true" tabindex="-1"></a>À compléter</span>
-<span id="cb274-16"><a href="sect025.html#cb274-16" aria-hidden="true" tabindex="-1"></a><span class="co"># avec la matrice W.k2</span></span>
-<span id="cb274-17"><a href="sect025.html#cb274-17" aria-hidden="true" tabindex="-1"></a>À compléter</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="sect025.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb275-2"><a href="sect025.html#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb275-3"><a href="sect025.html#cb275-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb275-4"><a href="sect025.html#cb275-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie de la variable</span></span>
+<span id="cb275-5"><a href="sect025.html#cb275-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(SRQc)<span class="sc">+</span></span>
+<span id="cb275-6"><a href="sect025.html#cb275-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;D1pct&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Premier décile de revenu (%)&quot;</span>,</span>
+<span id="cb275-7"><a href="sect025.html#cb275-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;quantile&quot;</span>, <span class="at">n=</span><span class="dv">5</span>, <span class="at">palette=</span><span class="st">&quot;Greens&quot;</span>)<span class="sc">+</span></span>
+<span id="cb275-8"><a href="sect025.html#cb275-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)<span class="sc">+</span><span class="fu">tm_scale_bar</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>))</span>
+<span id="cb275-9"><a href="sect025.html#cb275-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb275-10"><a href="sect025.html#cb275-10" aria-hidden="true" tabindex="-1"></a><span class="do">## I de Moran avec la méthode Monte-Carlo avec 999 permutations</span></span>
+<span id="cb275-11"><a href="sect025.html#cb275-11" aria-hidden="true" tabindex="-1"></a><span class="co"># utilisez la fonction moran.mc</span></span>
+<span id="cb275-12"><a href="sect025.html#cb275-12" aria-hidden="true" tabindex="-1"></a><span class="co"># avec la matrice W.Rook</span></span>
+<span id="cb275-13"><a href="sect025.html#cb275-13" aria-hidden="true" tabindex="-1"></a>À compléter</span>
+<span id="cb275-14"><a href="sect025.html#cb275-14" aria-hidden="true" tabindex="-1"></a><span class="co"># avec la matrice W_InvDistances2Reduite</span></span>
+<span id="cb275-15"><a href="sect025.html#cb275-15" aria-hidden="true" tabindex="-1"></a>À compléter</span>
+<span id="cb275-16"><a href="sect025.html#cb275-16" aria-hidden="true" tabindex="-1"></a><span class="co"># avec la matrice W.k2</span></span>
+<span id="cb275-17"><a href="sect025.html#cb275-17" aria-hidden="true" tabindex="-1"></a>À compléter</span></code></pre></div>
 <p>Quelle matrice de pondération spatiale donne la dépendance spatiale la plus forte?
 Correction à la section <a href="sect1002.html#sect10023">10.2.3</a>.</p>
 </div>
@@ -514,54 +512,54 @@ Correction à la section <a href="sect1002.html#sect10023">10.2.3</a>.</p>
 <li>Typologie du nuage de points du <em>I</em> de Moran avec la fonction <code>localmoran</code> (voir la section <a href="sect024.html#sect0243">2.4.3</a>).</li>
 </ul>
 <p>Complétez le code ci-dessous.</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="sect025.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
-<span id="cb275-2"><a href="sect025.html#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du Z(Gi)</span></span>
-<span id="cb275-3"><a href="sect025.html#cb275-3" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
-<span id="cb275-4"><a href="sect025.html#cb275-4" aria-hidden="true" tabindex="-1"></a>SRQc<span class="sc">$</span>D1pct_localGetis <span class="ot">&lt;-</span> <span class="fu">localG</span>(À compléter, </span>
-<span id="cb275-5"><a href="sect025.html#cb275-5" aria-hidden="true" tabindex="-1"></a>                                À compléter, </span>
-<span id="cb275-6"><a href="sect025.html#cb275-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">zero.policy=</span><span class="cn">TRUE</span>)</span>
-<span id="cb275-7"><a href="sect025.html#cb275-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition des intervalles et des noms des classes</span></span>
-<span id="cb275-8"><a href="sect025.html#cb275-8" aria-hidden="true" tabindex="-1"></a>classes.intervalles <span class="ot">=</span> À compléter</span>
-<span id="cb275-9"><a href="sect025.html#cb275-9" aria-hidden="true" tabindex="-1"></a>classes.noms <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Point froid (p = 0,001)&quot;</span>, </span>
-<span id="cb275-10"><a href="sect025.html#cb275-10" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point froid (p = 0,01)&quot;</span>, </span>
-<span id="cb275-11"><a href="sect025.html#cb275-11" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point froid (p = 0,05)&quot;</span>, </span>
-<span id="cb275-12"><a href="sect025.html#cb275-12" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Non significatif&quot;</span>,</span>
-<span id="cb275-13"><a href="sect025.html#cb275-13" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,05)&quot;</span>, </span>
-<span id="cb275-14"><a href="sect025.html#cb275-14" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,01)&quot;</span>, </span>
-<span id="cb275-15"><a href="sect025.html#cb275-15" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,001)&quot;</span>)</span>
-<span id="cb275-16"><a href="sect025.html#cb275-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;un champ avec les noms des classes</span></span>
-<span id="cb275-17"><a href="sect025.html#cb275-17" aria-hidden="true" tabindex="-1"></a>SRQc<span class="sc">$</span>D1pct_localGetisP <span class="ot">&lt;-</span> <span class="fu">cut</span>(SRQc<span class="sc">$</span>D1pct_localGetis,</span>
-<span id="cb275-18"><a href="sect025.html#cb275-18" aria-hidden="true" tabindex="-1"></a>                              <span class="at">breaks =</span> classes.intervalles,</span>
-<span id="cb275-19"><a href="sect025.html#cb275-19" aria-hidden="true" tabindex="-1"></a>                              <span class="at">labels =</span> classes.noms)</span>
-<span id="cb275-20"><a href="sect025.html#cb275-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
-<span id="cb275-21"><a href="sect025.html#cb275-21" aria-hidden="true" tabindex="-1"></a>À compléter</span>
-<span id="cb275-22"><a href="sect025.html#cb275-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb275-23"><a href="sect025.html#cb275-23" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
-<span id="cb275-24"><a href="sect025.html#cb275-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Typologie LISA</span></span>
-<span id="cb275-25"><a href="sect025.html#cb275-25" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
-<span id="cb275-26"><a href="sect025.html#cb275-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Cote Z (variable centrée réduite)</span></span>
-<span id="cb275-27"><a href="sect025.html#cb275-27" aria-hidden="true" tabindex="-1"></a>zx <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb275-28"><a href="sect025.html#cb275-28" aria-hidden="true" tabindex="-1"></a><span class="do">## variable X centrée réduite spatialement décalée avec une matrice Rook</span></span>
-<span id="cb275-29"><a href="sect025.html#cb275-29" aria-hidden="true" tabindex="-1"></a>wzx <span class="ot">&lt;-</span> <span class="fu">lag.listw</span>(À compléter)</span>
-<span id="cb275-30"><a href="sect025.html#cb275-30" aria-hidden="true" tabindex="-1"></a><span class="do">## I de Moran local (notez que vous pouvez aussi utiliser la fonction localmoran_perm)</span></span>
-<span id="cb275-31"><a href="sect025.html#cb275-31" aria-hidden="true" tabindex="-1"></a>localMoranI  <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(À compléter)</span>
-<span id="cb275-32"><a href="sect025.html#cb275-32" aria-hidden="true" tabindex="-1"></a>plocalMoranI <span class="ot">&lt;-</span> localMoranI[, <span class="dv">5</span>]</span>
-<span id="cb275-33"><a href="sect025.html#cb275-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Choisir un seuil de signification</span></span>
-<span id="cb275-34"><a href="sect025.html#cb275-34" aria-hidden="true" tabindex="-1"></a>signif <span class="ot">=</span> <span class="fl">0.05</span></span>
-<span id="cb275-35"><a href="sect025.html#cb275-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Construction de la typologie</span></span>
-<span id="cb275-36"><a href="sect025.html#cb275-36" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;1. HH&quot;</span>, <span class="cn">NA</span>)</span>
-<span id="cb275-37"><a href="sect025.html#cb275-37" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">&quot;2. LL&quot;</span>, Typologie)</span>
-<span id="cb275-38"><a href="sect025.html#cb275-38" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">&quot;3. HL&quot;</span>, Typologie)</span>
-<span id="cb275-39"><a href="sect025.html#cb275-39" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;4. LH&quot;</span>, Typologie)</span>
-<span id="cb275-40"><a href="sect025.html#cb275-40" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(plocalMoranI <span class="sc">&gt;</span> signif, <span class="st">&quot;Non sign&quot;</span>, Typologie)  <span class="co"># Non significatif</span></span>
-<span id="cb275-41"><a href="sect025.html#cb275-41" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrement de la typologie dans un champ</span></span>
-<span id="cb275-42"><a href="sect025.html#cb275-42" aria-hidden="true" tabindex="-1"></a>SRQc<span class="sc">$</span>TypoIMoran.D1pct <span class="ot">&lt;-</span> Typologie</span>
-<span id="cb275-43"><a href="sect025.html#cb275-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Couleurs</span></span>
-<span id="cb275-44"><a href="sect025.html#cb275-44" aria-hidden="true" tabindex="-1"></a>Couleurs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightpink&quot;</span>, <span class="st">&quot;skyblue2&quot;</span>, <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb275-45"><a href="sect025.html#cb275-45" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Couleurs) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1. HH&quot;</span>,<span class="st">&quot;2. LL&quot;</span>,<span class="st">&quot;3. HL&quot;</span>,<span class="st">&quot;4. LH&quot;</span>,<span class="st">&quot;Non sign&quot;</span>)</span>
-<span id="cb275-46"><a href="sect025.html#cb275-46" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
-<span id="cb275-47"><a href="sect025.html#cb275-47" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb275-48"><a href="sect025.html#cb275-48" aria-hidden="true" tabindex="-1"></a>À compléter</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="sect025.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb276-2"><a href="sect025.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul du Z(Gi)</span></span>
+<span id="cb276-3"><a href="sect025.html#cb276-3" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb276-4"><a href="sect025.html#cb276-4" aria-hidden="true" tabindex="-1"></a>SRQc<span class="sc">$</span>D1pct_localGetis <span class="ot">&lt;-</span> <span class="fu">localG</span>(À compléter, </span>
+<span id="cb276-5"><a href="sect025.html#cb276-5" aria-hidden="true" tabindex="-1"></a>                                À compléter, </span>
+<span id="cb276-6"><a href="sect025.html#cb276-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">zero.policy=</span><span class="cn">TRUE</span>)</span>
+<span id="cb276-7"><a href="sect025.html#cb276-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition des intervalles et des noms des classes</span></span>
+<span id="cb276-8"><a href="sect025.html#cb276-8" aria-hidden="true" tabindex="-1"></a>classes.intervalles <span class="ot">=</span> À compléter</span>
+<span id="cb276-9"><a href="sect025.html#cb276-9" aria-hidden="true" tabindex="-1"></a>classes.noms <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Point froid (p = 0,001)&quot;</span>, </span>
+<span id="cb276-10"><a href="sect025.html#cb276-10" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point froid (p = 0,01)&quot;</span>, </span>
+<span id="cb276-11"><a href="sect025.html#cb276-11" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point froid (p = 0,05)&quot;</span>, </span>
+<span id="cb276-12"><a href="sect025.html#cb276-12" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Non significatif&quot;</span>,</span>
+<span id="cb276-13"><a href="sect025.html#cb276-13" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,05)&quot;</span>, </span>
+<span id="cb276-14"><a href="sect025.html#cb276-14" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,01)&quot;</span>, </span>
+<span id="cb276-15"><a href="sect025.html#cb276-15" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,001)&quot;</span>)</span>
+<span id="cb276-16"><a href="sect025.html#cb276-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;un champ avec les noms des classes</span></span>
+<span id="cb276-17"><a href="sect025.html#cb276-17" aria-hidden="true" tabindex="-1"></a>SRQc<span class="sc">$</span>D1pct_localGetisP <span class="ot">&lt;-</span> <span class="fu">cut</span>(SRQc<span class="sc">$</span>D1pct_localGetis,</span>
+<span id="cb276-18"><a href="sect025.html#cb276-18" aria-hidden="true" tabindex="-1"></a>                              <span class="at">breaks =</span> classes.intervalles,</span>
+<span id="cb276-19"><a href="sect025.html#cb276-19" aria-hidden="true" tabindex="-1"></a>                              <span class="at">labels =</span> classes.noms)</span>
+<span id="cb276-20"><a href="sect025.html#cb276-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb276-21"><a href="sect025.html#cb276-21" aria-hidden="true" tabindex="-1"></a>À compléter</span>
+<span id="cb276-22"><a href="sect025.html#cb276-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-23"><a href="sect025.html#cb276-23" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb276-24"><a href="sect025.html#cb276-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Typologie LISA</span></span>
+<span id="cb276-25"><a href="sect025.html#cb276-25" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb276-26"><a href="sect025.html#cb276-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Cote Z (variable centrée réduite)</span></span>
+<span id="cb276-27"><a href="sect025.html#cb276-27" aria-hidden="true" tabindex="-1"></a>zx <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb276-28"><a href="sect025.html#cb276-28" aria-hidden="true" tabindex="-1"></a><span class="do">## variable X centrée réduite spatialement décalée avec une matrice Rook</span></span>
+<span id="cb276-29"><a href="sect025.html#cb276-29" aria-hidden="true" tabindex="-1"></a>wzx <span class="ot">&lt;-</span> <span class="fu">lag.listw</span>(À compléter)</span>
+<span id="cb276-30"><a href="sect025.html#cb276-30" aria-hidden="true" tabindex="-1"></a><span class="do">## I de Moran local (notez que vous pouvez aussi utiliser la fonction localmoran_perm)</span></span>
+<span id="cb276-31"><a href="sect025.html#cb276-31" aria-hidden="true" tabindex="-1"></a>localMoranI  <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(À compléter)</span>
+<span id="cb276-32"><a href="sect025.html#cb276-32" aria-hidden="true" tabindex="-1"></a>plocalMoranI <span class="ot">&lt;-</span> localMoranI[, <span class="dv">5</span>]</span>
+<span id="cb276-33"><a href="sect025.html#cb276-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Choisir un seuil de signification</span></span>
+<span id="cb276-34"><a href="sect025.html#cb276-34" aria-hidden="true" tabindex="-1"></a>signif <span class="ot">=</span> <span class="fl">0.05</span></span>
+<span id="cb276-35"><a href="sect025.html#cb276-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Construction de la typologie</span></span>
+<span id="cb276-36"><a href="sect025.html#cb276-36" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;1. HH&quot;</span>, <span class="cn">NA</span>)</span>
+<span id="cb276-37"><a href="sect025.html#cb276-37" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">&quot;2. LL&quot;</span>, Typologie)</span>
+<span id="cb276-38"><a href="sect025.html#cb276-38" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">&quot;3. HL&quot;</span>, Typologie)</span>
+<span id="cb276-39"><a href="sect025.html#cb276-39" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;4. LH&quot;</span>, Typologie)</span>
+<span id="cb276-40"><a href="sect025.html#cb276-40" aria-hidden="true" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(plocalMoranI <span class="sc">&gt;</span> signif, <span class="st">&quot;Non sign&quot;</span>, Typologie)  <span class="co"># Non significatif</span></span>
+<span id="cb276-41"><a href="sect025.html#cb276-41" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrement de la typologie dans un champ</span></span>
+<span id="cb276-42"><a href="sect025.html#cb276-42" aria-hidden="true" tabindex="-1"></a>SRQc<span class="sc">$</span>TypoIMoran.D1pct <span class="ot">&lt;-</span> Typologie</span>
+<span id="cb276-43"><a href="sect025.html#cb276-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Couleurs</span></span>
+<span id="cb276-44"><a href="sect025.html#cb276-44" aria-hidden="true" tabindex="-1"></a>Couleurs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightpink&quot;</span>, <span class="st">&quot;skyblue2&quot;</span>, <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb276-45"><a href="sect025.html#cb276-45" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Couleurs) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1. HH&quot;</span>,<span class="st">&quot;2. LL&quot;</span>,<span class="st">&quot;3. HL&quot;</span>,<span class="st">&quot;4. LH&quot;</span>,<span class="st">&quot;Non sign&quot;</span>)</span>
+<span id="cb276-46"><a href="sect025.html#cb276-46" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb276-47"><a href="sect025.html#cb276-47" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb276-48"><a href="sect025.html#cb276-48" aria-hidden="true" tabindex="-1"></a>À compléter</span></code></pre></div>
 <p>Correction à la section <a href="sect1002.html#sect10024">10.2.4</a>.</p>
 </div>
 <div style="page-break-after: always;"></div>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.4 Exportation de données spatiales de R vers des formats géographiques | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.4 Exportation de données spatiales de R vers des formats géographiques | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
@@ -51,16 +51,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -103,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -269,11 +269,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="sect041.html"><a href="sect041.html"><i class="fa fa-check"></i><b>4.1</b> Agrégats d’entités spatiales ponctuelles</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN</a></li>
-<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> HDBSCAN</a></li>
-<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0413"><i class="fa fa-check"></i><b>4.1.3</b> OPTICS</a></li>
-<li class="chapter" data-level="4.1.4" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.4</b> Agrégats spatio-temporels : ST-DBSCAN</a></li>
-<li class="chapter" data-level="4.1.5" data-path="sect041.html"><a href="sect041.html#sect0415"><i class="fa fa-check"></i><b>4.1.5</b> Mise en oeuvre dans R</a></li>
+<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN : agrégats spatiaux</a></li>
+<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> ST-DBSCAN : agrégats spatio-temporels</a></li>
+<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="sect042.html"><a href="sect042.html"><i class="fa fa-check"></i><b>4.2</b> Méthodes de balayage de Kulldorff</a>
 <ul>
@@ -458,39 +456,39 @@ Modélisation et analyse spatiale</a>
 </ul>
 </div>
 <p>Dans la section <a href="sect011.html#sect011">1.1</a>, nous avons vu que la fonction <code>st_read()</code> du <em>package</em> <code>sf</code> permet d’importer une multitude de formats géographiques. Comment en exporter avec <code>sf</code>? Rien de plus simple : avec la fonction <code>st_write()</code>. Le code ci-dessous illustre comment exporter des objets <code>sf</code> aux formats <em>shapefile</em> (<code>shp</code>), <em>GeoPackage</em> (<code>GPKG</code>), <em>Keyhole Markup Language</em> (<code>kml</code>) et <em>GeoJSON</em>. Par défaut, <code>st_write()</code> n’écrase pas un fichier existant; pour l’écraser, ajoutez le paramètre <code>append = FALSE</code>.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="sect014.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exportation au format shapefile</span></span>
-<span id="cb172-2"><a href="sect014.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(PointsGPS, <span class="co"># couche sf</span></span>
-<span id="cb172-3"><a href="sect014.html#cb172-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;data/chap01/export/PointsGPS.shp&quot;</span>,  <span class="co"># chemin et nom du fichier</span></span>
-<span id="cb172-4"><a href="sect014.html#cb172-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">append =</span> <span class="cn">FALSE</span>, <span class="co"># pour écraser le fichier s&#39;il existe</span></span>
-<span id="cb172-5"><a href="sect014.html#cb172-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">driver =</span> <span class="st">&quot;ESRI Shapefile&quot;</span></span>
-<span id="cb172-6"><a href="sect014.html#cb172-6" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="sect014.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exportation au format shapefile</span></span>
+<span id="cb173-2"><a href="sect014.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(PointsGPS, <span class="co"># couche sf</span></span>
+<span id="cb173-3"><a href="sect014.html#cb173-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;data/chap01/export/PointsGPS.shp&quot;</span>,  <span class="co"># chemin et nom du fichier</span></span>
+<span id="cb173-4"><a href="sect014.html#cb173-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">append =</span> <span class="cn">FALSE</span>, <span class="co"># pour écraser le fichier s&#39;il existe</span></span>
+<span id="cb173-5"><a href="sect014.html#cb173-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">driver =</span> <span class="st">&quot;ESRI Shapefile&quot;</span></span>
+<span id="cb173-6"><a href="sect014.html#cb173-6" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
 <pre><code>## Deleting layer `PointsGPS&#39; using driver `ESRI Shapefile&#39;
 ## Writing layer `PointsGPS&#39; to data source 
 ##   `data/chap01/export/PointsGPS.shp&#39; using driver `ESRI Shapefile&#39;
 ## Writing 89 features with 2 fields and geometry type Point.</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="sect014.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exportation dans une couche dans GPKG</span></span>
-<span id="cb174-2"><a href="sect014.html#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(PointsGPS, </span>
-<span id="cb174-3"><a href="sect014.html#cb174-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;data/chap01/export/Data.gpkg&quot;</span>, </span>
-<span id="cb174-4"><a href="sect014.html#cb174-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">layer =</span> <span class="st">&quot;PointsGPS&quot;</span>,</span>
-<span id="cb174-5"><a href="sect014.html#cb174-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">append =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb174-6"><a href="sect014.html#cb174-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">driver =</span> <span class="st">&quot;GPKG&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="sect014.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exportation dans une couche dans GPKG</span></span>
+<span id="cb175-2"><a href="sect014.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(PointsGPS, </span>
+<span id="cb175-3"><a href="sect014.html#cb175-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;data/chap01/export/Data.gpkg&quot;</span>, </span>
+<span id="cb175-4"><a href="sect014.html#cb175-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">layer =</span> <span class="st">&quot;PointsGPS&quot;</span>,</span>
+<span id="cb175-5"><a href="sect014.html#cb175-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">append =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb175-6"><a href="sect014.html#cb175-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">driver =</span> <span class="st">&quot;GPKG&quot;</span>)</span></code></pre></div>
 <pre><code>## Deleting layer `PointsGPS&#39; using driver `GPKG&#39;
 ## Writing layer `PointsGPS&#39; to data source 
 ##   `data/chap01/export/Data.gpkg&#39; using driver `GPKG&#39;
 ## Writing 89 features with 2 fields and geometry type Point.</code></pre>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="sect014.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exportation vers un fichier KML</span></span>
-<span id="cb176-2"><a href="sect014.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(PointsGPS, </span>
-<span id="cb176-3"><a href="sect014.html#cb176-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;data/chap01/export/PointsGPS.kml&quot;</span>, </span>
-<span id="cb176-4"><a href="sect014.html#cb176-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">append =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb176-5"><a href="sect014.html#cb176-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">driver=</span><span class="st">&quot;KML&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="sect014.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exportation vers un fichier KML</span></span>
+<span id="cb177-2"><a href="sect014.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(PointsGPS, </span>
+<span id="cb177-3"><a href="sect014.html#cb177-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;data/chap01/export/PointsGPS.kml&quot;</span>, </span>
+<span id="cb177-4"><a href="sect014.html#cb177-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">append =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb177-5"><a href="sect014.html#cb177-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">driver=</span><span class="st">&quot;KML&quot;</span>)</span></code></pre></div>
 <pre><code>## Writing layer `PointsGPS&#39; to data source 
 ##   `data/chap01/export/PointsGPS.kml&#39; using driver `KML&#39;
 ## Writing 89 features with 2 fields and geometry type Point.</code></pre>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="sect014.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exportation vers un fichier GeoJSON</span></span>
-<span id="cb178-2"><a href="sect014.html#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(PointsGPS, </span>
-<span id="cb178-3"><a href="sect014.html#cb178-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;data/chap01/export/PointsGPS.geojson&quot;</span>, </span>
-<span id="cb178-4"><a href="sect014.html#cb178-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">append =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb178-5"><a href="sect014.html#cb178-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">driver=</span><span class="st">&quot;GeoJSON&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="sect014.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exportation vers un fichier GeoJSON</span></span>
+<span id="cb179-2"><a href="sect014.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(PointsGPS, </span>
+<span id="cb179-3"><a href="sect014.html#cb179-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;data/chap01/export/PointsGPS.geojson&quot;</span>, </span>
+<span id="cb179-4"><a href="sect014.html#cb179-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">append =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb179-5"><a href="sect014.html#cb179-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">driver=</span><span class="st">&quot;GeoJSON&quot;</span>)</span></code></pre></div>
 <pre><code>## Deleting layer not supported by driver `GeoJSON&#39;
 ## Deleting layer `PointsGPS&#39; failed
 ## Writing layer `PointsGPS&#39; to data source 
@@ -1667,9 +1665,9 @@ TRUE
 <div id="sect0142" class="section level3 hasAnchor" number="1.4.2">
 <h3><span class="header-section-number">1.4.2</span> Exportation de données <em>raster</em><a href="sect014.html#sect0142" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’exportation d’objets <code>SpatRasters</code> de <code>terra</code> est très simple avec la méthode <code>terra::writeRaster</code>. En guise d’exemple, le code ci-dessous exporte la mosaïque de MNA dans un fichier GeoTIFF. Notez que le paramètre <code>filetype</code> permet de spécifier d’autres formats d’images de la liste qui est disponible au lien suivant : <a href="https://gdal.org/drivers/raster/index.html"><em>https://gdal.org/drivers/raster/index.html</em></a>. En guise d’exemple, les paramètres <code>EIR</code>, <code>ENVI</code>, <code>RST</code>, <code>ERS</code> et <code>GRASS</code> permettent d’exporter vers les logiciels de télédétection ERDAS, ENVI, Idrisi, ERMapper et GRASS, tandis que le paramètre <code>GPKG</code> permet d’exporter vers un <em>GeoPackage</em> raster.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="sect014.html#cb180-1" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(MosaicSherbCrop, <span class="st">&quot;data/chap01/export/MosaicSherb.tif&quot;</span>, </span>
-<span id="cb180-2"><a href="sect014.html#cb180-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">filetype =</span> <span class="st">&quot;GTiff&quot;</span>, </span>
-<span id="cb180-3"><a href="sect014.html#cb180-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="sect014.html#cb181-1" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(MosaicSherbCrop, <span class="st">&quot;data/chap01/export/MosaicSherb.tif&quot;</span>, </span>
+<span id="cb181-2"><a href="sect014.html#cb181-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">filetype =</span> <span class="st">&quot;GTiff&quot;</span>, </span>
+<span id="cb181-3"><a href="sect014.html#cb181-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 </div>
             </section>

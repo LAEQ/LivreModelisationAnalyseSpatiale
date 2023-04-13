@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.3 Manipulation de données raster | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.3 Manipulation de données raster | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
@@ -51,16 +51,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -103,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -269,11 +269,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="sect041.html"><a href="sect041.html"><i class="fa fa-check"></i><b>4.1</b> Agrégats d’entités spatiales ponctuelles</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN</a></li>
-<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> HDBSCAN</a></li>
-<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0413"><i class="fa fa-check"></i><b>4.1.3</b> OPTICS</a></li>
-<li class="chapter" data-level="4.1.4" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.4</b> Agrégats spatio-temporels : ST-DBSCAN</a></li>
-<li class="chapter" data-level="4.1.5" data-path="sect041.html"><a href="sect041.html#sect0415"><i class="fa fa-check"></i><b>4.1.5</b> Mise en oeuvre dans R</a></li>
+<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN : agrégats spatiaux</a></li>
+<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> ST-DBSCAN : agrégats spatio-temporels</a></li>
+<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="sect042.html"><a href="sect042.html"><i class="fa fa-check"></i><b>4.2</b> Méthodes de balayage de Kulldorff</a>
 <ul>
@@ -454,24 +452,24 @@ Modélisation et analyse spatiale</a>
 <li><p><code>terra::merge</code> fusionne plusieurs images (<code>SpatRasters</code>) pour former un nouvel objet <code>SpatRasters</code> dont l’étendue est recalculée en fonction des images fusionnées. Par contre, si les images se chevauchent, les valeurs des pixels dans les zones de chevauchement seront prises dans le même ordre que les images.</p></li>
 <li><p><code>terra::mosaic</code> fusionne aussi plusieurs images. Toutefois, dans les zones de chevauchement, les moyennes des pixels sont calculées. Selon la documentation de <code>terra</code>, cette méthode serait plus rapide que la précédente. Dans le code ci-dessous, nous fusionnons les quatre feuillets de modèles numériques d’altitude (MNA) importés dans la section <a href="sect011.html#sect0112">1.1.2</a>.</p></li>
 </ul>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="sect013.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Les GeoTIFF importés avec terra sont bien des SpatRaster</span></span>
-<span id="cb157-2"><a href="sect013.html#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(f21e05_101)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="sect013.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Les GeoTIFF importés avec terra sont bien des SpatRaster</span></span>
+<span id="cb158-2"><a href="sect013.html#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(f21e05_101)</span></code></pre></div>
 <pre><code>## [1] &quot;SpatRaster&quot;
 ## attr(,&quot;package&quot;)
 ## [1] &quot;terra&quot;</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="sect013.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;une liste pour les cinq feuillets SpatRaster</span></span>
-<span id="cb159-2"><a href="sect013.html#cb159-2" aria-hidden="true" tabindex="-1"></a>rlist <span class="ot">&lt;-</span> <span class="fu">list</span>(f21e05_101, f21e05_201, f31h08_102,</span>
-<span id="cb159-3"><a href="sect013.html#cb159-3" aria-hidden="true" tabindex="-1"></a>              f31h08_202, f21e12_101)</span>
-<span id="cb159-4"><a href="sect013.html#cb159-4" aria-hidden="true" tabindex="-1"></a>rsrc <span class="ot">&lt;-</span> <span class="fu">sprc</span>(rlist)</span>
-<span id="cb159-5"><a href="sect013.html#cb159-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de la mosaïque</span></span>
-<span id="cb159-6"><a href="sect013.html#cb159-6" aria-hidden="true" tabindex="-1"></a>MosaicSherb <span class="ot">&lt;-</span> <span class="fu">mosaic</span>(rsrc)</span>
-<span id="cb159-7"><a href="sect013.html#cb159-7" aria-hidden="true" tabindex="-1"></a>MosaicSherb</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="sect013.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;une liste pour les cinq feuillets SpatRaster</span></span>
+<span id="cb160-2"><a href="sect013.html#cb160-2" aria-hidden="true" tabindex="-1"></a>rlist <span class="ot">&lt;-</span> <span class="fu">list</span>(f21e05_101, f21e05_201, f31h08_102,</span>
+<span id="cb160-3"><a href="sect013.html#cb160-3" aria-hidden="true" tabindex="-1"></a>              f31h08_202, f21e12_101)</span>
+<span id="cb160-4"><a href="sect013.html#cb160-4" aria-hidden="true" tabindex="-1"></a>rsrc <span class="ot">&lt;-</span> <span class="fu">sprc</span>(rlist)</span>
+<span id="cb160-5"><a href="sect013.html#cb160-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de la mosaïque</span></span>
+<span id="cb160-6"><a href="sect013.html#cb160-6" aria-hidden="true" tabindex="-1"></a>MosaicSherb <span class="ot">&lt;-</span> <span class="fu">mosaic</span>(rsrc)</span>
+<span id="cb160-7"><a href="sect013.html#cb160-7" aria-hidden="true" tabindex="-1"></a>MosaicSherb</span></code></pre></div>
 <pre><code>## class       : SpatRaster 
 ## dimensions  : 4187, 5575, 1  (nrow, ncol, nlyr)
 ## resolution  : 9e-05, 9e-05  (x, y)
 ## extent      : -72.25087, -71.74913, 45.24907, 45.6259  (xmin, xmax, ymin, ymax)
 ## coord. ref. : lon/lat NAD83 (EPSG:4269) 
-## source      : memory 
+## source(s)   : memory
 ## name        : f21e05_101 
 ## min value   :   123.7184 
 ## max value   :   845.0474</code></pre>
@@ -482,45 +480,45 @@ Modélisation et analyse spatiale</a>
 <li><p><code>mask(x, y)</code> découpe une image <code>x</code> en prenant la zone (pixels avec des valeurs non nulles ou objets vectoriels) de <code>y</code>. Les pixels en dehors de cette zone auront nulle comme valeur (<code>NA</code> dans R).</p></li>
 </ul>
 <p>En guise d’exemple, découpons la mosaïque avec le polygone de la ville de Sherbrooke en utilisant la méthode <code>mask</code>. Attention, les deux sources de données doivent avoir la même projection et il faut préalablement convertir l’objet <code>sf</code> en objet <code>terra</code>.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="sect013.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Changement de projection pour le polygone de la ville de Sherbrooke</span></span>
-<span id="cb161-2"><a href="sect013.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Application de la même projection que celle de la mosaïque</span></span>
-<span id="cb161-3"><a href="sect013.html#cb161-3" aria-hidden="true" tabindex="-1"></a>VilleSherb.EPSG4269 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Arrond.Union, <span class="fu">crs</span>(MosaicSherb))</span>
-<span id="cb161-4"><a href="sect013.html#cb161-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir l&#39;objet sf en un objet SpatVector de terra</span></span>
-<span id="cb161-5"><a href="sect013.html#cb161-5" aria-hidden="true" tabindex="-1"></a>VilleSherb.SpatVector <span class="ot">=</span> <span class="fu">vect</span>(VilleSherb.EPSG4269)</span>
-<span id="cb161-6"><a href="sect013.html#cb161-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Découpage de la mosaïque avec le polygone de la ville de Sherbrooke</span></span>
-<span id="cb161-7"><a href="sect013.html#cb161-7" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(MosaicSherb, VilleSherb.SpatVector)</span>
-<span id="cb161-8"><a href="sect013.html#cb161-8" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="sect013.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Changement de projection pour le polygone de la ville de Sherbrooke</span></span>
+<span id="cb162-2"><a href="sect013.html#cb162-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Application de la même projection que celle de la mosaïque</span></span>
+<span id="cb162-3"><a href="sect013.html#cb162-3" aria-hidden="true" tabindex="-1"></a>VilleSherb.EPSG4269 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Arrond.Union, <span class="fu">crs</span>(MosaicSherb))</span>
+<span id="cb162-4"><a href="sect013.html#cb162-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir l&#39;objet sf en un objet SpatVector de terra</span></span>
+<span id="cb162-5"><a href="sect013.html#cb162-5" aria-hidden="true" tabindex="-1"></a>VilleSherb.SpatVector <span class="ot">=</span> <span class="fu">vect</span>(VilleSherb.EPSG4269)</span>
+<span id="cb162-6"><a href="sect013.html#cb162-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Découpage de la mosaïque avec le polygone de la ville de Sherbrooke</span></span>
+<span id="cb162-7"><a href="sect013.html#cb162-7" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(MosaicSherb, VilleSherb.SpatVector)</span>
+<span id="cb162-8"><a href="sect013.html#cb162-8" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop</span></code></pre></div>
 <pre><code>## class       : SpatRaster 
 ## dimensions  : 4187, 5575, 1  (nrow, ncol, nlyr)
 ## resolution  : 9e-05, 9e-05  (x, y)
 ## extent      : -72.25087, -71.74913, 45.24907, 45.6259  (xmin, xmax, ymin, ymax)
 ## coord. ref. : lon/lat NAD83 (EPSG:4269) 
-## source      : memory 
+## source(s)   : memory
 ## name        : f21e05_101 
 ## min value   :        126 
 ## max value   :        390</code></pre>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="sect013.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Constastez ci-dessus que le nom de l&#39;image est f21e05_101.</span></span>
-<span id="cb163-2"><a href="sect013.html#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Pour le changer, utilisez la fonction names()</span></span>
-<span id="cb163-3"><a href="sect013.html#cb163-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(MosaicSherbCrop) <span class="ot">=</span> <span class="st">&quot;Elevation&quot;</span></span>
-<span id="cb163-4"><a href="sect013.html#cb163-4" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="sect013.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Constastez ci-dessus que le nom de l&#39;image est f21e05_101.</span></span>
+<span id="cb164-2"><a href="sect013.html#cb164-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Pour le changer, utilisez la fonction names()</span></span>
+<span id="cb164-3"><a href="sect013.html#cb164-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(MosaicSherbCrop) <span class="ot">=</span> <span class="st">&quot;Elevation&quot;</span></span>
+<span id="cb164-4"><a href="sect013.html#cb164-4" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop</span></code></pre></div>
 <pre><code>## class       : SpatRaster 
 ## dimensions  : 4187, 5575, 1  (nrow, ncol, nlyr)
 ## resolution  : 9e-05, 9e-05  (x, y)
 ## extent      : -72.25087, -71.74913, 45.24907, 45.6259  (xmin, xmax, ymin, ymax)
 ## coord. ref. : lon/lat NAD83 (EPSG:4269) 
-## source      : memory 
+## source(s)   : memory
 ## name        : Elevation 
 ## min value   :       126 
 ## max value   :       390</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="sect013.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Visualisation du résultat</span></span>
-<span id="cb165-2"><a href="sect013.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MosaicSherbCrop)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="sect013.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Visualisation du résultat</span></span>
+<span id="cb166-2"><a href="sect013.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MosaicSherbCrop)</span></code></pre></div>
 <p><img src="GMQ405_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 </div>
 <div id="sect0132" class="section level3 hasAnchor" number="1.3.2">
 <h3><span class="header-section-number">1.3.2</span> Requêtes attributaires sur des images<a href="sect013.html#sect0132" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Avant d’effectuer une requête, il est judicieux d’explorer les valeurs des pixels de l’image avec un histogramme et la fonction <code>summary(Nom de l'image)</code> (valeurs minimales, maximales, quartiles, moyenne et valeurs nulles – <code>NA</code>).</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="sect013.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sommaire statistique des valeurs</span></span>
-<span id="cb166-2"><a href="sect013.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MosaicSherbCrop)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="sect013.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sommaire statistique des valeurs</span></span>
+<span id="cb167-2"><a href="sect013.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MosaicSherbCrop)</span></code></pre></div>
 <pre><code>##    Elevation    
 ##  Min.   :126.0  
 ##  1st Qu.:197.7  
@@ -529,28 +527,28 @@ Modélisation et analyse spatiale</a>
 ##  3rd Qu.:251.4  
 ##  Max.   :389.9  
 ##  NA&#39;s   :78040</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="sect013.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Histogramme</span></span>
-<span id="cb168-2"><a href="sect013.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(MosaicSherbCrop,</span>
-<span id="cb168-3"><a href="sect013.html#cb168-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Mosaïque du MNA pour la ville de Sherbrooke&quot;</span>,</span>
-<span id="cb168-4"><a href="sect013.html#cb168-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Élévation (mètres)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Fréquence&quot;</span>,</span>
-<span id="cb168-5"><a href="sect013.html#cb168-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;lightgreen&quot;</span>)</span></code></pre></div>
-<p><img src="GMQ405_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="sect013.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Histogramme en barre de 125 à 400 avec un saut de 25 mètres </span></span>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="sect013.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Histogramme</span></span>
 <span id="cb169-2"><a href="sect013.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(MosaicSherbCrop,</span>
 <span id="cb169-3"><a href="sect013.html#cb169-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Mosaïque du MNA pour la ville de Sherbrooke&quot;</span>,</span>
 <span id="cb169-4"><a href="sect013.html#cb169-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Élévation (mètres)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Fréquence&quot;</span>,</span>
-<span id="cb169-5"><a href="sect013.html#cb169-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">125</span>, <span class="at">to =</span> <span class="dv">400</span>, <span class="at">by =</span> <span class="dv">25</span>),</span>
-<span id="cb169-6"><a href="sect013.html#cb169-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;lightgreen&quot;</span>)</span></code></pre></div>
+<span id="cb169-5"><a href="sect013.html#cb169-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;lightgreen&quot;</span>)</span></code></pre></div>
+<p><img src="GMQ405_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="sect013.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Histogramme en barre de 125 à 400 avec un saut de 25 mètres </span></span>
+<span id="cb170-2"><a href="sect013.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(MosaicSherbCrop,</span>
+<span id="cb170-3"><a href="sect013.html#cb170-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Mosaïque du MNA pour la ville de Sherbrooke&quot;</span>,</span>
+<span id="cb170-4"><a href="sect013.html#cb170-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Élévation (mètres)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Fréquence&quot;</span>,</span>
+<span id="cb170-5"><a href="sect013.html#cb170-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">125</span>, <span class="at">to =</span> <span class="dv">400</span>, <span class="at">by =</span> <span class="dv">25</span>),</span>
+<span id="cb170-6"><a href="sect013.html#cb170-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;lightgreen&quot;</span>)</span></code></pre></div>
 <p><img src="GMQ405_files/figure-html/unnamed-chunk-61-2.png" width="672" /></p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="sect013.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection des pixels avec une élévation d&#39;au moins 300 mètres</span></span>
-<span id="cb170-2"><a href="sect013.html#cb170-2" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop300 <span class="ot">=</span> <span class="fu">clamp</span>(MosaicSherbCrop, <span class="at">lower =</span> <span class="dv">300</span>)</span>
-<span id="cb170-3"><a href="sect013.html#cb170-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MosaicSherbCrop300, </span>
-<span id="cb170-4"><a href="sect013.html#cb170-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Pixels avec une élévation d&#39;au moins 300 mètres&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="sect013.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection des pixels avec une élévation d&#39;au moins 300 mètres</span></span>
+<span id="cb171-2"><a href="sect013.html#cb171-2" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop300 <span class="ot">=</span> <span class="fu">clamp</span>(MosaicSherbCrop, <span class="at">lower =</span> <span class="dv">300</span>)</span>
+<span id="cb171-3"><a href="sect013.html#cb171-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MosaicSherbCrop300, </span>
+<span id="cb171-4"><a href="sect013.html#cb171-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Pixels avec une élévation d&#39;au moins 300 mètres&quot;</span>)</span></code></pre></div>
 <p><img src="GMQ405_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="sect013.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection des pixels avec une élévation de 200 à 300 mètres</span></span>
-<span id="cb171-2"><a href="sect013.html#cb171-2" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop200_300 <span class="ot">=</span> <span class="fu">clamp</span>(MosaicSherbCrop, <span class="at">lower =</span> <span class="dv">200</span>, <span class="at">upper =</span> <span class="dv">300</span>)</span>
-<span id="cb171-3"><a href="sect013.html#cb171-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MosaicSherbCrop200_300,</span>
-<span id="cb171-4"><a href="sect013.html#cb171-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Pixels avec une élévation de 200 à 300 mètres&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="sect013.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection des pixels avec une élévation de 200 à 300 mètres</span></span>
+<span id="cb172-2"><a href="sect013.html#cb172-2" aria-hidden="true" tabindex="-1"></a>MosaicSherbCrop200_300 <span class="ot">=</span> <span class="fu">clamp</span>(MosaicSherbCrop, <span class="at">lower =</span> <span class="dv">200</span>, <span class="at">upper =</span> <span class="dv">300</span>)</span>
+<span id="cb172-3"><a href="sect013.html#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MosaicSherbCrop200_300,</span>
+<span id="cb172-4"><a href="sect013.html#cb172-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Pixels avec une élévation de 200 à 300 mètres&quot;</span>)</span></code></pre></div>
 <p><img src="GMQ405_files/figure-html/unnamed-chunk-62-2.png" width="672" /></p>
 </div>
 </div>

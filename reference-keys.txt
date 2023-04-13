@@ -118,6 +118,13 @@ tab:TableauFonctionsKernel
 fig:CartoQuatreKernels
 fig:CartoDistKernels
 fig:CartoTemporelleKernels
+fig:DonnesFictivesDBSCAN
+fig:AutresMethodesClassifNonSuperv
+fig:TypesPointsDBSCAN
+fig:ResultatsDBSCAN
+fig:VariationResultatsDBSCAN
+fig:KPlusProcheDbScan
+fig:DbscanResultatsOptimatisationEpsilon
 fig:ExoMatriceDeContiguite
 chap01
 sect011
@@ -233,10 +240,10 @@ sect036
 chap04
 sect041
 sect0411
+sect04111
+sect04112
 sect0412
-sect0413
 sect0414
-sect0415
 sect042
 sect0421
 sect0422

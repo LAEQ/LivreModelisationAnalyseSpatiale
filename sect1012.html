@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10.11 Excercice du chapitre 12 | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10.11 Excercice du chapitre 12 | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
@@ -51,16 +51,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -103,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -269,11 +269,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="sect041.html"><a href="sect041.html"><i class="fa fa-check"></i><b>4.1</b> Agrégats d’entités spatiales ponctuelles</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN</a></li>
-<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> HDBSCAN</a></li>
-<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0413"><i class="fa fa-check"></i><b>4.1.3</b> OPTICS</a></li>
-<li class="chapter" data-level="4.1.4" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.4</b> Agrégats spatio-temporels : ST-DBSCAN</a></li>
-<li class="chapter" data-level="4.1.5" data-path="sect041.html"><a href="sect041.html#sect0415"><i class="fa fa-check"></i><b>4.1.5</b> Mise en oeuvre dans R</a></li>
+<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN : agrégats spatiaux</a></li>
+<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> ST-DBSCAN : agrégats spatio-temporels</a></li>
+<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="sect042.html"><a href="sect042.html"><i class="fa fa-check"></i><b>4.2</b> Méthodes de balayage de Kulldorff</a>
 <ul>
@@ -470,6 +468,9 @@ Baddeley, Adrian et Rolf Turner. 2005. <span>« <span>spatstat</span>: An <span
 Barbonne, Rémy, Paul Villeneuve et Marius Thériault. 2007. <span>« La dynamique spatiale des march<span>é</span>s locaux de l’emploi au sein du champ m<span>é</span>tropolitain de Qu<span>é</span>bec, 1981–2001. »</span> <em>The Canadian Geographer/Le G<span>é</span>ographe canadien</em> 51 (3). Wiley Online Library: 303‑322. <a href="https://doi.org/10.1111/j.1541-0064.2007.00180.x">https://doi.org/10.1111/j.1541-0064.2007.00180.x</a>.
 </div>
 <div class="csl-entry">
+Birant, Derya et Alp Kut. 2007. <span>« ST-DBSCAN: An algorithm for clustering spatial–temporal data. »</span> <em>Data &amp; knowledge engineering</em> 60 (1): 208‑221. <a href="https://doi.org/10.1016/j.datak.2006.01.013">https://doi.org/10.1016/j.datak.2006.01.013</a>.
+</div>
+<div class="csl-entry">
 Bivand, Roger, Edzer Pebesma et Virgilio Gomez-Rubio. 2013. <em>Applied spatial data analysis with <span>R</span>, Second edition</em>. Springer, New York. <a href="https://asdar-book.org/">https://asdar-book.org/</a>.
 </div>
 <div class="csl-entry">
@@ -482,10 +483,16 @@ Brewer, Cynthia A, Geoffrey W Hatchard et Mark A Harrower. 2003. <span>« Color
 Caha, Jan. 2023. <em>SpatialKDE: Kernel Density Estimation for Spatial Data</em>. s.n. <a href="https://CRAN.R-project.org/package=SpatialKDE">https://CRAN.R-project.org/package=SpatialKDE</a>.
 </div>
 <div class="csl-entry">
+Campello, Ricardo JGB, Davoud Moulavi et Jörg Sander. 2013. <span>« Density-based clustering based on hierarchical density estimates. »</span> In <em>Advances in Knowledge Discovery and Data Mining: 17th Pacific-Asia Conference, PAKDD 2013, Gold Coast, Australia, April 14-17, 2013, Proceedings, Part II 17</em>, 160‑172. s.n. <a href="http://dx.doi.org/10.1007/978-3-642-37456-2_14">http://dx.doi.org/10.1007/978-3-642-37456-2_14</a>.
+</div>
+<div class="csl-entry">
 Douglas, David H et Thomas K Peucker. 1973. <span>« Algorithms for the reduction of the number of points required to represent a digitized line or its caricature. »</span> <em>Cartographica: the international journal for geographic information and geovisualization</em> 10 (2): 112‑122. <a href="https://doi.org/10.3138/FM57-6770-U75U-7727">https://doi.org/10.3138/FM57-6770-U75U-7727</a>.
 </div>
 <div class="csl-entry">
 Dubé, Jean et Diègo Legros. 2014. <em>Econom<span>é</span>trie spatiale appliqu<span>é</span>e des microdonn<span>é</span>es</em>. ISTE Group.
+</div>
+<div class="csl-entry">
+Ester, Martin, Hans-Peter Kriegel, Jörg Sander et Xiaowei Xu. 1996. <span>« A density-based algorithm for discovering clusters in large spatial databases with noise. »</span> In <em>Proceedings of the Second International Conference on Knowledge Discovery and Data Mining (KDD-96)</em>, 96:226‑231. 34. s.n. <a href="https://dl.acm.org/doi/10.5555/3001460.3001507">https://dl.acm.org/doi/10.5555/3001460.3001507</a>.
 </div>
 <div class="csl-entry">
 Garnier, Simon, Ross, Noam, Rudis, Robert, Camargo, Antônio Pedro, Sciaini, Marco, Scherer et Cédric. 2021. <em><span>viridis</span> - Colorblind-Friendly Color Maps for R</em>. s.n. <a href="https://sjmgarnier.github.io/viridis/">https://sjmgarnier.github.io/viridis/</a>.
@@ -500,6 +507,12 @@ Getis, Arthur et J Keith Ord. 1992. <span>« The analysis of spatial associatio
 Giraud, Timothée et Nicolas Lambert. 2016. <span>« cartography: Create and Integrate Maps in your R Workflow. »</span> <em>JOSS</em> 1 (4). The Open Journal. <a href="https://doi.org/10.21105/joss.00054">https://doi.org/10.21105/joss.00054</a>.
 </div>
 <div class="csl-entry">
+Hahsler, Michael et Matthew Piekenbrock. 2022. <em>dbscan: Density-Based Spatial Clustering of Applications with Noise (DBSCAN) and Related Algorithms</em>. s.n. <a href="https://CRAN.R-project.org/package=dbscan">https://CRAN.R-project.org/package=dbscan</a>.
+</div>
+<div class="csl-entry">
+Hahsler, Michael, Matthew Piekenbrock et Derek Doran. 2019. <span>« <span>dbscan</span>: Fast Density-Based Clustering with <span>R</span>. »</span> <em>Journal of Statistical Software</em> 91 (1): 1‑30. doi:<a href="https://doi.org/10.18637/jss.v091.i01">https://doi.org/10.18637/jss.v091.i01</a>.
+</div>
+<div class="csl-entry">
 Harrower, Mark et Cynthia A Brewer. 2003. <span>« ColorBrewer.org: an online tool for selecting colour schemes for maps. »</span> <em>The Cartographic Journal</em> 40 (1): 27‑37. <a href="http://dx.doi.org/10.1179/000870403235002042">http://dx.doi.org/10.1179/000870403235002042</a>.
 </div>
 <div class="csl-entry">
@@ -507,6 +520,9 @@ Hijmans, Robert J. 2022a. <em>raster: Geographic Data Analysis and Modeling</em>
 </div>
 <div class="csl-entry">
 ———. 2022b. <em>terra: Spatial Data Analysis</em>. s.n. <a href="https://CRAN.R-project.org/package=terra">https://CRAN.R-project.org/package=terra</a>.
+</div>
+<div class="csl-entry">
+Kulldorff, Martin. 1997. <span>« A spatial scan statistic. »</span> <em>Communications in Statistics-Theory and methods</em> 26 (6): 1481‑1496. <a href="https://doi.org/10.1080/03610929708831995">https://doi.org/10.1080/03610929708831995</a>.
 </div>
 <div class="csl-entry">
 Levine, Ned. 2006. <span>« Crime mapping and the Crimestat program. »</span> <em>Geographical analysis</em> 38 (1): 41‑56. <a href="https://doi.org/10.1111/j.0016-7363.2005.00673.x">https://doi.org/10.1111/j.0016-7363.2005.00673.x</a>.
@@ -536,10 +552,13 @@ Pebesma, Edzer. 2018. <span>« <span>Simple Features for R: Standardized Suppor
 Pebesma, Edzer et Roger Bivand. 2005. <span>« Classes and methods for spatial data in <span>R</span>. »</span> <em>R News</em> 5 (2): 9‑13. <a href="https://CRAN.R-project.org/doc/Rnews/">https://CRAN.R-project.org/doc/Rnews/</a>.
 </div>
 <div class="csl-entry">
+Sander, Jörg, Martin Ester, Hans-Peter Kriegel et Xiaowei Xu. 1998. <span>« Density-based clustering in spatial databases: The algorithm gdbscan and its applications. »</span> <em>Data mining and knowledge discovery</em> 2: 169‑194.
+</div>
+<div class="csl-entry">
 Sokal, Robert R, Neal L Oden et Barbara A Thomson. 1998. <span>« Local spatial autocorrelation in a biological model. »</span> <em>Geographical Analysis</em> 30 (4): 331‑354. <a href="https://doi.org/10.1111/j.1538-4632.1998.tb00406.x">https://doi.org/10.1111/j.1538-4632.1998.tb00406.x</a>.
 </div>
 <div class="csl-entry">
-Tennekes, Martijn. 2018. <span>« <span>tmap</span>: Thematic Maps in <span>R</span>. »</span> <em>Journal of Statistical Software</em> 84 (6): 1‑39.
+Tennekes, Martijn. 2018. <span>« <span>tmap</span>: Thematic Maps in <span>R</span>. »</span> <em>Journal of Statistical Software</em> 84 (6): 1‑39. <a href="https://doi.org/10.18637/jss.v084.i06">https://doi.org/10.18637/jss.v084.i06</a>.
 </div>
 <div class="csl-entry">
 Tobler, Waldo R. 1970. <span>« A computer movie simulating urban growth in the Detroit region. »</span> <em>Economic geography</em> 46 (sup1): 234‑240. <a href="https://doi.org/10.2307/143141">https://doi.org/10.2307/143141</a>.
