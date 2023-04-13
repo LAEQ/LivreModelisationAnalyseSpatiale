@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 4 Méthodes de détection d’agrégats spatiaux et spatio-temporels | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 4 Méthodes de détection d’agrégats spatiaux et spatio-temporels | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
@@ -51,16 +51,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -103,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -269,11 +269,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="sect041.html"><a href="sect041.html"><i class="fa fa-check"></i><b>4.1</b> Agrégats d’entités spatiales ponctuelles</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN</a></li>
-<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> HDBSCAN</a></li>
-<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0413"><i class="fa fa-check"></i><b>4.1.3</b> OPTICS</a></li>
-<li class="chapter" data-level="4.1.4" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.4</b> Agrégats spatio-temporels : ST-DBSCAN</a></li>
-<li class="chapter" data-level="4.1.5" data-path="sect041.html"><a href="sect041.html#sect0415"><i class="fa fa-check"></i><b>4.1.5</b> Mise en oeuvre dans R</a></li>
+<li class="chapter" data-level="4.1.1" data-path="sect041.html"><a href="sect041.html#sect0411"><i class="fa fa-check"></i><b>4.1.1</b> DBSCAN : agrégats spatiaux</a></li>
+<li class="chapter" data-level="4.1.2" data-path="sect041.html"><a href="sect041.html#sect0412"><i class="fa fa-check"></i><b>4.1.2</b> ST-DBSCAN : agrégats spatio-temporels</a></li>
+<li class="chapter" data-level="4.1.3" data-path="sect041.html"><a href="sect041.html#sect0414"><i class="fa fa-check"></i><b>4.1.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="sect042.html"><a href="sect042.html"><i class="fa fa-check"></i><b>4.2</b> Méthodes de balayage de Kulldorff</a>
 <ul>
@@ -446,6 +444,35 @@ Modélisation et analyse spatiale</a>
             <section class="normal" id="section-">
 <div id="chap04" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapitre 4</span> Méthodes de détection d’agrégats spatiaux et spatio-temporels<a href="chap04.html#chap04" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Dans ce chapitre, nous abordons deux familles de méthode de détection d’agrégats spatiaux et spatio-temporels qui s’appliquent à des géométries différentes : les méthodes de classification basées sur la densité des points (couche de points), principalement les algorithmes DBSCAN <span class="citation">(<a href="#ref-DBSCAN1996" role="doc-biblioref">Ester et al. 1996</a>)</span> et ST_DBSCAN <span class="citation">(<a href="#ref-birant2007st" role="doc-biblioref">Birant et Kut 2007</a>)</span>; et les méthodes de balayage de Kulldorff <span class="citation">(<a href="#ref-kulldorff1997spatial" role="doc-biblioref">1997</a>)</span> (couche polygonale).</p>
+<div class="bloc_package">
+<p>Dans ce chapitre, nous utilisons les <em>packages</em> suivants :</p>
+<ul>
+<li>Pour importer et manipuler des fichiers géographiques :
+<ul>
+<li><code>sf</code> pour importer et manipuler des données vectorielles.</li>
+</ul></li>
+<li>Pour construire des cartes et des graphiques :
+<ul>
+<li><code>tmap</code> est certainement le meilleur <em>package</em>.</li>
+<li><code>ggplot2</code> est un <em>package</em> pour construire des graphiques.</li>
+</ul></li>
+<li><code>dbscan</code> pour l’algorithme DBSCAN.</li>
+<li><code>SpatialEpi</code> pour les méthodes de balayage de Kurlldoff.</li>
+</ul>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-birant2007st" class="csl-entry">
+Birant, Derya et Alp Kut. 2007. <span>« ST-DBSCAN: An algorithm for clustering spatial–temporal data. »</span> <em>Data &amp; knowledge engineering</em> 60 (1): 208‑221. <a href="https://doi.org/10.1016/j.datak.2006.01.013">https://doi.org/10.1016/j.datak.2006.01.013</a>.
+</div>
+<div id="ref-DBSCAN1996" class="csl-entry">
+Ester, Martin, Hans-Peter Kriegel, Jörg Sander et Xiaowei Xu. 1996. <span>« A density-based algorithm for discovering clusters in large spatial databases with noise. »</span> In <em>Proceedings of the Second International Conference on Knowledge Discovery and Data Mining (KDD-96)</em>, 96:226‑231. 34. s.n. <a href="https://dl.acm.org/doi/10.5555/3001460.3001507">https://dl.acm.org/doi/10.5555/3001460.3001507</a>.
+</div>
+<div id="ref-kulldorff1997spatial" class="csl-entry">
+Kulldorff, Martin. 1997. <span>« A spatial scan statistic. »</span> <em>Communications in Statistics-Theory and methods</em> 26 (6): 1481‑1496. <a href="https://doi.org/10.1080/03610929708831995">https://doi.org/10.1080/03610929708831995</a>.
+</div>
 </div>
             </section>
 
