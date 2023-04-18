@@ -415,7 +415,11 @@ div.csl-indent {
 <li class="chapter" data-level="10.3.2" data-path="sect1003.html"><a href="sect1003.html#sect10032"><i class="fa fa-check"></i><b>10.3.2</b> Exercice 2</a></li>
 <li class="chapter" data-level="10.3.3" data-path="sect1003.html"><a href="sect1003.html#sect10033"><i class="fa fa-check"></i><b>10.3.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="sect1004.html"><a href="sect1004.html"><i class="fa fa-check"></i><b>10.4</b> Exercices du chapitre 4</a></li>
+<li class="chapter" data-level="10.4" data-path="sect1004.html"><a href="sect1004.html"><i class="fa fa-check"></i><b>10.4</b> Exercices du chapitre 4</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="sect1004.html"><a href="sect1004.html#sect10041"><i class="fa fa-check"></i><b>10.4.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
+</ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
 <li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a></li>
@@ -444,6 +448,108 @@ Modélisation et analyse spatiale</a>
             <section class="normal" id="section-">
 <div id="sect044" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Exercices de révision<a href="sect044.html#sect044" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="bloc_exercice">
+<p><strong>Exercice 1.</strong> Application de l’algorithme DBSCAN sur les accidents impliquant des personnes à vélo sur l’île de Montréal (voir la section <a href="sect041.html#sect04141">4.1.3.1</a>). Ces données ouvertes sur les collisions routières et leur documentation sont disponibles au <a href="https://donnees.montreal.ca/dataset/collisions-routieres">lien suivant</a>.</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="sect044.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb368-2"><a href="sect044.html#cb368-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb368-3"><a href="sect044.html#cb368-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbscan)</span>
+<span id="cb368-4"><a href="sect044.html#cb368-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb368-5"><a href="sect044.html#cb368-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des données</span></span>
+<span id="cb368-6"><a href="sect044.html#cb368-6" aria-hidden="true" tabindex="-1"></a>Collissions <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap04/collisions.gpkg&quot;</span>, </span>
+<span id="cb368-7"><a href="sect044.html#cb368-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">layer =</span> <span class="st">&quot;CollisionsRoutieres&quot;</span>, </span>
+<span id="cb368-8"><a href="sect044.html#cb368-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">quiet =</span> T)</span>
+<span id="cb368-9"><a href="sect044.html#cb368-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Collisions impliquant au moins une personne à vélo en 2020 et 2021</span></span>
+<span id="cb368-10"><a href="sect044.html#cb368-10" aria-hidden="true" tabindex="-1"></a>Coll.Velo <span class="ot">&lt;-</span> <span class="fu">subset</span>(Collissions,</span>
+<span id="cb368-11"><a href="sect044.html#cb368-11" aria-hidden="true" tabindex="-1"></a>                    Collissions<span class="sc">$</span>NB_VICTIMES_VELO <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span></span>
+<span id="cb368-12"><a href="sect044.html#cb368-12" aria-hidden="true" tabindex="-1"></a>                      Collissions<span class="sc">$</span>AN <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">2021</span>))</span>
+<span id="cb368-13"><a href="sect044.html#cb368-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques</span></span>
+<span id="cb368-14"><a href="sect044.html#cb368-14" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(Coll.Velo)</span>
+<span id="cb368-15"><a href="sect044.html#cb368-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Graphique pour la distance au quatrième voisin le plus proche</span></span>
+<span id="cb368-16"><a href="sect044.html#cb368-16" aria-hidden="true" tabindex="-1"></a>DistKplusproche <span class="ot">&lt;-</span> <span class="fu">kNNdist</span>(xy, <span class="at">k =</span> <span class="dv">4</span>)</span>
+<span id="cb368-17"><a href="sect044.html#cb368-17" aria-hidden="true" tabindex="-1"></a>DistKplusproche <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sort</span>(DistKplusproche, <span class="at">decreasing =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb368-18"><a href="sect044.html#cb368-18" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(DistKplusproche) <span class="ot">&lt;-</span> <span class="st">&quot;distance&quot;</span></span>
+<span id="cb368-19"><a href="sect044.html#cb368-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(à compléter)<span class="sc">+</span></span>
+<span id="cb368-20"><a href="sect044.html#cb368-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(à compléter)<span class="sc">+</span></span>
+<span id="cb368-21"><a href="sect044.html#cb368-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(à compléter)<span class="sc">+</span></span>
+<span id="cb368-22"><a href="sect044.html#cb368-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">250</span>, <span class="at">color =</span> <span class="st">&quot;#08306b&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb368-23"><a href="sect044.html#cb368-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">500</span>, <span class="at">color =</span> <span class="st">&quot;#00441b&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb368-24"><a href="sect044.html#cb368-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">1000</span>, <span class="at">color =</span> <span class="st">&quot;#67000d&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)</span>
+<span id="cb368-25"><a href="sect044.html#cb368-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Dbscan avec les quatre distances</span></span>
+<span id="cb368-26"><a href="sect044.html#cb368-26" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123456789</span>)</span>
+<span id="cb368-27"><a href="sect044.html#cb368-27" aria-hidden="true" tabindex="-1"></a>dbscan250  <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb368-28"><a href="sect044.html#cb368-28" aria-hidden="true" tabindex="-1"></a>dbscan500  <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb368-29"><a href="sect044.html#cb368-29" aria-hidden="true" tabindex="-1"></a>dbscan1000 <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb368-30"><a href="sect044.html#cb368-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Affichage des résultats</span></span>
+<span id="cb368-31"><a href="sect044.html#cb368-31" aria-hidden="true" tabindex="-1"></a>dbscan250</span>
+<span id="cb368-32"><a href="sect044.html#cb368-32" aria-hidden="true" tabindex="-1"></a>dbscan500</span>
+<span id="cb368-33"><a href="sect044.html#cb368-33" aria-hidden="true" tabindex="-1"></a>dbscan1000</span>
+<span id="cb368-34"><a href="sect044.html#cb368-34" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrement dans la couche de points sf Coll.Velo</span></span>
+<span id="cb368-35"><a href="sect044.html#cb368-35" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan250 <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb368-36"><a href="sect044.html#cb368-36" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan500 <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb368-37"><a href="sect044.html#cb368-37" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan1000 <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb368-38"><a href="sect044.html#cb368-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb368-39"><a href="sect044.html#cb368-39" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan250 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan250) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb368-40"><a href="sect044.html#cb368-40" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan250),</span>
+<span id="cb368-41"><a href="sect044.html#cb368-41" aria-hidden="true" tabindex="-1"></a>                              Coll.Velo<span class="sc">$</span>dbscan250)</span>
+<span id="cb368-42"><a href="sect044.html#cb368-42" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan500 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan500) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb368-43"><a href="sect044.html#cb368-43" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan500),</span>
+<span id="cb368-44"><a href="sect044.html#cb368-44" aria-hidden="true" tabindex="-1"></a>                               Coll.Velo<span class="sc">$</span>dbscan500)</span>
+<span id="cb368-45"><a href="sect044.html#cb368-45" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan1000 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan1000) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb368-46"><a href="sect044.html#cb368-46" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan1000),</span>
+<span id="cb368-47"><a href="sect044.html#cb368-47" aria-hidden="true" tabindex="-1"></a>                               Coll.Velo<span class="sc">$</span>dbscan1000)</span>
+<span id="cb368-48"><a href="sect044.html#cb368-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraction des agrégats</span></span>
+<span id="cb368-49"><a href="sect044.html#cb368-49" aria-hidden="true" tabindex="-1"></a>Agregats.dbscan250  <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan250 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb368-50"><a href="sect044.html#cb368-50" aria-hidden="true" tabindex="-1"></a>Agregats.dbscan500  <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan500 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb368-51"><a href="sect044.html#cb368-51" aria-hidden="true" tabindex="-1"></a>Agregats.dbscan1000 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan1000 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb368-52"><a href="sect044.html#cb368-52" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb368-53"><a href="sect044.html#cb368-53" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb368-54"><a href="sect044.html#cb368-54" aria-hidden="true" tabindex="-1"></a>à compléter</span></code></pre></div>
+<p>Correction à la section <a href="sect1004.html#sect10041">10.4.1</a>.</p>
+</div>
+<div class="bloc_exercice">
+<p><strong>Exercice 2.</strong> Avec le même jeu de données, réaliser un ST-DBSCAN avec les paramètres suivants : distance spatiale de 500 mètres, distance temporelle de 30 jours et quatre points minimum (voir la section <a href="sect041.html#sect04142">4.1.3.2</a>).</p>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="sect044.html#cb369-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb369-2"><a href="sect044.html#cb369-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb369-3"><a href="sect044.html#cb369-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbscan)</span>
+<span id="cb369-4"><a href="sect044.html#cb369-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb369-5"><a href="sect044.html#cb369-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des données</span></span>
+<span id="cb369-6"><a href="sect044.html#cb369-6" aria-hidden="true" tabindex="-1"></a>Collissions <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap04/collisions.gpkg&quot;</span>, <span class="at">layer =</span> <span class="st">&quot;CollisionsRoutieres&quot;</span>)</span>
+<span id="cb369-7"><a href="sect044.html#cb369-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Collisions impliquant au moins une personne à vélo en 2020 et 2021</span></span>
+<span id="cb369-8"><a href="sect044.html#cb369-8" aria-hidden="true" tabindex="-1"></a>Coll.Velo <span class="ot">&lt;-</span> <span class="fu">subset</span>(Collissions,</span>
+<span id="cb369-9"><a href="sect044.html#cb369-9" aria-hidden="true" tabindex="-1"></a>                    Collissions<span class="sc">$</span>NB_VICTIMES_VELO <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span></span>
+<span id="cb369-10"><a href="sect044.html#cb369-10" aria-hidden="true" tabindex="-1"></a>                      Collissions<span class="sc">$</span>AN <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">2021</span>))</span>
+<span id="cb369-11"><a href="sect044.html#cb369-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques</span></span>
+<span id="cb369-12"><a href="sect044.html#cb369-12" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(Coll.Velo)</span>
+<span id="cb369-13"><a href="sect044.html#cb369-13" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>x <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
+<span id="cb369-14"><a href="sect044.html#cb369-14" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
+<span id="cb369-15"><a href="sect044.html#cb369-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Conversion du champ DT_ACCDN au format Date</span></span>
+<span id="cb369-16"><a href="sect044.html#cb369-16" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>DT_ACCDN <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(Coll.Velo<span class="sc">$</span>DT_ACCDN)</span>
+<span id="cb369-17"><a href="sect044.html#cb369-17" aria-hidden="true" tabindex="-1"></a><span class="do">## ST-DBSCAN avec eps1 = 500, esp2 = 30 et minpts = 4</span></span>
+<span id="cb369-18"><a href="sect044.html#cb369-18" aria-hidden="true" tabindex="-1"></a>Resultats.stdbscan <span class="ot">&lt;-</span> <span class="fu">stdbscan</span>(À compléter)</span>
+<span id="cb369-19"><a href="sect044.html#cb369-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrement des résultats ST-DBSCAN dans la couche de points sf</span></span>
+<span id="cb369-20"><a href="sect044.html#cb369-20" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>stdbscan <span class="ot">&lt;-</span> <span class="fu">as.character</span>(Resultats.stdbscan<span class="sc">$</span>cluster)</span>
+<span id="cb369-21"><a href="sect044.html#cb369-21" aria-hidden="true" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>stdbscan <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>stdbscan) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb369-22"><a href="sect044.html#cb369-22" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>stdbscan),</span>
+<span id="cb369-23"><a href="sect044.html#cb369-23" aria-hidden="true" tabindex="-1"></a>                             Coll.Velo<span class="sc">$</span>stdbscan)</span>
+<span id="cb369-24"><a href="sect044.html#cb369-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Nombre de points par agrégat avec la fonction table</span></span>
+<span id="cb369-25"><a href="sect044.html#cb369-25" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Coll.Velo<span class="sc">$</span>stdbscan)</span>
+<span id="cb369-26"><a href="sect044.html#cb369-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection des points appartenant à un agrégat avec la fonction subset</span></span>
+<span id="cb369-27"><a href="sect044.html#cb369-27" aria-hidden="true" tabindex="-1"></a>Agregats <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, stdbscan <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb369-28"><a href="sect044.html#cb369-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Conversion de la date au format POSIXct</span></span>
+<span id="cb369-29"><a href="sect044.html#cb369-29" aria-hidden="true" tabindex="-1"></a>Agregats<span class="sc">$</span>dtPOSIXct <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(Agregats<span class="sc">$</span>DT_ACCDN, <span class="at">format =</span> <span class="st">&quot;%Y/%m/%d&quot;</span>)</span>
+<span id="cb369-30"><a href="sect044.html#cb369-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Tableau récapitulatif</span></span>
+<span id="cb369-31"><a href="sect044.html#cb369-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;dplyr&quot;</span>)  </span>
+<span id="cb369-32"><a href="sect044.html#cb369-32" aria-hidden="true" tabindex="-1"></a>Tableau.stdbscan <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb369-33"><a href="sect044.html#cb369-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Affichage du tableau</span></span>
+<span id="cb369-34"><a href="sect044.html#cb369-34" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Tableau.stdbscan, <span class="at">n =</span> <span class="fu">nrow</span>(Tableau.stdbscan))</span>
+<span id="cb369-35"><a href="sect044.html#cb369-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Construction du graphique</span></span>
+<span id="cb369-36"><a href="sect044.html#cb369-36" aria-hidden="true" tabindex="-1"></a>À compléter</span>
+<span id="cb369-37"><a href="sect044.html#cb369-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;une couche pour les agrégats</span></span>
+<span id="cb369-38"><a href="sect044.html#cb369-38" aria-hidden="true" tabindex="-1"></a>stdbcan.Agregats <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, stdbscan <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb369-39"><a href="sect044.html#cb369-39" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb369-40"><a href="sect044.html#cb369-40" aria-hidden="true" tabindex="-1"></a>À compléter</span></code></pre></div>
+<p>Correction à la section <a href="sect1004.html#sect10042">10.4.2</a>.</p>
+</div>
 </div>
             </section>
 

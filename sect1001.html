@@ -415,7 +415,11 @@ div.csl-indent {
 <li class="chapter" data-level="10.3.2" data-path="sect1003.html"><a href="sect1003.html#sect10032"><i class="fa fa-check"></i><b>10.3.2</b> Exercice 2</a></li>
 <li class="chapter" data-level="10.3.3" data-path="sect1003.html"><a href="sect1003.html#sect10033"><i class="fa fa-check"></i><b>10.3.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="sect1004.html"><a href="sect1004.html"><i class="fa fa-check"></i><b>10.4</b> Exercices du chapitre 4</a></li>
+<li class="chapter" data-level="10.4" data-path="sect1004.html"><a href="sect1004.html"><i class="fa fa-check"></i><b>10.4</b> Exercices du chapitre 4</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="sect1004.html"><a href="sect1004.html#sect10041"><i class="fa fa-check"></i><b>10.4.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
+</ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
 <li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a></li>
@@ -446,89 +450,89 @@ Modélisation et analyse spatiale</a>
 <h2><span class="header-section-number">10.1</span> Exercices du chapitre 1<a href="sect1001.html#sect1001" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="sect10011" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Exercice 1<a href="sect1001.html#sect10011" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="sect1001.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb368-2"><a href="sect1001.html#cb368-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des deux couches</span></span>
-<span id="cb368-3"><a href="sect1001.html#cb368-3" aria-hidden="true" tabindex="-1"></a>Arrond <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/shp/Arrondissements.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb368-4"><a href="sect1001.html#cb368-4" aria-hidden="true" tabindex="-1"></a>Rues <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/shp/Segments_de_rue.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb368-5"><a href="sect1001.html#cb368-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;un objet sf pour l&#39;arrondissement des Nations : requête attributive</span></span>
-<span id="cb368-6"><a href="sect1001.html#cb368-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Arrondissements<span class="sc">$</span>NOM)</span>
-<span id="cb368-7"><a href="sect1001.html#cb368-7" aria-hidden="true" tabindex="-1"></a>Arrond.DesNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(Arrondissements, </span>
-<span id="cb368-8"><a href="sect1001.html#cb368-8" aria-hidden="true" tabindex="-1"></a>                            NOM <span class="sc">==</span> <span class="st">&quot;Arrondissement des Nations&quot;</span>)</span>
-<span id="cb368-9"><a href="sect1001.html#cb368-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Découper les rues avec le polygone de l&#39;arrondissement des nations</span></span>
-<span id="cb368-10"><a href="sect1001.html#cb368-10" aria-hidden="true" tabindex="-1"></a>Rues.DesNations <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(Rues, Arrond.DesNations)</span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="sect1001.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb370-2"><a href="sect1001.html#cb370-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des deux couches</span></span>
+<span id="cb370-3"><a href="sect1001.html#cb370-3" aria-hidden="true" tabindex="-1"></a>Arrond <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/shp/Arrondissements.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb370-4"><a href="sect1001.html#cb370-4" aria-hidden="true" tabindex="-1"></a>Rues <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/shp/Segments_de_rue.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb370-5"><a href="sect1001.html#cb370-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;un objet sf pour l&#39;arrondissement des Nations : requête attributive</span></span>
+<span id="cb370-6"><a href="sect1001.html#cb370-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Arrondissements<span class="sc">$</span>NOM)</span>
+<span id="cb370-7"><a href="sect1001.html#cb370-7" aria-hidden="true" tabindex="-1"></a>Arrond.DesNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(Arrondissements, </span>
+<span id="cb370-8"><a href="sect1001.html#cb370-8" aria-hidden="true" tabindex="-1"></a>                            NOM <span class="sc">==</span> <span class="st">&quot;Arrondissement des Nations&quot;</span>)</span>
+<span id="cb370-9"><a href="sect1001.html#cb370-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Découper les rues avec le polygone de l&#39;arrondissement des nations</span></span>
+<span id="cb370-10"><a href="sect1001.html#cb370-10" aria-hidden="true" tabindex="-1"></a>Rues.DesNations <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(Rues, Arrond.DesNations)</span></code></pre></div>
 </div>
 <div id="sect10012" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Exercice 2<a href="sect1001.html#sect10012" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="sect1001.html#cb369-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb369-2"><a href="sect1001.html#cb369-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb369-3"><a href="sect1001.html#cb369-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des deux couches</span></span>
-<span id="cb369-4"><a href="sect1001.html#cb369-4" aria-hidden="true" tabindex="-1"></a>AD.RMRSherb <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/gpkg/Recen2021Sherbrooke.gpkg&quot;</span>, </span>
-<span id="cb369-5"><a href="sect1001.html#cb369-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">layer =</span> <span class="st">&quot;SherbAD&quot;</span>, <span class="at">quiet =</span> T)</span>
-<span id="cb369-6"><a href="sect1001.html#cb369-6" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span>, <span class="at">Nom =</span> <span class="st">&quot;Hotel de Ville&quot;</span>,</span>
-<span id="cb369-7"><a href="sect1001.html#cb369-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">lon =</span> <span class="sc">-</span><span class="fl">71.89306</span>, <span class="at">lat =</span> <span class="fl">45.40417</span>)</span>
-<span id="cb369-8"><a href="sect1001.html#cb369-8" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(HotelVille, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>,<span class="st">&quot;lat&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb369-9"><a href="sect1001.html#cb369-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Changement de projection avant de s&#39;assurer que les deux couches aient la même</span></span>
-<span id="cb369-10"><a href="sect1001.html#cb369-10" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(HotelVille, <span class="fu">st_crs</span>(AD.RMRSherb))</span>
-<span id="cb369-11"><a href="sect1001.html#cb369-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Ajout d&#39;un champ pour la distance en km à l&#39;hôtel de Ville pour les secteurs de recensement</span></span>
-<span id="cb369-12"><a href="sect1001.html#cb369-12" aria-hidden="true" tabindex="-1"></a>AD.RMRSherb<span class="sc">$</span>DistHVKM <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">st_distance</span>(AD.RMRSherb,HotelVille)) <span class="sc">/</span> <span class="dv">1000</span></span>
-<span id="cb369-13"><a href="sect1001.html#cb369-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie en quatre classes selon les quantiles</span></span>
-<span id="cb369-14"><a href="sect1001.html#cb369-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb369-15"><a href="sect1001.html#cb369-15" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(AD.RMRSherb)<span class="sc">+</span></span>
-<span id="cb369-16"><a href="sect1001.html#cb369-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span> <span class="st">&quot;DistHVKM&quot;</span>, </span>
-<span id="cb369-17"><a href="sect1001.html#cb369-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">palette =</span> <span class="st">&quot;Reds&quot;</span>,</span>
-<span id="cb369-18"><a href="sect1001.html#cb369-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">n=</span><span class="dv">4</span>,</span>
-<span id="cb369-19"><a href="sect1001.html#cb369-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>,</span>
-<span id="cb369-20"><a href="sect1001.html#cb369-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span><span class="st">&quot;Distance à l&#39;hôtel de Ville (km)&quot;</span>)<span class="sc">+</span></span>
-<span id="cb369-21"><a href="sect1001.html#cb369-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="sect1001.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb371-2"><a href="sect1001.html#cb371-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb371-3"><a href="sect1001.html#cb371-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des deux couches</span></span>
+<span id="cb371-4"><a href="sect1001.html#cb371-4" aria-hidden="true" tabindex="-1"></a>AD.RMRSherb <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/gpkg/Recen2021Sherbrooke.gpkg&quot;</span>, </span>
+<span id="cb371-5"><a href="sect1001.html#cb371-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">layer =</span> <span class="st">&quot;SherbAD&quot;</span>, <span class="at">quiet =</span> T)</span>
+<span id="cb371-6"><a href="sect1001.html#cb371-6" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span>, <span class="at">Nom =</span> <span class="st">&quot;Hotel de Ville&quot;</span>,</span>
+<span id="cb371-7"><a href="sect1001.html#cb371-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">lon =</span> <span class="sc">-</span><span class="fl">71.89306</span>, <span class="at">lat =</span> <span class="fl">45.40417</span>)</span>
+<span id="cb371-8"><a href="sect1001.html#cb371-8" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(HotelVille, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>,<span class="st">&quot;lat&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb371-9"><a href="sect1001.html#cb371-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Changement de projection avant de s&#39;assurer que les deux couches aient la même</span></span>
+<span id="cb371-10"><a href="sect1001.html#cb371-10" aria-hidden="true" tabindex="-1"></a>HotelVille <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(HotelVille, <span class="fu">st_crs</span>(AD.RMRSherb))</span>
+<span id="cb371-11"><a href="sect1001.html#cb371-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Ajout d&#39;un champ pour la distance en km à l&#39;hôtel de Ville pour les secteurs de recensement</span></span>
+<span id="cb371-12"><a href="sect1001.html#cb371-12" aria-hidden="true" tabindex="-1"></a>AD.RMRSherb<span class="sc">$</span>DistHVKM <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">st_distance</span>(AD.RMRSherb,HotelVille)) <span class="sc">/</span> <span class="dv">1000</span></span>
+<span id="cb371-13"><a href="sect1001.html#cb371-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie en quatre classes selon les quantiles</span></span>
+<span id="cb371-14"><a href="sect1001.html#cb371-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb371-15"><a href="sect1001.html#cb371-15" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(AD.RMRSherb)<span class="sc">+</span></span>
+<span id="cb371-16"><a href="sect1001.html#cb371-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span> <span class="st">&quot;DistHVKM&quot;</span>, </span>
+<span id="cb371-17"><a href="sect1001.html#cb371-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">palette =</span> <span class="st">&quot;Reds&quot;</span>,</span>
+<span id="cb371-18"><a href="sect1001.html#cb371-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">n=</span><span class="dv">4</span>,</span>
+<span id="cb371-19"><a href="sect1001.html#cb371-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>,</span>
+<span id="cb371-20"><a href="sect1001.html#cb371-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span><span class="st">&quot;Distance à l&#39;hôtel de Ville (km)&quot;</span>)<span class="sc">+</span></span>
+<span id="cb371-21"><a href="sect1001.html#cb371-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span></code></pre></div>
 </div>
 <div id="sect10013" class="section level3 hasAnchor" number="10.1.3">
 <h3><span class="header-section-number">10.1.3</span> Exercice 3<a href="sect1001.html#sect10013" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="sect1001.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb370-2"><a href="sect1001.html#cb370-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des divisions de recensement du Québec</span></span>
-<span id="cb370-3"><a href="sect1001.html#cb370-3" aria-hidden="true" tabindex="-1"></a>DR.Qc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/gpkg/Recen2021Sherbrooke.gpkg&quot;</span>, </span>
-<span id="cb370-4"><a href="sect1001.html#cb370-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">layer =</span> <span class="st">&quot;DivisionsRecens2021&quot;</span>, <span class="at">quiet =</span> T)</span>
-<span id="cb370-5"><a href="sect1001.html#cb370-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation du fichier csv des division de recensement</span></span>
-<span id="cb370-6"><a href="sect1001.html#cb370-6" aria-hidden="true" tabindex="-1"></a>DR.Data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/tables/DRQC2021.csv&quot;</span>)</span>
-<span id="cb370-7"><a href="sect1001.html#cb370-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Jointure attributive avec le champ IDUGD</span></span>
-<span id="cb370-8"><a href="sect1001.html#cb370-8" aria-hidden="true" tabindex="-1"></a>DR.Qc <span class="ot">&lt;-</span> <span class="fu">merge</span>(DR.Qc, DR.Data, <span class="at">by=</span><span class="st">&quot;IDUGD&quot;</span>)</span>
-<span id="cb370-9"><a href="sect1001.html#cb370-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Il y a déja deux champs dans la table pour calculer la densité de population :</span></span>
-<span id="cb370-10"><a href="sect1001.html#cb370-10" aria-hidden="true" tabindex="-1"></a><span class="do">## SUPTERRE : superficie en km2</span></span>
-<span id="cb370-11"><a href="sect1001.html#cb370-11" aria-hidden="true" tabindex="-1"></a><span class="do">## DRpop_2021 : population en 2021</span></span>
-<span id="cb370-12"><a href="sect1001.html#cb370-12" aria-hidden="true" tabindex="-1"></a>DR.Qc<span class="sc">$</span>HabKm2 <span class="ot">&lt;-</span> DR.Qc<span class="sc">$</span>DRpop_2021 <span class="sc">/</span> DR.Qc<span class="sc">$</span>SUPTERRE</span>
-<span id="cb370-13"><a href="sect1001.html#cb370-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(DR.Qc, <span class="at">n=</span><span class="dv">2</span>)</span>
-<span id="cb370-14"><a href="sect1001.html#cb370-14" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(DR.Qc<span class="sc">$</span>HabKm2)</span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="sect1001.html#cb372-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb372-2"><a href="sect1001.html#cb372-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation de la couche des divisions de recensement du Québec</span></span>
+<span id="cb372-3"><a href="sect1001.html#cb372-3" aria-hidden="true" tabindex="-1"></a>DR.Qc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/gpkg/Recen2021Sherbrooke.gpkg&quot;</span>, </span>
+<span id="cb372-4"><a href="sect1001.html#cb372-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">layer =</span> <span class="st">&quot;DivisionsRecens2021&quot;</span>, <span class="at">quiet =</span> T)</span>
+<span id="cb372-5"><a href="sect1001.html#cb372-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation du fichier csv des division de recensement</span></span>
+<span id="cb372-6"><a href="sect1001.html#cb372-6" aria-hidden="true" tabindex="-1"></a>DR.Data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/tables/DRQC2021.csv&quot;</span>)</span>
+<span id="cb372-7"><a href="sect1001.html#cb372-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Jointure attributive avec le champ IDUGD</span></span>
+<span id="cb372-8"><a href="sect1001.html#cb372-8" aria-hidden="true" tabindex="-1"></a>DR.Qc <span class="ot">&lt;-</span> <span class="fu">merge</span>(DR.Qc, DR.Data, <span class="at">by=</span><span class="st">&quot;IDUGD&quot;</span>)</span>
+<span id="cb372-9"><a href="sect1001.html#cb372-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Il y a déja deux champs dans la table pour calculer la densité de population :</span></span>
+<span id="cb372-10"><a href="sect1001.html#cb372-10" aria-hidden="true" tabindex="-1"></a><span class="do">## SUPTERRE : superficie en km2</span></span>
+<span id="cb372-11"><a href="sect1001.html#cb372-11" aria-hidden="true" tabindex="-1"></a><span class="do">## DRpop_2021 : population en 2021</span></span>
+<span id="cb372-12"><a href="sect1001.html#cb372-12" aria-hidden="true" tabindex="-1"></a>DR.Qc<span class="sc">$</span>HabKm2 <span class="ot">&lt;-</span> DR.Qc<span class="sc">$</span>DRpop_2021 <span class="sc">/</span> DR.Qc<span class="sc">$</span>SUPTERRE</span>
+<span id="cb372-13"><a href="sect1001.html#cb372-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(DR.Qc, <span class="at">n=</span><span class="dv">2</span>)</span>
+<span id="cb372-14"><a href="sect1001.html#cb372-14" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(DR.Qc<span class="sc">$</span>HabKm2)</span></code></pre></div>
 </div>
 <div id="sect10014" class="section level3 hasAnchor" number="10.1.4">
 <h3><span class="header-section-number">10.1.4</span> Exercice 4<a href="sect1001.html#sect10014" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="sect1001.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb371-2"><a href="sect1001.html#cb371-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation du réseau de rues</span></span>
-<span id="cb371-3"><a href="sect1001.html#cb371-3" aria-hidden="true" tabindex="-1"></a>Rues <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/shp/Segments_de_rue.shp&quot;</span>, <span class="at">quiet=</span>T)</span>
-<span id="cb371-4"><a href="sect1001.html#cb371-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(Rues<span class="sc">$</span>TYPESEGMEN)</span>
-<span id="cb371-5"><a href="sect1001.html#cb371-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection des tronçons autoroutiers</span></span>
-<span id="cb371-6"><a href="sect1001.html#cb371-6" aria-hidden="true" tabindex="-1"></a>Autoroutes <span class="ot">&lt;-</span> <span class="fu">subset</span>(Rues, TYPESEGMEN <span class="sc">==</span> <span class="st">&quot;Autoroute&quot;</span>)</span>
-<span id="cb371-7"><a href="sect1001.html#cb371-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;une couche sf pour le point avec les coordonnées</span></span>
-<span id="cb371-8"><a href="sect1001.html#cb371-8" aria-hidden="true" tabindex="-1"></a><span class="do">## en degrés (WGS84, EPSG : 4326) : -71.91688, 45.37579</span></span>
-<span id="cb371-9"><a href="sect1001.html#cb371-9" aria-hidden="true" tabindex="-1"></a>Point1_sf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span>,</span>
-<span id="cb371-10"><a href="sect1001.html#cb371-10" aria-hidden="true" tabindex="-1"></a>                         <span class="at">lon =</span> <span class="sc">-</span><span class="fl">71.91688</span>, <span class="at">lat =</span> <span class="fl">45.37579</span>)</span>
-<span id="cb371-11"><a href="sect1001.html#cb371-11" aria-hidden="true" tabindex="-1"></a>Point1_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(Point1_sf, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>,<span class="st">&quot;lat&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb371-12"><a href="sect1001.html#cb371-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Changement de projection avant de s&#39;assurer que les deux couches aient la même</span></span>
-<span id="cb371-13"><a href="sect1001.html#cb371-13" aria-hidden="true" tabindex="-1"></a>Point1_sf <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Point1_sf, <span class="fu">st_crs</span>(Autoroutes))</span>
-<span id="cb371-14"><a href="sect1001.html#cb371-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Trouver le tronçon autoroutier le plus proche</span></span>
-<span id="cb371-15"><a href="sect1001.html#cb371-15" aria-hidden="true" tabindex="-1"></a>PlusProche <span class="ot">&lt;-</span> <span class="fu">st_nearest_feature</span>(Point1_sf, Autoroutes)</span>
-<span id="cb371-16"><a href="sect1001.html#cb371-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(PlusProche)</span>
-<span id="cb371-17"><a href="sect1001.html#cb371-17" aria-hidden="true" tabindex="-1"></a>Point1_sf<span class="sc">$</span>AutoroutePlusProche <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">st_distance</span>(Point1_sf,</span>
-<span id="cb371-18"><a href="sect1001.html#cb371-18" aria-hidden="true" tabindex="-1"></a>                                                        Autoroutes[PlusProche,]))</span>
-<span id="cb371-19"><a href="sect1001.html#cb371-19" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Distance à l&#39;autoroute la plus proche :&quot;</span>, Point1_sf<span class="sc">$</span>AutoroutePlusProche, <span class="st">&quot;m.&quot;</span>)</span>
-<span id="cb371-20"><a href="sect1001.html#cb371-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Zone tampon </span></span>
-<span id="cb371-21"><a href="sect1001.html#cb371-21" aria-hidden="true" tabindex="-1"></a>ZoneTampon <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(Point1_sf, Point1_sf<span class="sc">$</span>AutoroutePlusProche)</span>
-<span id="cb371-22"><a href="sect1001.html#cb371-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
-<span id="cb371-23"><a href="sect1001.html#cb371-23" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;view&quot;</span>)</span>
-<span id="cb371-24"><a href="sect1001.html#cb371-24" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(ZoneTampon)<span class="sc">+</span></span>
-<span id="cb371-25"><a href="sect1001.html#cb371-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col=</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb371-26"><a href="sect1001.html#cb371-26" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Autoroutes)<span class="sc">+</span></span>
-<span id="cb371-27"><a href="sect1001.html#cb371-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_lines</span>(<span class="at">col=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb371-28"><a href="sect1001.html#cb371-28" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Point1_sf)<span class="sc">+</span></span>
-<span id="cb371-29"><a href="sect1001.html#cb371-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>(<span class="at">col=</span> <span class="st">&quot;blue&quot;</span>, <span class="at">shape=</span><span class="dv">21</span>, <span class="at">size =</span> .<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="sect1001.html#cb373-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb373-2"><a href="sect1001.html#cb373-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation du réseau de rues</span></span>
+<span id="cb373-3"><a href="sect1001.html#cb373-3" aria-hidden="true" tabindex="-1"></a>Rues <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/shp/Segments_de_rue.shp&quot;</span>, <span class="at">quiet=</span>T)</span>
+<span id="cb373-4"><a href="sect1001.html#cb373-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(Rues<span class="sc">$</span>TYPESEGMEN)</span>
+<span id="cb373-5"><a href="sect1001.html#cb373-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection des tronçons autoroutiers</span></span>
+<span id="cb373-6"><a href="sect1001.html#cb373-6" aria-hidden="true" tabindex="-1"></a>Autoroutes <span class="ot">&lt;-</span> <span class="fu">subset</span>(Rues, TYPESEGMEN <span class="sc">==</span> <span class="st">&quot;Autoroute&quot;</span>)</span>
+<span id="cb373-7"><a href="sect1001.html#cb373-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Création d&#39;une couche sf pour le point avec les coordonnées</span></span>
+<span id="cb373-8"><a href="sect1001.html#cb373-8" aria-hidden="true" tabindex="-1"></a><span class="do">## en degrés (WGS84, EPSG : 4326) : -71.91688, 45.37579</span></span>
+<span id="cb373-9"><a href="sect1001.html#cb373-9" aria-hidden="true" tabindex="-1"></a>Point1_sf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span>,</span>
+<span id="cb373-10"><a href="sect1001.html#cb373-10" aria-hidden="true" tabindex="-1"></a>                         <span class="at">lon =</span> <span class="sc">-</span><span class="fl">71.91688</span>, <span class="at">lat =</span> <span class="fl">45.37579</span>)</span>
+<span id="cb373-11"><a href="sect1001.html#cb373-11" aria-hidden="true" tabindex="-1"></a>Point1_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(Point1_sf, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>,<span class="st">&quot;lat&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb373-12"><a href="sect1001.html#cb373-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Changement de projection avant de s&#39;assurer que les deux couches aient la même</span></span>
+<span id="cb373-13"><a href="sect1001.html#cb373-13" aria-hidden="true" tabindex="-1"></a>Point1_sf <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Point1_sf, <span class="fu">st_crs</span>(Autoroutes))</span>
+<span id="cb373-14"><a href="sect1001.html#cb373-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Trouver le tronçon autoroutier le plus proche</span></span>
+<span id="cb373-15"><a href="sect1001.html#cb373-15" aria-hidden="true" tabindex="-1"></a>PlusProche <span class="ot">&lt;-</span> <span class="fu">st_nearest_feature</span>(Point1_sf, Autoroutes)</span>
+<span id="cb373-16"><a href="sect1001.html#cb373-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(PlusProche)</span>
+<span id="cb373-17"><a href="sect1001.html#cb373-17" aria-hidden="true" tabindex="-1"></a>Point1_sf<span class="sc">$</span>AutoroutePlusProche <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">st_distance</span>(Point1_sf,</span>
+<span id="cb373-18"><a href="sect1001.html#cb373-18" aria-hidden="true" tabindex="-1"></a>                                                        Autoroutes[PlusProche,]))</span>
+<span id="cb373-19"><a href="sect1001.html#cb373-19" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Distance à l&#39;autoroute la plus proche :&quot;</span>, Point1_sf<span class="sc">$</span>AutoroutePlusProche, <span class="st">&quot;m.&quot;</span>)</span>
+<span id="cb373-20"><a href="sect1001.html#cb373-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Zone tampon </span></span>
+<span id="cb373-21"><a href="sect1001.html#cb373-21" aria-hidden="true" tabindex="-1"></a>ZoneTampon <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(Point1_sf, Point1_sf<span class="sc">$</span>AutoroutePlusProche)</span>
+<span id="cb373-22"><a href="sect1001.html#cb373-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb373-23"><a href="sect1001.html#cb373-23" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;view&quot;</span>)</span>
+<span id="cb373-24"><a href="sect1001.html#cb373-24" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(ZoneTampon)<span class="sc">+</span></span>
+<span id="cb373-25"><a href="sect1001.html#cb373-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col=</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb373-26"><a href="sect1001.html#cb373-26" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Autoroutes)<span class="sc">+</span></span>
+<span id="cb373-27"><a href="sect1001.html#cb373-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_lines</span>(<span class="at">col=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb373-28"><a href="sect1001.html#cb373-28" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Point1_sf)<span class="sc">+</span></span>
+<span id="cb373-29"><a href="sect1001.html#cb373-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>(<span class="at">col=</span> <span class="st">&quot;blue&quot;</span>, <span class="at">shape=</span><span class="dv">21</span>, <span class="at">size =</span> .<span class="dv">2</span>)</span></code></pre></div>
 </div>
 </div>
             </section>

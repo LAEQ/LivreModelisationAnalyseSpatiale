@@ -415,7 +415,11 @@ div.csl-indent {
 <li class="chapter" data-level="10.3.2" data-path="sect1003.html"><a href="sect1003.html#sect10032"><i class="fa fa-check"></i><b>10.3.2</b> Exercice 2</a></li>
 <li class="chapter" data-level="10.3.3" data-path="sect1003.html"><a href="sect1003.html#sect10033"><i class="fa fa-check"></i><b>10.3.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="sect1004.html"><a href="sect1004.html"><i class="fa fa-check"></i><b>10.4</b> Exercices du chapitre 4</a></li>
+<li class="chapter" data-level="10.4" data-path="sect1004.html"><a href="sect1004.html"><i class="fa fa-check"></i><b>10.4</b> Exercices du chapitre 4</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="sect1004.html"><a href="sect1004.html#sect10041"><i class="fa fa-check"></i><b>10.4.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
+</ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
 <li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a></li>
@@ -604,7 +608,7 @@ Figure 4.8: Accidents survenus entre juillet 2019 et juin 2022, Ville de Sherbro
 <ul>
 <li>Importation des accidents.</li>
 <li>Récupération des coordonnées (<span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>) des accidents dans une matrice.</li>
-<li>Construction du graphique à partir de la distance au quatrième points le plus proche.</li>
+<li>Construction du graphique à partir de la distance au quatrième point le plus proche.</li>
 </ul>
 <p>Nous n’observons pas de décrochement particulier dans la courbe de la figure <a href="sect041.html#fig:GraphiqueAccidentsDist4">4.9</a>. Par conséquent, nous pourrions tout aussi bien retenir comme rayon pour epsilon une distance euclidienne de 250, 500, 1000 ou 1500 mètres.</p>
 <div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="sect041.html#cb345-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -808,7 +812,7 @@ Figure 4.9: Optimisation de la valeur d’epsilon pour les accidents
 <span id="cb360-7"><a href="sect041.html#cb360-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Vérifions que le champ DATEINCIDE est bien au format date</span></span>
 <span id="cb360-8"><a href="sect041.html#cb360-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Accidents.sf<span class="sc">$</span>DATEINCIDE)</span></code></pre></div>
 <pre><code>##  Date[1:1106], format: &quot;2021-12-11&quot; &quot;2022-05-16&quot; &quot;2021-08-12&quot; &quot;2019-08-02&quot; &quot;2020-03-02&quot; ...</code></pre>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="sect041.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calul de st-dbscan avec une distance de 1000 mètres et 21 jours</span></span>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="sect041.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcul de st-dbscan avec une distance de 1000 mètres et 21 jours</span></span>
 <span id="cb362-2"><a href="sect041.html#cb362-2" aria-hidden="true" tabindex="-1"></a>Resultats.stdbscan <span class="ot">&lt;-</span> <span class="fu">stdbscan</span>(<span class="at">x =</span> Accidents.sf<span class="sc">$</span>x,</span>
 <span id="cb362-3"><a href="sect041.html#cb362-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">y =</span> Accidents.sf<span class="sc">$</span>y,</span>
 <span id="cb362-4"><a href="sect041.html#cb362-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">time =</span> Accidents.sf<span class="sc">$</span>DATEINCIDE,</span>
@@ -890,7 +894,7 @@ Figure 4.9: Optimisation de la valeur d’epsilon pour les accidents
 <span id="cb366-7"><a href="sect041.html#cb366-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_datetime</span>(<span class="at">date_labels =</span> <span class="st">&quot;%Y/%m&quot;</span>)<span class="sc">+</span></span>
 <span id="cb366-8"><a href="sect041.html#cb366-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span> <span class="st">&quot;Temps&quot;</span>,</span>
 <span id="cb366-9"><a href="sect041.html#cb366-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">&quot;Identifiant de l&#39;agrégat&quot;</span>,</span>
-<span id="cb366-10"><a href="sect041.html#cb366-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;ST-DBSCAN avec 1000 mètres et 21 jours)&quot;</span>)</span></code></pre></div>
+<span id="cb366-10"><a href="sect041.html#cb366-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;ST-DBSCAN avec Esp1 = 1000, Esp2 = 21 et MinPts = 4&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphStScanEps1000Eps21"></span>
 <img src="GMQ405_files/figure-html/GraphStScanEps1000Eps21-1.png" alt="Intervalles temporels des agrégats ST-DBSCAN" width="65%" />
 <p class="caption">
@@ -919,7 +923,7 @@ Figure 4.11: Agrégats identifiés avec ST-DBSCAN
 </div>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-birant2007st" class="csl-entry">
 Birant, Derya et Alp Kut. 2007. <span>« ST-DBSCAN: An algorithm for clustering spatial–temporal data. »</span> <em>Data &amp; knowledge engineering</em> 60 (1): 208‑221. doi:<a href="https://doi.org/10.1016/j.datak.2006.01.013">https://doi.org/10.1016/j.datak.2006.01.013</a>.

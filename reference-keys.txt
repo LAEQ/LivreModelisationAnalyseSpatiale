@@ -361,6 +361,8 @@ sect10031
 sect10032
 sect10033
 sect1004
+sect10041
+sect10042
 sect1005
 sect1006
 sect1007
