@@ -125,6 +125,10 @@ fig:ResultatsDBSCAN
 fig:VariationResultatsDBSCAN
 fig:KPlusProcheDbScan
 fig:DbscanResultatsOptimatisationEpsilon
+fig:CartoAccidents
+fig:GraphiqueAccidentsDist4
+fig:GraphStScanEps1000Eps21
+fig:CarteStScanEps1000Eps21
 fig:ExoMatriceDeContiguite
 chap01
 sect011
@@ -244,6 +248,8 @@ sect04111
 sect04112
 sect0412
 sect0414
+sect04141
+sect04142
 sect042
 sect0421
 sect0422

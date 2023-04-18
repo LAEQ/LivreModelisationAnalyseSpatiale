@@ -471,7 +471,7 @@ Figure 4.2: Classification avec d’autres algorithmes basée sur la distance
 <p>L’algorithme DBSCAN comprend deux paramètres qui doivent être définis par la personne utilisatrice :</p>
 <ul>
 <li><strong>Le rayon de recherche</strong>, dénommé <span class="math inline">\(\epsilon\)</span> (epsilon), habituellement basé sur la distance euclidienne. Les distances de Manhattan ou réticulaires peuvent aussi être utilisées.</li>
-<li><strong>Le nombre minimum de points</strong>, dénommé <span class="math inline">\(MinPts\)</span>, requis pour former un agrégat, un regroupement (<em>cluster</em> en anglais).</li>
+<li><strong>Le nombre minimum de points</strong>, dénommé <span class="math inline">\(MinPts\)</span>, requis pour qu’un point, incluant lui-même, soit considéré comme un point central et appartienne à un agrégat, un regroupement (<em>cluster</em> en anglais).</li>
 </ul>
 <div class="bloc_notes">
 <p><strong>Avantage de DBSCAN : nul besoin de spécifier le nombre d’agrégats (<em>clusters</em>)!</strong></p>
@@ -479,9 +479,9 @@ Figure 4.2: Classification avec d’autres algorithmes basée sur la distance
 </div>
 <p>À la figure <a href="sect041.html#fig:TypesPointsDBSCAN">4.3</a>, nous appliquons l’algorithme DBSCAN à un semis de points avec un rayon de recherche de 500 mètres (<span class="math inline">\(\epsilon=500\)</span>) et un nombre minimum de cinq points (<span class="math inline">\(MinPts = 5\)</span>). Dans un premier temps, l’algorithme distingue trois types de points :</p>
 <ol style="list-style-type: decimal">
-<li>des <strong>points centraux</strong> (<em>core points</em> en anglais) qui ont au moins cinq points dans un rayon de 500 mètres (points rouges).</li>
-<li>des <strong>points frontières</strong> (<em>border points</em>) qui ont moins de cinq points dans un rayon de 500 mètres, mais qui sont inclus dans la zone tampon de 500 mètre d’un point central (points bleus).</li>
-<li>des <strong>points aberrants</strong> (<em>noise points</em>) qui ont moins de cinq points dans un rayon de 500 mètres et qui ne sont pas inclus dans la zone tampon d’un point central (points noirs).</li>
+<li>des <strong>points centraux</strong> (<em>core points</em> en anglais) qui ont au moins cinq points (incluant eux-mêmes) dans un rayon de 500 mètres (points rouges).</li>
+<li>des <strong>points frontières</strong> (<em>border points</em>) qui ont moins de cinq points (incluant eux-mêmes) dans un rayon de 500 mètres, mais qui sont inclus dans la zone tampon de 500 mètre d’un point central (points bleus).</li>
+<li>des <strong>points aberrants</strong> (<em>noise points</em>) qui ont moins de cinq points (incluant eux-mêmes) dans un rayon de 500 mètres et qui ne sont pas inclus dans la zone tampon d’un point central (points noirs).</li>
 </ol>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:TypesPointsDBSCAN"></span>
 <img src="images/Chap04/DbscanTypesPoints.png" alt="Trois types de points identifiés par l'algorithme DBSCAN" width="75%" />
@@ -528,7 +528,7 @@ Figure 4.4: Résultats de l’algorithme DBSCAN
 Figure 4.5: Variations de résultats de l’algorithme DBSCAN selon la taille du rayon
 </p>
 </div>
-<p>Concernant le paramètre <span class="math inline">\(MinPts\)</span>, plusieurs règles de pouce (à la louche) ont été proposés pour fixer sa valeur :</p>
+<p>Concernant le paramètre <span class="math inline">\(MinPts\)</span>, plusieurs règles de pouce (à la louche) ont été proposées pour fixer sa valeur :</p>
 <ul>
 <li><span class="math inline">\(MinPts \geq dim(D) + 1\)</span>, c’est-à-dire que sa valeur doit être minimalement égale au nombre de dimensions plus un (variables) du jeu de données.</li>
 <li><span class="math inline">\(MinPts = dim(D) \times 2\)</span>, c’est-à dire que le nombre de points devrait être égal à deux fois le nombre de dimensions du tableau <span class="citation">(<a href="#ref-sander1998density" role="doc-biblioref">Sander et al. 1998</a>)</span>.</li>
@@ -564,20 +564,366 @@ Figure 4.7: Comparaison de solutions DBSCAN avec différentes valeurs d’epsilo
 <li>HDBSCAN (<em><strong>H</strong>ierarchical <strong>D</strong>ensity-<strong>B</strong>ased <strong>S</strong>patial <strong>C</strong>lustering of <strong>A</strong>pplications with <strong>N</strong>oise</em>) <span class="citation">(<a href="#ref-HDBSCAN2013" role="doc-biblioref">Campello, Moulavi et Sander 2013</a>)</span>. Brièvement, cette version modifiée de DBSCAN permet d’obtenir une hiérarchie de partitions, comme dans une classification ascendante hiérarchique.</li>
 <li>OPTICS (<em><strong>O</strong>rdering <strong>P</strong>oints <strong>T</strong>o <strong>I</strong>dentify the <strong>C</strong>lustering <strong>S</strong>tructure</em>) <span class="citation">(<a href="#ref-HDBSCAN2013" role="doc-biblioref">Campello, Moulavi et Sander 2013</a>)</span>. À titre de rappel, l’algorithme DBSCAN a deux paramètres, soit le nombre minimal de points (<span class="math inline">\(MinPts\)</span>) et la distance de voisinage (<span class="math inline">\(\epsilon\)</span>). Avec OPTICS, le second paramètre n’a pas besoin d’être spécifié. Succintement, pour chaque point du jeu de données, il utilise la distance au <span class="math inline">\(k\)</span> (<span class="math inline">\(MinPts\)</span>) plus proche voisin.</li>
 </ul>
+<p><strong>Application à des évènements localisés sur un réseau de rues</strong></p>
+<p>Lors les évènements sont localisés sur un réseau de rues (des accidents par exemple), il convient d’utiliser une autre métrique que la distance euclidienne pour le rayon de recherche (<span class="math inline">\(\epsilon\)</span>), soit la distance du chemin le plus court à travers le rues de rues. Plusieurs solutions ont été récemment proposées :</p>
+<ul>
+<li><a href="https://geoffboeing.com/2018/04/network-based-spatial-clustering/">un code Python</a> basé sur la librairie <a href="https://geoffboeing.com/2016/11/osmnx-python-street-networks/">OSMnx</a> proposé par Geoff Boeing.</li>
+<li><a href="https://jeremygelb.github.io/spNetwork/articles/web_vignettes/SpaceTimeDBscan.html?fbclid=IwAR3cComlNZlkxjUDJXIC78OXpL934W1cEuZuZBnATuhqBvrdnoErTui5j">un code R</a> utilisant les <em>packages</em> <code>spNetwork</code> et <code>dbscan</code> proposé par Jérémy Gelb. Le premier est utilisé pour construire la matrice de distance entre les points à partir d’un réseau de rues tandis que le second est utilisé pour l’algorithme DBSCAN.</li>
+</ul>
 </div>
 </div>
 </div>
 <div id="sect0412" class="section level3 hasAnchor" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> ST-DBSCAN : agrégats spatio-temporels<a href="sect041.html#sect0412" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Derya Birant et Alp Kut <span class="citation">(<a href="#ref-birant2007st" role="doc-biblioref">2007</a>)</span> ont proposé une modification de l’algorithme de DBSCAN afin qu’il puisse s’appliquer à des données spatio-temporelles (<span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(d\)</span>) avec <span class="math inline">\(d\)</span> étant la date de l’évènement. Dénommé ST-DBSCAN, l’algorithme comprend toujours les deux paramètres de DBSCAN (<span class="math inline">\(MinPts\)</span> et <span class="math inline">\(\epsilon\)</span>), auquel s’ajoute un autre paramètre <span class="math inline">\(\epsilon\)</span> pour le temps (défini en heure, jour, semaine, mois ou année). Autrement dit, deux paramètres de distance sont utilisées : <span class="math inline">\(\epsilon_1\)</span> pour la proximité spatiale (comme avec DBSCAN) et <span class="math inline">\(\epsilon_2\)</span> pour la proximité temporelle <span class="citation">(<a href="#ref-birant2007st" role="doc-biblioref">Birant et Kut 2007</a>)</span>. De la sorte, deux points sont considérées comme voisins si la distance spatiale et la distance temporelle sont toutes deux inférieures aux seuils fixés.</p>
+<div class="bloc_attention">
+<p><strong>Fenêtre temporelle des points formant un agrégat</strong></p>
+<p>Attention, les points formant un agrégat peuvent avoir une fenêtre temporelle bien plus grande que le seuil <span class="math inline">\(\epsilon_2\)</span> fixé. Par exemple, fixons les valeurs de <span class="math inline">\(\epsilon_1\)</span> à 500 mètres et de <span class="math inline">\(\epsilon_2\)</span> à 7 jours. Si le point A (<span class="math inline">\(d\)</span>=2023-01-15) est distant de 400 mètres du point B (<span class="math inline">\(d\)</span>=2023-01-20), les deux points sont considérés comme voisins. Par contre, si le point B est distant du point C (<span class="math inline">\(d\)</span>=2023-01-25) de moins de 500 mètres, il peut être aussi agrégé à l’agrégat puisque l’écart temporel est B et C est de 5 jours.</p>
+<p>Habituellement, plus la valeur d’<span class="math inline">\(\epsilon_2\)</span> est faible, plus le nombre de points considéré comme aberrants sera important.</p>
+</div>
 </div>
 <div id="sect0414" class="section level3 hasAnchor" number="4.1.3">
 <h3><span class="header-section-number">4.1.3</span> Mise en œuvre dans R<a href="sect041.html#sect0414" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><em>package</em> <code>dbscan</code> <span class="citation">(<a href="#ref-dbscanPackage1" role="doc-biblioref">Hahsler et Piekenbrock 2022</a>; <a href="#ref-dbscanPackage2" role="doc-biblioref">Hahsler, Piekenbrock et Doran 2019</a>)</span>.</p>
-<p><a href="https://donnees.montreal.ca/ville-de-montreal/collisions-routieres" class="uri">https://donnees.montreal.ca/ville-de-montreal/collisions-routieres</a></p>
+<div id="sect04141" class="section level4 hasAnchor" number="4.1.3.1">
+<h4><span class="header-section-number">4.1.3.1</span> DBSCAN<a href="sect041.html#sect04141" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Nous utilisons le <em>package</em> <code>dbscan</code> <span class="citation">(<a href="#ref-dbscanPackage1" role="doc-biblioref">Hahsler et Piekenbrock 2022</a>; <a href="#ref-dbscanPackage2" role="doc-biblioref">Hahsler, Piekenbrock et Doran 2019</a>)</span> dans lequel sont implémentés plusieurs algorithmes dont dbscan, mais aussi OPTICS et HDBSCAN. La fonction <code>dbscan(x, eps, minPts, weights = NULL)</code> comprend plusieurs paramètres :</p>
+<ul>
+<li><code>x</code> : une matrice, un <em>DataFrame</em>, un objet <code>dist</code> ou un objet <code>frNN</code>.</li>
+<li><code>eps</code> : le rayon de recherche epsilon (<span class="math inline">\(\epsilon\)</span>).</li>
+<li><code>minPts</code> : le nombre de points minimum requis pour chaque point soit considéré comme un point central.</li>
+<li><code>weights</code> : un vecteur numérique optionnel pour pondérer les points.</li>
+</ul>
+<p>Pour illustrer le fonctionnement de la méthode DBSCAN, nous avons extrait les accidents d’un <a href="https://donneesouvertes-sherbrooke.opendata.arcgis.com/datasets/64d19d62f0804f5896e4b24c32aea49d_0/explore?location=45.403675%2C-71.960143%2C12.65">jeu de données sur les incidents de sécurité publique survenus sur le territoire de la Ville de Sherbrooke de juillet 2019 à juin 2022</a> (figure <a href="sect041.html#fig:CartoAccidents">4.8</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoAccidents"></span>
+<img src="GMQ405_files/figure-html/CartoAccidents-1.png" alt="Accidents survenus entre juillet 2019 et juin 2022, Ville de Sherbrooke" width="65%" />
+<p class="caption">
+Figure 4.8: Accidents survenus entre juillet 2019 et juin 2022, Ville de Sherbrooke
+</p>
+</div>
+<p>Dans le code ci-dessous, nous réalisons trois étapes préalables au calcul de DBSCAN :</p>
+<ul>
+<li>Importation des accidents.</li>
+<li>Récupération des coordonnées (<span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>) des accidents dans une matrice.</li>
+<li>Construction du graphique à partir de la distance au quatrième points le plus proche.</li>
+</ul>
+<p>Nous n’observons pas de décrochement particulier dans la courbe de la figure <a href="sect041.html#fig:GraphiqueAccidentsDist4">4.9</a>. Par conséquent, nous pourrions tout aussi bien retenir comme rayon pour epsilon une distance euclidienne de 250, 500, 1000 ou 1500 mètres.</p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="sect041.html#cb345-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb345-2"><a href="sect041.html#cb345-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb345-3"><a href="sect041.html#cb345-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbscan)</span>
+<span id="cb345-4"><a href="sect041.html#cb345-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb345-5"><a href="sect041.html#cb345-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des accidents</span></span>
+<span id="cb345-6"><a href="sect041.html#cb345-6" aria-hidden="true" tabindex="-1"></a>Accidents.sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap04/DataAccidentsSherb.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb345-7"><a href="sect041.html#cb345-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques</span></span>
+<span id="cb345-8"><a href="sect041.html#cb345-8" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(Accidents.sf)</span>
+<span id="cb345-9"><a href="sect041.html#cb345-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Graphique pour la distance au quatrième voisin le plus proche</span></span>
+<span id="cb345-10"><a href="sect041.html#cb345-10" aria-hidden="true" tabindex="-1"></a>DistKplusproche <span class="ot">&lt;-</span> <span class="fu">kNNdist</span>(xy, <span class="at">k =</span> <span class="dv">4</span>)</span>
+<span id="cb345-11"><a href="sect041.html#cb345-11" aria-hidden="true" tabindex="-1"></a>DistKplusproche <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sort</span>(DistKplusproche, <span class="at">decreasing =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb345-12"><a href="sect041.html#cb345-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(DistKplusproche) <span class="ot">&lt;-</span> <span class="st">&quot;distance&quot;</span></span>
+<span id="cb345-13"><a href="sect041.html#cb345-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DistKplusproche)<span class="sc">+</span></span>
+<span id="cb345-14"><a href="sect041.html#cb345-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(DistKplusproche), <span class="at">y =</span> distance), <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb345-15"><a href="sect041.html#cb345-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Points triés par ordre croissant selon la distance&quot;</span>,</span>
+<span id="cb345-16"><a href="sect041.html#cb345-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Distance au quatrième point le plus proche&quot;</span>)<span class="sc">+</span></span>
+<span id="cb345-17"><a href="sect041.html#cb345-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">250</span>, <span class="at">color =</span> <span class="st">&quot;#08306b&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb345-18"><a href="sect041.html#cb345-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">500</span>, <span class="at">color =</span> <span class="st">&quot;#00441b&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb345-19"><a href="sect041.html#cb345-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">1000</span>, <span class="at">color =</span> <span class="st">&quot;#67000d&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb345-20"><a href="sect041.html#cb345-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">1500</span>, <span class="at">color =</span> <span class="st">&quot;#3f007d&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphiqueAccidentsDist4"></span>
+<img src="GMQ405_files/figure-html/GraphiqueAccidentsDist4-1.png" alt="Optimisation de la valeur d’epsilon pour les accidents" width="65%" />
+<p class="caption">
+Figure 4.9: Optimisation de la valeur d’epsilon pour les accidents
+</p>
+</div>
+<p>Appliquons la méthode DBSCAN avec un minimum de quatre points et les quatre valeurs de distance euclidienne.</p>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="sect041.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123456789</span>)</span>
+<span id="cb346-2"><a href="sect041.html#cb346-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Dbscan avec les quatre distances</span></span>
+<span id="cb346-3"><a href="sect041.html#cb346-3" aria-hidden="true" tabindex="-1"></a>dbscan250  <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">250</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
+<span id="cb346-4"><a href="sect041.html#cb346-4" aria-hidden="true" tabindex="-1"></a>dbscan500  <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">500</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
+<span id="cb346-5"><a href="sect041.html#cb346-5" aria-hidden="true" tabindex="-1"></a>dbscan1000 <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">1000</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
+<span id="cb346-6"><a href="sect041.html#cb346-6" aria-hidden="true" tabindex="-1"></a>dbscan1500 <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">1500</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
+<span id="cb346-7"><a href="sect041.html#cb346-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Affichage des résultats</span></span>
+<span id="cb346-8"><a href="sect041.html#cb346-8" aria-hidden="true" tabindex="-1"></a>dbscan250</span></code></pre></div>
+<pre><code>## DBSCAN clustering for 1106 objects.
+## Parameters: eps = 250, minPts = 4
+## Using euclidean distances and borderpoints = TRUE
+## The clustering contains 45 cluster(s) and 353 noise points.
+## 
+##   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+## 353   4   6   7   5  15   5   4  22   7   5   5  19 295   4  18   5   4   7   8 
+##  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39 
+##   4   6  49   4  11   4   4  41   5   4   8  31  25  10   6  23   4   5  18  15 
+##  40  41  42  43  44  45 
+##   6   4   6   4   7   4 
+## 
+## Available fields: cluster, eps, minPts, dist, borderPoints</code></pre>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="sect041.html#cb348-1" aria-hidden="true" tabindex="-1"></a>dbscan500</span></code></pre></div>
+<pre><code>## DBSCAN clustering for 1106 objects.
+## Parameters: eps = 500, minPts = 4
+## Using euclidean distances and borderpoints = TRUE
+## The clustering contains 33 cluster(s) and 143 noise points.
+## 
+##   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+## 143   7   6  14   4   5   5   4   6 734  18   8   6   6   5   9  16   9   5   4 
+##  20  21  22  23  24  25  26  27  28  29  30  31  32  33 
+##  23   5   3   4   6   5   4   9   6   9   4   4   4   6 
+## 
+## Available fields: cluster, eps, minPts, dist, borderPoints</code></pre>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="sect041.html#cb350-1" aria-hidden="true" tabindex="-1"></a>dbscan1000</span></code></pre></div>
+<pre><code>## DBSCAN clustering for 1106 objects.
+## Parameters: eps = 1000, minPts = 4
+## Using euclidean distances and borderpoints = TRUE
+## The clustering contains 10 cluster(s) and 42 noise points.
+## 
+##   0   1   2   3   4   5   6   7   8   9  10 
+##  42   8   6  37 962   8   4   6   5  12  16 
+## 
+## Available fields: cluster, eps, minPts, dist, borderPoints</code></pre>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="sect041.html#cb352-1" aria-hidden="true" tabindex="-1"></a>dbscan1500</span></code></pre></div>
+<pre><code>## DBSCAN clustering for 1106 objects.
+## Parameters: eps = 1500, minPts = 4
+## Using euclidean distances and borderpoints = TRUE
+## The clustering contains 3 cluster(s) and 7 noise points.
+## 
+##    0    1    2    3 
+##    7 1047   12   40 
+## 
+## Available fields: cluster, eps, minPts, dist, borderPoints</code></pre>
+<p>Pour les 1106 accidents du jeu de données, les résultats des quatre DBSCAN ci-dessus sont les suivants :</p>
+<ul>
+<li>Avec <span class="math inline">\(\epsilon=250\)</span>, 45 agrégats et 353 points aberrants (bruit).</li>
+<li>Avec <span class="math inline">\(\epsilon=500\)</span>, 33 agrégats et 143 points aberrants.</li>
+<li>Avec <span class="math inline">\(\epsilon=1000\)</span>, 10 agrégats et 42 points aberrants.</li>
+<li>Avec <span class="math inline">\(\epsilon=1500\)</span>, 3 agrégats et 7 points aberrants.</li>
+</ul>
+<p>Pour les <em>n</em> points du jeu de données, l’appartenance à un agrégat est enregistrée dans un vecteur numérique avec des valeurs de 0 à <em>k</em> agrégats (<code>ResultatDbscan$cluster</code>). Notez que la valeur de 0 est attribué aux points aberrants. Avec ce vecteur, nous enregistrons les résultats dans un nouveau champ de la couche de points <code>sf</code>.</p>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="sect041.html#cb354-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrement des résultats de DBSCAN dans la couche de points sf</span></span>
+<span id="cb354-2"><a href="sect041.html#cb354-2" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>Dbscan250  <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan250<span class="sc">$</span>cluster)</span>
+<span id="cb354-3"><a href="sect041.html#cb354-3" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>Dbscan500  <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan500<span class="sc">$</span>cluster)</span>
+<span id="cb354-4"><a href="sect041.html#cb354-4" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>Dbscan1000 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan1000<span class="sc">$</span>cluster)</span>
+<span id="cb354-5"><a href="sect041.html#cb354-5" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>Dbscan1500 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan1500<span class="sc">$</span>cluster)</span>
+<span id="cb354-6"><a href="sect041.html#cb354-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb354-7"><a href="sect041.html#cb354-7" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>Dbscan250 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Accidents.sf<span class="sc">$</span>Dbscan250) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb354-8"><a href="sect041.html#cb354-8" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Accidents.sf<span class="sc">$</span>Dbscan250),</span>
+<span id="cb354-9"><a href="sect041.html#cb354-9" aria-hidden="true" tabindex="-1"></a>                                        Accidents.sf<span class="sc">$</span>Dbscan250)</span>
+<span id="cb354-10"><a href="sect041.html#cb354-10" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>Dbscan500 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Accidents.sf<span class="sc">$</span>Dbscan500) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb354-11"><a href="sect041.html#cb354-11" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Accidents.sf<span class="sc">$</span>Dbscan500),</span>
+<span id="cb354-12"><a href="sect041.html#cb354-12" aria-hidden="true" tabindex="-1"></a>                                        Accidents.sf<span class="sc">$</span>Dbscan500)</span>
+<span id="cb354-13"><a href="sect041.html#cb354-13" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>Dbscan1000 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Accidents.sf<span class="sc">$</span>Dbscan1000) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb354-14"><a href="sect041.html#cb354-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Accidents.sf<span class="sc">$</span>Dbscan1000),</span>
+<span id="cb354-15"><a href="sect041.html#cb354-15" aria-hidden="true" tabindex="-1"></a>                                        Accidents.sf<span class="sc">$</span>Dbscan1000)</span>
+<span id="cb354-16"><a href="sect041.html#cb354-16" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>Dbscan1500 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Accidents.sf<span class="sc">$</span>Dbscan1500) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb354-17"><a href="sect041.html#cb354-17" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Accidents.sf<span class="sc">$</span>Dbscan1500),</span>
+<span id="cb354-18"><a href="sect041.html#cb354-18" aria-hidden="true" tabindex="-1"></a>                                        Accidents.sf<span class="sc">$</span>Dbscan1500)</span></code></pre></div>
+<p>Nous cartographions finalement les résultats pour les quatre solutions.</p>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="sect041.html#cb355-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb355-2"><a href="sect041.html#cb355-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Accidents.sf)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;Dbscan250&quot;</span>, <span class="at">size =</span> .<span class="dv">5</span>)</span></code></pre></div>
+<p><img src="GMQ405_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="sect041.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Accidents.sf)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;Dbscan500&quot;</span>, <span class="at">size =</span> .<span class="dv">5</span>)</span></code></pre></div>
+<p><img src="GMQ405_files/figure-html/unnamed-chunk-121-2.png" width="672" /></p>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="sect041.html#cb357-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Accidents.sf)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;Dbscan1000&quot;</span>, <span class="at">size =</span> .<span class="dv">5</span>)</span></code></pre></div>
+<p><img src="GMQ405_files/figure-html/unnamed-chunk-121-3.png" width="672" /></p>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="sect041.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Accidents.sf)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;Dbscan1500&quot;</span>, <span class="at">size =</span> .<span class="dv">5</span>)</span></code></pre></div>
+<p><img src="GMQ405_files/figure-html/unnamed-chunk-121-4.png" width="672" /></p>
+</div>
+<div id="sect04142" class="section level4 hasAnchor" number="4.1.3.2">
+<h4><span class="header-section-number">4.1.3.2</span> ST-DBSCAN<a href="sect041.html#sect04142" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Pour l’algorithme ST-DBSCAN, nous utilisons une <a href="https://github.com/CKerouanton/ST-DBSCAN">fonction R</a> proposée par Colin Kerouanton.</p>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="sect041.html#cb359-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Fonction pour l&#39;algorithme st-dbscan</span></span>
+<span id="cb359-2"><a href="sect041.html#cb359-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Source : https://github.com/CKerouanton/ST-DBSCAN_sensitivity</span></span>
+<span id="cb359-3"><a href="sect041.html#cb359-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x vecteur pour les coordonnées X des points.</span></span>
+<span id="cb359-4"><a href="sect041.html#cb359-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y vecteur pour les coordonnées Y des points.</span></span>
+<span id="cb359-5"><a href="sect041.html#cb359-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param eps1 valeur de epsilon pour la distance.</span></span>
+<span id="cb359-6"><a href="sect041.html#cb359-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param eps2 valeur de epsilon pour le temps.</span></span>
+<span id="cb359-7"><a href="sect041.html#cb359-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param minpts nombre de points minimum pour les points centraux.</span></span>
+<span id="cb359-8"><a href="sect041.html#cb359-8" aria-hidden="true" tabindex="-1"></a>stdbscan <span class="ot">=</span> <span class="cf">function</span> (x, y, time, eps1, eps2, minpts) {</span>
+<span id="cb359-9"><a href="sect041.html#cb359-9" aria-hidden="true" tabindex="-1"></a>  countmode <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)</span>
+<span id="cb359-10"><a href="sect041.html#cb359-10" aria-hidden="true" tabindex="-1"></a>  seeds <span class="ot">=</span> <span class="cn">TRUE</span></span>
+<span id="cb359-11"><a href="sect041.html#cb359-11" aria-hidden="true" tabindex="-1"></a>  data_spatial  <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">cbind</span>(y, x)))</span>
+<span id="cb359-12"><a href="sect041.html#cb359-12" aria-hidden="true" tabindex="-1"></a>  data_temporal <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(time))</span>
+<span id="cb359-13"><a href="sect041.html#cb359-13" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data_spatial)</span>
+<span id="cb359-14"><a href="sect041.html#cb359-14" aria-hidden="true" tabindex="-1"></a>  classn <span class="ot">&lt;-</span> cv <span class="ot">&lt;-</span> <span class="fu">integer</span>(n)</span>
+<span id="cb359-15"><a href="sect041.html#cb359-15" aria-hidden="true" tabindex="-1"></a>  isseed <span class="ot">&lt;-</span> <span class="fu">logical</span>(n)</span>
+<span id="cb359-16"><a href="sect041.html#cb359-16" aria-hidden="true" tabindex="-1"></a>  cn <span class="ot">&lt;-</span> <span class="fu">integer</span>(<span class="dv">1</span>)</span>
+<span id="cb359-17"><a href="sect041.html#cb359-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb359-18"><a href="sect041.html#cb359-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb359-19"><a href="sect041.html#cb359-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">%in%</span> countmode)</span>
+<span id="cb359-20"><a href="sect041.html#cb359-20" aria-hidden="true" tabindex="-1"></a>      <span class="co">#cat(&quot;Processing point &quot;, i, &quot; of &quot;, n, &quot;.\n&quot;)</span></span>
+<span id="cb359-21"><a href="sect041.html#cb359-21" aria-hidden="true" tabindex="-1"></a>      unclass <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span>n)[cv <span class="sc">&lt;</span> <span class="dv">1</span>]</span>
+<span id="cb359-22"><a href="sect041.html#cb359-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb359-23"><a href="sect041.html#cb359-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (cv[i] <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb359-24"><a href="sect041.html#cb359-24" aria-hidden="true" tabindex="-1"></a>      reachables <span class="ot">&lt;-</span> <span class="fu">intersect</span>(unclass[data_spatial[i, unclass] <span class="sc">&lt;=</span> eps1],  </span>
+<span id="cb359-25"><a href="sect041.html#cb359-25" aria-hidden="true" tabindex="-1"></a>                              unclass[data_temporal[i, unclass] <span class="sc">&lt;=</span> eps2])</span>
+<span id="cb359-26"><a href="sect041.html#cb359-26" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">length</span>(reachables) <span class="sc">+</span> classn[i] <span class="sc">&lt;</span> minpts)</span>
+<span id="cb359-27"><a href="sect041.html#cb359-27" aria-hidden="true" tabindex="-1"></a>        cv[i] <span class="ot">&lt;-</span> (<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb359-28"><a href="sect041.html#cb359-28" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span> {</span>
+<span id="cb359-29"><a href="sect041.html#cb359-29" aria-hidden="true" tabindex="-1"></a>        cn <span class="ot">&lt;-</span> cn <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb359-30"><a href="sect041.html#cb359-30" aria-hidden="true" tabindex="-1"></a>        cv[i] <span class="ot">&lt;-</span> cn</span>
+<span id="cb359-31"><a href="sect041.html#cb359-31" aria-hidden="true" tabindex="-1"></a>        isseed[i] <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb359-32"><a href="sect041.html#cb359-32" aria-hidden="true" tabindex="-1"></a>        reachables <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(reachables, i)</span>
+<span id="cb359-33"><a href="sect041.html#cb359-33" aria-hidden="true" tabindex="-1"></a>        unclass <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(unclass, i)</span>
+<span id="cb359-34"><a href="sect041.html#cb359-34" aria-hidden="true" tabindex="-1"></a>        classn[reachables] <span class="ot">&lt;-</span> classn[reachables] <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb359-35"><a href="sect041.html#cb359-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> (<span class="fu">length</span>(reachables)) {</span>
+<span id="cb359-36"><a href="sect041.html#cb359-36" aria-hidden="true" tabindex="-1"></a>          cv[reachables] <span class="ot">&lt;-</span> cn</span>
+<span id="cb359-37"><a href="sect041.html#cb359-37" aria-hidden="true" tabindex="-1"></a>          ap <span class="ot">&lt;-</span> reachables</span>
+<span id="cb359-38"><a href="sect041.html#cb359-38" aria-hidden="true" tabindex="-1"></a>          reachables <span class="ot">&lt;-</span> <span class="fu">integer</span>()</span>
+<span id="cb359-39"><a href="sect041.html#cb359-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb359-40"><a href="sect041.html#cb359-40" aria-hidden="true" tabindex="-1"></a>          <span class="cf">for</span> (i2 <span class="cf">in</span> <span class="fu">seq</span>(<span class="at">along =</span> ap)) {</span>
+<span id="cb359-41"><a href="sect041.html#cb359-41" aria-hidden="true" tabindex="-1"></a>            j <span class="ot">&lt;-</span> ap[i2]</span>
+<span id="cb359-42"><a href="sect041.html#cb359-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb359-43"><a href="sect041.html#cb359-43" aria-hidden="true" tabindex="-1"></a>            jreachables <span class="ot">&lt;-</span> <span class="fu">intersect</span>(unclass[data_spatial[j, unclass] <span class="sc">&lt;=</span> eps1], </span>
+<span id="cb359-44"><a href="sect041.html#cb359-44" aria-hidden="true" tabindex="-1"></a>                                     unclass[data_temporal[j, unclass] <span class="sc">&lt;=</span> eps2])</span>
+<span id="cb359-45"><a href="sect041.html#cb359-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb359-46"><a href="sect041.html#cb359-46" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (<span class="fu">length</span>(jreachables) <span class="sc">+</span> classn[j] <span class="sc">&gt;=</span> minpts) {</span>
+<span id="cb359-47"><a href="sect041.html#cb359-47" aria-hidden="true" tabindex="-1"></a>              isseed[j] <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb359-48"><a href="sect041.html#cb359-48" aria-hidden="true" tabindex="-1"></a>              cv[jreachables[cv[jreachables] <span class="sc">&lt;</span> <span class="dv">0</span>]] <span class="ot">&lt;-</span> cn</span>
+<span id="cb359-49"><a href="sect041.html#cb359-49" aria-hidden="true" tabindex="-1"></a>              reachables <span class="ot">&lt;-</span> <span class="fu">union</span>(reachables, jreachables[cv[jreachables] <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb359-50"><a href="sect041.html#cb359-50" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb359-51"><a href="sect041.html#cb359-51" aria-hidden="true" tabindex="-1"></a>            classn[jreachables] <span class="ot">&lt;-</span> classn[jreachables] <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb359-52"><a href="sect041.html#cb359-52" aria-hidden="true" tabindex="-1"></a>            unclass <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(unclass, j)</span>
+<span id="cb359-53"><a href="sect041.html#cb359-53" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb359-54"><a href="sect041.html#cb359-54" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb359-55"><a href="sect041.html#cb359-55" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb359-56"><a href="sect041.html#cb359-56" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb359-57"><a href="sect041.html#cb359-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">length</span>(unclass))</span>
+<span id="cb359-58"><a href="sect041.html#cb359-58" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb359-59"><a href="sect041.html#cb359-59" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb359-60"><a href="sect041.html#cb359-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb359-61"><a href="sect041.html#cb359-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">any</span>(cv <span class="sc">==</span> (<span class="sc">-</span><span class="dv">1</span>))) {</span>
+<span id="cb359-62"><a href="sect041.html#cb359-62" aria-hidden="true" tabindex="-1"></a>    cv[cv <span class="sc">==</span> (<span class="sc">-</span><span class="dv">1</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb359-63"><a href="sect041.html#cb359-63" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb359-64"><a href="sect041.html#cb359-64" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">cluster =</span> cv, <span class="at">eps1 =</span> eps1, <span class="at">eps2 =</span> eps2, <span class="at">minpts =</span> minpts, <span class="at">density =</span> classn)</span>
+<span id="cb359-65"><a href="sect041.html#cb359-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rm</span>(classn)</span>
+<span id="cb359-66"><a href="sect041.html#cb359-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (seeds <span class="sc">&amp;&amp;</span> cn <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb359-67"><a href="sect041.html#cb359-67" aria-hidden="true" tabindex="-1"></a>    out<span class="sc">$</span>isseed <span class="ot">&lt;-</span> isseed</span>
+<span id="cb359-68"><a href="sect041.html#cb359-68" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb359-69"><a href="sect041.html#cb359-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(out) <span class="ot">&lt;-</span> <span class="st">&quot;stdbscan&quot;</span></span>
+<span id="cb359-70"><a href="sect041.html#cb359-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(out)</span>
+<span id="cb359-71"><a href="sect041.html#cb359-71" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Calculons ST-DBSCAN avec une distance spatiale de 1000 mètres et une distance temporelle de 21 jours. Nous obtenons 26 agrégats et 584 points identifiés comme aberrants.</p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="sect041.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation des accidents</span></span>
+<span id="cb360-2"><a href="sect041.html#cb360-2" aria-hidden="true" tabindex="-1"></a>Accidents.sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap04/DataAccidentsSherb.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb360-3"><a href="sect041.html#cb360-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Coordonnées géographiques</span></span>
+<span id="cb360-4"><a href="sect041.html#cb360-4" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(Accidents.sf)</span>
+<span id="cb360-5"><a href="sect041.html#cb360-5" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>x <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
+<span id="cb360-6"><a href="sect041.html#cb360-6" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
+<span id="cb360-7"><a href="sect041.html#cb360-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Vérifions que le champ DATEINCIDE est bien au format date</span></span>
+<span id="cb360-8"><a href="sect041.html#cb360-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Accidents.sf<span class="sc">$</span>DATEINCIDE)</span></code></pre></div>
+<pre><code>##  Date[1:1106], format: &quot;2021-12-11&quot; &quot;2022-05-16&quot; &quot;2021-08-12&quot; &quot;2019-08-02&quot; &quot;2020-03-02&quot; ...</code></pre>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="sect041.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calul de st-dbscan avec une distance de 1000 mètres et 21 jours</span></span>
+<span id="cb362-2"><a href="sect041.html#cb362-2" aria-hidden="true" tabindex="-1"></a>Resultats.stdbscan <span class="ot">&lt;-</span> <span class="fu">stdbscan</span>(<span class="at">x =</span> Accidents.sf<span class="sc">$</span>x,</span>
+<span id="cb362-3"><a href="sect041.html#cb362-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">y =</span> Accidents.sf<span class="sc">$</span>y,</span>
+<span id="cb362-4"><a href="sect041.html#cb362-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">time =</span> Accidents.sf<span class="sc">$</span>DATEINCIDE,</span>
+<span id="cb362-5"><a href="sect041.html#cb362-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">eps1 =</span> <span class="dv">1000</span>,</span>
+<span id="cb362-6"><a href="sect041.html#cb362-6" aria-hidden="true" tabindex="-1"></a>                              <span class="at">eps2 =</span> <span class="dv">21</span>,</span>
+<span id="cb362-7"><a href="sect041.html#cb362-7" aria-hidden="true" tabindex="-1"></a>                              <span class="at">minpts =</span> <span class="dv">4</span>)</span>
+<span id="cb362-8"><a href="sect041.html#cb362-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Enregistrement des résultats de ST-DBSCAN dans la couche de points sf</span></span>
+<span id="cb362-9"><a href="sect041.html#cb362-9" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(Resultats.stdbscan<span class="sc">$</span>cluster)</span>
+<span id="cb362-10"><a href="sect041.html#cb362-10" aria-hidden="true" tabindex="-1"></a>Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb362-11"><a href="sect041.html#cb362-11" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21),</span>
+<span id="cb362-12"><a href="sect041.html#cb362-12" aria-hidden="true" tabindex="-1"></a>                                        Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21)</span>
+<span id="cb362-13"><a href="sect041.html#cb362-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Nombre de points par agrégat</span></span>
+<span id="cb362-14"><a href="sect041.html#cb362-14" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21)</span></code></pre></div>
+<pre><code>## 
+##  00  01  02  03  04  05  06  07  08  09  10  11  12  13  14  15  16  17  18  19 
+## 584   4   6   5   4   4   7   7   4 178 156  13  17   4  22  32   6   7   8   8 
+##  20  21  22  23  24  25  26 
+##   5   6   4   3   5   4   3</code></pre>
+<p>Pour faciliter l’analyse des résultats de ST-DBSCAN, nous conseillons de :</p>
+<ol style="list-style-type: decimal">
+<li>Construire un tableau récapitulatif pour les agrégats avec le nombre de points, les dates de début et de fin et l’intervalle temporel.</li>
+<li>Construire un graphique avec les agrégats (axe des <em>y</em>) et la dimension temporelle (axe des <em>x</em>).</li>
+<li>Cartographier les résultats.</li>
+</ol>
+<p>Le code ci-dessous génère le tableau récapitulatif. Nous constatons ainsi que les agrégats 9 et 10 incluent respectivement 178 et 150 points avec des intervalles temporels importants (respectivement 251 et 319 jours).</p>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="sect041.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb364-2"><a href="sect041.html#cb364-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Sélection des points appartenant à un agrégat</span></span>
+<span id="cb364-3"><a href="sect041.html#cb364-3" aria-hidden="true" tabindex="-1"></a>Agregats <span class="ot">&lt;-</span> <span class="fu">subset</span>(Accidents.sf, </span>
+<span id="cb364-4"><a href="sect041.html#cb364-4" aria-hidden="true" tabindex="-1"></a>                   Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb364-5"><a href="sect041.html#cb364-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Conversion de la date au format POSIXct</span></span>
+<span id="cb364-6"><a href="sect041.html#cb364-6" aria-hidden="true" tabindex="-1"></a>Agregats<span class="sc">$</span>dtPOSIXct <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(Agregats<span class="sc">$</span>DATEINCIDE, <span class="at">format =</span> <span class="st">&quot;%Y/%m/%d&quot;</span>)</span>
+<span id="cb364-7"><a href="sect041.html#cb364-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Tableau récapitulatif</span></span>
+<span id="cb364-8"><a href="sect041.html#cb364-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;dplyr&quot;</span>)  </span>
+<span id="cb364-9"><a href="sect041.html#cb364-9" aria-hidden="true" tabindex="-1"></a>Tableau.stdbscan <span class="ot">&lt;-</span></span>
+<span id="cb364-10"><a href="sect041.html#cb364-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_drop_geometry</span>(Agregats) <span class="sc">%&gt;%</span></span>
+<span id="cb364-11"><a href="sect041.html#cb364-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(stdbscan<span class="fl">.1000</span>_21) <span class="sc">%&gt;%</span> </span>
+<span id="cb364-12"><a href="sect041.html#cb364-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarize</span>(<span class="at">points =</span> <span class="fu">n</span>(),</span>
+<span id="cb364-13"><a href="sect041.html#cb364-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">date.min =</span> <span class="fu">min</span>(DATEINCIDE),</span>
+<span id="cb364-14"><a href="sect041.html#cb364-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">date.max =</span> <span class="fu">max</span>(DATEINCIDE),</span>
+<span id="cb364-15"><a href="sect041.html#cb364-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">intervalle.jours =</span> <span class="fu">as.numeric</span>(<span class="fu">max</span>(DATEINCIDE)<span class="sc">-</span><span class="fu">min</span>(DATEINCIDE)))</span>
+<span id="cb364-16"><a href="sect041.html#cb364-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Affichage du tableau</span></span>
+<span id="cb364-17"><a href="sect041.html#cb364-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Tableau.stdbscan, <span class="at">n =</span> <span class="fu">nrow</span>(Tableau.stdbscan))</span></code></pre></div>
+<pre><code>## # A tibble: 26 × 5
+##    stdbscan.1000_21 points date.min   date.max   intervalle.jours
+##    &lt;chr&gt;             &lt;int&gt; &lt;date&gt;     &lt;date&gt;                &lt;dbl&gt;
+##  1 01                    4 2019-08-08 2019-09-04               27
+##  2 02                    6 2021-12-15 2022-01-25               41
+##  3 03                    5 2019-07-21 2019-08-30               40
+##  4 04                    4 2020-11-10 2020-12-12               32
+##  5 05                    4 2022-01-08 2022-02-13               36
+##  6 06                    7 2021-06-09 2021-07-02               23
+##  7 07                    7 2020-06-23 2020-08-07               45
+##  8 08                    4 2021-09-30 2021-10-27               27
+##  9 09                  178 2019-07-02 2020-03-09              251
+## 10 10                  156 2021-03-13 2022-01-26              319
+## 11 11                   13 2021-07-24 2021-09-11               49
+## 12 12                   17 2021-10-21 2022-01-12               83
+## 13 13                    4 2021-06-16 2021-07-07               21
+## 14 14                   22 2022-04-11 2022-06-27               77
+## 15 15                   32 2020-09-11 2020-12-18               98
+## 16 16                    6 2020-01-17 2020-02-08               22
+## 17 17                    7 2022-05-07 2022-05-30               23
+## 18 18                    8 2021-04-01 2021-05-27               56
+## 19 19                    8 2020-07-15 2020-09-11               58
+## 20 20                    5 2019-07-05 2019-07-31               26
+## 21 21                    6 2022-01-15 2022-03-02               46
+## 22 22                    4 2020-06-17 2020-06-30               13
+## 23 23                    3 2022-03-12 2022-03-18                6
+## 24 24                    5 2021-06-29 2021-07-21               22
+## 25 25                    4 2021-09-20 2021-10-25               35
+## 26 26                    3 2021-04-13 2021-04-26               13</code></pre>
+<p>La figure <a href="sect041.html#fig:GraphStScanEps1000Eps21">4.10</a> présente les points et l’étendue temporelle de chaque agrégat.</p>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="sect041.html#cb366-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Construction du graphique</span></span>
+<span id="cb366-2"><a href="sect041.html#cb366-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Agregats) <span class="sc">+</span> </span>
+<span id="cb366-3"><a href="sect041.html#cb366-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> dtPOSIXct, </span>
+<span id="cb366-4"><a href="sect041.html#cb366-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> stdbscan<span class="fl">.1000</span>_21, </span>
+<span id="cb366-5"><a href="sect041.html#cb366-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> stdbscan<span class="fl">.1000</span>_21),</span>
+<span id="cb366-6"><a href="sect041.html#cb366-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb366-7"><a href="sect041.html#cb366-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_datetime</span>(<span class="at">date_labels =</span> <span class="st">&quot;%Y/%m&quot;</span>)<span class="sc">+</span></span>
+<span id="cb366-8"><a href="sect041.html#cb366-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span> <span class="st">&quot;Temps&quot;</span>,</span>
+<span id="cb366-9"><a href="sect041.html#cb366-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">&quot;Identifiant de l&#39;agrégat&quot;</span>,</span>
+<span id="cb366-10"><a href="sect041.html#cb366-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;ST-DBSCAN avec 1000 mètres et 21 jours)&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphStScanEps1000Eps21"></span>
+<img src="GMQ405_files/figure-html/GraphStScanEps1000Eps21-1.png" alt="Intervalles temporels des agrégats ST-DBSCAN" width="65%" />
+<p class="caption">
+Figure 4.10: Intervalles temporels des agrégats ST-DBSCAN
+</p>
+</div>
+<p>La cartographie des agrégats est présentée à la figure <a href="sect041.html#fig:CarteStScanEps1000Eps21">4.11</a> avec en noir les points aberrants.</p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="sect041.html#cb367-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Création de deux couches : l&#39;une pour les agrégats, l&#39;autre pour les points aberrants</span></span>
+<span id="cb367-2"><a href="sect041.html#cb367-2" aria-hidden="true" tabindex="-1"></a>stdbcan.Agregats <span class="ot">&lt;-</span> <span class="fu">subset</span>(Accidents.sf, Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb367-3"><a href="sect041.html#cb367-3" aria-hidden="true" tabindex="-1"></a>stdbcan.Bruit    <span class="ot">&lt;-</span> <span class="fu">subset</span>(Accidents.sf, Accidents.sf<span class="sc">$</span>stdbscan<span class="fl">.1000</span>_21 <span class="sc">==</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb367-4"><a href="sect041.html#cb367-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb367-5"><a href="sect041.html#cb367-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb367-6"><a href="sect041.html#cb367-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Arrondiss)<span class="sc">+</span><span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;#f7f7f7&quot;</span>)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb367-7"><a href="sect041.html#cb367-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(stdbcan.Bruit)<span class="sc">+</span></span>
+<span id="cb367-8"><a href="sect041.html#cb367-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">col=</span><span class="st">&quot;black&quot;</span>, <span class="at">size=</span>.<span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb367-9"><a href="sect041.html#cb367-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(stdbcan.Agregats)<span class="sc">+</span></span>
+<span id="cb367-10"><a href="sect041.html#cb367-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">col=</span><span class="st">&quot;stdbscan.1000_21&quot;</span>, <span class="at">size=</span>.<span class="dv">2</span>, <span class="at">title =</span> <span class="st">&quot;Agrégat&quot;</span>)<span class="sc">+</span></span>
+<span id="cb367-11"><a href="sect041.html#cb367-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">frame =</span> F, <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;bottom&quot;</span>), </span>
+<span id="cb367-12"><a href="sect041.html#cb367-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">legend.text.size =</span> .<span class="dv">85</span>, <span class="at">legend.outside =</span> T)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:CarteStScanEps1000Eps21"></span>
+<img src="GMQ405_files/figure-html/CarteStScanEps1000Eps21-1.png" alt="Agrégats identifiés avec ST-DBSCAN" width="65%" />
+<p class="caption">
+Figure 4.11: Agrégats identifiés avec ST-DBSCAN
+</p>
 </div>
 </div>
-<h3>References</h3>
+</div>
+</div>
+<h3>Références</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-birant2007st" class="csl-entry">
+Birant, Derya et Alp Kut. 2007. <span>« ST-DBSCAN: An algorithm for clustering spatial–temporal data. »</span> <em>Data &amp; knowledge engineering</em> 60 (1): 208‑221. doi:<a href="https://doi.org/10.1016/j.datak.2006.01.013">https://doi.org/10.1016/j.datak.2006.01.013</a>.
+</div>
 <div id="ref-HDBSCAN2013" class="csl-entry">
 Campello, Ricardo JGB, Davoud Moulavi et Jörg Sander. 2013. <span>« Density-based clustering based on hierarchical density estimates. »</span> In <em>Advances in Knowledge Discovery and Data Mining: 17th Pacific-Asia Conference, PAKDD 2013, Gold Coast, Australia, April 14-17, 2013, Proceedings, Part II 17</em>, 160‑172. s.n. <a href="http://dx.doi.org/10.1007/978-3-642-37456-2_14">http://dx.doi.org/10.1007/978-3-642-37456-2_14</a>.
 </div>

@@ -1071,7 +1071,7 @@ Figure 1.5: st_intersection() est équivalent à la méthode clip dans un SIG
 <span id="cb108-12"><a href="sect012.html#cb108-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;temps de traitement (CSV) : &quot;</span>, </span>
 <span id="cb108-13"><a href="sect012.html#cb108-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.numeric</span>(<span class="fu">difftime</span>(t2,t1,<span class="at">units=</span><span class="st">&quot;secs&quot;</span>)),</span>
 <span id="cb108-14"><a href="sect012.html#cb108-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot; secondes&quot;</span>)</span></code></pre></div>
-<pre><code>## temps de traitement (CSV) :  0.01658201  secondes</code></pre>
+<pre><code>## temps de traitement (CSV) :  0.01554108  secondes</code></pre>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="sect012.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation d&#39;un fichier Excel avec le nom de fichier et de la feuille Excel</span></span>
 <span id="cb110-2"><a href="sect012.html#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="do">## sheetIndex = 1 signale l&#39;importation de la première feuille Excel</span></span>
 <span id="cb110-3"><a href="sect012.html#cb110-3" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
@@ -1081,7 +1081,7 @@ Figure 1.5: st_intersection() est équivalent à la méthode clip dans un SIG
 <span id="cb110-7"><a href="sect012.html#cb110-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;temps de traitement (Excel) : &quot;</span>, </span>
 <span id="cb110-8"><a href="sect012.html#cb110-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.numeric</span>(<span class="fu">difftime</span>(t2,t1,<span class="at">units=</span><span class="st">&quot;secs&quot;</span>)),</span>
 <span id="cb110-9"><a href="sect012.html#cb110-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot; secondes&quot;</span>)</span></code></pre></div>
-<pre><code>## temps de traitement (Excel) :  9.068675  secondes</code></pre>
+<pre><code>## temps de traitement (Excel) :  6.237657  secondes</code></pre>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="sect012.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Importation du fichier dBase</span></span>
 <span id="cb112-2"><a href="sect012.html#cb112-2" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb112-3"><a href="sect012.html#cb112-3" aria-hidden="true" tabindex="-1"></a>dfDbf <span class="ot">&lt;-</span> <span class="fu">read.dbf</span>(<span class="at">file =</span> <span class="st">&quot;data/chap01/tables/ADQC2021.dbf&quot;</span>)</span>
@@ -1089,7 +1089,7 @@ Figure 1.5: st_intersection() est équivalent à la méthode clip dans un SIG
 <span id="cb112-5"><a href="sect012.html#cb112-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;temps de traitement (dBase) : &quot;</span>, </span>
 <span id="cb112-6"><a href="sect012.html#cb112-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.numeric</span>(<span class="fu">difftime</span>(t2,t1,<span class="at">units=</span><span class="st">&quot;secs&quot;</span>)),</span>
 <span id="cb112-7"><a href="sect012.html#cb112-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot; secondes&quot;</span>)</span></code></pre></div>
-<pre><code>## temps de traitement (dBase) :  0.155267  secondes</code></pre>
+<pre><code>## temps de traitement (dBase) :  0.1243379  secondes</code></pre>
 <div class="bloc_astuce">
 <p>Le temps nécessaire pour importer un fichier Excel est bien plus long que pour des fichiers texte et dBase! Par conséquent, si vous travaillez avec Excel, il est vivement conseillé de l’exporter vers un fichier texte (<code>Fichier/Enregistrer sous/type de fichier CSV</code>).</p>
 </div>
@@ -1322,7 +1322,7 @@ Figure 1.5: st_intersection() est équivalent à la méthode clip dans un SIG
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>Références</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RBoldAir" class="csl-entry">
 Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.
