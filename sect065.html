@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10.7 Exercices du chapitre 7 | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
+  <title>6.5 Exercices de révision | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10.7 Exercices du chapitre 7 | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta property="og:title" content="6.5 Exercices de révision | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/introduction/ImageCouverture.png" />
   <meta property="og:description" content="Mettre le description du cours." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10.7 Exercices du chapitre 7 | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta name="twitter:title" content="6.5 Exercices de révision | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   
   <meta name="twitter:description" content="Mettre le description du cours." />
   <meta name="twitter:image" content="/images/introduction/ImageCouverture.png" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="sect1006.html"/>
-<link rel="next" href="sect1008.html"/>
+<link rel="prev" href="sect064.html"/>
+<link rel="next" href="chap07.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -454,16 +454,73 @@ Modélisation et analyse spatiale</a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sect1007" class="section level2 hasAnchor" number="10.7">
-<h2><span class="header-section-number">10.7</span> Exercices du chapitre 7<a href="sect1007.html#sect1007" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sect065" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Exercices de révision<a href="sect065.html#sect065" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="bloc_exercice">
+<p><strong>Exercice 1.</strong> Réalisation de modèles de régression autorégressifs spatiaux</p>
+<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="sect065.html#cb521-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb521-2"><a href="sect065.html#cb521-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb521-3"><a href="sect065.html#cb521-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice de contiguïté selon le partage d&#39;un segment (Rook)</span></span>
+<span id="cb521-4"><a href="sect065.html#cb521-4" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
+<span id="cb521-5"><a href="sect065.html#cb521-5" aria-hidden="true" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
+<span id="cb521-6"><a href="sect065.html#cb521-6" aria-hidden="true" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
+<span id="cb521-7"><a href="sect065.html#cb521-7" aria-hidden="true" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb521-8"><a href="sect065.html#cb521-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Modèles</span></span>
+<span id="cb521-9"><a href="sect065.html#cb521-9" aria-hidden="true" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~  Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
+<span id="cb521-10"><a href="sect065.html#cb521-10" aria-hidden="true" tabindex="-1"></a>Modele.SLX <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb521-11"><a href="sect065.html#cb521-11" aria-hidden="true" tabindex="-1"></a>Modele.SAR <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb521-12"><a href="sect065.html#cb521-12" aria-hidden="true" tabindex="-1"></a>Modele.SEM <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb521-13"><a href="sect065.html#cb521-13" aria-hidden="true" tabindex="-1"></a>Modele.DurbinSpatial <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb521-14"><a href="sect065.html#cb521-14" aria-hidden="true" tabindex="-1"></a>Modele.DurbinErreur <span class="ot">&lt;-</span> à compléter</span></code></pre></div>
+<p>Correction à la section <a href="sect1006.html#sect10061">10.6.1</a>.</p>
 </div>
+<div class="bloc_exercice">
+<p><strong>Exercice 2.</strong> Réalisation d’un modèle GAM</p>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="sect065.html#cb522-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb522-2"><a href="sect065.html#cb522-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
+<span id="cb522-3"><a href="sect065.html#cb522-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
+<span id="cb522-4"><a href="sect065.html#cb522-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajout des coordonnées x et y</span></span>
+<span id="cb522-5"><a href="sect065.html#cb522-5" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb522-6"><a href="sect065.html#cb522-6" aria-hidden="true" tabindex="-1"></a>LyonIris<span class="sc">$</span>X <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb522-7"><a href="sect065.html#cb522-7" aria-hidden="true" tabindex="-1"></a>LyonIris<span class="sc">$</span>Y <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb522-8"><a href="sect065.html#cb522-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Construction du modèle avec</span></span>
+<span id="cb522-9"><a href="sect065.html#cb522-9" aria-hidden="true" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~  Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
+<span id="cb522-10"><a href="sect065.html#cb522-10" aria-hidden="true" tabindex="-1"></a>Modele.GAM2 <span class="ot">&lt;-</span> <span class="fu">gam</span>(NO2 <span class="sc">~</span>  à compléter</span>
+<span id="cb522-11"><a href="sect065.html#cb522-11" aria-hidden="true" tabindex="-1"></a>                          à compléter,</span>
+<span id="cb522-12"><a href="sect065.html#cb522-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> LyonIris)</span>
+<span id="cb522-13"><a href="sect065.html#cb522-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Modele.GAM2)</span></code></pre></div>
+<p>Correction à la section <a href="sect1006.html#sect10062">10.6.2</a>.</p>
+</div>
+<div class="bloc_exercice">
+<p><strong>Exercice 2.</strong> Réalisation d’un modèle GWR</p>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="sect065.html#cb523-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb523-2"><a href="sect065.html#cb523-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spgwr)</span>
+<span id="cb523-3"><a href="sect065.html#cb523-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
+<span id="cb523-4"><a href="sect065.html#cb523-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajout des coordonnées x et y</span></span>
+<span id="cb523-5"><a href="sect065.html#cb523-5" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb523-6"><a href="sect065.html#cb523-6" aria-hidden="true" tabindex="-1"></a>LyonIris<span class="sc">$</span>X <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb523-7"><a href="sect065.html#cb523-7" aria-hidden="true" tabindex="-1"></a>LyonIris<span class="sc">$</span>Y <span class="ot">&lt;-</span> à compléter</span>
+<span id="cb523-8"><a href="sect065.html#cb523-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Optimisation du nombre de voisins avec le CV</span></span>
+<span id="cb523-9"><a href="sect065.html#cb523-9" aria-hidden="true" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
+<span id="cb523-10"><a href="sect065.html#cb523-10" aria-hidden="true" tabindex="-1"></a>bwaCV.voisins  <span class="ot">&lt;-</span> <span class="fu">gwr.sel</span>(à compléter)</span>
+<span id="cb523-11"><a href="sect065.html#cb523-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Optimisation du nombre de voisins avec l&#39;AIC</span></span>
+<span id="cb523-12"><a href="sect065.html#cb523-12" aria-hidden="true" tabindex="-1"></a>bwaCV.voisins  <span class="ot">&lt;-</span> <span class="fu">gwr.sel</span>(à compléter)</span>
+<span id="cb523-13"><a href="sect065.html#cb523-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Réalisation de la GWR</span></span>
+<span id="cb523-14"><a href="sect065.html#cb523-14" aria-hidden="true" tabindex="-1"></a>Modele.GWR <span class="ot">&lt;-</span> <span class="fu">gwr</span>(à compléter)</span>
+<span id="cb523-15"><a href="sect065.html#cb523-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage des résultats</span></span>
+<span id="cb523-16"><a href="sect065.html#cb523-16" aria-hidden="true" tabindex="-1"></a>Modele.GWR</span></code></pre></div>
+<p>Correction à la section <a href="sect1006.html#sect10063">10.6.3</a>.</p>
+</div>
+
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="sect1006.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sect1008.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sect064.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap07.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
