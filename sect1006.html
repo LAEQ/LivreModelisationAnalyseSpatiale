@@ -461,85 +461,85 @@ Modélisation et analyse spatiale</a>
 <h2><span class="header-section-number">10.6</span> Exercices du chapitre 6<a href="sect1006.html#sect1006" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="sect10061" class="section level3 hasAnchor" number="10.6.1">
 <h3><span class="header-section-number">10.6.1</span> Exercice 1<a href="sect1006.html#sect10061" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb608-1"><a href="sect1006.html#cb608-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb608-2"><a href="sect1006.html#cb608-2" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
-<span id="cb608-3"><a href="sect1006.html#cb608-3" tabindex="-1"></a><span class="co"># Matrice de contiguïté selon le partage d&#39;un segment (Rook)</span></span>
-<span id="cb608-4"><a href="sect1006.html#cb608-4" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
-<span id="cb608-5"><a href="sect1006.html#cb608-5" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
-<span id="cb608-6"><a href="sect1006.html#cb608-6" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
-<span id="cb608-7"><a href="sect1006.html#cb608-7" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb608-8"><a href="sect1006.html#cb608-8" tabindex="-1"></a><span class="co"># Modèles</span></span>
-<span id="cb608-9"><a href="sect1006.html#cb608-9" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
-<span id="cb608-10"><a href="sect1006.html#cb608-10" tabindex="-1"></a>Modele.SLX <span class="ot">&lt;-</span> <span class="fu">lmSLX</span>(formule, <span class="at">listw=</span>W.Rook,  <span class="at">data =</span> LyonIris)  <span class="co"># dataframe</span></span>
-<span id="cb608-11"><a href="sect1006.html#cb608-11" tabindex="-1"></a>Modele.SAR <span class="ot">&lt;-</span> <span class="fu">lagsarlm</span>(formule, <span class="at">listw=</span>W.Rook,  <span class="at">data =</span> LyonIris,  <span class="at">type =</span> <span class="st">&#39;lag&#39;</span>)</span>
-<span id="cb608-12"><a href="sect1006.html#cb608-12" tabindex="-1"></a>Modele.SEM <span class="ot">&lt;-</span> <span class="fu">errorsarlm</span>(formule, <span class="at">listw=</span>W.Rook, <span class="at">data =</span> LyonIris)</span>
-<span id="cb608-13"><a href="sect1006.html#cb608-13" tabindex="-1"></a>Modele.DurbinSpatial <span class="ot">&lt;-</span> <span class="fu">lagsarlm</span>(formule, <span class="at">listw =</span> W.Rook, <span class="at">data =</span> LyonIris, <span class="at">type =</span> <span class="st">&quot;mixed&quot;</span>)</span>
-<span id="cb608-14"><a href="sect1006.html#cb608-14" tabindex="-1"></a>Modele.DurbinErreur <span class="ot">&lt;-</span> <span class="fu">errorsarlm</span>(formule, <span class="at">listw=</span>W.Rook, <span class="at">data =</span> LyonIris, <span class="at">etype =</span> <span class="st">&#39;emixed&#39;</span>)</span>
-<span id="cb608-15"><a href="sect1006.html#cb608-15" tabindex="-1"></a><span class="co"># Résultats des modèles</span></span>
-<span id="cb608-16"><a href="sect1006.html#cb608-16" tabindex="-1"></a><span class="fu">summary</span>(Modele.SLX)</span>
-<span id="cb608-17"><a href="sect1006.html#cb608-17" tabindex="-1"></a><span class="fu">summary</span>(Modele.SAR)</span>
-<span id="cb608-18"><a href="sect1006.html#cb608-18" tabindex="-1"></a><span class="fu">summary</span>(Modele.SEM)</span>
-<span id="cb608-19"><a href="sect1006.html#cb608-19" tabindex="-1"></a><span class="fu">summary</span>(Modele.DurbinSpatial)</span>
-<span id="cb608-20"><a href="sect1006.html#cb608-20" tabindex="-1"></a><span class="fu">summary</span>(Modele.DurbinErreur)</span></code></pre></div>
+<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb607-1"><a href="sect1006.html#cb607-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb607-2"><a href="sect1006.html#cb607-2" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb607-3"><a href="sect1006.html#cb607-3" tabindex="-1"></a><span class="co"># Matrice de contiguïté selon le partage d&#39;un segment (Rook)</span></span>
+<span id="cb607-4"><a href="sect1006.html#cb607-4" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
+<span id="cb607-5"><a href="sect1006.html#cb607-5" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
+<span id="cb607-6"><a href="sect1006.html#cb607-6" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
+<span id="cb607-7"><a href="sect1006.html#cb607-7" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb607-8"><a href="sect1006.html#cb607-8" tabindex="-1"></a><span class="co"># Modèles</span></span>
+<span id="cb607-9"><a href="sect1006.html#cb607-9" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
+<span id="cb607-10"><a href="sect1006.html#cb607-10" tabindex="-1"></a>Modele.SLX <span class="ot">&lt;-</span> <span class="fu">lmSLX</span>(formule, <span class="at">listw=</span>W.Rook,  <span class="at">data =</span> LyonIris)  <span class="co"># dataframe</span></span>
+<span id="cb607-11"><a href="sect1006.html#cb607-11" tabindex="-1"></a>Modele.SAR <span class="ot">&lt;-</span> <span class="fu">lagsarlm</span>(formule, <span class="at">listw=</span>W.Rook,  <span class="at">data =</span> LyonIris,  <span class="at">type =</span> <span class="st">&#39;lag&#39;</span>)</span>
+<span id="cb607-12"><a href="sect1006.html#cb607-12" tabindex="-1"></a>Modele.SEM <span class="ot">&lt;-</span> <span class="fu">errorsarlm</span>(formule, <span class="at">listw=</span>W.Rook, <span class="at">data =</span> LyonIris)</span>
+<span id="cb607-13"><a href="sect1006.html#cb607-13" tabindex="-1"></a>Modele.DurbinSpatial <span class="ot">&lt;-</span> <span class="fu">lagsarlm</span>(formule, <span class="at">listw =</span> W.Rook, <span class="at">data =</span> LyonIris, <span class="at">type =</span> <span class="st">&quot;mixed&quot;</span>)</span>
+<span id="cb607-14"><a href="sect1006.html#cb607-14" tabindex="-1"></a>Modele.DurbinErreur <span class="ot">&lt;-</span> <span class="fu">errorsarlm</span>(formule, <span class="at">listw=</span>W.Rook, <span class="at">data =</span> LyonIris, <span class="at">etype =</span> <span class="st">&#39;emixed&#39;</span>)</span>
+<span id="cb607-15"><a href="sect1006.html#cb607-15" tabindex="-1"></a><span class="co"># Résultats des modèles</span></span>
+<span id="cb607-16"><a href="sect1006.html#cb607-16" tabindex="-1"></a><span class="fu">summary</span>(Modele.SLX)</span>
+<span id="cb607-17"><a href="sect1006.html#cb607-17" tabindex="-1"></a><span class="fu">summary</span>(Modele.SAR)</span>
+<span id="cb607-18"><a href="sect1006.html#cb607-18" tabindex="-1"></a><span class="fu">summary</span>(Modele.SEM)</span>
+<span id="cb607-19"><a href="sect1006.html#cb607-19" tabindex="-1"></a><span class="fu">summary</span>(Modele.DurbinSpatial)</span>
+<span id="cb607-20"><a href="sect1006.html#cb607-20" tabindex="-1"></a><span class="fu">summary</span>(Modele.DurbinErreur)</span></code></pre></div>
 </div>
 <div id="sect10062" class="section level3 hasAnchor" number="10.6.2">
 <h3><span class="header-section-number">10.6.2</span> Exercice 2<a href="sect1006.html#sect10062" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb608-1"><a href="sect1006.html#cb608-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb608-2"><a href="sect1006.html#cb608-2" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
+<span id="cb608-3"><a href="sect1006.html#cb608-3" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
+<span id="cb608-4"><a href="sect1006.html#cb608-4" tabindex="-1"></a><span class="co"># Ajout des coordonnées x et y</span></span>
+<span id="cb608-5"><a href="sect1006.html#cb608-5" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(LyonIris))</span>
+<span id="cb608-6"><a href="sect1006.html#cb608-6" tabindex="-1"></a>LyonIris<span class="sc">$</span>X <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
+<span id="cb608-7"><a href="sect1006.html#cb608-7" tabindex="-1"></a>LyonIris<span class="sc">$</span>Y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
+<span id="cb608-8"><a href="sect1006.html#cb608-8" tabindex="-1"></a><span class="co"># Construction du modèle avec</span></span>
+<span id="cb608-9"><a href="sect1006.html#cb608-9" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
+<span id="cb608-10"><a href="sect1006.html#cb608-10" tabindex="-1"></a>Modele.GAM2 <span class="ot">&lt;-</span> <span class="fu">gam</span>(PM25 <span class="sc">~</span>  Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed<span class="sc">+</span></span>
+<span id="cb608-11"><a href="sect1006.html#cb608-11" tabindex="-1"></a>                           <span class="fu">s</span>(X, Y, <span class="at">k=</span> <span class="dv">40</span>),</span>
+<span id="cb608-12"><a href="sect1006.html#cb608-12" tabindex="-1"></a>                          <span class="at">data =</span> LyonIris)</span>
+<span id="cb608-13"><a href="sect1006.html#cb608-13" tabindex="-1"></a><span class="fu">summary</span>(Modele.GAM2)</span></code></pre></div>
+</div>
+<div id="sect10063" class="section level3 hasAnchor" number="10.6.3">
+<h3><span class="header-section-number">10.6.3</span> Exercice 3<a href="sect1006.html#sect10063" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb609"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb609-1"><a href="sect1006.html#cb609-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb609-2"><a href="sect1006.html#cb609-2" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
+<span id="cb609-2"><a href="sect1006.html#cb609-2" tabindex="-1"></a><span class="fu">library</span>(spgwr)</span>
 <span id="cb609-3"><a href="sect1006.html#cb609-3" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
 <span id="cb609-4"><a href="sect1006.html#cb609-4" tabindex="-1"></a><span class="co"># Ajout des coordonnées x et y</span></span>
 <span id="cb609-5"><a href="sect1006.html#cb609-5" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(LyonIris))</span>
 <span id="cb609-6"><a href="sect1006.html#cb609-6" tabindex="-1"></a>LyonIris<span class="sc">$</span>X <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
 <span id="cb609-7"><a href="sect1006.html#cb609-7" tabindex="-1"></a>LyonIris<span class="sc">$</span>Y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
-<span id="cb609-8"><a href="sect1006.html#cb609-8" tabindex="-1"></a><span class="co"># Construction du modèle avec</span></span>
+<span id="cb609-8"><a href="sect1006.html#cb609-8" tabindex="-1"></a><span class="co"># Optimisation du nombre de voisins avec le CV</span></span>
 <span id="cb609-9"><a href="sect1006.html#cb609-9" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
-<span id="cb609-10"><a href="sect1006.html#cb609-10" tabindex="-1"></a>Modele.GAM2 <span class="ot">&lt;-</span> <span class="fu">gam</span>(PM25 <span class="sc">~</span>  Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed<span class="sc">+</span></span>
-<span id="cb609-11"><a href="sect1006.html#cb609-11" tabindex="-1"></a>                           <span class="fu">s</span>(X, Y, <span class="at">k=</span> <span class="dv">40</span>),</span>
-<span id="cb609-12"><a href="sect1006.html#cb609-12" tabindex="-1"></a>                          <span class="at">data =</span> LyonIris)</span>
-<span id="cb609-13"><a href="sect1006.html#cb609-13" tabindex="-1"></a><span class="fu">summary</span>(Modele.GAM2)</span></code></pre></div>
-</div>
-<div id="sect10063" class="section level3 hasAnchor" number="10.6.3">
-<h3><span class="header-section-number">10.6.3</span> Exercice 3<a href="sect1006.html#sect10063" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb610-1"><a href="sect1006.html#cb610-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb610-2"><a href="sect1006.html#cb610-2" tabindex="-1"></a><span class="fu">library</span>(spgwr)</span>
-<span id="cb610-3"><a href="sect1006.html#cb610-3" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
-<span id="cb610-4"><a href="sect1006.html#cb610-4" tabindex="-1"></a><span class="co"># Ajout des coordonnées x et y</span></span>
-<span id="cb610-5"><a href="sect1006.html#cb610-5" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(LyonIris))</span>
-<span id="cb610-6"><a href="sect1006.html#cb610-6" tabindex="-1"></a>LyonIris<span class="sc">$</span>X <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
-<span id="cb610-7"><a href="sect1006.html#cb610-7" tabindex="-1"></a>LyonIris<span class="sc">$</span>Y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
-<span id="cb610-8"><a href="sect1006.html#cb610-8" tabindex="-1"></a><span class="co"># Optimisation du nombre de voisins avec le CV</span></span>
-<span id="cb610-9"><a href="sect1006.html#cb610-9" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
-<span id="cb610-10"><a href="sect1006.html#cb610-10" tabindex="-1"></a>bwaCV.voisins  <span class="ot">&lt;-</span> <span class="fu">gwr.sel</span>(formule,</span>
-<span id="cb610-11"><a href="sect1006.html#cb610-11" tabindex="-1"></a>                          <span class="at">data =</span> LyonIris,</span>
-<span id="cb610-12"><a href="sect1006.html#cb610-12" tabindex="-1"></a>                          <span class="at">method =</span> <span class="st">&quot;cv&quot;</span>,</span>
-<span id="cb610-13"><a href="sect1006.html#cb610-13" tabindex="-1"></a>                          <span class="at">gweight=</span>gwr.bisquare,</span>
-<span id="cb610-14"><a href="sect1006.html#cb610-14" tabindex="-1"></a>                          <span class="at">adapt=</span><span class="cn">TRUE</span>,</span>
-<span id="cb610-15"><a href="sect1006.html#cb610-15" tabindex="-1"></a>                          <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb610-16"><a href="sect1006.html#cb610-16" tabindex="-1"></a>                          <span class="at">RMSE =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb610-17"><a href="sect1006.html#cb610-17" tabindex="-1"></a>                          <span class="at">longlat =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb610-18"><a href="sect1006.html#cb610-18" tabindex="-1"></a>                          <span class="at">coords=</span><span class="fu">cbind</span>(LyonIris<span class="sc">$</span>X,LyonIris<span class="sc">$</span>Y))</span>
-<span id="cb610-19"><a href="sect1006.html#cb610-19" tabindex="-1"></a><span class="co"># Optimisation du nombre de voisins avec l&#39;AIC</span></span>
-<span id="cb610-20"><a href="sect1006.html#cb610-20" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
-<span id="cb610-21"><a href="sect1006.html#cb610-21" tabindex="-1"></a>bwaCV.voisins  <span class="ot">&lt;-</span> <span class="fu">gwr.sel</span>(formule,</span>
-<span id="cb610-22"><a href="sect1006.html#cb610-22" tabindex="-1"></a>                          <span class="at">data =</span> LyonIris,</span>
-<span id="cb610-23"><a href="sect1006.html#cb610-23" tabindex="-1"></a>                          <span class="at">method =</span> <span class="st">&quot;AIC&quot;</span>,</span>
-<span id="cb610-24"><a href="sect1006.html#cb610-24" tabindex="-1"></a>                          <span class="at">gweight=</span>gwr.bisquare,</span>
-<span id="cb610-25"><a href="sect1006.html#cb610-25" tabindex="-1"></a>                          <span class="at">adapt=</span><span class="cn">TRUE</span>,</span>
-<span id="cb610-26"><a href="sect1006.html#cb610-26" tabindex="-1"></a>                          <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb610-27"><a href="sect1006.html#cb610-27" tabindex="-1"></a>                          <span class="at">RMSE =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb610-28"><a href="sect1006.html#cb610-28" tabindex="-1"></a>                          <span class="at">longlat =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb610-29"><a href="sect1006.html#cb610-29" tabindex="-1"></a>                          <span class="at">coords=</span><span class="fu">cbind</span>(LyonIris<span class="sc">$</span>X,LyonIris<span class="sc">$</span>Y))</span>
-<span id="cb610-30"><a href="sect1006.html#cb610-30" tabindex="-1"></a><span class="co"># Réalisation de la GWR</span></span>
-<span id="cb610-31"><a href="sect1006.html#cb610-31" tabindex="-1"></a>Modele.GWR <span class="ot">&lt;-</span> <span class="fu">gwr</span>(formule,</span>
-<span id="cb610-32"><a href="sect1006.html#cb610-32" tabindex="-1"></a>              <span class="at">data =</span> LyonIris,</span>
-<span id="cb610-33"><a href="sect1006.html#cb610-33" tabindex="-1"></a>              <span class="at">adapt=</span>bwaCV.voisins,</span>
-<span id="cb610-34"><a href="sect1006.html#cb610-34" tabindex="-1"></a>              <span class="at">gweight=</span>gwr.bisquare,</span>
-<span id="cb610-35"><a href="sect1006.html#cb610-35" tabindex="-1"></a>              <span class="at">hatmatrix=</span><span class="cn">TRUE</span>,</span>
-<span id="cb610-36"><a href="sect1006.html#cb610-36" tabindex="-1"></a>              <span class="at">se.fit=</span><span class="cn">TRUE</span>,</span>
-<span id="cb610-37"><a href="sect1006.html#cb610-37" tabindex="-1"></a>              <span class="at">coords=</span><span class="fu">cbind</span>(LyonIris<span class="sc">$</span>X,LyonIris<span class="sc">$</span>Y),</span>
-<span id="cb610-38"><a href="sect1006.html#cb610-38" tabindex="-1"></a>              <span class="at">longlat=</span>F)</span>
-<span id="cb610-39"><a href="sect1006.html#cb610-39" tabindex="-1"></a><span class="co"># Affichage des résultats</span></span>
-<span id="cb610-40"><a href="sect1006.html#cb610-40" tabindex="-1"></a>Modele.GWR</span></code></pre></div>
+<span id="cb609-10"><a href="sect1006.html#cb609-10" tabindex="-1"></a>bwaCV.voisins  <span class="ot">&lt;-</span> <span class="fu">gwr.sel</span>(formule,</span>
+<span id="cb609-11"><a href="sect1006.html#cb609-11" tabindex="-1"></a>                          <span class="at">data =</span> LyonIris,</span>
+<span id="cb609-12"><a href="sect1006.html#cb609-12" tabindex="-1"></a>                          <span class="at">method =</span> <span class="st">&quot;cv&quot;</span>,</span>
+<span id="cb609-13"><a href="sect1006.html#cb609-13" tabindex="-1"></a>                          <span class="at">gweight=</span>gwr.bisquare,</span>
+<span id="cb609-14"><a href="sect1006.html#cb609-14" tabindex="-1"></a>                          <span class="at">adapt=</span><span class="cn">TRUE</span>,</span>
+<span id="cb609-15"><a href="sect1006.html#cb609-15" tabindex="-1"></a>                          <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb609-16"><a href="sect1006.html#cb609-16" tabindex="-1"></a>                          <span class="at">RMSE =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb609-17"><a href="sect1006.html#cb609-17" tabindex="-1"></a>                          <span class="at">longlat =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb609-18"><a href="sect1006.html#cb609-18" tabindex="-1"></a>                          <span class="at">coords=</span><span class="fu">cbind</span>(LyonIris<span class="sc">$</span>X,LyonIris<span class="sc">$</span>Y))</span>
+<span id="cb609-19"><a href="sect1006.html#cb609-19" tabindex="-1"></a><span class="co"># Optimisation du nombre de voisins avec l&#39;AIC</span></span>
+<span id="cb609-20"><a href="sect1006.html#cb609-20" tabindex="-1"></a>formule <span class="ot">&lt;-</span> <span class="st">&quot;PM25 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed&quot;</span></span>
+<span id="cb609-21"><a href="sect1006.html#cb609-21" tabindex="-1"></a>bwaCV.voisins  <span class="ot">&lt;-</span> <span class="fu">gwr.sel</span>(formule,</span>
+<span id="cb609-22"><a href="sect1006.html#cb609-22" tabindex="-1"></a>                          <span class="at">data =</span> LyonIris,</span>
+<span id="cb609-23"><a href="sect1006.html#cb609-23" tabindex="-1"></a>                          <span class="at">method =</span> <span class="st">&quot;AIC&quot;</span>,</span>
+<span id="cb609-24"><a href="sect1006.html#cb609-24" tabindex="-1"></a>                          <span class="at">gweight=</span>gwr.bisquare,</span>
+<span id="cb609-25"><a href="sect1006.html#cb609-25" tabindex="-1"></a>                          <span class="at">adapt=</span><span class="cn">TRUE</span>,</span>
+<span id="cb609-26"><a href="sect1006.html#cb609-26" tabindex="-1"></a>                          <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb609-27"><a href="sect1006.html#cb609-27" tabindex="-1"></a>                          <span class="at">RMSE =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb609-28"><a href="sect1006.html#cb609-28" tabindex="-1"></a>                          <span class="at">longlat =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb609-29"><a href="sect1006.html#cb609-29" tabindex="-1"></a>                          <span class="at">coords=</span><span class="fu">cbind</span>(LyonIris<span class="sc">$</span>X,LyonIris<span class="sc">$</span>Y))</span>
+<span id="cb609-30"><a href="sect1006.html#cb609-30" tabindex="-1"></a><span class="co"># Réalisation de la GWR</span></span>
+<span id="cb609-31"><a href="sect1006.html#cb609-31" tabindex="-1"></a>Modele.GWR <span class="ot">&lt;-</span> <span class="fu">gwr</span>(formule,</span>
+<span id="cb609-32"><a href="sect1006.html#cb609-32" tabindex="-1"></a>              <span class="at">data =</span> LyonIris,</span>
+<span id="cb609-33"><a href="sect1006.html#cb609-33" tabindex="-1"></a>              <span class="at">adapt=</span>bwaCV.voisins,</span>
+<span id="cb609-34"><a href="sect1006.html#cb609-34" tabindex="-1"></a>              <span class="at">gweight=</span>gwr.bisquare,</span>
+<span id="cb609-35"><a href="sect1006.html#cb609-35" tabindex="-1"></a>              <span class="at">hatmatrix=</span><span class="cn">TRUE</span>,</span>
+<span id="cb609-36"><a href="sect1006.html#cb609-36" tabindex="-1"></a>              <span class="at">se.fit=</span><span class="cn">TRUE</span>,</span>
+<span id="cb609-37"><a href="sect1006.html#cb609-37" tabindex="-1"></a>              <span class="at">coords=</span><span class="fu">cbind</span>(LyonIris<span class="sc">$</span>X,LyonIris<span class="sc">$</span>Y),</span>
+<span id="cb609-38"><a href="sect1006.html#cb609-38" tabindex="-1"></a>              <span class="at">longlat=</span>F)</span>
+<span id="cb609-39"><a href="sect1006.html#cb609-39" tabindex="-1"></a><span class="co"># Affichage des résultats</span></span>
+<span id="cb609-40"><a href="sect1006.html#cb609-40" tabindex="-1"></a>Modele.GWR</span></code></pre></div>
 </div>
 </div>
             </section>

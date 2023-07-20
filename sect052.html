@@ -719,7 +719,7 @@ Figure 5.7: Modèle numérique d’élévation au 1/20000 pour la région de She
 ##             from_id from_lat  from_lon      to_id   to_lat    to_lon option
 ## 1 Rue Wellington S. 45.38947 -71.88393 Rue Darche 45.38353 -71.89169      1
 ##   departure_time total_duration total_distance segment    mode segment_duration
-## 1       13:16:05            8.1           1215       1 BICYCLE              8.1
+## 1       14:48:16            8.1           1215       1 BICYCLE              8.1
 ##   wait distance route                       geometry
 ## 1    0     1215       LINESTRING (-71.88396 45.38...</code></pre>
 <div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="sect052.html#cb372-1" tabindex="-1"></a>velo<span class="fl">.2</span></span></code></pre></div>
@@ -731,7 +731,7 @@ Figure 5.7: Modèle numérique d’élévation au 1/20000 pour la région de She
 ##      from_id from_lat  from_lon             to_id   to_lat    to_lon option
 ## 1 Rue Darche 45.38353 -71.89169 Rue Wellington S. 45.38947 -71.88393      1
 ##   departure_time total_duration total_distance segment    mode segment_duration
-## 1       13:16:06            6.5           1215       1 BICYCLE              6.5
+## 1       14:48:17            6.5           1215       1 BICYCLE              6.5
 ##   wait distance route                       geometry
 ## 1    0     1215       LINESTRING (-71.89191 45.38...</code></pre>
 <p>Avec la fonction <code>detailed_itineraries</code>, les durées sont estimées à respectivement six et huit minutes (figure <a href="sect052.html#fig:TrajetsVelo">5.8</a>). Bien que le chemin emprunté soit le même, cet écart s’explique par la Côte de l’Acadie, soit l’un des tronçons de rue les plus pentues de la ville de Sherbrooke. Pour visualiser les trajets, nous utilisons le <em>package</em> <code>tmap</code> en mode <code>view</code>. Notez qu’un clic sur le trajet fait apparaître une fenêtre surgissante.</p>
@@ -818,7 +818,7 @@ Figure 5.9: Trajets à pied entre les deux destinations
 ##   from_id from_lat  from_lon            to_id   to_lat    to_lon option
 ## 1  Départ 45.42203 -71.88183 Campus principal 45.37802 -71.92953      1
 ##   departure_time total_duration total_distance segment mode segment_duration
-## 1       13:16:06           21.7          11352       1  CAR             21.7
+## 1       14:48:17           21.7          11352       1  CAR             21.7
 ##   wait distance route                       geometry
 ## 1    0    11352       LINESTRING (-71.88129 45.42...</code></pre>
 <div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="sect052.html#cb378-1" tabindex="-1"></a>Auto.Retour</span></code></pre></div>
@@ -830,7 +830,7 @@ Figure 5.9: Trajets à pied entre les deux destinations
 ##            from_id from_lat  from_lon  to_id   to_lat    to_lon option
 ## 1 Campus principal 45.37802 -71.92953 Départ 45.42203 -71.88183      1
 ##   departure_time total_duration total_distance segment mode segment_duration
-## 1       13:16:06           18.8           9685       1  CAR             18.8
+## 1       14:48:17           18.8           9685       1  CAR             18.8
 ##   wait distance route                       geometry
 ## 1    0     9685       LINESTRING (-71.92952 45.37...</code></pre>
 <p>Bien entendu, les deux trajets sont différents en raison des sens de circulation (figure <a href="sect052.html#fig:TrajetsAuto">5.10</a>).</p>
@@ -1052,10 +1052,10 @@ Figure 5.11: Trajets en transport en commun
 <span id="cb392-4"><a href="sect052.html#cb392-4" tabindex="-1"></a>     <span class="st">&quot;</span><span class="sc">\n</span><span class="st"> Vélo : &quot;</span>, <span class="fu">round</span>(duree.velo,<span class="dv">2</span>), <span class="st">&quot;secondes&quot;</span>,</span>
 <span id="cb392-5"><a href="sect052.html#cb392-5" tabindex="-1"></a>     <span class="st">&quot;</span><span class="sc">\n</span><span class="st"> Transport en commun : &quot;</span>, <span class="fu">round</span>(duree.tc,<span class="dv">2</span>), <span class="st">&quot;secondes&quot;</span>)</span></code></pre></div>
 <pre><code>## Temps de calcul des matrices : 
-##  Voiture :  11.47 secondes 
-##  Marche :  0.45 secondes 
-##  Vélo :  3.18 secondes 
-##  Transport en commun :  0.33 secondes</code></pre>
+##  Voiture :  11.02 secondes 
+##  Marche :  0.34 secondes 
+##  Vélo :  3.12 secondes 
+##  Transport en commun :  0.36 secondes</code></pre>
 <p>Une fois les matrices obtenues, nous les enregistrons dans un fichier <code>Rdata</code>.</p>
 <div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="sect052.html#cb394-1" tabindex="-1"></a><span class="fu">save</span>(matriceOD.Auto, matriceOD.Marche, </span>
 <span id="cb394-2"><a href="sect052.html#cb394-2" tabindex="-1"></a>     matriceOD.Velo, matriceOD.TC,</span>
@@ -1153,7 +1153,7 @@ Figure 5.12: Supermarché le plus proche en minutes selon le mode de transport
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>Références</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-osmextractpackage" class="csl-entry">
 Gilardi, Andrea et Robin Lovelace. 2022. <em>osmextract: Download and Import Open Street Map Data Extracts</em>. s.n. <a href="https://CRAN.R-project.org/package=osmextract">https://CRAN.R-project.org/package=osmextract</a>.

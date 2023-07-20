@@ -461,127 +461,127 @@ Modélisation et analyse spatiale</a>
 <h2><span class="header-section-number">10.4</span> Exercices du chapitre 4<a href="sect1004.html#sect1004" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="sect10041" class="section level3 hasAnchor" number="10.4.1">
 <h3><span class="header-section-number">10.4.1</span> Exercice 1<a href="sect1004.html#sect10041" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb605-1"><a href="sect1004.html#cb605-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb605-2"><a href="sect1004.html#cb605-2" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb605-3"><a href="sect1004.html#cb605-3" tabindex="-1"></a><span class="fu">library</span>(dbscan)</span>
+<span id="cb605-4"><a href="sect1004.html#cb605-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb605-5"><a href="sect1004.html#cb605-5" tabindex="-1"></a><span class="do">## Importation des données</span></span>
+<span id="cb605-6"><a href="sect1004.html#cb605-6" tabindex="-1"></a>Collissions <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap04/collisions.gpkg&quot;</span>, </span>
+<span id="cb605-7"><a href="sect1004.html#cb605-7" tabindex="-1"></a>                       <span class="at">layer =</span> <span class="st">&quot;CollisionsRoutieres&quot;</span>, </span>
+<span id="cb605-8"><a href="sect1004.html#cb605-8" tabindex="-1"></a>                       <span class="at">quiet =</span> T)</span>
+<span id="cb605-9"><a href="sect1004.html#cb605-9" tabindex="-1"></a><span class="do">## Collisions impliquant au moins une personne à vélo en 2020 et 2021</span></span>
+<span id="cb605-10"><a href="sect1004.html#cb605-10" tabindex="-1"></a>Coll.Velo <span class="ot">&lt;-</span> <span class="fu">subset</span>(Collissions,</span>
+<span id="cb605-11"><a href="sect1004.html#cb605-11" tabindex="-1"></a>                    Collissions<span class="sc">$</span>NB_VICTIMES_VELO <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span></span>
+<span id="cb605-12"><a href="sect1004.html#cb605-12" tabindex="-1"></a>                      Collissions<span class="sc">$</span>AN <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">2021</span>))</span>
+<span id="cb605-13"><a href="sect1004.html#cb605-13" tabindex="-1"></a><span class="do">## Coordonnées géographiques</span></span>
+<span id="cb605-14"><a href="sect1004.html#cb605-14" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(Coll.Velo)</span>
+<span id="cb605-15"><a href="sect1004.html#cb605-15" tabindex="-1"></a><span class="do">## Graphique pour la distance au quatrième voisin le plus proche</span></span>
+<span id="cb605-16"><a href="sect1004.html#cb605-16" tabindex="-1"></a>DistKplusproche <span class="ot">&lt;-</span> <span class="fu">kNNdist</span>(xy, <span class="at">k =</span> <span class="dv">4</span>)</span>
+<span id="cb605-17"><a href="sect1004.html#cb605-17" tabindex="-1"></a>DistKplusproche <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sort</span>(DistKplusproche, <span class="at">decreasing =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb605-18"><a href="sect1004.html#cb605-18" tabindex="-1"></a><span class="fu">names</span>(DistKplusproche) <span class="ot">&lt;-</span> <span class="st">&quot;distance&quot;</span></span>
+<span id="cb605-19"><a href="sect1004.html#cb605-19" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DistKplusproche)<span class="sc">+</span></span>
+<span id="cb605-20"><a href="sect1004.html#cb605-20" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(DistKplusproche), <span class="at">y =</span> distance), <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb605-21"><a href="sect1004.html#cb605-21" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Points triés par ordre croissant selon la distance&quot;</span>,</span>
+<span id="cb605-22"><a href="sect1004.html#cb605-22" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Distance au quatrième point le plus proche&quot;</span>)<span class="sc">+</span></span>
+<span id="cb605-23"><a href="sect1004.html#cb605-23" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">250</span>, <span class="at">color =</span> <span class="st">&quot;#08306b&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb605-24"><a href="sect1004.html#cb605-24" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">500</span>, <span class="at">color =</span> <span class="st">&quot;#00441b&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb605-25"><a href="sect1004.html#cb605-25" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">1000</span>, <span class="at">color =</span> <span class="st">&quot;#67000d&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)</span>
+<span id="cb605-26"><a href="sect1004.html#cb605-26" tabindex="-1"></a><span class="do">## DBSCAN avec les quatre distances</span></span>
+<span id="cb605-27"><a href="sect1004.html#cb605-27" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123456789</span>)</span>
+<span id="cb605-28"><a href="sect1004.html#cb605-28" tabindex="-1"></a>dbscan250  <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">250</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
+<span id="cb605-29"><a href="sect1004.html#cb605-29" tabindex="-1"></a>dbscan500  <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">500</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
+<span id="cb605-30"><a href="sect1004.html#cb605-30" tabindex="-1"></a>dbscan1000 <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">1000</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
+<span id="cb605-31"><a href="sect1004.html#cb605-31" tabindex="-1"></a><span class="do">## Affichage des résultats</span></span>
+<span id="cb605-32"><a href="sect1004.html#cb605-32" tabindex="-1"></a>dbscan250</span>
+<span id="cb605-33"><a href="sect1004.html#cb605-33" tabindex="-1"></a>dbscan500</span>
+<span id="cb605-34"><a href="sect1004.html#cb605-34" tabindex="-1"></a>dbscan1000</span>
+<span id="cb605-35"><a href="sect1004.html#cb605-35" tabindex="-1"></a><span class="do">## Enregistrement dans la couche de points sf Coll.Velo</span></span>
+<span id="cb605-36"><a href="sect1004.html#cb605-36" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan250 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan250<span class="sc">$</span>cluster)</span>
+<span id="cb605-37"><a href="sect1004.html#cb605-37" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan500 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan500<span class="sc">$</span>cluster)</span>
+<span id="cb605-38"><a href="sect1004.html#cb605-38" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan1000 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan1000<span class="sc">$</span>cluster)</span>
+<span id="cb605-39"><a href="sect1004.html#cb605-39" tabindex="-1"></a></span>
+<span id="cb605-40"><a href="sect1004.html#cb605-40" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan250 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan250) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb605-41"><a href="sect1004.html#cb605-41" tabindex="-1"></a>                              <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan250),</span>
+<span id="cb605-42"><a href="sect1004.html#cb605-42" tabindex="-1"></a>                              Coll.Velo<span class="sc">$</span>dbscan250)</span>
+<span id="cb605-43"><a href="sect1004.html#cb605-43" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan500 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan500) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb605-44"><a href="sect1004.html#cb605-44" tabindex="-1"></a>                               <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan500),</span>
+<span id="cb605-45"><a href="sect1004.html#cb605-45" tabindex="-1"></a>                               Coll.Velo<span class="sc">$</span>dbscan500)</span>
+<span id="cb605-46"><a href="sect1004.html#cb605-46" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan1000 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan1000) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb605-47"><a href="sect1004.html#cb605-47" tabindex="-1"></a>                               <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan1000),</span>
+<span id="cb605-48"><a href="sect1004.html#cb605-48" tabindex="-1"></a>                               Coll.Velo<span class="sc">$</span>dbscan1000)</span>
+<span id="cb605-49"><a href="sect1004.html#cb605-49" tabindex="-1"></a><span class="do">## Extraction des agrégats</span></span>
+<span id="cb605-50"><a href="sect1004.html#cb605-50" tabindex="-1"></a>Agregats.dbscan250  <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan250 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb605-51"><a href="sect1004.html#cb605-51" tabindex="-1"></a>Agregats.dbscan500  <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan500 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb605-52"><a href="sect1004.html#cb605-52" tabindex="-1"></a>Agregats.dbscan1000 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan1000 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb605-53"><a href="sect1004.html#cb605-53" tabindex="-1"></a><span class="do">## Cartographie des résultats</span></span>
+<span id="cb605-54"><a href="sect1004.html#cb605-54" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;view&quot;</span>)</span>
+<span id="cb605-55"><a href="sect1004.html#cb605-55" tabindex="-1"></a><span class="fu">tm_shape</span>(Agregats.dbscan250)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;dbscan250&quot;</span>, <span class="at">size =</span> .<span class="dv">05</span>)</span>
+<span id="cb605-56"><a href="sect1004.html#cb605-56" tabindex="-1"></a><span class="fu">tm_shape</span>(Agregats.dbscan500)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;dbscan500&quot;</span>, <span class="at">size =</span> .<span class="dv">05</span>)</span>
+<span id="cb605-57"><a href="sect1004.html#cb605-57" tabindex="-1"></a><span class="fu">tm_shape</span>(Agregats.dbscan1000)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;dbscan1000&quot;</span>, <span class="at">size =</span> .<span class="dv">05</span>)</span></code></pre></div>
+</div>
+<div id="sect10042" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Exercice 2<a href="sect1004.html#sect10042" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb606"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb606-1"><a href="sect1004.html#cb606-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb606-2"><a href="sect1004.html#cb606-2" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
 <span id="cb606-3"><a href="sect1004.html#cb606-3" tabindex="-1"></a><span class="fu">library</span>(dbscan)</span>
 <span id="cb606-4"><a href="sect1004.html#cb606-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb606-5"><a href="sect1004.html#cb606-5" tabindex="-1"></a><span class="do">## Importation des données</span></span>
-<span id="cb606-6"><a href="sect1004.html#cb606-6" tabindex="-1"></a>Collissions <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap04/collisions.gpkg&quot;</span>, </span>
-<span id="cb606-7"><a href="sect1004.html#cb606-7" tabindex="-1"></a>                       <span class="at">layer =</span> <span class="st">&quot;CollisionsRoutieres&quot;</span>, </span>
-<span id="cb606-8"><a href="sect1004.html#cb606-8" tabindex="-1"></a>                       <span class="at">quiet =</span> T)</span>
-<span id="cb606-9"><a href="sect1004.html#cb606-9" tabindex="-1"></a><span class="do">## Collisions impliquant au moins une personne à vélo en 2020 et 2021</span></span>
-<span id="cb606-10"><a href="sect1004.html#cb606-10" tabindex="-1"></a>Coll.Velo <span class="ot">&lt;-</span> <span class="fu">subset</span>(Collissions,</span>
-<span id="cb606-11"><a href="sect1004.html#cb606-11" tabindex="-1"></a>                    Collissions<span class="sc">$</span>NB_VICTIMES_VELO <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span></span>
-<span id="cb606-12"><a href="sect1004.html#cb606-12" tabindex="-1"></a>                      Collissions<span class="sc">$</span>AN <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">2021</span>))</span>
-<span id="cb606-13"><a href="sect1004.html#cb606-13" tabindex="-1"></a><span class="do">## Coordonnées géographiques</span></span>
-<span id="cb606-14"><a href="sect1004.html#cb606-14" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(Coll.Velo)</span>
-<span id="cb606-15"><a href="sect1004.html#cb606-15" tabindex="-1"></a><span class="do">## Graphique pour la distance au quatrième voisin le plus proche</span></span>
-<span id="cb606-16"><a href="sect1004.html#cb606-16" tabindex="-1"></a>DistKplusproche <span class="ot">&lt;-</span> <span class="fu">kNNdist</span>(xy, <span class="at">k =</span> <span class="dv">4</span>)</span>
-<span id="cb606-17"><a href="sect1004.html#cb606-17" tabindex="-1"></a>DistKplusproche <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sort</span>(DistKplusproche, <span class="at">decreasing =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb606-18"><a href="sect1004.html#cb606-18" tabindex="-1"></a><span class="fu">names</span>(DistKplusproche) <span class="ot">&lt;-</span> <span class="st">&quot;distance&quot;</span></span>
-<span id="cb606-19"><a href="sect1004.html#cb606-19" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DistKplusproche)<span class="sc">+</span></span>
-<span id="cb606-20"><a href="sect1004.html#cb606-20" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(DistKplusproche), <span class="at">y =</span> distance), <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb606-21"><a href="sect1004.html#cb606-21" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Points triés par ordre croissant selon la distance&quot;</span>,</span>
-<span id="cb606-22"><a href="sect1004.html#cb606-22" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Distance au quatrième point le plus proche&quot;</span>)<span class="sc">+</span></span>
-<span id="cb606-23"><a href="sect1004.html#cb606-23" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">250</span>, <span class="at">color =</span> <span class="st">&quot;#08306b&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb606-24"><a href="sect1004.html#cb606-24" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">500</span>, <span class="at">color =</span> <span class="st">&quot;#00441b&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb606-25"><a href="sect1004.html#cb606-25" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">1000</span>, <span class="at">color =</span> <span class="st">&quot;#67000d&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)</span>
-<span id="cb606-26"><a href="sect1004.html#cb606-26" tabindex="-1"></a><span class="do">## DBSCAN avec les quatre distances</span></span>
-<span id="cb606-27"><a href="sect1004.html#cb606-27" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123456789</span>)</span>
-<span id="cb606-28"><a href="sect1004.html#cb606-28" tabindex="-1"></a>dbscan250  <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">250</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
-<span id="cb606-29"><a href="sect1004.html#cb606-29" tabindex="-1"></a>dbscan500  <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">500</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
-<span id="cb606-30"><a href="sect1004.html#cb606-30" tabindex="-1"></a>dbscan1000 <span class="ot">&lt;-</span> <span class="fu">dbscan</span>(xy, <span class="at">eps =</span> <span class="dv">1000</span>, <span class="at">minPts =</span> <span class="dv">4</span>)</span>
-<span id="cb606-31"><a href="sect1004.html#cb606-31" tabindex="-1"></a><span class="do">## Affichage des résultats</span></span>
-<span id="cb606-32"><a href="sect1004.html#cb606-32" tabindex="-1"></a>dbscan250</span>
-<span id="cb606-33"><a href="sect1004.html#cb606-33" tabindex="-1"></a>dbscan500</span>
-<span id="cb606-34"><a href="sect1004.html#cb606-34" tabindex="-1"></a>dbscan1000</span>
-<span id="cb606-35"><a href="sect1004.html#cb606-35" tabindex="-1"></a><span class="do">## Enregistrement dans la couche de points sf Coll.Velo</span></span>
-<span id="cb606-36"><a href="sect1004.html#cb606-36" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan250 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan250<span class="sc">$</span>cluster)</span>
-<span id="cb606-37"><a href="sect1004.html#cb606-37" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan500 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan500<span class="sc">$</span>cluster)</span>
-<span id="cb606-38"><a href="sect1004.html#cb606-38" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan1000 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(dbscan1000<span class="sc">$</span>cluster)</span>
-<span id="cb606-39"><a href="sect1004.html#cb606-39" tabindex="-1"></a></span>
-<span id="cb606-40"><a href="sect1004.html#cb606-40" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan250 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan250) <span class="sc">==</span> <span class="dv">1</span>,</span>
-<span id="cb606-41"><a href="sect1004.html#cb606-41" tabindex="-1"></a>                              <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan250),</span>
-<span id="cb606-42"><a href="sect1004.html#cb606-42" tabindex="-1"></a>                              Coll.Velo<span class="sc">$</span>dbscan250)</span>
-<span id="cb606-43"><a href="sect1004.html#cb606-43" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan500 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan500) <span class="sc">==</span> <span class="dv">1</span>,</span>
-<span id="cb606-44"><a href="sect1004.html#cb606-44" tabindex="-1"></a>                               <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan500),</span>
-<span id="cb606-45"><a href="sect1004.html#cb606-45" tabindex="-1"></a>                               Coll.Velo<span class="sc">$</span>dbscan500)</span>
-<span id="cb606-46"><a href="sect1004.html#cb606-46" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>dbscan1000 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>dbscan1000) <span class="sc">==</span> <span class="dv">1</span>,</span>
-<span id="cb606-47"><a href="sect1004.html#cb606-47" tabindex="-1"></a>                               <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>dbscan1000),</span>
-<span id="cb606-48"><a href="sect1004.html#cb606-48" tabindex="-1"></a>                               Coll.Velo<span class="sc">$</span>dbscan1000)</span>
-<span id="cb606-49"><a href="sect1004.html#cb606-49" tabindex="-1"></a><span class="do">## Extraction des agrégats</span></span>
-<span id="cb606-50"><a href="sect1004.html#cb606-50" tabindex="-1"></a>Agregats.dbscan250  <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan250 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
-<span id="cb606-51"><a href="sect1004.html#cb606-51" tabindex="-1"></a>Agregats.dbscan500  <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan500 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
-<span id="cb606-52"><a href="sect1004.html#cb606-52" tabindex="-1"></a>Agregats.dbscan1000 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, dbscan1000 <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
-<span id="cb606-53"><a href="sect1004.html#cb606-53" tabindex="-1"></a><span class="do">## Cartographie des résultats</span></span>
-<span id="cb606-54"><a href="sect1004.html#cb606-54" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;view&quot;</span>)</span>
-<span id="cb606-55"><a href="sect1004.html#cb606-55" tabindex="-1"></a><span class="fu">tm_shape</span>(Agregats.dbscan250)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;dbscan250&quot;</span>, <span class="at">size =</span> .<span class="dv">05</span>)</span>
-<span id="cb606-56"><a href="sect1004.html#cb606-56" tabindex="-1"></a><span class="fu">tm_shape</span>(Agregats.dbscan500)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;dbscan500&quot;</span>, <span class="at">size =</span> .<span class="dv">05</span>)</span>
-<span id="cb606-57"><a href="sect1004.html#cb606-57" tabindex="-1"></a><span class="fu">tm_shape</span>(Agregats.dbscan1000)<span class="sc">+</span><span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&quot;dbscan1000&quot;</span>, <span class="at">size =</span> .<span class="dv">05</span>)</span></code></pre></div>
-</div>
-<div id="sect10042" class="section level3 hasAnchor" number="10.4.2">
-<h3><span class="header-section-number">10.4.2</span> Exercice 2<a href="sect1004.html#sect10042" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb607-1"><a href="sect1004.html#cb607-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb607-2"><a href="sect1004.html#cb607-2" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb607-3"><a href="sect1004.html#cb607-3" tabindex="-1"></a><span class="fu">library</span>(dbscan)</span>
-<span id="cb607-4"><a href="sect1004.html#cb607-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb607-5"><a href="sect1004.html#cb607-5" tabindex="-1"></a><span class="do">## Importation des données</span></span>
-<span id="cb607-6"><a href="sect1004.html#cb607-6" tabindex="-1"></a>Collissions <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap04/collisions.gpkg&quot;</span>, <span class="at">layer =</span> <span class="st">&quot;CollisionsRoutieres&quot;</span>)</span>
-<span id="cb607-7"><a href="sect1004.html#cb607-7" tabindex="-1"></a><span class="do">## Collisions impliquant au moins une personne à vélo en 2020 et 2021</span></span>
-<span id="cb607-8"><a href="sect1004.html#cb607-8" tabindex="-1"></a>Coll.Velo <span class="ot">&lt;-</span> <span class="fu">subset</span>(Collissions,</span>
-<span id="cb607-9"><a href="sect1004.html#cb607-9" tabindex="-1"></a>                    Collissions<span class="sc">$</span>NB_VICTIMES_VELO <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span></span>
-<span id="cb607-10"><a href="sect1004.html#cb607-10" tabindex="-1"></a>                      Collissions<span class="sc">$</span>AN <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">2021</span>))</span>
-<span id="cb607-11"><a href="sect1004.html#cb607-11" tabindex="-1"></a><span class="do">## Coordonnées géographiques</span></span>
-<span id="cb607-12"><a href="sect1004.html#cb607-12" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(Coll.Velo)</span>
-<span id="cb607-13"><a href="sect1004.html#cb607-13" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>x <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
-<span id="cb607-14"><a href="sect1004.html#cb607-14" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
-<span id="cb607-15"><a href="sect1004.html#cb607-15" tabindex="-1"></a><span class="do">## Conversion du champ DT_ACCDN au format Date</span></span>
-<span id="cb607-16"><a href="sect1004.html#cb607-16" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>DT_ACCDN <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(Coll.Velo<span class="sc">$</span>DT_ACCDN)</span>
-<span id="cb607-17"><a href="sect1004.html#cb607-17" tabindex="-1"></a><span class="do">## ST-DBSCAN avec eps1 = 500, esp2 = 30 et minpts = 4</span></span>
-<span id="cb607-18"><a href="sect1004.html#cb607-18" tabindex="-1"></a>Resultats.stdbscan <span class="ot">&lt;-</span> <span class="fu">stdbscan</span>(<span class="at">x =</span> Coll.Velo<span class="sc">$</span>x,</span>
-<span id="cb607-19"><a href="sect1004.html#cb607-19" tabindex="-1"></a>                               <span class="at">y =</span> Coll.Velo<span class="sc">$</span>y,</span>
-<span id="cb607-20"><a href="sect1004.html#cb607-20" tabindex="-1"></a>                               <span class="at">time =</span> Coll.Velo<span class="sc">$</span>DT_ACCDN,</span>
-<span id="cb607-21"><a href="sect1004.html#cb607-21" tabindex="-1"></a>                               <span class="at">eps1 =</span> <span class="dv">500</span>,</span>
-<span id="cb607-22"><a href="sect1004.html#cb607-22" tabindex="-1"></a>                               <span class="at">eps2 =</span> <span class="dv">30</span>,</span>
-<span id="cb607-23"><a href="sect1004.html#cb607-23" tabindex="-1"></a>                               <span class="at">minpts =</span> <span class="dv">4</span>)</span>
-<span id="cb607-24"><a href="sect1004.html#cb607-24" tabindex="-1"></a><span class="do">## Enregistrement des résultats ST-DBSCAN dans la couche de points sf</span></span>
-<span id="cb607-25"><a href="sect1004.html#cb607-25" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>stdbscan <span class="ot">&lt;-</span> <span class="fu">as.character</span>(Resultats.stdbscan<span class="sc">$</span>cluster)</span>
-<span id="cb607-26"><a href="sect1004.html#cb607-26" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>stdbscan <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>stdbscan) <span class="sc">==</span> <span class="dv">1</span>,</span>
-<span id="cb607-27"><a href="sect1004.html#cb607-27" tabindex="-1"></a>                             <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>stdbscan),</span>
-<span id="cb607-28"><a href="sect1004.html#cb607-28" tabindex="-1"></a>                             Coll.Velo<span class="sc">$</span>stdbscan)</span>
-<span id="cb607-29"><a href="sect1004.html#cb607-29" tabindex="-1"></a><span class="do">## Nombre de points par agrégat avec la fonction table</span></span>
-<span id="cb607-30"><a href="sect1004.html#cb607-30" tabindex="-1"></a><span class="fu">table</span>(Coll.Velo<span class="sc">$</span>stdbscan)</span>
-<span id="cb607-31"><a href="sect1004.html#cb607-31" tabindex="-1"></a><span class="do">## Sélection des points appartenant à un agrégat avec la fonction subset</span></span>
-<span id="cb607-32"><a href="sect1004.html#cb607-32" tabindex="-1"></a>Agregats <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, stdbscan <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
-<span id="cb607-33"><a href="sect1004.html#cb607-33" tabindex="-1"></a><span class="do">## Conversion de la date au format POSIXct</span></span>
-<span id="cb607-34"><a href="sect1004.html#cb607-34" tabindex="-1"></a>Agregats<span class="sc">$</span>dtPOSIXct <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(Agregats<span class="sc">$</span>DT_ACCDN, <span class="at">format =</span> <span class="st">&quot;%Y/%m/%d&quot;</span>)</span>
-<span id="cb607-35"><a href="sect1004.html#cb607-35" tabindex="-1"></a><span class="do">## Tableau récapitulatif</span></span>
-<span id="cb607-36"><a href="sect1004.html#cb607-36" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;dplyr&quot;</span>)  </span>
-<span id="cb607-37"><a href="sect1004.html#cb607-37" tabindex="-1"></a>Tableau.stdbscan <span class="ot">&lt;-</span></span>
-<span id="cb607-38"><a href="sect1004.html#cb607-38" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>(Agregats) <span class="sc">%&gt;%</span></span>
-<span id="cb607-39"><a href="sect1004.html#cb607-39" tabindex="-1"></a>  <span class="fu">group_by</span>(stdbscan) <span class="sc">%&gt;%</span> </span>
-<span id="cb607-40"><a href="sect1004.html#cb607-40" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">points =</span> <span class="fu">n</span>(),</span>
-<span id="cb607-41"><a href="sect1004.html#cb607-41" tabindex="-1"></a>            <span class="at">date.min =</span> <span class="fu">min</span>(DT_ACCDN),</span>
-<span id="cb607-42"><a href="sect1004.html#cb607-42" tabindex="-1"></a>            <span class="at">date.max =</span> <span class="fu">max</span>(DT_ACCDN),</span>
-<span id="cb607-43"><a href="sect1004.html#cb607-43" tabindex="-1"></a>            <span class="at">intervalle.jours =</span> <span class="fu">as.numeric</span>(<span class="fu">max</span>(DT_ACCDN)<span class="sc">-</span><span class="fu">min</span>(DT_ACCDN)))</span>
-<span id="cb607-44"><a href="sect1004.html#cb607-44" tabindex="-1"></a><span class="do">## Affichage du tableau</span></span>
-<span id="cb607-45"><a href="sect1004.html#cb607-45" tabindex="-1"></a><span class="fu">print</span>(Tableau.stdbscan, <span class="at">n =</span> <span class="fu">nrow</span>(Tableau.stdbscan))</span>
-<span id="cb607-46"><a href="sect1004.html#cb607-46" tabindex="-1"></a><span class="do">## Construction du graphique</span></span>
-<span id="cb607-47"><a href="sect1004.html#cb607-47" tabindex="-1"></a><span class="fu">ggplot</span>(Agregats) <span class="sc">+</span> </span>
-<span id="cb607-48"><a href="sect1004.html#cb607-48" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> dtPOSIXct, </span>
-<span id="cb607-49"><a href="sect1004.html#cb607-49" tabindex="-1"></a>                 <span class="at">y =</span> stdbscan, </span>
-<span id="cb607-50"><a href="sect1004.html#cb607-50" tabindex="-1"></a>                 <span class="at">color =</span> stdbscan),</span>
-<span id="cb607-51"><a href="sect1004.html#cb607-51" tabindex="-1"></a>             <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb607-52"><a href="sect1004.html#cb607-52" tabindex="-1"></a>  <span class="fu">scale_x_datetime</span>(<span class="at">date_labels =</span> <span class="st">&quot;%Y/%m&quot;</span>)<span class="sc">+</span></span>
-<span id="cb607-53"><a href="sect1004.html#cb607-53" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span> <span class="st">&quot;Temps&quot;</span>,</span>
-<span id="cb607-54"><a href="sect1004.html#cb607-54" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">&quot;Identifiant de l&#39;agrégat&quot;</span>,</span>
-<span id="cb607-55"><a href="sect1004.html#cb607-55" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;ST-DBSCAN avec Esp1 = 1000, Esp2 = 21 et MinPts = 4&quot;</span>)</span>
-<span id="cb607-56"><a href="sect1004.html#cb607-56" tabindex="-1"></a><span class="do">## Création d&#39;une couche pour les agrégats</span></span>
-<span id="cb607-57"><a href="sect1004.html#cb607-57" tabindex="-1"></a>stdbcan.Agregats <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, stdbscan <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
-<span id="cb607-58"><a href="sect1004.html#cb607-58" tabindex="-1"></a><span class="do">## Cartographie</span></span>
-<span id="cb607-59"><a href="sect1004.html#cb607-59" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;view&quot;</span>)</span>
-<span id="cb607-60"><a href="sect1004.html#cb607-60" tabindex="-1"></a>  <span class="fu">tm_shape</span>(stdbcan.Agregats)<span class="sc">+</span></span>
-<span id="cb607-61"><a href="sect1004.html#cb607-61" tabindex="-1"></a>    <span class="fu">tm_dots</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">col=</span><span class="st">&quot;stdbscan&quot;</span>, <span class="at">size=</span>.<span class="dv">025</span>, <span class="at">title =</span> <span class="st">&quot;Agrégat&quot;</span>)</span></code></pre></div>
+<span id="cb606-6"><a href="sect1004.html#cb606-6" tabindex="-1"></a>Collissions <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap04/collisions.gpkg&quot;</span>, <span class="at">layer =</span> <span class="st">&quot;CollisionsRoutieres&quot;</span>)</span>
+<span id="cb606-7"><a href="sect1004.html#cb606-7" tabindex="-1"></a><span class="do">## Collisions impliquant au moins une personne à vélo en 2020 et 2021</span></span>
+<span id="cb606-8"><a href="sect1004.html#cb606-8" tabindex="-1"></a>Coll.Velo <span class="ot">&lt;-</span> <span class="fu">subset</span>(Collissions,</span>
+<span id="cb606-9"><a href="sect1004.html#cb606-9" tabindex="-1"></a>                    Collissions<span class="sc">$</span>NB_VICTIMES_VELO <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span></span>
+<span id="cb606-10"><a href="sect1004.html#cb606-10" tabindex="-1"></a>                      Collissions<span class="sc">$</span>AN <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">2021</span>))</span>
+<span id="cb606-11"><a href="sect1004.html#cb606-11" tabindex="-1"></a><span class="do">## Coordonnées géographiques</span></span>
+<span id="cb606-12"><a href="sect1004.html#cb606-12" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(Coll.Velo)</span>
+<span id="cb606-13"><a href="sect1004.html#cb606-13" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>x <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
+<span id="cb606-14"><a href="sect1004.html#cb606-14" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
+<span id="cb606-15"><a href="sect1004.html#cb606-15" tabindex="-1"></a><span class="do">## Conversion du champ DT_ACCDN au format Date</span></span>
+<span id="cb606-16"><a href="sect1004.html#cb606-16" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>DT_ACCDN <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(Coll.Velo<span class="sc">$</span>DT_ACCDN)</span>
+<span id="cb606-17"><a href="sect1004.html#cb606-17" tabindex="-1"></a><span class="do">## ST-DBSCAN avec eps1 = 500, esp2 = 30 et minpts = 4</span></span>
+<span id="cb606-18"><a href="sect1004.html#cb606-18" tabindex="-1"></a>Resultats.stdbscan <span class="ot">&lt;-</span> <span class="fu">stdbscan</span>(<span class="at">x =</span> Coll.Velo<span class="sc">$</span>x,</span>
+<span id="cb606-19"><a href="sect1004.html#cb606-19" tabindex="-1"></a>                               <span class="at">y =</span> Coll.Velo<span class="sc">$</span>y,</span>
+<span id="cb606-20"><a href="sect1004.html#cb606-20" tabindex="-1"></a>                               <span class="at">time =</span> Coll.Velo<span class="sc">$</span>DT_ACCDN,</span>
+<span id="cb606-21"><a href="sect1004.html#cb606-21" tabindex="-1"></a>                               <span class="at">eps1 =</span> <span class="dv">500</span>,</span>
+<span id="cb606-22"><a href="sect1004.html#cb606-22" tabindex="-1"></a>                               <span class="at">eps2 =</span> <span class="dv">30</span>,</span>
+<span id="cb606-23"><a href="sect1004.html#cb606-23" tabindex="-1"></a>                               <span class="at">minpts =</span> <span class="dv">4</span>)</span>
+<span id="cb606-24"><a href="sect1004.html#cb606-24" tabindex="-1"></a><span class="do">## Enregistrement des résultats ST-DBSCAN dans la couche de points sf</span></span>
+<span id="cb606-25"><a href="sect1004.html#cb606-25" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>stdbscan <span class="ot">&lt;-</span> <span class="fu">as.character</span>(Resultats.stdbscan<span class="sc">$</span>cluster)</span>
+<span id="cb606-26"><a href="sect1004.html#cb606-26" tabindex="-1"></a>Coll.Velo<span class="sc">$</span>stdbscan <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">nchar</span>(Coll.Velo<span class="sc">$</span>stdbscan) <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb606-27"><a href="sect1004.html#cb606-27" tabindex="-1"></a>                             <span class="fu">paste0</span>(<span class="st">&quot;0&quot;</span>, Coll.Velo<span class="sc">$</span>stdbscan),</span>
+<span id="cb606-28"><a href="sect1004.html#cb606-28" tabindex="-1"></a>                             Coll.Velo<span class="sc">$</span>stdbscan)</span>
+<span id="cb606-29"><a href="sect1004.html#cb606-29" tabindex="-1"></a><span class="do">## Nombre de points par agrégat avec la fonction table</span></span>
+<span id="cb606-30"><a href="sect1004.html#cb606-30" tabindex="-1"></a><span class="fu">table</span>(Coll.Velo<span class="sc">$</span>stdbscan)</span>
+<span id="cb606-31"><a href="sect1004.html#cb606-31" tabindex="-1"></a><span class="do">## Sélection des points appartenant à un agrégat avec la fonction subset</span></span>
+<span id="cb606-32"><a href="sect1004.html#cb606-32" tabindex="-1"></a>Agregats <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, stdbscan <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb606-33"><a href="sect1004.html#cb606-33" tabindex="-1"></a><span class="do">## Conversion de la date au format POSIXct</span></span>
+<span id="cb606-34"><a href="sect1004.html#cb606-34" tabindex="-1"></a>Agregats<span class="sc">$</span>dtPOSIXct <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(Agregats<span class="sc">$</span>DT_ACCDN, <span class="at">format =</span> <span class="st">&quot;%Y/%m/%d&quot;</span>)</span>
+<span id="cb606-35"><a href="sect1004.html#cb606-35" tabindex="-1"></a><span class="do">## Tableau récapitulatif</span></span>
+<span id="cb606-36"><a href="sect1004.html#cb606-36" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;dplyr&quot;</span>)  </span>
+<span id="cb606-37"><a href="sect1004.html#cb606-37" tabindex="-1"></a>Tableau.stdbscan <span class="ot">&lt;-</span></span>
+<span id="cb606-38"><a href="sect1004.html#cb606-38" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>(Agregats) <span class="sc">%&gt;%</span></span>
+<span id="cb606-39"><a href="sect1004.html#cb606-39" tabindex="-1"></a>  <span class="fu">group_by</span>(stdbscan) <span class="sc">%&gt;%</span> </span>
+<span id="cb606-40"><a href="sect1004.html#cb606-40" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">points =</span> <span class="fu">n</span>(),</span>
+<span id="cb606-41"><a href="sect1004.html#cb606-41" tabindex="-1"></a>            <span class="at">date.min =</span> <span class="fu">min</span>(DT_ACCDN),</span>
+<span id="cb606-42"><a href="sect1004.html#cb606-42" tabindex="-1"></a>            <span class="at">date.max =</span> <span class="fu">max</span>(DT_ACCDN),</span>
+<span id="cb606-43"><a href="sect1004.html#cb606-43" tabindex="-1"></a>            <span class="at">intervalle.jours =</span> <span class="fu">as.numeric</span>(<span class="fu">max</span>(DT_ACCDN)<span class="sc">-</span><span class="fu">min</span>(DT_ACCDN)))</span>
+<span id="cb606-44"><a href="sect1004.html#cb606-44" tabindex="-1"></a><span class="do">## Affichage du tableau</span></span>
+<span id="cb606-45"><a href="sect1004.html#cb606-45" tabindex="-1"></a><span class="fu">print</span>(Tableau.stdbscan, <span class="at">n =</span> <span class="fu">nrow</span>(Tableau.stdbscan))</span>
+<span id="cb606-46"><a href="sect1004.html#cb606-46" tabindex="-1"></a><span class="do">## Construction du graphique</span></span>
+<span id="cb606-47"><a href="sect1004.html#cb606-47" tabindex="-1"></a><span class="fu">ggplot</span>(Agregats) <span class="sc">+</span> </span>
+<span id="cb606-48"><a href="sect1004.html#cb606-48" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> dtPOSIXct, </span>
+<span id="cb606-49"><a href="sect1004.html#cb606-49" tabindex="-1"></a>                 <span class="at">y =</span> stdbscan, </span>
+<span id="cb606-50"><a href="sect1004.html#cb606-50" tabindex="-1"></a>                 <span class="at">color =</span> stdbscan),</span>
+<span id="cb606-51"><a href="sect1004.html#cb606-51" tabindex="-1"></a>             <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb606-52"><a href="sect1004.html#cb606-52" tabindex="-1"></a>  <span class="fu">scale_x_datetime</span>(<span class="at">date_labels =</span> <span class="st">&quot;%Y/%m&quot;</span>)<span class="sc">+</span></span>
+<span id="cb606-53"><a href="sect1004.html#cb606-53" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span> <span class="st">&quot;Temps&quot;</span>,</span>
+<span id="cb606-54"><a href="sect1004.html#cb606-54" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">&quot;Identifiant de l&#39;agrégat&quot;</span>,</span>
+<span id="cb606-55"><a href="sect1004.html#cb606-55" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;ST-DBSCAN avec Esp1 = 1000, Esp2 = 21 et MinPts = 4&quot;</span>)</span>
+<span id="cb606-56"><a href="sect1004.html#cb606-56" tabindex="-1"></a><span class="do">## Création d&#39;une couche pour les agrégats</span></span>
+<span id="cb606-57"><a href="sect1004.html#cb606-57" tabindex="-1"></a>stdbcan.Agregats <span class="ot">&lt;-</span> <span class="fu">subset</span>(Coll.Velo, stdbscan <span class="sc">!=</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb606-58"><a href="sect1004.html#cb606-58" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb606-59"><a href="sect1004.html#cb606-59" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;view&quot;</span>)</span>
+<span id="cb606-60"><a href="sect1004.html#cb606-60" tabindex="-1"></a>  <span class="fu">tm_shape</span>(stdbcan.Agregats)<span class="sc">+</span></span>
+<span id="cb606-61"><a href="sect1004.html#cb606-61" tabindex="-1"></a>    <span class="fu">tm_dots</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">col=</span><span class="st">&quot;stdbscan&quot;</span>, <span class="at">size=</span>.<span class="dv">025</span>, <span class="at">title =</span> <span class="st">&quot;Agrégat&quot;</span>)</span></code></pre></div>
 </div>
 </div>
             </section>

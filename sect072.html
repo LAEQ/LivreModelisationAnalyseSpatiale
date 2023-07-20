@@ -1092,22 +1092,10 @@ Figure 7.20: Cartographie des probabilités d’appartenance aux cinq classes av
 Figure 7.21: Cartographie des des classes issues la classification SFCM
 </p>
 </div>
-<p><strong>Valeurs moyennes pour les classes du SFCM</strong></p>
-<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="sect072.html#cb594-1" tabindex="-1"></a>VarsEnv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Lden&quot;</span>, <span class="st">&quot;NO2&quot;</span>, <span class="st">&quot;PM25&quot;</span>, <span class="st">&quot;VegHautPrt&quot;</span>)</span>
-<span id="cb594-2"><a href="sect072.html#cb594-2" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(<span class="fu">st_drop_geometry</span>(LyonIris)[VarsEnv]))</span>
-<span id="cb594-3"><a href="sect072.html#cb594-3" tabindex="-1"></a>groupStats <span class="ot">&lt;-</span> <span class="fu">summarizeClusters</span>(Data,</span>
-<span id="cb594-4"><a href="sect072.html#cb594-4" tabindex="-1"></a>                                SFCM<span class="sc">$</span>Belongings,</span>
-<span id="cb594-5"><a href="sect072.html#cb594-5" tabindex="-1"></a>                                <span class="at">weighted =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb594-6"><a href="sect072.html#cb594-6" tabindex="-1"></a>                                <span class="at">dec =</span> <span class="dv">2</span>, <span class="at">silent =</span> <span class="cn">TRUE</span></span>
-<span id="cb594-7"><a href="sect072.html#cb594-7" tabindex="-1"></a>                                )</span>
-<span id="cb594-8"><a href="sect072.html#cb594-8" tabindex="-1"></a><span class="fu">View</span>(groupStats<span class="sc">$</span>Cluster_1)</span>
-<span id="cb594-9"><a href="sect072.html#cb594-9" tabindex="-1"></a><span class="fu">View</span>(groupStats<span class="sc">$</span>Cluster_2)</span>
-<span id="cb594-10"><a href="sect072.html#cb594-10" tabindex="-1"></a><span class="fu">View</span>(groupStats<span class="sc">$</span>Cluster_3)</span>
-<span id="cb594-11"><a href="sect072.html#cb594-11" tabindex="-1"></a><span class="fu">View</span>(groupStats<span class="sc">$</span>Cluster_4)</span></code></pre></div>
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>Références</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RBoldAir" class="csl-entry">
 Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.
