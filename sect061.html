@@ -332,7 +332,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec constrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
 <li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
@@ -466,8 +466,8 @@ Modélisation et analyse spatiale</a>
 </div>
 <p><strong>Pourquoi recourir à des modèles économétriques spatiaux?</strong></p>
 <p>Dans un modèle, les résidus (<span class="math inline">\(\epsilon\)</span>) sont la différence entre les valeurs observées (<span class="math inline">\(y_i\)</span>) et les valeurs prédites par le modèle (<span class="math inline">\(\widehat{y_i}\)</span>). Une des hypothèses de la régression linéaire multiple est que les observations doivent être indépendantes les unes des autres (<em>indépendance du terme d’erreur</em>). Le non-respect de cette hypothèse produit des résultats biaisés, notamment pour les coefficients de régression.</p>
-<p>Lorsque les observations sont des entités spatiales (polygones, points par exemple), si les résidus du modèle sont autocorrélées spatialement, il y a un problème de dépendance spatiale du modèle. Autrement dit, les observations ne sont pas spatialement indépendantes les unes des autres. Pour vérifier la dépendance spatiale d’un modèle, il suffit de calculer le <em>I</em> de Moran sur les résidus du modèle, comme décrit au chapitre 2 (section <a href="sect023.html#sect023">2.3</a>).</p>
-<p>Autrement dit, un modèle régression construit à des données spatiales ne devrait pas avoir des résidus spatialement autocorrélés. Or, les modèles économétriques spatiaux permettent justement d’intégrer l’autocorrélation spatiale de différentes manières afin de s’assurer que l’hypothèse de l’indépendance du terme d’erreur soit respectée.</p>
+<p>Lorsque les observations sont des entités spatiales (polygones, points par exemple), si les résidus du modèle sont autocorrélés spatialement, il y a un problème de dépendance spatiale du modèle. Autrement dit, les observations ne sont pas spatialement indépendantes les unes des autres. Pour vérifier la dépendance spatiale d’un modèle, il suffit de calculer le <em>I</em> de Moran sur les résidus du modèle, comme décrit au chapitre 2 (section <a href="sect023.html#sect023">2.3</a>).</p>
+<p>Autrement dit, un modèle de régression construit avec des données spatiales ne devrait pas avoir des résidus spatialement autocorrélés. Or, les modèles économétriques spatiaux permettent justement d’intégrer l’autocorrélation spatiale de différentes manières afin de s’assurer que l’hypothèse de l’indépendance du terme d’erreur est respectée.</p>
 <div id="sect0611" class="section level3 hasAnchor" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> Bref retour sur la régression linéaire multiple<a href="sect061.html#sect0611" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>À titre de rappel, la régression linéaire multiple permet de prédire et d’expliquer une variable dépendante (<span class="math inline">\(Y\)</span>) en fonction de plusieurs variables indépendantes (<span class="math inline">\(X\)</span>). L’équation de régression s’écrit alors :</p>
@@ -478,13 +478,13 @@ y_i = \beta_{0} + \beta_{1}x_{1i} + \beta_{2}x_{2i} +\ldots+ \beta_{k}x_{ki} + \
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\(y_i\)</span>, la valeur de la variable dépendante <em>Y</em> pour l’observation <em>i</em></li>
-<li><span class="math inline">\(\beta_{0}\)</span>, la constante, soit la valeur prédite pour <em>Y</em> quand toutes les variables indépendantes sont égales à 0</li>
-<li><span class="math inline">\(k\)</span> le nombre de variables indépendantes</li>
-<li><span class="math inline">\(\beta_{1}\)</span> à <span class="math inline">\(\beta_{k}\)</span>, les coefficients de régression pour les variables indépendantes de 1 à <em>k</em> (<span class="math inline">\(X_{1}\)</span> à <span class="math inline">\(X_{k}\)</span>)</li>
+<li><span class="math inline">\(y_i\)</span>, la valeur de la variable dépendante <em>Y</em> pour l’observation <em>i</em>.</li>
+<li><span class="math inline">\(\beta_{0}\)</span>, la constante, soit la valeur prédite pour <em>Y</em> quand toutes les variables indépendantes sont égales à 0.</li>
+<li><span class="math inline">\(k\)</span> le nombre de variables indépendantes.</li>
+<li><span class="math inline">\(\beta_{1}\)</span> à <span class="math inline">\(\beta_{k}\)</span>, les coefficients de régression pour les variables indépendantes de 1 à <em>k</em> (<span class="math inline">\(X_{1}\)</span> à <span class="math inline">\(X_{k}\)</span>).</li>
 <li><span class="math inline">\(\epsilon_{i}\)</span>, le résidu pour l’observation de <em>i</em>, soit la partie de la valeur de <span class="math inline">\(y_i\)</span> qui n’est pas expliquée par le modèle de régression.</li>
 </ul>
-<p>il existe plusieurs écritures simplifiées de cette équation. Dans le cadre de ce chapitre, nous utilisons la forme matricielle suivante :</p>
+<p>Il existe plusieurs écritures simplifiées de cette équation. Dans le cadre de ce chapitre, nous utilisons la forme matricielle suivante :</p>
 <p><span class="math display" id="eq:MCO">\[\begin{equation}
 y = X\beta + \epsilon
 \tag{6.2}
@@ -492,13 +492,13 @@ y = X\beta + \epsilon
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\(y\)</span>, un vecteur de dimension <span class="math inline">\(n \times 1\)</span> pour la variable dépendante, soit une colonne avec <em>n</em> observations</li>
-<li><span class="math inline">\(X\)</span>, une matrice de dimension <span class="math inline">\(n \times (k + 1)\)</span> pour les <em>k</em> variables indépendantes, incluant une autre colonne (avec la valeur de 1 pour les <em>n</em> observations) pour la constante d’où <span class="math inline">\(k + 1\)</span></li>
-<li><span class="math inline">\(\beta\)</span>, un vecteur de dimension <span class="math inline">\(k + 1\)</span>, soit les coefficients de régression pour les <em>k</em> variables et la constante</li>
+<li><span class="math inline">\(y\)</span>, un vecteur de dimension <span class="math inline">\(n \times 1\)</span> pour la variable dépendante, soit une colonne avec <em>n</em> observations.</li>
+<li><span class="math inline">\(X\)</span>, une matrice de dimension <span class="math inline">\(n \times (k + 1)\)</span> pour les <em>k</em> variables indépendantes, incluant une autre colonne (avec la valeur de 1 pour les <em>n</em> observations) pour la constante, d’où <span class="math inline">\(k + 1\)</span>.</li>
+<li><span class="math inline">\(\beta\)</span>, un vecteur de dimension <span class="math inline">\(k + 1\)</span>, soit les coefficients de régression pour les <em>k</em> variables et la constante.</li>
 <li><span class="math inline">\(\epsilon\)</span>, un vecteur de dimension <span class="math inline">\(n \times 1\)</span> pour les résidus.</li>
 </ul>
 <p><strong>Construction du modèle MCO dans R</strong></p>
-<p>Avec la fonction <code>lm()</code>, il est facile de construire un modèle de régression linéaire multiple, basé sur la méthodes des moindres carrés ordinaires (MCO).
+<p>Avec la fonction <code>lm()</code>, il est facile de construire un modèle de régression linéaire multiple, basé sur la méthode des moindres carrés ordinaires (MCO).
 Dans le code ci-dessous, la formule de l’équation du modèle est donc <code>NO2 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed</code>. Notez que la variable dépendante et les variables indépendantes sont séparées avec un tilde (<code>~</code>). Quant à la fonction <code>summary(NomDuModèle)</code>, elle affiche les résultats du modèle.</p>
 <div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="sect061.html#cb431-1" tabindex="-1"></a><span class="co"># Appel des différents packages utilisés dans le chapitre</span></span>
 <span id="cb431-2"><a href="sect061.html#cb431-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
@@ -552,7 +552,7 @@ Dans le code ci-dessous, la formule de l’équation du modèle est donc <code>N
 ##      0.587312061     -0.005375800      0.000776745</code></pre>
 <p>Avec une valeur du <em>I</em> de Moran de 0,587 (<em>p</em> &lt; 0,001), les résidus sont fortement autocorrélés spatialement, traduisant ainsi un problème de dépendance spatiale du modèle MCO et la nécessité de recourir à des modèles économétriques spatiaux. La cartographie des résidus à la figure <a href="sect061.html#fig:figCartoResMCO">6.2</a> corrobore ce résultat.</p>
 <div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="sect061.html#cb435-1" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb435-2"><a href="sect061.html#cb435-2" tabindex="-1"></a><span class="do">## Ajout du colonne dans LyonIris avec les valeurs des résidus</span></span>
+<span id="cb435-2"><a href="sect061.html#cb435-2" tabindex="-1"></a><span class="do">## Ajout de la colonne dans LyonIris avec les valeurs des résidus</span></span>
 <span id="cb435-3"><a href="sect061.html#cb435-3" tabindex="-1"></a>LyonIris<span class="sc">$</span>ModeleMCO.Residus <span class="ot">&lt;-</span> <span class="fu">residuals</span>(Modele.MCO)</span>
 <span id="cb435-4"><a href="sect061.html#cb435-4" tabindex="-1"></a><span class="do">## Cartographie</span></span>
 <span id="cb435-5"><a href="sect061.html#cb435-5" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
@@ -570,13 +570,13 @@ Figure 6.2: Cartographie des résidus du modèle de régression multiple
 </div>
 <div id="sect0612" class="section level3 hasAnchor" number="6.1.2">
 <h3><span class="header-section-number">6.1.2</span> Les différents modèles spatiaux autorégressifs<a href="sect061.html#sect0612" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Selon Jean Dubé et Diègo Legros, « cinq raisons peuvent motiver le choix d’un modèle autorégressif : la présence d’externalités, les effets d’entraînement, l’omission de variables importantes, la présence d’hétérogénéité spatiale des comportements, les effets mixtes » <span class="citation">(<a href="#ref-dube2014econometrie">2014, 120</a>)</span>. Les effets mixtes peuvent être la combinaison d’externalités avec des effets d’entraînement ou encore d’externalités avec l’omission d’une ou plusieurs variables importantes spatialement structurées.</p>
+<p>Selon Jean Dubé et Diègo Legros, « cinq raisons peuvent motiver le choix d’un modèle autorégressif : la présence d’externalités, les effets d’entraînement, l’omission de variables importantes, la présence d’hétérogénéité spatiale des comportements, les effets mixtes » <span class="citation">(<a href="#ref-dube2014econometrie">2014, 120</a>)</span>. Les effets mixtes peuvent être la combinaison d’externalités avec des effets d’entraînement ou encore d’externalités avec l’omission d’une ou de plusieurs variables importantes spatialement structurées.</p>
 <div id="sect06121" class="section level4 hasAnchor" number="6.1.2.1">
 <h4><span class="header-section-number">6.1.2.1</span> Modèle SLX : autocorrélation spatiale sur les variables indépendantes<a href="sect061.html#sect06121" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Dans un modèle SLX, l’autocorrélation spatiale est intégrée au niveau des variables indépendantes. Autrement dit, les variables indépendantes spatialement décalées (<span class="math inline">\(WX\)</span>) sont introduites aussi dans le modèle. Par conséquent, la valeur de chaque unité spatiale du modèle est ainsi expliquée à la fois par ses propres caractéristiques et celles dans le voisinage ou à proximité en fonction de la matrice de pondération spatiale (<span class="math inline">\(W\)</span>).</p>
 <div class="bloc_aller_loin">
 <p><strong>Rappel sur les variables spatialement décalées</strong></p>
-<p>Dans chapitre 2 sur l’autocorrélation spatiale, nous avons vu comment calculer une variable spatialement décalée avec un matrice de pondération spatiale (figure <a href="sect024.html#fig:Chap02FigureVariableSpatialementDecalee">2.20</a>). À titre de rappel, lorsque cette dernière est standardisée en ligne, elle correspond à la valeur moyenne dans le voisinage.</p>
+<p>Dans chapitre 2 sur l’autocorrélation spatiale, nous avons vu comment calculer une variable spatialement décalée avec une matrice de pondération spatiale (figure <a href="sect024.html#fig:Chap02FigureVariableSpatialementDecalee">2.20</a>). À titre de rappel, lorsque cette dernière est standardisée en ligne, elle correspond à la valeur moyenne dans le voisinage.</p>
 </div>
 <p>L’idée est alors d’introduire des <strong>externalités</strong> puisque les caractéristiques des entités spatiales proches ou voisines peuvent avoir un effet sur la variable dépendante <span class="citation">(<a href="#ref-dube2014econometrie">Dubé et Legros 2014</a>)</span>. L’équation du modèle SLX, qui est estimée selon la méthode des moindres carrés ordinaires (comme la régression linéaire multiple), s’écrit alors :</p>
 <p><span class="math display" id="eq:SLX">\[\begin{equation}
@@ -586,16 +586,16 @@ y = X\beta + WX\theta + \epsilon
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\(y\)</span>, la variable dépendante</li>
-<li><span class="math inline">\(X\)</span>, les variables indépendantes</li>
-<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes</li>
-<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale</li>
-<li><span class="math inline">\(WX\)</span>, les variables dépendantes spatiales décalés</li>
-<li><span class="math inline">\(\theta\)</span>, les coefficients des variables dépendantes spatiales décalées</li>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(WX\)</span>, les variables indépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\theta\)</span>, les coefficients des variables indépendantes spatiales décalées.</li>
 <li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
 </ul>
 <p><strong>Construction du modèle SLX dans R</strong></p>
-<p>Le modèle SLX est construit avec la fonction <code>lmSLX</code> du <em>package</em> <code>spatialreg</code> <span class="citation">(<a href="#ref-bivand2021review">Bivand, Millo et Piras 2021</a>)</span>. Remarquez dans le code ci-dessous le paramètre <code>listw=W.Rook</code> qui est utilisé pour spécifier la matrice de pondération spatiale.</p>
+<p>Le modèle SLX est construit avec la fonction <code>lmSLX</code> du <em>package</em> <code>spatialreg</code> <span class="citation">(<a href="#ref-bivand2021review">Bivand, Millo et Piras 2021</a>)</span>. Remarquez, dans le code ci-dessous, le paramètre <code>listw=W.Rook</code> qui est utilisé pour spécifier la matrice de pondération spatiale.</p>
 <div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="sect061.html#cb436-1" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
 <span id="cb436-2"><a href="sect061.html#cb436-2" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
 <span id="cb436-3"><a href="sect061.html#cb436-3" tabindex="-1"></a>Modele.SLX <span class="ot">&lt;-</span> <span class="fu">lmSLX</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
@@ -635,9 +635,9 @@ y = X\beta + WX\theta + \epsilon
 <p><strong>Effets directs, indirects et totaux</strong></p>
 <p>Les effets des variables indépendantes sont donc décomposés en trois composantes :</p>
 <ul>
-<li>les <strong>effets directs</strong>, soit ceux des caractéristiques des entités spatiales. Ils correspondent aux coefficients <span class="math inline">\(\beta\)</span> des variables dépendantes (<span class="math inline">\(X\)</span>)</li>
-<li>les <strong>effets indirects</strong>, soit ceux des caractéristiques des entités spatiales voisines ou proches définies selon la matrice de pondération spatiale. Ils correspondent aussi aux coefficients <span class="math inline">\(\theta\)</span> des variables dépendantes spatialement décalées (<span class="math inline">\(WX\)</span>)</li>
-<li>les <strong>effets totaux</strong> soit la somme deux précédents.</li>
+<li>les <strong>effets directs</strong>, soit ceux des caractéristiques des entités spatiales. Ils correspondent aux coefficients <span class="math inline">\(\beta\)</span> des variables indépendantes (<span class="math inline">\(X\)</span>)</li>
+<li>les <strong>effets indirects</strong>, soit ceux des caractéristiques des entités spatiales voisines ou proches définies selon la matrice de pondération spatiale. Ils correspondent aux coefficients <span class="math inline">\(\theta\)</span> des variables indépendantes spatialement décalées (<span class="math inline">\(WX\)</span>).</li>
+<li>les <strong>effets totaux</strong>, soit la somme des deux précédents.</li>
 </ul>
 <p>Le code suivant permet de les obtenir.</p>
 <div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="sect061.html#cb438-1" tabindex="-1"></a><span class="do">## Effets directs, indirects et totaux (uniquement les coefficients)</span></span>
@@ -713,7 +713,7 @@ Figure 6.3: Cartographie des résidus du modèle SLX
 </div>
 <div id="sect06122" class="section level4 hasAnchor" number="6.1.2.2">
 <h4><span class="header-section-number">6.1.2.2</span> Modèle SAR : autocorrélation spatiale sur la variable dépendante<a href="sect061.html#sect06122" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Dans le modèle SAR, l’autocorrélation spatiale est intégrée au niveau de variable indépendante (<span class="math inline">\(Wy\)</span>), qui est ainsi spatialement décalée. L’idée générale est que la valeur de la variable dépendante pour une observation (<span class="math inline">\(y_i\)</span>) peut être influencée par les valeurs de <span class="math inline">\(y\)</span> des observations voisines et proches. L’exemple le plus classique est le prix de vente des maisons : il est influencé à la fois par les caractéristiques intrinsèques de la maison (<span class="math inline">\(X\)</span>, par exemple, la superficie habitable, le nombre de chambres à coucher, de salles de bains, etc.) et par le prix de vente des maison voisines (<span class="math inline">\(Wy\)</span>). Dubé et Legros <span class="citation">(<a href="#ref-dube2014econometrie">2014</a>)</span> qualifie ce phénomène « <strong>d’effets d’entraînement ou d’effets de débordement</strong> (<em>spillover effects</em>) » <span class="citation">(<a href="#ref-dube2014econometrie">2014, 123</a>)</span>. L’équation du modèle SAR s’écrit alors :</p>
+<p>Dans le modèle SAR, l’autocorrélation spatiale est intégrée au niveau de la variable indépendante (<span class="math inline">\(Wy\)</span>), qui est ainsi spatialement décalée. L’idée générale est que la valeur de la variable dépendante pour une observation (<span class="math inline">\(y_i\)</span>) peut être influencée par les valeurs de <span class="math inline">\(y\)</span> des observations voisines et proches. L’exemple le plus classique est le prix de vente des maisons : il est influencé à la fois par les caractéristiques intrinsèques de la maison (<span class="math inline">\(X\)</span>, par exemple, la superficie habitable, le nombre de chambres à coucher, de salles de bains, etc.) et par le prix de vente des maisons voisines (<span class="math inline">\(Wy\)</span>). Dubé et Legros <span class="citation">(<a href="#ref-dube2014econometrie">2014</a>)</span> qualifient ce phénomène « <strong>d’effets d’entraînement ou d’effets de débordement</strong> (<em>spillover effects</em>) » <span class="citation">(<a href="#ref-dube2014econometrie">2014, 123</a>)</span>. L’équation du modèle SAR s’écrit alors :</p>
 <p><span class="math display" id="eq:SLM">\[\begin{equation}
 y = Wy\rho + X\beta + \epsilon
 \tag{6.4}
@@ -721,12 +721,12 @@ y = Wy\rho + X\beta + \epsilon
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\(y\)</span>, la variable dépendante</li>
-<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale</li>
-<li><span class="math inline">\(Wy\)</span>, la variable indépendante spatialement décalée</li>
-<li><span class="math inline">\(\rho\)</span> (prononcez <em>rho</em>), le coefficient de la variable indépendante spatialement décalée. Il varie de -1 à 1.</li>
-<li><span class="math inline">\(X\)</span>, les variables indépendantes</li>
-<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes</li>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(Wy\)</span>, la variable dépendante spatialement décalée.</li>
+<li><span class="math inline">\(\rho\)</span> (prononcez <em>rho</em>), le coefficient de la variable dépendante spatialement décalée. Il varie de -1 à 1.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
 <li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
 </ul>
 <p><strong>Construction du modèle SAR dans R</strong></p>
@@ -769,7 +769,7 @@ y = Wy\rho + X\beta + \epsilon
 ## AIC: 2748.3, (AIC for lm: 3366.6)
 ## LM test for residual autocorrelation
 ## test value: 0.6198, p-value: 0.43112</code></pre>
-<p>Dans les résultats ci-dessous, la valeur de <em>rho</em> est de 0,88 (LR = 620, <em>p</em> &lt; 0,001), traduisant une très fort effet d’entraînement. Autrement dit, lorsqu’en moyenne la concentration de dioxyde d’azote augmente dans les IRIS voisines (<span class="math inline">\(Wy\)</span>), elle augmente aussi fortement chaque IRIS (<span class="math inline">\(y\)</span>).</p>
+<p>Dans les résultats ci-dessus, la valeur de <em>rho</em> est de 0,88 (LR = 620, <em>p</em> &lt; 0,001), traduisant une très fort effet d’entraînement. Autrement dit, lorsqu’en moyenne la concentration de dioxyde d’azote augmente dans les IRIS voisines (<span class="math inline">\(Wy\)</span>), elle augmente aussi fortement chaque IRIS (<span class="math inline">\(y\)</span>).</p>
 <p><strong>Effets directs, indirects et totaux</strong></p>
 <div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="sect061.html#cb447-1" tabindex="-1"></a><span class="do">## Effets directs, indirects et totaux (uniquement les coefficients)</span></span>
 <span id="cb447-2"><a href="sect061.html#cb447-2" tabindex="-1"></a><span class="fu">impacts</span>(Modele.SAR, <span class="at">listw =</span> W.Rook, <span class="at">R =</span> <span class="dv">999</span>)</span></code></pre></div>
@@ -852,11 +852,11 @@ y = X\beta + u \textrm{, } u = \lambda Wu + \epsilon
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\(y\)</span>, la variable dépendante</li>
-<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale</li>
-<li><span class="math inline">\(\lambda\)</span> (prononcez <em>lambda</em>), le coefficient sur le terme d’erreur spatialement décalée. Il varie de -1 à 1.</li>
-<li><span class="math inline">\(X\)</span>, les variables indépendantes</li>
-<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes</li>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(\lambda\)</span> (prononcez <em>lambda</em>), le coefficient sur le terme d’erreur spatialement décalé. Il varie de -1 à 1.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
 <li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
 </ul>
 <p><strong>Construction du modèle SAR dans R</strong></p>
@@ -921,18 +921,18 @@ y = Wy\rho + X\beta + WX\theta + \epsilon
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\(y\)</span>, la variable dépendante</li>
-<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale</li>
-<li><span class="math inline">\(Wy\)</span>, la variable indépendante spatialement décalée</li>
-<li><span class="math inline">\(\rho\)</span>, le coefficient de la variable indépendante spatialement décalée</li>
-<li><span class="math inline">\(X\)</span>, les variables indépendantes</li>
-<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes</li>
-<li><span class="math inline">\(WX\)</span>, les variables dépendantes spatiales décalés</li>
-<li><span class="math inline">\(\theta\)</span>, les coefficients des variables dépendantes spatiales décalées</li>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(Wy\)</span>, la variable dépendante spatialement décalée.</li>
+<li><span class="math inline">\(\rho\)</span>, le coefficient de la variable dépendante spatialement décalée.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
+<li><span class="math inline">\(WX\)</span>, les variables indépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\theta\)</span>, les coefficients des variables indépendantes spatiales décalées.</li>
 <li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
 </ul>
 <p><strong>Construction du modèle SDM dans R</strong></p>
-<p>Le modèle SDM est construit avec la fonction <code>lagsarlm</code> du <em>package</em> <code>spatialreg</code>. Notez que le paramètre <code>type = "mixed"</code> qui spécifie l’utilisation d’un modèle mixte.</p>
+<p>Le modèle SDM est construit avec la fonction <code>lagsarlm</code> du <em>package</em> <code>spatialreg</code>. Notez que le paramètre <code>type = "mixed"</code> spécifie l’utilisation d’un modèle mixte.</p>
 <div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="sect061.html#cb458-1" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
 <span id="cb458-2"><a href="sect061.html#cb458-2" tabindex="-1"></a>Modele.DurbinSpatial <span class="ot">&lt;-</span> <span class="fu">lagsarlm</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
 <span id="cb458-3"><a href="sect061.html#cb458-3" tabindex="-1"></a>                       <span class="at">listw =</span> W.Rook,    <span class="co"># matrice de pondération spatiale</span></span>
@@ -1044,19 +1044,17 @@ y = X\beta + WX\theta + u \textrm{, } u = \lambda Wu + \epsilon
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\(y\)</span>, la variable dépendante</li>
-<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale</li>
-<li><span class="math inline">\(X\)</span>, les variables indépendantes</li>
-<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes</li>
-<li><span class="math inline">\(WX\)</span>, les variables dépendantes spatiales décalés</li>
-<li><span class="math inline">\(\theta\)</span>, les coefficients des variables dépendantes spatiales décalées</li>
-<li><span class="math inline">\(\lambda\)</span> (prononcez <em>lambda</em>), le coefficient sur le terme d’erreur spatialement décalée</li>
-<li><span class="math inline">\(X\)</span>, les variables indépendantes</li>
-<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes</li>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
+<li><span class="math inline">\(WX\)</span>, les variables dépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\theta\)</span>, les coefficients des variables indépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\lambda\)</span> (prononcez <em>lambda</em>), le coefficient sur le terme d’erreur spatialement décalé.</li>
 <li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
 </ul>
 <p><strong>Construction du modèle SDEM dans R</strong></p>
-<p>Le modèle SDEM est construit avec la fonction <code>errorsarlm</code> du <em>package</em> <code>spatialreg</code>. Notez que le paramètre <code>etype = "mixed"</code> qui spécifie l’utilisation d’un modèle mixte.</p>
+<p>Le modèle SDEM est construit avec la fonction <code>errorsarlm</code> du <em>package</em> <code>spatialreg</code>. Notez que le paramètre <code>etype = "mixed"</code> spécifie l’utilisation d’un modèle mixte.</p>
 <div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="sect061.html#cb466-1" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
 <span id="cb466-2"><a href="sect061.html#cb466-2" tabindex="-1"></a>Modele.DurbinErreur <span class="ot">&lt;-</span> <span class="fu">errorsarlm</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
 <span id="cb466-3"><a href="sect061.html#cb466-3" tabindex="-1"></a>                                  <span class="at">listw=</span>W.Rook,    <span class="co"># matrice de pondération spatiale</span></span>
@@ -1143,6 +1141,7 @@ y = X\beta + WX\theta + u \textrm{, } u = \lambda Wu + \epsilon
 ## Pct_brevet 0.682034 0.502105 0.700357
 ## NivVieMed  0.013576 0.552040 0.201589</code></pre>
 <p><strong>Dépendance du modèle spatiale SDEM?</strong></p>
+<p>Avec une valeur du <em>I</em> de Moran de -0,010 (<em>p</em> = 0,619), les résidus du modèle SDEM ne sont pas spatialement autocorrélés.</p>
 <div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="sect061.html#cb472-1" tabindex="-1"></a><span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.DurbinErreur), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Monte-Carlo simulation of Moran I
@@ -1159,14 +1158,14 @@ y = X\beta + WX\theta + u \textrm{, } u = \lambda Wu + \epsilon
 <h3><span class="header-section-number">6.1.3</span> Quel modèle choisir?<a href="sect061.html#sect0613" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="sect06131" class="section level4 hasAnchor" number="6.1.3.1">
 <h4><span class="header-section-number">6.1.3.1</span> Tests du multiplicateur de Lagrange sur le modèle MCO<a href="sect061.html#sect06131" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>L’utilisation des tests du multiplicateur de Lagrange (simple et robuste) a été largement popularisée par Anselin <em>et al.</em> <span class="citation">(<a href="#ref-anselin1996simple">1996</a>)</span> pour vérifier si le recours à un modèle autorégressif est nécessaire, comparativement à un modèle de régression classique (MCO). Les tests sont calculés sur le modèle MCO avec le fonction <code>lm.LMtests</code> et une matrice pondération spatiale. Ces tests permettent aussi de choisir entre les modèles SAR et SEM. La démarche suivante peut être utilisée pour choisir un modèle :</p>
+<p>L’utilisation des tests du multiplicateur de Lagrange (simple et robuste) a été largement popularisée par Anselin <em>et al.</em> <span class="citation">(<a href="#ref-anselin1996simple">1996</a>)</span> pour vérifier si le recours à un modèle autorégressif est nécessaire, comparativement à un modèle de régression classique (MCO). Les tests sont calculés sur le modèle MCO avec la fonction <code>lm.LMtests</code> et une matrice de pondération spatiale. Ces tests permettent aussi de choisir entre les modèles SAR et SEM. La démarche suivante peut être utilisée pour choisir un modèle :</p>
 <ol style="list-style-type: decimal">
 <li>Si toutes les valeurs des tests (simples et robustes) sont non significatives (<em>p</em> &gt; 0,05) alors le recours à un modèle autorégressif n’est pas nécessaire. Nous pouvons conserver le modèle de régression classique (MCO).</li>
 <li>Si les valeurs de <code>LMlag</code> ou <code>RLMlag</code> sont non significatives (<em>p</em> &gt; 0,05) alors le recours au modèle SAR n’est pas nécessaire.</li>
 <li>Si les valeurs de <code>LMerr</code> ou <code>RLMerr</code> sont non significatives (<em>p</em> &gt; 0,05) alors le recours au modèle SEM n’est pas nécessaire.</li>
 <li>Si les valeurs de <code>RLMlag</code> et <code>RLMerr</code> sont significatives (<em>p</em> &lt; 0,001), nous choisissons le modèle ayant la plus forte statistique.</li>
 </ol>
-<p>Dans les résultats ci-dessous, nous ne retenons pas le modèle SEM car la valeur de 0,740 pour le <code>RLMerr</code> n’est pas significative (<em>p</em> = 0,3898). Par contre, les valeurs <code>LMlag</code> et de <code>RLMlag</code> (555 et 123) sont significatives, ce que justifie la sélection du modèle SAR.</p>
+<p>Dans les résultats ci-dessous, nous ne retenons pas le modèle SEM car la valeur de 0,740 pour le <code>RLMerr</code> n’est pas significative (<em>p</em> = 0,3898). Par contre, les valeurs de <code>LMlag</code> et de <code>RLMlag</code> (555 et 123) sont significatives, ce que justifie la sélection du modèle SAR.</p>
 <div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="sect061.html#cb474-1" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm.LMtests</span>(<span class="at">model =</span> Modele.MCO,</span>
 <span id="cb474-2"><a href="sect061.html#cb474-2" tabindex="-1"></a>                   <span class="at">listw =</span> W.Rook,</span>
 <span id="cb474-3"><a href="sect061.html#cb474-3" tabindex="-1"></a>                   <span class="at">test =</span> <span class="fu">c</span>(<span class="st">&quot;LMlag&quot;</span>,<span class="st">&quot;LMerr&quot;</span>,<span class="st">&quot;RLMlag&quot;</span>,<span class="st">&quot;RLMerr&quot;</span>)))</span></code></pre></div>
@@ -1186,7 +1185,7 @@ y = X\beta + WX\theta + u \textrm{, } u = \lambda Wu + \epsilon
 </div>
 <div id="sect06132" class="section level4 hasAnchor" number="6.1.3.2">
 <h4><span class="header-section-number">6.1.3.2</span> Comparaison des modèles mixtes et non mixtes<a href="sect061.html#sect06132" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Nous avons vu qu’il existe deux modèles mixtes (SDM et SDEM). Il convient alors de vérifier si le recours d’un modèle mixte est justifié comparativement à un modèle non mixte. Dans le code ci-dessous, nous vérifions ci le modèle SDM est statistiquement différent du modèle SAR avec les fonctions <code>LR.Sarlm</code> et <code>anova</code>. Les résultats signalent un écart significatif des valeurs du log-vraisemblance (26,101, <em>p</em> &lt; 0,001). Par conséquent, ce modèle mixte a un apport significatif.</p>
+<p>Nous avons vu qu’il existe deux modèles mixtes (SDM et SDEM). Il convient alors de vérifier si le recours d’un modèle mixte est justifié comparativement à un modèle non mixte. Dans le code ci-dessous, nous vérifions si le modèle SDM est statistiquement différent du modèle SAR avec les fonctions <code>LR.Sarlm</code> et <code>anova</code>. Les résultats signalent un écart significatif des valeurs du log-vraisemblance (26,101, <em>p</em> &lt; 0,001). Par conséquent, ce modèle mixte a un apport significatif.</p>
 <div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="sect061.html#cb476-1" tabindex="-1"></a><span class="do">## SDM et SEM sont-ils significativement différents?</span></span>
 <span id="cb476-2"><a href="sect061.html#cb476-2" tabindex="-1"></a><span class="fu">LR.Sarlm</span>(Modele.DurbinSpatial, Modele.SAR)</span></code></pre></div>
 <pre><code>## 
@@ -1201,7 +1200,7 @@ y = X\beta + WX\theta + u \textrm{, } u = \lambda Wu + \epsilon
 <pre><code>##                      Model df    AIC  logLik Test L.Ratio    p-value
 ## Modele.DurbinSpatial     1 13 2732.2 -1353.1    1                   
 ## Modele.SAR               2  8 2748.3 -1366.2    2  26.101 8.5283e-05</code></pre>
-<p>À l’inverse, la différence entre les valeurs du log-vraisemblance du modèle SDEM et SEM n’est pas significative (4,9728, <em>p</em> = 0,42), signalant que l’utilisation d’un modèle SDEM comparativement à un modèle SEM n’est pas nécessaire.</p>
+<p>À l’inverse, la différence entre les valeurs du log-vraisemblance des modèles SDEM et SEM n’est pas significative (4,9728, <em>p</em> = 0,42), signalant que l’utilisation d’un modèle SDEM comparativement à un modèle SEM n’est pas nécessaire.</p>
 <div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="sect061.html#cb480-1" tabindex="-1"></a><span class="do">## SDEM et SEM sont-ils significativement différents?</span></span>
 <span id="cb480-2"><a href="sect061.html#cb480-2" tabindex="-1"></a><span class="fu">LR.Sarlm</span>(Modele.DurbinErreur, Modele.SEM)</span></code></pre></div>
 <pre><code>## 
@@ -1256,19 +1255,19 @@ y = X\beta + WX\theta + u \textrm{, } u = \lambda Wu + \epsilon
 <p>Quelques lignes de code suffissent pour créer deux graphiques permettant de comparer visuellement les résultats des différents modèles (figure <a href="sect061.html#fig:GraphComparaison">6.5</a>). Les résultats démontrent que :</p>
 <ul>
 <li>les modèles MCO et SLX ont un problème de dépendance spatiale puisque leur résidus sont significativement autocorrélés.
-spatialement. Il ne devraient donc pas être retenus.</li>
-<li>Le modèle mixte SDM et le modèle non mixte SEM ont les valeurs sont les plus performants avec les valeurs d’AIC les plus faibles.</li>
+spatialement. Ils ne devraient donc pas être retenus.</li>
+<li>Les modèle mixte SDM et non mixte SEM sont les plus performants avec les valeurs d’AIC les plus faibles.</li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphComparaison"></span>
-<img src="GMQ405_files/figure-html/GraphComparaison-1.png" alt="Compararison des différents modèles" width="100%" />
+<img src="GMQ405_files/figure-html/GraphComparaison-1.png" alt="Comparaison des différents modèles" width="100%" />
 <p class="caption">
-Figure 6.5: Compararison des différents modèles
+Figure 6.5: Comparaison des différents modèles
 </p>
 </div>
 </div>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-anselin1996simple" class="csl-entry">
 Anselin, Luc, Anil K Bera, Raymond Florax et Mann J Yoon. 1996. <span>« Simple diagnostic tests for spatial dependence. »</span> <em>Regional science and urban economics</em> 26 (1): 77‑104. <a href="https://doi.org/10.1016/0166-0462(95)02111-6">https://doi.org/10.1016/0166-0462(95)02111-6</a>.

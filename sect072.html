@@ -332,7 +332,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec constrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
 <li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
@@ -459,23 +459,23 @@ Modélisation et analyse spatiale</a>
             <section class="normal" id="section-">
 <div id="sect072" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Méthodes de classification non supervisée avec une dimension spatiale<a href="sect072.html#sect072" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nous avons vu que les méthodes de classification avec une contrainte spatiale visent à obtenir des régions non discontinues, c’est-à-dire sans mitage spatial. L’objectif des méthodes de classification non supervisée avec une dimension spatiale est quelque peu différent : classifier les observations en tenant compte de l’espace (proximité, voisinage entre les unités spatiales) afin de limiter les effets de mitage, sans obtenir l’interdire.</p>
+<p>Nous avons vu que les méthodes de classification avec une contrainte spatiale visent à obtenir des régions non discontinues, c’est-à-dire sans mitage spatial. L’objectif des méthodes de classification non supervisée avec une dimension spatiale est quelque peu différent : classifier les observations en tenant compte de l’espace (proximité, voisinage entre les unités spatiales) afin de limiter les effets de mitage, sans obtenir toutefois l’interdire.</p>
 <p>Dans le cadre de cette section, nous décrivons deux de ces méthodes qui intègrent la dimension spatiale de manière différente :</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>La méthode <em>ClustGeo</em></strong>, qui est une extension de la classification ascendante hiérarchique, est une méthode de classification non supervisée, spatiale et stricte. Cette méthode repose sur deux matrices de dissimilarité : une <strong>matrice sémantique</strong> calculée sur les valeurs de plusieurs variables caractérisant les entités géographiques et une <strong>matrice de distances</strong> (euclidienne le plus souvent) entre les entités géographiques. Nous cherchons ainsi à regrouper les observations qui se ressemblent à la fois selon leurs attributs et selon leur proximité spatiale.</p></li>
-<li><p><strong>La méthode k-moyenne spatiale et floue (<em>Spatial fuzzy c-means</em>)</strong>, qui est une extension de la méthode k-moyennes, est une méthode de classification non supervisée, spatiale et floue. Cette méthode repose sur deux matrices de dissimilarité : une <strong>matrice sémantique</strong> calculée sur les valeurs de plusieurs variables caractérisant les entités géographiques et une <strong>matrice sémantique spatialement décalée</strong>. Nous cherchons ainsi à regrouper les observations qui se ressemblent à la fois selon leurs caractéristiques et celles de leurs unités spatiales adjacentes ou proches.</p></li>
+<li><p><strong>La méthode k-moyennes spatiale et floue (<em>Spatial fuzzy c-means</em>)</strong>, qui est une extension de la méthode k-moyennes, est une méthode de classification non supervisée, spatiale et floue. Cette méthode repose sur deux matrices de dissimilarité : une <strong>matrice sémantique</strong> calculée sur les valeurs de plusieurs variables caractérisant les entités géographiques et une <strong>matrice sémantique spatialement décalée</strong>. Nous cherchons ainsi à regrouper les observations qui se ressemblent à la fois selon leurs caractéristiques et celles de leurs unités spatiales adjacentes ou proches.</p></li>
 </ol>
-<p>Autrement dit, dans la méthode <em>ClustGeo</em>, l’espace est introduit sous la forme d’une matrice de distances entre les entités spatiales (<strong>agencement spatial</strong>) tandis que dans la méthode du <em>Spatial fuzzy c-means</em>, il est introduit sous la forme d’une matrice de données sémantiques spatialement décalée (<strong>information sémantique dans l’environnement immédiat</strong>).</p>
+<p>Autrement dit, dans la méthode <em>ClustGeo</em>, l’espace est introduit sous la forme d’une matrice de distances entre les entités spatiales (<strong>agencement spatial</strong>) tandis que dans la méthode du <em>Spatial fuzzy c-means</em>, il est introduit sous la forme d’une matrice de données sémantiques spatialement décalées (<strong>information sémantique dans l’environnement immédiat</strong>).</p>
 <div id="sect0721" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)<a href="sect072.html#sect0721" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="sect07211" class="section level4 hasAnchor" number="7.2.1.1">
 <h4><span class="header-section-number">7.2.1.1</span> Description de la méthode <em>ClustGeo</em><a href="sect072.html#sect07211" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>La méthode <em>ClustGeo</em>, proposée Marie Chavent et ses collègues <span class="citation">(<a href="#ref-packageClustGeo">2018</a>)</span>, est une extension de la classification ascendante hiérarchique (CAH) qui intègre la dimension spatiale des entités géographiques. Cette méthode repose sur une idée brillante, soit classer (regrouper) les observations (unités spatiales) en utilisant deux matrices de dissimilarité :</p>
+<p>La méthode <em>ClustGeo</em>, proposée par Marie Chavent et ses collègues <span class="citation">(<a href="#ref-packageClustGeo">2018</a>)</span>, est une extension de la classification ascendante hiérarchique (CAH) qui intègre la dimension spatiale des entités géographiques. Cette méthode repose sur une idée brillante, soit de classer (regrouper) les observations (unités spatiales) en utilisant deux matrices de dissimilarité :</p>
 <ol style="list-style-type: decimal">
 <li>Une matrice sémantique calculée sur <em>p</em> variables caractérisant les unités spatiales (<span class="math inline">\(D_0\)</span>).</li>
 <li>Une matrice spatiale calculée à partir des distances euclidiennes entre les unités spatiales (<span class="math inline">\(D_1\)</span>).</li>
 </ol>
-<p>Notez qu’un paramètre <span class="math inline">\(\alpha\)</span>, variant de 0 à 1, permet de définir le poids de la matrice spatiale comparativement à celle sémantique :</p>
+<p>Notez qu’un paramètre <span class="math inline">\(\alpha\)</span>, variant de 0 à 1, permet de définir le poids de la matrice spatiale comparativement à celui de la sémantique :</p>
 <ul>
 <li>Avec <span class="math inline">\(\alpha=0\)</span>, le poids accordé à la matrice spatiale est nul. Nous obtenons ainsi une CAH classique.</li>
 <li>Avec <span class="math inline">\(\alpha=1\)</span>, le poids accordé à la matrice spatiale est maximal; la classification est alors purement spatiale.</li>
@@ -505,7 +505,7 @@ Modélisation et analyse spatiale</a>
 <span id="cb560-14"><a href="sect072.html#cb560-14" tabindex="-1"></a>     <span class="at">sub =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Hauteur&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span></span>
 <span id="cb560-15"><a href="sect072.html#cb560-15" tabindex="-1"></a>     )</span></code></pre></div>
 <p><img src="GMQ405_files/figure-html/unnamed-chunk-209-1.png" width="672" /></p>
-<p>À la lecture de la figure <a href="sect072.html#fig:CAHCoude">7.9</a>, nous ne détectons de seuils marqués dans l’inertie expliquée en fonction du nombre de groupe. Par conséquent, nous fixons arbitrairement le nombre de groupes à 5.</p>
+<p>À la lecture de la figure <a href="sect072.html#fig:CAHCoude">7.9</a>, nous ne détectons pas de seuils marqués dans l’inertie expliquée en fonction du nombre de groupes. Par conséquent, nous fixons arbitrairement le nombre de groupes à 5.</p>
 <div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb561-1"><a href="sect072.html#cb561-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb561-2"><a href="sect072.html#cb561-2" tabindex="-1"></a><span class="co"># Fonction pour l&#39;inertie expliquée par les classes</span></span>
 <span id="cb561-3"><a href="sect072.html#cb561-3" tabindex="-1"></a>prop_inert_cutree <span class="ot">&lt;-</span> <span class="cf">function</span>(K,tree,n){</span>
@@ -719,7 +719,7 @@ Nombre d’IRIS
 <p>Pour la méthode <em>ClustGeo</em> (avec k = 5), nous évaluons l’impact du paramètre α pour des valeurs de 0 à 1, avec un saut de 0,05. Pour ce faire, nous utilisons la fonction <code>choicealpha</code> du <em>package</em> <code>ClustGeo</code>. À la lecture de la figure <a href="sect072.html#fig:GraphAlpha">7.11</a>, nous constatons que :</p>
 <ul>
 <li><p>plus la valeur de <span class="math inline">\(\alpha\)</span> augmente, plus l’inertie expliquée par la matrice sémantique diminue (trait noir) et inversement, plus l’inertie expliquée par la matrice spatiale est forte.</p></li>
-<li><p>avec <span class="math inline">\(\alpha=\text{0,30}\)</span>, l’inertie expliquée par la matrice spatiale est de 50 % pour une perte d’inertie expliquée par la matrice sémantique de seulement 7 %. Avec <span class="math inline">\(\alpha=\text{0,35}\)</span>, nous constatons observe une chute importante de l’inertie sémantique expliquée.Par conséquent, nous retenons la valeur de 0,30 pour la méthode <em>ClustGeo</em>.</p></li>
+<li><p>avec <span class="math inline">\(\alpha=\text{0,30}\)</span>, l’inertie expliquée par la matrice spatiale est de 50 % pour une perte d’inertie expliquée par la matrice sémantique de seulement 7 %. Avec <span class="math inline">\(\alpha=\text{0,35}\)</span>, nous constatons une chute importante de l’inertie sémantique expliquée.Par conséquent, nous retenons la valeur de 0,30 pour la méthode <em>ClustGeo</em>.</p></li>
 </ul>
 <div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="sect072.html#cb569-1" tabindex="-1"></a>alphas <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.05</span>)</span>
 <span id="cb569-2"><a href="sect072.html#cb569-2" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">choicealpha</span>(<span class="at">D0 =</span> Matrice.Semantique, <span class="co"># matrice sémantique</span></span>
@@ -735,7 +735,7 @@ Nombre d’IRIS
 <span id="cb569-12"><a href="sect072.html#cb569-12" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>alphas,<span class="at">y=</span> Q0), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb569-13"><a href="sect072.html#cb569-13" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>alphas,<span class="at">y=</span> Q1), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
 <span id="cb569-14"><a href="sect072.html#cb569-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>alphas,<span class="at">y=</span> Q1), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb569-15"><a href="sect072.html#cb569-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Pseudo-Inertie&quot;</span>, </span>
+<span id="cb569-15"><a href="sect072.html#cb569-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Pseudo-inertie&quot;</span>, </span>
 <span id="cb569-16"><a href="sect072.html#cb569-16" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Paramètre alpha&quot;</span>,</span>
 <span id="cb569-17"><a href="sect072.html#cb569-17" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Matrice sémantique (noir) et matrice spatiale (rouge)&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphAlpha"></span>
@@ -771,7 +771,12 @@ Figure 7.11: Impact des deux matrices dans la classification
 <span id="cb574-6"><a href="sect072.html#cb574-6" tabindex="-1"></a>                      <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
 <span id="cb574-7"><a href="sect072.html#cb574-7" tabindex="-1"></a>                      <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
 <span id="cb574-8"><a href="sect072.html#cb574-8" tabindex="-1"></a>Carte.ClusteGeo</span></code></pre></div>
-<p><img src="GMQ405_files/figure-html/unnamed-chunk-212-1.png" width="672" /></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphAlpha2"></span>
+<img src="GMQ405_files/figure-html/GraphAlpha2-1.png" alt="Classification ClustGeo avec alpha = 0,30" width="75%" />
+<p class="caption">
+Figure 7.12: Classification ClustGeo avec alpha = 0,30
+</p>
+</div>
 <table>
 <caption>
 <span id="tab:dataClusteGeotab">Tableau 7.3: </span>Valeurs moyennes des variables pour cinq classes obtenues par la ClustGeo (alpha = 0,30)
@@ -901,33 +906,33 @@ Nombre d’IRIS
 </tr>
 </tbody>
 </table>
-<p>La comparaison des typologies obtenues avec la CAH et la ClusteGeo démontre clairement que l’introduction d’une matrice spatiale dans la classification <em>ClustGeo</em> génére des classes qui sont moins discontinues spatialement (figure <a href="sect072.html#fig:ComparaisonCAHClusteo">7.12</a>)</p>
+<p>La comparaison des typologies obtenues avec la CAH et la ClusteGeo démontre clairement que l’introduction d’une matrice spatiale dans la classification <em>ClustGeo</em> génère des classes qui sont moins discontinues spatialement (figure <a href="sect072.html#fig:ComparaisonCAHClusteo">7.13</a>)</p>
 <div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="sect072.html#cb575-1" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte.CAH5, Carte.ClusteGeo, <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ComparaisonCAHClusteo"></span>
 <img src="GMQ405_files/figure-html/ComparaisonCAHClusteo-1.png" alt="Impact des deux matrices dans la classification" width="75%" />
 <p class="caption">
-Figure 7.12: Impact des deux matrices dans la classification
+Figure 7.13: Impact des deux matrices dans la classification
 </p>
 </div>
 </div>
 </div>
 <div id="sect0722" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> <em>Spatial fuzzy c-means</em><a href="sect072.html#sect0722" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>La méthode SFCM (<em>Spatial fuzzy c-means</em>), proposé Weiling Cai et ses collègues <span class="citation">(<a href="#ref-cai2007fast">2007</a>)</span>, est une extension de FCM, soit une version floue de l’algorithme de k-moyennes. Le principe de base est le suivant :</p>
+<p>La méthode SFCM (<em>Spatial fuzzy c-means</em>), proposée par Weiling Cai et ses collègues <span class="citation">(<a href="#ref-cai2007fast">2007</a>)</span>, est une extension de FCM, soit une version floue de l’algorithme des k-moyennes. Le principe de base est le suivant :</p>
 <p>« Comparativement au FCM classique, le SFCM introduit dans son calcul, en plus du jeu de données original (<span class="math inline">\(D_0\)</span>), une version spatialement décalée (<span class="math inline">\(D_s\)</span>) de ce dernier <span class="citation">(<a href="#ref-cai2007fast">Cai, Chen et Zhang 2007</a>)</span>. En analyse d’image, cela revient à calculer <span class="math inline">\(D_s\)</span> en appliquant un filtre moyen ou médian à <span class="math inline">\(D_0\)</span> (la médiane étant moins sensible aux valeurs extrêmes locales). Ce processus peut facilement s’appliquer à des entités géographiques vectorielles, en créant une matrice de pondération spatiale <span class="math inline">\(W_{kl}\)</span> (<em>l</em> étant les voisins de <em>k</em> et la diagonale de cette matrice valant 0) <span class="citation">(<a href="#ref-getis2009spatial">Getis 2009</a>)</span> et en utilisant les poids de cette matrice dans le calcul d’une moyenne ou d’une médiane pondérée locale » <span class="citation">(<a href="#ref-ClassificationFloue">Gelb et Apparicio 2021, 8</a>)</span>.</p>
 <p>Comme pour la méthode <em>ClustGeo</em>, il est possible de fixer une pondération à la dimension spatiale (<span class="math inline">\(D_s\)</span>) avec un paramètre <span class="math inline">\(\alpha\)</span>, qui varie de 0 à <span class="math inline">\(\infty\)</span>. Une valeur de 0 signale qu’aucun poids n’est accordé à la dimension spatiale, ce qui revient à calculer un FCM classique. Si <span class="math inline">\(\alpha=\)</span> =2, alors la version spatialement décalée aura deux fois plus de poids dans la classification que le jeu de données original.</p>
 <div class="bloc_attention">
 <p><strong>Retour sur une variable spatialement décalée</strong></p>
 <p>La notion de variable spatialement décalée a été abordée au chapitre 2 (figure <a href="sect024.html#fig:Chap02FigureVariableSpatialementDecalee">2.20</a>).</p>
-<p><strong>Retour la classification non supervisée k-moyennes (<em>k-means</em>)</strong></p>
+<p><strong>Retour sur la classification non supervisée k-moyennes (<em>k-means</em>)</strong></p>
 <p>Pour une description détaillée de la classification k-moyennes, consultez la <a href="https://laeq.github.io/LivreMethoQuantBolR/sect133.html">section suivante</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>.</p>
 </div>
 <div id="sect07221" class="section level4 hasAnchor" number="7.2.2.1">
-<h4><span class="header-section-number">7.2.2.1</span> Calcul du c-moyennes floue classique (<em>fuzzy c-means</em>)<a href="sect072.html#sect07221" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>À des fins de comparaison avec la CAH, nous proposons de calculer une classification c-moyennes floue classique (<em>fuzzy c-means</em>) avec cinq classes (<em>k</em> = 5). Puis, pour déterminer la valeur optimale de <em>m</em> (soit le degré de logique floue), nous calculons l’inertie expliquée et l’indice de silhouette pour des valeurs de <em>m</em> variant de 1,1 à 3 (avec un incrément de 0,1). Les résultats de ces deux indicateurs présentés à la figure <a href="sect072.html#fig:GraphCmeans">7.13</a> signale que :</p>
+<h4><span class="header-section-number">7.2.2.1</span> Calcul de la classification c-moyennes floue classique (<em>fuzzy c-means</em>)<a href="sect072.html#sect07221" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>À des fins de comparaison avec la CAH, nous proposons de calculer une classification c-moyennes floue classique (<em>fuzzy c-means</em>) avec cinq classes (<em>k</em> = 5). Puis, pour déterminer la valeur optimale de <em>m</em> (soit le degré de logique floue), nous calculons l’inertie expliquée et l’indice de silhouette pour des valeurs de <em>m</em> variant de 1,1 à 3 (avec un incrément de 0,1). Les résultats de ces deux indicateurs, présentés à la figure <a href="sect072.html#fig:GraphCmeans">7.14</a>, signale que :</p>
 <ul>
-<li>plus le paramètre <em>m</em> augmente, plus l’inertie expliquée diminue (figure <a href="sect072.html#fig:GraphCmeans">7.13</a>.a).</li>
-<li>la valeur de l’indice de silhouette est maximal avec <em>m</em> = 1,8 (figure <a href="sect072.html#fig:GraphCmeans">7.13</a>.b).</li>
+<li>plus le paramètre <em>m</em> augmente, plus l’inertie expliquée diminue (figure <a href="sect072.html#fig:GraphCmeans">7.14</a>.a).</li>
+<li>la valeur de l’indice de silhouette est maximale avec <em>m</em> = 1,8 (figure <a href="sect072.html#fig:GraphCmeans">7.14</a>.b).</li>
 </ul>
 <div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="sect072.html#cb576-1" tabindex="-1"></a><span class="fu">library</span>(geocmeans)</span>
 <span id="cb576-2"><a href="sect072.html#cb576-2" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
@@ -958,19 +963,19 @@ Figure 7.12: Impact des deux matrices dans la classification
 <span id="cb578-9"><a href="sect072.html#cb578-9" tabindex="-1"></a>      <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> Silhouette.index)) <span class="sc">+</span></span>
 <span id="cb578-10"><a href="sect072.html#cb578-10" tabindex="-1"></a>      <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> m,  <span class="at">y =</span> Silhouette.index), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
 <span id="cb578-11"><a href="sect072.html#cb578-11" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">title =</span><span class="st">&quot;b. Consistance des groupes&quot;</span>,</span>
-<span id="cb578-12"><a href="sect072.html#cb578-12" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Critère de sihlouette floue&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Paramètre m&quot;</span>)</span>
+<span id="cb578-12"><a href="sect072.html#cb578-12" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Critère de Silhouette floue&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Paramètre m&quot;</span>)</span>
 <span id="cb578-13"><a href="sect072.html#cb578-13" tabindex="-1"></a><span class="co"># Combinaison des deux graphiques dans la figure</span></span>
 <span id="cb578-14"><a href="sect072.html#cb578-14" tabindex="-1"></a><span class="fu">ggarrange</span>(G1, G2)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphCmeans"></span>
 <img src="GMQ405_files/figure-html/GraphCmeans-1.png" alt="Évaluation de la qualité de la classification FCM avec cinq classes selon le degré de flou (m)" width="75%" />
 <p class="caption">
-Figure 7.13: Évaluation de la qualité de la classification FCM avec cinq classes selon le degré de flou (m)
+Figure 7.14: Évaluation de la qualité de la classification FCM avec cinq classes selon le degré de flou (m)
 </p>
 </div>
-<p>Réalisons la classification <em>fuzzy c-means</em> et cartographions les probabilités d’appartenance à chacune des classes (figure <a href="sect072.html#fig:FigureCmeansProb">7.14</a>), puis l’appartenance à une classe (figure <a href="sect072.html#fig:FigureCmeansCluster">7.15</a>).</p>
+<p>Réalisons la classification c-moyennes floue et cartographions les probabilités d’appartenance à chacune des classes (figure <a href="sect072.html#fig:FigureCmeansProb">7.15</a>), puis l’appartenance à une classe (figure <a href="sect072.html#fig:FigureCmeansCluster">7.16</a>).</p>
 <div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="sect072.html#cb579-1" tabindex="-1"></a><span class="do">## Classification du c-means </span></span>
 <span id="cb579-2"><a href="sect072.html#cb579-2" tabindex="-1"></a>FCM <span class="ot">&lt;-</span> <span class="fu">CMeans</span>(DataZscore, <span class="at">k =</span> <span class="dv">5</span>, <span class="at">m =</span> <span class="fl">1.8</span>, <span class="at">tol =</span> <span class="fl">0.0001</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>, <span class="at">seed =</span> <span class="dv">456</span>)</span>
-<span id="cb579-3"><a href="sect072.html#cb579-3" tabindex="-1"></a><span class="do">## calcul des indicateurs de qualité</span></span>
+<span id="cb579-3"><a href="sect072.html#cb579-3" tabindex="-1"></a><span class="do">## Calcul des indicateurs de qualité</span></span>
 <span id="cb579-4"><a href="sect072.html#cb579-4" tabindex="-1"></a><span class="fu">calcqualityIndexes</span>(DataZscore, FCM<span class="sc">$</span>Belongings, <span class="fl">1.5</span>)</span></code></pre></div>
 <pre><code>## $Silhouette.index
 ## [1] 0.5502472
@@ -997,24 +1002,24 @@ Figure 7.13: Évaluation de la qualité de la classification FCM avec cinq class
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureCmeansProb"></span>
 <img src="GMQ405_files/figure-html/FigureCmeansProb-1.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification c-means" width="100%" />
 <p class="caption">
-Figure 7.14: Cartographie des probabilités d’appartenance aux cinq classes avec la classification c-means
+Figure 7.15: Cartographie des probabilités d’appartenance aux cinq classes avec la classification c-means
 </p>
 </div>
 <div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="sect072.html#cb584-1" tabindex="-1"></a>Cartes.FCM<span class="sc">$</span>ClusterPlot</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureCmeansCluster"></span>
-<img src="GMQ405_files/figure-html/FigureCmeansCluster-1.png" alt="Cartographie des des classes issues la classification c-means" width="75%" />
+<img src="GMQ405_files/figure-html/FigureCmeansCluster-1.png" alt="Cartographie des classes issues la classification c-moyennes" width="75%" />
 <p class="caption">
-Figure 7.15: Cartographie des des classes issues la classification c-means
+Figure 7.16: Cartographie des classes issues la classification c-moyennes
 </p>
 </div>
 </div>
 <div id="sect07222" class="section level4 hasAnchor" number="7.2.2.2">
-<h4><span class="header-section-number">7.2.2.2</span> Calcul du c-moyennes floue et spatial (<em>spatial fuzzy c-means</em>)<a href="sect072.html#sect07222" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">7.2.2.2</span> Calcul de la classification c-moyennes floue et spatial (<em>spatial fuzzy c-means</em>)<a href="sect072.html#sect07222" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Dans l’exemple ci-dessous, nous calculons une classification SFCM (<em>spatial fuzzy c-means</em>) avec :</p>
 <ul>
 <li>k = 5, soit cinq classes.</li>
 <li>m = 1,8, soit le degré de logique floue.</li>
-<li>alpha = 0,7, soit le poids accordée à la matrice spatialement décalée comparativement à la matrice de données originale.</li>
+<li>alpha = 0,7, soit le poids accordé à la matrice spatialement décalée comparativement à la matrice de données originale.</li>
 </ul>
 <div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="sect072.html#cb585-1" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
 <span id="cb585-2"><a href="sect072.html#cb585-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -1053,49 +1058,49 @@ Figure 7.15: Cartographie des des classes issues la classification c-means
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-1"></span>
 <img src="GMQ405_files/figure-html/FigureSFCMProb-1.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
 <p class="caption">
-Figure 7.16: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+Figure 7.17: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
 </p>
 </div>
 <div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="sect072.html#cb589-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">2</span>]]</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-2"></span>
 <img src="GMQ405_files/figure-html/FigureSFCMProb-2.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
 <p class="caption">
-Figure 7.17: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+Figure 7.18: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
 </p>
 </div>
 <div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="sect072.html#cb590-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">3</span>]]</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-3"></span>
 <img src="GMQ405_files/figure-html/FigureSFCMProb-3.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
 <p class="caption">
-Figure 7.18: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+Figure 7.19: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
 </p>
 </div>
 <div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="sect072.html#cb591-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">4</span>]]</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-4"></span>
 <img src="GMQ405_files/figure-html/FigureSFCMProb-4.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
 <p class="caption">
-Figure 7.19: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+Figure 7.20: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
 </p>
 </div>
 <div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="sect072.html#cb592-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">5</span>]]</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-5"></span>
 <img src="GMQ405_files/figure-html/FigureSFCMProb-5.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
 <p class="caption">
-Figure 7.20: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+Figure 7.21: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
 </p>
 </div>
 <p><strong>Cartographie des probabilités d’appartenance à chaque classe du SFCM</strong></p>
 <div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="sect072.html#cb593-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ClusterPlot</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMCluster"></span>
-<img src="GMQ405_files/figure-html/FigureSFCMCluster-1.png" alt="Cartographie des des classes issues la classification SFCM" width="75%" />
+<img src="GMQ405_files/figure-html/FigureSFCMCluster-1.png" alt="Cartographie des classes issues de la classification SFCM" width="75%" />
 <p class="caption">
-Figure 7.21: Cartographie des des classes issues la classification SFCM
+Figure 7.22: Cartographie des classes issues de la classification SFCM
 </p>
 </div>
 </div>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RBoldAir" class="csl-entry">
 Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.

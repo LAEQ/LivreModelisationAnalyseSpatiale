@@ -332,7 +332,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec constrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
 <li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
@@ -461,7 +461,7 @@ Modélisation et analyse spatiale</a>
 <h2><span class="header-section-number">6.2</span> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques<a href="sect062.html#sect062" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="sect0621" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Principe de base d’un GAM intégrant l’espace<a href="sect062.html#sect0621" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Les modèles additifs généralisés (<em>Generalized additive models</em> en anglais) permettent d’intégrer à la fois des effets linéaires et des effets non linéaires avec des <em>splines</em>.</p>
+<p>Les modèles généralisés additifs (<em>Generalized additive models</em> en anglais) permettent d’intégrer à la fois des effets linéaires et des effets non linéaires avec des <em>splines</em>.</p>
 <div class="bloc_attention">
 <p><strong>Modèles généralisés additifs</strong></p>
 <p>Pour une description détaillée des modèles généralisés additifs, nous vous invitons vivement à lire le <a href="https://laeq.github.io/LivreMethoQuantBolR/chap11.html">chapitre suivant</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>.</p>
@@ -474,11 +474,11 @@ g(Y) \ = \beta_{0} \ + X\beta + s(CoordX,CoordY) \ + \epsilon
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\(y\)</span>, la variable dépendante</li>
-<li><span class="math inline">\(\beta_{0}\)</span>, la constante</li>
-<li><span class="math inline">\(X\)</span>, les variables indépendantes</li>
-<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes</li>
-<li><span class="math inline">\(s(CoordX,CoordY)\)</span>, <em>spline</em> bivariée sur les coordonnées <em>x</em> et <em>y</em></li>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(\beta_{0}\)</span>, la constante.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes.</li>
+<li><span class="math inline">\(s(CoordX,CoordY)\)</span>, <em>spline</em> bivariée sur les coordonnées <em>x</em> et <em>y</em>.</li>
 <li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
 </ul>
 <p>L’intérêt de recourir à une <em>spline</em> bivariée sur les coordonnées géographiques est double :</p>
@@ -498,11 +498,11 @@ g(Y) \ = \beta_{0} \ + X\beta + s(CoordX,CoordY) \ + \epsilon
 <pre><code>## Warning: st_centroid assumes attributes are constant over geometries</code></pre>
 <div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="sect062.html#cb488-1" tabindex="-1"></a>LyonIris<span class="sc">$</span>X <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
 <span id="cb488-2"><a href="sect062.html#cb488-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>Y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
-<span id="cb488-3"><a href="sect062.html#cb488-3" tabindex="-1"></a><span class="do">## Construction du modèles GAM</span></span>
+<span id="cb488-3"><a href="sect062.html#cb488-3" tabindex="-1"></a><span class="do">## Construction du modèle GAM</span></span>
 <span id="cb488-4"><a href="sect062.html#cb488-4" tabindex="-1"></a>Modele.GAM1 <span class="ot">&lt;-</span> <span class="fu">gam</span>(NO2 <span class="sc">~</span>  Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed<span class="sc">+</span></span>
 <span id="cb488-5"><a href="sect062.html#cb488-5" tabindex="-1"></a>                          <span class="fu">s</span>(X, Y),    <span class="co"># spline sur les coordonnées X, Y</span></span>
 <span id="cb488-6"><a href="sect062.html#cb488-6" tabindex="-1"></a>                    <span class="at">data =</span> LyonIris)  <span class="co"># dataframe</span></span>
-<span id="cb488-7"><a href="sect062.html#cb488-7" tabindex="-1"></a><span class="do">## Résultat du modèle</span></span>
+<span id="cb488-7"><a href="sect062.html#cb488-7" tabindex="-1"></a><span class="do">## Résultats du modèle</span></span>
 <span id="cb488-8"><a href="sect062.html#cb488-8" tabindex="-1"></a><span class="fu">summary</span>(Modele.GAM1)</span></code></pre></div>
 <pre><code>## 
 ## Family: gaussian 
@@ -531,8 +531,8 @@ g(Y) \ = \beta_{0} \ + X\beta + s(CoordX,CoordY) \ + \epsilon
 ## 
 ## R-sq.(adj) =  0.715   Deviance explained = 73.3%
 ## GCV = 18.814  Scale est. = 17.605    n = 506</code></pre>
-<p>Les résultats ci-dessous signalent que la localisation a un effet très significatif puisque (s(X,Y) = 26,5 avec <em>p</em> &lt; 0,001). Notez que la valeur de <em>p</em> permet de déterminer si la <em>spline</em> bivariée (et donc l’espace) a ou non un effet significatif. Si la valeur de <em>p</em> est inférieure à 0,05 alors il n’est pas été nécessaire de conserver la <em>spline</em> bivariée sur les coordonnées géographiquement.</p>
-<p>De plus, le code ci-dessous permet de constater que le modèle GAM est performant que le modèle linéaire multiple classique (MCO).</p>
+<p>Les résultats ci-dessus signalent que la localisation a un effet très significatif puisque (s(X,Y) = 26,5 avec <em>p</em> &lt; 0,001). Notez que la valeur de <em>p</em> permet de déterminer si la <em>spline</em> bivariée (et donc l’espace) a ou non un effet significatif. Si la valeur de <em>p</em> est inférieure à 0,05, alors il n’est pas nécessaire de conserver la <em>spline</em> bivariée sur les coordonnées géographiquement.</p>
+<p>De plus, le code ci-dessous permet de constater que le modèle GAM est plus performant que le modèle linéaire multiple classique (MCO).</p>
 <div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="sect062.html#cb490-1" tabindex="-1"></a><span class="fu">anova</span>(Modele.MCO, Modele.GAM1)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
@@ -592,9 +592,9 @@ g(Y) \ = \beta_{0} \ + X\beta + s(CoordX,CoordY) \ + \epsilon
 Figure 6.6: Visualisation des prédictions dans l’espace avec la fonction <code>vis.gam</code>
 </p>
 </div>
-<p>Toutefois, il est plus intéressant de la représenter dans un <em>raster</em>, une fois contrôlée les autres variables indépendantes. Pour ce faire, six étapes sont nécessaires :</p>
+<p>Toutefois, il est plus intéressant de la représenter dans un <em>raster</em>, une fois contrôlées les autres variables indépendantes. Pour ce faire, six étapes sont nécessaires :</p>
 <ol style="list-style-type: decimal">
-<li>Créer d’une <em>grid</em>.</li>
+<li>Créer une <em>grid</em>.</li>
 <li>Fixer les autres paramètres à leur moyenne respective.</li>
 <li>Calculer la prédiction pour la localisation.</li>
 <li>Centrer la prédiction.</li>
@@ -608,7 +608,7 @@ Figure 6.6: Visualisation des prédictions dans l’espace avec la fonction <cod
 <span id="cb497-5"><a href="sect062.html#cb497-5" tabindex="-1"></a>Ycoords <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(LyonIris<span class="sc">$</span>Y<span class="dv">-100</span>), <span class="fu">max</span>(LyonIris<span class="sc">$</span>Y<span class="sc">+</span><span class="dv">100</span>), <span class="at">by=</span><span class="dv">100</span>)</span>
 <span id="cb497-6"><a href="sect062.html#cb497-6" tabindex="-1"></a>PredDF <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(Xcoords,Ycoords)</span>
 <span id="cb497-7"><a href="sect062.html#cb497-7" tabindex="-1"></a><span class="fu">names</span>(PredDF) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>,<span class="st">&quot;Y&quot;</span>)</span>
-<span id="cb497-8"><a href="sect062.html#cb497-8" tabindex="-1"></a><span class="do">## Étape 2 : fixons tous les autres paramètres à leur moyenne</span></span>
+<span id="cb497-8"><a href="sect062.html#cb497-8" tabindex="-1"></a><span class="do">## Étape 2 : fixation de tous les autres paramètres à leur moyenne</span></span>
 <span id="cb497-9"><a href="sect062.html#cb497-9" tabindex="-1"></a><span class="cf">for</span>(Var <span class="cf">in</span> <span class="fu">c</span>(<span class="st">&quot;VegHautPrt&quot;</span>,<span class="st">&quot;Pct0_14&quot;</span>,<span class="st">&quot;Pct_65&quot;</span>,<span class="st">&quot;Pct_Img&quot;</span>,<span class="st">&quot;Pct_brevet&quot;</span>, <span class="st">&quot;NivVieMed&quot;</span>)){</span>
 <span id="cb497-10"><a href="sect062.html#cb497-10" tabindex="-1"></a>  PredDF[[Var]] <span class="ot">&lt;-</span> <span class="fu">mean</span>(LyonIris[[Var]])</span>
 <span id="cb497-11"><a href="sect062.html#cb497-11" tabindex="-1"></a>}</span>
@@ -620,7 +620,7 @@ Figure 6.6: Visualisation des prédictions dans l’espace avec la fonction <cod
 <span id="cb497-17"><a href="sect062.html#cb497-17" tabindex="-1"></a>rasterGAM <span class="ot">&lt;-</span> <span class="fu">rasterFromXYZ</span>(PredDF[, <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>, <span class="st">&quot;CenterPredPM25&quot;</span>)])</span>
 <span id="cb497-18"><a href="sect062.html#cb497-18" tabindex="-1"></a><span class="fu">crs</span>(rasterGAM) <span class="ot">&lt;-</span> <span class="fu">crs</span>(<span class="fu">as</span>(LyonIris, <span class="st">&quot;Spatial&quot;</span>))</span>
 <span id="cb497-19"><a href="sect062.html#cb497-19" tabindex="-1"></a>rasterGAM <span class="ot">&lt;-</span> <span class="fu">rast</span>(rasterGAM)</span>
-<span id="cb497-20"><a href="sect062.html#cb497-20" tabindex="-1"></a><span class="do">### Étape 6 : découper et cartographier le raster</span></span>
+<span id="cb497-20"><a href="sect062.html#cb497-20" tabindex="-1"></a><span class="do">### Étape 6 : découpage et cartographie du raster</span></span>
 <span id="cb497-21"><a href="sect062.html#cb497-21" tabindex="-1"></a>LyonIris.SpatVector <span class="ot">&lt;-</span> <span class="fu">vect</span>(LyonIris)</span>
 <span id="cb497-22"><a href="sect062.html#cb497-22" tabindex="-1"></a>rasterGAM <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(rasterGAM, LyonIris.SpatVector)</span>
 <span id="cb497-23"><a href="sect062.html#cb497-23" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(rasterGAM)</span></code></pre></div>
@@ -630,11 +630,11 @@ Figure 6.6: Visualisation des prédictions dans l’espace avec la fonction <cod
 Figure 6.7: Visualisation de l’effet de la localisation centrée sur zéro
 </p>
 </div>
-<p>La figure <a href="sect062.html#fig:EffetLocalisation2">6.7</a> signale que dans le centre de Lyon, le dioxyde d’azote est plus élevée de 10 à 20 <span class="math inline">\(\mu\)</span>g/m<sup>3</sup>, toutes choses étant égales par ailleurs. À l’inverse, dans les zones périphériques, il est faible. Cela signale un net patron spatial décroissant du centre vers la périphérie.</p>
+<p>La figure <a href="sect062.html#fig:EffetLocalisation2">6.7</a> signale que dans le centre de Lyon, le dioxyde d’azote est plus élevé de 10 à 20 <span class="math inline">\(\mu\)</span>g/m<sup>3</sup>, toutes choses étant égales par ailleurs. À l’inverse, dans les zones périphériques, il est faible. Cela signale un net patron spatial décroissant du centre vers la périphérie.</p>
 </div>
 <div id="sect06223" class="section level4 hasAnchor" number="6.2.2.3">
 <h4><span class="header-section-number">6.2.2.3</span> Dépendance spatiale du modèle GAM<a href="sect062.html#sect06223" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Par contre, bien que l’autocorrélation spatiale des résidus du modèle GAM soit plus faible que pour le modèle MCO (I de Moran de 0,337 contre 0,570 avec <em>p</em> &lt; 0,001), il reste que le problème de la dépendance spatiale n’est pas corrigé.</p>
+<p>Par contre, bien que l’autocorrélation spatiale des résidus du modèle GAM soit plus faible que pour le modèle MCO (<em>I</em> de Moran de 0,337 contre 0,570 avec <em>p</em> &lt; 0,001), il reste que le problème de la dépendance spatiale n’est pas corrigé.</p>
 <div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="sect062.html#cb498-1" tabindex="-1"></a><span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.GAM2), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Monte-Carlo simulation of Moran I
@@ -648,7 +648,7 @@ Figure 6.7: Visualisation de l’effet de la localisation centrée sur zéro
 </div>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RBoldAir" class="csl-entry">
 Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.

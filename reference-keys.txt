@@ -184,6 +184,7 @@ fig:CAHCoude
 fig:CAHCarto
 tab:dataCAHtab
 fig:GraphAlpha
+fig:GraphAlpha2
 tab:dataClusteGeotab
 fig:ComparaisonCAHClusteo
 fig:GraphCmeans

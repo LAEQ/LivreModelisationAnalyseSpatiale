@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7.1 Méthodes de classification non supervisée avec constrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
+  <title>7.1 Méthodes de classification non supervisée avec contrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7.1 Méthodes de classification non supervisée avec constrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta property="og:title" content="7.1 Méthodes de classification non supervisée avec contrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/introduction/ImageCouverture.png" />
   <meta property="og:description" content="Mettre le description du cours." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7.1 Méthodes de classification non supervisée avec constrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta name="twitter:title" content="7.1 Méthodes de classification non supervisée avec contrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   
   <meta name="twitter:description" content="Mettre le description du cours." />
   <meta name="twitter:image" content="/images/introduction/ImageCouverture.png" />
@@ -332,7 +332,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec constrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
 <li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
@@ -458,8 +458,8 @@ Modélisation et analyse spatiale</a>
 
             <section class="normal" id="section-">
 <div id="sect071" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Méthodes de classification non supervisée avec constrainte spatiale<a href="sect071.html#sect071" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nous avons vu que l’objectif d’une méthode non supervisée appliquée à des données spatiales est de regrouper en <em>n</em> classes les unités spatiales d’une couche géographique. Prenons l’exemple de quatre variables environnementales cartographiés à la figure <a href="sect071.html#fig:figVarEnv">7.1</a> au niveau des IRIS de la ville de Lyon, dont trois considérées comme des nuisances (bruit, dioxyde d’azote et particules fines) et une considérée comme avantageuse (végétation).</p>
+<h2><span class="header-section-number">7.1</span> Méthodes de classification non supervisée avec contrainte spatiale<a href="sect071.html#sect071" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nous avons vu que l’objectif d’une méthode non supervisée appliquée à des données spatiales est de regrouper en <em>n</em> classes les unités spatiales d’une couche géographique. Prenons l’exemple de quatre variables environnementales cartographiés à la figure <a href="sect071.html#fig:figVarEnv">7.1</a> pour les IRIS de la ville de Lyon, dont trois considérées comme des nuisances (bruit, dioxyde d’azote et particules fines) et une considérée comme avantageuse (végétation).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figVarEnv"></span>
 <img src="GMQ405_files/figure-html/figVarEnv-1.png" alt="Cartographie des variables environnementales" width="100%" />
 <p class="caption">
@@ -469,7 +469,7 @@ Figure 7.1: Cartographie des variables environnementales
 <p>Il est possible de regrouper les unités spatiales avec ou sans contrainte spatiale :</p>
 <ul>
 <li><p><strong>Sans contrainte spatiale</strong>, nous cherchons à regrouper les IRIS (unités spatiales) avec des valeurs similaires pour les quatre variables retenues (L<sub>den</sub>, NO<sub>2</sub>, PM<sub>2,5</sub> et pourcentage de canopée). Cette approche est illustrée à la figure <a href="sect071.html#fig:figKmeansSkater">7.2</a>.a avec l’algorithme k-moyennes (<em>k-means</em> en anglais) avec cinq classes.</p></li>
-<li><p><strong>Avec contrainte spatiale</strong>, nous cherchons à regrouper les IRIS (unités spatiales) avec des valeurs similaires pour les quatre variables retenues, tout en nous assurant que les regroupements forment des régions avec une absence de mitage. Cette approche est illustrée à la figure <a href="sect071.html#fig:figKmeansSkater">7.2</a>.b avec l’algorithme SKATER (<em>Spatial ’K’luster Analysis by Tree Edge Removal</em>) avec cinq classes. Autrement dit, l’objectif des méthodes de classification non supervisée avec constrainte spatiale est d’agréger <em>n</em> unités spatiales en <em>m</em> régions non discontinues (avec <em>n</em> &lt; <em>m</em>) <span class="citation">(<a href="#ref-openshaw1995algorithms">Openshaw et Rao 1995, 428</a>)</span>.</p></li>
+<li><p><strong>Avec contrainte spatiale</strong>, nous cherchons à regrouper les IRIS (unités spatiales) avec des valeurs similaires pour les quatre variables retenues, tout en nous assurant que les regroupements forment des régions avec une absence de mitage. Cette approche est illustrée à la figure <a href="sect071.html#fig:figKmeansSkater">7.2</a>.b avec l’algorithme SKATER (<em>Spatial ’K’luster Analysis by Tree Edge Removal</em>) avec cinq classes. Autrement dit, l’objectif des méthodes de classification non supervisée avec contrainte spatiale est d’agréger <em>n</em> unités spatiales en <em>m</em> régions non discontinues (avec <em>n</em> &lt; <em>m</em>) <span class="citation">(<a href="#ref-openshaw1995algorithms">Openshaw et Rao 1995, 428</a>)</span>.</p></li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figKmeansSkater"></span>
 <img src="GMQ405_files/figure-html/figKmeansSkater-1.png" alt="Classification non supervisée avec et sans contrainte spatiale" width="85%" />
@@ -484,22 +484,22 @@ Figure 7.2: Classification non supervisée avec et sans contrainte spatiale
 </div>
 <p>Les principaux algorithmes de classification supervisée avec contrainte spatiale (<em>Spatially Constrained Clustering Methods</em> en anglais) sont :</p>
 <ul>
-<li>La méthode de zonage automatique (<em>Automatic Zoning Procedure</em> en anglais) (AZP) proposée Openshaw <span class="citation">(<a href="#ref-openshaw1977geographical">1977</a>)</span>, puis améliorée par Openshaw et Rao <span class="citation">(<a href="#ref-openshaw1995algorithms">1995</a>)</span>.</li>
+<li>La méthode de zonage automatique (<em>Automatic Zoning Procedure</em> en anglais) (AZP) proposée par Openshaw <span class="citation">(<a href="#ref-openshaw1977geographical">1977</a>)</span>, puis améliorée par Openshaw et Rao <span class="citation">(<a href="#ref-openshaw1995algorithms">1995</a>)</span>.</li>
 <li>L’algorithme SKATER (<em>Spatial ’K’luster Analysis by Tree Edge Removal</em>) <span class="citation">(<a href="#ref-assunccao2006efficient">Assunção et al. 2006</a>)</span>.</li>
 <li>L’Algorithme REDCAP (<em>Regionalization with dynamically constrained agglomerative clustering and partitioning</em>) <span class="citation">(<a href="#ref-guo2008regionalization">Guo 2008</a>)</span>.</li>
 <li>L’Algorithme du <em>max-p-regions problem</em> <span class="citation">(<a href="#ref-duque2012max">Duque, Anselin et Rey 2012</a>)</span>.</li>
 </ul>
-<p>Pour mettre en œuvre ces différents algorithmes, nous utilisons le <em>package</em> <code>rgeoda</code> <span class="citation">(<a href="#ref-packagergeoda">Li et Anselin 2023</a>)</span>. Notez que l’algorithme Skater est aussi implémenté dans le <em>package</em> <code>spded</code> (fonction <code>skater</code>).</p>
+<p>Pour mettre en œuvre ces différents algorithmes, nous utilisons le <em>package</em> <code>rgeoda</code> <span class="citation">(<a href="#ref-packagergeoda">Li et Anselin 2023</a>)</span>. Notez que l’algorithme SKATER est aussi implémenté dans le <em>package</em> <code>spded</code> (fonction <code>skater</code>).</p>
 <div id="sect0711" class="section level3 hasAnchor" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Algorithmes AZP<a href="sect071.html#sect0711" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>L’algorithme AZP (<em>Automatic Zoning Problem</em>) est une approche itérative et heuristique visant à regrouper des polygones adjacents en <em>m</em> régions, tout en maximisant la variance intrarégionale (variance interclasse) et minimisant la variance intrarégionale (variance intraclasse) calculées sur les <em>p</em> variables. Autrement dit, il vise à créer des régions non discontinues les plus homogènes possibles et les plus dissemblables entre elles sur la base des <em>p</em> variables. Pour utiliser l’AZP, il faut spécifier le nombre de régions (<em>m</em>) désiré. Notez qu’il existe trois algorithmes pour l’AZP :</p>
+<p>L’algorithme AZP (<em>Automatic Zoning Problem</em>) est une approche itérative et heuristique visant à regrouper des polygones adjacents en <em>m</em> régions, tout en maximisant la variance interrégionale (variance interclasse) et minimisant la variance intrarégionale (variance intraclasse) calculées sur les <em>p</em> variables. Autrement dit, il vise à créer des régions non discontinues les plus homogènes possibles et les plus dissemblables entre elles sur la base des <em>p</em> variables. Pour utiliser l’AZP, il faut spécifier le nombre de régions (<em>m</em>) désiré. Notez qu’il existe trois algorithmes pour l’AZP :</p>
 <ol style="list-style-type: decimal">
 <li>AZP (<em>Automatic Zoning Procedure</em>), soit la première version par Stan Openshaw <span class="citation">(<a href="#ref-openshaw1977geographical">1977</a>)</span>.</li>
 <li>AZP-SA (<em>A simulated annealing AZP method</em>) <span class="citation">(<a href="#ref-openshaw1995algorithms">Openshaw et Rao 1995</a>)</span>.</li>
-<li>AZP-TABU (<em>A tabu search heuritic version of AZP</em>) <span class="citation">(<a href="#ref-openshaw1995algorithms">Openshaw et Rao 1995</a>)</span>.</li>
+<li>AZP-TABU (<em>A tabu search heuristic version of AZP</em>) <span class="citation">(<a href="#ref-openshaw1995algorithms">Openshaw et Rao 1995</a>)</span>.</li>
 </ol>
-<p>Pour une description détaillée de ces trois algorithmes, on pourra consulter Openshaw et Rao <span class="citation">(<a href="#ref-openshaw1995algorithms">1995</a>)</span> ou encore le <a href="https://geodacenter.github.io/workbook/9d_spatial4/lab9d.html#principle">lien suivant</a>.</p>
-<p>Appliquons ces algorithmes aux 506 IRIS de la ville de Lyon avec les quatre variables environnementales préalablement centrées réduites (bruit, dioxyde d’azote et particules fines et pourcentage de végétation) et une matrice de contiguïté selon le partage d’un nœud. Le <em>package</em> <code>rgeoda</code> comprend trois fonctions pour l’AZP : <code>azp_greedy</code> (AZP), <code>azp_sa</code> (AZP-SA), <code>azp_tabu</code> (AZP-TABU). Pour l’exercice, nous fixons le nombre de régions à 5. Notez que par défaut, les variables seront centrées réduites (moyenne = 0 et écart-type = 1) avec le paramètre <code>scale_method="standardize"</code>.</p>
+<p>Pour une description détaillée de ces trois algorithmes, vous pouvez consulter Openshaw et Rao <span class="citation">(<a href="#ref-openshaw1995algorithms">1995</a>)</span> ou encore le <a href="https://geodacenter.github.io/workbook/9d_spatial4/lab9d.html#principle">lien suivant</a>.</p>
+<p>Appliquons ces algorithmes aux 506 IRIS de la ville de Lyon avec les quatre variables environnementales préalablement centrées réduites (bruit, dioxyde d’azote, particules fines et pourcentage de végétation) et une matrice de contiguïté selon le partage d’un nœud. Le <em>package</em> <code>rgeoda</code> comprend trois fonctions pour l’AZP : <code>azp_greedy</code> (AZP), <code>azp_sa</code> (AZP-SA), <code>azp_tabu</code> (AZP-TABU). Pour l’exercice, nous fixons le nombre de régions à 5. Notez que par défaut, les variables seront centrées réduites (moyenne = 0 et écart-type = 1) avec le paramètre <code>scale_method="standardize"</code>.</p>
 <div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="sect071.html#cb526-1" tabindex="-1"></a><span class="fu">library</span>(rgeoda)</span>
 <span id="cb526-2"><a href="sect071.html#cb526-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb526-3"><a href="sect071.html#cb526-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
@@ -550,21 +550,21 @@ Figure 7.3: Regroupements des 505 IRIS en cinq régions selon les trois algorith
 </div>
 <p>Par la suite, nous comparons les résultats obtenus des trois algorithmes en reportant :</p>
 <ol style="list-style-type: decimal">
-<li>Les variances totale, intrarégionale et interégionale, et surtout le ratio entre les variances intergroupe et totale. Ce ratio varie de 0 à 1 et exprime la proportion de la variance des variables qui est expliquée par les différentes régions obtenues; plus il est élevé, meilleur est le résultat. Par conséquent, il peut être utilisé pour identifier la solution optimale entre les trois algorithmes.</li>
+<li>Les variances totale, intrarégionale et interrégionale, et surtout le ratio entre les variances intergroupe et totale. Ce ratio varie de 0 à 1 et exprime la proportion de la variance des variables qui est expliquée par les différentes régions obtenues; plus il est élevé, meilleur est le résultat. Par conséquent, il peut être utilisé pour identifier la solution optimale entre les trois algorithmes.</li>
 <li>Le nombre d’observations par région.</li>
 <li>Les valeurs moyennes des variables centrées réduites par région.</li>
 </ol>
 <div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="sect071.html#cb528-1" tabindex="-1"></a><span class="do">## Calcul du ratio entre les variances intergroupes et totale</span></span>
-<span id="cb528-2"><a href="sect071.html#cb528-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Ratio des variances interégionale et totale&quot;</span>,</span>
+<span id="cb528-2"><a href="sect071.html#cb528-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Ratio des variances interrégionale et totale&quot;</span>,</span>
 <span id="cb528-3"><a href="sect071.html#cb528-3" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">AZP : &quot;</span>, <span class="fu">round</span>(azp<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>, <span class="dv">3</span>),</span>
 <span id="cb528-4"><a href="sect071.html#cb528-4" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">AZP-SA : &quot;</span>, <span class="fu">round</span>(azp.sa<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>, <span class="dv">3</span>),</span>
 <span id="cb528-5"><a href="sect071.html#cb528-5" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">AZP-TABU : &quot;</span>, <span class="fu">round</span>(azp.tab<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>, <span class="dv">3</span>)</span>
 <span id="cb528-6"><a href="sect071.html#cb528-6" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## Ratio des variances interégionale et totale 
+<pre><code>## Ratio des variances interrégionale et totale 
 ## AZP :  0.436 
 ## AZP-SA :  0.518 
 ## AZP-TABU :  0.428</code></pre>
-<p>À la lecture des valeurs du ratio entre la variance interégionale et la variance totale ci-dessus, celle la plus élevée est obtenue pour l’AZP-SA (0,518), suivies de celles de l’AZP (0,436) et de l’AZP-TABU (0,428). Nous retenons alors l’AZP-SA.</p>
+<p>À la lecture des valeurs du ratio entre la variance interrégionale et la variance totale ci-dessus, celle la plus élevée est obtenue pour l’AZP-SA (0,518), suivies de celles de l’AZP (0,436) et de l’AZP-TABU (0,428). Nous retenons alors l’AZP-SA.</p>
 <div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="sect071.html#cb530-1" tabindex="-1"></a><span class="do">## Nombre d&#39;observations par région</span></span>
 <span id="cb530-2"><a href="sect071.html#cb530-2" tabindex="-1"></a><span class="fu">table</span>(LyonIris<span class="sc">$</span>Azp)</span></code></pre></div>
 <pre><code>## 
@@ -603,10 +603,10 @@ Figure 7.3: Regroupements des 505 IRIS en cinq régions selon les trois algorith
 ## 3       3 53.19298 23.97221 14.99671   31.90967
 ## 4       4 52.26742 22.99701 14.58065   20.39444
 ## 5       5 48.32861 17.74683 12.84853   31.68364</code></pre>
-<p>Les résultats finaux de l’AZP-SA sont présentés au tableau <a href="sect071.html#tab:dataAZPsa">7.1</a> et la figure <a href="sect071.html#fig:CartoAZPsa">7.4</a>. L’analyse conjointe du tableau et de la carte permet ainsi d’interpréter chacune des classes. En guise d’exemple, nous pouvons conclure que :</p>
+<p>Les résultats finaux de l’AZP-SA sont présentés au tableau <a href="sect071.html#tab:dataAZPsa">7.1</a> et à la figure <a href="sect071.html#fig:CartoAZPsa">7.4</a>. L’analyse conjointe du tableau et de la carte permet ainsi d’interpréter chacune des classes. En guise d’exemple, nous pouvons conclure que :</p>
 <ul>
-<li><strong>La région 1</strong> comprend 221 IRIS localisés au centre de la ville de Lyon et caractérisés par des niveaux moyens élevés de bruit (54,7), de dioxyde d’azote (35) et particules fines (18,8) élevés et un faible pourcentage de canopée (14,4%),</li>
-<li>tandis que <strong>la région 3</strong> comprend 107 IRIS localisés à l’extrême ouest de la ville et caractérisés par les plus faibles niveaux de polluants (51,1, 20,5 et 14,2) et la forte moyenne pour la canopée (28,7%).</li>
+<li><strong>la région 1</strong> comprend 221 IRIS localisés au centre de la ville de Lyon et caractérisés par des niveaux moyens élevés de bruit (57,4), de dioxyde d’azote (35) et de particules fines (18,8) élevés et un faible pourcentage de canopée (14,4%),</li>
+<li>tandis que <strong>la région 2</strong> comprend 107 IRIS localisés à l’extrême ouest de la ville et caractérisés par les plus faibles niveaux de polluants (51,1, 20,5 et 14,2) et une forte moyenne pour la canopée (28,7%).</li>
 </ul>
 <table>
 <caption>
@@ -738,12 +738,12 @@ Nombre d’IRIS
 </tbody>
 </table>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoAZPsa"></span>
-<img src="GMQ405_files/figure-html/CartoAZPsa-1.png" alt="Regroupement des IRIS en quatre régions selon l'AZP-TABU" width="100%" />
+<img src="GMQ405_files/figure-html/CartoAZPsa-1.png" alt="Regroupement des IRIS en cinq régions selon l'AZP-TABU" width="100%" />
 <p class="caption">
-Figure 7.4: Regroupement des IRIS en quatre régions selon l’AZP-TABU
+Figure 7.4: Regroupement des IRIS en cinq régions selon l’AZP-TABU
 </p>
 </div>
-<p>Nous avons vu que pour les algorithmes AZP, il faut spécifier le nombre de régions. Nous l’avons fixé arbitrairement à 5. Comme pour n’importe quelle méthode de classification non supervisée, déterminer le nombre de classes optimal est une étape cruciale qui peut s’appuyer sur différentes techniques, dont la méthode du coude basée sur l’inertie expliquée (ici le ratio entre la variance interégionale et totale), l’indicateur de silhouette et la méthode GAP. Pour une description détaillée de ces méthodes, consultez la <a href="https://laeq.github.io/LivreMethoQuantBolR/sect133.html#sect1332">section suivante</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>. Le code ci-dessous permet de réaliser un graphique avec les valeurs du ratio (inertie expliquée) par l’algorithme AZP-TABU calculée de 2 à 10 régions. À la lecture de la figure <a href="sect071.html#fig:AZPCoude">7.5</a>, nous observons deux ruptures (coudes) très nettes à 5 et 8.</p>
+<p>Nous avons vu que pour les algorithmes AZP, il faut spécifier le nombre de régions. Nous l’avons fixé arbitrairement à 5. Comme pour n’importe quelle méthode de classification non supervisée, déterminer le nombre de classes optimal est une étape cruciale qui peut s’appuyer sur différentes techniques, dont la méthode du coude basée sur l’inertie expliquée (ici le ratio entre les variances interrégionale et totale), l’indicateur de silhouette et la méthode GAP. Pour une description détaillée de ces méthodes, consultez la <a href="https://laeq.github.io/LivreMethoQuantBolR/sect133.html#sect1332">section suivante</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>. Le code ci-dessous permet de réaliser un graphique avec les valeurs du ratio (inertie expliquée) obtenues avec l’algorithme AZP-TABU calculé de 2 à 10 régions. À la lecture de la figure <a href="sect071.html#fig:AZPCoude">7.5</a>, nous observons deux ruptures (coudes) très nettes à 5 et 8.</p>
 <div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="sect071.html#cb542-1" tabindex="-1"></a>nregions <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb542-2"><a href="sect071.html#cb542-2" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(<span class="fu">st_drop_geometry</span>(LyonIris)[VarsEnv]))</span>
 <span id="cb542-3"><a href="sect071.html#cb542-3" tabindex="-1"></a>queen_w <span class="ot">&lt;-</span> <span class="fu">queen_weights</span>(LyonIris)</span>
@@ -772,12 +772,12 @@ Figure 7.5: Méthode du coude reposant sur l’inertie expliquée pour l’AZP-T
 <p>L’algorithme SKATER (<em>Spatial ’K’luster Analysis by Tree Edge Removal</em>) <span class="citation">(<a href="#ref-assunccao2006efficient">Assunção et al. 2006</a>)</span> permet aussi de créer des régions sans discontinuité, en recourant à une technique de la théorie des graphes, soit celle de l’arbre couvrant de poids minimal (<em>minimum spanning tree</em>). Succinctement, la classification est obtenue avec les étapes suivantes :</p>
 <ol style="list-style-type: decimal">
 <li>Création d’un graphe de connectivité pour les polygones de la couche géographique. Dans ce graphe, les nœuds sont les centroïdes des polygones et les arêtes représentent les liaisons entre deux entités spatiales voisines.</li>
-<li>Pour chaque arête, nous calculons la dissimilarité (appelée coût) deux polygones voisins en fonction des <em>p</em> variables.</li>
+<li>Pour chaque arête, nous calculons la dissimilarité (appelée coût) des deux polygones voisins en fonction des <em>p</em> variables.</li>
 <li>Pour chaque polygone, nous retenons l’arête avec le coût minimal. Autrement dit, pour chaque polygone, nous retenons son polygone voisin qui lui est le plus semblable selon les <em>p</em> variables. Nous obtenons ainsi l’arbre couvrant de poids minimal.</li>
 <li>Cet arbre est ensuite élagué en supprimant les arêtes avec les plus forts coûts et en créant ainsi des sous-graphes en <em>m</em> régions sans discontinuité.</li>
 </ol>
 <p>Pour une description plus détaillée de l’algorithme, consultez l’article d’Assunção <em>et al.</em> <span class="citation">(<a href="#ref-assunccao2006efficient">2006</a>)</span>.</p>
-<p>Le code ci-dessous permet de centrer et réduire les quatre variables (fonction <code>scale</code>) et de construire la matrice de voisinage entre les polygones de la couche <code>LyonIris</code> (fonction <code>poly2nb</code> de <code>spdep</code>).</p>
+<p>Le code ci-dessous permet de centrer et de réduire les quatre variables (fonction <code>scale</code>) et de construire la matrice de voisinage entre les polygones de la couche <code>LyonIris</code> (fonction <code>poly2nb</code> de <code>spdep</code>).</p>
 <div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="sect071.html#cb543-1" tabindex="-1"></a><span class="fu">library</span>(rgdal)</span>
 <span id="cb543-2"><a href="sect071.html#cb543-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
 <span id="cb543-3"><a href="sect071.html#cb543-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
@@ -790,7 +790,7 @@ Figure 7.5: Méthode du coude reposant sur l’inertie expliquée pour l’AZP-T
 <span id="cb543-10"><a href="sect071.html#cb543-10" tabindex="-1"></a>LyonIrisZscore <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(Data))</span>
 <span id="cb543-11"><a href="sect071.html#cb543-11" tabindex="-1"></a><span class="do">## Matrice voisinage</span></span>
 <span id="cb543-12"><a href="sect071.html#cb543-12" tabindex="-1"></a>Lyon.nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris)</span></code></pre></div>
-<p>Calculons les coûts pour les arêtes reliant les nœuds avec la fonction <code>nbcosts</code>. Nous constatons que le polygone 1 est voisin des polygones 27, 26, 44 et 74 avec des coûts de 1,354, 1,74, 1,15 et 16,3. Par conséquent, parmi ses quatre voisins, le polygone 1 est le plus semblable au polygone 44 (coût minimal).</p>
+<p>Calculons les coûts pour les arêtes reliant les nœuds avec la fonction <code>nbcosts</code>. Nous constatons que le polygone 1 est voisin des polygones 27, 26, 44 et 74 avec des coûts de 1,34, 1,74, 1,15 et 16,3. Par conséquent, parmi ses quatre voisins, le polygone 1 est le plus semblable au polygone 44 (coût minimal).</p>
 <div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="sect071.html#cb544-1" tabindex="-1"></a><span class="do">## Calcul des coûts pour les arêtes</span></span>
 <span id="cb544-2"><a href="sect071.html#cb544-2" tabindex="-1"></a>lcosts <span class="ot">&lt;-</span> <span class="fu">nbcosts</span>(Lyon.nb, LyonIrisZscore)</span>
 <span id="cb544-3"><a href="sect071.html#cb544-3" tabindex="-1"></a><span class="fu">head</span>(Lyon.nb, <span class="at">n=</span><span class="dv">1</span>)</span></code></pre></div>
@@ -801,9 +801,9 @@ Figure 7.5: Méthode du coude reposant sur l’inertie expliquée pour l’AZP-T
 ## [1] 1.343210 1.735894 1.153787 1.632583</code></pre>
 <p>À partir de ces coûts, nous pouvons trouver l’arbre couvrant de poids minimal (<em>minimum spanning tree</em>), objet dénommée ici <code>Lyon.mst</code> qui comprend trois colonnes :</p>
 <ul>
-<li>la première pour l’identifiant du polygone</li>
-<li>la seconde pour l’identifiant du polygone voisin</li>
-<li>la troisième pour la valeur du coût minimal (similarité selon les variables retenues).</li>
+<li>La première pour l’identifiant du polygone.</li>
+<li>La seconde pour l’identifiant du polygone voisin.</li>
+<li>La troisième pour la valeur du coût minimal (similarité selon les variables retenues).</li>
 </ul>
 <div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="sect071.html#cb548-1" tabindex="-1"></a><span class="do">## Matrice de pondération spatiale avec les coûts</span></span>
 <span id="cb548-2"><a href="sect071.html#cb548-2" tabindex="-1"></a>Lyon.w <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Lyon.nb, lcosts, <span class="at">style=</span><span class="st">&quot;B&quot;</span>)</span>
@@ -814,7 +814,7 @@ Figure 7.5: Méthode du coude reposant sur l’inertie expliquée pour l’AZP-T
 ## [1,]  499  478 0.5025378
 ## [2,]  478   46 0.4618205
 ## [3,]   46    7 1.3665949</code></pre>
-<p>Le code ci-dessous de visualiser le graphe de connectivité et l’arbre couvrant de poids minimal (figure <a href="sect071.html#fig:ArbreMinimum">7.6</a>).</p>
+<p>Le code ci-dessous permet de visualiser le graphe de connectivité et l’arbre couvrant de poids minimal (figure <a href="sect071.html#fig:ArbreMinimum">7.6</a>).</p>
 <div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="sect071.html#cb550-1" tabindex="-1"></a><span class="do">## Visualisation du graphe de connectivité </span></span>
 <span id="cb550-2"><a href="sect071.html#cb550-2" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(LyonIris))</span>
 <span id="cb550-3"><a href="sect071.html#cb550-3" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(LyonIris), <span class="at">border=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;wheat&quot;</span>)</span>
@@ -828,8 +828,8 @@ Figure 7.5: Méthode du coude reposant sur l’inertie expliquée pour l’AZP-T
 Figure 7.6: Graphe de connectivité et arbre couvrant de poids minimal
 </p>
 </div>
-<p>Le code ci-dessous permet de réaliser une classification Skater avec cinq régions avec le <em>package</em> <code>spdep</code>.</p>
-<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="sect071.html#cb551-1" tabindex="-1"></a><span class="do">## Skater avec le package spdep</span></span>
+<p>Le code ci-dessous permet de réaliser une classification SKATER avec cinq régions avec le <em>package</em> <code>spdep</code>.</p>
+<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="sect071.html#cb551-1" tabindex="-1"></a><span class="do">## SKATER avec le package spdep</span></span>
 <span id="cb551-2"><a href="sect071.html#cb551-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123456789</span>)</span>
 <span id="cb551-3"><a href="sect071.html#cb551-3" tabindex="-1"></a>skater5.spdep <span class="ot">&lt;-</span> spdep<span class="sc">::</span><span class="fu">skater</span>(<span class="at">edges =</span> Lyon.mst[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="co"># deux première colonnes de l&#39;arbre </span></span>
 <span id="cb551-4"><a href="sect071.html#cb551-4" tabindex="-1"></a>                               <span class="at">data =</span> <span class="fu">data.frame</span>(LyonIrisZscore),</span>
@@ -839,8 +839,8 @@ Figure 7.6: Graphe de connectivité et arbre couvrant de poids minimal
 <pre><code>## 
 ##   1   2   3   4   5 
 ##  48 215  89  57  97</code></pre>
-<p>Toutefois, il est plus simple d’utiliser la fonction <code>skater</code> de <code>rgeoda</code> qui ne nécessite pas de créer au prélable l’arbre couvrant de poids minimal.</p>
-<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="sect071.html#cb553-1" tabindex="-1"></a><span class="do">## Skater avec le package rgeoda</span></span>
+<p>Toutefois, il est plus simple d’utiliser la fonction <code>skater</code> de <code>rgeoda</code> qui ne nécessite pas de créer au préalable l’arbre couvrant de poids minimal.</p>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="sect071.html#cb553-1" tabindex="-1"></a><span class="do">## SKATER avec le package rgeoda</span></span>
 <span id="cb553-2"><a href="sect071.html#cb553-2" tabindex="-1"></a><span class="fu">library</span>(rgeoda)</span>
 <span id="cb553-3"><a href="sect071.html#cb553-3" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(LyonIris[VarsEnv])</span>
 <span id="cb553-4"><a href="sect071.html#cb553-4" tabindex="-1"></a>queen_w <span class="ot">&lt;-</span> <span class="fu">queen_weights</span>(LyonIris)</span>
@@ -859,24 +859,24 @@ Figure 7.6: Graphe de connectivité et arbre couvrant de poids minimal
 <span id="cb555-4"><a href="sect071.html#cb555-4" tabindex="-1"></a>Carte.SkaterA <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
 <span id="cb555-5"><a href="sect071.html#cb555-5" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;skater5spdep&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
 <span id="cb555-6"><a href="sect071.html#cb555-6" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb555-7"><a href="sect071.html#cb555-7" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;a. Skater spdep&quot;</span>, </span>
+<span id="cb555-7"><a href="sect071.html#cb555-7" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;a. SKATER spdep&quot;</span>, </span>
 <span id="cb555-8"><a href="sect071.html#cb555-8" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
 <span id="cb555-9"><a href="sect071.html#cb555-9" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
 <span id="cb555-10"><a href="sect071.html#cb555-10" tabindex="-1"></a>Carte.SkaterB <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
 <span id="cb555-11"><a href="sect071.html#cb555-11" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;skater5rgeoda&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
 <span id="cb555-12"><a href="sect071.html#cb555-12" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb555-13"><a href="sect071.html#cb555-13" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;b. Skater rgeoda&quot;</span>, </span>
+<span id="cb555-13"><a href="sect071.html#cb555-13" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;b. SKATER rgeoda&quot;</span>, </span>
 <span id="cb555-14"><a href="sect071.html#cb555-14" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
 <span id="cb555-15"><a href="sect071.html#cb555-15" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
 <span id="cb555-16"><a href="sect071.html#cb555-16" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte.SkaterA, Carte.SkaterB)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:SkaterAB"></span>
-<img src="GMQ405_files/figure-html/SkaterAB-1.png" alt="Résultats de l'algorithme Skater avec cinq classes obtenus avec les *packages* `spdep` et `rgeoda`" width="85%" />
+<img src="GMQ405_files/figure-html/SkaterAB-1.png" alt="Résultats de l'algorithme SKATER avec cinq classes obtenus avec les *packages* `spdep` et `rgeoda`" width="85%" />
 <p class="caption">
-Figure 7.7: Résultats de l’algorithme Skater avec cinq classes obtenus avec les <em>packages</em> <code>spdep</code> et <code>rgeoda</code>
+Figure 7.7: Résultats de l’algorithme SKATER avec cinq classes obtenus avec les <em>packages</em> <code>spdep</code> et <code>rgeoda</code>
 </p>
 </div>
 <div class="bloc_aller_loin">
-<p><strong>Algorithme Skater avec un seuil minimal pour les classes</strong></p>
+<p><strong>Algorithme SKATER avec un seuil minimal pour les classes</strong></p>
 <p>Dans une classification non supervisée avec une contrainte spatiale, il est possible de fixer un seuil minimal pour chaque région à partir d’une variable. L’exemple le plus classique est l’obtention de <em>p</em> régions qui doivent au moins avoir un nombre d’habitants fixé par la personne utilisatrice. Pour ce faire, nous utilisons deux paramètres de la fonction <code>spdep::skater</code>, soit <code>crit = 50000</code> pour fixer le seuil et <code>vec.crit = df$Population</code> pour indiquer le vecteur sur lequel est calculé le critère.</p>
 <div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="sect071.html#cb556-1" tabindex="-1"></a><span class="st">`</span><span class="at">clus10_min &lt;- spdep::skater(edges = ct_mst[,1:2], </span></span>
 <span id="cb556-2"><a href="sect071.html#cb556-2" tabindex="-1"></a><span class="at">                     data = dfs,               # dataframe avec les variables centrées réduites</span></span>
@@ -886,23 +886,23 @@ Figure 7.7: Résultats de l’algorithme Skater avec cinq classes obtenus avec l
 <p><strong>Fonction skater : différences entre les <em>packages</em> rgeoda et spdep</strong></p>
 <p>La fonction <code>skater</code> de <code>rgeoda</code> a deux principaux avantages :</p>
 <ol style="list-style-type: decimal">
-<li>Comme décrit précédemment, l’avantage de la fonction <code>skater</code> de <code>rgeoda</code> est qu’elle ne nécessite pas de calculer au prélable l’arbre couvrant de poids minimal.</li>
-<li>scale_method = c(“raw”, “standardize”, “demean”, “mad”, “range_standardize”, “range_adjust”) permet de transformer directement les variables. La méthode par défaut est la cote z (moyenne =  et écart-type = 1).</li>
+<li>Comme décrit précédemment, l’avantage de la fonction <code>skater</code> de <code>rgeoda</code> est qu’elle ne nécessite pas de calculer au préalable l’arbre couvrant de poids minimal.</li>
+<li>scale_method = c(“raw”, “standardize”, “demean”, “mad”, “range_standardize”, “range_adjust”) permet de transformer directement les variables. La méthode par défaut est la cote z (moyenne = 0 et écart-type = 1).</li>
 </ol>
 <p>Avec la fonction <code>skater</code> de <code>spdep</code>, vous devez préalablement transformer vos variables et construire l’arbre couvrant de poids minimal. Par contre, elle intègre de nombreux types de distance pour évaluer la dissimilarité entre les unités spatiales avec le paramètre <code>method = c("euclidean",  "maximum", "manhattan", "canberra", "binary", "minkowski",  "mahalanobis")</code> tandis que le paramètre <code>distance_method = c("euclidean", "manhattan")</code> de <code>rgeoda</code> ne comprend que deux types de distance.</p>
 </div>
 </div>
 <div id="sect0713" class="section level3 hasAnchor" number="7.1.3">
 <h3><span class="header-section-number">7.1.3</span> Algorithmes REDCAP<a href="sect071.html#sect0713" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Les différentes versions de l’algorithme REDCAP (<em>Regionalization with dynamically constrained agglomerative clustering and partitioning</em>) proposé par Diansheng Guo <span class="citation">(<a href="#ref-guo2008regionalization">2008</a>)</span> sont aussi basées sur la construction d’un arbre (<em>spanning tree</em>) dont l’élagage est obtenue de cinq différentes façons :</p>
+<p>Les différentes versions de l’algorithme REDCAP (<em>Regionalization with dynamically constrained agglomerative clustering and partitioning</em>) proposé par Diansheng Guo <span class="citation">(<a href="#ref-guo2008regionalization">2008</a>)</span> sont aussi basées sur la construction d’un arbre (<em>spanning tree</em>) dont l’élagage est obtenu de cinq différentes façons :</p>
 <ul>
-<li>Premier ordre et saut minimal (<em>First-order and Single-linkage</em>) qui fournit un résultats identique à l’algorithme skater.</li>
+<li>Premier ordre et saut minimal (<em>First-order and Single-linkage</em>) qui fournit un résultats identique à l’algorithme SKATER.</li>
 <li>Ordre complet et saut maximal (<em>Full-order and Complete-linkage</em>).</li>
 <li>Ordre complet et saut moyen (<em>Full-order and Average-linkage</em>).</li>
 <li>Ordre complet et saut minimal (<em>Full-order and Single-linkage</em>).</li>
 <li>Ordre complet et critère de Ward (<em>Full-order and Ward-linkage</em>).</li>
 </ul>
-<p>Le code ci-dessous permet de calculer les cinq versions de l’algorithmes REDCAP avec cinq régions et de comparer leurs résultats à partir du ratio (entre les variances interrégionale et totale) et du nombre d’observations par région</p>
+<p>Le code ci-dessous permet de calculer les cinq versions de l’algorithmes REDCAP avec cinq régions et de comparer leurs résultats à partir du ratio (entre les variances interrégionale et totale) et du nombre d’observations par région.</p>
 <div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="sect071.html#cb557-1" tabindex="-1"></a><span class="fu">library</span>(rgeoda)</span>
 <span id="cb557-2"><a href="sect071.html#cb557-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb557-3"><a href="sect071.html#cb557-3" tabindex="-1"></a><span class="do">## Préparation des données </span></span>
@@ -946,15 +946,15 @@ Figure 7.7: Résultats de l’algorithme Skater avec cinq classes obtenus avec l
 ## 3  fullorder-averagelinkage 0.4993184 148 141 106 63 48
 ## 4   fullorder-singlelinkage 0.3976055 227 102  73 53 51
 ## 5     fullorder-wardlinkage 0.5185455 166 134 120 51 35</code></pre>
-<p>À la lecture des valeurs du ratio ci-dessous, la meilleure classification serait celle obtenue avec un ordre complet et le critère de Ward. Cartographions les résultats des quatre version de l’algorithmes RECAP avec un ordre complet (figure <a href="sect071.html#fig:CartoREDCAP">7.8</a>).</p>
+<p>À la lecture des valeurs du ratio ci-dessous, la meilleure classification serait celle obtenue avec un ordre complet et le critère de Ward. Cartographions les résultats des quatre versions de l’algorithme RECAP avec un ordre complet (figure <a href="sect071.html#fig:CartoREDCAP">7.8</a>).</p>
 <div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="sect071.html#cb559-1" tabindex="-1"></a><span class="do">## Ajout des champs dans la couche</span></span>
-<span id="cb559-2"><a href="sect071.html#cb559-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOsinglelinkage  <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.B<span class="sc">$</span>Clusters)</span>
-<span id="cb559-3"><a href="sect071.html#cb559-3" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOaveragelinkage <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.C<span class="sc">$</span>Clusters)</span>
-<span id="cb559-4"><a href="sect071.html#cb559-4" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOsinglelinkage  <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.D<span class="sc">$</span>Clusters)</span>
-<span id="cb559-5"><a href="sect071.html#cb559-5" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOwardlinkage    <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.E<span class="sc">$</span>Clusters)</span>
+<span id="cb559-2"><a href="sect071.html#cb559-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOcompletelinkage  <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.B<span class="sc">$</span>Clusters)</span>
+<span id="cb559-3"><a href="sect071.html#cb559-3" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOaveragelinkage   <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.C<span class="sc">$</span>Clusters)</span>
+<span id="cb559-4"><a href="sect071.html#cb559-4" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOsinglelinkage    <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.D<span class="sc">$</span>Clusters)</span>
+<span id="cb559-5"><a href="sect071.html#cb559-5" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOwardlinkage      <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.E<span class="sc">$</span>Clusters)</span>
 <span id="cb559-6"><a href="sect071.html#cb559-6" tabindex="-1"></a><span class="do">## Cartographie des résultats</span></span>
 <span id="cb559-7"><a href="sect071.html#cb559-7" tabindex="-1"></a>Carte.RCb <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb559-8"><a href="sect071.html#cb559-8" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;RC5.FOsinglelinkage&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb559-8"><a href="sect071.html#cb559-8" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;RC5.FOcompletelinkage&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
 <span id="cb559-9"><a href="sect071.html#cb559-9" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
 <span id="cb559-10"><a href="sect071.html#cb559-10" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;a. Saut maximal&quot;</span>, </span>
 <span id="cb559-11"><a href="sect071.html#cb559-11" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
@@ -987,10 +987,10 @@ Figure 7.8: Regroupements des 505 IRIS en cinq régions selon les quatre version
 </div>
 <div id="sect0714" class="section level3 hasAnchor" number="7.1.4">
 <h3><span class="header-section-number">7.1.4</span> Algorithme du <em>max-p-regions problem</em><a href="sect071.html#sect0714" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Cet algorithme proposé par Duque <em>et al.</em> <span class="citation">(<a href="#ref-duque2012max">2012</a>)</span> n’est pas abordé dans le cours. Il peut être calculé avec trois fonctions du package <code>rgeoda</code>, soit <code>maxp_greedy</code>, <code>maxp_sa</code> et <code>maxp_tabu</code>.</p>
+<p>Cet algorithme, proposé par Duque <em>et al.</em> <span class="citation">(<a href="#ref-duque2012max">2012</a>)</span>, n’est pas abordé dans le cours. Il peut être calculé avec trois fonctions du package <code>rgeoda</code>, soit <code>maxp_greedy</code>, <code>maxp_sa</code> et <code>maxp_tabu</code>.</p>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RBoldAir" class="csl-entry">
 Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.

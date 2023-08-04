@@ -332,7 +332,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec constrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
 <li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
@@ -459,12 +459,12 @@ Modélisation et analyse spatiale</a>
             <section class="normal" id="section-">
 <div id="sect063" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Régression géographiquement pondérée<a href="sect063.html#sect063" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>La régression géographiquement pondérée (<em>geographically weighted regression</em> - GWR, en anglais) a été proposée par Fotheringham <em>et al.</em> <span class="citation">(<a href="#ref-fotheringham2003geographically">2003</a>)</span> pour modéliser une variable continue. Depuis, plusieurs extensions ont été proposées, notamment des GWR mixtes, des GWR logistique ou Poisson. Dans le cadre de cette section, nous abordons uniquement sa forme classique.</p>
+<p>La régression géographiquement pondérée (<em>geographically weighted regression</em> - GWR, en anglais) a été proposée par Fotheringham <em>et al.</em> <span class="citation">(<a href="#ref-fotheringham2003geographically">2003</a>)</span> pour modéliser une variable continue. Depuis, plusieurs extensions ont été proposées, notamment des GWR mixtes, des GWR logistiques ou Poisson. Dans le cadre de cette section, nous abordons uniquement sa forme classique.</p>
 <div id="sect0631" class="section level3 hasAnchor" number="6.3.1">
 <h3><span class="header-section-number">6.3.1</span> Principe de base<a href="sect063.html#sect0631" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Pourquoi recourir à la GWR?</strong></p>
 <p>Dans la section <a href="sect061.html#sect061">6.1</a>, nous avons vu que les modèles autorégressifs visent à contrôler la <strong>dépendance spatiale</strong> d’un modèle de régression classique (MCO), afin d’améliorer l’estimation des coefficients de régression. L’objectif des modèles de régression géographiquement pondérée est différent : ils visent à analyser les variations spatiales de la relation entre la variable dépendante et les variables indépendantes.</p>
-<p>Autrement dit, les modèles GWR visent à explorer <strong>l’instabilité spatiale du modèle MCO</strong> afin d’analyser localement la relation entre la variable dépendante et les variables indépendantes. Pour une description détaillée en français en la GWR, consultez Apparicio <em>et al.</em> <span class="citation">(<a href="#ref-apparicio2007modelisation">2007</a>)</span>.</p>
+<p>Autrement dit, les modèles GWR visent à explorer <strong>l’instabilité spatiale du modèle MCO</strong> afin d’analyser localement la relation entre la variable dépendante et les variables indépendantes. Pour une description détaillée en français de la GWR, consultez Apparicio <em>et al.</em> <span class="citation">(<a href="#ref-apparicio2007modelisation">2007</a>)</span>.</p>
 <p><strong>Formulation de la GWR</strong></p>
 <p>Contrairement à la régression linéaire classique et aux modèles spatiaux autorégressifs qui produisent une équation pour l’ensemble du tableau de données, la GWR produit une équation pour chaque unité spatiale <em>i</em> et ainsi, des valeurs locales de R<sup>2</sup>, <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_k\)</span>, <em>t</em> de Student, etc. La résolution de cette équation de régression locale est aussi basée sur la méthode des moindres carrés et sur une matrice de pondération W(i) dont les valeurs décroissent en fonction de la distance séparant les unités <em>i</em> et <em>j</em>. Autrement dit, plus <em>j</em> est proche de <em>i</em>, plus sa pondération est élevée et donc plus son « rôle » dans la détermination de l’équation de régression locale de <em>i</em> est important.</p>
 <p>De la sorte, la GWR est une extension de la régression linéaire multiple classique où <span class="math inline">\((u_i, v_i)\)</span> représente les coordonnées géographiques du centroïde de l’unité spatiale et où les paramètres <span class="math inline">\(\beta_0\)</span> et <span class="math inline">\(\beta_k\)</span> peuvent
@@ -476,12 +476,12 @@ y_i = \beta_0(u_i, v_i)+ \sum_{j=1}^k \beta_j(u_i, v_i)x_{ij}+ \epsilon_i
 </p>
 <p>avec :</p>
 <ul>
-<li><span class="math inline">\((u_i, v_i)\)</span> sont les coordonnées géographiques de l’unité spatiale <em>i</em>.</li>
+<li><span class="math inline">\((u_i, v_i)\)</span>, les coordonnées géographiques de l’unité spatiale <em>i</em>.</li>
 <li><span class="math inline">\(y_i\)</span>, la variable dépendante pour l’unité spatiale <em>i</em>.</li>
 <li><span class="math inline">\(\beta_0(u_i, v_i)\)</span>, la constante pour l’unité spatiale <em>i</em> aux coordonnées géographiques <span class="math inline">\((u_i, v_i)\)</span>.</li>
-<li><span class="math inline">\(\beta_j(u_i, v_i)\)</span>, le coefficient de régression pour la variable <span class="math inline">\(x_j\)</span> (avec <em>k</em> variables indépendantes) pour pour l’unité spatiale <em>i</em> aux coordonnées géographiques <span class="math inline">\((u_i, v_i)\)</span>.</li>
+<li><span class="math inline">\(\beta_j(u_i, v_i)\)</span>, le coefficient de régression pour la variable <span class="math inline">\(x_j\)</span> (avec <em>k</em> variables indépendantes) pour l’unité spatiale <em>i</em> aux coordonnées géographiques <span class="math inline">\((u_i, v_i)\)</span>.</li>
 <li><span class="math inline">\(x_{ij}\)</span>, la valeur de la variable indépendante <span class="math inline">\(x_j\)</span> pour l’unité spatiale <em>i</em>.</li>
-<li><span class="math inline">\(\epsilon_i\)</span>, le terme d’erreur pour l’unité spatiale <em>i</em>..</li>
+<li><span class="math inline">\(\epsilon_i\)</span>, le terme d’erreur pour l’unité spatiale <em>i</em>.</li>
 </ul>
 <p>Fotheringham <em>et al.</em> <span class="citation">(<a href="#ref-fotheringham2003geographically">2003</a>)</span> proposent deux fonctions <em>kernel</em> pour définir la pondération W(i) dans le modèle GWR : une fonction gaussienne (équation <a href="sect063.html#eq:kernelgaussien">(6.10)</a>) et une fonction bicarrée (équation <a href="sect063.html#eq:kernelbicarree">(6.11)</a>) où <span class="math inline">\(d_{ij}\)</span> représente la distance euclidienne entre les points <em>i</em> et <em>j</em> et <em>b</em>, le rayon de zone d’influence autour du point <em>i</em> (<em>bandwidth</em>). Il existe une différence fondamentale entre les deux : la fonction gaussienne accorde un poids non nul à tous les points de l’espace d’étude aussi loin soient-ils, tandis que la fonction bicarrée ne tient pas compte des points distants à plus de <em>b</em> mètres de <em>i</em>, tel qu’illustré à la figure <a href="sect063.html#fig:GWRKernels">6.8</a> avec une valeur fixée à 5000 mètres en guise d’exemple.</p>
 <p><span class="math display" id="eq:kernelgaussien">\[\begin{equation}
@@ -516,7 +516,7 @@ Figure 6.8: Fonctions kernel pour définir la matrice de pondération W(i)
 <p>La sélection de la taille de la zone d’influence optimale est réalisée avec la fonction <code>gwr.sel</code> pour laquelle :</p>
 <ul>
 <li>le paramètre <code>gweight</code> permet de spécifier une fonction <em>kernel</em> gaussienne (<code>gwr.gauss</code>) ou bicarrée (<code>gwr.gauss</code>).</li>
-<li>le paramètre <code>adapt</code> permet de spécifier si vous optimez le nombre de plus proches voisins (<code>adapt=TRUE</code>) ou la distance (<code>adapt=FALSE</code>).</li>
+<li>le paramètre <code>adapt</code> permet de spécifier si vous optimisez le nombre de plus proches voisins (<code>adapt=TRUE</code>) ou la distance (<code>adapt=FALSE</code>).</li>
 </ul>
 <div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="sect063.html#cb500-1" tabindex="-1"></a><span class="fu">library</span>(spgwr)</span>
 <span id="cb500-2"><a href="sect063.html#cb500-2" tabindex="-1"></a><span class="do">## Optimisation du nombre de voisins avec le CV</span></span>
@@ -576,11 +576,11 @@ Figure 6.8: Fonctions kernel pour définir la matrice de pondération W(i)
 ## Sélection de la taille de la zone optimale (bandwith) avec la distance : 
 ##   CV = 1315 mètres 
 ##   AIC = 1662 mètres</code></pre>
-<p>Les résultats ci-dessous montrent que le nombre de plus proche voisins pourrait être de 92 selon l’approche <em>cross-validation</em> et de 54 selon la méthode basée sur l’AIC. Si la valeur de <em>b</em> est basée sur la distance, elle serait alors optimale à 1315 et 1662 mètres selon les deux méthodes.</p>
+<p>Les résultats ci-dessus montrent que le nombre de plus proche voisins pourrait être de 92 selon l’approche <em>cross-validation</em> et de 54 selon la méthode basée sur l’AIC. Si la valeur de <em>b</em> est basée sur la distance, elle serait alors optimale à 1315 et 1662 mètres selon les deux méthodes.</p>
 </div>
 <div id="sect06322" class="section level4 hasAnchor" number="6.3.2.2">
 <h4><span class="header-section-number">6.3.2.2</span> Réalisation de la GWR<a href="sect063.html#sect06322" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Avec la fonction <code>gwr</code>, nous estimons un modèle GWR avec un kernel bicarrée et un nombre de plus voisins optimisée selon la méthode CV, soit 92.</p>
+<p>Avec la fonction <code>gwr</code>, nous estimons un modèle GWR avec un kernel bicarré et un nombre de plus voisins optimisé selon la méthode CV, soit 92.</p>
 <div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="sect063.html#cb502-1" tabindex="-1"></a>Modele.GWR <span class="ot">&lt;-</span> <span class="fu">gwr</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
 <span id="cb502-2"><a href="sect063.html#cb502-2" tabindex="-1"></a>              <span class="at">data =</span> LyonIris,</span>
 <span id="cb502-3"><a href="sect063.html#cb502-3" tabindex="-1"></a>              <span class="at">adapt=</span>bwaCV.voisins,</span>
@@ -589,7 +589,7 @@ Figure 6.8: Fonctions kernel pour définir la matrice de pondération W(i)
 <span id="cb502-6"><a href="sect063.html#cb502-6" tabindex="-1"></a>              <span class="at">se.fit=</span><span class="cn">TRUE</span>,</span>
 <span id="cb502-7"><a href="sect063.html#cb502-7" tabindex="-1"></a>              <span class="at">coords=</span><span class="fu">cbind</span>(LyonIris<span class="sc">$</span>X,LyonIris<span class="sc">$</span>Y),</span>
 <span id="cb502-8"><a href="sect063.html#cb502-8" tabindex="-1"></a>              <span class="at">longlat=</span>F)</span></code></pre></div>
-<p>Le code ci-dessous permet de renvoyer les statistiques univariées des coefficients des 506 régressions locales, réalisées pour chacune des 506 entités spatiales (IRIS) et les statistiques d’ajustement du modèle (AIC, R<sup>2</sup> global, etc.)</p>
+<p>Le code ci-dessous permet de renvoyer les statistiques univariées des coefficients des 506 régressions locales, réalisées pour chacune des 506 entités spatiales (IRIS), et les statistiques d’ajustement du modèle (AIC, R<sup>2</sup> global, etc.)</p>
 <div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="sect063.html#cb503-1" tabindex="-1"></a>Modele.GWR</span></code></pre></div>
 <pre><code>## Call:
 ## gwr(formula = NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + 
@@ -621,7 +621,7 @@ Figure 6.8: Fonctions kernel pour définir la matrice de pondération W(i)
 </div>
 <div id="sect06323" class="section level4 hasAnchor" number="6.3.2.3">
 <h4><span class="header-section-number">6.3.2.3</span> Comparaison des modèles MCO et GWR<a href="sect063.html#sect06323" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Le R<sup>2</sup> global du modèle GWR est bien supérieur au modèle classique MCO (0,783 contre 0,283). Fotheringham <em>et al.</em> <span class="citation">(<a href="#ref-fotheringham2003geographically">2003</a>)</span> proposent plusieurs tests pour comparer les modèles GWR et classique qui sont implémentées dans le <em>package</em> <code>spgwr</code> (fonctions <code>anova(Modele.GWR)</code>, <code>anova(Modele.GWR, approx=TRUE)</code>, <code>LMZ.F1GWR.test(Modele.GWR)</code>, <code>LMZ.F2GWR.test(Modele.GWR)</code>.</p>
+<p>Le R<sup>2</sup> global du modèle GWR est bien supérieur au modèle classique MCO (0,783 contre 0,283). Fotheringham <em>et al.</em> <span class="citation">(<a href="#ref-fotheringham2003geographically">2003</a>)</span> proposent plusieurs tests pour comparer les modèles GWR et classique qui sont implémentés dans le <em>package</em> <code>spgwr</code> (fonctions <code>anova(Modele.GWR)</code>, <code>anova(Modele.GWR, approx=TRUE)</code>, <code>LMZ.F1GWR.test(Modele.GWR)</code>, <code>LMZ.F2GWR.test(Modele.GWR)</code>.</p>
 <p>Si les valeurs de <em>p</em> de ces tests sont inférieures à 0,05 alors le modèle GWR améliore de façon significative la capacité prédictive du modèle de régression globale, ce que confirment les résultats ci-dessous.</p>
 <div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="sect063.html#cb505-1" tabindex="-1"></a><span class="fu">anova</span>(Modele.GWR)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table 
@@ -674,7 +674,7 @@ Figure 6.8: Fonctions kernel pour définir la matrice de pondération W(i)
 <div id="sect06324" class="section level4 hasAnchor" number="6.3.2.4">
 <h4><span class="header-section-number">6.3.2.4</span> Cartographie des résultats du modèle GWR<a href="sect063.html#sect06324" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Dans un premier temps, nous ajoutons les valeurs locales des R<sup>2</sup>, des coefficients de régression et des valeurs de <em>t</em> dans la couche <code>sf</code>. Notez que les résultats locaux de la GWR sont stockés dans l’objet <code>Modele.GWR$SDF</code>.</p>
-<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="sect063.html#cb515-1" tabindex="-1"></a><span class="do">## Récupération du R2 local</span></span>
+<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="sect063.html#cb515-1" tabindex="-1"></a><span class="do">## Récupération du R carré local</span></span>
 <span id="cb515-2"><a href="sect063.html#cb515-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>GWR.R2 <span class="ot">&lt;-</span> Modele.GWR<span class="sc">$</span>SDF<span class="sc">$</span>localR2</span>
 <span id="cb515-3"><a href="sect063.html#cb515-3" tabindex="-1"></a><span class="do">## Récupération des coefficients de régression et calcul des valeurs de t locales</span></span>
 <span id="cb515-4"><a href="sect063.html#cb515-4" tabindex="-1"></a><span class="fu">names</span>(Modele.GWR<span class="sc">$</span>SDF)</span></code></pre></div>
@@ -806,21 +806,21 @@ Figure 6.12: Nombre de variables significatives aux seuils de 5% et 1%
 </p>
 </div>
 <p><strong>Cartographie de la variable la plus significative avec la valeur de <em>t</em></strong></p>
-<p>Finalement, le code ci-dessous permet de réperer la variable la plus significative au seuil de 5%, c’est-à-dire avec la plus forte valeur absolue pour la valeur de <em>t</em>.</p>
+<p>Finalement, le code ci-dessous permet de repérer la variable la plus significative au seuil de 5%, c’est-à-dire avec la plus forte valeur absolue pour la valeur de <em>t</em>.</p>
 <div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="sect063.html#cb522-1" tabindex="-1"></a><span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray25&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
 <span id="cb522-2"><a href="sect063.html#cb522-2" tabindex="-1"></a>          <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;PlusSign&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Set1&quot;</span>, </span>
 <span id="cb522-3"><a href="sect063.html#cb522-3" tabindex="-1"></a>                 <span class="at">title =</span> <span class="st">&quot;Variable la plus significative&quot;</span>)<span class="sc">+</span></span>
 <span id="cb522-4"><a href="sect063.html#cb522-4" tabindex="-1"></a>          <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>)<span class="sc">+</span> <span class="fu">tm_scale_bar</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:GWRPlussign"></span>
-<img src="GMQ405_files/figure-html/GWRPlussign-1.png" alt="Variable indépendante la plus significative au seuil de 5%" width="85%" />
+<img src="GMQ405_files/figure-html/GWRPlussign-1.png" alt="Variable indépendante la plus significative au seuil de 5 %" width="85%" />
 <p class="caption">
-Figure 6.13: Variable indépendante la plus significative au seuil de 5%
+Figure 6.13: Variable indépendante la plus significative au seuil de 5 %
 </p>
 </div>
 </div>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-apparicio2007modelisation" class="csl-entry">
 Apparicio, Philippe, Anne-Marie Séguin et Xavier Leloup. 2007. <span>« Modélisation spatiale de la pauvreté à Montréal: apport méthodologique de la régression géographiquement pondérée. »</span> <em>The Canadian Geographer/Le Géographe canadien</em> 51 (4): 412‑427. <a href="https://doi.org/10.1111/j.1541-0064.2007.00189.x">https://doi.org/10.1111/j.1541-0064.2007.00189.x</a>.

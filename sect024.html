@@ -332,7 +332,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec constrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
 <li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
@@ -663,27 +663,27 @@ I_i = \frac{(x_i-\bar{X})\Sigma_{j=1}^n w_{ij}(x_j-\bar{X})}
 ##  3rd Qu.:0.3948293  
 ##  Max.   :0.9833048</code></pre>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="sect024.html#cb254-1" tabindex="-1"></a><span class="fu">summary</span>(localMoranI.mc)</span></code></pre></div>
-<pre><code>##        Ii                E.Ii               Var.Ii               Z.Ii       
-##  Min.   :-0.90053   Min.   :-0.069635   Min.   :0.0000003   Min.   :-1.974  
-##  1st Qu.: 0.08313   1st Qu.:-0.010034   1st Qu.:0.0365815   1st Qu.: 0.449  
-##  Median : 0.49029   Median :-0.001348   Median :0.1392868   Median : 1.440  
-##  Mean   : 0.61678   Mean   :-0.003444   Mean   :0.2185429   Mean   : 1.236  
-##  3rd Qu.: 0.97602   3rd Qu.: 0.002914   3rd Qu.:0.2605064   3rd Qu.: 2.181  
-##  Max.   : 3.37625   Max.   : 0.044310   Max.   :1.7678673   Max.   : 3.927  
+<pre><code>##        Ii                E.Ii               Var.Ii               Z.Ii        
+##  Min.   :-0.90053   Min.   :-0.073778   Min.   :0.0000003   Min.   :-1.9943  
+##  1st Qu.: 0.08313   1st Qu.:-0.010682   1st Qu.:0.0384248   1st Qu.: 0.4484  
+##  Median : 0.49029   Median :-0.002337   Median :0.1375183   Median : 1.4361  
+##  Mean   : 0.61678   Mean   :-0.005067   Mean   :0.2178934   Mean   : 1.2403  
+##  3rd Qu.: 0.97602   3rd Qu.: 0.001983   3rd Qu.:0.2589829   3rd Qu.: 2.1552  
+##  Max.   : 3.37625   Max.   : 0.048434   Max.   :1.7960705   Max.   : 3.9267  
 ##  Pr(z != E(Ii))      Pr(z != E(Ii)) Sim Pr(folded) Sim      Skewness       
-##  Min.   :0.0000861   Min.   :0.0020     Min.   :0.0010   Min.   :-0.37231  
-##  1st Qu.:0.0292025   1st Qu.:0.0200     1st Qu.:0.0100   1st Qu.:-0.21930  
-##  Median :0.1259498   Median :0.1300     Median :0.0650   Median :-0.12122  
-##  Mean   :0.2492671   Mean   :0.2545     Mean   :0.1272   Mean   :-0.01551  
-##  3rd Qu.:0.4062386   3rd Qu.:0.4220     3rd Qu.:0.2110   3rd Qu.: 0.21084  
-##  Max.   :0.9892344   Max.   :0.9880     Max.   :0.4940   Max.   : 0.45153  
+##  Min.   :0.0000861   Min.   :0.0020     Min.   :0.0010   Min.   :-0.48222  
+##  1st Qu.:0.0311473   1st Qu.:0.0240     1st Qu.:0.0120   1st Qu.:-0.22385  
+##  Median :0.1243026   Median :0.1320     Median :0.0660   Median :-0.10392  
+##  Mean   :0.2498198   Mean   :0.2542     Mean   :0.1271   Mean   :-0.01812  
+##  3rd Qu.:0.3910017   3rd Qu.:0.4120     3rd Qu.:0.2060   3rd Qu.: 0.20513  
+##  Max.   :0.9896397   Max.   :1.0000     Max.   :0.5000   Max.   : 0.41053  
 ##     Kurtosis       
-##  Min.   :-0.52011  
-##  1st Qu.:-0.28009  
-##  Median :-0.18964  
-##  Mean   :-0.17193  
-##  3rd Qu.:-0.07416  
-##  Max.   : 0.43919</code></pre>
+##  Min.   :-0.57603  
+##  1st Qu.:-0.27961  
+##  Median :-0.18873  
+##  Mean   :-0.17557  
+##  3rd Qu.:-0.08443  
+##  Max.   : 0.41481</code></pre>
 <p>Avec la cartographie du <em>I</em> de Moran local, nous repérons localement l’autocorrélation spatiale positive (valeurs similaires, fortes ou faibles localement) et l’autocorrélation spatiale négative (valeurs dissemblables localement) (figure <a href="sect024.html#fig:Chap02CartoIMoranLocal">2.19</a>).</p>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="sect024.html#cb256-1" tabindex="-1"></a><span class="do">## Ajout de champs pour le I de Moran local</span></span>
 <span id="cb256-2"><a href="sect024.html#cb256-2" tabindex="-1"></a>AD.DR<span class="sc">$</span>RevMed_IlocalMoran.MC999 <span class="ot">&lt;-</span> localMoranI.mc[, <span class="dv">1</span>]</span>
@@ -884,7 +884,7 @@ Figure 2.22: Typologie de l’autocorrélation spatiale locale avec le <em>I</em
 </div>
 </div>
 </div>
-<h3>Références</h3>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-anselin1995local" class="csl-entry">
 Anselin, Luc. 1995. <span>« Local indicators of spatial association—LISA. »</span> <em>Geographical analysis</em> 27 (2): 93‑115. <a href="https://doi.org/10.1111/j.1538-4632.1995.tb00338.x">https://doi.org/10.1111/j.1538-4632.1995.tb00338.x</a>.
