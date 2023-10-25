@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6.2 Modèles généralisés additifs (GAM) avec une spline bivariée sur les coordonnées géographiques | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
+  <title>6.2 Mesure d’autocorrélation spatiale sur un réseau | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6.2 Modèles généralisés additifs (GAM) avec une spline bivariée sur les coordonnées géographiques | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta property="og:title" content="6.2 Mesure d’autocorrélation spatiale sur un réseau | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/introduction/ImageCouverture.png" />
   <meta property="og:description" content="Mettre le description du cours." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6.2 Modèles généralisés additifs (GAM) avec une spline bivariée sur les coordonnées géographiques | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta name="twitter:title" content="6.2 Mesure d’autocorrélation spatiale sur un réseau | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   
   <meta name="twitter:description" content="Mettre le description du cours." />
   <meta name="twitter:image" content="/images/introduction/ImageCouverture.png" />
@@ -198,7 +198,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.2.6" data-path="sect012.html"><a href="sect012.html#sect0126"><i class="fa fa-check"></i><b>1.2.6</b> Requêtes spatiales</a></li>
 <li class="chapter" data-level="1.2.7" data-path="sect012.html"><a href="sect012.html#sect0127"><i class="fa fa-check"></i><b>1.2.7</b> Manipulation des données attributaires</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
+<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données matricielles (<em>raster</em>)</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
@@ -232,13 +232,18 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="sect023.html"><a href="sect023.html#sect0231"><i class="fa fa-check"></i><b>2.3.1</b> Statistique du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Mise en œuvre dans R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sect023.html"><a href="sect023.html#sect0233"><i class="fa fa-check"></i><b>2.3.3</b> Indice de Lee : autocorrélation spatiale dans un contexte bivariée</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="sect024.html"><a href="sect024.html"><i class="fa fa-check"></i><b>2.4</b> Autocorrélation spatiale locale</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids</a></li>
+<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids pour une variable continue</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sect024.html"><a href="sect024.html#sect0242"><i class="fa fa-check"></i><b>2.4.2</b> Version locale du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Nuage de points du <em>I</em> de Moran d’Anselin</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sect024.html"><a href="sect024.html#sect0244"><i class="fa fa-check"></i><b>2.4.4</b> Version locale des statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.4.5" data-path="sect024.html"><a href="sect024.html#sect0245"><i class="fa fa-check"></i><b>2.4.5</b> Version locale de l’indice de Lee</a></li>
+<li class="chapter" data-level="2.4.6" data-path="sect024.html"><a href="sect024.html#sect0246"><i class="fa fa-check"></i><b>2.4.6</b> Typologie basée sur le diagramme de Moran dans un contexte bivarié</a></li>
+<li class="chapter" data-level="2.4.7" data-path="sect024.html"><a href="sect024.html#sect0247"><i class="fa fa-check"></i><b>2.4.7</b> Autocorrélation locale pour une variable qualitative (catégorielle) : l’indicateur ELSA</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sect025.html"><a href="sect025.html"><i class="fa fa-check"></i><b>2.5</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="2.6" data-path="sect026.html"><a href="sect026.html"><i class="fa fa-check"></i><b>2.6</b> Exercices de révision</a></li>
@@ -309,92 +314,83 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="sect055.html"><a href="sect055.html"><i class="fa fa-check"></i><b>5.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Introduction aux modèles de régression spatiale</a>
+<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Analyses d’évènements localisés sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Modèles économétriques spatiaux</a>
+<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Cartographie de la densité d’évènements sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
-<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
-<li class="chapter" data-level="6.1.3" data-path="sect061.html"><a href="sect061.html#sect0613"><i class="fa fa-check"></i><b>6.1.3</b> Quel modèle choisir?</a></li>
+<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
+<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Mesure d’autocorrélation spatiale sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
-<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Construction d’un modèle GAM dans R</a></li>
+<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Getis et Ord</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="6.2.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>6.2.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> Régression géographiquement pondérée</a>
+<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> DBSCAN sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Principe de base</a></li>
-<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
+<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="sect064.html"><a href="sect064.html"><i class="fa fa-check"></i><b>6.4</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="6.5" data-path="sect065.html"><a href="sect065.html"><i class="fa fa-check"></i><b>6.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
+<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Introduction aux modèles de régression spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Modèles économétriques spatiaux</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
-<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
-<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Algorithmes REDCAP</a></li>
-<li class="chapter" data-level="7.1.4" data-path="sect071.html"><a href="sect071.html#sect0714"><i class="fa fa-check"></i><b>7.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
+<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
+<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Quel modèle choisir?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
+<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
+<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> Construction d’un modèle GAM dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Régression géographiquement pondérée</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Principe de base</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes déterministes</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Interpolation polynomiale locale</a></li>
-<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Interpolation de l’inverse à la distance - <em>IDW</em></a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes géostatistiques</a>
+<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Krigeage simple</a></li>
-<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> Krigeage universel</a></li>
-<li class="chapter" data-level="8.2.3" data-path="sect082.html"><a href="sect082.html#sect0823"><i class="fa fa-check"></i><b>8.2.3</b> Co-krigeage</a></li>
-<li class="chapter" data-level="8.2.4" data-path="sect082.html"><a href="sect082.html#sect0824"><i class="fa fa-check"></i><b>8.2.4</b> Krigeage résiduel</a></li>
+<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Algorithmes AZP</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Algorithme SKATER</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sect081.html"><a href="sect081.html#sect0813"><i class="fa fa-check"></i><b>8.1.3</b> Algorithmes REDCAP</a></li>
+<li class="chapter" data-level="8.1.4" data-path="sect081.html"><a href="sect081.html#sect0814"><i class="fa fa-check"></i><b>8.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="sect083.html"><a href="sect083.html"><i class="fa fa-check"></i><b>8.3</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="8.4" data-path="sect084.html"><a href="sect084.html"><i class="fa fa-check"></i><b>8.4</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Analyse spatiale par l’analyse d’images</a>
+<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Méthodes d’interpolation spatiale</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Fonctions mathématiques, booléennes, relationnelles et conditionnelles sur les images</a>
+<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Méthodes déterministes</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Fonctions mathématiques</a></li>
-<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Fonctions booléennes</a></li>
+<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Interpolation polynomiale locale</a></li>
+<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Interpolation de l’inverse à la distance (<em>IDW</em>)</a></li>
 <li class="chapter" data-level="9.1.3" data-path="sect091.html"><a href="sect091.html#sect0913"><i class="fa fa-check"></i><b>9.1.3</b> Fonctions relationnelles</a></li>
 <li class="chapter" data-level="9.1.4" data-path="sect091.html"><a href="sect091.html#sect0914"><i class="fa fa-check"></i><b>9.1.4</b> Fonctions conditionnelles</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Fonctions locales, focales, zonales et globales sur les images</a>
+<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Méthodes géostatistiques</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Fonctions locales</a></li>
-<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Fonctions focales</a></li>
-<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Fonctions zonales</a></li>
-<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Fonctions globales</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Krigeage simple</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Krigeage universel</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Co-krigeage</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Krigeage résiduel</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Fonctions de surface</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="sect093.html"><a href="sect093.html#sect0931"><i class="fa fa-check"></i><b>9.3.1</b> Élevation</a></li>
-<li class="chapter" data-level="9.3.2" data-path="sect093.html"><a href="sect093.html#sect0932"><i class="fa fa-check"></i><b>9.3.2</b> Pente</a></li>
-<li class="chapter" data-level="9.3.3" data-path="sect093.html"><a href="sect093.html#sect0933"><i class="fa fa-check"></i><b>9.3.3</b> Ombrage</a></li>
-<li class="chapter" data-level="9.3.4" data-path="sect093.html"><a href="sect093.html#sect0934"><i class="fa fa-check"></i><b>9.3.4</b> Visibilité</a></li>
-<li class="chapter" data-level="9.3.5" data-path="sect093.html"><a href="sect093.html#sect0935"><i class="fa fa-check"></i><b>9.3.5</b> Sky-view factor Index</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Données spatiotemporelles en mode image</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="sect094.html"><a href="sect094.html#fichier-netcdf"><i class="fa fa-check"></i><b>9.4.1</b> Fichier <em>netCDF</em></a></li>
-<li class="chapter" data-level="9.4.2" data-path="sect094.html"><a href="sect094.html#exemples-applicatifs"><i class="fa fa-check"></i><b>9.4.2</b> Exemples applicatifs</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="sect095.html"><a href="sect095.html"><i class="fa fa-check"></i><b>9.5</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="9.6" data-path="sect096.html"><a href="sect096.html"><i class="fa fa-check"></i><b>9.6</b> Exercices de révision</a></li>
+<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Exercices de révision</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>10</b> Correction des exercices</a>
 <ul>
@@ -424,20 +420,18 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
-<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a>
-<ul>
-<li class="chapter" data-level="10.6.1" data-path="sect1006.html"><a href="sect1006.html#sect10061"><i class="fa fa-check"></i><b>10.6.1</b> Exercice 1</a></li>
-<li class="chapter" data-level="10.6.2" data-path="sect1006.html"><a href="sect1006.html#sect10062"><i class="fa fa-check"></i><b>10.6.2</b> Exercice 2</a></li>
-<li class="chapter" data-level="10.6.3" data-path="sect1006.html"><a href="sect1006.html#sect10063"><i class="fa fa-check"></i><b>10.6.3</b> Exercice 3</a></li>
-</ul></li>
+<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sect1007.html"><a href="sect1007.html#sect10071"><i class="fa fa-check"></i><b>10.7.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sect1007.html"><a href="sect1007.html#sect10072"><i class="fa fa-check"></i><b>10.7.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.7.3" data-path="sect1007.html"><a href="sect1007.html#sect10073"><i class="fa fa-check"></i><b>10.7.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a></li>
+<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="sect1008.html"><a href="sect1008.html#sect10081"><i class="fa fa-check"></i><b>10.8.1</b> Exercice 1</a></li>
+</ul></li>
 <li class="chapter" data-level="10.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>10.9</b> Exercices du chapitre 9</a></li>
-<li class="chapter" data-level="10.10" data-path="sect1011.html"><a href="sect1011.html"><i class="fa fa-check"></i><b>10.10</b> Exercices du chapitre 11</a></li>
-<li class="chapter" data-level="10.11" data-path="sect1012.html"><a href="sect1012.html"><i class="fa fa-check"></i><b>10.11</b> Excercice du chapitre 12</a></li>
 </ul></li>
 </ul>
 
@@ -458,203 +452,15 @@ Modélisation et analyse spatiale</a>
 
             <section class="normal" id="section-">
 <div id="sect062" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques<a href="sect062.html#sect062" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">6.2</span> Mesure d’autocorrélation spatiale sur un réseau<a href="sect062.html#sect062" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="sect0621" class="section level3 hasAnchor" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Principe de base d’un GAM intégrant l’espace<a href="sect062.html#sect0621" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Les modèles généralisés additifs (<em>Generalized additive models</em> en anglais) permettent d’intégrer à la fois des effets linéaires et des effets non linéaires avec des <em>splines</em>.</p>
-<div class="bloc_attention">
-<p><strong>Modèles généralisés additifs</strong></p>
-<p>Pour une description détaillée des modèles généralisés additifs, nous vous invitons vivement à lire le <a href="https://laeq.github.io/LivreMethoQuantBolR/chap11.html">chapitre suivant</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>.</p>
-</div>
-<p>Il est alors possible d’introduire dans le modèle une <em>spline</em> bivariée sur les coordonnées géographiques. L’équation du modèle s’écrit alors :</p>
-<p><span class="math display" id="eq:GAM">\[\begin{equation}
-g(Y) \ = \beta_{0} \ + X\beta + s(CoordX,CoordY) \ + \epsilon
-\tag{6.8}
-\end{equation}\]</span>
-</p>
-<p>avec :</p>
-<ul>
-<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
-<li><span class="math inline">\(\beta_{0}\)</span>, la constante.</li>
-<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
-<li><span class="math inline">\(\beta\)</span>, les coefficients des variables dépendantes.</li>
-<li><span class="math inline">\(s(CoordX,CoordY)\)</span>, <em>spline</em> bivariée sur les coordonnées <em>x</em> et <em>y</em>.</li>
-<li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
-</ul>
-<p>L’intérêt de recourir à une <em>spline</em> bivariée sur les coordonnées géographiques est double :</p>
-<ol style="list-style-type: decimal">
-<li>Contrôler l’effet de la localisation sur la variable dépendante (<span class="math inline">\(y\)</span>). Les coefficients des autres variables indépendantes sont ainsi obtenus une fois l’espace pris en compte.</li>
-<li>Évaluer l’effet de la localisation (patron spatial), une fois les autres variables indépendantes contrôlées. Autrement dit, toutes choses étant égales par ailleurs, quel est l’effet de la localisation sur la variable dépendante?</li>
-</ol>
+<h3><span class="header-section-number">6.2.1</span> Getis et Ord<a href="sect062.html#sect0621" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 <div id="sect0622" class="section level3 hasAnchor" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Construction d’un modèle GAM dans R<a href="sect062.html#sect0622" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="sect06221" class="section level4 hasAnchor" number="6.2.2.1">
-<h4><span class="header-section-number">6.2.2.1</span> Réalisation du modèle GAM<a href="sect062.html#sect06221" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour construire des modèles GAM dans R, nous utilisons la fonction <code>gam</code> du <em>package</em> <code>mgcv</code> <span class="citation">(<a href="#ref-wood2011fast">Wood 2011</a>)</span>.</p>
-<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="sect062.html#cb486-1" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
-<span id="cb486-2"><a href="sect062.html#cb486-2" tabindex="-1"></a><span class="do">## Ajout des coordonnées X et Y dans LyonIris </span></span>
-<span id="cb486-3"><a href="sect062.html#cb486-3" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(LyonIris))</span></code></pre></div>
-<pre><code>## Warning: st_centroid assumes attributes are constant over geometries</code></pre>
-<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="sect062.html#cb488-1" tabindex="-1"></a>LyonIris<span class="sc">$</span>X <span class="ot">&lt;-</span> xy[,<span class="dv">1</span>]</span>
-<span id="cb488-2"><a href="sect062.html#cb488-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>Y <span class="ot">&lt;-</span> xy[,<span class="dv">2</span>]</span>
-<span id="cb488-3"><a href="sect062.html#cb488-3" tabindex="-1"></a><span class="do">## Construction du modèle GAM</span></span>
-<span id="cb488-4"><a href="sect062.html#cb488-4" tabindex="-1"></a>Modele.GAM1 <span class="ot">&lt;-</span> <span class="fu">gam</span>(NO2 <span class="sc">~</span>  Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed<span class="sc">+</span></span>
-<span id="cb488-5"><a href="sect062.html#cb488-5" tabindex="-1"></a>                          <span class="fu">s</span>(X, Y),    <span class="co"># spline sur les coordonnées X, Y</span></span>
-<span id="cb488-6"><a href="sect062.html#cb488-6" tabindex="-1"></a>                    <span class="at">data =</span> LyonIris)  <span class="co"># dataframe</span></span>
-<span id="cb488-7"><a href="sect062.html#cb488-7" tabindex="-1"></a><span class="do">## Résultats du modèle</span></span>
-<span id="cb488-8"><a href="sect062.html#cb488-8" tabindex="-1"></a><span class="fu">summary</span>(Modele.GAM1)</span></code></pre></div>
-<pre><code>## 
-## Family: gaussian 
-## Link function: identity 
-## 
-## Formula:
-## NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + NivVieMed + s(X, 
-##     Y)
-## 
-## Parametric coefficients:
-##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 30.402313   2.156322  14.099   &lt;2e-16 ***
-## Pct0_14     -0.053641   0.046224  -1.160    0.246    
-## Pct_65      -0.056310   0.038476  -1.463    0.144    
-## Pct_Img      0.008033   0.035397   0.227    0.821    
-## Pct_brevet   0.043874   0.027518   1.594    0.112    
-## NivVieMed   -0.043282   0.072461  -0.597    0.551    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Approximate significance of smooth terms:
-##         edf Ref.df     F p-value    
-## s(X,Y) 26.5  28.62 27.22  &lt;2e-16 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## R-sq.(adj) =  0.715   Deviance explained = 73.3%
-## GCV = 18.814  Scale est. = 17.605    n = 506</code></pre>
-<p>Les résultats ci-dessus signalent que la localisation a un effet très significatif puisque (s(X,Y) = 26,5 avec <em>p</em> &lt; 0,001). Notez que la valeur de <em>p</em> permet de déterminer si la <em>spline</em> bivariée (et donc l’espace) a ou non un effet significatif. Si la valeur de <em>p</em> est inférieure à 0,05, alors il n’est pas nécessaire de conserver la <em>spline</em> bivariée sur les coordonnées géographiquement.</p>
-<p>De plus, le code ci-dessous permet de constater que le modèle GAM est plus performant que le modèle linéaire multiple classique (MCO).</p>
-<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="sect062.html#cb490-1" tabindex="-1"></a><span class="fu">anova</span>(Modele.MCO, Modele.GAM1)</span></code></pre></div>
-<pre><code>## Analysis of Variance Table
-## 
-## Model 1: NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + NivVieMed
-## Model 2: NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + NivVieMed + s(X, 
-##     Y)
-##   Res.Df     RSS   Df Sum of Sq      F    Pr(&gt;F)    
-## 1  500.0 22346.0                                    
-## 2  473.5  8336.1 26.5     14010 30.029 &lt; 2.2e-16 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>Nous pouvons aussi introduire une <em>spline</em> plus complexe en augmentant le nombre de nœuds à 40.</p>
-<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="sect062.html#cb492-1" tabindex="-1"></a>Modele.GAM2 <span class="ot">&lt;-</span> <span class="fu">gam</span>(NO2 <span class="sc">~</span>  Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed<span class="sc">+</span></span>
-<span id="cb492-2"><a href="sect062.html#cb492-2" tabindex="-1"></a>                          <span class="fu">s</span>(X, Y, <span class="at">k=</span> <span class="dv">40</span>), <span class="at">data =</span> LyonIris)</span>
-<span id="cb492-3"><a href="sect062.html#cb492-3" tabindex="-1"></a><span class="fu">summary</span>(Modele.GAM2)</span></code></pre></div>
-<pre><code>## 
-## Family: gaussian 
-## Link function: identity 
-## 
-## Formula:
-## NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + NivVieMed + s(X, 
-##     Y, k = 40)
-## 
-## Parametric coefficients:
-##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 30.372093   2.088160  14.545   &lt;2e-16 ***
-## Pct0_14     -0.055294   0.044285  -1.249   0.2124    
-## Pct_65      -0.049122   0.036870  -1.332   0.1834    
-## Pct_Img      0.002226   0.033722   0.066   0.9474    
-## Pct_brevet   0.052229   0.026315   1.985   0.0478 *  
-## NivVieMed   -0.050991   0.070081  -0.728   0.4672    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Approximate significance of smooth terms:
-##          edf Ref.df     F p-value    
-## s(X,Y) 35.68  38.51 24.27  &lt;2e-16 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## R-sq.(adj) =  0.747   Deviance explained = 76.7%
-## GCV = 17.014  Scale est. = 15.613    n = 506</code></pre>
-<p>La valeur plus faible d’AIC pour le second modèle GAM signale qu’il est plus performant que le premier.</p>
-<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="sect062.html#cb494-1" tabindex="-1"></a><span class="fu">AIC</span>(Modele.MCO, Modele.GAM1, Modele.GAM2)</span></code></pre></div>
-<pre><code>##                   df      AIC
-## Modele.MCO   7.00000 3366.626
-## Modele.GAM1 33.50046 2920.682
-## Modele.GAM2 42.67520 2868.355</code></pre>
+<h3><span class="header-section-number">6.2.2</span> Typologie basée sur le diagramme de Moran<a href="sect062.html#sect0622" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="sect06222" class="section level4 hasAnchor" number="6.2.2.2">
-<h4><span class="header-section-number">6.2.2.2</span> Visualisation de l’effet de l’espace<a href="sect062.html#sect06222" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Pour visualiser les prédictions du modèle dans l’espace, toutes choses étant égales par ailleurs, nous utilisons la fonction <code>vis.gam</code> (figure <a href="sect062.html#fig:EffetLocalisation1">6.6</a>). Les contours signalent qu’au centre de Lyon, les valeurs de dioxyde d’azote sont les plus élevées et dépassent même 40 <span class="math inline">\(\mu\)</span>g/m<sup>3</sup>.</p>
-<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="sect062.html#cb496-1" tabindex="-1"></a><span class="fu">vis.gam</span>(Modele.GAM2, <span class="at">view=</span><span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">plot.type =</span> <span class="st">&quot;contour&quot;</span>, <span class="at">color=</span><span class="st">&quot;terrain&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:EffetLocalisation1"></span>
-<img src="GMQ405_files/figure-html/EffetLocalisation1-1.png" alt="Visualisation des prédictions dans l'espace avec la fonction `vis.gam`" width="85%" />
-<p class="caption">
-Figure 6.6: Visualisation des prédictions dans l’espace avec la fonction <code>vis.gam</code>
-</p>
-</div>
-<p>Toutefois, il est plus intéressant de la représenter dans un <em>raster</em>, une fois contrôlées les autres variables indépendantes. Pour ce faire, six étapes sont nécessaires :</p>
-<ol style="list-style-type: decimal">
-<li>Créer une <em>grid</em>.</li>
-<li>Fixer les autres paramètres à leur moyenne respective.</li>
-<li>Calculer la prédiction pour la localisation.</li>
-<li>Centrer la prédiction.</li>
-<li>Construire le <em>raster</em> avec les prédictions.</li>
-<li>Découper et cartographier le <em>raster</em>.</li>
-</ol>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="sect062.html#cb497-1" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
-<span id="cb497-2"><a href="sect062.html#cb497-2" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
-<span id="cb497-3"><a href="sect062.html#cb497-3" tabindex="-1"></a><span class="do">## Étape 1 : création d&#39;une grid pour la prédiction de 100 mètres de résolution spatiale</span></span>
-<span id="cb497-4"><a href="sect062.html#cb497-4" tabindex="-1"></a>Xcoords <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(LyonIris<span class="sc">$</span>X<span class="dv">-100</span>), <span class="fu">max</span>(LyonIris<span class="sc">$</span>X<span class="sc">+</span><span class="dv">100</span>), <span class="at">by=</span><span class="dv">100</span>)</span>
-<span id="cb497-5"><a href="sect062.html#cb497-5" tabindex="-1"></a>Ycoords <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(LyonIris<span class="sc">$</span>Y<span class="dv">-100</span>), <span class="fu">max</span>(LyonIris<span class="sc">$</span>Y<span class="sc">+</span><span class="dv">100</span>), <span class="at">by=</span><span class="dv">100</span>)</span>
-<span id="cb497-6"><a href="sect062.html#cb497-6" tabindex="-1"></a>PredDF <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(Xcoords,Ycoords)</span>
-<span id="cb497-7"><a href="sect062.html#cb497-7" tabindex="-1"></a><span class="fu">names</span>(PredDF) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>,<span class="st">&quot;Y&quot;</span>)</span>
-<span id="cb497-8"><a href="sect062.html#cb497-8" tabindex="-1"></a><span class="do">## Étape 2 : fixation de tous les autres paramètres à leur moyenne</span></span>
-<span id="cb497-9"><a href="sect062.html#cb497-9" tabindex="-1"></a><span class="cf">for</span>(Var <span class="cf">in</span> <span class="fu">c</span>(<span class="st">&quot;VegHautPrt&quot;</span>,<span class="st">&quot;Pct0_14&quot;</span>,<span class="st">&quot;Pct_65&quot;</span>,<span class="st">&quot;Pct_Img&quot;</span>,<span class="st">&quot;Pct_brevet&quot;</span>, <span class="st">&quot;NivVieMed&quot;</span>)){</span>
-<span id="cb497-10"><a href="sect062.html#cb497-10" tabindex="-1"></a>  PredDF[[Var]] <span class="ot">&lt;-</span> <span class="fu">mean</span>(LyonIris[[Var]])</span>
-<span id="cb497-11"><a href="sect062.html#cb497-11" tabindex="-1"></a>}</span>
-<span id="cb497-12"><a href="sect062.html#cb497-12" tabindex="-1"></a><span class="do">## Étape 3 : calcul de la prédiction</span></span>
-<span id="cb497-13"><a href="sect062.html#cb497-13" tabindex="-1"></a>PredDF<span class="sc">$</span>PM25 <span class="ot">&lt;-</span> <span class="fu">predict</span>(Modele.GAM2,<span class="at">newdata=</span>PredDF)</span>
-<span id="cb497-14"><a href="sect062.html#cb497-14" tabindex="-1"></a><span class="do">## Étape 4 : centrage de la prédiction (sans la constante)</span></span>
-<span id="cb497-15"><a href="sect062.html#cb497-15" tabindex="-1"></a>PredDF<span class="sc">$</span>CenterPredPM25 <span class="ot">&lt;-</span> PredDF<span class="sc">$</span>PM25 <span class="sc">-</span> <span class="fu">mean</span>(PredDF<span class="sc">$</span>PM25)</span>
-<span id="cb497-16"><a href="sect062.html#cb497-16" tabindex="-1"></a><span class="do">### Étape 5 : construction du raster</span></span>
-<span id="cb497-17"><a href="sect062.html#cb497-17" tabindex="-1"></a>rasterGAM <span class="ot">&lt;-</span> <span class="fu">rasterFromXYZ</span>(PredDF[, <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>, <span class="st">&quot;CenterPredPM25&quot;</span>)])</span>
-<span id="cb497-18"><a href="sect062.html#cb497-18" tabindex="-1"></a><span class="fu">crs</span>(rasterGAM) <span class="ot">&lt;-</span> <span class="fu">crs</span>(<span class="fu">as</span>(LyonIris, <span class="st">&quot;Spatial&quot;</span>))</span>
-<span id="cb497-19"><a href="sect062.html#cb497-19" tabindex="-1"></a>rasterGAM <span class="ot">&lt;-</span> <span class="fu">rast</span>(rasterGAM)</span>
-<span id="cb497-20"><a href="sect062.html#cb497-20" tabindex="-1"></a><span class="do">### Étape 6 : découpage et cartographie du raster</span></span>
-<span id="cb497-21"><a href="sect062.html#cb497-21" tabindex="-1"></a>LyonIris.SpatVector <span class="ot">&lt;-</span> <span class="fu">vect</span>(LyonIris)</span>
-<span id="cb497-22"><a href="sect062.html#cb497-22" tabindex="-1"></a>rasterGAM <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(rasterGAM, LyonIris.SpatVector)</span>
-<span id="cb497-23"><a href="sect062.html#cb497-23" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(rasterGAM)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:EffetLocalisation2"></span>
-<img src="GMQ405_files/figure-html/EffetLocalisation2-1.png" alt="Visualisation de l'effet de la localisation centrée sur zéro" width="85%" />
-<p class="caption">
-Figure 6.7: Visualisation de l’effet de la localisation centrée sur zéro
-</p>
-</div>
-<p>La figure <a href="sect062.html#fig:EffetLocalisation2">6.7</a> signale que dans le centre de Lyon, le dioxyde d’azote est plus élevé de 10 à 20 <span class="math inline">\(\mu\)</span>g/m<sup>3</sup>, toutes choses étant égales par ailleurs. À l’inverse, dans les zones périphériques, il est faible. Cela signale un net patron spatial décroissant du centre vers la périphérie.</p>
-</div>
-<div id="sect06223" class="section level4 hasAnchor" number="6.2.2.3">
-<h4><span class="header-section-number">6.2.2.3</span> Dépendance spatiale du modèle GAM<a href="sect062.html#sect06223" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Par contre, bien que l’autocorrélation spatiale des résidus du modèle GAM soit plus faible que pour le modèle MCO (<em>I</em> de Moran de 0,337 contre 0,570 avec <em>p</em> &lt; 0,001), il reste que le problème de la dépendance spatiale n’est pas corrigé.</p>
-<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="sect062.html#cb498-1" tabindex="-1"></a><span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.GAM2), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span></code></pre></div>
-<pre><code>## 
-##  Monte-Carlo simulation of Moran I
-## 
-## data:  resid(Modele.GAM2) 
-## weights: W.Rook  
-## number of simulations + 1: 1000 
-## 
-## statistic = 0.33664, observed rank = 1000, p-value = 0.001
-## alternative hypothesis: greater</code></pre>
-</div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-RBoldAir" class="csl-entry">
-Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.
-</div>
-<div id="ref-wood2011fast" class="csl-entry">
-Wood, Simon N. 2011. <span>« Fast stable restricted maximum likelihood and marginal likelihood estimation of semiparametric generalized linear models. »</span> <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 73 (1): 3‑36. <a href="https://doi.org/10.1111/j.1467-9868.2010.00749.x">https://doi.org/10.1111/j.1467-9868.2010.00749.x</a>.
+<div id="sect0623" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Mise en œuvre dans R<a href="sect062.html#sect0623" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
             </section>

@@ -198,7 +198,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.2.6" data-path="sect012.html"><a href="sect012.html#sect0126"><i class="fa fa-check"></i><b>1.2.6</b> Requêtes spatiales</a></li>
 <li class="chapter" data-level="1.2.7" data-path="sect012.html"><a href="sect012.html#sect0127"><i class="fa fa-check"></i><b>1.2.7</b> Manipulation des données attributaires</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
+<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données matricielles (<em>raster</em>)</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
@@ -232,13 +232,18 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="sect023.html"><a href="sect023.html#sect0231"><i class="fa fa-check"></i><b>2.3.1</b> Statistique du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Mise en œuvre dans R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sect023.html"><a href="sect023.html#sect0233"><i class="fa fa-check"></i><b>2.3.3</b> Indice de Lee : autocorrélation spatiale dans un contexte bivariée</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="sect024.html"><a href="sect024.html"><i class="fa fa-check"></i><b>2.4</b> Autocorrélation spatiale locale</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids</a></li>
+<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids pour une variable continue</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sect024.html"><a href="sect024.html#sect0242"><i class="fa fa-check"></i><b>2.4.2</b> Version locale du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Nuage de points du <em>I</em> de Moran d’Anselin</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sect024.html"><a href="sect024.html#sect0244"><i class="fa fa-check"></i><b>2.4.4</b> Version locale des statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.4.5" data-path="sect024.html"><a href="sect024.html#sect0245"><i class="fa fa-check"></i><b>2.4.5</b> Version locale de l’indice de Lee</a></li>
+<li class="chapter" data-level="2.4.6" data-path="sect024.html"><a href="sect024.html#sect0246"><i class="fa fa-check"></i><b>2.4.6</b> Typologie basée sur le diagramme de Moran dans un contexte bivarié</a></li>
+<li class="chapter" data-level="2.4.7" data-path="sect024.html"><a href="sect024.html#sect0247"><i class="fa fa-check"></i><b>2.4.7</b> Autocorrélation locale pour une variable qualitative (catégorielle) : l’indicateur ELSA</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sect025.html"><a href="sect025.html"><i class="fa fa-check"></i><b>2.5</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="2.6" data-path="sect026.html"><a href="sect026.html"><i class="fa fa-check"></i><b>2.6</b> Exercices de révision</a></li>
@@ -309,92 +314,83 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="sect055.html"><a href="sect055.html"><i class="fa fa-check"></i><b>5.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Introduction aux modèles de régression spatiale</a>
+<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Analyses d’évènements localisés sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Modèles économétriques spatiaux</a>
+<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Cartographie de la densité d’évènements sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
-<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
-<li class="chapter" data-level="6.1.3" data-path="sect061.html"><a href="sect061.html#sect0613"><i class="fa fa-check"></i><b>6.1.3</b> Quel modèle choisir?</a></li>
+<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
+<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Mesure d’autocorrélation spatiale sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
-<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Construction d’un modèle GAM dans R</a></li>
+<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Getis et Ord</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="6.2.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>6.2.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> Régression géographiquement pondérée</a>
+<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> DBSCAN sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Principe de base</a></li>
-<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
+<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="sect064.html"><a href="sect064.html"><i class="fa fa-check"></i><b>6.4</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="6.5" data-path="sect065.html"><a href="sect065.html"><i class="fa fa-check"></i><b>6.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
+<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Introduction aux modèles de régression spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Modèles économétriques spatiaux</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
-<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
-<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Algorithmes REDCAP</a></li>
-<li class="chapter" data-level="7.1.4" data-path="sect071.html"><a href="sect071.html#sect0714"><i class="fa fa-check"></i><b>7.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
+<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
+<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Quel modèle choisir?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
+<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
+<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> Construction d’un modèle GAM dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Régression géographiquement pondérée</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Principe de base</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes déterministes</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Interpolation polynomiale locale</a></li>
-<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Interpolation de l’inverse à la distance - <em>IDW</em></a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes géostatistiques</a>
+<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Krigeage simple</a></li>
-<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> Krigeage universel</a></li>
-<li class="chapter" data-level="8.2.3" data-path="sect082.html"><a href="sect082.html#sect0823"><i class="fa fa-check"></i><b>8.2.3</b> Co-krigeage</a></li>
-<li class="chapter" data-level="8.2.4" data-path="sect082.html"><a href="sect082.html#sect0824"><i class="fa fa-check"></i><b>8.2.4</b> Krigeage résiduel</a></li>
+<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Algorithmes AZP</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Algorithme SKATER</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sect081.html"><a href="sect081.html#sect0813"><i class="fa fa-check"></i><b>8.1.3</b> Algorithmes REDCAP</a></li>
+<li class="chapter" data-level="8.1.4" data-path="sect081.html"><a href="sect081.html#sect0814"><i class="fa fa-check"></i><b>8.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="sect083.html"><a href="sect083.html"><i class="fa fa-check"></i><b>8.3</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="8.4" data-path="sect084.html"><a href="sect084.html"><i class="fa fa-check"></i><b>8.4</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Analyse spatiale par l’analyse d’images</a>
+<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Méthodes d’interpolation spatiale</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Fonctions mathématiques, booléennes, relationnelles et conditionnelles sur les images</a>
+<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Méthodes déterministes</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Fonctions mathématiques</a></li>
-<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Fonctions booléennes</a></li>
+<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Interpolation polynomiale locale</a></li>
+<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Interpolation de l’inverse à la distance (<em>IDW</em>)</a></li>
 <li class="chapter" data-level="9.1.3" data-path="sect091.html"><a href="sect091.html#sect0913"><i class="fa fa-check"></i><b>9.1.3</b> Fonctions relationnelles</a></li>
 <li class="chapter" data-level="9.1.4" data-path="sect091.html"><a href="sect091.html#sect0914"><i class="fa fa-check"></i><b>9.1.4</b> Fonctions conditionnelles</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Fonctions locales, focales, zonales et globales sur les images</a>
+<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Méthodes géostatistiques</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Fonctions locales</a></li>
-<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Fonctions focales</a></li>
-<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Fonctions zonales</a></li>
-<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Fonctions globales</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Krigeage simple</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Krigeage universel</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Co-krigeage</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Krigeage résiduel</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Fonctions de surface</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="sect093.html"><a href="sect093.html#sect0931"><i class="fa fa-check"></i><b>9.3.1</b> Élevation</a></li>
-<li class="chapter" data-level="9.3.2" data-path="sect093.html"><a href="sect093.html#sect0932"><i class="fa fa-check"></i><b>9.3.2</b> Pente</a></li>
-<li class="chapter" data-level="9.3.3" data-path="sect093.html"><a href="sect093.html#sect0933"><i class="fa fa-check"></i><b>9.3.3</b> Ombrage</a></li>
-<li class="chapter" data-level="9.3.4" data-path="sect093.html"><a href="sect093.html#sect0934"><i class="fa fa-check"></i><b>9.3.4</b> Visibilité</a></li>
-<li class="chapter" data-level="9.3.5" data-path="sect093.html"><a href="sect093.html#sect0935"><i class="fa fa-check"></i><b>9.3.5</b> Sky-view factor Index</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Données spatiotemporelles en mode image</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="sect094.html"><a href="sect094.html#fichier-netcdf"><i class="fa fa-check"></i><b>9.4.1</b> Fichier <em>netCDF</em></a></li>
-<li class="chapter" data-level="9.4.2" data-path="sect094.html"><a href="sect094.html#exemples-applicatifs"><i class="fa fa-check"></i><b>9.4.2</b> Exemples applicatifs</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="sect095.html"><a href="sect095.html"><i class="fa fa-check"></i><b>9.5</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="9.6" data-path="sect096.html"><a href="sect096.html"><i class="fa fa-check"></i><b>9.6</b> Exercices de révision</a></li>
+<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Exercices de révision</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>10</b> Correction des exercices</a>
 <ul>
@@ -424,20 +420,18 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
-<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a>
-<ul>
-<li class="chapter" data-level="10.6.1" data-path="sect1006.html"><a href="sect1006.html#sect10061"><i class="fa fa-check"></i><b>10.6.1</b> Exercice 1</a></li>
-<li class="chapter" data-level="10.6.2" data-path="sect1006.html"><a href="sect1006.html#sect10062"><i class="fa fa-check"></i><b>10.6.2</b> Exercice 2</a></li>
-<li class="chapter" data-level="10.6.3" data-path="sect1006.html"><a href="sect1006.html#sect10063"><i class="fa fa-check"></i><b>10.6.3</b> Exercice 3</a></li>
-</ul></li>
+<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sect1007.html"><a href="sect1007.html#sect10071"><i class="fa fa-check"></i><b>10.7.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sect1007.html"><a href="sect1007.html#sect10072"><i class="fa fa-check"></i><b>10.7.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.7.3" data-path="sect1007.html"><a href="sect1007.html#sect10073"><i class="fa fa-check"></i><b>10.7.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a></li>
+<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="sect1008.html"><a href="sect1008.html#sect10081"><i class="fa fa-check"></i><b>10.8.1</b> Exercice 1</a></li>
+</ul></li>
 <li class="chapter" data-level="10.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>10.9</b> Exercices du chapitre 9</a></li>
-<li class="chapter" data-level="10.10" data-path="sect1011.html"><a href="sect1011.html"><i class="fa fa-check"></i><b>10.10</b> Exercices du chapitre 11</a></li>
-<li class="chapter" data-level="10.11" data-path="sect1012.html"><a href="sect1012.html"><i class="fa fa-check"></i><b>10.11</b> Excercice du chapitre 12</a></li>
 </ul></li>
 </ul>
 
@@ -987,16 +981,16 @@ Figure 3.5: Propriétaires et locataires dans la ville de Sherbrooke (avec ellip
 </p>
 </div>
 <p>Quelques lignes de code suffisent pour obtenir l’indice de Wong <span class="citation">(<a href="#ref-wong1999geostatistics">1999</a>)</span>.</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="sect032.html#cb264-1" tabindex="-1"></a><span class="do">## Importation des deux ellipses </span></span>
-<span id="cb264-2"><a href="sect032.html#cb264-2" tabindex="-1"></a>E1 <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/EllipseProprio.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>) </span>
-<span id="cb264-3"><a href="sect032.html#cb264-3" tabindex="-1"></a>E2 <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/EllipseLocataire.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>) </span>
-<span id="cb264-4"><a href="sect032.html#cb264-4" tabindex="-1"></a><span class="do">## Intersection </span></span>
-<span id="cb264-5"><a href="sect032.html#cb264-5" tabindex="-1"></a>Inter <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(E1, E2)</span>
-<span id="cb264-6"><a href="sect032.html#cb264-6" tabindex="-1"></a><span class="do">## Union</span></span>
-<span id="cb264-7"><a href="sect032.html#cb264-7" tabindex="-1"></a>Union <span class="ot">&lt;-</span> <span class="fu">st_union</span>(E1, E2)</span>
-<span id="cb264-8"><a href="sect032.html#cb264-8" tabindex="-1"></a><span class="do">## Calcul de l&#39;indice de Wong</span></span>
-<span id="cb264-9"><a href="sect032.html#cb264-9" tabindex="-1"></a>Wong <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> ( <span class="fu">as.numeric</span>(<span class="fu">st_area</span>(Inter)) <span class="sc">/</span> <span class="fu">as.numeric</span>(<span class="fu">st_area</span>(Union)))</span>
-<span id="cb264-10"><a href="sect032.html#cb264-10" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Valeur de l&#39;indice de Wong : &quot;</span>,<span class="fu">round</span>(Wong,<span class="dv">3</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="sect032.html#cb292-1" tabindex="-1"></a><span class="do">## Importation des deux ellipses </span></span>
+<span id="cb292-2"><a href="sect032.html#cb292-2" tabindex="-1"></a>E1 <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/EllipseProprio.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>) </span>
+<span id="cb292-3"><a href="sect032.html#cb292-3" tabindex="-1"></a>E2 <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/EllipseLocataire.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>) </span>
+<span id="cb292-4"><a href="sect032.html#cb292-4" tabindex="-1"></a><span class="do">## Intersection </span></span>
+<span id="cb292-5"><a href="sect032.html#cb292-5" tabindex="-1"></a>Inter <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(E1, E2)</span>
+<span id="cb292-6"><a href="sect032.html#cb292-6" tabindex="-1"></a><span class="do">## Union</span></span>
+<span id="cb292-7"><a href="sect032.html#cb292-7" tabindex="-1"></a>Union <span class="ot">&lt;-</span> <span class="fu">st_union</span>(E1, E2)</span>
+<span id="cb292-8"><a href="sect032.html#cb292-8" tabindex="-1"></a><span class="do">## Calcul de l&#39;indice de Wong</span></span>
+<span id="cb292-9"><a href="sect032.html#cb292-9" tabindex="-1"></a>Wong <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> ( <span class="fu">as.numeric</span>(<span class="fu">st_area</span>(Inter)) <span class="sc">/</span> <span class="fu">as.numeric</span>(<span class="fu">st_area</span>(Union)))</span>
+<span id="cb292-10"><a href="sect032.html#cb292-10" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Valeur de l&#39;indice de Wong : &quot;</span>,<span class="fu">round</span>(Wong,<span class="dv">3</span>)))</span></code></pre></div>
 <pre><code>## [1] &quot;Valeur de l&#39;indice de Wong : 0.515&quot;</code></pre>
 </div>
 </div>
@@ -1005,26 +999,26 @@ Figure 3.5: Propriétaires et locataires dans la ville de Sherbrooke (avec ellip
 <div id="sect03131" class="section level4 hasAnchor" number="3.2.3.1">
 <h4><span class="header-section-number">3.2.3.1</span> Calcul de mesures non pondérées<a href="sect032.html#sect03131" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Pour illustrer la mise en œuvre des différentes mesures de l’analyse centrographique dans R, nous utilisons un jeu de données ouvertes sur les <a href="https://donneesouvertes-sherbrooke.opendata.arcgis.com/datasets/64d19d62f0804f5896e4b24c32aea49d_0/explore?location=45.403468%2C-71.960143%2C12.00">incidents de sécurité publique de la ville de Sherbrooke</a>. Dans la syntaxe ci-dessous, nous importons les données et constituons une couche <code>sf</code> par année (2019 à 2022) et extrayons les coordonnées géographiques.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="sect032.html#cb266-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb266-2"><a href="sect032.html#cb266-2" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb266-3"><a href="sect032.html#cb266-3" tabindex="-1"></a><span class="do">## Importation des données </span></span>
-<span id="cb266-4"><a href="sect032.html#cb266-4" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span>  <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Arrondissements.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb266-5"><a href="sect032.html#cb266-5" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/IncidentsSecuritePublique.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb266-6"><a href="sect032.html#cb266-6" tabindex="-1"></a><span class="do">## Changement de projection</span></span>
-<span id="cb266-7"><a href="sect032.html#cb266-7" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Arrondissements, <span class="at">crs =</span> <span class="dv">3798</span>) </span>
-<span id="cb266-8"><a href="sect032.html#cb266-8" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Incidents, <span class="at">crs =</span> <span class="dv">3798</span>)</span>
-<span id="cb266-9"><a href="sect032.html#cb266-9" tabindex="-1"></a><span class="do">## Extaction des méfaits</span></span>
-<span id="cb266-10"><a href="sect032.html#cb266-10" tabindex="-1"></a>Mefaits <span class="ot">&lt;-</span> <span class="fu">subset</span>(Incidents, DESCRIPTIO <span class="sc">==</span> <span class="st">&quot;Méfait&quot;</span>)</span>
-<span id="cb266-11"><a href="sect032.html#cb266-11" tabindex="-1"></a><span class="co"># Méfaits par année</span></span>
-<span id="cb266-12"><a href="sect032.html#cb266-12" tabindex="-1"></a>M2019 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Mefaits, ANNEE<span class="sc">==</span><span class="dv">2019</span>)</span>
-<span id="cb266-13"><a href="sect032.html#cb266-13" tabindex="-1"></a>M2020 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Mefaits, ANNEE<span class="sc">==</span><span class="dv">2020</span>)</span>
-<span id="cb266-14"><a href="sect032.html#cb266-14" tabindex="-1"></a>M2021 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Mefaits, ANNEE<span class="sc">==</span><span class="dv">2021</span>)</span>
-<span id="cb266-15"><a href="sect032.html#cb266-15" tabindex="-1"></a>M2022 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Mefaits, ANNEE<span class="sc">==</span><span class="dv">2022</span>)</span>
-<span id="cb266-16"><a href="sect032.html#cb266-16" tabindex="-1"></a><span class="co"># Coordonnées géographiques</span></span>
-<span id="cb266-17"><a href="sect032.html#cb266-17" tabindex="-1"></a>xy<span class="fl">.2019</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2019)</span>
-<span id="cb266-18"><a href="sect032.html#cb266-18" tabindex="-1"></a>xy<span class="fl">.2020</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2020)</span>
-<span id="cb266-19"><a href="sect032.html#cb266-19" tabindex="-1"></a>xy<span class="fl">.2021</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2021)</span>
-<span id="cb266-20"><a href="sect032.html#cb266-20" tabindex="-1"></a>xy<span class="fl">.2022</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2022)</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="sect032.html#cb294-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb294-2"><a href="sect032.html#cb294-2" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb294-3"><a href="sect032.html#cb294-3" tabindex="-1"></a><span class="do">## Importation des données </span></span>
+<span id="cb294-4"><a href="sect032.html#cb294-4" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span>  <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Arrondissements.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb294-5"><a href="sect032.html#cb294-5" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/IncidentsSecuritePublique.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb294-6"><a href="sect032.html#cb294-6" tabindex="-1"></a><span class="do">## Changement de projection</span></span>
+<span id="cb294-7"><a href="sect032.html#cb294-7" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Arrondissements, <span class="at">crs =</span> <span class="dv">3798</span>) </span>
+<span id="cb294-8"><a href="sect032.html#cb294-8" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Incidents, <span class="at">crs =</span> <span class="dv">3798</span>)</span>
+<span id="cb294-9"><a href="sect032.html#cb294-9" tabindex="-1"></a><span class="do">## Extaction des méfaits</span></span>
+<span id="cb294-10"><a href="sect032.html#cb294-10" tabindex="-1"></a>Mefaits <span class="ot">&lt;-</span> <span class="fu">subset</span>(Incidents, DESCRIPTIO <span class="sc">==</span> <span class="st">&quot;Méfait&quot;</span>)</span>
+<span id="cb294-11"><a href="sect032.html#cb294-11" tabindex="-1"></a><span class="co"># Méfaits par année</span></span>
+<span id="cb294-12"><a href="sect032.html#cb294-12" tabindex="-1"></a>M2019 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Mefaits, ANNEE<span class="sc">==</span><span class="dv">2019</span>)</span>
+<span id="cb294-13"><a href="sect032.html#cb294-13" tabindex="-1"></a>M2020 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Mefaits, ANNEE<span class="sc">==</span><span class="dv">2020</span>)</span>
+<span id="cb294-14"><a href="sect032.html#cb294-14" tabindex="-1"></a>M2021 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Mefaits, ANNEE<span class="sc">==</span><span class="dv">2021</span>)</span>
+<span id="cb294-15"><a href="sect032.html#cb294-15" tabindex="-1"></a>M2022 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Mefaits, ANNEE<span class="sc">==</span><span class="dv">2022</span>)</span>
+<span id="cb294-16"><a href="sect032.html#cb294-16" tabindex="-1"></a><span class="co"># Coordonnées géographiques</span></span>
+<span id="cb294-17"><a href="sect032.html#cb294-17" tabindex="-1"></a>xy<span class="fl">.2019</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2019)</span>
+<span id="cb294-18"><a href="sect032.html#cb294-18" tabindex="-1"></a>xy<span class="fl">.2020</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2020)</span>
+<span id="cb294-19"><a href="sect032.html#cb294-19" tabindex="-1"></a>xy<span class="fl">.2021</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2021)</span>
+<span id="cb294-20"><a href="sect032.html#cb294-20" tabindex="-1"></a>xy<span class="fl">.2022</span> <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(M2022)</span></code></pre></div>
 <p>Les méfaits par année sont présentés à la figure <a href="sect032.html#fig:CarteMefaits">3.6</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CarteMefaits"></span>
 <img src="GMQ405_files/figure-html/CarteMefaits-1.png" alt="Localisation des méfaits par année, ville de Sherbrooke, 2021" width="85%" />
@@ -1034,25 +1028,25 @@ Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke, 2021
 </div>
 <p><strong>Centre moyen</strong></p>
 <p>Avec la fonction <code>mean</code>, nous pouvons calculer les valeurs moyennes sur les coordonnées <em>X</em> et <em>Y</em>, puis créer un objet <code>sf</code> avec les centres moyens.</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="sect032.html#cb267-1" tabindex="-1"></a><span class="do">## Récupération de la projection cartographique dans une variable</span></span>
-<span id="cb267-2"><a href="sect032.html#cb267-2" tabindex="-1"></a>ProjCarto <span class="ot">=</span> <span class="fu">st_crs</span>(Mefaits)</span>
-<span id="cb267-3"><a href="sect032.html#cb267-3" tabindex="-1"></a><span class="do">## Calcul du centre moyen pour une année (2019)</span></span>
-<span id="cb267-4"><a href="sect032.html#cb267-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]), <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>])))</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="sect032.html#cb295-1" tabindex="-1"></a><span class="do">## Récupération de la projection cartographique dans une variable</span></span>
+<span id="cb295-2"><a href="sect032.html#cb295-2" tabindex="-1"></a>ProjCarto <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(Mefaits)</span>
+<span id="cb295-3"><a href="sect032.html#cb295-3" tabindex="-1"></a><span class="do">## Calcul du centre moyen pour une année (2019)</span></span>
+<span id="cb295-4"><a href="sect032.html#cb295-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]), <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>])))</span></code></pre></div>
 <pre><code>## [1] 649990.3 157059.3</code></pre>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="sect032.html#cb269-1" tabindex="-1"></a><span class="do">## Calcul pour toutes les années</span></span>
-<span id="cb269-2"><a href="sect032.html#cb269-2" tabindex="-1"></a><span class="co"># vecteur pour les moyennes des X</span></span>
-<span id="cb269-3"><a href="sect032.html#cb269-3" tabindex="-1"></a>X.moy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]), <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">1</span>]), <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">1</span>]), <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">1</span>]))</span>
-<span id="cb269-4"><a href="sect032.html#cb269-4" tabindex="-1"></a><span class="co"># Vecteur pour les moyennes des Y</span></span>
-<span id="cb269-5"><a href="sect032.html#cb269-5" tabindex="-1"></a>Y.moy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]), <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">2</span>]), <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">2</span>]), <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">2</span>]))</span>
-<span id="cb269-6"><a href="sect032.html#cb269-6" tabindex="-1"></a><span class="co"># Enregistrement dans un objet sf</span></span>
-<span id="cb269-7"><a href="sect032.html#cb269-7" tabindex="-1"></a>CentreMoyen <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Annee =</span> <span class="fu">c</span>(<span class="st">&quot;2019&quot;</span>, <span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2022&quot;</span>),</span>
-<span id="cb269-8"><a href="sect032.html#cb269-8" tabindex="-1"></a>                          <span class="at">X =</span> X.moy, </span>
-<span id="cb269-9"><a href="sect032.html#cb269-9" tabindex="-1"></a>                          <span class="at">Y =</span> Y.moy,</span>
-<span id="cb269-10"><a href="sect032.html#cb269-10" tabindex="-1"></a>                          <span class="at">CMx =</span> X.moy,  </span>
-<span id="cb269-11"><a href="sect032.html#cb269-11" tabindex="-1"></a>                          <span class="at">CMy =</span> Y.moy)</span>
-<span id="cb269-12"><a href="sect032.html#cb269-12" tabindex="-1"></a>CentreMoyen <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(CentreMoyen, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> ProjCarto)</span>
-<span id="cb269-13"><a href="sect032.html#cb269-13" tabindex="-1"></a><span class="co"># Affichage des résultats</span></span>
-<span id="cb269-14"><a href="sect032.html#cb269-14" tabindex="-1"></a><span class="fu">print</span>(CentreMoyen)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="sect032.html#cb297-1" tabindex="-1"></a><span class="do">## Calcul pour toutes les années</span></span>
+<span id="cb297-2"><a href="sect032.html#cb297-2" tabindex="-1"></a><span class="co"># vecteur pour les moyennes des X</span></span>
+<span id="cb297-3"><a href="sect032.html#cb297-3" tabindex="-1"></a>X.moy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]), <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">1</span>]), <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">1</span>]), <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">1</span>]))</span>
+<span id="cb297-4"><a href="sect032.html#cb297-4" tabindex="-1"></a><span class="co"># Vecteur pour les moyennes des Y</span></span>
+<span id="cb297-5"><a href="sect032.html#cb297-5" tabindex="-1"></a>Y.moy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]), <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">2</span>]), <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">2</span>]), <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">2</span>]))</span>
+<span id="cb297-6"><a href="sect032.html#cb297-6" tabindex="-1"></a><span class="co"># Enregistrement dans un objet sf</span></span>
+<span id="cb297-7"><a href="sect032.html#cb297-7" tabindex="-1"></a>CentreMoyen <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Annee =</span> <span class="fu">c</span>(<span class="st">&quot;2019&quot;</span>, <span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2022&quot;</span>),</span>
+<span id="cb297-8"><a href="sect032.html#cb297-8" tabindex="-1"></a>                          <span class="at">X =</span> X.moy, </span>
+<span id="cb297-9"><a href="sect032.html#cb297-9" tabindex="-1"></a>                          <span class="at">Y =</span> Y.moy,</span>
+<span id="cb297-10"><a href="sect032.html#cb297-10" tabindex="-1"></a>                          <span class="at">CMx =</span> X.moy,  </span>
+<span id="cb297-11"><a href="sect032.html#cb297-11" tabindex="-1"></a>                          <span class="at">CMy =</span> Y.moy)</span>
+<span id="cb297-12"><a href="sect032.html#cb297-12" tabindex="-1"></a>CentreMoyen <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(CentreMoyen, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> ProjCarto)</span>
+<span id="cb297-13"><a href="sect032.html#cb297-13" tabindex="-1"></a><span class="co"># Affichage des résultats</span></span>
+<span id="cb297-14"><a href="sect032.html#cb297-14" tabindex="-1"></a><span class="fu">print</span>(CentreMoyen)</span></code></pre></div>
 <pre><code>## Simple feature collection with 4 features and 3 fields
 ## Geometry type: POINT
 ## Dimension:     XY
@@ -1065,44 +1059,44 @@ Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke, 2021
 ## 4  2022 650442.5 157237.0   POINT (650442.5 157237)</code></pre>
 <p><strong>Point central</strong></p>
 <p>La syntaxe ci-dessous illustre comment identifier le point central, qui fait partie du jeu de données, pour l’année 2019.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="sect032.html#cb271-1" tabindex="-1"></a><span class="do">## Calcul de la matrice de distances entre les points de l&#39;année 2019</span></span>
-<span id="cb271-2"><a href="sect032.html#cb271-2" tabindex="-1"></a>DistMatrice2019 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(xy<span class="fl">.2019</span>, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>, <span class="at">diag =</span> <span class="cn">TRUE</span>, <span class="at">upper =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb271-3"><a href="sect032.html#cb271-3" tabindex="-1"></a><span class="do">## Somme de chaque ligne de la matrice, soit la somme des distances à tous les autres points</span></span>
-<span id="cb271-4"><a href="sect032.html#cb271-4" tabindex="-1"></a>M2019<span class="sc">$</span>DistATous <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(DistMatrice2019)</span>
-<span id="cb271-5"><a href="sect032.html#cb271-5" tabindex="-1"></a><span class="do">## Sélection du point avec plus petite distance à tous les autres</span></span>
-<span id="cb271-6"><a href="sect032.html#cb271-6" tabindex="-1"></a>PointCentral2019 <span class="ot">&lt;-</span> <span class="fu">subset</span>(M2019, M2019<span class="sc">$</span>DistATous<span class="sc">==</span><span class="fu">min</span>(M2019<span class="sc">$</span>DistATous))</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="sect032.html#cb299-1" tabindex="-1"></a><span class="do">## Calcul de la matrice de distances entre les points de l&#39;année 2019</span></span>
+<span id="cb299-2"><a href="sect032.html#cb299-2" tabindex="-1"></a>DistMatrice2019 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(xy<span class="fl">.2019</span>, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>, <span class="at">diag =</span> <span class="cn">TRUE</span>, <span class="at">upper =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb299-3"><a href="sect032.html#cb299-3" tabindex="-1"></a><span class="do">## Somme de chaque ligne de la matrice, soit la somme des distances à tous les autres points</span></span>
+<span id="cb299-4"><a href="sect032.html#cb299-4" tabindex="-1"></a>M2019<span class="sc">$</span>DistATous <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(DistMatrice2019)</span>
+<span id="cb299-5"><a href="sect032.html#cb299-5" tabindex="-1"></a><span class="do">## Sélection du point avec plus petite distance à tous les autres</span></span>
+<span id="cb299-6"><a href="sect032.html#cb299-6" tabindex="-1"></a>PointCentral2019 <span class="ot">&lt;-</span> <span class="fu">subset</span>(M2019, M2019<span class="sc">$</span>DistATous<span class="sc">==</span><span class="fu">min</span>(M2019<span class="sc">$</span>DistATous))</span></code></pre></div>
 <p><strong>Distance standard sur les coordonnées <em>X</em> et <em>Y</em> et distance standard combinée</strong></p>
 <p>La syntaxe permet de calculer les trois distances standards.</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="sect032.html#cb272-1" tabindex="-1"></a><span class="do">## Calcul de la distance standard pour une année (2019)</span></span>
-<span id="cb272-2"><a href="sect032.html#cb272-2" tabindex="-1"></a><span class="co"># Distance standard sur les coordonnées X et Y</span></span>
-<span id="cb272-3"><a href="sect032.html#cb272-3" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
-<span id="cb272-4"><a href="sect032.html#cb272-4" tabindex="-1"></a>  <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="sect032.html#cb300-1" tabindex="-1"></a><span class="do">## Calcul de la distance standard pour une année (2019)</span></span>
+<span id="cb300-2"><a href="sect032.html#cb300-2" tabindex="-1"></a><span class="co"># Distance standard sur les coordonnées X et Y</span></span>
+<span id="cb300-3"><a href="sect032.html#cb300-3" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb300-4"><a href="sect032.html#cb300-4" tabindex="-1"></a>  <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)))</span></code></pre></div>
 <pre><code>## [1] 3732.173 2593.207</code></pre>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="sect032.html#cb274-1" tabindex="-1"></a><span class="co"># Distance standard</span></span>
-<span id="cb274-2"><a href="sect032.html#cb274-2" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span> </span>
-<span id="cb274-3"><a href="sect032.html#cb274-3" tabindex="-1"></a>            (xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="sect032.html#cb302-1" tabindex="-1"></a><span class="co"># Distance standard</span></span>
+<span id="cb302-2"><a href="sect032.html#cb302-2" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span> </span>
+<span id="cb302-3"><a href="sect032.html#cb302-3" tabindex="-1"></a>            (xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 4544.649</code></pre>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="sect032.html#cb276-1" tabindex="-1"></a><span class="do">## Calcul pour toutes les années et enregistrement des centres moyens dans de nouveaux champs</span></span>
-<span id="cb276-2"><a href="sect032.html#cb276-2" tabindex="-1"></a>CentreMoyen<span class="sc">$</span>DS.X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
-<span id="cb276-3"><a href="sect032.html#cb276-3" tabindex="-1"></a>                      <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2020</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
-<span id="cb276-4"><a href="sect032.html#cb276-4" tabindex="-1"></a>                      <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2021</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
-<span id="cb276-5"><a href="sect032.html#cb276-5" tabindex="-1"></a>                      <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2022</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)))</span>
-<span id="cb276-6"><a href="sect032.html#cb276-6" tabindex="-1"></a></span>
-<span id="cb276-7"><a href="sect032.html#cb276-7" tabindex="-1"></a>CentreMoyen<span class="sc">$</span>DS.Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
-<span id="cb276-8"><a href="sect032.html#cb276-8" tabindex="-1"></a>                       <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2020</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
-<span id="cb276-9"><a href="sect032.html#cb276-9" tabindex="-1"></a>                       <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2021</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
-<span id="cb276-10"><a href="sect032.html#cb276-10" tabindex="-1"></a>                       <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2022</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)))</span>
-<span id="cb276-11"><a href="sect032.html#cb276-11" tabindex="-1"></a></span>
-<span id="cb276-12"><a href="sect032.html#cb276-12" tabindex="-1"></a>CentreMoyen<span class="sc">$</span>DS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span></span>
-<span id="cb276-13"><a href="sect032.html#cb276-13" tabindex="-1"></a>                              (xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>)),</span>
-<span id="cb276-14"><a href="sect032.html#cb276-14" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2020</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span></span>
-<span id="cb276-15"><a href="sect032.html#cb276-15" tabindex="-1"></a>                              (xy<span class="fl">.2020</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>)),<span class="sc">+</span></span>
-<span id="cb276-16"><a href="sect032.html#cb276-16" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2021</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span></span>
-<span id="cb276-17"><a href="sect032.html#cb276-17" tabindex="-1"></a>                              (xy<span class="fl">.2021</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>)),<span class="sc">+</span></span>
-<span id="cb276-18"><a href="sect032.html#cb276-18" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2022</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span></span>
-<span id="cb276-19"><a href="sect032.html#cb276-19" tabindex="-1"></a>                              (xy<span class="fl">.2022</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>)))</span>
-<span id="cb276-20"><a href="sect032.html#cb276-20" tabindex="-1"></a><span class="do">## Visualisation des résultats</span></span>
-<span id="cb276-21"><a href="sect032.html#cb276-21" tabindex="-1"></a><span class="fu">head</span>(CentreMoyen)</span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="sect032.html#cb304-1" tabindex="-1"></a><span class="do">## Calcul pour toutes les années et enregistrement des centres moyens dans de nouveaux champs</span></span>
+<span id="cb304-2"><a href="sect032.html#cb304-2" tabindex="-1"></a>CentreMoyen<span class="sc">$</span>DS.X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb304-3"><a href="sect032.html#cb304-3" tabindex="-1"></a>                      <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2020</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb304-4"><a href="sect032.html#cb304-4" tabindex="-1"></a>                      <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2021</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb304-5"><a href="sect032.html#cb304-5" tabindex="-1"></a>                      <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2022</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">1</span>]))<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb304-6"><a href="sect032.html#cb304-6" tabindex="-1"></a></span>
+<span id="cb304-7"><a href="sect032.html#cb304-7" tabindex="-1"></a>CentreMoyen<span class="sc">$</span>DS.Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb304-8"><a href="sect032.html#cb304-8" tabindex="-1"></a>                       <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2020</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb304-9"><a href="sect032.html#cb304-9" tabindex="-1"></a>                       <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2021</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb304-10"><a href="sect032.html#cb304-10" tabindex="-1"></a>                       <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2022</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">2</span>]))<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb304-11"><a href="sect032.html#cb304-11" tabindex="-1"></a></span>
+<span id="cb304-12"><a href="sect032.html#cb304-12" tabindex="-1"></a>CentreMoyen<span class="sc">$</span>DS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2019</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span></span>
+<span id="cb304-13"><a href="sect032.html#cb304-13" tabindex="-1"></a>                              (xy<span class="fl">.2019</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2019</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>)),</span>
+<span id="cb304-14"><a href="sect032.html#cb304-14" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2020</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span></span>
+<span id="cb304-15"><a href="sect032.html#cb304-15" tabindex="-1"></a>                              (xy<span class="fl">.2020</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2020</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>)),<span class="sc">+</span></span>
+<span id="cb304-16"><a href="sect032.html#cb304-16" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2021</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span></span>
+<span id="cb304-17"><a href="sect032.html#cb304-17" tabindex="-1"></a>                              (xy<span class="fl">.2021</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2021</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>)),<span class="sc">+</span></span>
+<span id="cb304-18"><a href="sect032.html#cb304-18" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">mean</span>((xy<span class="fl">.2022</span>[,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">1</span>]))<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span></span>
+<span id="cb304-19"><a href="sect032.html#cb304-19" tabindex="-1"></a>                              (xy<span class="fl">.2022</span>[,<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(xy<span class="fl">.2022</span>[,<span class="dv">2</span>]))<span class="sc">**</span><span class="dv">2</span>)))</span>
+<span id="cb304-20"><a href="sect032.html#cb304-20" tabindex="-1"></a><span class="do">## Visualisation des résultats</span></span>
+<span id="cb304-21"><a href="sect032.html#cb304-21" tabindex="-1"></a><span class="fu">head</span>(CentreMoyen)</span></code></pre></div>
 <pre><code>## Simple feature collection with 4 features and 6 fields
 ## Geometry type: POINT
 ## Dimension:     XY
@@ -1115,141 +1109,66 @@ Figure 3.6: Localisation des méfaits par année, ville de Sherbrooke, 2021
 ## 4  2022 650442.5 157237.0   POINT (650442.5 157237) 3601.208 2170.215 4204.585</code></pre>
 <p><strong>Représentations graphiques de la dispersion</strong></p>
 <p>Une fois que la couche <code>sf</code> des centres moyens avec les trois champs pour la distance standard est créée, il suffit de tracer un rectangle et un cercle de distance standard.</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="sect032.html#cb278-1" tabindex="-1"></a><span class="do">## Enveloppe convexe</span></span>
-<span id="cb278-2"><a href="sect032.html#cb278-2" tabindex="-1"></a>sf.Enveloppes <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(<span class="at">Id=</span><span class="fu">c</span>(<span class="st">&quot;2019&quot;</span>, <span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2022&quot;</span>)),</span>
-<span id="cb278-3"><a href="sect032.html#cb278-3" tabindex="-1"></a>                    <span class="at">geometry =</span> <span class="fu">c</span>(<span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2019)),</span>
-<span id="cb278-4"><a href="sect032.html#cb278-4" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2020)),</span>
-<span id="cb278-5"><a href="sect032.html#cb278-5" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2021)),</span>
-<span id="cb278-6"><a href="sect032.html#cb278-6" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2022))))</span>
-<span id="cb278-7"><a href="sect032.html#cb278-7" tabindex="-1"></a><span class="do">## Rectangle avec les distances standards sur les coordonnées X et Y</span></span>
-<span id="cb278-8"><a href="sect032.html#cb278-8" tabindex="-1"></a><span class="co">#&#39; Fonction pour tracer le rectangle</span></span>
-<span id="cb278-9"><a href="sect032.html#cb278-9" tabindex="-1"></a><span class="co">#&#39; @param MoyX coordonnées X du centre moyen.</span></span>
-<span id="cb278-10"><a href="sect032.html#cb278-10" tabindex="-1"></a><span class="co">#&#39; @param MoyY coordonnées Y du centre moyen.</span></span>
-<span id="cb278-11"><a href="sect032.html#cb278-11" tabindex="-1"></a><span class="co">#&#39; @param SDx distance standard sur les coordonnées X.</span></span>
-<span id="cb278-12"><a href="sect032.html#cb278-12" tabindex="-1"></a><span class="co">#&#39; @param SDy distance standard sur les coordonnées Y.</span></span>
-<span id="cb278-13"><a href="sect032.html#cb278-13" tabindex="-1"></a><span class="co">#&#39; @param crs projection cartographique.</span></span>
-<span id="cb278-14"><a href="sect032.html#cb278-14" tabindex="-1"></a>CreationRec <span class="ot">&lt;-</span> <span class="cf">function</span>(MoyX, MoyY, SDx, SDy, ProjCarto){</span>
-<span id="cb278-15"><a href="sect032.html#cb278-15" tabindex="-1"></a>  pt1 <span class="ot">=</span> <span class="fu">c</span>(MoyX <span class="sc">-</span> SDx, MoyY <span class="sc">-</span> SDy)</span>
-<span id="cb278-16"><a href="sect032.html#cb278-16" tabindex="-1"></a>  pt2 <span class="ot">=</span> <span class="fu">c</span>(MoyX <span class="sc">-</span> SDx, MoyY <span class="sc">+</span> SDy)</span>
-<span id="cb278-17"><a href="sect032.html#cb278-17" tabindex="-1"></a>  pt3 <span class="ot">=</span> <span class="fu">c</span>(MoyX <span class="sc">+</span> SDx, MoyY <span class="sc">+</span> SDy)</span>
-<span id="cb278-18"><a href="sect032.html#cb278-18" tabindex="-1"></a>  pt4 <span class="ot">=</span> <span class="fu">c</span>(MoyX <span class="sc">+</span> SDx, MoyY <span class="sc">-</span> SDy)</span>
-<span id="cb278-19"><a href="sect032.html#cb278-19" tabindex="-1"></a>  Rectangle <span class="ot">=</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">rbind</span>(pt1, pt2, pt3, pt4, pt1)))</span>
-<span id="cb278-20"><a href="sect032.html#cb278-20" tabindex="-1"></a>  Rectangle <span class="ot">=</span> <span class="fu">st_sfc</span>(Rectangle)</span>
-<span id="cb278-21"><a href="sect032.html#cb278-21" tabindex="-1"></a>  <span class="fu">st_crs</span>(Rectangle) <span class="ot">=</span> ProjCarto</span>
-<span id="cb278-22"><a href="sect032.html#cb278-22" tabindex="-1"></a>  <span class="fu">return</span>(Rectangle)</span>
-<span id="cb278-23"><a href="sect032.html#cb278-23" tabindex="-1"></a>}</span>
-<span id="cb278-24"><a href="sect032.html#cb278-24" tabindex="-1"></a>MoyX <span class="ot">&lt;-</span> CentreMoyen<span class="sc">$</span>CMx</span>
-<span id="cb278-25"><a href="sect032.html#cb278-25" tabindex="-1"></a>MoyY <span class="ot">&lt;-</span> CentreMoyen<span class="sc">$</span>CMy</span>
-<span id="cb278-26"><a href="sect032.html#cb278-26" tabindex="-1"></a>SDx <span class="ot">&lt;-</span> CentreMoyen<span class="sc">$</span>DS.X</span>
-<span id="cb278-27"><a href="sect032.html#cb278-27" tabindex="-1"></a>SDy <span class="ot">&lt;-</span> CentreMoyen<span class="sc">$</span>DS.Y</span>
-<span id="cb278-28"><a href="sect032.html#cb278-28" tabindex="-1"></a>sf.Rectangles <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(<span class="at">Id=</span><span class="fu">c</span>(<span class="st">&quot;2019&quot;</span>, <span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2022&quot;</span>)),</span>
-<span id="cb278-29"><a href="sect032.html#cb278-29" tabindex="-1"></a>                    <span class="at">geometry =</span> <span class="fu">c</span>(<span class="fu">CreationRec</span>(MoyX[<span class="dv">1</span>], MoyY[<span class="dv">1</span>], SDx[<span class="dv">1</span>], SDy[<span class="dv">1</span>], ProjCarto),</span>
-<span id="cb278-30"><a href="sect032.html#cb278-30" tabindex="-1"></a>                                 <span class="fu">CreationRec</span>(MoyX[<span class="dv">2</span>], MoyY[<span class="dv">2</span>], SDx[<span class="dv">2</span>], SDy[<span class="dv">2</span>], ProjCarto),</span>
-<span id="cb278-31"><a href="sect032.html#cb278-31" tabindex="-1"></a>                                 <span class="fu">CreationRec</span>(MoyX[<span class="dv">3</span>], MoyY[<span class="dv">3</span>], SDx[<span class="dv">3</span>], SDy[<span class="dv">3</span>], ProjCarto),</span>
-<span id="cb278-32"><a href="sect032.html#cb278-32" tabindex="-1"></a>                                 <span class="fu">CreationRec</span>(MoyX[<span class="dv">4</span>], MoyY[<span class="dv">4</span>], SDx[<span class="dv">4</span>], SDy[<span class="dv">4</span>], ProjCarto)))</span>
-<span id="cb278-33"><a href="sect032.html#cb278-33" tabindex="-1"></a><span class="do">## Cercle de distance standard avec la fonction st_buffer</span></span>
-<span id="cb278-34"><a href="sect032.html#cb278-34" tabindex="-1"></a>sf.CercleDS <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(CentreMoyen, <span class="at">dist =</span> CentreMoyen<span class="sc">$</span>DS)</span></code></pre></div>
-<p>Le calcul de l’ellipse est un peu plus complexe. Par conséquent, nous avons créer une fonction <code>CreateEllipse</code> qui renvoie un objets <code>sf</code>.</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="sect032.html#cb279-1" tabindex="-1"></a><span class="co">#&#39; Calcul de l&#39;ellipse</span></span>
-<span id="cb279-2"><a href="sect032.html#cb279-2" tabindex="-1"></a><span class="co">#&#39; @param id identifiant de l&#39;ellipse.</span></span>
-<span id="cb279-3"><a href="sect032.html#cb279-3" tabindex="-1"></a><span class="co">#&#39; @param x coordonnées X.</span></span>
-<span id="cb279-4"><a href="sect032.html#cb279-4" tabindex="-1"></a><span class="co">#&#39; @param y coordonnées Y.</span></span>
-<span id="cb279-5"><a href="sect032.html#cb279-5" tabindex="-1"></a><span class="co">#&#39; @param crs projection cartographique.</span></span>
-<span id="cb279-6"><a href="sect032.html#cb279-6" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb279-7"><a href="sect032.html#cb279-7" tabindex="-1"></a>CreateEllipse <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">id=</span><span class="dv">1</span>, x, y, crs){</span>
-<span id="cb279-8"><a href="sect032.html#cb279-8" tabindex="-1"></a>  <span class="co"># coordonnées du centre moyen </span></span>
-<span id="cb279-9"><a href="sect032.html#cb279-9" tabindex="-1"></a>  mean.x <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb279-10"><a href="sect032.html#cb279-10" tabindex="-1"></a>  mean.y <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
-<span id="cb279-11"><a href="sect032.html#cb279-11" tabindex="-1"></a>  <span class="co"># coordonnées centrées</span></span>
-<span id="cb279-12"><a href="sect032.html#cb279-12" tabindex="-1"></a>  zx <span class="ot">&lt;-</span> x <span class="sc">-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb279-13"><a href="sect032.html#cb279-13" tabindex="-1"></a>  zy <span class="ot">&lt;-</span> y <span class="sc">-</span> <span class="fu">mean</span>(y)</span>
-<span id="cb279-14"><a href="sect032.html#cb279-14" tabindex="-1"></a>  sumzx2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(zx<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb279-15"><a href="sect032.html#cb279-15" tabindex="-1"></a>  sumzy2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(zy<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb279-16"><a href="sect032.html#cb279-16" tabindex="-1"></a>  sumzxy <span class="ot">&lt;-</span> <span class="fu">sum</span>(zx <span class="sc">*</span> zy)</span>
-<span id="cb279-17"><a href="sect032.html#cb279-17" tabindex="-1"></a>  <span class="co"># Calcul de l&#39;angle de rotation</span></span>
-<span id="cb279-18"><a href="sect032.html#cb279-18" tabindex="-1"></a>  numerateur   <span class="ot">&lt;-</span> (sumzx2<span class="sc">-</span>sumzy2)<span class="sc">+</span> <span class="fu">sqrt</span>((sumzx2<span class="sc">-</span>sumzy2)<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span> <span class="dv">4</span><span class="sc">*</span>(sumzxy)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb279-19"><a href="sect032.html#cb279-19" tabindex="-1"></a>  demoninateur <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>sumzxy</span>
-<span id="cb279-20"><a href="sect032.html#cb279-20" tabindex="-1"></a>  tantheta <span class="ot">&lt;-</span> numerateur <span class="sc">/</span> demoninateur</span>
-<span id="cb279-21"><a href="sect032.html#cb279-21" tabindex="-1"></a>  <span class="co"># Theta</span></span>
-<span id="cb279-22"><a href="sect032.html#cb279-22" tabindex="-1"></a>  theta <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(tantheta <span class="sc">&lt;</span> <span class="dv">0</span>,</span>
-<span id="cb279-23"><a href="sect032.html#cb279-23" tabindex="-1"></a>                  <span class="dv">180</span> <span class="sc">+</span> <span class="fu">atan</span>(tantheta)<span class="sc">*</span> <span class="dv">180</span><span class="sc">/</span>pi,</span>
-<span id="cb279-24"><a href="sect032.html#cb279-24" tabindex="-1"></a>                  Theta <span class="ot">&lt;-</span> <span class="fu">atan</span>(tantheta)<span class="sc">*</span> <span class="dv">180</span><span class="sc">/</span>pi)</span>
-<span id="cb279-25"><a href="sect032.html#cb279-25" tabindex="-1"></a>  sintheta <span class="ot">&lt;-</span> <span class="fu">sin</span>(theta <span class="sc">*</span> pi<span class="sc">/</span><span class="dv">180</span>)</span>
-<span id="cb279-26"><a href="sect032.html#cb279-26" tabindex="-1"></a>  costheta <span class="ot">&lt;-</span> <span class="fu">cos</span>(theta <span class="sc">*</span> pi<span class="sc">/</span><span class="dv">180</span>)</span>
-<span id="cb279-27"><a href="sect032.html#cb279-27" tabindex="-1"></a>  sin2theta <span class="ot">&lt;-</span> sintheta<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb279-28"><a href="sect032.html#cb279-28" tabindex="-1"></a>  cos2theta <span class="ot">&lt;-</span> costheta<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb279-29"><a href="sect032.html#cb279-29" tabindex="-1"></a>  sinthetacostheta <span class="ot">&lt;-</span> sintheta <span class="sc">*</span> costheta</span>
-<span id="cb279-30"><a href="sect032.html#cb279-30" tabindex="-1"></a>  <span class="co"># Calcul de Sigma.x et Sigma.y</span></span>
-<span id="cb279-31"><a href="sect032.html#cb279-31" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(zx)</span>
-<span id="cb279-32"><a href="sect032.html#cb279-32" tabindex="-1"></a>  sigmax <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(((sumzx2) <span class="sc">*</span> (cos2theta) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> (sumzxy) <span class="sc">*</span> </span>
-<span id="cb279-33"><a href="sect032.html#cb279-33" tabindex="-1"></a>            (sinthetacostheta) <span class="sc">+</span> (sumzy2) <span class="sc">*</span> (sin2theta))<span class="sc">/</span>(n <span class="sc">-</span> <span class="dv">2</span>))</span>
-<span id="cb279-34"><a href="sect032.html#cb279-34" tabindex="-1"></a>  sigmay <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(((sumzx2) <span class="sc">*</span> (sin2theta) <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> (sumzxy) <span class="sc">*</span> </span>
-<span id="cb279-35"><a href="sect032.html#cb279-35" tabindex="-1"></a>            (sinthetacostheta) <span class="sc">+</span> (sumzy2) <span class="sc">*</span> (cos2theta))<span class="sc">/</span>(n <span class="sc">-</span> <span class="dv">2</span>))</span>
-<span id="cb279-36"><a href="sect032.html#cb279-36" tabindex="-1"></a>  <span class="co"># Theta corrigé</span></span>
-<span id="cb279-37"><a href="sect032.html#cb279-37" tabindex="-1"></a>  <span class="cf">if</span> (sigmax <span class="sc">&gt;</span> sigmay) {</span>
-<span id="cb279-38"><a href="sect032.html#cb279-38" tabindex="-1"></a>    Theta.Corr <span class="ot">&lt;-</span> theta <span class="sc">+</span> <span class="dv">90</span></span>
-<span id="cb279-39"><a href="sect032.html#cb279-39" tabindex="-1"></a>    Major <span class="ot">&lt;-</span> <span class="st">&quot;SigmaX&quot;</span></span>
-<span id="cb279-40"><a href="sect032.html#cb279-40" tabindex="-1"></a>    Minor <span class="ot">&lt;-</span> <span class="st">&quot;SigmaY&quot;</span></span>
-<span id="cb279-41"><a href="sect032.html#cb279-41" tabindex="-1"></a>  }</span>
-<span id="cb279-42"><a href="sect032.html#cb279-42" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb279-43"><a href="sect032.html#cb279-43" tabindex="-1"></a>    Theta.Corr <span class="ot">&lt;-</span> theta</span>
-<span id="cb279-44"><a href="sect032.html#cb279-44" tabindex="-1"></a>    Major <span class="ot">&lt;-</span> <span class="st">&quot;SigmaY&quot;</span></span>
-<span id="cb279-45"><a href="sect032.html#cb279-45" tabindex="-1"></a>    Minor <span class="ot">&lt;-</span> <span class="st">&quot;SigmaX&quot;</span></span>
-<span id="cb279-46"><a href="sect032.html#cb279-46" tabindex="-1"></a>  }</span>
-<span id="cb279-47"><a href="sect032.html#cb279-47" tabindex="-1"></a>  <span class="co"># Coordonnées</span></span>
-<span id="cb279-48"><a href="sect032.html#cb279-48" tabindex="-1"></a>  B <span class="ot">&lt;-</span> <span class="fu">min</span>(sigmax, sigmay)</span>
-<span id="cb279-49"><a href="sect032.html#cb279-49" tabindex="-1"></a>  A <span class="ot">&lt;-</span> <span class="fu">max</span>(sigmax, sigmay)</span>
-<span id="cb279-50"><a href="sect032.html#cb279-50" tabindex="-1"></a>  d2 <span class="ot">&lt;-</span> (A <span class="sc">-</span> B) <span class="sc">*</span> (A <span class="sc">+</span> B)</span>
-<span id="cb279-51"><a href="sect032.html#cb279-51" tabindex="-1"></a>  phi <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">len =</span> <span class="dv">360</span>)</span>
-<span id="cb279-52"><a href="sect032.html#cb279-52" tabindex="-1"></a>  sp <span class="ot">&lt;-</span> <span class="fu">sin</span>(phi)</span>
-<span id="cb279-53"><a href="sect032.html#cb279-53" tabindex="-1"></a>  cp <span class="ot">&lt;-</span> <span class="fu">cos</span>(phi)</span>
-<span id="cb279-54"><a href="sect032.html#cb279-54" tabindex="-1"></a>  r <span class="ot">&lt;-</span> sigmax <span class="sc">*</span> sigmay<span class="sc">/</span><span class="fu">sqrt</span>(B<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> d2 <span class="sc">*</span> sp<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb279-55"><a href="sect032.html#cb279-55" tabindex="-1"></a>  xy <span class="ot">&lt;-</span> r <span class="sc">*</span> <span class="fu">cbind</span>(cp, sp)</span>
-<span id="cb279-56"><a href="sect032.html#cb279-56" tabindex="-1"></a>  al <span class="ot">&lt;-</span> (<span class="dv">90</span> <span class="sc">-</span> theta) <span class="sc">*</span> pi<span class="sc">/</span><span class="dv">180</span></span>
-<span id="cb279-57"><a href="sect032.html#cb279-57" tabindex="-1"></a>  ca <span class="ot">&lt;-</span> <span class="fu">cos</span>(al)</span>
-<span id="cb279-58"><a href="sect032.html#cb279-58" tabindex="-1"></a>  sa <span class="ot">&lt;-</span> <span class="fu">sin</span>(al)</span>
-<span id="cb279-59"><a href="sect032.html#cb279-59" tabindex="-1"></a>  coordsSDE <span class="ot">&lt;-</span> xy <span class="sc">%*%</span> <span class="fu">rbind</span>(<span class="fu">c</span>(ca, sa), <span class="fu">c</span>(<span class="sc">-</span>sa, ca)) <span class="sc">+</span> </span>
-<span id="cb279-60"><a href="sect032.html#cb279-60" tabindex="-1"></a>                      <span class="fu">cbind</span>(<span class="fu">rep</span>(mean.x, <span class="dv">360</span>), <span class="fu">rep</span>(mean.y, <span class="dv">360</span>))</span>
-<span id="cb279-61"><a href="sect032.html#cb279-61" tabindex="-1"></a>  <span class="co"># Polygone</span></span>
-<span id="cb279-62"><a href="sect032.html#cb279-62" tabindex="-1"></a>  EllPoly <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">as.matrix</span>(coordsSDE)))</span>
-<span id="cb279-63"><a href="sect032.html#cb279-63" tabindex="-1"></a>  ellipse <span class="ot">&lt;-</span> <span class="fu">st_sfc</span>(EllPoly, <span class="at">crs=</span>crs)</span>
-<span id="cb279-64"><a href="sect032.html#cb279-64" tabindex="-1"></a>  ellipse <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(<span class="at">Id=</span>id,</span>
-<span id="cb279-65"><a href="sect032.html#cb279-65" tabindex="-1"></a>                               <span class="at">CMx =</span> mean.x,</span>
-<span id="cb279-66"><a href="sect032.html#cb279-66" tabindex="-1"></a>                               <span class="at">CMy =</span> mean.y,</span>
-<span id="cb279-67"><a href="sect032.html#cb279-67" tabindex="-1"></a>                               <span class="at">Sigmax =</span> sigmax,</span>
-<span id="cb279-68"><a href="sect032.html#cb279-68" tabindex="-1"></a>                               <span class="at">Sigmay =</span> sigmay,</span>
-<span id="cb279-69"><a href="sect032.html#cb279-69" tabindex="-1"></a>                               <span class="at">Lx =</span> <span class="dv">2</span><span class="sc">*</span>sigmax,</span>
-<span id="cb279-70"><a href="sect032.html#cb279-70" tabindex="-1"></a>                               <span class="at">Ly =</span> <span class="dv">2</span><span class="sc">*</span>sigmay,</span>
-<span id="cb279-71"><a href="sect032.html#cb279-71" tabindex="-1"></a>                               <span class="at">Aire =</span> pi<span class="sc">*</span>sigmax<span class="sc">*</span>sigmay,</span>
-<span id="cb279-72"><a href="sect032.html#cb279-72" tabindex="-1"></a>                               <span class="at">Theta =</span> theta,</span>
-<span id="cb279-73"><a href="sect032.html#cb279-73" tabindex="-1"></a>                               <span class="at">ThetaCorr =</span>Theta.Corr,</span>
-<span id="cb279-74"><a href="sect032.html#cb279-74" tabindex="-1"></a>                               <span class="at">Major =</span> Major,</span>
-<span id="cb279-75"><a href="sect032.html#cb279-75" tabindex="-1"></a>                               <span class="at">Minor =</span> Minor),</span>
-<span id="cb279-76"><a href="sect032.html#cb279-76" tabindex="-1"></a>                     <span class="at">geometry =</span> ellipse)</span>
-<span id="cb279-77"><a href="sect032.html#cb279-77" tabindex="-1"></a>  <span class="fu">return</span>(ellipse)</span>
-<span id="cb279-78"><a href="sect032.html#cb279-78" tabindex="-1"></a>}</span>
-<span id="cb279-79"><a href="sect032.html#cb279-79" tabindex="-1"></a></span>
-<span id="cb279-80"><a href="sect032.html#cb279-80" tabindex="-1"></a>El2019 <span class="ot">&lt;-</span> <span class="fu">CreateEllipse</span>(<span class="at">id=</span><span class="st">&quot;2019&quot;</span>,  <span class="at">x =</span> xy<span class="fl">.2019</span>[,<span class="dv">1</span>], <span class="at">y =</span> xy<span class="fl">.2019</span>[,<span class="dv">2</span>], <span class="at">crs =</span> ProjCarto)</span>
-<span id="cb279-81"><a href="sect032.html#cb279-81" tabindex="-1"></a>El2020 <span class="ot">&lt;-</span> <span class="fu">CreateEllipse</span>(<span class="at">id=</span><span class="st">&quot;2020&quot;</span>,  <span class="at">x =</span> xy<span class="fl">.2020</span>[,<span class="dv">1</span>], <span class="at">y =</span> xy<span class="fl">.2020</span>[,<span class="dv">2</span>], <span class="at">crs =</span> ProjCarto)</span>
-<span id="cb279-82"><a href="sect032.html#cb279-82" tabindex="-1"></a>El2021 <span class="ot">&lt;-</span> <span class="fu">CreateEllipse</span>(<span class="at">id=</span><span class="st">&quot;2021&quot;</span>,  <span class="at">x =</span> xy<span class="fl">.2021</span>[,<span class="dv">1</span>], <span class="at">y =</span> xy<span class="fl">.2021</span>[,<span class="dv">2</span>], <span class="at">crs =</span> ProjCarto)</span>
-<span id="cb279-83"><a href="sect032.html#cb279-83" tabindex="-1"></a>El2022 <span class="ot">&lt;-</span> <span class="fu">CreateEllipse</span>(<span class="at">id=</span><span class="st">&quot;2022&quot;</span>,  <span class="at">x =</span> xy<span class="fl">.2022</span>[,<span class="dv">1</span>], <span class="at">y =</span> xy<span class="fl">.2022</span>[,<span class="dv">2</span>], <span class="at">crs =</span> ProjCarto)</span>
-<span id="cb279-84"><a href="sect032.html#cb279-84" tabindex="-1"></a>sf.Ellipse <span class="ot">&lt;-</span> <span class="fu">rbind</span>(El2019, El2020, El2021, El2022)</span>
-<span id="cb279-85"><a href="sect032.html#cb279-85" tabindex="-1"></a><span class="fu">head</span>(sf.Ellipse)</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="sect032.html#cb306-1" tabindex="-1"></a><span class="do">## Enveloppe convexe</span></span>
+<span id="cb306-2"><a href="sect032.html#cb306-2" tabindex="-1"></a>sf.Enveloppes <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(<span class="at">Id=</span><span class="fu">c</span>(<span class="st">&quot;2019&quot;</span>, <span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2022&quot;</span>)),</span>
+<span id="cb306-3"><a href="sect032.html#cb306-3" tabindex="-1"></a>                    <span class="at">geometry =</span> <span class="fu">c</span>(<span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2019)),</span>
+<span id="cb306-4"><a href="sect032.html#cb306-4" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2020)),</span>
+<span id="cb306-5"><a href="sect032.html#cb306-5" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2021)),</span>
+<span id="cb306-6"><a href="sect032.html#cb306-6" tabindex="-1"></a>                                 <span class="fu">st_convex_hull</span>(<span class="fu">st_union</span>(M2022))))</span>
+<span id="cb306-7"><a href="sect032.html#cb306-7" tabindex="-1"></a><span class="do">## Rectangle avec les distances standards sur les coordonnées X et Y</span></span>
+<span id="cb306-8"><a href="sect032.html#cb306-8" tabindex="-1"></a><span class="co">#&#39; Fonction pour tracer le rectangle</span></span>
+<span id="cb306-9"><a href="sect032.html#cb306-9" tabindex="-1"></a><span class="co">#&#39; @param MoyX coordonnées X du centre moyen.</span></span>
+<span id="cb306-10"><a href="sect032.html#cb306-10" tabindex="-1"></a><span class="co">#&#39; @param MoyY coordonnées Y du centre moyen.</span></span>
+<span id="cb306-11"><a href="sect032.html#cb306-11" tabindex="-1"></a><span class="co">#&#39; @param SDx distance standard sur les coordonnées X.</span></span>
+<span id="cb306-12"><a href="sect032.html#cb306-12" tabindex="-1"></a><span class="co">#&#39; @param SDy distance standard sur les coordonnées Y.</span></span>
+<span id="cb306-13"><a href="sect032.html#cb306-13" tabindex="-1"></a><span class="co">#&#39; @param crs projection cartographique.</span></span>
+<span id="cb306-14"><a href="sect032.html#cb306-14" tabindex="-1"></a>CreationRec <span class="ot">&lt;-</span> <span class="cf">function</span>(MoyX, MoyY, SDx, SDy, ProjCarto){</span>
+<span id="cb306-15"><a href="sect032.html#cb306-15" tabindex="-1"></a>  pt1 <span class="ot">=</span> <span class="fu">c</span>(MoyX <span class="sc">-</span> SDx, MoyY <span class="sc">-</span> SDy)</span>
+<span id="cb306-16"><a href="sect032.html#cb306-16" tabindex="-1"></a>  pt2 <span class="ot">=</span> <span class="fu">c</span>(MoyX <span class="sc">-</span> SDx, MoyY <span class="sc">+</span> SDy)</span>
+<span id="cb306-17"><a href="sect032.html#cb306-17" tabindex="-1"></a>  pt3 <span class="ot">=</span> <span class="fu">c</span>(MoyX <span class="sc">+</span> SDx, MoyY <span class="sc">+</span> SDy)</span>
+<span id="cb306-18"><a href="sect032.html#cb306-18" tabindex="-1"></a>  pt4 <span class="ot">=</span> <span class="fu">c</span>(MoyX <span class="sc">+</span> SDx, MoyY <span class="sc">-</span> SDy)</span>
+<span id="cb306-19"><a href="sect032.html#cb306-19" tabindex="-1"></a>  Rectangle <span class="ot">=</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">rbind</span>(pt1, pt2, pt3, pt4, pt1)))</span>
+<span id="cb306-20"><a href="sect032.html#cb306-20" tabindex="-1"></a>  Rectangle <span class="ot">=</span> <span class="fu">st_sfc</span>(Rectangle)</span>
+<span id="cb306-21"><a href="sect032.html#cb306-21" tabindex="-1"></a>  <span class="fu">st_crs</span>(Rectangle) <span class="ot">=</span> ProjCarto</span>
+<span id="cb306-22"><a href="sect032.html#cb306-22" tabindex="-1"></a>  <span class="fu">return</span>(Rectangle)</span>
+<span id="cb306-23"><a href="sect032.html#cb306-23" tabindex="-1"></a>}</span>
+<span id="cb306-24"><a href="sect032.html#cb306-24" tabindex="-1"></a>MoyX <span class="ot">&lt;-</span> CentreMoyen<span class="sc">$</span>CMx</span>
+<span id="cb306-25"><a href="sect032.html#cb306-25" tabindex="-1"></a>MoyY <span class="ot">&lt;-</span> CentreMoyen<span class="sc">$</span>CMy</span>
+<span id="cb306-26"><a href="sect032.html#cb306-26" tabindex="-1"></a>SDx <span class="ot">&lt;-</span> CentreMoyen<span class="sc">$</span>DS.X</span>
+<span id="cb306-27"><a href="sect032.html#cb306-27" tabindex="-1"></a>SDy <span class="ot">&lt;-</span> CentreMoyen<span class="sc">$</span>DS.Y</span>
+<span id="cb306-28"><a href="sect032.html#cb306-28" tabindex="-1"></a>sf.Rectangles <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(<span class="at">Id=</span><span class="fu">c</span>(<span class="st">&quot;2019&quot;</span>, <span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2022&quot;</span>)),</span>
+<span id="cb306-29"><a href="sect032.html#cb306-29" tabindex="-1"></a>                    <span class="at">geometry =</span> <span class="fu">c</span>(<span class="fu">CreationRec</span>(MoyX[<span class="dv">1</span>], MoyY[<span class="dv">1</span>], SDx[<span class="dv">1</span>], SDy[<span class="dv">1</span>], ProjCarto),</span>
+<span id="cb306-30"><a href="sect032.html#cb306-30" tabindex="-1"></a>                                 <span class="fu">CreationRec</span>(MoyX[<span class="dv">2</span>], MoyY[<span class="dv">2</span>], SDx[<span class="dv">2</span>], SDy[<span class="dv">2</span>], ProjCarto),</span>
+<span id="cb306-31"><a href="sect032.html#cb306-31" tabindex="-1"></a>                                 <span class="fu">CreationRec</span>(MoyX[<span class="dv">3</span>], MoyY[<span class="dv">3</span>], SDx[<span class="dv">3</span>], SDy[<span class="dv">3</span>], ProjCarto),</span>
+<span id="cb306-32"><a href="sect032.html#cb306-32" tabindex="-1"></a>                                 <span class="fu">CreationRec</span>(MoyX[<span class="dv">4</span>], MoyY[<span class="dv">4</span>], SDx[<span class="dv">4</span>], SDy[<span class="dv">4</span>], ProjCarto)))</span>
+<span id="cb306-33"><a href="sect032.html#cb306-33" tabindex="-1"></a><span class="do">## Cercle de distance standard avec la fonction st_buffer</span></span>
+<span id="cb306-34"><a href="sect032.html#cb306-34" tabindex="-1"></a>sf.CercleDS <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(CentreMoyen, <span class="at">dist =</span> CentreMoyen<span class="sc">$</span>DS)</span></code></pre></div>
+<p>Le calcul de l’ellipse est un peu plus complexe. Par conséquent, nous avons écrit deux fonctions :</p>
+<ul>
+<li><code>CreateEllipse</code> qui construit une ellipse à partir d’une couche <code>sf</code> de points.</li>
+<li><code>CreateEllipse_gp</code> qui construit des ellipses à partir d’une couche <code>sf</code> de points en fonction d’une colonne indiquant différents groupes de points (ici, les différentes années).</li>
+</ul>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="sect032.html#cb307-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;code_complementaire/ellipses.R&quot;</span>)</span>
+<span id="cb307-2"><a href="sect032.html#cb307-2" tabindex="-1"></a><span class="do">## Création d&#39;une ellipse pour une année </span></span>
+<span id="cb307-3"><a href="sect032.html#cb307-3" tabindex="-1"></a>sf.Ellipse2019 <span class="ot">&lt;-</span> <span class="fu">CreateEllipse</span>(M2019)</span>
+<span id="cb307-4"><a href="sect032.html#cb307-4" tabindex="-1"></a><span class="do">## Création de plusieurs ellipses regroupées selon les différentes années</span></span>
+<span id="cb307-5"><a href="sect032.html#cb307-5" tabindex="-1"></a>sf.Ellipse <span class="ot">&lt;-</span> <span class="fu">CreateEllipse_gp</span>(<span class="at">points =</span> Mefaits, <span class="at">group =</span> <span class="st">&quot;ANNEE&quot;</span>)</span>
+<span id="cb307-6"><a href="sect032.html#cb307-6" tabindex="-1"></a><span class="fu">head</span>(sf.Ellipse)</span></code></pre></div>
 <pre><code>## Simple feature collection with 4 features and 12 fields
 ## Geometry type: POLYGON
 ## Dimension:     XY
 ## Bounding box:  xmin: 643833.8 ymin: 153377.3 xmax: 655559 ymax: 160937.9
 ## Projected CRS: NAD83 / MTQ Lambert
-##     Id      CMx      CMy   Sigmax   Sigmay       Lx        Ly     Aire    Theta
-## 1 2019 649990.3 157059.3 3055.157 5683.790 6110.315 11367.580 54553357 64.60944
-## 2 2020 649696.0 157544.8 3154.712 5994.647 6309.423 11989.294 59411858 75.81068
-## 3 2021 650663.7 157214.8 3128.891 4869.299 6257.783  9738.598 47863757 76.14675
-## 4 2022 650442.5 157237.0 2540.594 5406.184 5081.187 10812.368 43149511 68.52718
-##   ThetaCorr  Major  Minor                       geometry
-## 1  64.60944 SigmaY SigmaX POLYGON ((655125.1 159496.4...
-## 2  75.81068 SigmaY SigmaX POLYGON ((655507.7 159014.3...
-## 3  76.14675 SigmaY SigmaX POLYGON ((655391.4 158380.7...
-## 4  68.52718 SigmaY SigmaX POLYGON ((655473.5 159216, ...</code></pre>
+##        CMx      CMy   Sigmax   Sigmay       Lx        Ly     Aire    Theta
+## 1 649990.3 157059.3 3055.157 5683.790 6110.315 11367.580 54553357 64.60944
+## 2 649696.0 157544.8 3154.712 5994.647 6309.423 11989.294 59411858 75.81068
+## 3 650663.7 157214.8 3128.891 4869.299 6257.783  9738.598 47863757 76.14675
+## 4 650442.5 157237.0 2540.594 5406.184 5081.187 10812.368 43149511 68.52718
+##   ThetaCorr  Major  Minor                       geometry ANNEE
+## 1  64.60944 SigmaY SigmaX POLYGON ((655125.1 159496.4...  2019
+## 2  75.81068 SigmaY SigmaX POLYGON ((655507.7 159014.3...  2020
+## 3  76.14675 SigmaY SigmaX POLYGON ((655391.4 158380.7...  2021
+## 4  68.52718 SigmaY SigmaX POLYGON ((655473.5 159216, ...  2022</code></pre>
 <p>Les quatre représentations de la dispersion sont présentées à la figure <a href="sect032.html#fig:RepresentationDispersion">3.7</a> : 1) enveloppe convexe (gris), 2) cercle de distance standard (bleu), 3) rectangle de distance standard sur les X et Y (noir) et 4) ellipse de distance standard (rouge).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:RepresentationDispersion"></span>
 <img src="GMQ405_files/figure-html/RepresentationDispersion-1.png" alt="Représentations de la dispersion des méfaits pour les quatre années" width="85%" />
@@ -1268,55 +1187,80 @@ Figure 3.8: Déciles extrêmes de revenu après impôt des familles économiques
 </p>
 </div>
 <p>La syntaxe suivante permet d’importer et de structurer les données. puis de calculer les différentes mesures (centre moyen pondéré et distance standard pondérée).</p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="sect032.html#cb281-1" tabindex="-1"></a><span class="do">## Importation et structuration des données</span></span>
-<span id="cb281-2"><a href="sect032.html#cb281-2" tabindex="-1"></a>dfdecile <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/chap03/DataDecilesSR.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb281-3"><a href="sect032.html#cb281-3" tabindex="-1"></a>dfdecile<span class="sc">$</span>SRIDU <span class="ot">&lt;-</span> <span class="fu">substr</span>(dfdecile<span class="sc">$</span>SRIDU, <span class="dv">1</span>, <span class="dv">10</span>)</span>
-<span id="cb281-4"><a href="sect032.html#cb281-4" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
-<span id="cb281-5"><a href="sect032.html#cb281-5" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbSRDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb281-6"><a href="sect032.html#cb281-6" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">merge</span>(SR[,<span class="fu">c</span>(<span class="st">&quot;SRIDU&quot;</span>)], dfdecile, <span class="at">by =</span> <span class="st">&quot;SRIDU&quot;</span>)</span>
-<span id="cb281-7"><a href="sect032.html#cb281-7" tabindex="-1"></a>ProjCarto <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(SR)</span>
-<span id="cb281-8"><a href="sect032.html#cb281-8" tabindex="-1"></a><span class="do">## Coordonnées géographiques des secteurs de recensement</span></span>
-<span id="cb281-9"><a href="sect032.html#cb281-9" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_point_on_surface</span>(SR))</span>
-<span id="cb281-10"><a href="sect032.html#cb281-10" tabindex="-1"></a><span class="do">## Pondérations pour les deux déciles</span></span>
-<span id="cb281-11"><a href="sect032.html#cb281-11" tabindex="-1"></a>wd1  <span class="ot">&lt;-</span> SR<span class="sc">$</span>D1</span>
-<span id="cb281-12"><a href="sect032.html#cb281-12" tabindex="-1"></a>wd10 <span class="ot">&lt;-</span> SR<span class="sc">$</span>D10</span>
-<span id="cb281-13"><a href="sect032.html#cb281-13" tabindex="-1"></a><span class="do">## Sommes des pondérations</span></span>
-<span id="cb281-14"><a href="sect032.html#cb281-14" tabindex="-1"></a>swd1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(wd1)</span>
-<span id="cb281-15"><a href="sect032.html#cb281-15" tabindex="-1"></a>swd10 <span class="ot">&lt;-</span> <span class="fu">sum</span>(wd10)</span>
-<span id="cb281-16"><a href="sect032.html#cb281-16" tabindex="-1"></a><span class="do">## Calcul du centre pondéré</span></span>
-<span id="cb281-17"><a href="sect032.html#cb281-17" tabindex="-1"></a>XmoyD1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">1</span>]<span class="sc">*</span>wd1) <span class="sc">/</span> swd1</span>
-<span id="cb281-18"><a href="sect032.html#cb281-18" tabindex="-1"></a>XmoyD10 <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">1</span>]<span class="sc">*</span>wd10) <span class="sc">/</span> swd10</span>
-<span id="cb281-19"><a href="sect032.html#cb281-19" tabindex="-1"></a>YmoyD1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">2</span>]<span class="sc">*</span>wd1) <span class="sc">/</span> swd1</span>
-<span id="cb281-20"><a href="sect032.html#cb281-20" tabindex="-1"></a>YmoyD10 <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">2</span>]<span class="sc">*</span>wd10) <span class="sc">/</span> swd10</span>
-<span id="cb281-21"><a href="sect032.html#cb281-21" tabindex="-1"></a>CentreMoyenPond <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Decile =</span> <span class="fu">c</span>(<span class="st">&quot;Premier&quot;</span>, <span class="st">&quot;Dernier&quot;</span>),</span>
-<span id="cb281-22"><a href="sect032.html#cb281-22" tabindex="-1"></a>                          <span class="at">X =</span> <span class="fu">c</span>(XmoyD1, XmoyD10), </span>
-<span id="cb281-23"><a href="sect032.html#cb281-23" tabindex="-1"></a>                          <span class="at">Y =</span> <span class="fu">c</span>(YmoyD1, YmoyD10),</span>
-<span id="cb281-24"><a href="sect032.html#cb281-24" tabindex="-1"></a>                          <span class="at">CMwx =</span> <span class="fu">c</span>(XmoyD1, XmoyD10),  </span>
-<span id="cb281-25"><a href="sect032.html#cb281-25" tabindex="-1"></a>                          <span class="at">CMwy =</span> <span class="fu">c</span>(YmoyD1, YmoyD10))</span>
-<span id="cb281-26"><a href="sect032.html#cb281-26" tabindex="-1"></a>CentreMoyenPond <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(CentreMoyenPond, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> ProjCarto)</span>
-<span id="cb281-27"><a href="sect032.html#cb281-27" tabindex="-1"></a><span class="do">## Calcul de la distance standard pondérée</span></span>
-<span id="cb281-28"><a href="sect032.html#cb281-28" tabindex="-1"></a>sdD1  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(wd1<span class="sc">*</span>(xy[,<span class="dv">1</span>]<span class="sc">-</span> XmoyD1)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1) <span class="sc">+</span> (<span class="fu">sum</span>(wd1<span class="sc">*</span>(xy[,<span class="dv">2</span>]<span class="sc">-</span> YmoyD1)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1))</span>
-<span id="cb281-29"><a href="sect032.html#cb281-29" tabindex="-1"></a>sdD10 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(wd10<span class="sc">*</span>(xy[,<span class="dv">1</span>]<span class="sc">-</span> XmoyD10)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1) <span class="sc">+</span> (<span class="fu">sum</span>(wd10<span class="sc">*</span>(xy[,<span class="dv">2</span>]<span class="sc">-</span> YmoyD10)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd10))</span>
-<span id="cb281-30"><a href="sect032.html#cb281-30" tabindex="-1"></a><span class="do">## Zones tampons</span></span>
-<span id="cb281-31"><a href="sect032.html#cb281-31" tabindex="-1"></a>CentreMoyenPond<span class="sc">$</span>SDw <span class="ot">&lt;-</span> <span class="fu">c</span>(sdD1, sdD10)</span>
-<span id="cb281-32"><a href="sect032.html#cb281-32" tabindex="-1"></a>sf.CercleDSW <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(CentreMoyenPond, <span class="at">dist =</span> CentreMoyenPond<span class="sc">$</span>SDw)</span>
-<span id="cb281-33"><a href="sect032.html#cb281-33" tabindex="-1"></a><span class="do">## Cartographie</span></span>
-<span id="cb281-34"><a href="sect032.html#cb281-34" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb281-35"><a href="sect032.html#cb281-35" tabindex="-1"></a><span class="fu">tm_shape</span>(Arrondissements)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">lwd =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span><span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;wheat&quot;</span>)<span class="sc">+</span></span>
-<span id="cb281-36"><a href="sect032.html#cb281-36" tabindex="-1"></a><span class="fu">tm_shape</span>(CentreMoyenPond) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;gray&quot;</span>)<span class="sc">+</span></span>
-<span id="cb281-37"><a href="sect032.html#cb281-37" tabindex="-1"></a>  <span class="fu">tm_shape</span>(sf.CercleDSW) <span class="sc">+</span></span>
-<span id="cb281-38"><a href="sect032.html#cb281-38" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">lwd =</span> <span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;Decile&quot;</span>, <span class="at">border.col=</span><span class="st">&quot;black&quot;</span>, <span class="at">alpha=</span>.<span class="dv">3</span>, <span class="at">title=</span><span class="st">&quot;Décile&quot;</span>)<span class="sc">+</span>               </span>
-<span id="cb281-39"><a href="sect032.html#cb281-39" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, <span class="at">title =</span> <span class="st">&quot;2019&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="sect032.html#cb309-1" tabindex="-1"></a><span class="do">## Importation et structuration des données</span></span>
+<span id="cb309-2"><a href="sect032.html#cb309-2" tabindex="-1"></a>dfdecile <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/chap03/DataDecilesSR.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb309-3"><a href="sect032.html#cb309-3" tabindex="-1"></a>dfdecile<span class="sc">$</span>SRIDU <span class="ot">&lt;-</span> <span class="fu">substr</span>(dfdecile<span class="sc">$</span>SRIDU, <span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb309-4"><a href="sect032.html#cb309-4" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
+<span id="cb309-5"><a href="sect032.html#cb309-5" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbSRDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb309-6"><a href="sect032.html#cb309-6" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">merge</span>(SR[,<span class="fu">c</span>(<span class="st">&quot;SRIDU&quot;</span>)], dfdecile, <span class="at">by =</span> <span class="st">&quot;SRIDU&quot;</span>)</span>
+<span id="cb309-7"><a href="sect032.html#cb309-7" tabindex="-1"></a>ProjCarto <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(SR)</span>
+<span id="cb309-8"><a href="sect032.html#cb309-8" tabindex="-1"></a><span class="do">## Coordonnées géographiques des secteurs de recensement</span></span>
+<span id="cb309-9"><a href="sect032.html#cb309-9" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_point_on_surface</span>(SR))</span>
+<span id="cb309-10"><a href="sect032.html#cb309-10" tabindex="-1"></a><span class="do">## Pondérations pour les deux déciles</span></span>
+<span id="cb309-11"><a href="sect032.html#cb309-11" tabindex="-1"></a>wd1  <span class="ot">&lt;-</span> SR<span class="sc">$</span>D1</span>
+<span id="cb309-12"><a href="sect032.html#cb309-12" tabindex="-1"></a>wd10 <span class="ot">&lt;-</span> SR<span class="sc">$</span>D10</span>
+<span id="cb309-13"><a href="sect032.html#cb309-13" tabindex="-1"></a><span class="do">## Sommes des pondérations</span></span>
+<span id="cb309-14"><a href="sect032.html#cb309-14" tabindex="-1"></a>swd1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(wd1)</span>
+<span id="cb309-15"><a href="sect032.html#cb309-15" tabindex="-1"></a>swd10 <span class="ot">&lt;-</span> <span class="fu">sum</span>(wd10)</span>
+<span id="cb309-16"><a href="sect032.html#cb309-16" tabindex="-1"></a><span class="do">## Calcul du centre pondéré</span></span>
+<span id="cb309-17"><a href="sect032.html#cb309-17" tabindex="-1"></a>XmoyD1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">1</span>]<span class="sc">*</span>wd1) <span class="sc">/</span> swd1</span>
+<span id="cb309-18"><a href="sect032.html#cb309-18" tabindex="-1"></a>XmoyD10 <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">1</span>]<span class="sc">*</span>wd10) <span class="sc">/</span> swd10</span>
+<span id="cb309-19"><a href="sect032.html#cb309-19" tabindex="-1"></a>YmoyD1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">2</span>]<span class="sc">*</span>wd1) <span class="sc">/</span> swd1</span>
+<span id="cb309-20"><a href="sect032.html#cb309-20" tabindex="-1"></a>YmoyD10 <span class="ot">&lt;-</span> <span class="fu">sum</span>(xy[,<span class="dv">2</span>]<span class="sc">*</span>wd10) <span class="sc">/</span> swd10</span>
+<span id="cb309-21"><a href="sect032.html#cb309-21" tabindex="-1"></a>CentreMoyenPond <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Decile =</span> <span class="fu">c</span>(<span class="st">&quot;Premier&quot;</span>, <span class="st">&quot;Dernier&quot;</span>),</span>
+<span id="cb309-22"><a href="sect032.html#cb309-22" tabindex="-1"></a>                          <span class="at">X =</span> <span class="fu">c</span>(XmoyD1, XmoyD10), </span>
+<span id="cb309-23"><a href="sect032.html#cb309-23" tabindex="-1"></a>                          <span class="at">Y =</span> <span class="fu">c</span>(YmoyD1, YmoyD10),</span>
+<span id="cb309-24"><a href="sect032.html#cb309-24" tabindex="-1"></a>                          <span class="at">CMwx =</span> <span class="fu">c</span>(XmoyD1, XmoyD10),  </span>
+<span id="cb309-25"><a href="sect032.html#cb309-25" tabindex="-1"></a>                          <span class="at">CMwy =</span> <span class="fu">c</span>(YmoyD1, YmoyD10))</span>
+<span id="cb309-26"><a href="sect032.html#cb309-26" tabindex="-1"></a>CentreMoyenPond <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(CentreMoyenPond, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> ProjCarto)</span>
+<span id="cb309-27"><a href="sect032.html#cb309-27" tabindex="-1"></a><span class="do">## Calcul de la distance standard pondérée</span></span>
+<span id="cb309-28"><a href="sect032.html#cb309-28" tabindex="-1"></a>sdD1  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(wd1<span class="sc">*</span>(xy[,<span class="dv">1</span>]<span class="sc">-</span> XmoyD1)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1) <span class="sc">+</span> (<span class="fu">sum</span>(wd1<span class="sc">*</span>(xy[,<span class="dv">2</span>]<span class="sc">-</span> YmoyD1)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1))</span>
+<span id="cb309-29"><a href="sect032.html#cb309-29" tabindex="-1"></a>sdD10 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(wd10<span class="sc">*</span>(xy[,<span class="dv">1</span>]<span class="sc">-</span> XmoyD10)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd1) <span class="sc">+</span> (<span class="fu">sum</span>(wd10<span class="sc">*</span>(xy[,<span class="dv">2</span>]<span class="sc">-</span> YmoyD10)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> swd10))</span>
+<span id="cb309-30"><a href="sect032.html#cb309-30" tabindex="-1"></a><span class="do">## Zones tampons avec la distance standard pondérée</span></span>
+<span id="cb309-31"><a href="sect032.html#cb309-31" tabindex="-1"></a>CentreMoyenPond<span class="sc">$</span>SDw <span class="ot">&lt;-</span> <span class="fu">c</span>(sdD1, sdD10)</span>
+<span id="cb309-32"><a href="sect032.html#cb309-32" tabindex="-1"></a>sf.CercleDSW <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(CentreMoyenPond, <span class="at">dist =</span> CentreMoyenPond<span class="sc">$</span>SDw)</span>
+<span id="cb309-33"><a href="sect032.html#cb309-33" tabindex="-1"></a></span>
+<span id="cb309-34"><a href="sect032.html#cb309-34" tabindex="-1"></a><span class="do">## Calcul de l&#39;ellipse pondérée pour le premier décile</span></span>
+<span id="cb309-35"><a href="sect032.html#cb309-35" tabindex="-1"></a>SR.points <span class="ot">&lt;-</span> <span class="fu">st_point_on_surface</span>(SR)</span>
+<span id="cb309-36"><a href="sect032.html#cb309-36" tabindex="-1"></a>ellipse.D1 <span class="ot">&lt;-</span> <span class="fu">CreateEllipse</span>(SR.points, <span class="at">w =</span> SR.points<span class="sc">$</span>D1)</span>
+<span id="cb309-37"><a href="sect032.html#cb309-37" tabindex="-1"></a>ellipse.D10 <span class="ot">&lt;-</span> <span class="fu">CreateEllipse</span>(SR.points, <span class="at">w =</span> SR.points<span class="sc">$</span>D10)</span>
+<span id="cb309-38"><a href="sect032.html#cb309-38" tabindex="-1"></a></span>
+<span id="cb309-39"><a href="sect032.html#cb309-39" tabindex="-1"></a><span class="co"># Carte 1 : premier décile</span></span>
+<span id="cb309-40"><a href="sect032.html#cb309-40" tabindex="-1"></a>Carte1 <span class="ot">=</span> <span class="fu">tm_shape</span>(SR)<span class="sc">+</span></span>
+<span id="cb309-41"><a href="sect032.html#cb309-41" tabindex="-1"></a>              <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;whitesmoke&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;grey30&quot;</span>, <span class="at">lwd =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb309-42"><a href="sect032.html#cb309-42" tabindex="-1"></a>          <span class="fu">tm_shape</span>(CentreMoyenPond[<span class="dv">1</span>,])<span class="sc">+</span></span>
+<span id="cb309-43"><a href="sect032.html#cb309-43" tabindex="-1"></a>              <span class="fu">tm_dots</span>(<span class="at">size =</span> .<span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb309-44"><a href="sect032.html#cb309-44" tabindex="-1"></a>          <span class="fu">tm_shape</span>(sf.CercleDSW[<span class="dv">1</span>,])<span class="sc">+</span></span>
+<span id="cb309-45"><a href="sect032.html#cb309-45" tabindex="-1"></a>              <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)<span class="sc">+</span>      </span>
+<span id="cb309-46"><a href="sect032.html#cb309-46" tabindex="-1"></a>          <span class="fu">tm_shape</span>(ellipse.D1)<span class="sc">+</span></span>
+<span id="cb309-47"><a href="sect032.html#cb309-47" tabindex="-1"></a>              <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)<span class="sc">+</span>    </span>
+<span id="cb309-48"><a href="sect032.html#cb309-48" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">main.title =</span> <span class="st">&quot;A. Premier décile (le plus pauvre)&quot;</span>,</span>
+<span id="cb309-49"><a href="sect032.html#cb309-49" tabindex="-1"></a>            <span class="at">main.title.size =</span> .<span class="dv">9</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb309-50"><a href="sect032.html#cb309-50" tabindex="-1"></a><span class="co"># Carte 2 : dernier décile</span></span>
+<span id="cb309-51"><a href="sect032.html#cb309-51" tabindex="-1"></a>Carte2 <span class="ot">=</span> <span class="fu">tm_shape</span>(SR)<span class="sc">+</span></span>
+<span id="cb309-52"><a href="sect032.html#cb309-52" tabindex="-1"></a>              <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;whitesmoke&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;grey30&quot;</span>, <span class="at">lwd =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb309-53"><a href="sect032.html#cb309-53" tabindex="-1"></a>          <span class="fu">tm_shape</span>(CentreMoyenPond[<span class="dv">2</span>,])<span class="sc">+</span></span>
+<span id="cb309-54"><a href="sect032.html#cb309-54" tabindex="-1"></a>              <span class="fu">tm_dots</span>(<span class="at">size =</span> .<span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb309-55"><a href="sect032.html#cb309-55" tabindex="-1"></a>          <span class="fu">tm_shape</span>(sf.CercleDSW[<span class="dv">2</span>,])<span class="sc">+</span></span>
+<span id="cb309-56"><a href="sect032.html#cb309-56" tabindex="-1"></a>              <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)<span class="sc">+</span>         </span>
+<span id="cb309-57"><a href="sect032.html#cb309-57" tabindex="-1"></a>          <span class="fu">tm_shape</span>(ellipse.D10)<span class="sc">+</span></span>
+<span id="cb309-58"><a href="sect032.html#cb309-58" tabindex="-1"></a>              <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)<span class="sc">+</span>    </span>
+<span id="cb309-59"><a href="sect032.html#cb309-59" tabindex="-1"></a> <span class="fu">tm_layout</span>(<span class="at">main.title =</span> <span class="st">&quot;B. Dernier décile (le plus riche)&quot;</span>,</span>
+<span id="cb309-60"><a href="sect032.html#cb309-60" tabindex="-1"></a>            <span class="at">main.title.size =</span> .<span class="dv">9</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb309-61"><a href="sect032.html#cb309-61" tabindex="-1"></a><span class="fu">tm_credits</span>(<span class="st">&quot;Source : recensement de 2021, Statistique Canada</span><span class="sc">\n</span><span class="st">Auteur : Jéremy Lécartemplace.&quot;</span>, </span>
+<span id="cb309-62"><a href="sect032.html#cb309-62" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>), <span class="at">size =</span> <span class="fl">0.7</span>, <span class="at">align =</span> <span class="st">&quot;right&quot;</span>)</span>
+<span id="cb309-63"><a href="sect032.html#cb309-63" tabindex="-1"></a><span class="co"># Combinaison des deux cartes</span></span>
+<span id="cb309-64"><a href="sect032.html#cb309-64" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte1, Carte2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:MesuresPonderees"></span>
-<img src="GMQ405_files/figure-html/MesuresPonderees-1.png" alt="Déciles extrêmes de revenu après impôt des familles économiques" width="85%" />
+<img src="GMQ405_files/figure-html/MesuresPonderees-1.png" alt="Cercles de distance standard et ellipses pondérés" width="85%" />
 <p class="caption">
-Figure 3.9: Déciles extrêmes de revenu après impôt des familles économiques
+Figure 3.9: Cercles de distance standard et ellipses pondérés
 </p>
 </div>
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>Références</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RBoldAir" class="csl-entry">
 Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.

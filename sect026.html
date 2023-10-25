@@ -198,7 +198,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.2.6" data-path="sect012.html"><a href="sect012.html#sect0126"><i class="fa fa-check"></i><b>1.2.6</b> Requêtes spatiales</a></li>
 <li class="chapter" data-level="1.2.7" data-path="sect012.html"><a href="sect012.html#sect0127"><i class="fa fa-check"></i><b>1.2.7</b> Manipulation des données attributaires</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
+<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données matricielles (<em>raster</em>)</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
@@ -232,13 +232,18 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="sect023.html"><a href="sect023.html#sect0231"><i class="fa fa-check"></i><b>2.3.1</b> Statistique du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Mise en œuvre dans R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sect023.html"><a href="sect023.html#sect0233"><i class="fa fa-check"></i><b>2.3.3</b> Indice de Lee : autocorrélation spatiale dans un contexte bivariée</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="sect024.html"><a href="sect024.html"><i class="fa fa-check"></i><b>2.4</b> Autocorrélation spatiale locale</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids</a></li>
+<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids pour une variable continue</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sect024.html"><a href="sect024.html#sect0242"><i class="fa fa-check"></i><b>2.4.2</b> Version locale du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Nuage de points du <em>I</em> de Moran d’Anselin</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sect024.html"><a href="sect024.html#sect0244"><i class="fa fa-check"></i><b>2.4.4</b> Version locale des statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.4.5" data-path="sect024.html"><a href="sect024.html#sect0245"><i class="fa fa-check"></i><b>2.4.5</b> Version locale de l’indice de Lee</a></li>
+<li class="chapter" data-level="2.4.6" data-path="sect024.html"><a href="sect024.html#sect0246"><i class="fa fa-check"></i><b>2.4.6</b> Typologie basée sur le diagramme de Moran dans un contexte bivarié</a></li>
+<li class="chapter" data-level="2.4.7" data-path="sect024.html"><a href="sect024.html#sect0247"><i class="fa fa-check"></i><b>2.4.7</b> Autocorrélation locale pour une variable qualitative (catégorielle) : l’indicateur ELSA</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sect025.html"><a href="sect025.html"><i class="fa fa-check"></i><b>2.5</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="2.6" data-path="sect026.html"><a href="sect026.html"><i class="fa fa-check"></i><b>2.6</b> Exercices de révision</a></li>
@@ -309,92 +314,83 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="sect055.html"><a href="sect055.html"><i class="fa fa-check"></i><b>5.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Introduction aux modèles de régression spatiale</a>
+<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Analyses d’évènements localisés sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Modèles économétriques spatiaux</a>
+<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Cartographie de la densité d’évènements sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
-<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
-<li class="chapter" data-level="6.1.3" data-path="sect061.html"><a href="sect061.html#sect0613"><i class="fa fa-check"></i><b>6.1.3</b> Quel modèle choisir?</a></li>
+<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
+<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Mesure d’autocorrélation spatiale sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
-<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Construction d’un modèle GAM dans R</a></li>
+<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Getis et Ord</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="6.2.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>6.2.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> Régression géographiquement pondérée</a>
+<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> DBSCAN sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Principe de base</a></li>
-<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
+<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="sect064.html"><a href="sect064.html"><i class="fa fa-check"></i><b>6.4</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="6.5" data-path="sect065.html"><a href="sect065.html"><i class="fa fa-check"></i><b>6.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
+<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Introduction aux modèles de régression spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Modèles économétriques spatiaux</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
-<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
-<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Algorithmes REDCAP</a></li>
-<li class="chapter" data-level="7.1.4" data-path="sect071.html"><a href="sect071.html#sect0714"><i class="fa fa-check"></i><b>7.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
+<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
+<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Quel modèle choisir?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
+<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
+<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> Construction d’un modèle GAM dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Régression géographiquement pondérée</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Principe de base</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes déterministes</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Interpolation polynomiale locale</a></li>
-<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Interpolation de l’inverse à la distance - <em>IDW</em></a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes géostatistiques</a>
+<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Krigeage simple</a></li>
-<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> Krigeage universel</a></li>
-<li class="chapter" data-level="8.2.3" data-path="sect082.html"><a href="sect082.html#sect0823"><i class="fa fa-check"></i><b>8.2.3</b> Co-krigeage</a></li>
-<li class="chapter" data-level="8.2.4" data-path="sect082.html"><a href="sect082.html#sect0824"><i class="fa fa-check"></i><b>8.2.4</b> Krigeage résiduel</a></li>
+<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Algorithmes AZP</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Algorithme SKATER</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sect081.html"><a href="sect081.html#sect0813"><i class="fa fa-check"></i><b>8.1.3</b> Algorithmes REDCAP</a></li>
+<li class="chapter" data-level="8.1.4" data-path="sect081.html"><a href="sect081.html#sect0814"><i class="fa fa-check"></i><b>8.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="sect083.html"><a href="sect083.html"><i class="fa fa-check"></i><b>8.3</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="8.4" data-path="sect084.html"><a href="sect084.html"><i class="fa fa-check"></i><b>8.4</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Analyse spatiale par l’analyse d’images</a>
+<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Méthodes d’interpolation spatiale</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Fonctions mathématiques, booléennes, relationnelles et conditionnelles sur les images</a>
+<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Méthodes déterministes</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Fonctions mathématiques</a></li>
-<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Fonctions booléennes</a></li>
+<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Interpolation polynomiale locale</a></li>
+<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Interpolation de l’inverse à la distance (<em>IDW</em>)</a></li>
 <li class="chapter" data-level="9.1.3" data-path="sect091.html"><a href="sect091.html#sect0913"><i class="fa fa-check"></i><b>9.1.3</b> Fonctions relationnelles</a></li>
 <li class="chapter" data-level="9.1.4" data-path="sect091.html"><a href="sect091.html#sect0914"><i class="fa fa-check"></i><b>9.1.4</b> Fonctions conditionnelles</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Fonctions locales, focales, zonales et globales sur les images</a>
+<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Méthodes géostatistiques</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Fonctions locales</a></li>
-<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Fonctions focales</a></li>
-<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Fonctions zonales</a></li>
-<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Fonctions globales</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Krigeage simple</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Krigeage universel</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Co-krigeage</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Krigeage résiduel</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Fonctions de surface</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="sect093.html"><a href="sect093.html#sect0931"><i class="fa fa-check"></i><b>9.3.1</b> Élevation</a></li>
-<li class="chapter" data-level="9.3.2" data-path="sect093.html"><a href="sect093.html#sect0932"><i class="fa fa-check"></i><b>9.3.2</b> Pente</a></li>
-<li class="chapter" data-level="9.3.3" data-path="sect093.html"><a href="sect093.html#sect0933"><i class="fa fa-check"></i><b>9.3.3</b> Ombrage</a></li>
-<li class="chapter" data-level="9.3.4" data-path="sect093.html"><a href="sect093.html#sect0934"><i class="fa fa-check"></i><b>9.3.4</b> Visibilité</a></li>
-<li class="chapter" data-level="9.3.5" data-path="sect093.html"><a href="sect093.html#sect0935"><i class="fa fa-check"></i><b>9.3.5</b> Sky-view factor Index</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Données spatiotemporelles en mode image</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="sect094.html"><a href="sect094.html#fichier-netcdf"><i class="fa fa-check"></i><b>9.4.1</b> Fichier <em>netCDF</em></a></li>
-<li class="chapter" data-level="9.4.2" data-path="sect094.html"><a href="sect094.html#exemples-applicatifs"><i class="fa fa-check"></i><b>9.4.2</b> Exemples applicatifs</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="sect095.html"><a href="sect095.html"><i class="fa fa-check"></i><b>9.5</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="9.6" data-path="sect096.html"><a href="sect096.html"><i class="fa fa-check"></i><b>9.6</b> Exercices de révision</a></li>
+<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Exercices de révision</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>10</b> Correction des exercices</a>
 <ul>
@@ -424,20 +420,18 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
-<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a>
-<ul>
-<li class="chapter" data-level="10.6.1" data-path="sect1006.html"><a href="sect1006.html#sect10061"><i class="fa fa-check"></i><b>10.6.1</b> Exercice 1</a></li>
-<li class="chapter" data-level="10.6.2" data-path="sect1006.html"><a href="sect1006.html#sect10062"><i class="fa fa-check"></i><b>10.6.2</b> Exercice 2</a></li>
-<li class="chapter" data-level="10.6.3" data-path="sect1006.html"><a href="sect1006.html#sect10063"><i class="fa fa-check"></i><b>10.6.3</b> Exercice 3</a></li>
-</ul></li>
+<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sect1007.html"><a href="sect1007.html#sect10071"><i class="fa fa-check"></i><b>10.7.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sect1007.html"><a href="sect1007.html#sect10072"><i class="fa fa-check"></i><b>10.7.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.7.3" data-path="sect1007.html"><a href="sect1007.html#sect10073"><i class="fa fa-check"></i><b>10.7.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a></li>
+<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="sect1008.html"><a href="sect1008.html#sect10081"><i class="fa fa-check"></i><b>10.8.1</b> Exercice 1</a></li>
+</ul></li>
 <li class="chapter" data-level="10.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>10.9</b> Exercices du chapitre 9</a></li>
-<li class="chapter" data-level="10.10" data-path="sect1011.html"><a href="sect1011.html"><i class="fa fa-check"></i><b>10.10</b> Exercices du chapitre 11</a></li>
-<li class="chapter" data-level="10.11" data-path="sect1012.html"><a href="sect1012.html"><i class="fa fa-check"></i><b>10.11</b> Excercice du chapitre 12</a></li>
 </ul></li>
 </ul>
 
@@ -467,56 +461,56 @@ Modélisation et analyse spatiale</a>
 <li>Matrice de pondération spatiale selon le critère des plus proches voisins (<em>k</em> = 2) (voir la section <a href="sect022.html#sect02245">2.2.4.5</a>).</li>
 </ul>
 <p>Complétez le code ci-dessous.</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="sect026.html#cb261-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb261-2"><a href="sect026.html#cb261-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb261-3"><a href="sect026.html#cb261-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb261-4"><a href="sect026.html#cb261-4" tabindex="-1"></a><span class="do">## Importation de la couche des secteurs de recensement</span></span>
-<span id="cb261-5"><a href="sect026.html#cb261-5" tabindex="-1"></a>SRQc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/exercice/RMRQuebecSR2021.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb261-6"><a href="sect026.html#cb261-6" tabindex="-1"></a></span>
-<span id="cb261-7"><a href="sect026.html#cb261-7" tabindex="-1"></a><span class="do">## Matrice selon le partage d&#39;un segment (Rook)</span></span>
-<span id="cb261-8"><a href="sect026.html#cb261-8" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb261-9"><a href="sect026.html#cb261-9" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb261-10"><a href="sect026.html#cb261-10" tabindex="-1"></a></span>
-<span id="cb261-11"><a href="sect026.html#cb261-11" tabindex="-1"></a><span class="do">## Coordonnées des centroïdes des entités spatiales</span></span>
-<span id="cb261-12"><a href="sect026.html#cb261-12" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(SRQc))</span>
-<span id="cb261-13"><a href="sect026.html#cb261-13" tabindex="-1"></a></span>
-<span id="cb261-14"><a href="sect026.html#cb261-14" tabindex="-1"></a><span class="do">## Matrice de l&#39;inverse de la distance réduite</span></span>
-<span id="cb261-15"><a href="sect026.html#cb261-15" tabindex="-1"></a><span class="co"># Trouver le plus proche voisin avec la fonction knn2nb</span></span>
-<span id="cb261-16"><a href="sect026.html#cb261-16" tabindex="-1"></a>k1 <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb261-17"><a href="sect026.html#cb261-17" tabindex="-1"></a>plusprochevoisin.max <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">unlist</span>(<span class="fu">nbdists</span>(k1,coords)))</span>
-<span id="cb261-18"><a href="sect026.html#cb261-18" tabindex="-1"></a><span class="co"># Voisins les plus proches avec le seuil de distance maximal</span></span>
-<span id="cb261-19"><a href="sect026.html#cb261-19" tabindex="-1"></a>Voisins.DistMax <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb261-20"><a href="sect026.html#cb261-20" tabindex="-1"></a><span class="co"># Distances avec le seuil maximum</span></span>
-<span id="cb261-21"><a href="sect026.html#cb261-21" tabindex="-1"></a>distances <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb261-22"><a href="sect026.html#cb261-22" tabindex="-1"></a><span class="co"># Inverse de la distance au carré</span></span>
-<span id="cb261-23"><a href="sect026.html#cb261-23" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb261-24"><a href="sect026.html#cb261-24" tabindex="-1"></a><span class="co"># Matrices de pondération spatiale standardisées en ligne</span></span>
-<span id="cb261-25"><a href="sect026.html#cb261-25" tabindex="-1"></a>W_InvDistances2 <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb261-26"><a href="sect026.html#cb261-26" tabindex="-1"></a></span>
-<span id="cb261-27"><a href="sect026.html#cb261-27" tabindex="-1"></a><span class="do">## Matrice des plus proches voisins avec k = 2</span></span>
-<span id="cb261-28"><a href="sect026.html#cb261-28" tabindex="-1"></a>k2 <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb261-29"><a href="sect026.html#cb261-29" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  À compléter</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="sect026.html#cb289-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb289-2"><a href="sect026.html#cb289-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb289-3"><a href="sect026.html#cb289-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb289-4"><a href="sect026.html#cb289-4" tabindex="-1"></a><span class="do">## Importation de la couche des secteurs de recensement</span></span>
+<span id="cb289-5"><a href="sect026.html#cb289-5" tabindex="-1"></a>SRQc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/exercice/RMRQuebecSR2021.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb289-6"><a href="sect026.html#cb289-6" tabindex="-1"></a></span>
+<span id="cb289-7"><a href="sect026.html#cb289-7" tabindex="-1"></a><span class="do">## Matrice selon le partage d&#39;un segment (Rook)</span></span>
+<span id="cb289-8"><a href="sect026.html#cb289-8" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb289-9"><a href="sect026.html#cb289-9" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb289-10"><a href="sect026.html#cb289-10" tabindex="-1"></a></span>
+<span id="cb289-11"><a href="sect026.html#cb289-11" tabindex="-1"></a><span class="do">## Coordonnées des centroïdes des entités spatiales</span></span>
+<span id="cb289-12"><a href="sect026.html#cb289-12" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(SRQc))</span>
+<span id="cb289-13"><a href="sect026.html#cb289-13" tabindex="-1"></a></span>
+<span id="cb289-14"><a href="sect026.html#cb289-14" tabindex="-1"></a><span class="do">## Matrice de l&#39;inverse de la distance réduite</span></span>
+<span id="cb289-15"><a href="sect026.html#cb289-15" tabindex="-1"></a><span class="co"># Trouver le plus proche voisin avec la fonction knn2nb</span></span>
+<span id="cb289-16"><a href="sect026.html#cb289-16" tabindex="-1"></a>k1 <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb289-17"><a href="sect026.html#cb289-17" tabindex="-1"></a>plusprochevoisin.max <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">unlist</span>(<span class="fu">nbdists</span>(k1,coords)))</span>
+<span id="cb289-18"><a href="sect026.html#cb289-18" tabindex="-1"></a><span class="co"># Voisins les plus proches avec le seuil de distance maximal</span></span>
+<span id="cb289-19"><a href="sect026.html#cb289-19" tabindex="-1"></a>Voisins.DistMax <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb289-20"><a href="sect026.html#cb289-20" tabindex="-1"></a><span class="co"># Distances avec le seuil maximum</span></span>
+<span id="cb289-21"><a href="sect026.html#cb289-21" tabindex="-1"></a>distances <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb289-22"><a href="sect026.html#cb289-22" tabindex="-1"></a><span class="co"># Inverse de la distance au carré</span></span>
+<span id="cb289-23"><a href="sect026.html#cb289-23" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb289-24"><a href="sect026.html#cb289-24" tabindex="-1"></a><span class="co"># Matrices de pondération spatiale standardisées en ligne</span></span>
+<span id="cb289-25"><a href="sect026.html#cb289-25" tabindex="-1"></a>W_InvDistances2 <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb289-26"><a href="sect026.html#cb289-26" tabindex="-1"></a></span>
+<span id="cb289-27"><a href="sect026.html#cb289-27" tabindex="-1"></a><span class="do">## Matrice des plus proches voisins avec k = 2</span></span>
+<span id="cb289-28"><a href="sect026.html#cb289-28" tabindex="-1"></a>k2 <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb289-29"><a href="sect026.html#cb289-29" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  À compléter</span></code></pre></div>
 <p>Correction à la section <a href="sect1002.html#sect10022">10.2.2</a>.</p>
 </div>
 <div class="bloc_exercice">
 <p><strong>Exercice 3.</strong> Calculez le <em>I</em> de Moran global pour la variable <code>D1pct</code> (pourcentage du premier décile de revenu des familles économiques) de la couche <code>SRQc</code> avec les différentes matrices de pondération spatiale (voir la section <a href="sect023.html#sect02322">2.3.2.2</a>). Complétez le code ci-dessous.</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="sect026.html#cb262-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb262-2"><a href="sect026.html#cb262-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb262-3"><a href="sect026.html#cb262-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb262-4"><a href="sect026.html#cb262-4" tabindex="-1"></a><span class="do">## Cartographie de la variable</span></span>
-<span id="cb262-5"><a href="sect026.html#cb262-5" tabindex="-1"></a><span class="fu">tm_shape</span>(SRQc)<span class="sc">+</span></span>
-<span id="cb262-6"><a href="sect026.html#cb262-6" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;D1pct&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Premier décile de revenu (%)&quot;</span>,</span>
-<span id="cb262-7"><a href="sect026.html#cb262-7" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;quantile&quot;</span>, <span class="at">n=</span><span class="dv">5</span>, <span class="at">palette=</span><span class="st">&quot;Greens&quot;</span>)<span class="sc">+</span></span>
-<span id="cb262-8"><a href="sect026.html#cb262-8" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)<span class="sc">+</span><span class="fu">tm_scale_bar</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>))</span>
-<span id="cb262-9"><a href="sect026.html#cb262-9" tabindex="-1"></a></span>
-<span id="cb262-10"><a href="sect026.html#cb262-10" tabindex="-1"></a><span class="do">## I de Moran avec la méthode Monte-Carlo avec 999 permutations</span></span>
-<span id="cb262-11"><a href="sect026.html#cb262-11" tabindex="-1"></a><span class="co"># utilisez la fonction moran.mc</span></span>
-<span id="cb262-12"><a href="sect026.html#cb262-12" tabindex="-1"></a><span class="co"># avec la matrice W.Rook</span></span>
-<span id="cb262-13"><a href="sect026.html#cb262-13" tabindex="-1"></a>À compléter</span>
-<span id="cb262-14"><a href="sect026.html#cb262-14" tabindex="-1"></a><span class="co"># avec la matrice W_InvDistances2Reduite</span></span>
-<span id="cb262-15"><a href="sect026.html#cb262-15" tabindex="-1"></a>À compléter</span>
-<span id="cb262-16"><a href="sect026.html#cb262-16" tabindex="-1"></a><span class="co"># avec la matrice W.k2</span></span>
-<span id="cb262-17"><a href="sect026.html#cb262-17" tabindex="-1"></a>À compléter</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="sect026.html#cb290-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb290-2"><a href="sect026.html#cb290-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb290-3"><a href="sect026.html#cb290-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb290-4"><a href="sect026.html#cb290-4" tabindex="-1"></a><span class="do">## Cartographie de la variable</span></span>
+<span id="cb290-5"><a href="sect026.html#cb290-5" tabindex="-1"></a><span class="fu">tm_shape</span>(SRQc)<span class="sc">+</span></span>
+<span id="cb290-6"><a href="sect026.html#cb290-6" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;D1pct&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Premier décile de revenu (%)&quot;</span>,</span>
+<span id="cb290-7"><a href="sect026.html#cb290-7" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;quantile&quot;</span>, <span class="at">n=</span><span class="dv">5</span>, <span class="at">palette=</span><span class="st">&quot;Greens&quot;</span>)<span class="sc">+</span></span>
+<span id="cb290-8"><a href="sect026.html#cb290-8" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)<span class="sc">+</span><span class="fu">tm_scale_bar</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>))</span>
+<span id="cb290-9"><a href="sect026.html#cb290-9" tabindex="-1"></a></span>
+<span id="cb290-10"><a href="sect026.html#cb290-10" tabindex="-1"></a><span class="do">## I de Moran avec la méthode Monte-Carlo avec 999 permutations</span></span>
+<span id="cb290-11"><a href="sect026.html#cb290-11" tabindex="-1"></a><span class="co"># utilisez la fonction moran.mc</span></span>
+<span id="cb290-12"><a href="sect026.html#cb290-12" tabindex="-1"></a><span class="co"># avec la matrice W.Rook</span></span>
+<span id="cb290-13"><a href="sect026.html#cb290-13" tabindex="-1"></a>À compléter</span>
+<span id="cb290-14"><a href="sect026.html#cb290-14" tabindex="-1"></a><span class="co"># avec la matrice W_InvDistances2Reduite</span></span>
+<span id="cb290-15"><a href="sect026.html#cb290-15" tabindex="-1"></a>À compléter</span>
+<span id="cb290-16"><a href="sect026.html#cb290-16" tabindex="-1"></a><span class="co"># avec la matrice W.k2</span></span>
+<span id="cb290-17"><a href="sect026.html#cb290-17" tabindex="-1"></a>À compléter</span></code></pre></div>
 <p>Quelle matrice de pondération spatiale donne la dépendance spatiale la plus forte?
 Correction à la section <a href="sect1002.html#sect10023">10.2.3</a>.</p>
 </div>
@@ -527,54 +521,54 @@ Correction à la section <a href="sect1002.html#sect10023">10.2.3</a>.</p>
 <li>Typologie du nuage de points du <em>I</em> de Moran avec la fonction <code>localmoran</code> (voir la section <a href="sect024.html#sect0243">2.4.3</a>).</li>
 </ul>
 <p>Complétez le code ci-dessous.</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="sect026.html#cb263-1" tabindex="-1"></a><span class="do">####################</span></span>
-<span id="cb263-2"><a href="sect026.html#cb263-2" tabindex="-1"></a><span class="do">## Calcul du Z(Gi)</span></span>
-<span id="cb263-3"><a href="sect026.html#cb263-3" tabindex="-1"></a><span class="do">####################</span></span>
-<span id="cb263-4"><a href="sect026.html#cb263-4" tabindex="-1"></a>SRQc<span class="sc">$</span>D1pct_localGetis <span class="ot">&lt;-</span> <span class="fu">localG</span>(À compléter, </span>
-<span id="cb263-5"><a href="sect026.html#cb263-5" tabindex="-1"></a>                                À compléter, </span>
-<span id="cb263-6"><a href="sect026.html#cb263-6" tabindex="-1"></a>                                <span class="at">zero.policy=</span><span class="cn">TRUE</span>)</span>
-<span id="cb263-7"><a href="sect026.html#cb263-7" tabindex="-1"></a><span class="co"># Définition des intervalles et des noms des classes</span></span>
-<span id="cb263-8"><a href="sect026.html#cb263-8" tabindex="-1"></a>classes.intervalles <span class="ot">=</span> À compléter</span>
-<span id="cb263-9"><a href="sect026.html#cb263-9" tabindex="-1"></a>classes.noms <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Point froid (p = 0,001)&quot;</span>, </span>
-<span id="cb263-10"><a href="sect026.html#cb263-10" tabindex="-1"></a>                <span class="st">&quot;Point froid (p = 0,01)&quot;</span>, </span>
-<span id="cb263-11"><a href="sect026.html#cb263-11" tabindex="-1"></a>                <span class="st">&quot;Point froid (p = 0,05)&quot;</span>, </span>
-<span id="cb263-12"><a href="sect026.html#cb263-12" tabindex="-1"></a>                <span class="st">&quot;Non significatif&quot;</span>,</span>
-<span id="cb263-13"><a href="sect026.html#cb263-13" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,05)&quot;</span>, </span>
-<span id="cb263-14"><a href="sect026.html#cb263-14" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,01)&quot;</span>, </span>
-<span id="cb263-15"><a href="sect026.html#cb263-15" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,001)&quot;</span>)</span>
-<span id="cb263-16"><a href="sect026.html#cb263-16" tabindex="-1"></a><span class="do">## Création d&#39;un champ avec les noms des classes</span></span>
-<span id="cb263-17"><a href="sect026.html#cb263-17" tabindex="-1"></a>SRQc<span class="sc">$</span>D1pct_localGetisP <span class="ot">&lt;-</span> <span class="fu">cut</span>(SRQc<span class="sc">$</span>D1pct_localGetis,</span>
-<span id="cb263-18"><a href="sect026.html#cb263-18" tabindex="-1"></a>                              <span class="at">breaks =</span> classes.intervalles,</span>
-<span id="cb263-19"><a href="sect026.html#cb263-19" tabindex="-1"></a>                              <span class="at">labels =</span> classes.noms)</span>
-<span id="cb263-20"><a href="sect026.html#cb263-20" tabindex="-1"></a><span class="do">## Cartographie</span></span>
-<span id="cb263-21"><a href="sect026.html#cb263-21" tabindex="-1"></a>À compléter</span>
-<span id="cb263-22"><a href="sect026.html#cb263-22" tabindex="-1"></a></span>
-<span id="cb263-23"><a href="sect026.html#cb263-23" tabindex="-1"></a><span class="do">####################</span></span>
-<span id="cb263-24"><a href="sect026.html#cb263-24" tabindex="-1"></a><span class="do">## Typologie LISA</span></span>
-<span id="cb263-25"><a href="sect026.html#cb263-25" tabindex="-1"></a><span class="do">####################</span></span>
-<span id="cb263-26"><a href="sect026.html#cb263-26" tabindex="-1"></a><span class="do">## Cote Z (variable centrée réduite)</span></span>
-<span id="cb263-27"><a href="sect026.html#cb263-27" tabindex="-1"></a>zx <span class="ot">&lt;-</span> À compléter</span>
-<span id="cb263-28"><a href="sect026.html#cb263-28" tabindex="-1"></a><span class="do">## variable X centrée réduite spatialement décalée avec une matrice Rook</span></span>
-<span id="cb263-29"><a href="sect026.html#cb263-29" tabindex="-1"></a>wzx <span class="ot">&lt;-</span> <span class="fu">lag.listw</span>(À compléter)</span>
-<span id="cb263-30"><a href="sect026.html#cb263-30" tabindex="-1"></a><span class="do">## I de Moran local (notez que vous pouvez aussi utiliser la fonction localmoran_perm)</span></span>
-<span id="cb263-31"><a href="sect026.html#cb263-31" tabindex="-1"></a>localMoranI  <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(À compléter)</span>
-<span id="cb263-32"><a href="sect026.html#cb263-32" tabindex="-1"></a>plocalMoranI <span class="ot">&lt;-</span> localMoranI[, <span class="dv">5</span>]</span>
-<span id="cb263-33"><a href="sect026.html#cb263-33" tabindex="-1"></a><span class="do">## Choisir un seuil de signification</span></span>
-<span id="cb263-34"><a href="sect026.html#cb263-34" tabindex="-1"></a>signif <span class="ot">=</span> <span class="fl">0.05</span></span>
-<span id="cb263-35"><a href="sect026.html#cb263-35" tabindex="-1"></a><span class="do">## Construction de la typologie</span></span>
-<span id="cb263-36"><a href="sect026.html#cb263-36" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;1. HH&quot;</span>, <span class="cn">NA</span>)</span>
-<span id="cb263-37"><a href="sect026.html#cb263-37" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">&quot;2. LL&quot;</span>, Typologie)</span>
-<span id="cb263-38"><a href="sect026.html#cb263-38" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">&quot;3. HL&quot;</span>, Typologie)</span>
-<span id="cb263-39"><a href="sect026.html#cb263-39" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;4. LH&quot;</span>, Typologie)</span>
-<span id="cb263-40"><a href="sect026.html#cb263-40" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(plocalMoranI <span class="sc">&gt;</span> signif, <span class="st">&quot;Non sign&quot;</span>, Typologie)  <span class="co"># Non significatif</span></span>
-<span id="cb263-41"><a href="sect026.html#cb263-41" tabindex="-1"></a><span class="do">## Enregistrement de la typologie dans un champ</span></span>
-<span id="cb263-42"><a href="sect026.html#cb263-42" tabindex="-1"></a>SRQc<span class="sc">$</span>TypoIMoran.D1pct <span class="ot">&lt;-</span> Typologie</span>
-<span id="cb263-43"><a href="sect026.html#cb263-43" tabindex="-1"></a><span class="do">## Couleurs</span></span>
-<span id="cb263-44"><a href="sect026.html#cb263-44" tabindex="-1"></a>Couleurs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightpink&quot;</span>, <span class="st">&quot;skyblue2&quot;</span>, <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb263-45"><a href="sect026.html#cb263-45" tabindex="-1"></a><span class="fu">names</span>(Couleurs) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1. HH&quot;</span>,<span class="st">&quot;2. LL&quot;</span>,<span class="st">&quot;3. HL&quot;</span>,<span class="st">&quot;4. LH&quot;</span>,<span class="st">&quot;Non sign&quot;</span>)</span>
-<span id="cb263-46"><a href="sect026.html#cb263-46" tabindex="-1"></a><span class="do">## Cartographie</span></span>
-<span id="cb263-47"><a href="sect026.html#cb263-47" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb263-48"><a href="sect026.html#cb263-48" tabindex="-1"></a>À compléter</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="sect026.html#cb291-1" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb291-2"><a href="sect026.html#cb291-2" tabindex="-1"></a><span class="do">## Calcul du Z(Gi)</span></span>
+<span id="cb291-3"><a href="sect026.html#cb291-3" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb291-4"><a href="sect026.html#cb291-4" tabindex="-1"></a>SRQc<span class="sc">$</span>D1pct_localGetis <span class="ot">&lt;-</span> <span class="fu">localG</span>(À compléter, </span>
+<span id="cb291-5"><a href="sect026.html#cb291-5" tabindex="-1"></a>                                À compléter, </span>
+<span id="cb291-6"><a href="sect026.html#cb291-6" tabindex="-1"></a>                                <span class="at">zero.policy=</span><span class="cn">TRUE</span>)</span>
+<span id="cb291-7"><a href="sect026.html#cb291-7" tabindex="-1"></a><span class="co"># Définition des intervalles et des noms des classes</span></span>
+<span id="cb291-8"><a href="sect026.html#cb291-8" tabindex="-1"></a>classes.intervalles <span class="ot">=</span> À compléter</span>
+<span id="cb291-9"><a href="sect026.html#cb291-9" tabindex="-1"></a>classes.noms <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Point froid (p = 0,001)&quot;</span>, </span>
+<span id="cb291-10"><a href="sect026.html#cb291-10" tabindex="-1"></a>                <span class="st">&quot;Point froid (p = 0,01)&quot;</span>, </span>
+<span id="cb291-11"><a href="sect026.html#cb291-11" tabindex="-1"></a>                <span class="st">&quot;Point froid (p = 0,05)&quot;</span>, </span>
+<span id="cb291-12"><a href="sect026.html#cb291-12" tabindex="-1"></a>                <span class="st">&quot;Non significatif&quot;</span>,</span>
+<span id="cb291-13"><a href="sect026.html#cb291-13" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,05)&quot;</span>, </span>
+<span id="cb291-14"><a href="sect026.html#cb291-14" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,01)&quot;</span>, </span>
+<span id="cb291-15"><a href="sect026.html#cb291-15" tabindex="-1"></a>                <span class="st">&quot;Point chaud (p = 0,001)&quot;</span>)</span>
+<span id="cb291-16"><a href="sect026.html#cb291-16" tabindex="-1"></a><span class="do">## Création d&#39;un champ avec les noms des classes</span></span>
+<span id="cb291-17"><a href="sect026.html#cb291-17" tabindex="-1"></a>SRQc<span class="sc">$</span>D1pct_localGetisP <span class="ot">&lt;-</span> <span class="fu">cut</span>(SRQc<span class="sc">$</span>D1pct_localGetis,</span>
+<span id="cb291-18"><a href="sect026.html#cb291-18" tabindex="-1"></a>                              <span class="at">breaks =</span> classes.intervalles,</span>
+<span id="cb291-19"><a href="sect026.html#cb291-19" tabindex="-1"></a>                              <span class="at">labels =</span> classes.noms)</span>
+<span id="cb291-20"><a href="sect026.html#cb291-20" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb291-21"><a href="sect026.html#cb291-21" tabindex="-1"></a>À compléter</span>
+<span id="cb291-22"><a href="sect026.html#cb291-22" tabindex="-1"></a></span>
+<span id="cb291-23"><a href="sect026.html#cb291-23" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb291-24"><a href="sect026.html#cb291-24" tabindex="-1"></a><span class="do">## Typologie LISA</span></span>
+<span id="cb291-25"><a href="sect026.html#cb291-25" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb291-26"><a href="sect026.html#cb291-26" tabindex="-1"></a><span class="do">## Cote Z (variable centrée réduite)</span></span>
+<span id="cb291-27"><a href="sect026.html#cb291-27" tabindex="-1"></a>zx <span class="ot">&lt;-</span> À compléter</span>
+<span id="cb291-28"><a href="sect026.html#cb291-28" tabindex="-1"></a><span class="do">## variable X centrée réduite spatialement décalée avec une matrice Rook</span></span>
+<span id="cb291-29"><a href="sect026.html#cb291-29" tabindex="-1"></a>wzx <span class="ot">&lt;-</span> <span class="fu">lag.listw</span>(À compléter)</span>
+<span id="cb291-30"><a href="sect026.html#cb291-30" tabindex="-1"></a><span class="do">## I de Moran local (notez que vous pouvez aussi utiliser la fonction localmoran_perm)</span></span>
+<span id="cb291-31"><a href="sect026.html#cb291-31" tabindex="-1"></a>localMoranI  <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(À compléter)</span>
+<span id="cb291-32"><a href="sect026.html#cb291-32" tabindex="-1"></a>plocalMoranI <span class="ot">&lt;-</span> localMoranI[, <span class="dv">5</span>]</span>
+<span id="cb291-33"><a href="sect026.html#cb291-33" tabindex="-1"></a><span class="do">## Choisir un seuil de signification</span></span>
+<span id="cb291-34"><a href="sect026.html#cb291-34" tabindex="-1"></a>signif <span class="ot">=</span> <span class="fl">0.05</span></span>
+<span id="cb291-35"><a href="sect026.html#cb291-35" tabindex="-1"></a><span class="do">## Construction de la typologie</span></span>
+<span id="cb291-36"><a href="sect026.html#cb291-36" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;1. HH&quot;</span>, <span class="cn">NA</span>)</span>
+<span id="cb291-37"><a href="sect026.html#cb291-37" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">&quot;2. LL&quot;</span>, Typologie)</span>
+<span id="cb291-38"><a href="sect026.html#cb291-38" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">&quot;3. HL&quot;</span>, Typologie)</span>
+<span id="cb291-39"><a href="sect026.html#cb291-39" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(zx <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> wzx <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;4. LH&quot;</span>, Typologie)</span>
+<span id="cb291-40"><a href="sect026.html#cb291-40" tabindex="-1"></a>Typologie <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(plocalMoranI <span class="sc">&gt;</span> signif, <span class="st">&quot;Non sign&quot;</span>, Typologie)  <span class="co"># Non significatif</span></span>
+<span id="cb291-41"><a href="sect026.html#cb291-41" tabindex="-1"></a><span class="do">## Enregistrement de la typologie dans un champ</span></span>
+<span id="cb291-42"><a href="sect026.html#cb291-42" tabindex="-1"></a>SRQc<span class="sc">$</span>TypoIMoran.D1pct <span class="ot">&lt;-</span> Typologie</span>
+<span id="cb291-43"><a href="sect026.html#cb291-43" tabindex="-1"></a><span class="do">## Couleurs</span></span>
+<span id="cb291-44"><a href="sect026.html#cb291-44" tabindex="-1"></a>Couleurs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightpink&quot;</span>, <span class="st">&quot;skyblue2&quot;</span>, <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb291-45"><a href="sect026.html#cb291-45" tabindex="-1"></a><span class="fu">names</span>(Couleurs) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1. HH&quot;</span>,<span class="st">&quot;2. LL&quot;</span>,<span class="st">&quot;3. HL&quot;</span>,<span class="st">&quot;4. LH&quot;</span>,<span class="st">&quot;Non sign&quot;</span>)</span>
+<span id="cb291-46"><a href="sect026.html#cb291-46" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb291-47"><a href="sect026.html#cb291-47" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb291-48"><a href="sect026.html#cb291-48" tabindex="-1"></a>À compléter</span></code></pre></div>
 <p>Correction à la section <a href="sect1002.html#sect10024">10.2.4</a>.</p>
 </div>
 

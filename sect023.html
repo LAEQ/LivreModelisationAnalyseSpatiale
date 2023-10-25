@@ -198,7 +198,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.2.6" data-path="sect012.html"><a href="sect012.html#sect0126"><i class="fa fa-check"></i><b>1.2.6</b> Requêtes spatiales</a></li>
 <li class="chapter" data-level="1.2.7" data-path="sect012.html"><a href="sect012.html#sect0127"><i class="fa fa-check"></i><b>1.2.7</b> Manipulation des données attributaires</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
+<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données matricielles (<em>raster</em>)</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
@@ -232,13 +232,18 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="sect023.html"><a href="sect023.html#sect0231"><i class="fa fa-check"></i><b>2.3.1</b> Statistique du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Mise en œuvre dans R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sect023.html"><a href="sect023.html#sect0233"><i class="fa fa-check"></i><b>2.3.3</b> Indice de Lee : autocorrélation spatiale dans un contexte bivariée</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="sect024.html"><a href="sect024.html"><i class="fa fa-check"></i><b>2.4</b> Autocorrélation spatiale locale</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids</a></li>
+<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids pour une variable continue</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sect024.html"><a href="sect024.html#sect0242"><i class="fa fa-check"></i><b>2.4.2</b> Version locale du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Nuage de points du <em>I</em> de Moran d’Anselin</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sect024.html"><a href="sect024.html#sect0244"><i class="fa fa-check"></i><b>2.4.4</b> Version locale des statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.4.5" data-path="sect024.html"><a href="sect024.html#sect0245"><i class="fa fa-check"></i><b>2.4.5</b> Version locale de l’indice de Lee</a></li>
+<li class="chapter" data-level="2.4.6" data-path="sect024.html"><a href="sect024.html#sect0246"><i class="fa fa-check"></i><b>2.4.6</b> Typologie basée sur le diagramme de Moran dans un contexte bivarié</a></li>
+<li class="chapter" data-level="2.4.7" data-path="sect024.html"><a href="sect024.html#sect0247"><i class="fa fa-check"></i><b>2.4.7</b> Autocorrélation locale pour une variable qualitative (catégorielle) : l’indicateur ELSA</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sect025.html"><a href="sect025.html"><i class="fa fa-check"></i><b>2.5</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="2.6" data-path="sect026.html"><a href="sect026.html"><i class="fa fa-check"></i><b>2.6</b> Exercices de révision</a></li>
@@ -309,92 +314,83 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="sect055.html"><a href="sect055.html"><i class="fa fa-check"></i><b>5.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Introduction aux modèles de régression spatiale</a>
+<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Analyses d’évènements localisés sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Modèles économétriques spatiaux</a>
+<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Cartographie de la densité d’évènements sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
-<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
-<li class="chapter" data-level="6.1.3" data-path="sect061.html"><a href="sect061.html#sect0613"><i class="fa fa-check"></i><b>6.1.3</b> Quel modèle choisir?</a></li>
+<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
+<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Mesure d’autocorrélation spatiale sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
-<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Construction d’un modèle GAM dans R</a></li>
+<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Getis et Ord</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="6.2.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>6.2.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> Régression géographiquement pondérée</a>
+<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> DBSCAN sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Principe de base</a></li>
-<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
+<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="sect064.html"><a href="sect064.html"><i class="fa fa-check"></i><b>6.4</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="6.5" data-path="sect065.html"><a href="sect065.html"><i class="fa fa-check"></i><b>6.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
+<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Introduction aux modèles de régression spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Modèles économétriques spatiaux</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
-<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
-<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Algorithmes REDCAP</a></li>
-<li class="chapter" data-level="7.1.4" data-path="sect071.html"><a href="sect071.html#sect0714"><i class="fa fa-check"></i><b>7.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
+<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
+<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Quel modèle choisir?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
+<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
+<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> Construction d’un modèle GAM dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Régression géographiquement pondérée</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Principe de base</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes déterministes</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Interpolation polynomiale locale</a></li>
-<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Interpolation de l’inverse à la distance - <em>IDW</em></a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes géostatistiques</a>
+<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Krigeage simple</a></li>
-<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> Krigeage universel</a></li>
-<li class="chapter" data-level="8.2.3" data-path="sect082.html"><a href="sect082.html#sect0823"><i class="fa fa-check"></i><b>8.2.3</b> Co-krigeage</a></li>
-<li class="chapter" data-level="8.2.4" data-path="sect082.html"><a href="sect082.html#sect0824"><i class="fa fa-check"></i><b>8.2.4</b> Krigeage résiduel</a></li>
+<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Algorithmes AZP</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Algorithme SKATER</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sect081.html"><a href="sect081.html#sect0813"><i class="fa fa-check"></i><b>8.1.3</b> Algorithmes REDCAP</a></li>
+<li class="chapter" data-level="8.1.4" data-path="sect081.html"><a href="sect081.html#sect0814"><i class="fa fa-check"></i><b>8.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="sect083.html"><a href="sect083.html"><i class="fa fa-check"></i><b>8.3</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="8.4" data-path="sect084.html"><a href="sect084.html"><i class="fa fa-check"></i><b>8.4</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Analyse spatiale par l’analyse d’images</a>
+<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Méthodes d’interpolation spatiale</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Fonctions mathématiques, booléennes, relationnelles et conditionnelles sur les images</a>
+<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Méthodes déterministes</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Fonctions mathématiques</a></li>
-<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Fonctions booléennes</a></li>
+<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Interpolation polynomiale locale</a></li>
+<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Interpolation de l’inverse à la distance (<em>IDW</em>)</a></li>
 <li class="chapter" data-level="9.1.3" data-path="sect091.html"><a href="sect091.html#sect0913"><i class="fa fa-check"></i><b>9.1.3</b> Fonctions relationnelles</a></li>
 <li class="chapter" data-level="9.1.4" data-path="sect091.html"><a href="sect091.html#sect0914"><i class="fa fa-check"></i><b>9.1.4</b> Fonctions conditionnelles</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Fonctions locales, focales, zonales et globales sur les images</a>
+<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Méthodes géostatistiques</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Fonctions locales</a></li>
-<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Fonctions focales</a></li>
-<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Fonctions zonales</a></li>
-<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Fonctions globales</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Krigeage simple</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Krigeage universel</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Co-krigeage</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Krigeage résiduel</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Fonctions de surface</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="sect093.html"><a href="sect093.html#sect0931"><i class="fa fa-check"></i><b>9.3.1</b> Élevation</a></li>
-<li class="chapter" data-level="9.3.2" data-path="sect093.html"><a href="sect093.html#sect0932"><i class="fa fa-check"></i><b>9.3.2</b> Pente</a></li>
-<li class="chapter" data-level="9.3.3" data-path="sect093.html"><a href="sect093.html#sect0933"><i class="fa fa-check"></i><b>9.3.3</b> Ombrage</a></li>
-<li class="chapter" data-level="9.3.4" data-path="sect093.html"><a href="sect093.html#sect0934"><i class="fa fa-check"></i><b>9.3.4</b> Visibilité</a></li>
-<li class="chapter" data-level="9.3.5" data-path="sect093.html"><a href="sect093.html#sect0935"><i class="fa fa-check"></i><b>9.3.5</b> Sky-view factor Index</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Données spatiotemporelles en mode image</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="sect094.html"><a href="sect094.html#fichier-netcdf"><i class="fa fa-check"></i><b>9.4.1</b> Fichier <em>netCDF</em></a></li>
-<li class="chapter" data-level="9.4.2" data-path="sect094.html"><a href="sect094.html#exemples-applicatifs"><i class="fa fa-check"></i><b>9.4.2</b> Exemples applicatifs</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="sect095.html"><a href="sect095.html"><i class="fa fa-check"></i><b>9.5</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="9.6" data-path="sect096.html"><a href="sect096.html"><i class="fa fa-check"></i><b>9.6</b> Exercices de révision</a></li>
+<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Exercices de révision</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>10</b> Correction des exercices</a>
 <ul>
@@ -424,20 +420,18 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
-<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a>
-<ul>
-<li class="chapter" data-level="10.6.1" data-path="sect1006.html"><a href="sect1006.html#sect10061"><i class="fa fa-check"></i><b>10.6.1</b> Exercice 1</a></li>
-<li class="chapter" data-level="10.6.2" data-path="sect1006.html"><a href="sect1006.html#sect10062"><i class="fa fa-check"></i><b>10.6.2</b> Exercice 2</a></li>
-<li class="chapter" data-level="10.6.3" data-path="sect1006.html"><a href="sect1006.html#sect10063"><i class="fa fa-check"></i><b>10.6.3</b> Exercice 3</a></li>
-</ul></li>
+<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sect1007.html"><a href="sect1007.html#sect10071"><i class="fa fa-check"></i><b>10.7.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sect1007.html"><a href="sect1007.html#sect10072"><i class="fa fa-check"></i><b>10.7.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.7.3" data-path="sect1007.html"><a href="sect1007.html#sect10073"><i class="fa fa-check"></i><b>10.7.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a></li>
+<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="sect1008.html"><a href="sect1008.html#sect10081"><i class="fa fa-check"></i><b>10.8.1</b> Exercice 1</a></li>
+</ul></li>
 <li class="chapter" data-level="10.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>10.9</b> Exercices du chapitre 9</a></li>
-<li class="chapter" data-level="10.10" data-path="sect1011.html"><a href="sect1011.html"><i class="fa fa-check"></i><b>10.10</b> Exercices du chapitre 11</a></li>
-<li class="chapter" data-level="10.11" data-path="sect1012.html"><a href="sect1012.html"><i class="fa fa-check"></i><b>10.11</b> Excercice du chapitre 12</a></li>
 </ul></li>
 </ul>
 
@@ -459,6 +453,7 @@ Modélisation et analyse spatiale</a>
             <section class="normal" id="section-">
 <div id="sect023" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Autocorrélation spatiale globale<a href="sect023.html#sect023" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dans le cadre de cette section, nous présentons uniquement les mesures d’autocorrélation spatiale globale les plus utilisées, à savoir le <em>I</em> de Moran pour évaluer l’autocorrélation spatiale d’une variable continue (section <a href="sect023.html#sect0231">2.3.1</a>), les statistiques de comptage de jointure (<em>join count statistic</em>) pour une variable binaire ou catégorielle (section <a href="sect023.html#sect0232">2.3.2</a>) et l’indicateur de Lee pour évaluer l’autocorrélation spatiale deux variables continues (section <a href="sect023.html#sect0233">2.3.3</a>).</p>
 <div id="sect0231" class="section level3 hasAnchor" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Statistique du <em>I</em> de Moran<a href="sect023.html#sect0231" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="sect02311" class="section level4 hasAnchor" number="2.3.1.1">
@@ -508,9 +503,8 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 <p>Pour une description détaillée du calcul des trois tests, consultez l’ouvrage de Jean Dubé et Diego Legros <span class="citation">(<a href="#ref-dube2014econometrie">2014</a>)</span>.</p>
 </div>
 </div>
-</div>
-<div id="sect0232" class="section level3 hasAnchor" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Mise en œuvre dans R<a href="sect023.html#sect0232" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sect02314" class="section level4 hasAnchor" number="2.3.1.4">
+<h4><span class="header-section-number">2.3.1.4</span> Mise en œuvre dans R<a href="sect023.html#sect02314" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="bloc_objectif">
 <p><strong>Calcul du <em>I</em> de Moran dans R</strong></p>
 <p>Pour illustrer le calcul de <em>I</em> de Moran dans R, nous utilisons une couche des aires de diffusion (AD) de la ville de Sherbrooke. Les étapes suivantes sont réalisées :</p>
@@ -521,84 +515,84 @@ I = \frac{\Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}(x_i-\bar{x})(x_j-\bar{x})}{\Sigma
 <li>Comparer les valeurs de <em>I</em> de Moran calculées sur plusieurs variables.</li>
 </ol>
 </div>
-<div id="sect02321" class="section level4 hasAnchor" number="2.3.2.1">
-<h4><span class="header-section-number">2.3.2.1</span> Étape 1. Construction des matrices de pondération spatiale<a href="sect023.html#sect02321" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="sect023.html#cb229-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb229-2"><a href="sect023.html#cb229-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb229-3"><a href="sect023.html#cb229-3" tabindex="-1"></a><span class="do">## Importation de la couche des aires de diffusion de la ville de Sherbrooke</span></span>
-<span id="cb229-4"><a href="sect023.html#cb229-4" tabindex="-1"></a>AD.DR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
-<span id="cb229-5"><a href="sect023.html#cb229-5" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbADDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb229-6"><a href="sect023.html#cb229-6" tabindex="-1"></a></span>
-<span id="cb229-7"><a href="sect023.html#cb229-7" tabindex="-1"></a><span class="do">## Matrices de contiguïté</span></span>
-<span id="cb229-8"><a href="sect023.html#cb229-8" tabindex="-1"></a><span class="do">##############################################</span></span>
-<span id="cb229-9"><a href="sect023.html#cb229-9" tabindex="-1"></a><span class="do">## Partage d&#39;un nœud (Queen)</span></span>
-<span id="cb229-10"><a href="sect023.html#cb229-10" tabindex="-1"></a>Queen <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">TRUE</span>)</span>
-<span id="cb229-11"><a href="sect023.html#cb229-11" tabindex="-1"></a>W.Queen <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Queen, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-12"><a href="sect023.html#cb229-12" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook)</span></span>
-<span id="cb229-13"><a href="sect023.html#cb229-13" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
-<span id="cb229-14"><a href="sect023.html#cb229-14" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-15"><a href="sect023.html#cb229-15" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook) et ordres d&#39;adjacence de 2 à 5</span></span>
-<span id="cb229-16"><a href="sect023.html#cb229-16" tabindex="-1"></a>Rook2 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">2</span>))</span>
-<span id="cb229-17"><a href="sect023.html#cb229-17" tabindex="-1"></a>Rook3 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">3</span>))</span>
-<span id="cb229-18"><a href="sect023.html#cb229-18" tabindex="-1"></a>Rook4 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">4</span>))</span>
-<span id="cb229-19"><a href="sect023.html#cb229-19" tabindex="-1"></a>Rook5 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">5</span>))</span>
-<span id="cb229-20"><a href="sect023.html#cb229-20" tabindex="-1"></a>W.Rook2 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook2, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-21"><a href="sect023.html#cb229-21" tabindex="-1"></a>W.Rook3 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook3, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-22"><a href="sect023.html#cb229-22" tabindex="-1"></a>W.Rook4 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook4, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-23"><a href="sect023.html#cb229-23" tabindex="-1"></a>W.Rook5 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook5, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-24"><a href="sect023.html#cb229-24" tabindex="-1"></a></span>
-<span id="cb229-25"><a href="sect023.html#cb229-25" tabindex="-1"></a><span class="do">## Matrice de connectivité</span></span>
-<span id="cb229-26"><a href="sect023.html#cb229-26" tabindex="-1"></a><span class="do">##############################################</span></span>
-<span id="cb229-27"><a href="sect023.html#cb229-27" tabindex="-1"></a><span class="do">## Matrice binaire avec un seuil de 2500 mètres</span></span>
-<span id="cb229-28"><a href="sect023.html#cb229-28" tabindex="-1"></a>Connect2500m <span class="ot">&lt;-</span>   <span class="fu">dnearneigh</span>(<span class="fu">st_centroid</span>(AD.DR), <span class="at">d1 =</span> <span class="dv">0</span>, <span class="at">d2 =</span> <span class="dv">2500</span>)</span>
-<span id="cb229-29"><a href="sect023.html#cb229-29" tabindex="-1"></a>W.Connect2500m <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Connect2500m, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-30"><a href="sect023.html#cb229-30" tabindex="-1"></a></span>
-<span id="cb229-31"><a href="sect023.html#cb229-31" tabindex="-1"></a><span class="do">## Matrices de proximité</span></span>
-<span id="cb229-32"><a href="sect023.html#cb229-32" tabindex="-1"></a><span class="do">##############################################</span></span>
-<span id="cb229-33"><a href="sect023.html#cb229-33" tabindex="-1"></a><span class="do">## Coordonnées géographiques et matrice de distance</span></span>
-<span id="cb229-34"><a href="sect023.html#cb229-34" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(AD.DR))</span>
-<span id="cb229-35"><a href="sect023.html#cb229-35" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(coords, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>))</span>
-<span id="cb229-36"><a href="sect023.html#cb229-36" tabindex="-1"></a><span class="fu">diag</span>(distances) <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb229-37"><a href="sect023.html#cb229-37" tabindex="-1"></a><span class="do">## Matrices inverse de la distance et inverse de la distance au carré</span></span>
-<span id="cb229-38"><a href="sect023.html#cb229-38" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, distances)</span>
-<span id="cb229-39"><a href="sect023.html#cb229-39" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, distances)</span>
-<span id="cb229-40"><a href="sect023.html#cb229-40" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
-<span id="cb229-41"><a href="sect023.html#cb229-41" tabindex="-1"></a>W.InvDistances  <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-42"><a href="sect023.html#cb229-42" tabindex="-1"></a>W.InvDistances2 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-43"><a href="sect023.html#cb229-43" tabindex="-1"></a><span class="do">## Création de différentes matrices avec différents seuils</span></span>
-<span id="cb229-44"><a href="sect023.html#cb229-44" tabindex="-1"></a>InvDistances<span class="fl">.2500</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
-<span id="cb229-45"><a href="sect023.html#cb229-45" tabindex="-1"></a>InvDistances<span class="fl">.5000</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
-<span id="cb229-46"><a href="sect023.html#cb229-46" tabindex="-1"></a>InvDistances2<span class="fl">.2500</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb229-47"><a href="sect023.html#cb229-47" tabindex="-1"></a>InvDistances2<span class="fl">.5000</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb229-48"><a href="sect023.html#cb229-48" tabindex="-1"></a>W.InvDistances_2500 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-49"><a href="sect023.html#cb229-49" tabindex="-1"></a>W.InvDistances_5000 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-50"><a href="sect023.html#cb229-50" tabindex="-1"></a>W.InvDistances2_2500 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-51"><a href="sect023.html#cb229-51" tabindex="-1"></a>W.InvDistances2_5000 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-52"><a href="sect023.html#cb229-52" tabindex="-1"></a><span class="do">## Matrice de distance réduite standardisée</span></span>
-<span id="cb229-53"><a href="sect023.html#cb229-53" tabindex="-1"></a>k1 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords))</span>
-<span id="cb229-54"><a href="sect023.html#cb229-54" tabindex="-1"></a>plusprochevoisin.max <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">unlist</span>(<span class="fu">nbdists</span>(k1,coords)))</span>
-<span id="cb229-55"><a href="sect023.html#cb229-55" tabindex="-1"></a>Voisins.DistMax <span class="ot">&lt;-</span> <span class="fu">dnearneigh</span>(coords, <span class="dv">0</span>, plusprochevoisin.max)                            </span>
-<span id="cb229-56"><a href="sect023.html#cb229-56" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">nbdists</span>(Voisins.DistMax, coords)</span>
-<span id="cb229-57"><a href="sect023.html#cb229-57" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x))</span>
-<span id="cb229-58"><a href="sect023.html#cb229-58" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb229-59"><a href="sect023.html#cb229-59" tabindex="-1"></a>W_InvDistancesReduite  <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-60"><a href="sect023.html#cb229-60" tabindex="-1"></a>W_InvDistances2Reduite <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances2, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-61"><a href="sect023.html#cb229-61" tabindex="-1"></a></span>
-<span id="cb229-62"><a href="sect023.html#cb229-62" tabindex="-1"></a><span class="do">## Matrice selon le critère des plus proches voisins</span></span>
-<span id="cb229-63"><a href="sect023.html#cb229-63" tabindex="-1"></a><span class="do">#####################################################</span></span>
-<span id="cb229-64"><a href="sect023.html#cb229-64" tabindex="-1"></a><span class="do">## Matrices des plus proches voisins de 2 à 5</span></span>
-<span id="cb229-65"><a href="sect023.html#cb229-65" tabindex="-1"></a>k2 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">2</span>))</span>
-<span id="cb229-66"><a href="sect023.html#cb229-66" tabindex="-1"></a>k3 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">3</span>))</span>
-<span id="cb229-67"><a href="sect023.html#cb229-67" tabindex="-1"></a>k4 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">4</span>))</span>
-<span id="cb229-68"><a href="sect023.html#cb229-68" tabindex="-1"></a>k5 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">5</span>))</span>
-<span id="cb229-69"><a href="sect023.html#cb229-69" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
-<span id="cb229-70"><a href="sect023.html#cb229-70" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k2, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-71"><a href="sect023.html#cb229-71" tabindex="-1"></a>W.k3 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k3, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-72"><a href="sect023.html#cb229-72" tabindex="-1"></a>W.k4 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k4, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
-<span id="cb229-73"><a href="sect023.html#cb229-73" tabindex="-1"></a>W.k5 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k5, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
+<div id="sect023141" class="section level5 hasAnchor" number="2.3.1.4.1">
+<h5><span class="header-section-number">2.3.1.4.1</span> Étape 1. Construction des matrices de pondération spatiale<a href="sect023.html#sect023141" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="sect023.html#cb233-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb233-2"><a href="sect023.html#cb233-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb233-3"><a href="sect023.html#cb233-3" tabindex="-1"></a><span class="do">## Importation de la couche des aires de diffusion de la ville de Sherbrooke</span></span>
+<span id="cb233-4"><a href="sect023.html#cb233-4" tabindex="-1"></a>AD.DR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap02/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
+<span id="cb233-5"><a href="sect023.html#cb233-5" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbADDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb233-6"><a href="sect023.html#cb233-6" tabindex="-1"></a></span>
+<span id="cb233-7"><a href="sect023.html#cb233-7" tabindex="-1"></a><span class="do">## Matrices de contiguïté</span></span>
+<span id="cb233-8"><a href="sect023.html#cb233-8" tabindex="-1"></a><span class="do">##############################################</span></span>
+<span id="cb233-9"><a href="sect023.html#cb233-9" tabindex="-1"></a><span class="do">## Partage d&#39;un nœud (Queen)</span></span>
+<span id="cb233-10"><a href="sect023.html#cb233-10" tabindex="-1"></a>Queen <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">TRUE</span>)</span>
+<span id="cb233-11"><a href="sect023.html#cb233-11" tabindex="-1"></a>W.Queen <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Queen, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-12"><a href="sect023.html#cb233-12" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook)</span></span>
+<span id="cb233-13"><a href="sect023.html#cb233-13" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(AD.DR, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
+<span id="cb233-14"><a href="sect023.html#cb233-14" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-15"><a href="sect023.html#cb233-15" tabindex="-1"></a><span class="do">## Partage d&#39;un segment (Rook) et ordres d&#39;adjacence de 2 à 5</span></span>
+<span id="cb233-16"><a href="sect023.html#cb233-16" tabindex="-1"></a>Rook2 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">2</span>))</span>
+<span id="cb233-17"><a href="sect023.html#cb233-17" tabindex="-1"></a>Rook3 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">3</span>))</span>
+<span id="cb233-18"><a href="sect023.html#cb233-18" tabindex="-1"></a>Rook4 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">4</span>))</span>
+<span id="cb233-19"><a href="sect023.html#cb233-19" tabindex="-1"></a>Rook5 <span class="ot">&lt;-</span> <span class="fu">nblag_cumul</span>(<span class="fu">nblag</span>(Rook, <span class="dv">5</span>))</span>
+<span id="cb233-20"><a href="sect023.html#cb233-20" tabindex="-1"></a>W.Rook2 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook2, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-21"><a href="sect023.html#cb233-21" tabindex="-1"></a>W.Rook3 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook3, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-22"><a href="sect023.html#cb233-22" tabindex="-1"></a>W.Rook4 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook4, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-23"><a href="sect023.html#cb233-23" tabindex="-1"></a>W.Rook5 <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook5, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-24"><a href="sect023.html#cb233-24" tabindex="-1"></a></span>
+<span id="cb233-25"><a href="sect023.html#cb233-25" tabindex="-1"></a><span class="do">## Matrice de connectivité</span></span>
+<span id="cb233-26"><a href="sect023.html#cb233-26" tabindex="-1"></a><span class="do">##############################################</span></span>
+<span id="cb233-27"><a href="sect023.html#cb233-27" tabindex="-1"></a><span class="do">## Matrice binaire avec un seuil de 2500 mètres</span></span>
+<span id="cb233-28"><a href="sect023.html#cb233-28" tabindex="-1"></a>Connect2500m <span class="ot">&lt;-</span>   <span class="fu">dnearneigh</span>(<span class="fu">st_centroid</span>(AD.DR), <span class="at">d1 =</span> <span class="dv">0</span>, <span class="at">d2 =</span> <span class="dv">2500</span>)</span>
+<span id="cb233-29"><a href="sect023.html#cb233-29" tabindex="-1"></a>W.Connect2500m <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Connect2500m, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-30"><a href="sect023.html#cb233-30" tabindex="-1"></a></span>
+<span id="cb233-31"><a href="sect023.html#cb233-31" tabindex="-1"></a><span class="do">## Matrices de proximité</span></span>
+<span id="cb233-32"><a href="sect023.html#cb233-32" tabindex="-1"></a><span class="do">##############################################</span></span>
+<span id="cb233-33"><a href="sect023.html#cb233-33" tabindex="-1"></a><span class="do">## Coordonnées géographiques et matrice de distance</span></span>
+<span id="cb233-34"><a href="sect023.html#cb233-34" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(AD.DR))</span>
+<span id="cb233-35"><a href="sect023.html#cb233-35" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(coords, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>))</span>
+<span id="cb233-36"><a href="sect023.html#cb233-36" tabindex="-1"></a><span class="fu">diag</span>(distances) <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb233-37"><a href="sect023.html#cb233-37" tabindex="-1"></a><span class="do">## Matrices inverse de la distance et inverse de la distance au carré</span></span>
+<span id="cb233-38"><a href="sect023.html#cb233-38" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, distances)</span>
+<span id="cb233-39"><a href="sect023.html#cb233-39" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, distances)</span>
+<span id="cb233-40"><a href="sect023.html#cb233-40" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
+<span id="cb233-41"><a href="sect023.html#cb233-41" tabindex="-1"></a>W.InvDistances  <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-42"><a href="sect023.html#cb233-42" tabindex="-1"></a>W.InvDistances2 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-43"><a href="sect023.html#cb233-43" tabindex="-1"></a><span class="do">## Création de différentes matrices avec différents seuils</span></span>
+<span id="cb233-44"><a href="sect023.html#cb233-44" tabindex="-1"></a>InvDistances<span class="fl">.2500</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
+<span id="cb233-45"><a href="sect023.html#cb233-45" tabindex="-1"></a>InvDistances<span class="fl">.5000</span>m  <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances, <span class="dv">0</span>)</span>
+<span id="cb233-46"><a href="sect023.html#cb233-46" tabindex="-1"></a>InvDistances2<span class="fl">.2500</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">2500</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb233-47"><a href="sect023.html#cb233-47" tabindex="-1"></a>InvDistances2<span class="fl">.5000</span>m <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(distances<span class="sc">&lt;=</span><span class="dv">5000</span> <span class="sc">&amp;</span> distances<span class="sc">!=</span><span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span>distances<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb233-48"><a href="sect023.html#cb233-48" tabindex="-1"></a>W.InvDistances_2500 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-49"><a href="sect023.html#cb233-49" tabindex="-1"></a>W.InvDistances_5000 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-50"><a href="sect023.html#cb233-50" tabindex="-1"></a>W.InvDistances2_2500 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.2500</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-51"><a href="sect023.html#cb233-51" tabindex="-1"></a>W.InvDistances2_5000 <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(InvDistances2<span class="fl">.5000</span>m, <span class="at">style=</span><span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-52"><a href="sect023.html#cb233-52" tabindex="-1"></a><span class="do">## Matrice de distance réduite standardisée</span></span>
+<span id="cb233-53"><a href="sect023.html#cb233-53" tabindex="-1"></a>k1 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords))</span>
+<span id="cb233-54"><a href="sect023.html#cb233-54" tabindex="-1"></a>plusprochevoisin.max <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">unlist</span>(<span class="fu">nbdists</span>(k1,coords)))</span>
+<span id="cb233-55"><a href="sect023.html#cb233-55" tabindex="-1"></a>Voisins.DistMax <span class="ot">&lt;-</span> <span class="fu">dnearneigh</span>(coords, <span class="dv">0</span>, plusprochevoisin.max)                            </span>
+<span id="cb233-56"><a href="sect023.html#cb233-56" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">nbdists</span>(Voisins.DistMax, coords)</span>
+<span id="cb233-57"><a href="sect023.html#cb233-57" tabindex="-1"></a>InvDistances <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x))</span>
+<span id="cb233-58"><a href="sect023.html#cb233-58" tabindex="-1"></a>InvDistances2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(distances, <span class="cf">function</span>(x) (<span class="dv">1</span><span class="sc">/</span>x<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb233-59"><a href="sect023.html#cb233-59" tabindex="-1"></a>W_InvDistancesReduite  <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-60"><a href="sect023.html#cb233-60" tabindex="-1"></a>W_InvDistances2Reduite <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Voisins.DistMax, <span class="at">glist =</span> InvDistances2, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-61"><a href="sect023.html#cb233-61" tabindex="-1"></a></span>
+<span id="cb233-62"><a href="sect023.html#cb233-62" tabindex="-1"></a><span class="do">## Matrice selon le critère des plus proches voisins</span></span>
+<span id="cb233-63"><a href="sect023.html#cb233-63" tabindex="-1"></a><span class="do">#####################################################</span></span>
+<span id="cb233-64"><a href="sect023.html#cb233-64" tabindex="-1"></a><span class="do">## Matrices des plus proches voisins de 2 à 5</span></span>
+<span id="cb233-65"><a href="sect023.html#cb233-65" tabindex="-1"></a>k2 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">2</span>))</span>
+<span id="cb233-66"><a href="sect023.html#cb233-66" tabindex="-1"></a>k3 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">3</span>))</span>
+<span id="cb233-67"><a href="sect023.html#cb233-67" tabindex="-1"></a>k4 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">4</span>))</span>
+<span id="cb233-68"><a href="sect023.html#cb233-68" tabindex="-1"></a>k5 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coords, <span class="at">k =</span> <span class="dv">5</span>))</span>
+<span id="cb233-69"><a href="sect023.html#cb233-69" tabindex="-1"></a><span class="do">## Matrices de pondération spatiale standardisées en ligne</span></span>
+<span id="cb233-70"><a href="sect023.html#cb233-70" tabindex="-1"></a>W.k2 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k2, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-71"><a href="sect023.html#cb233-71" tabindex="-1"></a>W.k3 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k3, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-72"><a href="sect023.html#cb233-72" tabindex="-1"></a>W.k4 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k4, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb233-73"><a href="sect023.html#cb233-73" tabindex="-1"></a>W.k5 <span class="ot">&lt;-</span>  <span class="fu">nb2listw</span>(k5, <span class="at">zero.policy=</span><span class="cn">FALSE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span></code></pre></div>
 </div>
-<div id="sect02322" class="section level4 hasAnchor" number="2.3.2.2">
-<h4><span class="header-section-number">2.3.2.2</span> Étape 2. Calcul du <em>I</em> de Moran et des trois tests de significativité<a href="sect023.html#sect02322" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="sect023142" class="section level5 hasAnchor" number="2.3.1.4.2">
+<h5><span class="header-section-number">2.3.1.4.2</span> Étape 2. Calcul du <em>I</em> de Moran et des trois tests de significativité<a href="sect023.html#sect023142" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Calculons la statistique du <em>I</em> de Moran sur la variable continue cartographiée à la figure <a href="sect023.html#fig:CartoADDRSherbrooke">2.12</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoADDRSherbrooke"></span>
 <img src="GMQ405_files/figure-html/CartoADDRSherbrooke-1.png" alt="Densité de population, aires de diffusion de la ville de Sherbrooke" width="85%" />
@@ -622,10 +616,10 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 </ul></li>
 </ul>
 <p>Bien entendu, dans les sorties des trois méthodes, la valeur du <em>I</em> de Moran est la même, contrairement à la valeur de <em>p</em> qui peut varier.</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="sect023.html#cb230-1" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb230-2"><a href="sect023.html#cb230-2" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
-<span id="cb230-3"><a href="sect023.html#cb230-3" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
-<span id="cb230-4"><a href="sect023.html#cb230-4" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">FALSE</span>) <span class="co"># significativité selon l’hypothèse de la normalité</span></span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="sect023.html#cb234-1" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
+<span id="cb234-2"><a href="sect023.html#cb234-2" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
+<span id="cb234-3"><a href="sect023.html#cb234-3" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
+<span id="cb234-4"><a href="sect023.html#cb234-4" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">FALSE</span>) <span class="co"># significativité selon l’hypothèse de la normalité</span></span></code></pre></div>
 <pre><code>## 
 ##  Moran I test under normality
 ## 
@@ -637,10 +631,10 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 ## sample estimates:
 ## Moran I statistic       Expectation          Variance 
 ##       0.433714579      -0.004032258       0.001394035</code></pre>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="sect023.html#cb232-1" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb232-2"><a href="sect023.html#cb232-2" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
-<span id="cb232-3"><a href="sect023.html#cb232-3" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
-<span id="cb232-4"><a href="sect023.html#cb232-4" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">TRUE</span>)  <span class="co"># significativité selon l’hypothèse de la randomisation</span></span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="sect023.html#cb236-1" tabindex="-1"></a><span class="fu">moran.test</span>(AD.DR<span class="sc">$</span>HabKm2,          <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
+<span id="cb236-2"><a href="sect023.html#cb236-2" tabindex="-1"></a>           <span class="at">listw=</span>W.Queen,         <span class="co"># nom de la matrice de pondération spatiale</span></span>
+<span id="cb236-3"><a href="sect023.html#cb236-3" tabindex="-1"></a>           <span class="at">zero.policy=</span><span class="cn">TRUE</span>,    </span>
+<span id="cb236-4"><a href="sect023.html#cb236-4" tabindex="-1"></a>           <span class="at">randomisation =</span> <span class="cn">TRUE</span>)  <span class="co"># significativité selon l’hypothèse de la randomisation</span></span></code></pre></div>
 <pre><code>## 
 ##  Moran I test under randomisation
 ## 
@@ -652,10 +646,10 @@ Figure 2.12: Densité de population, aires de diffusion de la ville de Sherbrook
 ## sample estimates:
 ## Moran I statistic       Expectation          Variance 
 ##       0.433714579      -0.004032258       0.001385364</code></pre>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="sect023.html#cb234-1" tabindex="-1"></a><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,            <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
-<span id="cb234-2"><a href="sect023.html#cb234-2" tabindex="-1"></a>         <span class="at">listw=</span>W.Queen,           <span class="co"># nom de la matrice de pondération spatiale </span></span>
-<span id="cb234-3"><a href="sect023.html#cb234-3" tabindex="-1"></a>         <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
-<span id="cb234-4"><a href="sect023.html#cb234-4" tabindex="-1"></a>         <span class="at">nsim=</span><span class="dv">999</span>)                <span class="co"># 999 permutations</span></span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="sect023.html#cb238-1" tabindex="-1"></a><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,            <span class="co"># nom de l&#39;objet sf et de la variable continue</span></span>
+<span id="cb238-2"><a href="sect023.html#cb238-2" tabindex="-1"></a>         <span class="at">listw=</span>W.Queen,           <span class="co"># nom de la matrice de pondération spatiale </span></span>
+<span id="cb238-3"><a href="sect023.html#cb238-3" tabindex="-1"></a>         <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
+<span id="cb238-4"><a href="sect023.html#cb238-4" tabindex="-1"></a>         <span class="at">nsim=</span><span class="dv">999</span>)                <span class="co"># 999 permutations</span></span></code></pre></div>
 <pre><code>## 
 ##  Monte-Carlo simulation of Moran I
 ## 
@@ -674,44 +668,44 @@ Figure 2.13: Résultats du <em>I</em> de Moran selon l’hypothèse de la loi no
 </p>
 </div>
 </div>
-<div id="sect02323" class="section level4 hasAnchor" number="2.3.2.3">
-<h4><span class="header-section-number">2.3.2.3</span> Étape 3. Identification de la plus forte autocorrélation spatiale selon les différentes matrices<a href="sect023.html#sect02323" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="sect023143" class="section level5 hasAnchor" number="2.3.1.4.3">
+<h5><span class="header-section-number">2.3.1.4.3</span> Étape 3. Identification de la plus forte autocorrélation spatiale selon les différentes matrices<a href="sect023.html#sect023143" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>La syntaxe ci-dessous permet de calculer la statistique du <em>I</em> de Moran avec plusieurs matrices de pondération spatiale.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="sect023.html#cb236-1" tabindex="-1"></a><span class="do">## Création d&#39;un vecteur pour les noms des matrices</span></span>
-<span id="cb236-2"><a href="sect023.html#cb236-2" tabindex="-1"></a>VecteurMatrices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;W.Queen&quot;</span>, <span class="st">&quot;W.Rook&quot;</span>, <span class="st">&quot;W.Rook2&quot;</span>, <span class="st">&quot;W.Rook3&quot;</span>, <span class="st">&quot;W.Rook4&quot;</span>, <span class="st">&quot;W.Rook5&quot;</span>,</span>
-<span id="cb236-3"><a href="sect023.html#cb236-3" tabindex="-1"></a>                     <span class="st">&quot;W.Connect2500m&quot;</span>,</span>
-<span id="cb236-4"><a href="sect023.html#cb236-4" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances&quot;</span>, <span class="st">&quot;W.InvDistances2&quot;</span>,</span>
-<span id="cb236-5"><a href="sect023.html#cb236-5" tabindex="-1"></a>                     <span class="st">&quot;W_InvDistancesReduite&quot;</span>, <span class="st">&quot;W_InvDistances2Reduite&quot;</span>,</span>
-<span id="cb236-6"><a href="sect023.html#cb236-6" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances_2500&quot;</span>, <span class="st">&quot;W.InvDistances_5000&quot;</span>,</span>
-<span id="cb236-7"><a href="sect023.html#cb236-7" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances2_2500&quot;</span>,<span class="st">&quot;W.InvDistances2_5000&quot;</span>,</span>
-<span id="cb236-8"><a href="sect023.html#cb236-8" tabindex="-1"></a>                     <span class="st">&quot;W.k2&quot;</span>, <span class="st">&quot;W.k3&quot;</span>, <span class="st">&quot;W.k4&quot;</span>, <span class="st">&quot;W.k5&quot;</span>)</span>
-<span id="cb236-9"><a href="sect023.html#cb236-9" tabindex="-1"></a><span class="do">## Création d&#39;une liste pour toutes les matrices</span></span>
-<span id="cb236-10"><a href="sect023.html#cb236-10" tabindex="-1"></a>ListeMatrices <span class="ot">&lt;-</span> <span class="fu">list</span>(W.Queen, W.Rook, W.Rook2, W.Rook3, W.Rook4, W.Rook5,</span>
-<span id="cb236-11"><a href="sect023.html#cb236-11" tabindex="-1"></a>                      W.Connect2500m,</span>
-<span id="cb236-12"><a href="sect023.html#cb236-12" tabindex="-1"></a>                      W.InvDistances, W.InvDistances2,</span>
-<span id="cb236-13"><a href="sect023.html#cb236-13" tabindex="-1"></a>                      W_InvDistancesReduite, W_InvDistances2Reduite,</span>
-<span id="cb236-14"><a href="sect023.html#cb236-14" tabindex="-1"></a>                      W.InvDistances_2500, W.InvDistances2_2500,</span>
-<span id="cb236-15"><a href="sect023.html#cb236-15" tabindex="-1"></a>                      W.InvDistances2_2500, W.InvDistances2_5000,</span>
-<span id="cb236-16"><a href="sect023.html#cb236-16" tabindex="-1"></a>                      W.k2, W.k3, W.k4, W.k5)</span>
-<span id="cb236-17"><a href="sect023.html#cb236-17" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
-<span id="cb236-18"><a href="sect023.html#cb236-18" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb236-19"><a href="sect023.html#cb236-19" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb236-20"><a href="sect023.html#cb236-20" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb236-21"><a href="sect023.html#cb236-21" tabindex="-1"></a><span class="do">## Boucle pour calculer le I de Moran avec la liste des matrices</span></span>
-<span id="cb236-22"><a href="sect023.html#cb236-22" tabindex="-1"></a><span class="cf">for</span> (e <span class="cf">in</span> ListeMatrices){</span>
-<span id="cb236-23"><a href="sect023.html#cb236-23" tabindex="-1"></a>   i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb236-24"><a href="sect023.html#cb236-24" tabindex="-1"></a>   Test <span class="ot">&lt;-</span><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,</span>
-<span id="cb236-25"><a href="sect023.html#cb236-25" tabindex="-1"></a>                   <span class="at">listw=</span>e, </span>
-<span id="cb236-26"><a href="sect023.html#cb236-26" tabindex="-1"></a>                   <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
-<span id="cb236-27"><a href="sect023.html#cb236-27" tabindex="-1"></a>                   <span class="at">nsim=</span><span class="dv">999</span>)</span>
-<span id="cb236-28"><a href="sect023.html#cb236-28" tabindex="-1"></a>   MoranI[i]<span class="ot">&lt;-</span>Test<span class="sc">$</span>statistic</span>
-<span id="cb236-29"><a href="sect023.html#cb236-29" tabindex="-1"></a>   Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
-<span id="cb236-30"><a href="sect023.html#cb236-30" tabindex="-1"></a>}</span>
-<span id="cb236-31"><a href="sect023.html#cb236-31" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
-<span id="cb236-32"><a href="sect023.html#cb236-32" tabindex="-1"></a>MoranData1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Matrices=</span>VecteurMatrices,</span>
-<span id="cb236-33"><a href="sect023.html#cb236-33" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
-<span id="cb236-34"><a href="sect023.html#cb236-34" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
-<span id="cb236-35"><a href="sect023.html#cb236-35" tabindex="-1"></a><span class="fu">print</span>(MoranData1)</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="sect023.html#cb240-1" tabindex="-1"></a><span class="do">## Création d&#39;un vecteur pour les noms des matrices</span></span>
+<span id="cb240-2"><a href="sect023.html#cb240-2" tabindex="-1"></a>VecteurMatrices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;W.Queen&quot;</span>, <span class="st">&quot;W.Rook&quot;</span>, <span class="st">&quot;W.Rook2&quot;</span>, <span class="st">&quot;W.Rook3&quot;</span>, <span class="st">&quot;W.Rook4&quot;</span>, <span class="st">&quot;W.Rook5&quot;</span>,</span>
+<span id="cb240-3"><a href="sect023.html#cb240-3" tabindex="-1"></a>                     <span class="st">&quot;W.Connect2500m&quot;</span>,</span>
+<span id="cb240-4"><a href="sect023.html#cb240-4" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances&quot;</span>, <span class="st">&quot;W.InvDistances2&quot;</span>,</span>
+<span id="cb240-5"><a href="sect023.html#cb240-5" tabindex="-1"></a>                     <span class="st">&quot;W_InvDistancesReduite&quot;</span>, <span class="st">&quot;W_InvDistances2Reduite&quot;</span>,</span>
+<span id="cb240-6"><a href="sect023.html#cb240-6" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances_2500&quot;</span>, <span class="st">&quot;W.InvDistances_5000&quot;</span>,</span>
+<span id="cb240-7"><a href="sect023.html#cb240-7" tabindex="-1"></a>                     <span class="st">&quot;W.InvDistances2_2500&quot;</span>,<span class="st">&quot;W.InvDistances2_5000&quot;</span>,</span>
+<span id="cb240-8"><a href="sect023.html#cb240-8" tabindex="-1"></a>                     <span class="st">&quot;W.k2&quot;</span>, <span class="st">&quot;W.k3&quot;</span>, <span class="st">&quot;W.k4&quot;</span>, <span class="st">&quot;W.k5&quot;</span>)</span>
+<span id="cb240-9"><a href="sect023.html#cb240-9" tabindex="-1"></a><span class="do">## Création d&#39;une liste pour toutes les matrices</span></span>
+<span id="cb240-10"><a href="sect023.html#cb240-10" tabindex="-1"></a>ListeMatrices <span class="ot">&lt;-</span> <span class="fu">list</span>(W.Queen, W.Rook, W.Rook2, W.Rook3, W.Rook4, W.Rook5,</span>
+<span id="cb240-11"><a href="sect023.html#cb240-11" tabindex="-1"></a>                      W.Connect2500m,</span>
+<span id="cb240-12"><a href="sect023.html#cb240-12" tabindex="-1"></a>                      W.InvDistances, W.InvDistances2,</span>
+<span id="cb240-13"><a href="sect023.html#cb240-13" tabindex="-1"></a>                      W_InvDistancesReduite, W_InvDistances2Reduite,</span>
+<span id="cb240-14"><a href="sect023.html#cb240-14" tabindex="-1"></a>                      W.InvDistances_2500, W.InvDistances2_2500,</span>
+<span id="cb240-15"><a href="sect023.html#cb240-15" tabindex="-1"></a>                      W.InvDistances2_2500, W.InvDistances2_5000,</span>
+<span id="cb240-16"><a href="sect023.html#cb240-16" tabindex="-1"></a>                      W.k2, W.k3, W.k4, W.k5)</span>
+<span id="cb240-17"><a href="sect023.html#cb240-17" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
+<span id="cb240-18"><a href="sect023.html#cb240-18" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb240-19"><a href="sect023.html#cb240-19" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb240-20"><a href="sect023.html#cb240-20" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb240-21"><a href="sect023.html#cb240-21" tabindex="-1"></a><span class="do">## Boucle pour calculer le I de Moran avec la liste des matrices</span></span>
+<span id="cb240-22"><a href="sect023.html#cb240-22" tabindex="-1"></a><span class="cf">for</span> (e <span class="cf">in</span> ListeMatrices){</span>
+<span id="cb240-23"><a href="sect023.html#cb240-23" tabindex="-1"></a>   i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb240-24"><a href="sect023.html#cb240-24" tabindex="-1"></a>   Test <span class="ot">&lt;-</span><span class="fu">moran.mc</span>(AD.DR<span class="sc">$</span>HabKm2,</span>
+<span id="cb240-25"><a href="sect023.html#cb240-25" tabindex="-1"></a>                   <span class="at">listw=</span>e, </span>
+<span id="cb240-26"><a href="sect023.html#cb240-26" tabindex="-1"></a>                   <span class="at">zero.policy=</span><span class="cn">TRUE</span>, </span>
+<span id="cb240-27"><a href="sect023.html#cb240-27" tabindex="-1"></a>                   <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb240-28"><a href="sect023.html#cb240-28" tabindex="-1"></a>   MoranI[i]<span class="ot">&lt;-</span>Test<span class="sc">$</span>statistic</span>
+<span id="cb240-29"><a href="sect023.html#cb240-29" tabindex="-1"></a>   Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
+<span id="cb240-30"><a href="sect023.html#cb240-30" tabindex="-1"></a>}</span>
+<span id="cb240-31"><a href="sect023.html#cb240-31" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
+<span id="cb240-32"><a href="sect023.html#cb240-32" tabindex="-1"></a>MoranData1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Matrices=</span>VecteurMatrices,</span>
+<span id="cb240-33"><a href="sect023.html#cb240-33" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
+<span id="cb240-34"><a href="sect023.html#cb240-34" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
+<span id="cb240-35"><a href="sect023.html#cb240-35" tabindex="-1"></a><span class="fu">print</span>(MoranData1)</span></code></pre></div>
 <pre><code>##                  Matrices    MoranIs Pvalues
 ## 1                 W.Queen 0.43371458   0.001
 ## 2                  W.Rook 0.44970946   0.001
@@ -1067,15 +1061,15 @@ W.k5
 </table>
 <p><strong>Quelle est la matrice avec laquelle la dépendance spatiale de la variable est la plus forte?</strong></p>
 <p>Pour la trouver, nous construisons un graphique avec les valeurs du <em>I</em> de Moran triées par ordre décroissant. La valeur la plus forte est obtenue avec la matrice selon les deux plus proches voisins, suivie de la matrice <em>Rook</em>. Quoi qu’il en soit, il serait plus judicieux de privilégier la matrice de contiguïté selon le partage d’un segment comme expliqué plus haut.</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="sect023.html#cb238-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb238-2"><a href="sect023.html#cb238-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData1, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
-<span id="cb238-3"><a href="sect023.html#cb238-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
-<span id="cb238-4"><a href="sect023.html#cb238-4" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
-<span id="cb238-5"><a href="sect023.html#cb238-5" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
-<span id="cb238-6"><a href="sect023.html#cb238-6" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
-<span id="cb238-7"><a href="sect023.html#cb238-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Matrice de pondération spatiale&quot;</span>) <span class="sc">+</span></span>
-<span id="cb238-8"><a href="sect023.html#cb238-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
-<span id="cb238-9"><a href="sect023.html#cb238-9" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="sect023.html#cb242-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb242-2"><a href="sect023.html#cb242-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData1, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
+<span id="cb242-3"><a href="sect023.html#cb242-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
+<span id="cb242-4"><a href="sect023.html#cb242-4" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Matrices,MoranIs), </span>
+<span id="cb242-5"><a href="sect023.html#cb242-5" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
+<span id="cb242-6"><a href="sect023.html#cb242-6" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
+<span id="cb242-7"><a href="sect023.html#cb242-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Matrice de pondération spatiale&quot;</span>) <span class="sc">+</span></span>
+<span id="cb242-8"><a href="sect023.html#cb242-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
+<span id="cb242-9"><a href="sect023.html#cb242-9" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:loliplotMoran1"></span>
 <img src="GMQ405_files/figure-html/loliplotMoran1-1.png" alt="Graphique avec les valeurs du *I* de Moran selon les différentes matrices de pondération spatiale" width="75%" />
 <p class="caption">
@@ -1083,8 +1077,8 @@ Figure 2.14: Graphique avec les valeurs du <em>I</em> de Moran selon les différ
 </p>
 </div>
 </div>
-<div id="sect02324" class="section level4 hasAnchor" number="2.3.2.4">
-<h4><span class="header-section-number">2.3.2.4</span> Étape 4. Comparaison des valeurs du <em>I</em> de Moran pour plusieurs variables avec la même matrice<a href="sect023.html#sect02324" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="sect023144" class="section level5 hasAnchor" number="2.3.1.4.4">
+<h5><span class="header-section-number">2.3.1.4.4</span> Étape 4. Comparaison des valeurs du <em>I</em> de Moran pour plusieurs variables avec la même matrice<a href="sect023.html#sect023144" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>La syntaxe ci-dessous permet de calculer la statistique du <em>I</em> de Moran pour plusieurs variables (figure <a href="sect023.html#fig:CarteQuatreVariables">2.15</a>) avec la même matrice de pondération spatiale (ici, matrice de contiguïté selon le partage d’un segment).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CarteQuatreVariables"></span>
 <img src="GMQ405_files/figure-html/CarteQuatreVariables-1.png" alt="Quatre variables sélectionnées pour les AD de la ville de Sherbrooke" width="85%" />
@@ -1092,44 +1086,44 @@ Figure 2.14: Graphique avec les valeurs du <em>I</em> de Moran selon les différ
 Figure 2.15: Quatre variables sélectionnées pour les AD de la ville de Sherbrooke
 </p>
 </div>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="sect023.html#cb239-1" tabindex="-1"></a><span class="do">## Vecteur pour les variables à analyser</span></span>
-<span id="cb239-2"><a href="sect023.html#cb239-2" tabindex="-1"></a>listeVars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;PctLog1960_Av&quot;</span>, <span class="st">&quot;RevMedMenage&quot;</span> , <span class="st">&quot;PctProprieta&quot;</span>, <span class="st">&quot;PctPop0_14&quot;</span>)</span>
-<span id="cb239-3"><a href="sect023.html#cb239-3" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
-<span id="cb239-4"><a href="sect023.html#cb239-4" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb239-5"><a href="sect023.html#cb239-5" tabindex="-1"></a>VarName <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb239-6"><a href="sect023.html#cb239-6" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb239-7"><a href="sect023.html#cb239-7" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb239-8"><a href="sect023.html#cb239-8" tabindex="-1"></a><span class="do">## Boucle pour calculer le I de Moran pour les différentes variables</span></span>
-<span id="cb239-9"><a href="sect023.html#cb239-9" tabindex="-1"></a><span class="cf">for</span> (e <span class="cf">in</span> listeVars){</span>
-<span id="cb239-10"><a href="sect023.html#cb239-10" tabindex="-1"></a>  i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb239-11"><a href="sect023.html#cb239-11" tabindex="-1"></a>  Test <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(AD.DR[[e]],</span>
-<span id="cb239-12"><a href="sect023.html#cb239-12" tabindex="-1"></a>                   <span class="at">listw=</span>W.Rook,</span>
-<span id="cb239-13"><a href="sect023.html#cb239-13" tabindex="-1"></a>                   <span class="at">zero.policy=</span><span class="cn">TRUE</span>,</span>
-<span id="cb239-14"><a href="sect023.html#cb239-14" tabindex="-1"></a>                   <span class="at">nsim=</span><span class="dv">999</span>)</span>
-<span id="cb239-15"><a href="sect023.html#cb239-15" tabindex="-1"></a>  MoranI[i]<span class="ot">&lt;-</span><span class="fu">round</span>(Test<span class="sc">$</span>statistic,<span class="dv">4</span>)</span>
-<span id="cb239-16"><a href="sect023.html#cb239-16" tabindex="-1"></a>  VarName[i]<span class="ot">&lt;-</span>e</span>
-<span id="cb239-17"><a href="sect023.html#cb239-17" tabindex="-1"></a>  Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
-<span id="cb239-18"><a href="sect023.html#cb239-18" tabindex="-1"></a>}</span>
-<span id="cb239-19"><a href="sect023.html#cb239-19" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
-<span id="cb239-20"><a href="sect023.html#cb239-20" tabindex="-1"></a>MoranData2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Variable=</span>listeVars,</span>
-<span id="cb239-21"><a href="sect023.html#cb239-21" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
-<span id="cb239-22"><a href="sect023.html#cb239-22" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
-<span id="cb239-23"><a href="sect023.html#cb239-23" tabindex="-1"></a><span class="fu">print</span>(MoranData2)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="sect023.html#cb243-1" tabindex="-1"></a><span class="do">## Vecteur pour les variables à analyser</span></span>
+<span id="cb243-2"><a href="sect023.html#cb243-2" tabindex="-1"></a>listeVars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;PctLog1960_Av&quot;</span>, <span class="st">&quot;RevMedMenage&quot;</span> , <span class="st">&quot;PctProprieta&quot;</span>, <span class="st">&quot;PctPop0_14&quot;</span>)</span>
+<span id="cb243-3"><a href="sect023.html#cb243-3" tabindex="-1"></a><span class="do">## Vecteur pour le I de Moran et la valeur de p</span></span>
+<span id="cb243-4"><a href="sect023.html#cb243-4" tabindex="-1"></a>MoranI <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb243-5"><a href="sect023.html#cb243-5" tabindex="-1"></a>VarName <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb243-6"><a href="sect023.html#cb243-6" tabindex="-1"></a>Pvalue <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb243-7"><a href="sect023.html#cb243-7" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb243-8"><a href="sect023.html#cb243-8" tabindex="-1"></a><span class="do">## Boucle pour calculer le I de Moran pour les différentes variables</span></span>
+<span id="cb243-9"><a href="sect023.html#cb243-9" tabindex="-1"></a><span class="cf">for</span> (e <span class="cf">in</span> listeVars){</span>
+<span id="cb243-10"><a href="sect023.html#cb243-10" tabindex="-1"></a>  i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb243-11"><a href="sect023.html#cb243-11" tabindex="-1"></a>  Test <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(AD.DR[[e]],</span>
+<span id="cb243-12"><a href="sect023.html#cb243-12" tabindex="-1"></a>                   <span class="at">listw=</span>W.Rook,</span>
+<span id="cb243-13"><a href="sect023.html#cb243-13" tabindex="-1"></a>                   <span class="at">zero.policy=</span><span class="cn">TRUE</span>,</span>
+<span id="cb243-14"><a href="sect023.html#cb243-14" tabindex="-1"></a>                   <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb243-15"><a href="sect023.html#cb243-15" tabindex="-1"></a>  MoranI[i]<span class="ot">&lt;-</span><span class="fu">round</span>(Test<span class="sc">$</span>statistic,<span class="dv">4</span>)</span>
+<span id="cb243-16"><a href="sect023.html#cb243-16" tabindex="-1"></a>  VarName[i]<span class="ot">&lt;-</span>e</span>
+<span id="cb243-17"><a href="sect023.html#cb243-17" tabindex="-1"></a>  Pvalue[i] <span class="ot">&lt;-</span> Test<span class="sc">$</span>p.value</span>
+<span id="cb243-18"><a href="sect023.html#cb243-18" tabindex="-1"></a>}</span>
+<span id="cb243-19"><a href="sect023.html#cb243-19" tabindex="-1"></a><span class="co"># Création d&#39;un DataFrame avec les valeurs du I de Moran et de p</span></span>
+<span id="cb243-20"><a href="sect023.html#cb243-20" tabindex="-1"></a>MoranData2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Variable=</span>listeVars,</span>
+<span id="cb243-21"><a href="sect023.html#cb243-21" tabindex="-1"></a>                         <span class="at">MoranIs=</span>MoranI,</span>
+<span id="cb243-22"><a href="sect023.html#cb243-22" tabindex="-1"></a>                         <span class="at">Pvalues=</span>Pvalue)</span>
+<span id="cb243-23"><a href="sect023.html#cb243-23" tabindex="-1"></a><span class="fu">print</span>(MoranData2)</span></code></pre></div>
 <pre><code>##        Variable MoranIs Pvalues
 ## 1 PctLog1960_Av  0.7071   0.001
 ## 2  RevMedMenage  0.6168   0.001
 ## 3  PctProprieta  0.6028   0.001
 ## 4    PctPop0_14  0.4474   0.001</code></pre>
 <p>De nouveau, en quelques lignes de code, il est aisé de réaliser un graphique pour comparer les valeurs du <em>I</em> de Moran pour les différentes variables (figure <a href="sect023.html#fig:loliplotMoran2">2.16</a>).</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="sect023.html#cb241-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb241-2"><a href="sect023.html#cb241-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData2, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
-<span id="cb241-3"><a href="sect023.html#cb241-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>
-<span id="cb241-4"><a href="sect023.html#cb241-4" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>
-<span id="cb241-5"><a href="sect023.html#cb241-5" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
-<span id="cb241-6"><a href="sect023.html#cb241-6" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
-<span id="cb241-7"><a href="sect023.html#cb241-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Variable continue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb241-8"><a href="sect023.html#cb241-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
-<span id="cb241-9"><a href="sect023.html#cb241-9" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="sect023.html#cb245-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb245-2"><a href="sect023.html#cb245-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>MoranData2, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), <span class="at">y=</span>MoranIs)) <span class="sc">+</span></span>
+<span id="cb245-3"><a href="sect023.html#cb245-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>
+<span id="cb245-4"><a href="sect023.html#cb245-4" tabindex="-1"></a>                    <span class="at">xend=</span><span class="fu">reorder</span>(Variable,MoranIs), </span>
+<span id="cb245-5"><a href="sect023.html#cb245-5" tabindex="-1"></a>                    <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>MoranIs)) <span class="sc">+</span></span>
+<span id="cb245-6"><a href="sect023.html#cb245-6" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="at">size=</span><span class="dv">4</span>,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">shape=</span><span class="dv">21</span>)<span class="sc">+</span></span>
+<span id="cb245-7"><a href="sect023.html#cb245-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Variable continue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb245-8"><a href="sect023.html#cb245-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;I de Moran&quot;</span>)<span class="sc">+</span></span>
+<span id="cb245-9"><a href="sect023.html#cb245-9" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:loliplotMoran2"></span>
 <img src="GMQ405_files/figure-html/loliplotMoran2-1.png" alt="Graphique avec les valeurs du *I* de Moran pour les quatre variables" width="75%" />
 <p class="caption">
@@ -1139,10 +1133,1092 @@ Figure 2.16: Graphique avec les valeurs du <em>I</em> de Moran pour les quatre v
 </div>
 </div>
 </div>
-<h3>References</h3>
+<div id="sect0232" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Statistiques de comptage de jointure (<em>Join Count Statistics</em>)<a href="sect023.html#sect0232" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sect02321" class="section level4 hasAnchor" number="2.3.2.1">
+<h4><span class="header-section-number">2.3.2.1</span> Formulation des statistiques de comptage de jointure<a href="sect023.html#sect02321" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Pour évaluer l’autocorrélation spatiale d’une variable qualitative dichotomique (binaire) ou polychotomique (catégorielle), il convient d’utiliser les <strong><em>Join Count Statistics</em></strong>, qui peut être traduit par <strong>statistiques de comptage de jointure</strong>. Ces tests permettent de répondre à la question suivante : est-ce que le voisinage ou la proximité des entités spatiales augmente significativement les chances qu’elles partagent la même valeur (modalité) par rapport à ce que le hasard produirait <span class="citation">(<a href="#ref-cliff1981spatial">Cliff et Ord 1981</a>)</span>?</p>
+<div class="bloc_objectif">
+<p><strong>Autocorrélation spatiale sur une variable qualitative</strong></p>
+<p>Ces statistiques permettent ainsi de vérifier si la distribution des modalités d’une variable binaire ou nominale est dispersée aléatoirement dans l’espace d’étude ou si elle tend à se regrouper spatialement. Voici quelques exemples applicatifs :</p>
+<ul>
+<li><p><strong>Variable binaire</strong> (oui/non; absence/présence d’un phénomène) avec habituellement des valeurs de 0 ou 1. Dans une ville, la distribution spatiale des parcelles commerciales est distribuée aléatoirement ou tend-elle à se regrouper?</p></li>
+<li><p><strong>Variable qualitative nominale</strong>. Suite à une élection dans un pays donné, il s’agirait de vérifier si les districts électoraux adjacents ont significativement été remportés par des personnes candidates du même parti. Autre exemple, la répartition d’espèces d’arbres sur un territoire donné est aléatoire ou favorise-t-elle la proximité entre certaines espèces?</p></li>
+</ul>
+</div>
+<div id="sect023211" class="section level5 hasAnchor" number="2.3.2.1.1">
+<h5><span class="header-section-number">2.3.2.1.1</span> Application à une variable binaire<a href="sect023.html#sect023211" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Pour décrire le fonctionnement de ces tests, nous utilisons deux situations fictives avec toutes deux 36 entités spatiales, dont 9 avec des valeurs de 1 (noir, soit <em>B</em> par convention) et 27 des valeurs de 0 (blanc, soit <em>W</em> par convention) (figure <a href="sect023.html#fig:FigJoinCountTest">2.17</a>). La relation d’adjacence entre les entités spatiales est ici mesurée à partir d’une matrice de contiguïté selon le partage d’un segment qui est représentée avec un graphe à la figure <a href="sect023.html#fig:FigJoinCountTest">2.17</a>.b.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigJoinCountTest"></span>
+<img src="images/Chap02/JoinCountTest.png" alt="Illustration de l'autocorrélation spatiale pour une variable binaire" width="65%" />
+<p class="caption">
+Figure 2.17: Illustration de l’autocorrélation spatiale pour une variable binaire
+</p>
+</div>
+</div>
+<div id="sect0232111" class="section level5 hasAnchor" number="2.3.2.1.2">
+<h5><span class="header-section-number">2.3.2.1.2</span> Comptage des jointures<a href="sect023.html#sect0232111" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Le comptage des entités voisines partageant la même valeur (BB et WW, soit une autocorrélation spatiale positive) et inversement (WB, soit une autocorrélation spatiale négative) est réalisé comme suit :</p>
+<ul>
+<li><strong>Le nombre de voisins partageant la valeur de 1 (autocorrélation positive)</strong> est obtenu avec l’équation <a href="sect023.html#eq:JoinCountStatisticBB">(2.12)</a>. Lorsque deux entités ne sont pas adjacentes, alors <span class="math inline">\(w_{ij}=0\)</span> et donc <span class="math inline">\(w_{ij}x_ix_j = 0\)</span>. Par contre, lorsqu’elles sont voisines, trois cas de figure sont possibles :
+<ul>
+<li><strong>Toutes deux ont la valeur de 1</strong>, alors <span class="math inline">\(x_ix_j=1\times1 = 1\)</span>.</li>
+<li>Toutes deux ont la valeur de 0, alors <span class="math inline">\(x_ix_j=0\times0 = 0\)</span>.</li>
+<li>Elles ont des valeurs différentes, alors <span class="math inline">\(x_ix_j=1\times0 = 0\)</span>.</li>
+</ul></li>
+</ul>
+<p><span class="math display" id="eq:JoinCountStatisticBB">\[\begin{equation}  
+O_{BB} = \frac{1}{2} \Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij} x_i x_j \text{ avec :}
+\tag{2.12}
+\end{equation}\]</span> </p>
+<p><em>n</em> étant le nombre d’entités spatiales dans la couche géographique; <span class="math inline">\(w_{ij}\)</span> étant la valeur de la matrice de contiguïté non standardisée entre <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> (1 quand elles sont voisines, sinon 0), <span class="math inline">\(x_i\)</span> et <span class="math inline">\(x_j\)</span> étant les valeurs de la variable binaire (0 ou 1) pour les entités spatiales <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span>.</p>
+<ul>
+<li><strong>Le nombre de voisins partageant la valeur de 0 (autocorrélation positive)</strong> est obtenu avec l’équation <a href="sect023.html#eq:JoinCountStatisticWW">(2.13)</a> avec les cas suivants lorsque les deux entités sont voisines :
+<ul>
+<li>Toutes deux avec la valeur de 1, alors <span class="math inline">\((1-x_i) (1-x_j)=(1-1)\times(1-1) = 0 \times 0 = 0\)</span>.</li>
+<li><strong>Toutes deux avec la valeur de 0</strong>, alors <span class="math inline">\((1-x_i) (1-x_j)=(1-0)\times(1-0) = 1 \times 1 = 1\)</span>.</li>
+<li>Avec des valeurs différentes, alors <span class="math inline">\((1-x_i) (1-x_j)=(1-1)\times(1-0) = 0 \times 1 = 0\)</span>.</li>
+</ul></li>
+</ul>
+<p><span class="math display" id="eq:JoinCountStatisticWW">\[\begin{equation}  
+O_{WW} = \frac{1}{2} \Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij} (1-x_i) (1-x_j)
+\tag{2.13}
+\end{equation}\]</span> </p>
+<ul>
+<li><strong>Le nombre de voisins ne partageant pas les même valeurs (autocorrélation négative)</strong> est obtenu avec l’équation <a href="sect023.html#eq:JoinCountStatisticWB">(2.14)</a> avec les cas suivants lorsque les deux entités sont voisines :
+<ul>
+<li>Toutes deux avec la valeur de 1, alors <span class="math inline">\((x_i-x_j)^2=(1-1)^2 = 0\)</span>.</li>
+<li>Toutes deux avec la valeur de 0, alors <span class="math inline">\((x_i-x_j)^2=(0-0)^2 = 0\)</span>.</li>
+<li><strong>Avec des valeurs différentes</strong>, alors <span class="math inline">\((x_i-x_j)^2=(1-0)^2 = 1\)</span>.</li>
+</ul></li>
+</ul>
+<p><span class="math display" id="eq:JoinCountStatisticWB">\[\begin{equation}  
+O_{BW} = \frac{1}{2} \Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij} \left(x_i-x_j \right)^2
+\tag{2.14}
+\end{equation}\]</span> </p>
+<div class="bloc_notes">
+<p>Pour les trois équations ci-dessous, les sommes sont divisées par 2 puisque les mêmes résultats sont obtenus entre les paires (<span class="math inline">\(i,j\)</span>) et (<span class="math inline">\(j,i\)</span>). La somme des voisins partageant les mêmes valeurs (<span class="math inline">\(O_{BB}\)</span> et <span class="math inline">\(O_{WW}\)</span>) et dissemblables (<span class="math inline">\(O_{BW}\)</span>) est égale à la somme de la matrice de contiguïté (<span class="math inline">\(S_0\)</span>) divisée par deux (équation <a href="sect023.html#eq:JoinCountStatistic4">(2.15)</a>).</p>
+<p><span class="math display" id="eq:JoinCountStatistic4">\[\begin{equation}  
+  O_{BB} +  O_{WW} +  O_{BW} = \frac{1}{2}S_0= \frac{1}{2} \Sigma_{i=1}^n \Sigma_{j=1}^n w_{ij}
+\tag{2.15}
+\end{equation}\]</span> </p>
+</div>
+<p>Les résultats des comptages pour les situations A et B (figure <a href="sect023.html#fig:FigJoinCountTest">2.17</a>) sont présentés au tableau <a href="sect023.html#tab:TableauJC">2.4</a>.
+Ils démontrent clairement que les regroupements des valeurs de 0 et 1 sont bien plus importants pour la situation A (BB = 12 et WW = 42) que celle de B (BB = 1 et WW = 33). Reste à vérifier si ces résultats sont significatifs, c’est-à-dire s’ils diffèrent de ce que le hasard produirait.</p>
+<table>
+<caption>
+<span id="tab:TableauJC">Tableau 2.4: </span>Comptages des jointures
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Situation
+</th>
+<th style="text-align:right;">
+BB
+</th>
+<th style="text-align:right;">
+WW
+</th>
+<th style="text-align:right;">
+WB
+</th>
+<th style="text-align:right;">
+Somme
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+A (forte autocorrélation spatiale)
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+60
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B (absence autocorrélation spatiale)
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+60
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sect0232112" class="section level5 hasAnchor" number="2.3.2.1.3">
+<h5><span class="header-section-number">2.3.2.1.3</span> Tests statistiques<a href="sect023.html#sect0232112" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Il existe deux approches d’inférence pour déterminer si des observations voisines tendent plus souvent ou non que le hasard à produire certaines paires de catégories (BB, WW ou WB) : les tests reposant sur la loi binomiale et les tests par permutations. Notez que la seconde approche est habituellement privilégiée.</p>
+<p><strong>Tests par selon la loi binomiale</strong></p>
+<p>Ces tests permettent d’obtenir les valeurs attendues des paires BB, WW et WB pour une absence d’autocorrélation spatiale, puis des valeurs de Z (équation <a href="sect023.html#eq:JoinCountStatisticsZ">(2.16)</a>)) et de <em>p</em>.</p>
+<p><span class="math display" id="eq:JoinCountStatisticsZ">\[\begin{equation}  
+Z_{WW} = \frac{O[WW] - E[WW]}{\sqrt{\text{Var}[WW]}} \\
+Z_{BB} = \frac{O[BB] - E[BB]}{\sqrt{\text{Var}[BB]}} \\
+Z_{WB} = \frac{O[WB] - E[WB]}{\sqrt{\text{Var}[WB]}}\text{ avec :}
+\tag{2.16}
+\end{equation}\]</span> </p>
+<p><span class="math inline">\(O[WW]\)</span>, <span class="math inline">\(O[BB]\)</span> et <span class="math inline">\(O[WB]\)</span> étant les nombres de paires observées; <span class="math inline">\(E[WW]\)</span>, <span class="math inline">\(E[BB]\)</span> et <span class="math inline">\(E[WB]\)</span> étant les nombres de paires attendus et <span class="math inline">\(\text{Var}[WW]\)</span>, <span class="math inline">\(\text{Var}[BB]\)</span> et <span class="math inline">\(\text{Var}[WB]\)</span> leurs variances selon la loi binomiale pour une distribution aléatoire. Pour une description détaillée des formules des valeurs attendues et des variances selon les deux types d’échantillon (indépendant et dépendant) et selon le type de matrice de pondération spatiale (standardisée ou non), consultez l’ouvrage de Wong et Lee <span class="citation">(<a href="#ref-wong2005statistical">2005</a>)</span>.</p>
+<p>Aussi, le calcul des valeurs de Z repose sur deux cas de figure :</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Échantillon dépendant</strong> (<em>non free Sampling</em>). Le nombre de valeurs possibles de chaque catégorie est défini en amont et ne peut pas changer. Prenons l’exemple suivant : nous souhaitons vérifier si deux restaurants voisins ont tendance avoir une licence d’alcool (BB) ou non (WW). Si le nombre de licences d’alcool est réglementé, alors la probabilité d’en avoir une dépend du nombre de licences en circulation; on parle alors d’échantillon dépendant.</p></li>
+<li><p><strong>Échantillon indépendant</strong> (<em>free Sampling</em>). Pour chaque entité spatiale, la probabilité d’avoir une catégorie est indépendante du nombre d’observations. En d’autres termes, il n’y a pas un nombre défini d’observations pour chaque catégorie (W ou B) qui sont réparties entre les entités spatiales (échantillon indépendant).</p></li>
+</ol>
+<p>Bien distinguer ces deux configurations est essentiel, car elles impactent directement les valeurs des variances et par ricochet celles de Z et <em>p</em> (voir les tableaux <a href="sect023.html#tab:TableauJC2">2.5</a> et <a href="sect023.html#tab:TableauJC3">2.6</a>). Avec un test basé sur un échantillon indépendant pour la situation A, nous concluons que les valeurs de 1 et de 0 (BB et WW) ne sont pas distribuées aléatoirement puisque <em>p</em> &lt; 0,05), ce qui traduit une autocorrélation spatiale. Par contre, pour la situation B, toutes les valeurs de <em>p</em> sont supérieures à 0,05; ce qui ne nous permet pas de rejeter l’hypothèse nulle d’une distribution aléatoire selon la loi binomiale.</p>
+<table>
+<caption>
+<span id="tab:TableauJC2">Tableau 2.5: </span>Statistiques de comptage de jointures pour BB (tests basés sur la loi binomiale)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+O[BB]
+</th>
+<th style="text-align:right;">
+E[BB]
+</th>
+<th style="text-align:right;">
+Var[BB]
+</th>
+<th style="text-align:right;">
+Z
+</th>
+<th style="text-align:right;">
+p
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+A (échantillon dépendant)
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+33,43
+</td>
+<td style="text-align:right;">
+3,73
+</td>
+<td style="text-align:right;">
+4,439
+</td>
+<td style="text-align:right;">
+0,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A (échantillon indépendant)
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+33,75
+</td>
+<td style="text-align:right;">
+45,98
+</td>
+<td style="text-align:right;">
+1,217
+</td>
+<td style="text-align:right;">
+0,112
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B (échantillon dépendant)
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+33,43
+</td>
+<td style="text-align:right;">
+3,73
+</td>
+<td style="text-align:right;">
+-0,222
+</td>
+<td style="text-align:right;">
+0,588
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B (échantillon indépendant)
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+33,75
+</td>
+<td style="text-align:right;">
+45,98
+</td>
+<td style="text-align:right;">
+-0,111
+</td>
+<td style="text-align:right;">
+0,544
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:TableauJC3">Tableau 2.6: </span>Statistiques de comptage de jointures pour WW (tests basés sur la loi binomiale)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Situation et test
+</th>
+<th style="text-align:right;">
+O[WW]
+</th>
+<th style="text-align:right;">
+E[WW]
+</th>
+<th style="text-align:right;">
+Var[WW]
+</th>
+<th style="text-align:right;">
+Z
+</th>
+<th style="text-align:right;">
+p
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+A (échantillon dépendant)
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+3,43
+</td>
+<td style="text-align:right;">
+2,09
+</td>
+<td style="text-align:right;">
+5,922
+</td>
+<td style="text-align:right;">
+0,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B (échantillon indépendant)
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+3,75
+</td>
+<td style="text-align:right;">
+6,98
+</td>
+<td style="text-align:right;">
+3,122
+</td>
+<td style="text-align:right;">
+0,001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B (échantillon dépendant)
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3,43
+</td>
+<td style="text-align:right;">
+2,09
+</td>
+<td style="text-align:right;">
+-1,678
+</td>
+<td style="text-align:right;">
+0,953
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B (échantillon indépendant)
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3,75
+</td>
+<td style="text-align:right;">
+6,98
+</td>
+<td style="text-align:right;">
+-1,041
+</td>
+<td style="text-align:right;">
+0,851
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tests par permutations</strong></p>
+<p>Cette seconde approche d’inférence est très simple et consiste à :</p>
+<ol style="list-style-type: decimal">
+<li>Mélanger les observations du jeu de données un grand nombre de fois (habituellement 999).</li>
+<li>Pour chaque des permutations, compter les jointures BB, WW et WB.</li>
+<li>Estimer la pseudo valeur de <em>p</em> à partir de l’équation <a href="sect023.html#eq:JoinCountPermutation">(2.17)</a>). Cette valeur peut être interprétée comme la probabilité que le hasard génère plus souvent une paire (BB, WW ou WB) qu’observé dans le jeu de données initial.</li>
+</ol>
+<p><span class="math display" id="eq:JoinCountPermutation">\[\begin{equation}  
+  \text{Pseudo valeur de } p = (M+1)/ (R+1) \text{ avec :}
+\tag{2.17}
+\end{equation}\]</span> </p>
+<p><span class="math inline">\(M\)</span> étant le nombre de fois que le comptage de jointures (BB ou WW par exemple) est égal ou supérieur à la valeur de référence (<span class="math inline">\(O_{BB}\)</span> <span class="math inline">\(O_{WW}\)</span> ou par exemple) et <span class="math inline">\(R\)</span> étant le nombre de permutations (habituellement 999).</p>
+<p>En guise d’exemple, nous réalisons 999 permutations des valeurs de la situation A qui comprend 12 paires de BB, 42 de WW et 6 de WB. Les comptages de BB et WW pour ces 999 permutations sont représentés à la figure <a href="sect023.html#fig:JoinCountStatisticPermFigA">2.18</a>. Nous constatons qu’elles sont toujours inférieures aux valeurs de référence (BB = 12 et WW = 42; lignes bleues). Par conséquent, la pseudo valeur de <em>p</em> est égale à <span class="math inline">\((0+1)/(999+1)=\text{0,001}\)</span>. Cela signifie que nous ne pouvons rejeter l’hypothèse nulle stipulant que les distributions des paires BB et WW sont dues au hasard.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:JoinCountStatisticPermFigA"></span>
+<img src="GMQ405_files/figure-html/JoinCountStatisticPermFigA-1.png" alt="Résultats des 999 permutations pour la situation A" width="75%" />
+<p class="caption">
+Figure 2.18: Résultats des 999 permutations pour la situation A
+</p>
+</div>
+<p>Effectuons la même démarche pour la situation B avec une seule paire de BB et 33 paires de WW (figure <a href="sect023.html#fig:JoinCountStatisticPermFigB">2.19</a>) :</p>
+<ul>
+<li>pour BB, il y a 986 permutations qui ont une valeur supérieure ou égale à 1. La pseudo valeur de <em>p</em> est égale à <span class="math inline">\((984+1)/(999+1)=\text{0,985}\)</span>.</li>
+<li>pour WW, il y a 653 permutations qui ont une valeur supérieure ou égale à 1. La pseudo valeur de <em>p</em> est égale à <span class="math inline">\((653+1)/(999+1)=\text{0,653}\)</span>.</li>
+</ul>
+<p>Par conséquent, nous validons l’hypothèse nulle stipulant que les distributions des paires BB et WW sont dues au hasard pour la situation B.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:JoinCountStatisticPermFigB"></span>
+<img src="GMQ405_files/figure-html/JoinCountStatisticPermFigB-1.png" alt="Résultats des 999 permutations pour la situation B" width="75%" />
+<p class="caption">
+Figure 2.19: Résultats des 999 permutations pour la situation B
+</p>
+</div>
+<div class="bloc_astuce">
+<p><strong>Comment réaliser une permutation aléatoire des valeurs dans vecteur dans R</strong></p>
+<p>Dans R, la fonction <code>sample(x)</code> permet de permuter les valeurs d’un vecteur.</p>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="sect023.html#cb246-1" tabindex="-1"></a><span class="do">## Valeurs initiales pour les 36 observations (cas A)</span></span>
+<span id="cb246-2"><a href="sect023.html#cb246-2" tabindex="-1"></a><span class="fu">print</span>(Carres<span class="sc">$</span>CasA)</span></code></pre></div>
+<pre><code>##  [1] 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</code></pre>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="sect023.html#cb248-1" tabindex="-1"></a><span class="do">## Valeurs permutées</span></span>
+<span id="cb248-2"><a href="sect023.html#cb248-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sample</span>(Carres<span class="sc">$</span>CasA))</span></code></pre></div>
+<pre><code>##  [1] 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 1 0 1 0 0 0</code></pre>
+</div>
+<div class="bloc_attention">
+<p>Quelle que soit la méthode utilisée pour effectuer le <em>join count test</em>, notez qu’il est sensible à la définition de la matrice de voisinage, définie selon le partage d’un segment ou d’un nœud (<em>Queen</em> ou <em>Rook</em>). Elle impacte directement les nombres de paires observés et attendues et donc le niveau de significativité de l’autocorrélation spatiale.</p>
+</div>
+</div>
+</div>
+<div id="sect02322" class="section level4 hasAnchor" number="2.3.2.2">
+<h4><span class="header-section-number">2.3.2.2</span> Mise en œuvre dans R<a href="sect023.html#sect02322" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="bloc_objectif">
+<p><strong>Calcul des statistiques de comptage de jointure dans R</strong></p>
+<p>Pour illustrer le calcul des statistiques de comptage de jointure (<em>join count statistics</em>) dans R, nous utilisons une couche des aires de diffusion (AD) de la ville de Sherbrooke afin de répondre à la question suivante : les AD avec une majorité de locataires et celles avec une majorité de propriétaires sont-elles significativement voisines les unes des autres (autocorrélation spatiale positive) à Sherbrooke?</p>
+</div>
+<p>Dans le code ci-dessous, nous importons la couche géographique, créons une variable binaire indiquant si l’aire de diffusion a ou non une majorité de locataires et finalement, cartographions cette variable. Sans surprise, les AD avec une majorité de locataires sont concentrées dans la partie centrale de la ville (figure <a href="sect023.html#fig:FigMajLoc">2.20</a>).</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="sect023.html#cb250-1" tabindex="-1"></a><span class="do">## Chargement des données des aires de diffusion de la ville de Sherbrooke</span></span>
+<span id="cb250-2"><a href="sect023.html#cb250-2" tabindex="-1"></a>ADSherb <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/chap02/Recen2021Sherbrooke.gpkg&quot;</span>, </span>
+<span id="cb250-3"><a href="sect023.html#cb250-3" tabindex="-1"></a>                   <span class="at">layer=</span><span class="st">&quot;DR_SherbADDonnees2021&quot;</span>,</span>
+<span id="cb250-4"><a href="sect023.html#cb250-4" tabindex="-1"></a>                   <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb250-5"><a href="sect023.html#cb250-5" tabindex="-1"></a><span class="do">## Création de la variable binaire</span></span>
+<span id="cb250-6"><a href="sect023.html#cb250-6" tabindex="-1"></a>ADSherb<span class="sc">$</span>maj_locataires <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(ADSherb<span class="sc">$</span>Locataire <span class="sc">&gt;</span> ADSherb<span class="sc">$</span>Proprietaire, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb250-7"><a href="sect023.html#cb250-7" tabindex="-1"></a>ADSherb<span class="sc">$</span>maj_locataires <span class="ot">&lt;-</span> <span class="fu">factor</span>(ADSherb<span class="sc">$</span>maj_locataires,</span>
+<span id="cb250-8"><a href="sect023.html#cb250-8" tabindex="-1"></a>                                 <span class="at">levels =</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb250-9"><a href="sect023.html#cb250-9" tabindex="-1"></a>                                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Propriétaires&quot;</span>, <span class="st">&quot;Locataires&quot;</span>))</span>
+<span id="cb250-10"><a href="sect023.html#cb250-10" tabindex="-1"></a><span class="do">## Cartographie de la variable binaire</span></span>
+<span id="cb250-11"><a href="sect023.html#cb250-11" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb250-12"><a href="sect023.html#cb250-12" tabindex="-1"></a><span class="fu">tm_shape</span>(ADSherb)<span class="sc">+</span></span>
+<span id="cb250-13"><a href="sect023.html#cb250-13" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;black&quot;</span>, <span class="at">lwd=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb250-14"><a href="sect023.html#cb250-14" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;maj_locataires&quot;</span>, </span>
+<span id="cb250-15"><a href="sect023.html#cb250-15" tabindex="-1"></a>          <span class="at">palette=</span><span class="fu">c</span>(<span class="st">&quot;#ededed&quot;</span>, <span class="st">&quot;#706f6f&quot;</span>),</span>
+<span id="cb250-16"><a href="sect023.html#cb250-16" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Groupe majoritaire&quot;</span>)<span class="sc">+</span></span>
+<span id="cb250-17"><a href="sect023.html#cb250-17" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb250-18"><a href="sect023.html#cb250-18" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb250-19"><a href="sect023.html#cb250-19" tabindex="-1"></a>  <span class="fu">tm_credits</span>(<span class="st">&quot;Source : Statistique Canada, 2021.&quot;</span>, <span class="at">align =</span> <span class="st">&quot;left&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigMajLoc"></span>
+<img src="GMQ405_files/figure-html/FigMajLoc-1.png" alt="Aires de diffusion avec une majorité de locataires ou de propriétaires, Sherbrooke, 2021" width="85%" />
+<p class="caption">
+Figure 2.20: Aires de diffusion avec une majorité de locataires ou de propriétaires, Sherbrooke, 2021
+</p>
+</div>
+<p>Pour calculer les tests, nous utilisons une matrice de contiguïté selon le partage d’un nœud (<em>Queen</em>). Notez que pour les statistiques de comptage de jointure, il est préférable de ne pas standardiser la matrice spatiale (<code>style = "B"</code>), car nous souhaitons compter le nombre de paires formées par les deux catégories d’AD.</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="sect023.html#cb251-1" tabindex="-1"></a>Queen <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(ADSherb, <span class="at">queen =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb251-2"><a href="sect023.html#cb251-2" tabindex="-1"></a>WQueen <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Queen, <span class="at">style =</span> <span class="st">&quot;B&quot;</span>)</span></code></pre></div>
+<p>Pour calculer les tests selon la méthode d’inférence basée sur la loi binomiale, nous utilisons la fonction <code>joincount.test</code> du <em>package</em> <code>spdep</code>. Le paramètre <code>sampling = "free"</code> permet de spécifier le calcul des variances selon un échantillon indépendant, puisque les nombres d’AD dans lesquelles les locataires ou les propriétaires sont majoritaires n’ont pas de limites fixe.</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="sect023.html#cb252-1" tabindex="-1"></a>test1 <span class="ot">&lt;-</span> <span class="fu">joincount.test</span>(ADSherb<span class="sc">$</span>maj_locataires, <span class="at">listw =</span> WQueen, <span class="at">sampling =</span> <span class="st">&quot;free&quot;</span>)</span>
+<span id="cb252-2"><a href="sect023.html#cb252-2" tabindex="-1"></a><span class="fu">print</span>(test1)</span></code></pre></div>
+<p>Les résultats du test présentés à la figure  <a href="sect023.html#fig:FigurejoincountTest">2.21</a> s’interprètent comme suit :</p>
+<ul>
+<li><strong>a. Valeurs observées</strong> : 244 AD sont voisines et majoritairement occupées par des propriétaires contre 319 pour les locataires.</li>
+<li><strong>b. Valeurs attendues</strong> : 163,4227 pour une majorité de propriétaires et 214,8323 pour une majorité de locataires.</li>
+<li><strong>c. variances</strong> pour les deux groupes selon la loi binomiale avec un échantillon indépendant (602,3289 et 777,1427).</li>
+<li><strong>d. Valeurs Z</strong>, soit <span class="math inline">\((244-\text{163,4227})/\sqrt{\text{602,3289}}=\text{3,2832}\)</span> et <span class="math inline">\((319-\text{214,8323})/\sqrt{\text{777,1427}}=\text{3,7367}\)</span>.</li>
+<li><strong>e. Valeurs de <em>p</em></strong> sont inférieures à 0,005, signalant que les deux modalités de la variable binaire sont significativement autocorrélées positivement selon la matrice de contiguïté.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigurejoincountTest"></span>
+<img src="images/Chap02/JointCountTest_Locataires.png" alt="Résultats des statistiques de comptage de jointure avec la fonction `joincount.test`" width="70%" />
+<p class="caption">
+Figure 2.21: Résultats des statistiques de comptage de jointure avec la fonction <code>joincount.test</code>
+</p>
+</div>
+<p>À des fins de comparaison, nous effectuons le calcul des statistiques de comptage de jointure avec l’approche d’inférence selon le test des permutations (999) avec la fonction <code>joincount.mc</code>.</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="sect023.html#cb253-1" tabindex="-1"></a>test2 <span class="ot">&lt;-</span> <span class="fu">joincount.mc</span>(ADSherb<span class="sc">$</span>maj_locataires, <span class="at">listw =</span> WQueen, <span class="at">nsim =</span> <span class="dv">999</span>)</span>
+<span id="cb253-2"><a href="sect023.html#cb253-2" tabindex="-1"></a><span class="fu">print</span>(test2)</span></code></pre></div>
+<pre><code>## 
+##  Monte-Carlo simulation of join-count statistic
+## 
+## data:  ADSherb$maj_locataires 
+## weights: WQueen 
+## number of simulations + 1: 1000 
+## 
+## Join-count statistic for Propriétaires = 244, rank of observed
+## statistic = 1000, p-value = 0.001
+## alternative hypothesis: greater
+## sample estimates:
+##     mean of simulation variance of simulation 
+##               162.1662               112.0004 
+## 
+## 
+##  Monte-Carlo simulation of join-count statistic
+## 
+## data:  ADSherb$maj_locataires 
+## weights: WQueen 
+## number of simulations + 1: 1000 
+## 
+## Join-count statistic for Locataires = 319, rank of observed statistic =
+## 1000, p-value = 0.001
+## alternative hypothesis: greater
+## sample estimates:
+##     mean of simulation variance of simulation 
+##               214.1652               123.3825</code></pre>
+<p>L’approche d’inférence basée sur les permutations signale aussi que les deux distributions sont significativement autocorrélées spatialement (<em>p</em> = 0,001).</p>
+<div class="bloc_aller_loin">
+<p>Pour une variable qualitative comprenant plus de deux modalités (catégories), utilisez la fonction <code>joincount.multi</code> du <em>package</em> <code>spdep</code>. Cependant, elle ne renvoie pas de valeurs de <em>p</em>, mais uniquement des valeurs de Z et des variances pour chaque modalité. Il est possible d’obtenir des valeurs de <em>p</em> en utilisant la fonction <code>pnorm</code> et surtout en ajustant ces valeurs de <em>p</em> pour contrôler l’effet de la multiplication des tests de significativités avec la fonction <code>p.adjust</code>.</p>
+</div>
+</div>
+</div>
+<div id="sect0233" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Indice de Lee : autocorrélation spatiale dans un contexte bivariée<a href="sect023.html#sect0233" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>À la section <a href="sect023.html#sect0231">2.3.1</a>, nous avons vu que le <em>I</em> de Moran permet d’évaluer le degré d’autocorrélation spatiale d’une variable continue, c’est-à-dire de vérifier si les entités spatiales proches ou voisines ont tendance à avoir des valeurs (dis)similaires pour une seule variable continue. Il est logique de vouloir étendre cette analyse à un contexte bivariée : est-ce que deux variables continues partagent ou non une relation marquée par de l’autocorrélation spatiale. En d’autres termes, l’association spatiale bivariée cherche à capturer la présence d’un patron spatial commun pour les deux variables <span class="citation">(<a href="#ref-lee2001developing">Lee 2001</a>)</span>.</p>
+<div id="sect02331" class="section level4 hasAnchor" number="2.3.3.1">
+<h4><span class="header-section-number">2.3.3.1</span> Formulation de l’indice de Lee<a href="sect023.html#sect02331" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Il est important de distinguer la corrélation (non spatiale) entre deux variables et l’autocorrélation spatiale entre deux variables. La première mesure à quel point deux variables tendent à avoir une relation linéaire positive ou négative, alors que la seconde mesure la présence d’un patron spatial commun. Prenons l’exemple d’un jeu de données fictives avec 25 observations et deux variables continues <em>X</em> et <em>Y</em> (tableau <a href="sect023.html#tab:TabFictives2Vars">2.7</a>).</p>
+<table>
+<caption>
+<span id="tab:TabFictives2Vars">Tableau 2.7: </span>Jeu de données fictives avec 25 observations et deux variables
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+X
+</th>
+<th style="text-align:center;">
+Y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+4,51
+</td>
+<td style="text-align:center;">
+13,24
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-2,07
+</td>
+<td style="text-align:center;">
+-7,34
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-1,56
+</td>
+<td style="text-align:center;">
+-3,73
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,97
+</td>
+<td style="text-align:center;">
+4,02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-0,06
+</td>
+<td style="text-align:center;">
+-1,47
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1,48
+</td>
+<td style="text-align:center;">
+6,86
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,69
+</td>
+<td style="text-align:center;">
+12,54
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1,24
+</td>
+<td style="text-align:center;">
+0,16
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-4,92
+</td>
+<td style="text-align:center;">
+-21,49
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2,02
+</td>
+<td style="text-align:center;">
+7,11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-0,76
+</td>
+<td style="text-align:center;">
+-1,85
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,48
+</td>
+<td style="text-align:center;">
+-0,41
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-3,52
+</td>
+<td style="text-align:center;">
+-12,91
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-2,21
+</td>
+<td style="text-align:center;">
+-6,01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-0,21
+</td>
+<td style="text-align:center;">
+-5,48
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-0,20
+</td>
+<td style="text-align:center;">
+-5,90
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-2,14
+</td>
+<td style="text-align:center;">
+-7,47
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-0,90
+</td>
+<td style="text-align:center;">
+-6,24
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-1,28
+</td>
+<td style="text-align:center;">
+-4,05
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1,93
+</td>
+<td style="text-align:center;">
+8,81
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,95
+</td>
+<td style="text-align:center;">
+5,02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5,45
+</td>
+<td style="text-align:center;">
+17,97
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1,86
+</td>
+<td style="text-align:center;">
+4,90
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-3,12
+</td>
+<td style="text-align:center;">
+-8,48
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+-1,76
+</td>
+<td style="text-align:center;">
+-5,08
+</td>
+</tr>
+</tbody>
+</table>
+<p>Ces deux variables sont caractérisées par une forte corrélation linéaire positive avec un coefficient de corrélation de Pearson proche de 1 (figure <a href="sect023.html#fig:FigCorrelation">2.22</a>).</p>
+<div class="bloc_notes">
+<p><strong>Retour sur la notion de corrélation entre deux variables continues</strong>.</p>
+<p>Pour un rappel sur la notion de corrélation entre deux variables continues, notamment sur l’interprétation du coefficient de corrélation de Pearson, nous vous invitons à lire la <a href="https://laeq.github.io/LivreMethoQuantBolR/sect043.html">section suivante</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigCorrelation"></span>
+<img src="GMQ405_files/figure-html/FigCorrelation-1.png" alt="Relations entre deux variables continues et coefficients de corrélation de Pearson" width="75%" />
+<p class="caption">
+Figure 2.22: Relations entre deux variables continues et coefficients de corrélation de Pearson
+</p>
+</div>
+<p>Cependant, cette information relative à la corrélation entre les deux variables ne nous permet pas d’appréhender leurs caractéristiques spatiales. En effet, ce tableau de données peut correspondre aux différents patrons spatiaux. En examinant les cartes <strong>a</strong> à <strong>d</strong> de la figure <a href="sect023.html#fig:FigExMapBivar">2.23</a>, nous constatons l’absence de tout patron spatial apparent. Par contre, il est aussi possible d’observer des configurations spatiales particulières comme celle à la figure <a href="sect023.html#fig:FigExMapBivar">2.23</a>.e signalant une forte autocorrélation spatiale positive univariée de chacune des deux variables (X et Y), mais aussi une forte autocorrélation spatiale positive bivariée puisque les deux patrons spatiaux de X et Y sont similaires.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigExMapBivar"></span>
+<img src="GMQ405_files/figure-html/FigExMapBivar-1.png" alt="Exemples de patrons spatiaux sans et avec autocorrélation spatiale dans un contexte bivariée" width="100%" />
+<p class="caption">
+Figure 2.23: Exemples de patrons spatiaux sans et avec autocorrélation spatiale dans un contexte bivariée
+</p>
+</div>
+<p>Maintenant que nous avons fait la distinction entre la <strong>corrélation bivariée</strong> et <strong>l’autocorrélation spatiale bivariée</strong>, nous pouvons présenter un indicateur d’autocorrélation spatiale globale bivariée, soit l’indicateur de Lee <span class="citation">(<a href="#ref-lee2001developing">Lee 2001</a>)</span>. Cet indicateur est construit à partir du produit de l’autocorrélation univariée de chacune des deux variables (numérateur) et de la corrélation de Pearson entre les versions spatialement décalées de ces variables (dénominateur). La formule de l’indicateur est la suivante :</p>
+<p><span class="math display" id="eq:Lee1">\[\begin{equation}  
+\begin{aligned}
+L_{X, Y}=\frac{n}{\sum_i\left(\sum_j v_{i j}\right)^2} \cdot \frac{\sum_i\left[\left(\sum_j v_{i j}\left(x_j-\bar{x}\right)\right) \cdot\left(\sum_j v_{i j}\left(y_j-\bar{y}\right)\right)\right]}{\sqrt{\sum_i\left(x_i-\bar{x}\right)^2} \sqrt{\sum_i\left(y_i-\bar{y}\right)^2}}
+\end{aligned}
+\tag{2.18}
+\end{equation}\]</span>
+</p>
+<p>Si la matrice de pondération spatiale est standardisée en ligne, l’indicateur de Lee est simplifiée comme suit :</p>
+<p><span class="math display" id="eq:Lee2">\[\begin{equation}  
+\begin{aligned}
+L_{X, Y}= \frac{\sum_i\left[\left(\sum_j v_{i j}\left(x_j-\bar{x}\right)\right) \cdot\left(\sum_j v_{i j}\left(y_j-\bar{y}\right)\right)\right]}{\sqrt{\sum_i\left(x_i-\bar{x}\right)^2} \sqrt{\sum_i\left(y_i-\bar{y}\right)^2}}
+\end{aligned}
+\tag{2.19}
+\end{equation}\]</span>
+</p>
+<p>Cet indicateur varie entre −1 (autocorrélation spatiale bivariée négative) et +1 (autocorrélation bivariée positive).</p>
+<p>Nous présentons trois cas de figure <a href="sect023.html#fig:FigExMapBivar3">2.24</a> pour illustrer son interprétation. Prenons trois variables X, Y et X’, avec X’ étant l’inverse spatial de X. Pour simplifier l’exemple, ces trois variables ne peuvent avoir que trois valeurs (1, 2 ou 3).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigExMapBivar3"></span>
+<img src="GMQ405_files/figure-html/FigExMapBivar3-1.png" alt="Patrons spatiaux de X, Y et X'" width="75%" />
+<p class="caption">
+Figure 2.24: Patrons spatiaux de X, Y et X’
+</p>
+</div>
+<p>Si nous calculons l’autocorrélation spatiale entre toutes les paires de variables avec une matrice de contiguïté standardisée, nous obtenons la matrice au tableau <a href="sect023.html#tab:ExampleBivarLeeTab1">2.8</a>. Les résultats démontrent que les variables X et Y partage un patron d’autocorrélation spatiale positive modéré (0,327), alors que les variables X et X’ partagent un patron d’autocorrélation spatiale négative (−0,512). En d’autres termes, les endroits où X tend à avoir des regroupements d’observations avec des valeurs fortes, X’ tend à avoir des regroupements d’observations avec des valeurs faibles.</p>
+<table>
+<caption>
+<span id="tab:ExampleBivarLeeTab1">Tableau 2.8: </span>Indicateur de Lee global
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+X
+</th>
+<th style="text-align:center;">
+Y
+</th>
+<th style="text-align:center;">
+X’
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+X
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0,327
+</td>
+<td style="text-align:center;">
+-0,512
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Y
+</td>
+<td style="text-align:center;">
+0,327
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+-0,293
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+X’
+</td>
+<td style="text-align:center;">
+-0,512
+</td>
+<td style="text-align:center;">
+-0,293
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+<div class="bloc_astuce">
+<p>Au même titre que pour les indicateurs vus précédemment, il est possible de tester si l’indicateur de Lee obtenu est significativement différent de 0 avec des permutations Monte-Carlo.</p>
+</div>
+</div>
+<div id="sect02332" class="section level4 hasAnchor" number="2.3.3.2">
+<h4><span class="header-section-number">2.3.3.2</span> Mise en œuvre dans R<a href="sect023.html#sect02332" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Pour décrire le calcul de l’indicateur de Lee dans R, nous utilisons le jeu de données spatiales <code>LyonIris</code> du <em>package</em> <code>geocmeans</code> qui comprend quatre variables environnementales : le bruit routier (Lden dB(A)) (<code>Lden</code>), le dioxyde d’azote (ug/m<sup>3</sup>) (<code>NO2</code>), les particules fines PM<sub>2,5</sub> (<code>PM25</code>) et la canopée (%) (<code>VegHautPrt</code>) pour les îlots regroupés pour l’information statistique (IRIS) de l’agglomération lyonnaise (figure <a href="sect023.html#fig:datageocmeans1">2.25</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:datageocmeans1"></span>
+<img src="images/Chap02/FigureDataLyon.png" alt="Cartographie des variables du jeu de données LyonIris" width="100%" />
+<p class="caption">
+Figure 2.25: Cartographie des variables du jeu de données LyonIris
+</p>
+</div>
+<p>Il est facile de calculer l’indicateur de Lee en utilisant les fonctions <code>lee.test(x, y, listw)</code>,<code>lee.mc(x, y, listw)</code> ou <code>lee(x, y, listw, n)</code> du package <code>spdep</code>. Par exemple, le code ci-dessous permet de le calculer pour les variables <code>Lden</code> et <code>NO2</code>.</p>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="sect023.html#cb255-1" tabindex="-1"></a><span class="fu">library</span>(geocmeans)</span>
+<span id="cb255-2"><a href="sect023.html#cb255-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;LyonIris&quot;</span>)</span>
+<span id="cb255-3"><a href="sect023.html#cb255-3" tabindex="-1"></a><span class="do">## Matrice de pondération spatiale de contiguïté standardisée</span></span>
+<span id="cb255-4"><a href="sect023.html#cb255-4" tabindex="-1"></a>nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb255-5"><a href="sect023.html#cb255-5" tabindex="-1"></a>Wmat <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(nb, <span class="at">style =</span> <span class="st">&#39;W&#39;</span>)</span>
+<span id="cb255-6"><a href="sect023.html#cb255-6" tabindex="-1"></a><span class="do">## Calcul de l&#39;indicateur de Lee entre les deux variables</span></span>
+<span id="cb255-7"><a href="sect023.html#cb255-7" tabindex="-1"></a><span class="fu">lee.test</span>(LyonIris<span class="sc">$</span>Lden, LyonIris<span class="sc">$</span>NO2, <span class="at">listw =</span> Wmat)</span></code></pre></div>
+<pre><code>## 
+##  Lee&#39;s L statistic randomisation
+## 
+## data:  LyonIris$Lden ,  LyonIris$NO2 
+## weights: Wmat  
+## 
+## Lee&#39;s L statistic standard deviate = 17.135, p-value &lt; 2.2e-16
+## alternative hypothesis: greater
+## sample estimates:
+## Lee&#39;s L statistic       Expectation          Variance 
+##      0.4072785543      0.1243825152      0.0002725625</code></pre>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="sect023.html#cb257-1" tabindex="-1"></a><span class="fu">lee.mc</span>(LyonIris<span class="sc">$</span>Lden, LyonIris<span class="sc">$</span>NO2, <span class="at">listw =</span> Wmat, <span class="at">nsim =</span> <span class="dv">999</span>)</span></code></pre></div>
+<pre><code>## 
+##  Monte-Carlo simulation of Lee&#39;s L
+## 
+## data:  LyonIris$Lden ,  LyonIris$NO2 
+## weights: Wmat  
+## number of simulations + 1: 1000 
+## 
+## statistic = 0.40728, observed rank = 1000, p-value = 0.001
+## alternative hypothesis: greater</code></pre>
+<p>Si vous analysez plusieurs variables simultanément, il est pertinent de construire à la fois une matrice de corrélation et une matrice d’autocorrélation spatiale bivariée. Pour cette dernière, la diagonale peut être remplacée par le <em>I</em> de Moran de chaque variable.</p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="sect023.html#cb259-1" tabindex="-1"></a><span class="do">## Liste des variables à analyser</span></span>
+<span id="cb259-2"><a href="sect023.html#cb259-2" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Lden&quot;</span>,<span class="st">&quot;NO2&quot;</span>,<span class="st">&quot;PM25&quot;</span>,<span class="st">&quot;VegHautPrt&quot;</span>)</span>
+<span id="cb259-3"><a href="sect023.html#cb259-3" tabindex="-1"></a><span class="do">## Calcul de la matrice de corrélation de Pearson</span></span>
+<span id="cb259-4"><a href="sect023.html#cb259-4" tabindex="-1"></a>corr_mat <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">st_drop_geometry</span>(LyonIris)[vars])</span>
+<span id="cb259-5"><a href="sect023.html#cb259-5" tabindex="-1"></a><span class="do">## Calcul d&#39;une matrice d&#39;autocorrélation spatiale bivariée (indicateur de Lee)</span></span>
+<span id="cb259-6"><a href="sect023.html#cb259-6" tabindex="-1"></a>bivar_autocor_mat <span class="ot">&lt;-</span> <span class="fu">sapply</span>(vars, <span class="cf">function</span>(x1){</span>
+<span id="cb259-7"><a href="sect023.html#cb259-7" tabindex="-1"></a>  row_values <span class="ot">&lt;-</span> <span class="fu">sapply</span>(vars, <span class="cf">function</span>(x2){</span>
+<span id="cb259-8"><a href="sect023.html#cb259-8" tabindex="-1"></a>    test <span class="ot">&lt;-</span> <span class="fu">lee</span>(LyonIris[[x1]], LyonIris[[x2]], <span class="at">listw =</span> Wmat, <span class="at">n =</span> <span class="fu">nrow</span>(LyonIris))</span>
+<span id="cb259-9"><a href="sect023.html#cb259-9" tabindex="-1"></a>    <span class="fu">return</span>(test<span class="sc">$</span>L)</span>
+<span id="cb259-10"><a href="sect023.html#cb259-10" tabindex="-1"></a>  })</span>
+<span id="cb259-11"><a href="sect023.html#cb259-11" tabindex="-1"></a>})</span>
+<span id="cb259-12"><a href="sect023.html#cb259-12" tabindex="-1"></a><span class="co"># Remplacement de la diagonale par les valeurs du I de Moran</span></span>
+<span id="cb259-13"><a href="sect023.html#cb259-13" tabindex="-1"></a>moranIs <span class="ot">&lt;-</span> <span class="fu">sapply</span>(vars, <span class="cf">function</span>(x){</span>
+<span id="cb259-14"><a href="sect023.html#cb259-14" tabindex="-1"></a>  <span class="fu">moran</span>(LyonIris[[x]], Wmat, <span class="at">n =</span> <span class="fu">nrow</span>(LyonIris), <span class="at">S0 =</span> <span class="fu">nrow</span>(LyonIris))[[<span class="dv">1</span>]]</span>
+<span id="cb259-15"><a href="sect023.html#cb259-15" tabindex="-1"></a>})</span>
+<span id="cb259-16"><a href="sect023.html#cb259-16" tabindex="-1"></a><span class="fu">diag</span>(bivar_autocor_mat) <span class="ot">&lt;-</span> moranIs</span></code></pre></div>
+<table>
+<caption>
+<span id="tab:LeeCorrTable">Tableau 2.9: </span>Matrice de corrélation de Pearson
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Lden
+</th>
+<th style="text-align:center;">
+NO2
+</th>
+<th style="text-align:center;">
+PM25
+</th>
+<th style="text-align:center;">
+VegHautPrt
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lden
+</td>
+<td style="text-align:center;">
+1,000
+</td>
+<td style="text-align:center;">
+0,623
+</td>
+<td style="text-align:center;">
+0,489
+</td>
+<td style="text-align:center;">
+-0,227
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NO2
+</td>
+<td style="text-align:center;">
+0,623
+</td>
+<td style="text-align:center;">
+1,000
+</td>
+<td style="text-align:center;">
+0,901
+</td>
+<td style="text-align:center;">
+-0,283
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PM25
+</td>
+<td style="text-align:center;">
+0,489
+</td>
+<td style="text-align:center;">
+0,901
+</td>
+<td style="text-align:center;">
+1,000
+</td>
+<td style="text-align:center;">
+-0,392
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VegHautPrt
+</td>
+<td style="text-align:center;">
+-0,227
+</td>
+<td style="text-align:center;">
+-0,283
+</td>
+<td style="text-align:center;">
+-0,392
+</td>
+<td style="text-align:center;">
+1,000
+</td>
+</tr>
+</tbody>
+</table>
+<p>Sans surprise, les différents polluants sont corrélés positivement entre eux et moyennement corrélés négativement avec le couvert végétal. La corrélation la plus forte s’observe entre le dioxyde d’azote et les particules fines (<em>r</em> = 0,901).</p>
+<p>La lecture de la diagonale du tableau <a href="sect023.html#tab:LeeBiarAutoCorrTable">2.10</a> permet de constater que les deux polluants atmosphériques sont les plus fortement spatialement autocorrélés (<em>I</em> de Moran de 0,82 et 0,94). Leur indicateur de Lee est aussi très fort (0,79), indiquant qu’ils tendent à varier de façon conjointe dans l’espace. En revanche, l’autocorrélation spatiale entre le bruit environnemental (Lden) et le dioxyde d’azote (indicateur de Lee de 0,41) est à peine plus forte que celle entre le Lden et les particules fines (indicateur de Lee de 0,38) alors que l’écart de la corrélation entre ces paires deux variables est bien plus important (respectivement 0,62 et 0,49). La corrélation non spatiale marquée entre le bruit et le dioxyde d’azote ne se traduit que par une autocorrélation spatiale bivariée modérée (0,41). La géographie de ces deux pollutions ne peut donc se résumer à un patron commun.</p>
+<table>
+<caption>
+<span id="tab:LeeBiarAutoCorrTable">Tableau 2.10: </span>Matrice d’autocorrélation spatiale globale bivariée (indicateur de Lee)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Lden
+</th>
+<th style="text-align:center;">
+NO2
+</th>
+<th style="text-align:center;">
+PM25
+</th>
+<th style="text-align:center;">
+VegHautPrt
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lden
+</td>
+<td style="text-align:center;">
+0,561
+</td>
+<td style="text-align:center;">
+0,407
+</td>
+<td style="text-align:center;">
+0,379
+</td>
+<td style="text-align:center;">
+-0,231
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NO2
+</td>
+<td style="text-align:center;">
+0,407
+</td>
+<td style="text-align:center;">
+0,819
+</td>
+<td style="text-align:center;">
+0,789
+</td>
+<td style="text-align:center;">
+-0,283
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PM25
+</td>
+<td style="text-align:center;">
+0,379
+</td>
+<td style="text-align:center;">
+0,789
+</td>
+<td style="text-align:center;">
+0,935
+</td>
+<td style="text-align:center;">
+-0,412
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VegHautPrt
+</td>
+<td style="text-align:center;">
+-0,231
+</td>
+<td style="text-align:center;">
+-0,283
+</td>
+<td style="text-align:center;">
+-0,412
+</td>
+<td style="text-align:center;">
+0,585
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3>Références</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RBoldAir" class="csl-entry">
 Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.
+</div>
+<div id="ref-cliff1981spatial" class="csl-entry">
+Cliff, Andrew David et J Keith Ord. 1981. <em>Spatial processes: models &amp; applications</em>. Taylor &amp; Francis.
 </div>
 <div id="ref-dube2014econometrie" class="csl-entry">
 Dubé, Jean et Diègo Legros. 2014. <em>Econom<span>é</span>trie spatiale appliqu<span>é</span>e des microdonn<span>é</span>es</em>. ISTE Group.
@@ -1150,8 +2226,14 @@ Dubé, Jean et Diègo Legros. 2014. <em>Econom<span>é</span>trie spatiale appli
 <div id="ref-geary1954contiguity" class="csl-entry">
 Geary, Robert C. 1954. <span>« The contiguity ratio and statistical mapping. »</span> <em>The incorporated statistician</em> 5 (3): 115‑146. <a href="https://doi.org/10.2307/2986645">https://doi.org/10.2307/2986645</a>.
 </div>
+<div id="ref-lee2001developing" class="csl-entry">
+Lee, Sang-Il. 2001. <span>« Developing a bivariate spatial association measure: an integration of Pearson’s r and Moran’s I. »</span> <em>Journal of geographical systems</em> 3: 369‑385. <a href="https://doi.org/10.1007/s101090100064">https://doi.org/10.1007/s101090100064</a>.
+</div>
 <div id="ref-moran1950test" class="csl-entry">
 Moran, Patrick. 1950. <span>« A test for the serial independence of residuals. »</span> <em>Biometrika</em> 37 (1/2): 178‑181. <a href="https://doi.org/10.2307/2332162">https://doi.org/10.2307/2332162</a>.
+</div>
+<div id="ref-wong2005statistical" class="csl-entry">
+Wong, David WS et Jay Lee. 2005. <em>Statistical analysis of geographic information with ArcView GIS and ArcGIS</em>. Wiley.
 </div>
 </div>
             </section>

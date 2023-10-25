@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8.2 Méthodes géostatistiques | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
+  <title>8.2 Méthodes de classification non supervisée avec une dimension spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8.2 Méthodes géostatistiques | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta property="og:title" content="8.2 Méthodes de classification non supervisée avec une dimension spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/introduction/ImageCouverture.png" />
   <meta property="og:description" content="Mettre le description du cours." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8.2 Méthodes géostatistiques | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta name="twitter:title" content="8.2 Méthodes de classification non supervisée avec une dimension spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   
   <meta name="twitter:description" content="Mettre le description du cours." />
   <meta name="twitter:image" content="/images/introduction/ImageCouverture.png" />
@@ -198,7 +198,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.2.6" data-path="sect012.html"><a href="sect012.html#sect0126"><i class="fa fa-check"></i><b>1.2.6</b> Requêtes spatiales</a></li>
 <li class="chapter" data-level="1.2.7" data-path="sect012.html"><a href="sect012.html#sect0127"><i class="fa fa-check"></i><b>1.2.7</b> Manipulation des données attributaires</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
+<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données matricielles (<em>raster</em>)</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
@@ -232,13 +232,18 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="sect023.html"><a href="sect023.html#sect0231"><i class="fa fa-check"></i><b>2.3.1</b> Statistique du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Mise en œuvre dans R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sect023.html"><a href="sect023.html#sect0233"><i class="fa fa-check"></i><b>2.3.3</b> Indice de Lee : autocorrélation spatiale dans un contexte bivariée</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="sect024.html"><a href="sect024.html"><i class="fa fa-check"></i><b>2.4</b> Autocorrélation spatiale locale</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids</a></li>
+<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids pour une variable continue</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sect024.html"><a href="sect024.html#sect0242"><i class="fa fa-check"></i><b>2.4.2</b> Version locale du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Nuage de points du <em>I</em> de Moran d’Anselin</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sect024.html"><a href="sect024.html#sect0244"><i class="fa fa-check"></i><b>2.4.4</b> Version locale des statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.4.5" data-path="sect024.html"><a href="sect024.html#sect0245"><i class="fa fa-check"></i><b>2.4.5</b> Version locale de l’indice de Lee</a></li>
+<li class="chapter" data-level="2.4.6" data-path="sect024.html"><a href="sect024.html#sect0246"><i class="fa fa-check"></i><b>2.4.6</b> Typologie basée sur le diagramme de Moran dans un contexte bivarié</a></li>
+<li class="chapter" data-level="2.4.7" data-path="sect024.html"><a href="sect024.html#sect0247"><i class="fa fa-check"></i><b>2.4.7</b> Autocorrélation locale pour une variable qualitative (catégorielle) : l’indicateur ELSA</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sect025.html"><a href="sect025.html"><i class="fa fa-check"></i><b>2.5</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="2.6" data-path="sect026.html"><a href="sect026.html"><i class="fa fa-check"></i><b>2.6</b> Exercices de révision</a></li>
@@ -309,92 +314,83 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="sect055.html"><a href="sect055.html"><i class="fa fa-check"></i><b>5.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Introduction aux modèles de régression spatiale</a>
+<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Analyses d’évènements localisés sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Modèles économétriques spatiaux</a>
+<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Cartographie de la densité d’évènements sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
-<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
-<li class="chapter" data-level="6.1.3" data-path="sect061.html"><a href="sect061.html#sect0613"><i class="fa fa-check"></i><b>6.1.3</b> Quel modèle choisir?</a></li>
+<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
+<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Mesure d’autocorrélation spatiale sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
-<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Construction d’un modèle GAM dans R</a></li>
+<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Getis et Ord</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="6.2.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>6.2.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> Régression géographiquement pondérée</a>
+<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> DBSCAN sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Principe de base</a></li>
-<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
+<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="sect064.html"><a href="sect064.html"><i class="fa fa-check"></i><b>6.4</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="6.5" data-path="sect065.html"><a href="sect065.html"><i class="fa fa-check"></i><b>6.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
+<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Introduction aux modèles de régression spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Modèles économétriques spatiaux</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
-<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
-<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Algorithmes REDCAP</a></li>
-<li class="chapter" data-level="7.1.4" data-path="sect071.html"><a href="sect071.html#sect0714"><i class="fa fa-check"></i><b>7.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
+<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
+<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Quel modèle choisir?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
+<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
+<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> Construction d’un modèle GAM dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Régression géographiquement pondérée</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Principe de base</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes déterministes</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Interpolation polynomiale locale</a></li>
-<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Interpolation de l’inverse à la distance - <em>IDW</em></a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes géostatistiques</a>
+<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Krigeage simple</a></li>
-<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> Krigeage universel</a></li>
-<li class="chapter" data-level="8.2.3" data-path="sect082.html"><a href="sect082.html#sect0823"><i class="fa fa-check"></i><b>8.2.3</b> Co-krigeage</a></li>
-<li class="chapter" data-level="8.2.4" data-path="sect082.html"><a href="sect082.html#sect0824"><i class="fa fa-check"></i><b>8.2.4</b> Krigeage résiduel</a></li>
+<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Algorithmes AZP</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Algorithme SKATER</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sect081.html"><a href="sect081.html#sect0813"><i class="fa fa-check"></i><b>8.1.3</b> Algorithmes REDCAP</a></li>
+<li class="chapter" data-level="8.1.4" data-path="sect081.html"><a href="sect081.html#sect0814"><i class="fa fa-check"></i><b>8.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="sect083.html"><a href="sect083.html"><i class="fa fa-check"></i><b>8.3</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="8.4" data-path="sect084.html"><a href="sect084.html"><i class="fa fa-check"></i><b>8.4</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Analyse spatiale par l’analyse d’images</a>
+<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Méthodes d’interpolation spatiale</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Fonctions mathématiques, booléennes, relationnelles et conditionnelles sur les images</a>
+<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Méthodes déterministes</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Fonctions mathématiques</a></li>
-<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Fonctions booléennes</a></li>
+<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Interpolation polynomiale locale</a></li>
+<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Interpolation de l’inverse à la distance (<em>IDW</em>)</a></li>
 <li class="chapter" data-level="9.1.3" data-path="sect091.html"><a href="sect091.html#sect0913"><i class="fa fa-check"></i><b>9.1.3</b> Fonctions relationnelles</a></li>
 <li class="chapter" data-level="9.1.4" data-path="sect091.html"><a href="sect091.html#sect0914"><i class="fa fa-check"></i><b>9.1.4</b> Fonctions conditionnelles</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Fonctions locales, focales, zonales et globales sur les images</a>
+<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Méthodes géostatistiques</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Fonctions locales</a></li>
-<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Fonctions focales</a></li>
-<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Fonctions zonales</a></li>
-<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Fonctions globales</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Krigeage simple</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Krigeage universel</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Co-krigeage</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Krigeage résiduel</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Fonctions de surface</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="sect093.html"><a href="sect093.html#sect0931"><i class="fa fa-check"></i><b>9.3.1</b> Élevation</a></li>
-<li class="chapter" data-level="9.3.2" data-path="sect093.html"><a href="sect093.html#sect0932"><i class="fa fa-check"></i><b>9.3.2</b> Pente</a></li>
-<li class="chapter" data-level="9.3.3" data-path="sect093.html"><a href="sect093.html#sect0933"><i class="fa fa-check"></i><b>9.3.3</b> Ombrage</a></li>
-<li class="chapter" data-level="9.3.4" data-path="sect093.html"><a href="sect093.html#sect0934"><i class="fa fa-check"></i><b>9.3.4</b> Visibilité</a></li>
-<li class="chapter" data-level="9.3.5" data-path="sect093.html"><a href="sect093.html#sect0935"><i class="fa fa-check"></i><b>9.3.5</b> Sky-view factor Index</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Données spatiotemporelles en mode image</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="sect094.html"><a href="sect094.html#fichier-netcdf"><i class="fa fa-check"></i><b>9.4.1</b> Fichier <em>netCDF</em></a></li>
-<li class="chapter" data-level="9.4.2" data-path="sect094.html"><a href="sect094.html#exemples-applicatifs"><i class="fa fa-check"></i><b>9.4.2</b> Exemples applicatifs</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="sect095.html"><a href="sect095.html"><i class="fa fa-check"></i><b>9.5</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="9.6" data-path="sect096.html"><a href="sect096.html"><i class="fa fa-check"></i><b>9.6</b> Exercices de révision</a></li>
+<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Exercices de révision</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>10</b> Correction des exercices</a>
 <ul>
@@ -424,20 +420,18 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
-<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a>
-<ul>
-<li class="chapter" data-level="10.6.1" data-path="sect1006.html"><a href="sect1006.html#sect10061"><i class="fa fa-check"></i><b>10.6.1</b> Exercice 1</a></li>
-<li class="chapter" data-level="10.6.2" data-path="sect1006.html"><a href="sect1006.html#sect10062"><i class="fa fa-check"></i><b>10.6.2</b> Exercice 2</a></li>
-<li class="chapter" data-level="10.6.3" data-path="sect1006.html"><a href="sect1006.html#sect10063"><i class="fa fa-check"></i><b>10.6.3</b> Exercice 3</a></li>
-</ul></li>
+<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sect1007.html"><a href="sect1007.html#sect10071"><i class="fa fa-check"></i><b>10.7.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sect1007.html"><a href="sect1007.html#sect10072"><i class="fa fa-check"></i><b>10.7.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.7.3" data-path="sect1007.html"><a href="sect1007.html#sect10073"><i class="fa fa-check"></i><b>10.7.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a></li>
+<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="sect1008.html"><a href="sect1008.html#sect10081"><i class="fa fa-check"></i><b>10.8.1</b> Exercice 1</a></li>
+</ul></li>
 <li class="chapter" data-level="10.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>10.9</b> Exercices du chapitre 9</a></li>
-<li class="chapter" data-level="10.10" data-path="sect1011.html"><a href="sect1011.html"><i class="fa fa-check"></i><b>10.10</b> Exercices du chapitre 11</a></li>
-<li class="chapter" data-level="10.11" data-path="sect1012.html"><a href="sect1012.html"><i class="fa fa-check"></i><b>10.11</b> Excercice du chapitre 12</a></li>
 </ul></li>
 </ul>
 
@@ -458,18 +452,664 @@ Modélisation et analyse spatiale</a>
 
             <section class="normal" id="section-">
 <div id="sect082" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> Méthodes géostatistiques<a href="sect082.html#sect082" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">8.2</span> Méthodes de classification non supervisée avec une dimension spatiale<a href="sect082.html#sect082" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nous avons vu que les méthodes de classification avec une contrainte spatiale visent à obtenir des régions non discontinues, c’est-à-dire sans mitage spatial. L’objectif des méthodes de classification non supervisée avec une dimension spatiale est quelque peu différent : classifier les observations en tenant compte de l’espace (proximité, voisinage entre les unités spatiales) afin de limiter les effets de mitage, sans obtenir toutefois l’interdire.</p>
+<p>Dans le cadre de cette section, nous décrivons deux de ces méthodes qui intègrent la dimension spatiale de manière différente :</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>La méthode <em>ClustGeo</em></strong>, qui est une extension de la classification ascendante hiérarchique, est une méthode de classification non supervisée, spatiale et stricte. Cette méthode repose sur deux matrices de dissimilarité : une <strong>matrice sémantique</strong> calculée sur les valeurs de plusieurs variables caractérisant les entités géographiques et une <strong>matrice de distances</strong> (euclidienne le plus souvent) entre les entités géographiques. Nous cherchons ainsi à regrouper les observations qui se ressemblent à la fois selon leurs attributs et selon leur proximité spatiale.</p></li>
+<li><p><strong>La méthode k-moyennes spatiale et floue (<em>Spatial fuzzy c-means</em>)</strong>, qui est une extension de la méthode k-moyennes, est une méthode de classification non supervisée, spatiale et floue. Cette méthode repose sur deux matrices de dissimilarité : une <strong>matrice sémantique</strong> calculée sur les valeurs de plusieurs variables caractérisant les entités géographiques et une <strong>matrice sémantique spatialement décalée</strong>. Nous cherchons ainsi à regrouper les observations qui se ressemblent à la fois selon leurs caractéristiques et celles de leurs unités spatiales adjacentes ou proches.</p></li>
+</ol>
+<p>Autrement dit, dans la méthode <em>ClustGeo</em>, l’espace est introduit sous la forme d’une matrice de distances entre les entités spatiales (<strong>agencement spatial</strong>) tandis que dans la méthode du <em>Spatial fuzzy c-means</em>, il est introduit sous la forme d’une matrice de données sémantiques spatialement décalées (<strong>information sémantique dans l’environnement immédiat</strong>).</p>
 <div id="sect0821" class="section level3 hasAnchor" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> Krigeage simple<a href="sect082.html#sect0821" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">8.2.1</span> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)<a href="sect082.html#sect0821" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sect08211" class="section level4 hasAnchor" number="8.2.1.1">
+<h4><span class="header-section-number">8.2.1.1</span> Description de la méthode <em>ClustGeo</em><a href="sect082.html#sect08211" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La méthode <em>ClustGeo</em>, proposée par Marie Chavent et ses collègues <span class="citation">(<a href="#ref-packageClustGeo">2018</a>)</span>, est une extension de la classification ascendante hiérarchique (CAH) qui intègre la dimension spatiale des entités géographiques. Cette méthode repose sur une idée brillante, soit de classer (regrouper) les observations (unités spatiales) en utilisant deux matrices de dissimilarité :</p>
+<ol style="list-style-type: decimal">
+<li>Une matrice sémantique calculée sur <em>p</em> variables caractérisant les unités spatiales (<span class="math inline">\(D_0\)</span>).</li>
+<li>Une matrice spatiale calculée à partir des distances euclidiennes entre les unités spatiales (<span class="math inline">\(D_1\)</span>).</li>
+</ol>
+<p>Notez qu’un paramètre <span class="math inline">\(\alpha\)</span>, variant de 0 à 1, permet de définir le poids de la matrice spatiale comparativement à celui de la sémantique :</p>
+<ul>
+<li>Avec <span class="math inline">\(\alpha=0\)</span>, le poids accordé à la matrice spatiale est nul. Nous obtenons ainsi une CAH classique.</li>
+<li>Avec <span class="math inline">\(\alpha=1\)</span>, le poids accordé à la matrice spatiale est maximal; la classification est alors purement spatiale.</li>
+</ul>
+<p>Par conséquent, « […] l’enjeu principal est de fixer la valeur du paramètre 𝛼, considérant qu’une augmentation de 𝛼 revient à améliorer l’inertie expliquée de la matrice spatiale, au détriment d’une perte de l’inertie expliquée sur le plan sémantique » <span class="citation">(<a href="#ref-ClassificationFloue">Gelb et Apparicio 2021, 16</a>)</span>.</p>
+</div>
+<div id="sect08212" class="section level4 hasAnchor" number="8.2.1.2">
+<h4><span class="header-section-number">8.2.1.2</span> Calcul de la CAH classique<a href="sect082.html#sect08212" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="bloc_attention">
+<p><strong>Retour sur la classification ascendante hiérarchique (CAH)</strong></p>
+<p>Pour une description détaillée de la CAH, consultez la <a href="https://laeq.github.io/LivreMethoQuantBolR/sect133.html">section suivante</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>.</p>
+</div>
+<p>Le code ci-dessous permet de déterminer l’arbre de classification selon le critère de Ward à partir de la matrice sémantique.</p>
+<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="sect082.html#cb586-1" tabindex="-1"></a><span class="do">## Variables pour la CAH</span></span>
+<span id="cb586-2"><a href="sect082.html#cb586-2" tabindex="-1"></a>VarsEnv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Lden&quot;</span>, <span class="st">&quot;NO2&quot;</span>, <span class="st">&quot;PM25&quot;</span>, <span class="st">&quot;VegHautPrt&quot;</span>)</span>
+<span id="cb586-3"><a href="sect082.html#cb586-3" tabindex="-1"></a><span class="do">## Dataframe sans la géométrie et les quatre variables</span></span>
+<span id="cb586-4"><a href="sect082.html#cb586-4" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap08/DonneesLyon.Rdata&quot;</span>)</span>
+<span id="cb586-5"><a href="sect082.html#cb586-5" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(LyonIris[VarsEnv])</span>
+<span id="cb586-6"><a href="sect082.html#cb586-6" tabindex="-1"></a><span class="do">## Centrage (moyenne = 0) et réduction des données (variance = 1)</span></span>
+<span id="cb586-7"><a href="sect082.html#cb586-7" tabindex="-1"></a>DataZscore <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(Data))</span>
+<span id="cb586-8"><a href="sect082.html#cb586-8" tabindex="-1"></a><span class="do">## Matrice sémantique : dissimilarité des observations selon les variables</span></span>
+<span id="cb586-9"><a href="sect082.html#cb586-9" tabindex="-1"></a>Matrice.Semantique <span class="ot">&lt;-</span> <span class="fu">dist</span>(DataZscore, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>)</span>
+<span id="cb586-10"><a href="sect082.html#cb586-10" tabindex="-1"></a><span class="co"># Calcul du dendrogramme avec le critère WARD</span></span>
+<span id="cb586-11"><a href="sect082.html#cb586-11" tabindex="-1"></a>Arbre <span class="ot">&lt;-</span> <span class="fu">hclust</span>(Matrice.Semantique, <span class="at">method =</span> <span class="st">&quot;ward.D&quot;</span>)</span>
+<span id="cb586-12"><a href="sect082.html#cb586-12" tabindex="-1"></a><span class="fu">plot</span>(Arbre, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">label =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb586-13"><a href="sect082.html#cb586-13" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Dendrogramme </span><span class="sc">\n</span><span class="st">(arbre de classification selon le critère de Ward)&quot;</span>,</span>
+<span id="cb586-14"><a href="sect082.html#cb586-14" tabindex="-1"></a>     <span class="at">sub =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Hauteur&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb586-15"><a href="sect082.html#cb586-15" tabindex="-1"></a>     )</span></code></pre></div>
+<p><img src="GMQ405_files/figure-html/unnamed-chunk-220-1.png" width="672" /></p>
+<p>À la lecture de la figure <a href="sect082.html#fig:CAHCoude">8.9</a>, nous ne détectons pas de seuils marqués dans l’inertie expliquée en fonction du nombre de groupes. Par conséquent, nous fixons arbitrairement le nombre de groupes à 5.</p>
+<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="sect082.html#cb587-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb587-2"><a href="sect082.html#cb587-2" tabindex="-1"></a><span class="co"># Fonction pour l&#39;inertie expliquée par les classes</span></span>
+<span id="cb587-3"><a href="sect082.html#cb587-3" tabindex="-1"></a>prop_inert_cutree <span class="ot">&lt;-</span> <span class="cf">function</span>(K,tree,n){</span>
+<span id="cb587-4"><a href="sect082.html#cb587-4" tabindex="-1"></a>  P <span class="ot">&lt;-</span> <span class="fu">cutree</span>(tree,<span class="at">k=</span>K)</span>
+<span id="cb587-5"><a href="sect082.html#cb587-5" tabindex="-1"></a>  W <span class="ot">&lt;-</span> <span class="fu">sum</span>(tree<span class="sc">$</span>height[<span class="dv">1</span><span class="sc">:</span>(n<span class="sc">-</span>K)])</span>
+<span id="cb587-6"><a href="sect082.html#cb587-6" tabindex="-1"></a>  Tot <span class="ot">&lt;-</span> <span class="fu">sum</span>(tree<span class="sc">$</span>height)</span>
+<span id="cb587-7"><a href="sect082.html#cb587-7" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span><span class="sc">-</span>W<span class="sc">/</span>Tot)</span>
+<span id="cb587-8"><a href="sect082.html#cb587-8" tabindex="-1"></a>}</span>
+<span id="cb587-9"><a href="sect082.html#cb587-9" tabindex="-1"></a><span class="co"># Inertie expliquée par des CAH de 2 à 10 classes</span></span>
+<span id="cb587-10"><a href="sect082.html#cb587-10" tabindex="-1"></a>df.inertie <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">NGroupes =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb587-11"><a href="sect082.html#cb587-11" tabindex="-1"></a>                         <span class="at">Inertie =</span> <span class="fu">sapply</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb587-12"><a href="sect082.html#cb587-12" tabindex="-1"></a>                                          prop_inert_cutree,</span>
+<span id="cb587-13"><a href="sect082.html#cb587-13" tabindex="-1"></a>                                          <span class="at">tree=</span>Arbre,</span>
+<span id="cb587-14"><a href="sect082.html#cb587-14" tabindex="-1"></a>                                          <span class="at">n=</span><span class="fu">nrow</span>(DataZscore)))</span>
+<span id="cb587-15"><a href="sect082.html#cb587-15" tabindex="-1"></a><span class="fu">ggplot</span>(df.inertie)<span class="sc">+</span></span>
+<span id="cb587-16"><a href="sect082.html#cb587-16" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>NGroupes,<span class="at">y=</span>Inertie))<span class="sc">+</span></span>
+<span id="cb587-17"><a href="sect082.html#cb587-17" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>NGroupes,<span class="at">y=</span>Inertie), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb587-18"><a href="sect082.html#cb587-18" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Inertie expliquée&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Nombre de groupes&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:CAHCoude"></span>
+<img src="GMQ405_files/figure-html/CAHCoude-1.png" alt="Méthode du coude reposant sur l'inertie expliquée pour CAH" width="65%" />
+<p class="caption">
+Figure 8.9: Méthode du coude reposant sur l’inertie expliquée pour CAH
+</p>
+</div>
+<p>Nous pouvons visualiser l’arbre avec une coupure à cinq classes.</p>
+<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="sect082.html#cb588-1" tabindex="-1"></a><span class="fu">plot</span>(Arbre, <span class="at">labels =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb588-2"><a href="sect082.html#cb588-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Partition en 2, 5 ou 9 classes&quot;</span>, </span>
+<span id="cb588-3"><a href="sect082.html#cb588-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">sub =</span> <span class="st">&quot;&quot;</span>, <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb588-4"><a href="sect082.html#cb588-4" tabindex="-1"></a><span class="fu">rect.hclust</span>(Arbre, <span class="dv">5</span>, <span class="at">border =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="GMQ405_files/figure-html/unnamed-chunk-221-1.png" width="672" /></p>
+<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="sect082.html#cb589-1" tabindex="-1"></a><span class="do">## Coupure de l&#39;arbre à cinq classes</span></span>
+<span id="cb589-2"><a href="sect082.html#cb589-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>CAH5 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">cutree</span>(Arbre, <span class="at">k=</span><span class="dv">5</span>))</span>
+<span id="cb589-3"><a href="sect082.html#cb589-3" tabindex="-1"></a><span class="do">## Nombre d&#39;observations par classe</span></span>
+<span id="cb589-4"><a href="sect082.html#cb589-4" tabindex="-1"></a><span class="fu">table</span>(LyonIris<span class="sc">$</span>CAH5)</span></code></pre></div>
+<pre><code>## 
+##   1   2   3   4   5 
+##  62 120  88  81 155</code></pre>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="sect082.html#cb591-1" tabindex="-1"></a><span class="do">## Valeurs moyennes des classes</span></span>
+<span id="cb591-2"><a href="sect082.html#cb591-2" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(Lden,NO2,PM25,VegHautPrt) <span class="sc">~</span> CAH5, <span class="at">data =</span> <span class="fu">st_drop_geometry</span>(LyonIris), <span class="at">FUN =</span> mean)</span></code></pre></div>
+<pre><code>##   CAH5     Lden      NO2     PM25 VegHautPrt
+## 1    1 49.52246 19.11011 13.84968   34.64694
+## 2    2 54.57170 22.29326 15.17248   12.34458
+## 3    3 62.53950 37.18071 18.25763   18.25330
+## 4    4 55.21535 25.85652 15.83278   26.67333
+## 5    5 55.08405 34.17193 18.90686   13.44716</code></pre>
+<p>Les résultats de la CAH sont cartographiés à la figure <a href="sect082.html#fig:CAHCarto">8.10</a> tandis que le nombre d’observations et les valeurs moyennes des classes sont reportés tableau <a href="sect082.html#tab:dataCAHtab">8.2</a>.</p>
+<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="sect082.html#cb593-1" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb593-2"><a href="sect082.html#cb593-2" tabindex="-1"></a><span class="do">## Cartographie des résultats</span></span>
+<span id="cb593-3"><a href="sect082.html#cb593-3" tabindex="-1"></a>Carte.CAH5 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb593-4"><a href="sect082.html#cb593-4" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;CAH5&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb593-5"><a href="sect082.html#cb593-5" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
+<span id="cb593-6"><a href="sect082.html#cb593-6" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;CAH (critère de Ward)&quot;</span>, </span>
+<span id="cb593-7"><a href="sect082.html#cb593-7" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
+<span id="cb593-8"><a href="sect082.html#cb593-8" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
+<span id="cb593-9"><a href="sect082.html#cb593-9" tabindex="-1"></a>Carte.CAH5</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:CAHCarto"></span>
+<img src="GMQ405_files/figure-html/CAHCarto-1.png" alt="CAH avec le critère de Ward avec cinq classes" width="100%" />
+<p class="caption">
+Figure 8.10: CAH avec le critère de Ward avec cinq classes
+</p>
+</div>
+<table>
+<caption>
+<span id="tab:dataCAHtab">Tableau 8.2: </span>Valeurs moyennes des variables pour les cinq classes obtenues avec la CAH
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Classe
+</th>
+<th style="text-align:center;">
+Lden
+</th>
+<th style="text-align:center;">
+NO2
+</th>
+<th style="text-align:center;">
+PM25
+</th>
+<th style="text-align:center;">
+Végétation
+</th>
+<th style="text-align:center;">
+Nombre d’IRIS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+49,5
+</td>
+<td style="text-align:center;">
+19,1
+</td>
+<td style="text-align:center;">
+13,8
+</td>
+<td style="text-align:center;">
+34,6
+</td>
+<td style="text-align:center;">
+62
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+54,6
+</td>
+<td style="text-align:center;">
+22,3
+</td>
+<td style="text-align:center;">
+15,2
+</td>
+<td style="text-align:center;">
+12,3
+</td>
+<td style="text-align:center;">
+120
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+62,5
+</td>
+<td style="text-align:center;">
+37,2
+</td>
+<td style="text-align:center;">
+18,3
+</td>
+<td style="text-align:center;">
+18,3
+</td>
+<td style="text-align:center;">
+88
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+55,2
+</td>
+<td style="text-align:center;">
+25,9
+</td>
+<td style="text-align:center;">
+15,8
+</td>
+<td style="text-align:center;">
+26,7
+</td>
+<td style="text-align:center;">
+81
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+55,1
+</td>
+<td style="text-align:center;">
+34,2
+</td>
+<td style="text-align:center;">
+18,9
+</td>
+<td style="text-align:center;">
+13,4
+</td>
+<td style="text-align:center;">
+155
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sect08213" class="section level4 hasAnchor" number="8.2.1.3">
+<h4><span class="header-section-number">8.2.1.3</span> Calcul de la méthode <em>ClustGeo</em><a href="sect082.html#sect08213" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Calcul des deux matrices (sémantique et spatiale)</strong></p>
+<p>Dans un premier temps, nous créons les matrices sémantique (<span class="math inline">\(D_0\)</span>) et spatiale (<span class="math inline">\(D_1\)</span>).</p>
+<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="sect082.html#cb594-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb594-2"><a href="sect082.html#cb594-2" tabindex="-1"></a><span class="fu">library</span>(ClustGeo)</span>
+<span id="cb594-3"><a href="sect082.html#cb594-3" tabindex="-1"></a><span class="do">## Variables</span></span>
+<span id="cb594-4"><a href="sect082.html#cb594-4" tabindex="-1"></a>VarsEnv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Lden&quot;</span>, <span class="st">&quot;NO2&quot;</span>, <span class="st">&quot;PM25&quot;</span>, <span class="st">&quot;VegHautPrt&quot;</span>)</span>
+<span id="cb594-5"><a href="sect082.html#cb594-5" tabindex="-1"></a><span class="do">## Dataframe sans la géométrie et les quatre variables</span></span>
+<span id="cb594-6"><a href="sect082.html#cb594-6" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap08/DonneesLyon.Rdata&quot;</span>)</span>
+<span id="cb594-7"><a href="sect082.html#cb594-7" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(LyonIris[VarsEnv])</span>
+<span id="cb594-8"><a href="sect082.html#cb594-8" tabindex="-1"></a><span class="do">## Centrage (moyenne = 0) et réduction des données (variance = 1)</span></span>
+<span id="cb594-9"><a href="sect082.html#cb594-9" tabindex="-1"></a>DataZscore <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(Data))</span>
+<span id="cb594-10"><a href="sect082.html#cb594-10" tabindex="-1"></a><span class="do">## Matrice sémantique : dissimilarité des observations selon les variables</span></span>
+<span id="cb594-11"><a href="sect082.html#cb594-11" tabindex="-1"></a>Matrice.Semantique <span class="ot">&lt;-</span> <span class="fu">dist</span>(DataZscore, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>)</span>
+<span id="cb594-12"><a href="sect082.html#cb594-12" tabindex="-1"></a><span class="do">## Matrice spatiale entre les unités spatiales</span></span>
+<span id="cb594-13"><a href="sect082.html#cb594-13" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(LyonIris))</span>
+<span id="cb594-14"><a href="sect082.html#cb594-14" tabindex="-1"></a>Matrice.Spatiale <span class="ot">&lt;-</span> <span class="fu">dist</span>(xy, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>)</span></code></pre></div>
+<p><strong>Optimisation de la valeur de <span class="math inline">\(\alpha\)</span></strong></p>
+<p>Pour la méthode <em>ClustGeo</em> (avec k = 5), nous évaluons l’impact du paramètre α pour des valeurs de 0 à 1, avec un saut de 0,05. Pour ce faire, nous utilisons la fonction <code>choicealpha</code> du <em>package</em> <code>ClustGeo</code>. À la lecture de la figure <a href="sect082.html#fig:GraphAlpha">8.11</a>, nous constatons que :</p>
+<ul>
+<li><p>plus la valeur de <span class="math inline">\(\alpha\)</span> augmente, plus l’inertie expliquée par la matrice sémantique diminue (trait noir) et inversement, plus l’inertie expliquée par la matrice spatiale est forte.</p></li>
+<li><p>avec <span class="math inline">\(\alpha=\text{0,30}\)</span>, l’inertie expliquée par la matrice spatiale est de 50 % pour une perte d’inertie expliquée par la matrice sémantique de seulement 7 %. Avec <span class="math inline">\(\alpha=\text{0,35}\)</span>, nous constatons une chute importante de l’inertie sémantique expliquée.Par conséquent, nous retenons la valeur de 0,30 pour la méthode <em>ClustGeo</em>.</p></li>
+</ul>
+<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="sect082.html#cb595-1" tabindex="-1"></a>alphas <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.05</span>)</span>
+<span id="cb595-2"><a href="sect082.html#cb595-2" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">choicealpha</span>(<span class="at">D0 =</span> Matrice.Semantique, <span class="co"># matrice sémantique</span></span>
+<span id="cb595-3"><a href="sect082.html#cb595-3" tabindex="-1"></a>                      <span class="at">D1 =</span> Matrice.Spatiale,   <span class="co"># matrice spatiale </span></span>
+<span id="cb595-4"><a href="sect082.html#cb595-4" tabindex="-1"></a>                      <span class="at">range.alpha =</span> alphas,    <span class="co"># valeurs de alpha</span></span>
+<span id="cb595-5"><a href="sect082.html#cb595-5" tabindex="-1"></a>                      <span class="at">K =</span> <span class="dv">5</span>,                   <span class="co"># nombre de classes</span></span>
+<span id="cb595-6"><a href="sect082.html#cb595-6" tabindex="-1"></a>                      <span class="at">wt =</span> <span class="cn">NULL</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>, <span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb595-7"><a href="sect082.html#cb595-7" tabindex="-1"></a><span class="co"># Graphique avec Alpha</span></span>
+<span id="cb595-8"><a href="sect082.html#cb595-8" tabindex="-1"></a>df.alpha <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(result<span class="sc">$</span>Q)</span>
+<span id="cb595-9"><a href="sect082.html#cb595-9" tabindex="-1"></a>df.alpha<span class="sc">$</span>alpha <span class="ot">&lt;-</span> alphas</span>
+<span id="cb595-10"><a href="sect082.html#cb595-10" tabindex="-1"></a><span class="fu">ggplot</span>(df.alpha)<span class="sc">+</span></span>
+<span id="cb595-11"><a href="sect082.html#cb595-11" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>alphas,<span class="at">y=</span> Q0), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb595-12"><a href="sect082.html#cb595-12" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>alphas,<span class="at">y=</span> Q0), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb595-13"><a href="sect082.html#cb595-13" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>alphas,<span class="at">y=</span> Q1), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb595-14"><a href="sect082.html#cb595-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>alphas,<span class="at">y=</span> Q1), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb595-15"><a href="sect082.html#cb595-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Pseudo-inertie&quot;</span>, </span>
+<span id="cb595-16"><a href="sect082.html#cb595-16" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Paramètre alpha&quot;</span>,</span>
+<span id="cb595-17"><a href="sect082.html#cb595-17" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Matrice sémantique (noir) et matrice spatiale (rouge)&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphAlpha"></span>
+<img src="GMQ405_files/figure-html/GraphAlpha-1.png" alt="Impact des deux matrices dans la classification" width="75%" />
+<p class="caption">
+Figure 8.11: Impact des deux matrices dans la classification
+</p>
+</div>
+<p><strong>Réalisation de la méthode <em>ClustGeo</em></strong></p>
+<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb596-1"><a href="sect082.html#cb596-1" tabindex="-1"></a><span class="do">## Dendrogramme avec ClustGeo</span></span>
+<span id="cb596-2"><a href="sect082.html#cb596-2" tabindex="-1"></a>Arbre.ClustGeo <span class="ot">&lt;-</span> <span class="fu">hclustgeo</span>(<span class="at">D0 =</span> Matrice.Semantique, <span class="at">D1 =</span> Matrice.Spatiale, <span class="at">alpha =</span> <span class="fl">0.30</span>)</span>
+<span id="cb596-3"><a href="sect082.html#cb596-3" tabindex="-1"></a><span class="do">## Coupure de l&#39;arbre à cinq classes</span></span>
+<span id="cb596-4"><a href="sect082.html#cb596-4" tabindex="-1"></a>LyonIris<span class="sc">$</span>ClustGeo5 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">cutree</span>(Arbre.ClustGeo, <span class="at">k=</span><span class="dv">5</span>))</span>
+<span id="cb596-5"><a href="sect082.html#cb596-5" tabindex="-1"></a><span class="do">## Nombre d&#39;observations par classe</span></span>
+<span id="cb596-6"><a href="sect082.html#cb596-6" tabindex="-1"></a><span class="fu">table</span>(LyonIris<span class="sc">$</span>ClustGeo5)</span></code></pre></div>
+<pre><code>## 
+##   1   2   3   4   5 
+## 101  73 102 145  85</code></pre>
+<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="sect082.html#cb598-1" tabindex="-1"></a><span class="do">## Valeurs moyennes des classes</span></span>
+<span id="cb598-2"><a href="sect082.html#cb598-2" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(Lden,NO2,PM25,VegHautPrt) <span class="sc">~</span> ClustGeo5, </span>
+<span id="cb598-3"><a href="sect082.html#cb598-3" tabindex="-1"></a>          <span class="at">data =</span> <span class="fu">st_drop_geometry</span>(LyonIris), <span class="at">FUN =</span> mean)</span></code></pre></div>
+<pre><code>##   ClustGeo5     Lden      NO2     PM25 VegHautPrt
+## 1         1 51.99446 22.63948 14.69971   32.70396
+## 2         2 55.46789 20.84670 15.00392   14.07849
+## 3         3 61.41468 36.20785 18.23707   18.77059
+## 4         4 54.98927 34.16558 18.93142   12.84883
+## 5         5 54.05419 24.32165 15.45733   16.14224</code></pre>
+<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="sect082.html#cb600-1" tabindex="-1"></a><span class="do">## Cartographie des résultats</span></span>
+<span id="cb600-2"><a href="sect082.html#cb600-2" tabindex="-1"></a>Carte.ClusteGeo <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb600-3"><a href="sect082.html#cb600-3" tabindex="-1"></a>                    <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;ClustGeo5&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb600-4"><a href="sect082.html#cb600-4" tabindex="-1"></a>                    <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
+<span id="cb600-5"><a href="sect082.html#cb600-5" tabindex="-1"></a>                      <span class="at">main.title =</span> <span class="st">&quot;ClustGeo avec alpha = 0,30&quot;</span>, </span>
+<span id="cb600-6"><a href="sect082.html#cb600-6" tabindex="-1"></a>                      <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
+<span id="cb600-7"><a href="sect082.html#cb600-7" tabindex="-1"></a>                      <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
+<span id="cb600-8"><a href="sect082.html#cb600-8" tabindex="-1"></a>Carte.ClusteGeo</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphAlpha2"></span>
+<img src="GMQ405_files/figure-html/GraphAlpha2-1.png" alt="Classification ClustGeo avec alpha = 0,30" width="75%" />
+<p class="caption">
+Figure 8.12: Classification ClustGeo avec alpha = 0,30
+</p>
+</div>
+<table>
+<caption>
+<span id="tab:dataClusteGeotab">Tableau 8.3: </span>Valeurs moyennes des variables pour cinq classes obtenues par la ClustGeo (alpha = 0,30)
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Classe
+</th>
+<th style="text-align:center;">
+Lden
+</th>
+<th style="text-align:center;">
+NO2
+</th>
+<th style="text-align:center;">
+PM25
+</th>
+<th style="text-align:center;">
+Végétation
+</th>
+<th style="text-align:center;">
+Nombre d’IRIS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+52,0
+</td>
+<td style="text-align:center;">
+22,6
+</td>
+<td style="text-align:center;">
+14,7
+</td>
+<td style="text-align:center;">
+32,7
+</td>
+<td style="text-align:center;">
+101
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+55,5
+</td>
+<td style="text-align:center;">
+20,8
+</td>
+<td style="text-align:center;">
+15,0
+</td>
+<td style="text-align:center;">
+14,1
+</td>
+<td style="text-align:center;">
+73
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+61,4
+</td>
+<td style="text-align:center;">
+36,2
+</td>
+<td style="text-align:center;">
+18,2
+</td>
+<td style="text-align:center;">
+18,8
+</td>
+<td style="text-align:center;">
+102
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+55,0
+</td>
+<td style="text-align:center;">
+34,2
+</td>
+<td style="text-align:center;">
+18,9
+</td>
+<td style="text-align:center;">
+12,8
+</td>
+<td style="text-align:center;">
+145
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+54,1
+</td>
+<td style="text-align:center;">
+24,3
+</td>
+<td style="text-align:center;">
+15,5
+</td>
+<td style="text-align:center;">
+16,1
+</td>
+<td style="text-align:center;">
+85
+</td>
+</tr>
+</tbody>
+</table>
+<p>La comparaison des typologies obtenues avec la CAH et la ClusteGeo démontre clairement que l’introduction d’une matrice spatiale dans la classification <em>ClustGeo</em> génère des classes qui sont moins discontinues spatialement (figure <a href="sect082.html#fig:ComparaisonCAHClusteo">8.13</a>)</p>
+<div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb601-1"><a href="sect082.html#cb601-1" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte.CAH5, Carte.ClusteGeo, <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ComparaisonCAHClusteo"></span>
+<img src="GMQ405_files/figure-html/ComparaisonCAHClusteo-1.png" alt="Impact des deux matrices dans la classification" width="75%" />
+<p class="caption">
+Figure 8.13: Impact des deux matrices dans la classification
+</p>
+</div>
+</div>
 </div>
 <div id="sect0822" class="section level3 hasAnchor" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> Krigeage universel<a href="sect082.html#sect0822" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">8.2.2</span> <em>Spatial fuzzy c-means</em><a href="sect082.html#sect0822" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La méthode SFCM (<em>Spatial fuzzy c-means</em>), proposée par Weiling Cai et ses collègues <span class="citation">(<a href="#ref-cai2007fast">2007</a>)</span>, est une extension de FCM, soit une version floue de l’algorithme des k-moyennes. Le principe de base est le suivant :</p>
+<p>« Comparativement au FCM classique, le SFCM introduit dans son calcul, en plus du jeu de données original (<span class="math inline">\(D_0\)</span>), une version spatialement décalée (<span class="math inline">\(D_s\)</span>) de ce dernier <span class="citation">(<a href="#ref-cai2007fast">Cai, Chen et Zhang 2007</a>)</span>. En analyse d’image, cela revient à calculer <span class="math inline">\(D_s\)</span> en appliquant un filtre moyen ou médian à <span class="math inline">\(D_0\)</span> (la médiane étant moins sensible aux valeurs extrêmes locales). Ce processus peut facilement s’appliquer à des entités géographiques vectorielles, en créant une matrice de pondération spatiale <span class="math inline">\(W_{kl}\)</span> (<em>l</em> étant les voisins de <em>k</em> et la diagonale de cette matrice valant 0) <span class="citation">(<a href="#ref-getis2009spatial">Getis 2009</a>)</span> et en utilisant les poids de cette matrice dans le calcul d’une moyenne ou d’une médiane pondérée locale » <span class="citation">(<a href="#ref-ClassificationFloue">Gelb et Apparicio 2021, 8</a>)</span>.</p>
+<p>Comme pour la méthode <em>ClustGeo</em>, il est possible de fixer une pondération à la dimension spatiale (<span class="math inline">\(D_s\)</span>) avec un paramètre <span class="math inline">\(\alpha\)</span>, qui varie de 0 à <span class="math inline">\(\infty\)</span>. Une valeur de 0 signale qu’aucun poids n’est accordé à la dimension spatiale, ce qui revient à calculer un FCM classique. Si <span class="math inline">\(\alpha=\)</span> =2, alors la version spatialement décalée aura deux fois plus de poids dans la classification que le jeu de données original.</p>
+<div class="bloc_attention">
+<p><strong>Retour sur une variable spatialement décalée</strong></p>
+<p>La notion de variable spatialement décalée a été abordée au chapitre 2 (figure <a href="sect024.html#fig:Chap02FigureVariableSpatialementDecalee">2.29</a>).</p>
+<p><strong>Retour sur la classification non supervisée k-moyennes (<em>k-means</em>)</strong></p>
+<p>Pour une description détaillée de la classification k-moyennes, consultez la <a href="https://laeq.github.io/LivreMethoQuantBolR/sect133.html">section suivante</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>.</p>
 </div>
-<div id="sect0823" class="section level3 hasAnchor" number="8.2.3">
-<h3><span class="header-section-number">8.2.3</span> Co-krigeage<a href="sect082.html#sect0823" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sect08221" class="section level4 hasAnchor" number="8.2.2.1">
+<h4><span class="header-section-number">8.2.2.1</span> Calcul de la classification c-moyennes floue classique (<em>fuzzy c-means</em>)<a href="sect082.html#sect08221" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>À des fins de comparaison avec la CAH, nous proposons de calculer une classification c-moyennes floue classique (<em>fuzzy c-means</em>) avec cinq classes (<em>k</em> = 5). Puis, pour déterminer la valeur optimale de <em>m</em> (soit le degré de logique floue), nous calculons l’inertie expliquée et l’indice de silhouette pour des valeurs de <em>m</em> variant de 1,1 à 3 (avec un incrément de 0,1). Les résultats de ces deux indicateurs, présentés à la figure <a href="sect082.html#fig:GraphCmeans">8.14</a>, signale que :</p>
+<ul>
+<li>plus le paramètre <em>m</em> augmente, plus l’inertie expliquée diminue (figure <a href="sect082.html#fig:GraphCmeans">8.14</a>.a).</li>
+<li>la valeur de l’indice de silhouette est maximale avec <em>m</em> = 1,8 (figure <a href="sect082.html#fig:GraphCmeans">8.14</a>.b).</li>
+</ul>
+<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="sect082.html#cb602-1" tabindex="-1"></a><span class="fu">library</span>(geocmeans)</span>
+<span id="cb602-2"><a href="sect082.html#cb602-2" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb602-3"><a href="sect082.html#cb602-3" tabindex="-1"></a><span class="do">## Variables pour la CAH</span></span>
+<span id="cb602-4"><a href="sect082.html#cb602-4" tabindex="-1"></a>VarsEnv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Lden&quot;</span>, <span class="st">&quot;NO2&quot;</span>, <span class="st">&quot;PM25&quot;</span>, <span class="st">&quot;VegHautPrt&quot;</span>)</span>
+<span id="cb602-5"><a href="sect082.html#cb602-5" tabindex="-1"></a><span class="do">## Dataframe sans la géométrie et les quatre variables</span></span>
+<span id="cb602-6"><a href="sect082.html#cb602-6" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap08/DonneesLyon.Rdata&quot;</span>)</span>
+<span id="cb602-7"><a href="sect082.html#cb602-7" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(LyonIris[VarsEnv])</span>
+<span id="cb602-8"><a href="sect082.html#cb602-8" tabindex="-1"></a><span class="do">## Centrage (moyenne = 0) et réduction des données (variance = 1)</span></span>
+<span id="cb602-9"><a href="sect082.html#cb602-9" tabindex="-1"></a>DataZscore <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(Data))</span>
+<span id="cb602-10"><a href="sect082.html#cb602-10" tabindex="-1"></a><span class="do">## Dataframe pour les différents paramètres avec k = 5 et degré de flou</span></span>
+<span id="cb602-11"><a href="sect082.html#cb602-11" tabindex="-1"></a>FCM_selection <span class="ot">&lt;-</span> <span class="fu">select_parameters</span>(<span class="at">algo =</span> <span class="st">&quot;FCM&quot;</span>,</span>
+<span id="cb602-12"><a href="sect082.html#cb602-12" tabindex="-1"></a>                  <span class="at">data =</span> DataZscore,</span>
+<span id="cb602-13"><a href="sect082.html#cb602-13" tabindex="-1"></a>                  <span class="at">k =</span> <span class="dv">5</span>, <span class="co"># nous pourrions ici tester avec k=2:10</span></span>
+<span id="cb602-14"><a href="sect082.html#cb602-14" tabindex="-1"></a>                  <span class="at">m =</span> <span class="fu">seq</span>(<span class="fl">1.1</span>,<span class="dv">3</span>,<span class="fl">0.1</span>),</span>
+<span id="cb602-15"><a href="sect082.html#cb602-15" tabindex="-1"></a>                  <span class="at">classidx =</span> <span class="cn">TRUE</span>, <span class="at">spconsist =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb602-16"><a href="sect082.html#cb602-16" tabindex="-1"></a>                  <span class="at">tol =</span> <span class="fl">0.001</span>, <span class="at">seed =</span> <span class="dv">456</span>,</span>
+<span id="cb602-17"><a href="sect082.html#cb602-17" tabindex="-1"></a>                  <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;number of combinaisons to estimate :  20&quot;</code></pre>
+<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="sect082.html#cb604-1" tabindex="-1"></a><span class="co"># Graphique avec l&#39;inertie expliquée</span></span>
+<span id="cb604-2"><a href="sect082.html#cb604-2" tabindex="-1"></a>G1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(FCM_selection) <span class="sc">+</span></span>
+<span id="cb604-3"><a href="sect082.html#cb604-3" tabindex="-1"></a>      <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> Explained.inertia)) <span class="sc">+</span></span>
+<span id="cb604-4"><a href="sect082.html#cb604-4" tabindex="-1"></a>      <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> m,  <span class="at">y =</span> Explained.inertia), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb604-5"><a href="sect082.html#cb604-5" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">title =</span><span class="st">&quot;a. Variation des données expliquées&quot;</span>,</span>
+<span id="cb604-6"><a href="sect082.html#cb604-6" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Inertie expliquée&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Paramètre m&quot;</span>)</span>
+<span id="cb604-7"><a href="sect082.html#cb604-7" tabindex="-1"></a><span class="co"># Graphique avec l&#39;indice de Silhouette</span></span>
+<span id="cb604-8"><a href="sect082.html#cb604-8" tabindex="-1"></a>G2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(FCM_selection) <span class="sc">+</span></span>
+<span id="cb604-9"><a href="sect082.html#cb604-9" tabindex="-1"></a>      <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> Silhouette.index)) <span class="sc">+</span></span>
+<span id="cb604-10"><a href="sect082.html#cb604-10" tabindex="-1"></a>      <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> m,  <span class="at">y =</span> Silhouette.index), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb604-11"><a href="sect082.html#cb604-11" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">title =</span><span class="st">&quot;b. Consistance des groupes&quot;</span>,</span>
+<span id="cb604-12"><a href="sect082.html#cb604-12" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Critère de Silhouette floue&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Paramètre m&quot;</span>)</span>
+<span id="cb604-13"><a href="sect082.html#cb604-13" tabindex="-1"></a><span class="co"># Combinaison des deux graphiques dans la figure</span></span>
+<span id="cb604-14"><a href="sect082.html#cb604-14" tabindex="-1"></a><span class="fu">ggarrange</span>(G1, G2)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphCmeans"></span>
+<img src="GMQ405_files/figure-html/GraphCmeans-1.png" alt="Évaluation de la qualité de la classification FCM avec cinq classes selon le degré de flou (m)" width="75%" />
+<p class="caption">
+Figure 8.14: Évaluation de la qualité de la classification FCM avec cinq classes selon le degré de flou (m)
+</p>
 </div>
-<div id="sect0824" class="section level3 hasAnchor" number="8.2.4">
-<h3><span class="header-section-number">8.2.4</span> Krigeage résiduel<a href="sect082.html#sect0824" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Réalisons la classification c-moyennes floue et cartographions les probabilités d’appartenance à chacune des classes (figure <a href="sect082.html#fig:FigureCmeansProb">8.15</a>), puis l’appartenance à une classe (figure <a href="sect082.html#fig:FigureCmeansCluster">8.16</a>).</p>
+<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb605-1"><a href="sect082.html#cb605-1" tabindex="-1"></a><span class="do">## Classification du c-means </span></span>
+<span id="cb605-2"><a href="sect082.html#cb605-2" tabindex="-1"></a>FCM <span class="ot">&lt;-</span> <span class="fu">CMeans</span>(DataZscore, <span class="at">k =</span> <span class="dv">5</span>, <span class="at">m =</span> <span class="fl">1.8</span>, <span class="at">tol =</span> <span class="fl">0.0001</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>, <span class="at">seed =</span> <span class="dv">456</span>)</span>
+<span id="cb605-3"><a href="sect082.html#cb605-3" tabindex="-1"></a><span class="do">## Calcul des indicateurs de qualité</span></span>
+<span id="cb605-4"><a href="sect082.html#cb605-4" tabindex="-1"></a><span class="fu">calcqualityIndexes</span>(DataZscore, FCM<span class="sc">$</span>Belongings, <span class="fl">1.5</span>)</span></code></pre></div>
+<pre><code>## $Silhouette.index
+## [1] 0.5502472
+## 
+## $Partition.entropy
+## [1] 0.9663788
+## 
+## $Partition.coeff
+## [1] 0.5143427
+## 
+## $XieBeni.index
+## [1] 1.269992
+## 
+## $FukuyamaSugeno.index
+## [1] 158.1419
+## 
+## $Explained.inertia
+## [1] 0.3757482</code></pre>
+<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb607-1"><a href="sect082.html#cb607-1" tabindex="-1"></a><span class="do">## Cartographie des probabilités d&#39;appartenance à chaque classe</span></span>
+<span id="cb607-2"><a href="sect082.html#cb607-2" tabindex="-1"></a>Cartes.FCM <span class="ot">&lt;-</span> <span class="fu">mapClusters</span>(LyonIris,FCM<span class="sc">$</span>Belongings)</span>
+<span id="cb607-3"><a href="sect082.html#cb607-3" tabindex="-1"></a><span class="fu">names</span>(Cartes.FCM)</span></code></pre></div>
+<pre><code>## [1] &quot;ProbaMaps&quot;   &quot;ClusterPlot&quot;</code></pre>
+<div class="sourceCode" id="cb609"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb609-1"><a href="sect082.html#cb609-1" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Cartes.FCM<span class="sc">$</span>ProbaMaps, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureCmeansProb"></span>
+<img src="GMQ405_files/figure-html/FigureCmeansProb-1.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification c-means" width="100%" />
+<p class="caption">
+Figure 8.15: Cartographie des probabilités d’appartenance aux cinq classes avec la classification c-means
+</p>
+</div>
+<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb610-1"><a href="sect082.html#cb610-1" tabindex="-1"></a>Cartes.FCM<span class="sc">$</span>ClusterPlot</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureCmeansCluster"></span>
+<img src="GMQ405_files/figure-html/FigureCmeansCluster-1.png" alt="Cartographie des classes issues la classification c-moyennes" width="75%" />
+<p class="caption">
+Figure 8.16: Cartographie des classes issues la classification c-moyennes
+</p>
+</div>
+</div>
+<div id="sect08222" class="section level4 hasAnchor" number="8.2.2.2">
+<h4><span class="header-section-number">8.2.2.2</span> Calcul de la classification c-moyennes floue et spatial (<em>spatial fuzzy c-means</em>)<a href="sect082.html#sect08222" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dans l’exemple ci-dessous, nous calculons une classification SFCM (<em>spatial fuzzy c-means</em>) avec :</p>
+<ul>
+<li>k = 5, soit cinq classes.</li>
+<li>m = 1,8, soit le degré de logique floue.</li>
+<li>alpha = 0,7, soit le poids accordé à la matrice spatialement décalée comparativement à la matrice de données originale.</li>
+</ul>
+<div class="sourceCode" id="cb611"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb611-1"><a href="sect082.html#cb611-1" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb611-2"><a href="sect082.html#cb611-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb611-3"><a href="sect082.html#cb611-3" tabindex="-1"></a><span class="co"># Création d&#39;une matrice de contiguïté standardisée</span></span>
+<span id="cb611-4"><a href="sect082.html#cb611-4" tabindex="-1"></a>Neighbours <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb611-5"><a href="sect082.html#cb611-5" tabindex="-1"></a>WMat <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Neighbours, <span class="at">style=</span><span class="st">&quot;W&quot;</span>, <span class="at">zero.policy =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb611-6"><a href="sect082.html#cb611-6" tabindex="-1"></a><span class="co"># Calcul du SFCM</span></span>
+<span id="cb611-7"><a href="sect082.html#cb611-7" tabindex="-1"></a>SFCM <span class="ot">&lt;-</span> <span class="fu">SFCMeans</span>(DataZscore, WMat, </span>
+<span id="cb611-8"><a href="sect082.html#cb611-8" tabindex="-1"></a>                 <span class="at">k =</span> <span class="dv">5</span>, </span>
+<span id="cb611-9"><a href="sect082.html#cb611-9" tabindex="-1"></a>                 <span class="at">m =</span> <span class="fl">1.8</span>, </span>
+<span id="cb611-10"><a href="sect082.html#cb611-10" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.7</span>,</span>
+<span id="cb611-11"><a href="sect082.html#cb611-11" tabindex="-1"></a>                 <span class="at">tol =</span> <span class="fl">0.0001</span>, <span class="at">standardize =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb611-12"><a href="sect082.html#cb611-12" tabindex="-1"></a>                 <span class="at">verbose =</span> <span class="cn">FALSE</span>, <span class="at">seed =</span> <span class="dv">456</span>)</span></code></pre></div>
+<p><strong>Résultats des indicateurs de qualité du SFCM</strong></p>
+<div class="sourceCode" id="cb612"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb612-1"><a href="sect082.html#cb612-1" tabindex="-1"></a><span class="fu">calcqualityIndexes</span>(DataZscore, SFCM<span class="sc">$</span>Belongings, <span class="fl">1.5</span>)</span></code></pre></div>
+<pre><code>## $Silhouette.index
+## [1] 0.4829962
+## 
+## $Partition.entropy
+## [1] 1.040742
+## 
+## $Partition.coeff
+## [1] 0.472018
+## 
+## $XieBeni.index
+## [1] 2.214814
+## 
+## $FukuyamaSugeno.index
+## [1] 397.8657
+## 
+## $Explained.inertia
+## [1] 0.3346273</code></pre>
+<p><strong>Cartographie des probabilités d’appartenance à chaque classe</strong></p>
+<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb614-1"><a href="sect082.html#cb614-1" tabindex="-1"></a>Cartes.SFCM <span class="ot">&lt;-</span> <span class="fu">mapClusters</span>(LyonIris, SFCM<span class="sc">$</span>Belongings, <span class="at">undecided =</span> <span class="fl">0.45</span>)</span>
+<span id="cb614-2"><a href="sect082.html#cb614-2" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-1"></span>
+<img src="GMQ405_files/figure-html/FigureSFCMProb-1.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
+<p class="caption">
+Figure 8.17: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+</p>
+</div>
+<div class="sourceCode" id="cb615"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb615-1"><a href="sect082.html#cb615-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">2</span>]]</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-2"></span>
+<img src="GMQ405_files/figure-html/FigureSFCMProb-2.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
+<p class="caption">
+Figure 8.18: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+</p>
+</div>
+<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb616-1"><a href="sect082.html#cb616-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">3</span>]]</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-3"></span>
+<img src="GMQ405_files/figure-html/FigureSFCMProb-3.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
+<p class="caption">
+Figure 8.19: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+</p>
+</div>
+<div class="sourceCode" id="cb617"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb617-1"><a href="sect082.html#cb617-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">4</span>]]</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-4"></span>
+<img src="GMQ405_files/figure-html/FigureSFCMProb-4.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
+<p class="caption">
+Figure 8.20: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+</p>
+</div>
+<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb618-1"><a href="sect082.html#cb618-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ProbaMaps[[<span class="dv">5</span>]]</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMProb-5"></span>
+<img src="GMQ405_files/figure-html/FigureSFCMProb-5.png" alt="Cartographie des probabilités d'appartenance aux cinq classes avec la classification SFCM" width="100%" />
+<p class="caption">
+Figure 8.21: Cartographie des probabilités d’appartenance aux cinq classes avec la classification SFCM
+</p>
+</div>
+<p><strong>Cartographie des probabilités d’appartenance à chaque classe du SFCM</strong></p>
+<div class="sourceCode" id="cb619"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb619-1"><a href="sect082.html#cb619-1" tabindex="-1"></a>Cartes.SFCM<span class="sc">$</span>ClusterPlot</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FigureSFCMCluster"></span>
+<img src="GMQ405_files/figure-html/FigureSFCMCluster-1.png" alt="Cartographie des classes issues de la classification SFCM" width="75%" />
+<p class="caption">
+Figure 8.22: Cartographie des classes issues de la classification SFCM
+</p>
+</div>
+</div>
+</div>
+</div>
+<h3>Références</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-RBoldAir" class="csl-entry">
+Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.
+</div>
+<div id="ref-cai2007fast" class="csl-entry">
+Cai, Weiling, Songcan Chen et Daoqiang Zhang. 2007. <span>« Fast and robust fuzzy c-means clustering algorithms incorporating local information for image segmentation. »</span> <em>Pattern recognition</em> 40 (3): 825‑838. <a href="https://doi.org/10.1016/j.patcog.2006.07.011">https://doi.org/10.1016/j.patcog.2006.07.011</a>.
+</div>
+<div id="ref-packageClustGeo" class="csl-entry">
+Chavent, Marie, Vanessa Kuentz-Simonet, Amaury Labenne et Jérôme Saracco. 2018. <span>« ClustGeo: an R package for hierarchical clustering with spatial constraints. »</span> <em>Computational Statistics</em> 33 (4): 1799‑1822. <a href="https://doi.org/10.1007/s00180-018-0791-1">https://doi.org/10.1007/s00180-018-0791-1</a>.
+</div>
+<div id="ref-ClassificationFloue" class="csl-entry">
+Gelb, Jérémy et Philippe Apparicio. 2021. <span>« Apport de la classification floue c-means spatiale en géographie: essai de taxinomie socio-résidentielle et environnementale à Lyon. »</span> <em>Cybergeo: European Journal of Geography</em>. <a href="https://doi.org/10.4000/cybergeo.36414">https://doi.org/10.4000/cybergeo.36414</a>.
+</div>
+<div id="ref-getis2009spatial" class="csl-entry">
+Getis, Arthur. 2009. <span>« Spatial weights matrices. »</span> <em>Geographical Analysis</em> 41 (4): 404‑410. <a href="https://doi.org/10.1111/j.1538-4632.2009.00768.x">https://doi.org/10.1111/j.1538-4632.2009.00768.x</a>.
 </div>
 </div>
             </section>

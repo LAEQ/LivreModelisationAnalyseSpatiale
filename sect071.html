@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7.1 Méthodes de classification non supervisée avec contrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
+  <title>7.1 Modèles économétriques spatiaux | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
   <meta name="description" content="Mettre le description du cours." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7.1 Méthodes de classification non supervisée avec contrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta property="og:title" content="7.1 Modèles économétriques spatiaux | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/introduction/ImageCouverture.png" />
   <meta property="og:description" content="Mettre le description du cours." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7.1 Méthodes de classification non supervisée avec contrainte spatiale | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta name="twitter:title" content="7.1 Modèles économétriques spatiaux | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
   
   <meta name="twitter:description" content="Mettre le description du cours." />
   <meta name="twitter:image" content="/images/introduction/ImageCouverture.png" />
@@ -198,7 +198,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.2.6" data-path="sect012.html"><a href="sect012.html#sect0126"><i class="fa fa-check"></i><b>1.2.6</b> Requêtes spatiales</a></li>
 <li class="chapter" data-level="1.2.7" data-path="sect012.html"><a href="sect012.html#sect0127"><i class="fa fa-check"></i><b>1.2.7</b> Manipulation des données attributaires</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
+<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données matricielles (<em>raster</em>)</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
@@ -232,13 +232,18 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="sect023.html"><a href="sect023.html#sect0231"><i class="fa fa-check"></i><b>2.3.1</b> Statistique du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Mise en œuvre dans R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sect023.html"><a href="sect023.html#sect0233"><i class="fa fa-check"></i><b>2.3.3</b> Indice de Lee : autocorrélation spatiale dans un contexte bivariée</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="sect024.html"><a href="sect024.html"><i class="fa fa-check"></i><b>2.4</b> Autocorrélation spatiale locale</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids</a></li>
+<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids pour une variable continue</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sect024.html"><a href="sect024.html#sect0242"><i class="fa fa-check"></i><b>2.4.2</b> Version locale du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Nuage de points du <em>I</em> de Moran d’Anselin</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sect024.html"><a href="sect024.html#sect0244"><i class="fa fa-check"></i><b>2.4.4</b> Version locale des statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.4.5" data-path="sect024.html"><a href="sect024.html#sect0245"><i class="fa fa-check"></i><b>2.4.5</b> Version locale de l’indice de Lee</a></li>
+<li class="chapter" data-level="2.4.6" data-path="sect024.html"><a href="sect024.html#sect0246"><i class="fa fa-check"></i><b>2.4.6</b> Typologie basée sur le diagramme de Moran dans un contexte bivarié</a></li>
+<li class="chapter" data-level="2.4.7" data-path="sect024.html"><a href="sect024.html#sect0247"><i class="fa fa-check"></i><b>2.4.7</b> Autocorrélation locale pour une variable qualitative (catégorielle) : l’indicateur ELSA</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sect025.html"><a href="sect025.html"><i class="fa fa-check"></i><b>2.5</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="2.6" data-path="sect026.html"><a href="sect026.html"><i class="fa fa-check"></i><b>2.6</b> Exercices de révision</a></li>
@@ -309,92 +314,83 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="sect055.html"><a href="sect055.html"><i class="fa fa-check"></i><b>5.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Introduction aux modèles de régression spatiale</a>
+<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Analyses d’évènements localisés sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Modèles économétriques spatiaux</a>
+<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Cartographie de la densité d’évènements sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
-<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
-<li class="chapter" data-level="6.1.3" data-path="sect061.html"><a href="sect061.html#sect0613"><i class="fa fa-check"></i><b>6.1.3</b> Quel modèle choisir?</a></li>
+<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
+<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Mesure d’autocorrélation spatiale sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
-<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Construction d’un modèle GAM dans R</a></li>
+<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Getis et Ord</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="6.2.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>6.2.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> Régression géographiquement pondérée</a>
+<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> DBSCAN sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Principe de base</a></li>
-<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
+<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="sect064.html"><a href="sect064.html"><i class="fa fa-check"></i><b>6.4</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="6.5" data-path="sect065.html"><a href="sect065.html"><i class="fa fa-check"></i><b>6.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
+<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Introduction aux modèles de régression spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Modèles économétriques spatiaux</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
-<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
-<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Algorithmes REDCAP</a></li>
-<li class="chapter" data-level="7.1.4" data-path="sect071.html"><a href="sect071.html#sect0714"><i class="fa fa-check"></i><b>7.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
+<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
+<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Quel modèle choisir?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
+<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
+<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> Construction d’un modèle GAM dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Régression géographiquement pondérée</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Principe de base</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes déterministes</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Interpolation polynomiale locale</a></li>
-<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Interpolation de l’inverse à la distance - <em>IDW</em></a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes géostatistiques</a>
+<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Krigeage simple</a></li>
-<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> Krigeage universel</a></li>
-<li class="chapter" data-level="8.2.3" data-path="sect082.html"><a href="sect082.html#sect0823"><i class="fa fa-check"></i><b>8.2.3</b> Co-krigeage</a></li>
-<li class="chapter" data-level="8.2.4" data-path="sect082.html"><a href="sect082.html#sect0824"><i class="fa fa-check"></i><b>8.2.4</b> Krigeage résiduel</a></li>
+<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Algorithmes AZP</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Algorithme SKATER</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sect081.html"><a href="sect081.html#sect0813"><i class="fa fa-check"></i><b>8.1.3</b> Algorithmes REDCAP</a></li>
+<li class="chapter" data-level="8.1.4" data-path="sect081.html"><a href="sect081.html#sect0814"><i class="fa fa-check"></i><b>8.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="sect083.html"><a href="sect083.html"><i class="fa fa-check"></i><b>8.3</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="8.4" data-path="sect084.html"><a href="sect084.html"><i class="fa fa-check"></i><b>8.4</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Analyse spatiale par l’analyse d’images</a>
+<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Méthodes d’interpolation spatiale</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Fonctions mathématiques, booléennes, relationnelles et conditionnelles sur les images</a>
+<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Méthodes déterministes</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Fonctions mathématiques</a></li>
-<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Fonctions booléennes</a></li>
+<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Interpolation polynomiale locale</a></li>
+<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Interpolation de l’inverse à la distance (<em>IDW</em>)</a></li>
 <li class="chapter" data-level="9.1.3" data-path="sect091.html"><a href="sect091.html#sect0913"><i class="fa fa-check"></i><b>9.1.3</b> Fonctions relationnelles</a></li>
 <li class="chapter" data-level="9.1.4" data-path="sect091.html"><a href="sect091.html#sect0914"><i class="fa fa-check"></i><b>9.1.4</b> Fonctions conditionnelles</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Fonctions locales, focales, zonales et globales sur les images</a>
+<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Méthodes géostatistiques</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Fonctions locales</a></li>
-<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Fonctions focales</a></li>
-<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Fonctions zonales</a></li>
-<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Fonctions globales</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Krigeage simple</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Krigeage universel</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Co-krigeage</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Krigeage résiduel</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Fonctions de surface</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="sect093.html"><a href="sect093.html#sect0931"><i class="fa fa-check"></i><b>9.3.1</b> Élevation</a></li>
-<li class="chapter" data-level="9.3.2" data-path="sect093.html"><a href="sect093.html#sect0932"><i class="fa fa-check"></i><b>9.3.2</b> Pente</a></li>
-<li class="chapter" data-level="9.3.3" data-path="sect093.html"><a href="sect093.html#sect0933"><i class="fa fa-check"></i><b>9.3.3</b> Ombrage</a></li>
-<li class="chapter" data-level="9.3.4" data-path="sect093.html"><a href="sect093.html#sect0934"><i class="fa fa-check"></i><b>9.3.4</b> Visibilité</a></li>
-<li class="chapter" data-level="9.3.5" data-path="sect093.html"><a href="sect093.html#sect0935"><i class="fa fa-check"></i><b>9.3.5</b> Sky-view factor Index</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Données spatiotemporelles en mode image</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="sect094.html"><a href="sect094.html#fichier-netcdf"><i class="fa fa-check"></i><b>9.4.1</b> Fichier <em>netCDF</em></a></li>
-<li class="chapter" data-level="9.4.2" data-path="sect094.html"><a href="sect094.html#exemples-applicatifs"><i class="fa fa-check"></i><b>9.4.2</b> Exemples applicatifs</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="sect095.html"><a href="sect095.html"><i class="fa fa-check"></i><b>9.5</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="9.6" data-path="sect096.html"><a href="sect096.html"><i class="fa fa-check"></i><b>9.6</b> Exercices de révision</a></li>
+<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Exercices de révision</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>10</b> Correction des exercices</a>
 <ul>
@@ -424,20 +420,18 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
-<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a>
-<ul>
-<li class="chapter" data-level="10.6.1" data-path="sect1006.html"><a href="sect1006.html#sect10061"><i class="fa fa-check"></i><b>10.6.1</b> Exercice 1</a></li>
-<li class="chapter" data-level="10.6.2" data-path="sect1006.html"><a href="sect1006.html#sect10062"><i class="fa fa-check"></i><b>10.6.2</b> Exercice 2</a></li>
-<li class="chapter" data-level="10.6.3" data-path="sect1006.html"><a href="sect1006.html#sect10063"><i class="fa fa-check"></i><b>10.6.3</b> Exercice 3</a></li>
-</ul></li>
+<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sect1007.html"><a href="sect1007.html#sect10071"><i class="fa fa-check"></i><b>10.7.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sect1007.html"><a href="sect1007.html#sect10072"><i class="fa fa-check"></i><b>10.7.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.7.3" data-path="sect1007.html"><a href="sect1007.html#sect10073"><i class="fa fa-check"></i><b>10.7.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a></li>
+<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="sect1008.html"><a href="sect1008.html#sect10081"><i class="fa fa-check"></i><b>10.8.1</b> Exercice 1</a></li>
+</ul></li>
 <li class="chapter" data-level="10.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>10.9</b> Exercices du chapitre 9</a></li>
-<li class="chapter" data-level="10.10" data-path="sect1011.html"><a href="sect1011.html"><i class="fa fa-check"></i><b>10.10</b> Exercices du chapitre 11</a></li>
-<li class="chapter" data-level="10.11" data-path="sect1012.html"><a href="sect1012.html"><i class="fa fa-check"></i><b>10.11</b> Excercice du chapitre 12</a></li>
 </ul></li>
 </ul>
 
@@ -458,563 +452,837 @@ Modélisation et analyse spatiale</a>
 
             <section class="normal" id="section-">
 <div id="sect071" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Méthodes de classification non supervisée avec contrainte spatiale<a href="sect071.html#sect071" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nous avons vu que l’objectif d’une méthode non supervisée appliquée à des données spatiales est de regrouper en <em>n</em> classes les unités spatiales d’une couche géographique. Prenons l’exemple de quatre variables environnementales cartographiés à la figure <a href="sect071.html#fig:figVarEnv">7.1</a> pour les IRIS de la ville de Lyon, dont trois considérées comme des nuisances (bruit, dioxyde d’azote et particules fines) et une considérée comme avantageuse (végétation).</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figVarEnv"></span>
-<img src="GMQ405_files/figure-html/figVarEnv-1.png" alt="Cartographie des variables environnementales" width="100%" />
-<p class="caption">
-Figure 7.1: Cartographie des variables environnementales
-</p>
+<h2><span class="header-section-number">7.1</span> Modèles économétriques spatiaux<a href="sect071.html#sect071" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="bloc_attention">
+<p><strong>Régression linéaire multiple et modèles économétriques spatiaux</strong></p>
+<p>Dans cette section, nous décrivons uniquement les modèles économétriques spatiaux dont la variable dépendante est continue. Sommairement, ces modèles sont des extensions de la régression linéaire multiple dans laquelle est intégrée l’autocorrélation spatiale. Avant de lire cette section, il faut donc bien maîtriser la régression linéaire multiple. Si ce n’est pas le cas, nous vous invitons vivement à lire le <a href="https://laeq.github.io/LivreMethoQuantBolR/chap07.html">chapitre suivant</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>.</p>
+<p>Ces deux dernières décennies, plusieurs ouvrages traitant des modèles économétriques spatiaux ont été publiés, surtout en anglais <span class="citation">(<a href="#ref-lesage2008introduction">LeSage et Pace 2008</a>; <a href="#ref-anselin2014modern">Anselin et Rey 2014</a>; <a href="#ref-bivand2008applied">Bivand et al. 2008</a>)</span>. Ils méritent grandement d’être consultés, tout comme l’excellent livre en français de Jean Dubé et Diègo Legros <span class="citation">(<a href="#ref-dube2014econometrie">2014</a>)</span>.</p>
 </div>
-<p>Il est possible de regrouper les unités spatiales avec ou sans contrainte spatiale :</p>
-<ul>
-<li><p><strong>Sans contrainte spatiale</strong>, nous cherchons à regrouper les IRIS (unités spatiales) avec des valeurs similaires pour les quatre variables retenues (L<sub>den</sub>, NO<sub>2</sub>, PM<sub>2,5</sub> et pourcentage de canopée). Cette approche est illustrée à la figure <a href="sect071.html#fig:figKmeansSkater">7.2</a>.a avec l’algorithme k-moyennes (<em>k-means</em> en anglais) avec cinq classes.</p></li>
-<li><p><strong>Avec contrainte spatiale</strong>, nous cherchons à regrouper les IRIS (unités spatiales) avec des valeurs similaires pour les quatre variables retenues, tout en nous assurant que les regroupements forment des régions avec une absence de mitage. Cette approche est illustrée à la figure <a href="sect071.html#fig:figKmeansSkater">7.2</a>.b avec l’algorithme SKATER (<em>Spatial ’K’luster Analysis by Tree Edge Removal</em>) avec cinq classes. Autrement dit, l’objectif des méthodes de classification non supervisée avec contrainte spatiale est d’agréger <em>n</em> unités spatiales en <em>m</em> régions non discontinues (avec <em>n</em> &lt; <em>m</em>) <span class="citation">(<a href="#ref-openshaw1995algorithms">Openshaw et Rao 1995, 428</a>)</span>.</p></li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figKmeansSkater"></span>
-<img src="GMQ405_files/figure-html/figKmeansSkater-1.png" alt="Classification non supervisée avec et sans contrainte spatiale" width="85%" />
-<p class="caption">
-Figure 7.2: Classification non supervisée avec et sans contrainte spatiale
-</p>
-</div>
-<div class="bloc_objectif">
-<p><strong>Intérêt et limites des méthodes de classification avec une contrainte spatiale</strong></p>
-<p>Selon Gelb et Apparicio <span class="citation">(<a href="#ref-ClassificationFloue">2021, 7</a>)</span>, le résultat d’une méthode de classification avec une contrainte spatiale est « la création de régions très cohérentes spatialement, c’est-à-dire avec une absence de mitage. Autrement dit, avec ces méthodes, il n’est pas possible d’identifier de groupes qui seraient spatialement discontinus, c’est-à-dire composés de plusieurs ensembles régionaux séparés. L’impossibilité d’obtenir du mitage au sein des différentes régions peut masquer la présence de valeurs fortement dissemblables localement, malgré la prise en compte de l’espace. Or, ces observations systématiquement différentes de leurs voisines doivent faire l’objet d’une attention particulière dans les exercices de classification intégrant l’espace, ce que ne permettent pas ces méthodes d’agrégation spatiale.</p>
-<p>[…] Les limites de ces méthodes, particulièrement celles relatives au mitage, ont conduit plus récemment à la mise au point de nouvelles méthodes incluant l’espace dans le processus de classification, sans imposer une contrainte de contiguïté. Plus spécifiquement, ces nouvelles méthodes sont des modifications des algorithmes classiques, tels que la CAH ou le FCM, pour intégrer la dimension spatiale en parallèle à la dimension sémantique des données. En d’autres termes, l’espace n’est plus intégré comme une contrainte dans les algorithmes de classification, mais plutôt comme une donnée supplémentaire ».</p>
-</div>
-<p>Les principaux algorithmes de classification supervisée avec contrainte spatiale (<em>Spatially Constrained Clustering Methods</em> en anglais) sont :</p>
-<ul>
-<li>La méthode de zonage automatique (<em>Automatic Zoning Procedure</em> en anglais) (AZP) proposée par Openshaw <span class="citation">(<a href="#ref-openshaw1977geographical">1977</a>)</span>, puis améliorée par Openshaw et Rao <span class="citation">(<a href="#ref-openshaw1995algorithms">1995</a>)</span>.</li>
-<li>L’algorithme SKATER (<em>Spatial ’K’luster Analysis by Tree Edge Removal</em>) <span class="citation">(<a href="#ref-assunccao2006efficient">Assunção et al. 2006</a>)</span>.</li>
-<li>L’Algorithme REDCAP (<em>Regionalization with dynamically constrained agglomerative clustering and partitioning</em>) <span class="citation">(<a href="#ref-guo2008regionalization">Guo 2008</a>)</span>.</li>
-<li>L’Algorithme du <em>max-p-regions problem</em> <span class="citation">(<a href="#ref-duque2012max">Duque, Anselin et Rey 2012</a>)</span>.</li>
-</ul>
-<p>Pour mettre en œuvre ces différents algorithmes, nous utilisons le <em>package</em> <code>rgeoda</code> <span class="citation">(<a href="#ref-packagergeoda">Li et Anselin 2023</a>)</span>. Notez que l’algorithme SKATER est aussi implémenté dans le <em>package</em> <code>spded</code> (fonction <code>skater</code>).</p>
+<p><strong>Pourquoi recourir à des modèles économétriques spatiaux?</strong></p>
+<p>Dans un modèle, les résidus (<span class="math inline">\(\epsilon\)</span>) sont la différence entre les valeurs observées (<span class="math inline">\(y_i\)</span>) et les valeurs prédites par le modèle (<span class="math inline">\(\widehat{y_i}\)</span>). Une des hypothèses de la régression linéaire multiple est que les observations doivent être indépendantes les unes des autres (<em>indépendance du terme d’erreur</em>). Le non-respect de cette hypothèse produit des résultats biaisés, notamment pour les coefficients de régression.</p>
+<p>Lorsque les observations sont des entités spatiales (polygones, points par exemple), si les résidus du modèle sont autocorrélés spatialement, il y a un problème de dépendance spatiale du modèle. Autrement dit, les observations ne sont pas spatialement indépendantes les unes des autres. Pour vérifier la dépendance spatiale d’un modèle, il suffit de calculer le <em>I</em> de Moran sur les résidus du modèle, comme décrit au chapitre 2 (section <a href="sect023.html#sect023">2.3</a>).</p>
+<p>Autrement dit, un modèle de régression construit avec des données spatiales ne devrait pas avoir des résidus spatialement autocorrélés. Or, les modèles économétriques spatiaux permettent justement d’intégrer l’autocorrélation spatiale de différentes manières afin de s’assurer que l’hypothèse de l’indépendance du terme d’erreur est respectée.</p>
 <div id="sect0711" class="section level3 hasAnchor" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Algorithmes AZP<a href="sect071.html#sect0711" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>L’algorithme AZP (<em>Automatic Zoning Problem</em>) est une approche itérative et heuristique visant à regrouper des polygones adjacents en <em>m</em> régions, tout en maximisant la variance interrégionale (variance interclasse) et minimisant la variance intrarégionale (variance intraclasse) calculées sur les <em>p</em> variables. Autrement dit, il vise à créer des régions non discontinues les plus homogènes possibles et les plus dissemblables entre elles sur la base des <em>p</em> variables. Pour utiliser l’AZP, il faut spécifier le nombre de régions (<em>m</em>) désiré. Notez qu’il existe trois algorithmes pour l’AZP :</p>
-<ol style="list-style-type: decimal">
-<li>AZP (<em>Automatic Zoning Procedure</em>), soit la première version par Stan Openshaw <span class="citation">(<a href="#ref-openshaw1977geographical">1977</a>)</span>.</li>
-<li>AZP-SA (<em>A simulated annealing AZP method</em>) <span class="citation">(<a href="#ref-openshaw1995algorithms">Openshaw et Rao 1995</a>)</span>.</li>
-<li>AZP-TABU (<em>A tabu search heuristic version of AZP</em>) <span class="citation">(<a href="#ref-openshaw1995algorithms">Openshaw et Rao 1995</a>)</span>.</li>
-</ol>
-<p>Pour une description détaillée de ces trois algorithmes, vous pouvez consulter Openshaw et Rao <span class="citation">(<a href="#ref-openshaw1995algorithms">1995</a>)</span> ou encore le <a href="https://geodacenter.github.io/workbook/9d_spatial4/lab9d.html#principle">lien suivant</a>.</p>
-<p>Appliquons ces algorithmes aux 506 IRIS de la ville de Lyon avec les quatre variables environnementales préalablement centrées réduites (bruit, dioxyde d’azote, particules fines et pourcentage de végétation) et une matrice de contiguïté selon le partage d’un nœud. Le <em>package</em> <code>rgeoda</code> comprend trois fonctions pour l’AZP : <code>azp_greedy</code> (AZP), <code>azp_sa</code> (AZP-SA), <code>azp_tabu</code> (AZP-TABU). Pour l’exercice, nous fixons le nombre de régions à 5. Notez que par défaut, les variables seront centrées réduites (moyenne = 0 et écart-type = 1) avec le paramètre <code>scale_method="standardize"</code>.</p>
-<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="sect071.html#cb526-1" tabindex="-1"></a><span class="fu">library</span>(rgeoda)</span>
-<span id="cb526-2"><a href="sect071.html#cb526-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb526-3"><a href="sect071.html#cb526-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb526-4"><a href="sect071.html#cb526-4" tabindex="-1"></a><span class="do">## Variables</span></span>
-<span id="cb526-5"><a href="sect071.html#cb526-5" tabindex="-1"></a>VarsEnv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Lden&quot;</span>, <span class="st">&quot;NO2&quot;</span>, <span class="st">&quot;PM25&quot;</span>, <span class="st">&quot;VegHautPrt&quot;</span>)</span>
-<span id="cb526-6"><a href="sect071.html#cb526-6" tabindex="-1"></a><span class="do">## Dataframe sans la géométrie et les quatre variables</span></span>
-<span id="cb526-7"><a href="sect071.html#cb526-7" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
-<span id="cb526-8"><a href="sect071.html#cb526-8" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(LyonIris[VarsEnv])</span>
-<span id="cb526-9"><a href="sect071.html#cb526-9" tabindex="-1"></a><span class="do">## Création d&#39;une matrice de contiguïté avec rgeoda</span></span>
-<span id="cb526-10"><a href="sect071.html#cb526-10" tabindex="-1"></a>queen_w <span class="ot">&lt;-</span> <span class="fu">queen_weights</span>(LyonIris)</span>
-<span id="cb526-11"><a href="sect071.html#cb526-11" tabindex="-1"></a><span class="do">## Calcul des trois algorithmes</span></span>
-<span id="cb526-12"><a href="sect071.html#cb526-12" tabindex="-1"></a>azp <span class="ot">&lt;-</span> rgeoda<span class="sc">::</span><span class="fu">azp_greedy</span>(<span class="at">p=</span><span class="dv">5</span>,       <span class="co"># Nombre de régions</span></span>
-<span id="cb526-13"><a href="sect071.html#cb526-13" tabindex="-1"></a>                          <span class="at">w=</span>queen_w, <span class="co"># Matrice contiguïté</span></span>
-<span id="cb526-14"><a href="sect071.html#cb526-14" tabindex="-1"></a>                          <span class="at">df=</span>Data,   <span class="co"># Tableau de données</span></span>
-<span id="cb526-15"><a href="sect071.html#cb526-15" tabindex="-1"></a>                          <span class="at">scale_method =</span> <span class="st">&quot;standardize&quot;</span>) <span class="co"># cote z</span></span>
-<span id="cb526-16"><a href="sect071.html#cb526-16" tabindex="-1"></a>azp.sa <span class="ot">&lt;-</span> rgeoda<span class="sc">::</span><span class="fu">azp_sa</span>(<span class="at">p=</span><span class="dv">5</span>, <span class="at">w=</span>queen_w, <span class="at">df=</span>Data, <span class="at">cooling_rate =</span> <span class="fl">0.85</span>)</span>
-<span id="cb526-17"><a href="sect071.html#cb526-17" tabindex="-1"></a>azp.tab <span class="ot">&lt;-</span> rgeoda<span class="sc">::</span><span class="fu">azp_tabu</span>(<span class="at">p=</span><span class="dv">5</span>, <span class="at">w=</span>queen_w, <span class="at">df=</span>Data, <span class="at">tabu_length =</span> <span class="dv">10</span>, <span class="at">conv_tabu =</span> <span class="dv">10</span>)</span>
-<span id="cb526-18"><a href="sect071.html#cb526-18" tabindex="-1"></a><span class="do">## Création des trois champs dans la couche de Lyon</span></span>
-<span id="cb526-19"><a href="sect071.html#cb526-19" tabindex="-1"></a>LyonIris<span class="sc">$</span>Azp <span class="ot">&lt;-</span> <span class="fu">as.character</span>(azp<span class="sc">$</span>Clusters)</span>
-<span id="cb526-20"><a href="sect071.html#cb526-20" tabindex="-1"></a>LyonIris<span class="sc">$</span>Azp_sa <span class="ot">&lt;-</span> <span class="fu">as.character</span>(azp.sa<span class="sc">$</span>Clusters)</span>
-<span id="cb526-21"><a href="sect071.html#cb526-21" tabindex="-1"></a>LyonIris<span class="sc">$</span>Azp_tab <span class="ot">&lt;-</span> <span class="fu">as.character</span>(azp.tab<span class="sc">$</span>Clusters)</span></code></pre></div>
-<p>Cartographions les résultats des trois algorithmes AZP (figure <a href="sect071.html#fig:CartoAZP">7.3</a>).</p>
-<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="sect071.html#cb527-1" tabindex="-1"></a><span class="do">## Cartographie des résultats</span></span>
-<span id="cb527-2"><a href="sect071.html#cb527-2" tabindex="-1"></a>Carte.AZP1 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb527-3"><a href="sect071.html#cb527-3" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;Azp&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb527-4"><a href="sect071.html#cb527-4" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb527-5"><a href="sect071.html#cb527-5" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;a. AZP&quot;</span>, </span>
-<span id="cb527-6"><a href="sect071.html#cb527-6" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb527-7"><a href="sect071.html#cb527-7" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb527-8"><a href="sect071.html#cb527-8" tabindex="-1"></a>Carte.AZP2 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb527-9"><a href="sect071.html#cb527-9" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;Azp_sa&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb527-10"><a href="sect071.html#cb527-10" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb527-11"><a href="sect071.html#cb527-11" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;b. AZP Simulated Annealing&quot;</span>, </span>
-<span id="cb527-12"><a href="sect071.html#cb527-12" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb527-13"><a href="sect071.html#cb527-13" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb527-14"><a href="sect071.html#cb527-14" tabindex="-1"></a>Carte.AZP3 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb527-15"><a href="sect071.html#cb527-15" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;Azp_tab&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb527-16"><a href="sect071.html#cb527-16" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb527-17"><a href="sect071.html#cb527-17" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;c. AZP Tabu Search&quot;</span>, </span>
-<span id="cb527-18"><a href="sect071.html#cb527-18" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb527-19"><a href="sect071.html#cb527-19" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb527-20"><a href="sect071.html#cb527-20" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte.AZP1, Carte.AZP2, Carte.AZP3, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoAZP"></span>
-<img src="GMQ405_files/figure-html/CartoAZP-1.png" alt="Regroupements des 505 IRIS en cinq régions selon les trois algorithmes AZP" width="100%" />
-<p class="caption">
-Figure 7.3: Regroupements des 505 IRIS en cinq régions selon les trois algorithmes AZP
+<h3><span class="header-section-number">7.1.1</span> Bref retour sur la régression linéaire multiple<a href="sect071.html#sect0711" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>À titre de rappel, la régression linéaire multiple permet de prédire et d’expliquer une variable dépendante (<span class="math inline">\(Y\)</span>) en fonction de plusieurs variables indépendantes (<span class="math inline">\(X\)</span>). L’équation de régression s’écrit alors :</p>
+<p><span class="math display" id="eq:regmultiple1">\[\begin{equation}
+y_i = \beta_{0} + \beta_{1}x_{1i} + \beta_{2}x_{2i} +\ldots+ \beta_{k}x_{ki} + \epsilon_{i}
+\tag{7.1}
+\end{equation}\]</span>
 </p>
-</div>
-<p>Par la suite, nous comparons les résultats obtenus des trois algorithmes en reportant :</p>
-<ol style="list-style-type: decimal">
-<li>Les variances totale, intrarégionale et interrégionale, et surtout le ratio entre les variances intergroupe et totale. Ce ratio varie de 0 à 1 et exprime la proportion de la variance des variables qui est expliquée par les différentes régions obtenues; plus il est élevé, meilleur est le résultat. Par conséquent, il peut être utilisé pour identifier la solution optimale entre les trois algorithmes.</li>
-<li>Le nombre d’observations par région.</li>
-<li>Les valeurs moyennes des variables centrées réduites par région.</li>
-</ol>
-<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="sect071.html#cb528-1" tabindex="-1"></a><span class="do">## Calcul du ratio entre les variances intergroupes et totale</span></span>
-<span id="cb528-2"><a href="sect071.html#cb528-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Ratio des variances interrégionale et totale&quot;</span>,</span>
-<span id="cb528-3"><a href="sect071.html#cb528-3" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">AZP : &quot;</span>, <span class="fu">round</span>(azp<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>, <span class="dv">3</span>),</span>
-<span id="cb528-4"><a href="sect071.html#cb528-4" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">AZP-SA : &quot;</span>, <span class="fu">round</span>(azp.sa<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>, <span class="dv">3</span>),</span>
-<span id="cb528-5"><a href="sect071.html#cb528-5" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">AZP-TABU : &quot;</span>, <span class="fu">round</span>(azp.tab<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>, <span class="dv">3</span>)</span>
-<span id="cb528-6"><a href="sect071.html#cb528-6" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## Ratio des variances interrégionale et totale 
-## AZP :  0.436 
-## AZP-SA :  0.518 
-## AZP-TABU :  0.428</code></pre>
-<p>À la lecture des valeurs du ratio entre la variance interrégionale et la variance totale ci-dessus, celle la plus élevée est obtenue pour l’AZP-SA (0,518), suivies de celles de l’AZP (0,436) et de l’AZP-TABU (0,428). Nous retenons alors l’AZP-SA.</p>
-<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="sect071.html#cb530-1" tabindex="-1"></a><span class="do">## Nombre d&#39;observations par région</span></span>
-<span id="cb530-2"><a href="sect071.html#cb530-2" tabindex="-1"></a><span class="fu">table</span>(LyonIris<span class="sc">$</span>Azp)</span></code></pre></div>
-<pre><code>## 
-##   1   2   3   4   5 
-## 186 176 104  27  13</code></pre>
-<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="sect071.html#cb532-1" tabindex="-1"></a><span class="fu">table</span>(LyonIris<span class="sc">$</span>Azp_sa)</span></code></pre></div>
-<pre><code>## 
-##   1   2   3   4   5 
-## 221 107  87  51  40</code></pre>
-<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="sect071.html#cb534-1" tabindex="-1"></a><span class="fu">table</span>(LyonIris<span class="sc">$</span>Azp_tab)</span></code></pre></div>
-<pre><code>## 
-##   1   2   3   4   5 
-## 191 186  91  27  11</code></pre>
-<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="sect071.html#cb536-1" tabindex="-1"></a><span class="do">## Valeurs moyennes des variables centrées réduites par région</span></span>
-<span id="cb536-2"><a href="sect071.html#cb536-2" tabindex="-1"></a>Data<span class="sc">$</span>Azp <span class="ot">&lt;-</span> azp<span class="sc">$</span>Clusters</span>
-<span id="cb536-3"><a href="sect071.html#cb536-3" tabindex="-1"></a>Data<span class="sc">$</span>Azp_sa <span class="ot">&lt;-</span> azp.sa<span class="sc">$</span>Clusters</span>
-<span id="cb536-4"><a href="sect071.html#cb536-4" tabindex="-1"></a>Data<span class="sc">$</span>Azp_tab <span class="ot">&lt;-</span> azp.tab<span class="sc">$</span>Clusters</span>
-<span id="cb536-5"><a href="sect071.html#cb536-5" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(Lden,NO2,PM25,VegHautPrt) <span class="sc">~</span> Azp, <span class="at">data =</span> Data, <span class="at">FUN =</span> mean)</span></code></pre></div>
-<pre><code>##   Azp     Lden      NO2     PM25 VegHautPrt
-## 1   1 58.05464 35.21961 18.85212   15.45333
-## 2   2 55.42159 26.45169 16.32884   13.98563
-## 3   3 53.23122 23.63965 14.95293   30.42529
-## 4   4 52.26742 22.99701 14.58065   20.39444
-## 5   5 48.71652 18.24301 13.07043   33.07154</code></pre>
-<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="sect071.html#cb538-1" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(Lden,NO2,PM25,VegHautPrt) <span class="sc">~</span> Azp_sa, <span class="at">data =</span> Data, <span class="at">FUN =</span> mean)</span></code></pre></div>
-<pre><code>##   Azp_sa     Lden      NO2     PM25 VegHautPrt
-## 1      1 57.41952 35.02151 18.80132   14.41317
-## 2      2 55.11019 22.52804 15.55562   14.12178
-## 3      3 51.08297 20.48809 14.16951   28.66000
-## 4      4 54.23625 24.47389 14.96836   22.30059
-## 5      5 58.40430 33.55155 17.08480   28.83775</code></pre>
-<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb540-1"><a href="sect071.html#cb540-1" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(Lden,NO2,PM25,VegHautPrt) <span class="sc">~</span> Azp_tab, <span class="at">data =</span> Data, <span class="at">FUN =</span> mean)</span></code></pre></div>
-<pre><code>##   Azp_tab     Lden      NO2     PM25 VegHautPrt
-## 1       1 55.24285 26.04447 16.19300   14.67712
-## 2       2 58.05464 35.21961 18.85212   15.45333
-## 3       3 53.19298 23.97221 14.99671   31.90967
-## 4       4 52.26742 22.99701 14.58065   20.39444
-## 5       5 48.32861 17.74683 12.84853   31.68364</code></pre>
-<p>Les résultats finaux de l’AZP-SA sont présentés au tableau <a href="sect071.html#tab:dataAZPsa">7.1</a> et à la figure <a href="sect071.html#fig:CartoAZPsa">7.4</a>. L’analyse conjointe du tableau et de la carte permet ainsi d’interpréter chacune des classes. En guise d’exemple, nous pouvons conclure que :</p>
+<p>avec :</p>
 <ul>
-<li><strong>la région 1</strong> comprend 221 IRIS localisés au centre de la ville de Lyon et caractérisés par des niveaux moyens élevés de bruit (57,4), de dioxyde d’azote (35) et de particules fines (18,8) élevés et un faible pourcentage de canopée (14,4%),</li>
-<li>tandis que <strong>la région 2</strong> comprend 107 IRIS localisés à l’extrême ouest de la ville et caractérisés par les plus faibles niveaux de polluants (51,1, 20,5 et 14,2) et une forte moyenne pour la canopée (28,7%).</li>
+<li><span class="math inline">\(y_i\)</span>, la valeur de la variable dépendante <em>Y</em> pour l’observation <em>i</em>.</li>
+<li><span class="math inline">\(\beta_{0}\)</span>, la constante, soit la valeur prédite pour <em>Y</em> quand toutes les variables indépendantes sont égales à 0.</li>
+<li><span class="math inline">\(k\)</span> le nombre de variables indépendantes.</li>
+<li><span class="math inline">\(\beta_{1}\)</span> à <span class="math inline">\(\beta_{k}\)</span>, les coefficients de régression pour les variables indépendantes de 1 à <em>k</em> (<span class="math inline">\(X_{1}\)</span> à <span class="math inline">\(X_{k}\)</span>).</li>
+<li><span class="math inline">\(\epsilon_{i}\)</span>, le résidu pour l’observation de <em>i</em>, soit la partie de la valeur de <span class="math inline">\(y_i\)</span> qui n’est pas expliquée par le modèle de régression.</li>
 </ul>
-<table>
-<caption>
-<span id="tab:dataAZPsa">Tableau 7.1: </span>Valeurs moyennes des variables pour les quatre régions obtenus par l’AZP-SA
-</caption>
-<thead>
-<tr>
-<th style="text-align:center;">
-Région
-</th>
-<th style="text-align:center;">
-Lden
-</th>
-<th style="text-align:center;">
-NO2
-</th>
-<th style="text-align:center;">
-PM25
-</th>
-<th style="text-align:center;">
-Végétation
-</th>
-<th style="text-align:center;">
-Nombre d’IRIS
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-57,4
-</td>
-<td style="text-align:center;">
-35,0
-</td>
-<td style="text-align:center;">
-18,8
-</td>
-<td style="text-align:center;">
-14,4
-</td>
-<td style="text-align:center;">
-221
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-55,1
-</td>
-<td style="text-align:center;">
-22,5
-</td>
-<td style="text-align:center;">
-15,6
-</td>
-<td style="text-align:center;">
-14,1
-</td>
-<td style="text-align:center;">
-107
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-51,1
-</td>
-<td style="text-align:center;">
-20,5
-</td>
-<td style="text-align:center;">
-14,2
-</td>
-<td style="text-align:center;">
-28,7
-</td>
-<td style="text-align:center;">
-87
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-54,2
-</td>
-<td style="text-align:center;">
-24,5
-</td>
-<td style="text-align:center;">
-15,0
-</td>
-<td style="text-align:center;">
-22,3
-</td>
-<td style="text-align:center;">
-51
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-58,4
-</td>
-<td style="text-align:center;">
-33,6
-</td>
-<td style="text-align:center;">
-17,1
-</td>
-<td style="text-align:center;">
-28,8
-</td>
-<td style="text-align:center;">
-40
-</td>
-</tr>
-</tbody>
-</table>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoAZPsa"></span>
-<img src="GMQ405_files/figure-html/CartoAZPsa-1.png" alt="Regroupement des IRIS en cinq régions selon l'AZP-TABU" width="100%" />
-<p class="caption">
-Figure 7.4: Regroupement des IRIS en cinq régions selon l’AZP-TABU
+<p>Il existe plusieurs écritures simplifiées de cette équation. Dans le cadre de ce chapitre, nous utilisons la forme matricielle suivante :</p>
+<p><span class="math display" id="eq:MCO">\[\begin{equation}
+y = X\beta + \epsilon
+\tag{7.2}
+\end{equation}\]</span>
 </p>
-</div>
-<p>Nous avons vu que pour les algorithmes AZP, il faut spécifier le nombre de régions. Nous l’avons fixé arbitrairement à 5. Comme pour n’importe quelle méthode de classification non supervisée, déterminer le nombre de classes optimal est une étape cruciale qui peut s’appuyer sur différentes techniques, dont la méthode du coude basée sur l’inertie expliquée (ici le ratio entre les variances interrégionale et totale), l’indicateur de silhouette et la méthode GAP. Pour une description détaillée de ces méthodes, consultez la <a href="https://laeq.github.io/LivreMethoQuantBolR/sect133.html#sect1332">section suivante</a> <span class="citation">(<a href="#ref-RBoldAir">Apparicio et Gelb 2022</a>)</span>. Le code ci-dessous permet de réaliser un graphique avec les valeurs du ratio (inertie expliquée) obtenues avec l’algorithme AZP-TABU calculé de 2 à 10 régions. À la lecture de la figure <a href="sect071.html#fig:AZPCoude">7.5</a>, nous observons deux ruptures (coudes) très nettes à 5 et 8.</p>
-<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="sect071.html#cb542-1" tabindex="-1"></a>nregions <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb542-2"><a href="sect071.html#cb542-2" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(<span class="fu">st_drop_geometry</span>(LyonIris)[VarsEnv]))</span>
-<span id="cb542-3"><a href="sect071.html#cb542-3" tabindex="-1"></a>queen_w <span class="ot">&lt;-</span> <span class="fu">queen_weights</span>(LyonIris)</span>
-<span id="cb542-4"><a href="sect071.html#cb542-4" tabindex="-1"></a>inertie <span class="ot">&lt;-</span> <span class="fu">sapply</span>(nregions, <span class="cf">function</span>(k){</span>
-<span id="cb542-5"><a href="sect071.html#cb542-5" tabindex="-1"></a>  <span class="co"># calcul de l&#39;AZP-TABU avec k</span></span>
-<span id="cb542-6"><a href="sect071.html#cb542-6" tabindex="-1"></a>  resultat <span class="ot">&lt;-</span> <span class="fu">azp_tabu</span>(<span class="at">p=</span>k, <span class="at">w=</span>queen_w, <span class="at">df=</span>Data, <span class="at">tabu_length =</span> <span class="dv">10</span>, <span class="at">conv_tabu =</span> <span class="dv">10</span>)</span>
-<span id="cb542-7"><a href="sect071.html#cb542-7" tabindex="-1"></a>  <span class="co"># récupération du ratio</span></span>
-<span id="cb542-8"><a href="sect071.html#cb542-8" tabindex="-1"></a>  ratios <span class="ot">&lt;-</span> resultat<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span></span>
-<span id="cb542-9"><a href="sect071.html#cb542-9" tabindex="-1"></a>  <span class="fu">return</span>(ratios)</span>
-<span id="cb542-10"><a href="sect071.html#cb542-10" tabindex="-1"></a>})</span>
-<span id="cb542-11"><a href="sect071.html#cb542-11" tabindex="-1"></a></span>
-<span id="cb542-12"><a href="sect071.html#cb542-12" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">k =</span> nregions, <span class="at">ratio =</span> inertie)</span>
-<span id="cb542-13"><a href="sect071.html#cb542-13" tabindex="-1"></a><span class="fu">ggplot</span>(df) <span class="sc">+</span> </span>
-<span id="cb542-14"><a href="sect071.html#cb542-14" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> k, <span class="at">y =</span> ratio)) <span class="sc">+</span> </span>
-<span id="cb542-15"><a href="sect071.html#cb542-15" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> k, <span class="at">y =</span> ratio), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb542-16"><a href="sect071.html#cb542-16" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nombre de régions&quot;</span>, <span class="at">y =</span> <span class="st">&quot;inertie expliquée (%)&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:AZPCoude"></span>
-<img src="GMQ405_files/figure-html/AZPCoude-1.png" alt="Méthode du coude reposant sur l'inertie expliquée pour l'AZP-TABU" width="75%" />
+<p>avec :</p>
+<ul>
+<li><span class="math inline">\(y\)</span>, un vecteur de dimension <span class="math inline">\(n \times 1\)</span> pour la variable dépendante, soit une colonne avec <em>n</em> observations.</li>
+<li><span class="math inline">\(X\)</span>, une matrice de dimension <span class="math inline">\(n \times (k + 1)\)</span> pour les <em>k</em> variables indépendantes, incluant une autre colonne (avec la valeur de 1 pour les <em>n</em> observations) pour la constante, d’où <span class="math inline">\(k + 1\)</span>.</li>
+<li><span class="math inline">\(\beta\)</span>, un vecteur de dimension <span class="math inline">\(k + 1\)</span>, soit les coefficients de régression pour les <em>k</em> variables et la constante.</li>
+<li><span class="math inline">\(\epsilon\)</span>, un vecteur de dimension <span class="math inline">\(n \times 1\)</span> pour les résidus.</li>
+</ul>
+<p><strong>Construction du modèle MCO dans R</strong></p>
+<p>Avec la fonction <code>lm()</code>, il est facile de construire un modèle de régression linéaire multiple, basé sur la méthode des moindres carrés ordinaires (MCO).
+Dans le code ci-dessous, la formule de l’équation du modèle est donc <code>NO2 ~ Pct0_14+Pct_65+Pct_Img+Pct_brevet+NivVieMed</code>. Notez que la variable dépendante et les variables indépendantes sont séparées avec un tilde (<code>~</code>). Quant à la fonction <code>summary(NomDuModèle)</code>, elle affiche les résultats du modèle.</p>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="sect071.html#cb457-1" tabindex="-1"></a><span class="co"># Appel des différents packages utilisés dans le chapitre</span></span>
+<span id="cb457-2"><a href="sect071.html#cb457-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb457-3"><a href="sect071.html#cb457-3" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
+<span id="cb457-4"><a href="sect071.html#cb457-4" tabindex="-1"></a>Modele.MCO <span class="ot">&lt;-</span> <span class="fu">lm</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
+<span id="cb457-5"><a href="sect071.html#cb457-5" tabindex="-1"></a>                 <span class="at">data =</span> LyonIris)</span>
+<span id="cb457-6"><a href="sect071.html#cb457-6" tabindex="-1"></a><span class="do">## Résultats du modèle</span></span>
+<span id="cb457-7"><a href="sect071.html#cb457-7" tabindex="-1"></a><span class="fu">summary</span>(Modele.MCO)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + 
+##     NivVieMed, data = LyonIris)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -27.733  -4.457  -0.499   3.507  29.160 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 49.43296    2.99550  16.502  &lt; 2e-16 ***
+## Pct0_14     -0.53352    0.06305  -8.461 2.94e-16 ***
+## Pct_65      -0.15047    0.05627  -2.674  0.00774 ** 
+## Pct_Img      0.28287    0.05113   5.532 5.12e-08 ***
+## Pct_brevet  -0.24004    0.03721  -6.451 2.63e-10 ***
+## NivVieMed   -0.31625    0.10180  -3.107  0.00200 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 6.685 on 500 degrees of freedom
+## Multiple R-squared:  0.2832, Adjusted R-squared:  0.276 
+## F-statistic:  39.5 on 5 and 500 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><strong>Dépendance spatiale du modèle MCO?</strong></p>
+<p>Pour vérifier si ce modèle linéaire multiple a un problème de dépendance spatiale, nous calculons le <em>I</em> de Moran sur ses résidus avec la fonction <code>lm.morantest</code>, puis nous les cartographions.</p>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="sect071.html#cb459-1" tabindex="-1"></a><span class="do">## Matrice de contiguïté selon le partage d&#39;un segment (Rook)</span></span>
+<span id="cb459-2"><a href="sect071.html#cb459-2" tabindex="-1"></a>Rook <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris, <span class="at">queen=</span><span class="cn">FALSE</span>)</span>
+<span id="cb459-3"><a href="sect071.html#cb459-3" tabindex="-1"></a>W.Rook <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Rook, <span class="at">zero.policy=</span><span class="cn">TRUE</span>, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb459-4"><a href="sect071.html#cb459-4" tabindex="-1"></a><span class="co"># Autocorrélation spatiale globale des résidus</span></span>
+<span id="cb459-5"><a href="sect071.html#cb459-5" tabindex="-1"></a><span class="fu">lm.morantest</span>(Modele.MCO, W.Rook, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Global Moran I for regression residuals
+## 
+## data:  
+## model: lm(formula = NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet +
+## NivVieMed, data = LyonIris)
+## weights: W.Rook
+## 
+## Moran I statistic standard deviate = 21.266, p-value &lt; 2.2e-16
+## alternative hypothesis: two.sided
+## sample estimates:
+## Observed Moran I      Expectation         Variance 
+##      0.587312061     -0.005375800      0.000776745</code></pre>
+<p>Avec une valeur du <em>I</em> de Moran de 0,587 (<em>p</em> &lt; 0,001), les résidus sont fortement autocorrélés spatialement, traduisant ainsi un problème de dépendance spatiale du modèle MCO et la nécessité de recourir à des modèles économétriques spatiaux. La cartographie des résidus à la figure <a href="sect071.html#fig:figCartoResMCO">7.2</a> corrobore ce résultat.</p>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="sect071.html#cb461-1" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb461-2"><a href="sect071.html#cb461-2" tabindex="-1"></a><span class="do">## Ajout de la colonne dans LyonIris avec les valeurs des résidus</span></span>
+<span id="cb461-3"><a href="sect071.html#cb461-3" tabindex="-1"></a>LyonIris<span class="sc">$</span>ModeleMCO.Residus <span class="ot">&lt;-</span> <span class="fu">residuals</span>(Modele.MCO)</span>
+<span id="cb461-4"><a href="sect071.html#cb461-4" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb461-5"><a href="sect071.html#cb461-5" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb461-6"><a href="sect071.html#cb461-6" tabindex="-1"></a><span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span></span>
+<span id="cb461-7"><a href="sect071.html#cb461-7" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;ModeleMCO.Residus&quot;</span>, <span class="at">n =</span> <span class="dv">5</span>, <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>, </span>
+<span id="cb461-8"><a href="sect071.html#cb461-8" tabindex="-1"></a>          <span class="at">palette =</span> <span class="st">&quot;-RdBu&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Résidus&quot;</span>) <span class="sc">+</span></span>
+<span id="cb461-9"><a href="sect071.html#cb461-9" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb461-10"><a href="sect071.html#cb461-10" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figCartoResMCO"></span>
+<img src="GMQ405_files/figure-html/figCartoResMCO-1.png" alt="Cartographie des résidus du modèle de régression multiple" width="672" />
 <p class="caption">
-Figure 7.5: Méthode du coude reposant sur l’inertie expliquée pour l’AZP-TABU
+Figure 7.2: Cartographie des résidus du modèle de régression multiple
 </p>
 </div>
 </div>
 <div id="sect0712" class="section level3 hasAnchor" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Algorithme SKATER<a href="sect071.html#sect0712" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>L’algorithme SKATER (<em>Spatial ’K’luster Analysis by Tree Edge Removal</em>) <span class="citation">(<a href="#ref-assunccao2006efficient">Assunção et al. 2006</a>)</span> permet aussi de créer des régions sans discontinuité, en recourant à une technique de la théorie des graphes, soit celle de l’arbre couvrant de poids minimal (<em>minimum spanning tree</em>). Succinctement, la classification est obtenue avec les étapes suivantes :</p>
-<ol style="list-style-type: decimal">
-<li>Création d’un graphe de connectivité pour les polygones de la couche géographique. Dans ce graphe, les nœuds sont les centroïdes des polygones et les arêtes représentent les liaisons entre deux entités spatiales voisines.</li>
-<li>Pour chaque arête, nous calculons la dissimilarité (appelée coût) des deux polygones voisins en fonction des <em>p</em> variables.</li>
-<li>Pour chaque polygone, nous retenons l’arête avec le coût minimal. Autrement dit, pour chaque polygone, nous retenons son polygone voisin qui lui est le plus semblable selon les <em>p</em> variables. Nous obtenons ainsi l’arbre couvrant de poids minimal.</li>
-<li>Cet arbre est ensuite élagué en supprimant les arêtes avec les plus forts coûts et en créant ainsi des sous-graphes en <em>m</em> régions sans discontinuité.</li>
-</ol>
-<p>Pour une description plus détaillée de l’algorithme, consultez l’article d’Assunção <em>et al.</em> <span class="citation">(<a href="#ref-assunccao2006efficient">2006</a>)</span>.</p>
-<p>Le code ci-dessous permet de centrer et de réduire les quatre variables (fonction <code>scale</code>) et de construire la matrice de voisinage entre les polygones de la couche <code>LyonIris</code> (fonction <code>poly2nb</code> de <code>spdep</code>).</p>
-<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="sect071.html#cb543-1" tabindex="-1"></a><span class="fu">library</span>(rgdal)</span>
-<span id="cb543-2"><a href="sect071.html#cb543-2" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb543-3"><a href="sect071.html#cb543-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb543-4"><a href="sect071.html#cb543-4" tabindex="-1"></a><span class="do">## Variables</span></span>
-<span id="cb543-5"><a href="sect071.html#cb543-5" tabindex="-1"></a>VarsEnv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Lden&quot;</span>, <span class="st">&quot;NO2&quot;</span>, <span class="st">&quot;PM25&quot;</span>, <span class="st">&quot;VegHautPrt&quot;</span>)</span>
-<span id="cb543-6"><a href="sect071.html#cb543-6" tabindex="-1"></a><span class="do">## Dataframe sans la géométrie et les quatre variables</span></span>
-<span id="cb543-7"><a href="sect071.html#cb543-7" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/chap06/DonneesLyon.Rdata&quot;</span>)</span>
-<span id="cb543-8"><a href="sect071.html#cb543-8" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(LyonIris[VarsEnv])</span>
-<span id="cb543-9"><a href="sect071.html#cb543-9" tabindex="-1"></a><span class="do">## Données centrées et réduites</span></span>
-<span id="cb543-10"><a href="sect071.html#cb543-10" tabindex="-1"></a>LyonIrisZscore <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(Data))</span>
-<span id="cb543-11"><a href="sect071.html#cb543-11" tabindex="-1"></a><span class="do">## Matrice voisinage</span></span>
-<span id="cb543-12"><a href="sect071.html#cb543-12" tabindex="-1"></a>Lyon.nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(LyonIris)</span></code></pre></div>
-<p>Calculons les coûts pour les arêtes reliant les nœuds avec la fonction <code>nbcosts</code>. Nous constatons que le polygone 1 est voisin des polygones 27, 26, 44 et 74 avec des coûts de 1,34, 1,74, 1,15 et 16,3. Par conséquent, parmi ses quatre voisins, le polygone 1 est le plus semblable au polygone 44 (coût minimal).</p>
-<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="sect071.html#cb544-1" tabindex="-1"></a><span class="do">## Calcul des coûts pour les arêtes</span></span>
-<span id="cb544-2"><a href="sect071.html#cb544-2" tabindex="-1"></a>lcosts <span class="ot">&lt;-</span> <span class="fu">nbcosts</span>(Lyon.nb, LyonIrisZscore)</span>
-<span id="cb544-3"><a href="sect071.html#cb544-3" tabindex="-1"></a><span class="fu">head</span>(Lyon.nb, <span class="at">n=</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [[1]]
-## [1] 27 36 44 73</code></pre>
-<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="sect071.html#cb546-1" tabindex="-1"></a><span class="fu">head</span>(lcosts, <span class="at">n=</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [[1]]
-## [1] 1.343210 1.735894 1.153787 1.632583</code></pre>
-<p>À partir de ces coûts, nous pouvons trouver l’arbre couvrant de poids minimal (<em>minimum spanning tree</em>), objet dénommée ici <code>Lyon.mst</code> qui comprend trois colonnes :</p>
-<ul>
-<li>La première pour l’identifiant du polygone.</li>
-<li>La seconde pour l’identifiant du polygone voisin.</li>
-<li>La troisième pour la valeur du coût minimal (similarité selon les variables retenues).</li>
-</ul>
-<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="sect071.html#cb548-1" tabindex="-1"></a><span class="do">## Matrice de pondération spatiale avec les coûts</span></span>
-<span id="cb548-2"><a href="sect071.html#cb548-2" tabindex="-1"></a>Lyon.w <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(Lyon.nb, lcosts, <span class="at">style=</span><span class="st">&quot;B&quot;</span>)</span>
-<span id="cb548-3"><a href="sect071.html#cb548-3" tabindex="-1"></a><span class="do">### Trouver l&#39;arbre couvrant de poids minimal</span></span>
-<span id="cb548-4"><a href="sect071.html#cb548-4" tabindex="-1"></a>Lyon.mst <span class="ot">&lt;-</span> <span class="fu">mstree</span>(Lyon.w)</span>
-<span id="cb548-5"><a href="sect071.html#cb548-5" tabindex="-1"></a><span class="fu">head</span>(Lyon.mst, <span class="at">n=</span><span class="dv">3</span>)</span></code></pre></div>
-<pre><code>##      [,1] [,2]      [,3]
-## [1,]  499  478 0.5025378
-## [2,]  478   46 0.4618205
-## [3,]   46    7 1.3665949</code></pre>
-<p>Le code ci-dessous permet de visualiser le graphe de connectivité et l’arbre couvrant de poids minimal (figure <a href="sect071.html#fig:ArbreMinimum">7.6</a>).</p>
-<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="sect071.html#cb550-1" tabindex="-1"></a><span class="do">## Visualisation du graphe de connectivité </span></span>
-<span id="cb550-2"><a href="sect071.html#cb550-2" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(LyonIris))</span>
-<span id="cb550-3"><a href="sect071.html#cb550-3" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(LyonIris), <span class="at">border=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;wheat&quot;</span>)</span>
-<span id="cb550-4"><a href="sect071.html#cb550-4" tabindex="-1"></a><span class="fu">plot</span>(Lyon.nb, coords, <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">1</span>)</span>
-<span id="cb550-5"><a href="sect071.html#cb550-5" tabindex="-1"></a><span class="do">## Visualisation de l&#39;arbre couvrant de poids minimal</span></span>
-<span id="cb550-6"><a href="sect071.html#cb550-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(LyonIris), <span class="at">border=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;wheat&quot;</span>)</span>
-<span id="cb550-7"><a href="sect071.html#cb550-7" tabindex="-1"></a><span class="fu">plot</span>(Lyon.mst, coords, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">cex.lab=</span><span class="fl">0.7</span>, <span class="at">add=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ArbreMinimum"></span>
-<img src="images/Chap07/ArbreMinimum.png" alt="Graphe de connectivité et arbre couvrant de poids minimal" width="100%" />
-<p class="caption">
-Figure 7.6: Graphe de connectivité et arbre couvrant de poids minimal
-</p>
-</div>
-<p>Le code ci-dessous permet de réaliser une classification SKATER avec cinq régions avec le <em>package</em> <code>spdep</code>.</p>
-<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="sect071.html#cb551-1" tabindex="-1"></a><span class="do">## SKATER avec le package spdep</span></span>
-<span id="cb551-2"><a href="sect071.html#cb551-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123456789</span>)</span>
-<span id="cb551-3"><a href="sect071.html#cb551-3" tabindex="-1"></a>skater5.spdep <span class="ot">&lt;-</span> spdep<span class="sc">::</span><span class="fu">skater</span>(<span class="at">edges =</span> Lyon.mst[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="co"># deux première colonnes de l&#39;arbre </span></span>
-<span id="cb551-4"><a href="sect071.html#cb551-4" tabindex="-1"></a>                               <span class="at">data =</span> <span class="fu">data.frame</span>(LyonIrisZscore),</span>
-<span id="cb551-5"><a href="sect071.html#cb551-5" tabindex="-1"></a>                               <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>,</span>
-<span id="cb551-6"><a href="sect071.html#cb551-6" tabindex="-1"></a>                               <span class="at">ncuts =</span> <span class="dv">4</span>)  <span class="co"># k-1 régions</span></span>
-<span id="cb551-7"><a href="sect071.html#cb551-7" tabindex="-1"></a><span class="fu">table</span>(skater5.spdep<span class="sc">$</span>groups)</span></code></pre></div>
-<pre><code>## 
-##   1   2   3   4   5 
-##  48 215  89  57  97</code></pre>
-<p>Toutefois, il est plus simple d’utiliser la fonction <code>skater</code> de <code>rgeoda</code> qui ne nécessite pas de créer au préalable l’arbre couvrant de poids minimal.</p>
-<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="sect071.html#cb553-1" tabindex="-1"></a><span class="do">## SKATER avec le package rgeoda</span></span>
-<span id="cb553-2"><a href="sect071.html#cb553-2" tabindex="-1"></a><span class="fu">library</span>(rgeoda)</span>
-<span id="cb553-3"><a href="sect071.html#cb553-3" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(LyonIris[VarsEnv])</span>
-<span id="cb553-4"><a href="sect071.html#cb553-4" tabindex="-1"></a>queen_w <span class="ot">&lt;-</span> <span class="fu">queen_weights</span>(LyonIris)</span>
-<span id="cb553-5"><a href="sect071.html#cb553-5" tabindex="-1"></a>skater5.rgeoda <span class="ot">&lt;-</span> rgeoda<span class="sc">::</span><span class="fu">skater</span>(<span class="at">k =</span> <span class="dv">5</span>,        <span class="co"># k-1 régions</span></span>
-<span id="cb553-6"><a href="sect071.html#cb553-6" tabindex="-1"></a>                                 <span class="at">w =</span> queen_w,  <span class="co"># matrice de contiguité</span></span>
-<span id="cb553-7"><a href="sect071.html#cb553-7" tabindex="-1"></a>                                 <span class="at">scale_method =</span> <span class="st">&quot;standardize&quot;</span>,</span>
-<span id="cb553-8"><a href="sect071.html#cb553-8" tabindex="-1"></a>                                 <span class="at">df =</span> Data)    <span class="co"># dataframe</span></span>
-<span id="cb553-9"><a href="sect071.html#cb553-9" tabindex="-1"></a><span class="fu">table</span>(skater5.rgeoda<span class="sc">$</span>Clusters)</span></code></pre></div>
-<pre><code>## 
-##   1   2   3   4   5 
-## 248 125  51  48  34</code></pre>
-<p>La figure <a href="sect071.html#fig:SkaterAB">7.7</a> démontre que les résultats obtenus sont légèrement différents avec les deux <code>packages</code>.</p>
-<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="sect071.html#cb555-1" tabindex="-1"></a>LyonIris<span class="sc">$</span>skater5spdep <span class="ot">&lt;-</span> <span class="fu">as.character</span>(skater5.spdep<span class="sc">$</span>groups)</span>
-<span id="cb555-2"><a href="sect071.html#cb555-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>skater5rgeoda <span class="ot">&lt;-</span> <span class="fu">as.character</span>(skater5.rgeoda<span class="sc">$</span>Clusters)</span>
-<span id="cb555-3"><a href="sect071.html#cb555-3" tabindex="-1"></a></span>
-<span id="cb555-4"><a href="sect071.html#cb555-4" tabindex="-1"></a>Carte.SkaterA <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb555-5"><a href="sect071.html#cb555-5" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;skater5spdep&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb555-6"><a href="sect071.html#cb555-6" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb555-7"><a href="sect071.html#cb555-7" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;a. SKATER spdep&quot;</span>, </span>
-<span id="cb555-8"><a href="sect071.html#cb555-8" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb555-9"><a href="sect071.html#cb555-9" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb555-10"><a href="sect071.html#cb555-10" tabindex="-1"></a>Carte.SkaterB <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb555-11"><a href="sect071.html#cb555-11" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;skater5rgeoda&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb555-12"><a href="sect071.html#cb555-12" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb555-13"><a href="sect071.html#cb555-13" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;b. SKATER rgeoda&quot;</span>, </span>
-<span id="cb555-14"><a href="sect071.html#cb555-14" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb555-15"><a href="sect071.html#cb555-15" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb555-16"><a href="sect071.html#cb555-16" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte.SkaterA, Carte.SkaterB)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:SkaterAB"></span>
-<img src="GMQ405_files/figure-html/SkaterAB-1.png" alt="Résultats de l'algorithme SKATER avec cinq classes obtenus avec les *packages* `spdep` et `rgeoda`" width="85%" />
-<p class="caption">
-Figure 7.7: Résultats de l’algorithme SKATER avec cinq classes obtenus avec les <em>packages</em> <code>spdep</code> et <code>rgeoda</code>
-</p>
-</div>
+<h3><span class="header-section-number">7.1.2</span> Les différents modèles spatiaux autorégressifs<a href="sect071.html#sect0712" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Selon Jean Dubé et Diègo Legros, « cinq raisons peuvent motiver le choix d’un modèle autorégressif : la présence d’externalités, les effets d’entraînement, l’omission de variables importantes, la présence d’hétérogénéité spatiale des comportements, les effets mixtes » <span class="citation">(<a href="#ref-dube2014econometrie">2014, 120</a>)</span>. Les effets mixtes peuvent être la combinaison d’externalités avec des effets d’entraînement ou encore d’externalités avec l’omission d’une ou de plusieurs variables importantes spatialement structurées.</p>
+<div id="sect07121" class="section level4 hasAnchor" number="7.1.2.1">
+<h4><span class="header-section-number">7.1.2.1</span> Modèle SLX : autocorrélation spatiale sur les variables indépendantes<a href="sect071.html#sect07121" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dans un modèle SLX, l’autocorrélation spatiale est intégrée au niveau des variables indépendantes. Autrement dit, les variables indépendantes spatialement décalées (<span class="math inline">\(WX\)</span>) sont introduites aussi dans le modèle. Par conséquent, la valeur de chaque unité spatiale du modèle est ainsi expliquée à la fois par ses propres caractéristiques et celles dans le voisinage ou à proximité en fonction de la matrice de pondération spatiale (<span class="math inline">\(W\)</span>).</p>
 <div class="bloc_aller_loin">
-<p><strong>Algorithme SKATER avec un seuil minimal pour les classes</strong></p>
-<p>Dans une classification non supervisée avec une contrainte spatiale, il est possible de fixer un seuil minimal pour chaque région à partir d’une variable. L’exemple le plus classique est l’obtention de <em>p</em> régions qui doivent au moins avoir un nombre d’habitants fixé par la personne utilisatrice. Pour ce faire, nous utilisons deux paramètres de la fonction <code>spdep::skater</code>, soit <code>crit = 50000</code> pour fixer le seuil et <code>vec.crit = df$Population</code> pour indiquer le vecteur sur lequel est calculé le critère.</p>
-<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="sect071.html#cb556-1" tabindex="-1"></a><span class="st">`</span><span class="at">clus10_min &lt;- spdep::skater(edges = ct_mst[,1:2], </span></span>
-<span id="cb556-2"><a href="sect071.html#cb556-2" tabindex="-1"></a><span class="at">                     data = dfs,               # dataframe avec les variables centrées réduites</span></span>
-<span id="cb556-3"><a href="sect071.html#cb556-3" tabindex="-1"></a><span class="at">                     crit = 50000,             # seuil fixé</span></span>
-<span id="cb556-4"><a href="sect071.html#cb556-4" tabindex="-1"></a><span class="at">                     vec.crit = df$Population, # variable population du dataframe</span></span>
-<span id="cb556-5"><a href="sect071.html#cb556-5" tabindex="-1"></a><span class="at">                     ncuts = 4)</span></span></code></pre></div>
-<p><strong>Fonction skater : différences entre les <em>packages</em> rgeoda et spdep</strong></p>
-<p>La fonction <code>skater</code> de <code>rgeoda</code> a deux principaux avantages :</p>
-<ol style="list-style-type: decimal">
-<li>Comme décrit précédemment, l’avantage de la fonction <code>skater</code> de <code>rgeoda</code> est qu’elle ne nécessite pas de calculer au préalable l’arbre couvrant de poids minimal.</li>
-<li>scale_method = c(“raw”, “standardize”, “demean”, “mad”, “range_standardize”, “range_adjust”) permet de transformer directement les variables. La méthode par défaut est la cote z (moyenne = 0 et écart-type = 1).</li>
-</ol>
-<p>Avec la fonction <code>skater</code> de <code>spdep</code>, vous devez préalablement transformer vos variables et construire l’arbre couvrant de poids minimal. Par contre, elle intègre de nombreux types de distance pour évaluer la dissimilarité entre les unités spatiales avec le paramètre <code>method = c("euclidean",  "maximum", "manhattan", "canberra", "binary", "minkowski",  "mahalanobis")</code> tandis que le paramètre <code>distance_method = c("euclidean", "manhattan")</code> de <code>rgeoda</code> ne comprend que deux types de distance.</p>
+<p><strong>Rappel sur les variables spatialement décalées</strong></p>
+<p>Dans chapitre 2 sur l’autocorrélation spatiale, nous avons vu comment calculer une variable spatialement décalée avec une matrice de pondération spatiale (figure <a href="sect024.html#fig:Chap02FigureVariableSpatialementDecalee">2.29</a>). À titre de rappel, lorsque cette dernière est standardisée en ligne, elle correspond à la valeur moyenne dans le voisinage.</p>
+</div>
+<p>L’idée est alors d’introduire des <strong>externalités</strong> puisque les caractéristiques des entités spatiales proches ou voisines peuvent avoir un effet sur la variable dépendante <span class="citation">(<a href="#ref-dube2014econometrie">Dubé et Legros 2014</a>)</span>. L’équation du modèle SLX, qui est estimée selon la méthode des moindres carrés ordinaires (comme la régression linéaire multiple), s’écrit alors :</p>
+<p><span class="math display" id="eq:SLX">\[\begin{equation}
+y = X\beta + WX\theta + \epsilon
+\tag{7.3}
+\end{equation}\]</span>
+</p>
+<p>avec :</p>
+<ul>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(WX\)</span>, les variables indépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\theta\)</span>, les coefficients des variables indépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
+</ul>
+<p><strong>Construction du modèle SLX dans R</strong></p>
+<p>Le modèle SLX est construit avec la fonction <code>lmSLX</code> du <em>package</em> <code>spatialreg</code> <span class="citation">(<a href="#ref-bivand2021review">Bivand, Millo et Piras 2021</a>)</span>. Remarquez, dans le code ci-dessous, le paramètre <code>listw=W.Rook</code> qui est utilisé pour spécifier la matrice de pondération spatiale.</p>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="sect071.html#cb462-1" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb462-2"><a href="sect071.html#cb462-2" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
+<span id="cb462-3"><a href="sect071.html#cb462-3" tabindex="-1"></a>Modele.SLX <span class="ot">&lt;-</span> <span class="fu">lmSLX</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
+<span id="cb462-4"><a href="sect071.html#cb462-4" tabindex="-1"></a>                   <span class="at">listw=</span>W.Rook,     <span class="co"># matrice de pondération spatiale</span></span>
+<span id="cb462-5"><a href="sect071.html#cb462-5" tabindex="-1"></a>                   <span class="at">data =</span> LyonIris)  <span class="co"># dataframe</span></span>
+<span id="cb462-6"><a href="sect071.html#cb462-6" tabindex="-1"></a><span class="do">## Résultats du modèle</span></span>
+<span id="cb462-7"><a href="sect071.html#cb462-7" tabindex="-1"></a><span class="co"># Résultats du modèles</span></span>
+<span id="cb462-8"><a href="sect071.html#cb462-8" tabindex="-1"></a><span class="fu">summary</span>(Modele.SLX)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = formula(paste(&quot;y ~ &quot;, paste(colnames(x)[-1], collapse = &quot;+&quot;))), 
+##     data = as.data.frame(x), weights = weights)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -18.6087  -3.5084  -0.7178   2.9128  26.8724 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    50.67786    4.18791  12.101  &lt; 2e-16 ***
+## Pct0_14        -0.20404    0.06268  -3.255  0.00121 ** 
+## Pct_65         -0.03771    0.05361  -0.703  0.48217    
+## Pct_Img         0.10406    0.04849   2.146  0.03235 *  
+## Pct_brevet     -0.07363    0.03550  -2.074  0.03857 *  
+## NivVieMed      -0.18441    0.11063  -1.667  0.09617 .  
+## lag.Pct0_14    -0.77591    0.10295  -7.537 2.32e-13 ***
+## lag.Pct_65     -0.06454    0.09115  -0.708  0.47924    
+## lag.Pct_Img     0.64654    0.08593   7.524 2.53e-13 ***
+## lag.Pct_brevet -0.30128    0.06157  -4.893 1.34e-06 ***
+## lag.NivVieMed  -0.01805    0.17499  -0.103  0.91790    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 5.77 on 495 degrees of freedom
+## Multiple R-squared:  0.4713, Adjusted R-squared:  0.4606 
+## F-statistic: 44.13 on 10 and 495 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><strong>Effets directs, indirects et totaux</strong></p>
+<p>Les effets des variables indépendantes sont donc décomposés en trois composantes :</p>
+<ul>
+<li>les <strong>effets directs</strong>, soit ceux des caractéristiques des entités spatiales. Ils correspondent aux coefficients <span class="math inline">\(\beta\)</span> des variables indépendantes (<span class="math inline">\(X\)</span>)</li>
+<li>les <strong>effets indirects</strong>, soit ceux des caractéristiques des entités spatiales voisines ou proches définies selon la matrice de pondération spatiale. Ils correspondent aux coefficients <span class="math inline">\(\theta\)</span> des variables indépendantes spatialement décalées (<span class="math inline">\(WX\)</span>).</li>
+<li>les <strong>effets totaux</strong>, soit la somme des deux précédents.</li>
+</ul>
+<p>Le code suivant permet de les obtenir.</p>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="sect071.html#cb464-1" tabindex="-1"></a><span class="do">## Effets directs, indirects et totaux (uniquement les coefficients)</span></span>
+<span id="cb464-2"><a href="sect071.html#cb464-2" tabindex="-1"></a><span class="fu">impacts</span>(Modele.SLX)</span></code></pre></div>
+<pre><code>## Impact measures (SlX, glht):
+##                 Direct    Indirect      Total
+## Pct0_14    -0.20403803 -0.77590830 -0.9799463
+## Pct_65     -0.03770918 -0.06453809 -0.1022473
+## Pct_Img     0.10406359  0.64653923  0.7506028
+## Pct_brevet -0.07363272 -0.30128171 -0.3749144
+## NivVieMed  -0.18440960 -0.01804718 -0.2024568</code></pre>
+<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="sect071.html#cb466-1" tabindex="-1"></a><span class="do">## Effets directs, indirects et totaux (coefficients, valeurs de z et de p)</span></span>
+<span id="cb466-2"><a href="sect071.html#cb466-2" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">impacts</span>(Modele.SLX))</span></code></pre></div>
+<pre><code>## Impact measures (SlX, glht, n-k):
+##                 Direct    Indirect      Total
+## Pct0_14    -0.20403803 -0.77590830 -0.9799463
+## Pct_65     -0.03770918 -0.06453809 -0.1022473
+## Pct_Img     0.10406359  0.64653923  0.7506028
+## Pct_brevet -0.07363272 -0.30128171 -0.3749144
+## NivVieMed  -0.18440960 -0.01804718 -0.2024568
+## ========================================================
+## Standard errors:
+##                Direct   Indirect      Total
+## Pct0_14    0.06268202 0.10295210 0.10045332
+## Pct_65     0.05361420 0.09114695 0.08556272
+## Pct_Img    0.04849085 0.08593145 0.08060028
+## Pct_brevet 0.03549819 0.06157121 0.05975821
+## NivVieMed  0.11063207 0.17499339 0.14911021
+## ========================================================
+## Z-values:
+##                Direct   Indirect     Total
+## Pct0_14    -3.2551283 -7.5365951 -9.755241
+## Pct_65     -0.7033432 -0.7080664 -1.194998
+## Pct_Img     2.1460460  7.5238953  9.312658
+## Pct_brevet -2.0742665 -4.8932234 -6.273857
+## NivVieMed  -1.6668729 -0.1031306 -1.357766
+## 
+## p-values:
+##            Direct    Indirect   Total     
+## Pct0_14    0.0011334 4.8184e-14 &lt; 2.22e-16
+## Pct_65     0.4818419 0.47890    0.23209   
+## Pct_Img    0.0318693 5.3069e-14 &lt; 2.22e-16
+## Pct_brevet 0.0380546 9.9198e-07 3.5221e-10
+## NivVieMed  0.0955397 0.91786    0.17454</code></pre>
+<p><strong>Dépendance du modèle spatiale SLX?</strong></p>
+<p>Ce modèle a-t-il corrigé le problème de dépendance spatiale du modèle de régression linéaire classique? Avec une valeur du <em>I</em> de Moran de 0,605 (<em>p</em> &lt; 0,001), les résidus sont toujours fortement autocorrélés spatialement (figure <a href="sect071.html#fig:figCartoResMCO">7.2</a>).</p>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="sect071.html#cb468-1" tabindex="-1"></a><span class="fu">lm.morantest</span>(Modele.SLX, W.Rook, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Global Moran I for regression residuals
+## 
+## data:  
+## model: lm(formula = formula(paste(&quot;y ~ &quot;, paste(colnames(x)[-1],
+## collapse = &quot;+&quot;))), data = as.data.frame(x), weights = weights)
+## weights: W.Rook
+## 
+## Moran I statistic standard deviate = 21.951, p-value &lt; 2.2e-16
+## alternative hypothesis: two.sided
+## sample estimates:
+## Observed Moran I      Expectation         Variance 
+##     0.6046602748    -0.0072844321     0.0007771643</code></pre>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="sect071.html#cb470-1" tabindex="-1"></a>LyonIris<span class="sc">$</span>SLX.Residus <span class="ot">&lt;-</span> <span class="fu">residuals</span>(Modele.SLX)</span>
+<span id="cb470-2"><a href="sect071.html#cb470-2" tabindex="-1"></a><span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span></span>
+<span id="cb470-3"><a href="sect071.html#cb470-3" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;SLX.Residus&quot;</span>, <span class="at">n =</span> <span class="dv">5</span>, <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>, </span>
+<span id="cb470-4"><a href="sect071.html#cb470-4" tabindex="-1"></a>          <span class="at">palette =</span> <span class="st">&quot;-RdBu&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Résidus&quot;</span>) <span class="sc">+</span></span>
+<span id="cb470-5"><a href="sect071.html#cb470-5" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb470-6"><a href="sect071.html#cb470-6" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figCartoResSLX"></span>
+<img src="GMQ405_files/figure-html/figCartoResSLX-1.png" alt="Cartographie des résidus du modèle SLX" width="672" />
+<p class="caption">
+Figure 7.3: Cartographie des résidus du modèle SLX
+</p>
+</div>
+</div>
+<div id="sect07122" class="section level4 hasAnchor" number="7.1.2.2">
+<h4><span class="header-section-number">7.1.2.2</span> Modèle SAR : autocorrélation spatiale sur la variable dépendante<a href="sect071.html#sect07122" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dans le modèle SAR, l’autocorrélation spatiale est intégrée au niveau de la variable indépendante (<span class="math inline">\(Wy\)</span>), qui est ainsi spatialement décalée. L’idée générale est que la valeur de la variable dépendante pour une observation (<span class="math inline">\(y_i\)</span>) peut être influencée par les valeurs de <span class="math inline">\(y\)</span> des observations voisines et proches. L’exemple le plus classique est le prix de vente des maisons : il est influencé à la fois par les caractéristiques intrinsèques de la maison (<span class="math inline">\(X\)</span>, par exemple, la superficie habitable, le nombre de chambres à coucher, de salles de bains, etc.) et par le prix de vente des maisons voisines (<span class="math inline">\(Wy\)</span>). Dubé et Legros <span class="citation">(<a href="#ref-dube2014econometrie">2014</a>)</span> qualifient ce phénomène « <strong>d’effets d’entraînement ou d’effets de débordement</strong> (<em>spillover effects</em>) » <span class="citation">(<a href="#ref-dube2014econometrie">2014, 123</a>)</span>. L’équation du modèle SAR s’écrit alors :</p>
+<p><span class="math display" id="eq:SLM">\[\begin{equation}
+y = Wy\rho + X\beta + \epsilon
+\tag{7.4}
+\end{equation}\]</span>
+</p>
+<p>avec :</p>
+<ul>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(Wy\)</span>, la variable dépendante spatialement décalée.</li>
+<li><span class="math inline">\(\rho\)</span> (prononcez <em>rho</em>), le coefficient de la variable dépendante spatialement décalée. Il varie de -1 à 1.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
+<li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
+</ul>
+<p><strong>Construction du modèle SAR dans R</strong></p>
+<p>Le modèle SAR est construit avec la fonction <code>lagsarlm</code> du <em>package</em> <code>spatialreg</code>.</p>
+<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="sect071.html#cb471-1" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
+<span id="cb471-2"><a href="sect071.html#cb471-2" tabindex="-1"></a>Modele.SAR <span class="ot">&lt;-</span> <span class="fu">lagsarlm</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
+<span id="cb471-3"><a href="sect071.html#cb471-3" tabindex="-1"></a>                              <span class="at">listw=</span>W.Rook,    <span class="co"># matrice de pondération spatiale</span></span>
+<span id="cb471-4"><a href="sect071.html#cb471-4" tabindex="-1"></a>                              <span class="at">data =</span> LyonIris, <span class="co"># dataframe</span></span>
+<span id="cb471-5"><a href="sect071.html#cb471-5" tabindex="-1"></a>                              <span class="at">type =</span> <span class="st">&#39;lag&#39;</span>)    <span class="co"># Modèle lag par défaut</span></span>
+<span id="cb471-6"><a href="sect071.html#cb471-6" tabindex="-1"></a><span class="do">## Résultats du modèle</span></span>
+<span id="cb471-7"><a href="sect071.html#cb471-7" tabindex="-1"></a><span class="fu">summary</span>(Modele.SAR, <span class="at">Nagelkerke=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:lagsarlm(formula = NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + 
+##     NivVieMed, data = LyonIris, listw = W.Rook, type = &quot;lag&quot;)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -12.86859  -1.88111  -0.49760   0.94464  18.21351 
+## 
+## Type: lag 
+## Coefficients: (asymptotic standard errors) 
+##              Estimate Std. Error z value  Pr(&gt;|z|)
+## (Intercept)  7.838906   1.646232  4.7617 1.919e-06
+## Pct0_14     -0.098708   0.030554 -3.2306  0.001235
+## Pct_65      -0.034543   0.026957 -1.2814  0.200044
+## Pct_Img      0.030241   0.024491  1.2348  0.216917
+## Pct_brevet  -0.019234   0.017855 -1.0772  0.281384
+## NivVieMed   -0.098413   0.048985 -2.0090  0.044534
+## 
+## Rho: 0.87939, LR test value: 620.31, p-value: &lt; 2.22e-16
+## Asymptotic standard error: 0.01942
+##     z-value: 45.283, p-value: &lt; 2.22e-16
+## Wald statistic: 2050.5, p-value: &lt; 2.22e-16
+## 
+## Log likelihood: -1366.157 for lag model
+## ML residual variance (sigma squared): 10.181, (sigma: 3.1908)
+## Nagelkerke pseudo-R-squared: 0.78962 
+## Number of observations: 506 
+## Number of parameters estimated: 8 
+## AIC: 2748.3, (AIC for lm: 3366.6)
+## LM test for residual autocorrelation
+## test value: 0.6198, p-value: 0.43112</code></pre>
+<p>Dans les résultats ci-dessus, la valeur de <em>rho</em> est de 0,88 (LR = 620, <em>p</em> &lt; 0,001), traduisant une très fort effet d’entraînement. Autrement dit, lorsqu’en moyenne la concentration de dioxyde d’azote augmente dans les IRIS voisines (<span class="math inline">\(Wy\)</span>), elle augmente aussi fortement chaque IRIS (<span class="math inline">\(y\)</span>).</p>
+<p><strong>Effets directs, indirects et totaux</strong></p>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="sect071.html#cb473-1" tabindex="-1"></a><span class="do">## Effets directs, indirects et totaux (uniquement les coefficients)</span></span>
+<span id="cb473-2"><a href="sect071.html#cb473-2" tabindex="-1"></a><span class="fu">impacts</span>(Modele.SAR, <span class="at">listw =</span> W.Rook, <span class="at">R =</span> <span class="dv">999</span>)</span></code></pre></div>
+<pre><code>## Impact measures (lag, exact):
+##                 Direct   Indirect      Total
+## Pct0_14    -0.13878038 -0.6796248 -0.8184052
+## Pct_65     -0.04856624 -0.2378349 -0.2864012
+## Pct_Img     0.04251743  0.2082131  0.2507306
+## Pct_brevet -0.02704205 -0.1324283 -0.1594703
+## NivVieMed  -0.13836534 -0.6775923 -0.8159576</code></pre>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="sect071.html#cb475-1" tabindex="-1"></a><span class="do">## Effets directs, indirects et totaux (coefficients, valeurs de z et de p)</span></span>
+<span id="cb475-2"><a href="sect071.html#cb475-2" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">impacts</span>(Modele.SAR, <span class="at">listw =</span> W.Rook, <span class="at">R =</span> <span class="dv">999</span>), <span class="at">zstats =</span> <span class="cn">TRUE</span>, <span class="at">short =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Impact measures (lag, exact):
+##                 Direct   Indirect      Total
+## Pct0_14    -0.13878038 -0.6796248 -0.8184052
+## Pct_65     -0.04856624 -0.2378349 -0.2864012
+## Pct_Img     0.04251743  0.2082131  0.2507306
+## Pct_brevet -0.02704205 -0.1324283 -0.1594703
+## NivVieMed  -0.13836534 -0.6775923 -0.8159576
+## ========================================================
+## Simulation results ( variance matrix):
+## ========================================================
+## Simulated standard errors
+##                Direct  Indirect     Total
+## Pct0_14    0.04113113 0.2370482 0.2735397
+## Pct_65     0.03691988 0.1888555 0.2247334
+## Pct_Img    0.03399990 0.1773994 0.2103574
+## Pct_brevet 0.02446110 0.1267194 0.1505786
+## NivVieMed  0.06939467 0.3574779 0.4235727
+## 
+## Simulated z-values:
+##               Direct  Indirect     Total
+## Pct0_14    -3.363996 -2.897352 -3.016663
+## Pct_65     -1.296248 -1.249127 -1.262660
+## Pct_Img     1.236996  1.183906  1.198351
+## Pct_brevet -1.135529 -1.087427 -1.099588
+## NivVieMed  -1.989021 -1.906549 -1.934913
+## 
+## Simulated p-values:
+##            Direct     Indirect  Total    
+## Pct0_14    0.00076823 0.0037633 0.0025557
+## Pct_65     0.19488995 0.2116187 0.2067114
+## Pct_Img    0.21608866 0.2364502 0.2307805
+## Pct_brevet 0.25615388 0.2768479 0.2715117
+## NivVieMed  0.04669891 0.0565791 0.0530009</code></pre>
+<p><strong>Dépendance du modèle spatiale SAR?</strong></p>
+<p>Ce modèle a-t-il corrigé le problème de dépendance spatiale du modèle de régression linéaire classique? Avec une valeur du <em>I</em> de Moran de -0,014 (<em>p</em> = 0,654), les résidus ne sont plus spatialement autocorrélés (figure <a href="sect071.html#fig:figCartoResSAR">7.4</a>).</p>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="sect071.html#cb477-1" tabindex="-1"></a><span class="do">## Autocorrélation spatiale des résidus</span></span>
+<span id="cb477-2"><a href="sect071.html#cb477-2" tabindex="-1"></a><span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.SAR), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span></code></pre></div>
+<pre><code>## 
+##  Monte-Carlo simulation of Moran I
+## 
+## data:  resid(Modele.SAR) 
+## weights: W.Rook  
+## number of simulations + 1: 1000 
+## 
+## statistic = -0.014281, observed rank = 355, p-value = 0.645
+## alternative hypothesis: greater</code></pre>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="sect071.html#cb479-1" tabindex="-1"></a><span class="do">## Cartographie des résidus</span></span>
+<span id="cb479-2"><a href="sect071.html#cb479-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>SAR.Residus <span class="ot">&lt;-</span> <span class="fu">resid</span>(Modele.SAR)</span>
+<span id="cb479-3"><a href="sect071.html#cb479-3" tabindex="-1"></a><span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span></span>
+<span id="cb479-4"><a href="sect071.html#cb479-4" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;SAR.Residus&quot;</span>, <span class="at">n =</span> <span class="dv">5</span>, <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>, </span>
+<span id="cb479-5"><a href="sect071.html#cb479-5" tabindex="-1"></a>          <span class="at">palette =</span> <span class="st">&quot;-RdBu&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Résidus&quot;</span>) <span class="sc">+</span></span>
+<span id="cb479-6"><a href="sect071.html#cb479-6" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb479-7"><a href="sect071.html#cb479-7" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figCartoResSAR"></span>
+<img src="GMQ405_files/figure-html/figCartoResSAR-1.png" alt="Cartographie des résidus du modèle SAR" width="672" />
+<p class="caption">
+Figure 7.4: Cartographie des résidus du modèle SAR
+</p>
+</div>
+</div>
+<div id="sect07123" class="section level4 hasAnchor" number="7.1.2.3">
+<h4><span class="header-section-number">7.1.2.3</span> Modèle SEM : autocorrélation spatiale sur le terme d’erreur<a href="sect071.html#sect07123" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dans le modèle SEM (<em>spatial erreur model</em>), l’intégration de l’autocorrélation spatiale est réalisée sur le terme d’erreur, ce qui pourrait se justifier par l’omission d’une variable dépendante spatialement structurée <span class="citation">(<a href="#ref-dube2014econometrie">Dubé et Legros 2014, 126</a>)</span>. L’équation du modèle SEM s’écrit :</p>
+<p><span class="math display" id="eq:SEM">\[\begin{equation}
+y = X\beta + u \textrm{, } u = \lambda Wu + \epsilon
+\tag{7.5}
+\end{equation}\]</span>
+</p>
+<p>avec :</p>
+<ul>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(\lambda\)</span> (prononcez <em>lambda</em>), le coefficient sur le terme d’erreur spatialement décalé. Il varie de -1 à 1.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
+<li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
+</ul>
+<p><strong>Construction du modèle SAR dans R</strong></p>
+<p>Le modèle SEM est construit avec la fonction <code>lmSLX</code> du <em>package</em> <code>spatialreg</code>.</p>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="sect071.html#cb480-1" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
+<span id="cb480-2"><a href="sect071.html#cb480-2" tabindex="-1"></a>Modele.SEM <span class="ot">&lt;-</span> <span class="fu">errorsarlm</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
+<span id="cb480-3"><a href="sect071.html#cb480-3" tabindex="-1"></a>                         <span class="at">listw=</span>W.Rook,    <span class="co"># matrice de pondération spatiale</span></span>
+<span id="cb480-4"><a href="sect071.html#cb480-4" tabindex="-1"></a>                         <span class="at">data =</span> LyonIris) <span class="co"># dataframe</span></span>
+<span id="cb480-5"><a href="sect071.html#cb480-5" tabindex="-1"></a><span class="do">## Résultats du modèle</span></span>
+<span id="cb480-6"><a href="sect071.html#cb480-6" tabindex="-1"></a><span class="fu">summary</span>(Modele.SEM, <span class="at">Nagelkerke=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:errorsarlm(formula = NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + 
+##     NivVieMed, data = LyonIris, listw = W.Rook)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -12.86150  -1.83161  -0.44106   0.91029  17.94924 
+## 
+## Type: error 
+## Coefficients: (asymptotic standard errors) 
+##              Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept) 30.544576   2.358173 12.9526  &lt; 2e-16
+## Pct0_14     -0.035019   0.033393 -1.0487  0.29431
+## Pct_65      -0.026039   0.028970 -0.8988  0.36874
+## Pct_Img     -0.016770   0.026176 -0.6407  0.52175
+## Pct_brevet   0.023708   0.019074  1.2430  0.21388
+## NivVieMed   -0.146309   0.060273 -2.4274  0.01521
+## 
+## Lambda: 0.91138, LR test value: 613.15, p-value: &lt; 2.22e-16
+## Asymptotic standard error: 0.01651
+##     z-value: 55.201, p-value: &lt; 2.22e-16
+## Wald statistic: 3047.2, p-value: &lt; 2.22e-16
+## 
+## Log likelihood: -1369.737 for error model
+## ML residual variance (sigma squared): 9.9971, (sigma: 3.1618)
+## Nagelkerke pseudo-R-squared: 0.78662 
+## Number of observations: 506 
+## Number of parameters estimated: 8 
+## AIC: NA (not available for weighted model), (AIC for lm: 3366.6)</code></pre>
+<p>Dans les résultats ci-dessous, la valeur de <em>lambda</em> est de 0,91 (LR = 613, <em>p</em> &lt; 0,001), traduisant une très forte autocorrélation spatiale sur le terme d’erreur.</p>
+<p><strong>Dépendance du modèle spatiale SEM?</strong></p>
+<p>Ce modèle a-t-il corrigé le problème de dépendance spatiale du modèle de régression linéaire classique? Avec une valeur du <em>I</em> de Moran de -0,013 (<em>p</em> = 0,614), les résidus ne sont plus spatialement autocorrélés.</p>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="sect071.html#cb482-1" tabindex="-1"></a><span class="do">## Autocorrélation spatiale des résidus</span></span>
+<span id="cb482-2"><a href="sect071.html#cb482-2" tabindex="-1"></a><span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.SEM), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span></code></pre></div>
+<pre><code>## 
+##  Monte-Carlo simulation of Moran I
+## 
+## data:  resid(Modele.SEM) 
+## weights: W.Rook  
+## number of simulations + 1: 1000 
+## 
+## statistic = -0.011827, observed rank = 386, p-value = 0.614
+## alternative hypothesis: greater</code></pre>
+</div>
+<div id="sect07124" class="section level4 hasAnchor" number="7.1.2.4">
+<h4><span class="header-section-number">7.1.2.4</span> Modèle SDM : autocorrélation spatiale sur la variable dépendante et les variables indépendantes<a href="sect071.html#sect07124" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Le modèle SDM (<em>Spatial Durbin Model</em> en anglais) est un modèle mixte qui intègre à la fois l’autocorrélation spatiale sur la variable dépendante (<span class="math inline">\(Wy\)</span>, <strong>effets d’entraînement ou de débordement</strong>) et sur les variables indépendantes (<span class="math inline">\(WX\)</span>, <strong>externalités</strong>). Il s’écrit alors :</p>
+<p><span class="math display" id="eq:SDM">\[\begin{equation}
+y = Wy\rho + X\beta + WX\theta + \epsilon
+\tag{7.6}
+\end{equation}\]</span>
+</p>
+<p>avec :</p>
+<ul>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(Wy\)</span>, la variable dépendante spatialement décalée.</li>
+<li><span class="math inline">\(\rho\)</span>, le coefficient de la variable dépendante spatialement décalée.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
+<li><span class="math inline">\(WX\)</span>, les variables indépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\theta\)</span>, les coefficients des variables indépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
+</ul>
+<p><strong>Construction du modèle SDM dans R</strong></p>
+<p>Le modèle SDM est construit avec la fonction <code>lagsarlm</code> du <em>package</em> <code>spatialreg</code>. Notez que le paramètre <code>type = "mixed"</code> spécifie l’utilisation d’un modèle mixte.</p>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="sect071.html#cb484-1" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
+<span id="cb484-2"><a href="sect071.html#cb484-2" tabindex="-1"></a>Modele.DurbinSpatial <span class="ot">&lt;-</span> <span class="fu">lagsarlm</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
+<span id="cb484-3"><a href="sect071.html#cb484-3" tabindex="-1"></a>                       <span class="at">listw =</span> W.Rook,    <span class="co"># matrice de pondération spatiale</span></span>
+<span id="cb484-4"><a href="sect071.html#cb484-4" tabindex="-1"></a>                       <span class="at">data =</span> LyonIris,   <span class="co"># dataframe</span></span>
+<span id="cb484-5"><a href="sect071.html#cb484-5" tabindex="-1"></a>                       <span class="at">type =</span> <span class="st">&quot;mixed&quot;</span>)</span>
+<span id="cb484-6"><a href="sect071.html#cb484-6" tabindex="-1"></a><span class="do">## 7.2. Résultats du modèle</span></span>
+<span id="cb484-7"><a href="sect071.html#cb484-7" tabindex="-1"></a><span class="co"># Résultats du modèles</span></span>
+<span id="cb484-8"><a href="sect071.html#cb484-8" tabindex="-1"></a><span class="fu">summary</span>(Modele.DurbinSpatial, <span class="at">Nagelkerke=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:lagsarlm(formula = NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + 
+##     NivVieMed, data = LyonIris, listw = W.Rook, type = &quot;mixed&quot;)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -12.60922  -1.77753  -0.43909   0.99252  18.15526 
+## 
+## Type: mixed 
+## Coefficients: (asymptotic standard errors) 
+##                  Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept)     8.1130457  2.5671301  3.1604 0.001576
+## Pct0_14        -0.0574046  0.0344908 -1.6643 0.096043
+## Pct_65         -0.0238715  0.0293647 -0.8129 0.416256
+## Pct_Img         0.0048364  0.0266560  0.1814 0.856025
+## Pct_brevet      0.0112746  0.0195259  0.5774 0.563656
+## NivVieMed      -0.1463876  0.0605853 -2.4162 0.015682
+## lag.Pct0_14    -0.1242574  0.0581170 -2.1381 0.032512
+## lag.Pct_65      0.0255480  0.0499646  0.5113 0.609125
+## lag.Pct_Img     0.1559952  0.0482138  3.2355 0.001214
+## lag.Pct_brevet -0.0883930  0.0342496 -2.5809 0.009856
+## lag.NivVieMed   0.1032469  0.0960201  1.0753 0.282257
+## 
+## Rho: 0.84127, LR test value: 492.38, p-value: &lt; 2.22e-16
+## Asymptotic standard error: 0.023363
+##     z-value: 36.009, p-value: &lt; 2.22e-16
+## Wald statistic: 1296.7, p-value: &lt; 2.22e-16
+## 
+## Log likelihood: -1353.106 for mixed model
+## ML residual variance (sigma squared): 9.9845, (sigma: 3.1598)
+## Nagelkerke pseudo-R-squared: 0.8002 
+## Number of observations: 506 
+## Number of parameters estimated: 13 
+## AIC: 2732.2, (AIC for lm: 3222.6)
+## LM test for residual autocorrelation
+## test value: 0.0748, p-value: 0.78447</code></pre>
+<p><strong>Effets directs, indirects et totaux</strong></p>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="sect071.html#cb486-1" tabindex="-1"></a><span class="co"># Effets directs, indirects et totaux (uniquement les coefficients)</span></span>
+<span id="cb486-2"><a href="sect071.html#cb486-2" tabindex="-1"></a><span class="fu">impacts</span>(Modele.DurbinSpatial, <span class="at">listw =</span> W.Rook, <span class="at">R =</span> <span class="dv">999</span>)</span></code></pre></div>
+<pre><code>## Impact measures (mixed, exact):
+##                 Direct    Indirect       Total
+## Pct0_14    -0.12369039 -1.02079497 -1.14448536
+## Pct_65     -0.02177191  0.03233406  0.01056215
+## Pct_Img     0.06632543  0.94692639  1.01325182
+## Pct_brevet -0.01903815 -0.46681402 -0.48585217
+## NivVieMed  -0.15403413 -0.11775603 -0.27179016</code></pre>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="sect071.html#cb488-1" tabindex="-1"></a><span class="co"># Effets directs, indirects et totaux (coefficients, valeurs de z et de p)</span></span>
+<span id="cb488-2"><a href="sect071.html#cb488-2" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">impacts</span>(Modele.DurbinSpatial, <span class="at">listw =</span> W.Rook, <span class="at">R =</span> <span class="dv">999</span>), <span class="at">zstats =</span> <span class="cn">TRUE</span>, <span class="at">short =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Impact measures (mixed, exact):
+##                 Direct    Indirect       Total
+## Pct0_14    -0.12369039 -1.02079497 -1.14448536
+## Pct_65     -0.02177191  0.03233406  0.01056215
+## Pct_Img     0.06632543  0.94692639  1.01325182
+## Pct_brevet -0.01903815 -0.46681402 -0.48585217
+## NivVieMed  -0.15403413 -0.11775603 -0.27179016
+## ========================================================
+## Simulation results ( variance matrix):
+## ========================================================
+## Simulated standard errors
+##                Direct  Indirect     Total
+## Pct0_14    0.04387620 0.3238569 0.3511112
+## Pct_65     0.03564555 0.2798638 0.3023572
+## Pct_Img    0.03208904 0.2730492 0.2910092
+## Pct_brevet 0.02419487 0.1929199 0.2082737
+## NivVieMed  0.06923741 0.5025663 0.5366255
+## 
+## Simulated z-values:
+##                Direct    Indirect       Total
+## Pct0_14    -2.8402032 -3.20678815 -3.31279040
+## Pct_65     -0.6312146  0.06884458 -0.01069228
+## Pct_Img     2.0462274  3.47880743  3.48974241
+## Pct_brevet -0.7646549 -2.38010280 -2.29347248
+## NivVieMed  -2.2104748 -0.21362006 -0.48526546
+## 
+## Simulated p-values:
+##            Direct    Indirect   Total     
+## Pct0_14    0.0045085 0.00134226 0.00092370
+## Pct_65     0.5279002 0.94511333 0.99146896
+## Pct_Img    0.0407340 0.00050365 0.00048349
+## Pct_brevet 0.4444770 0.01730781 0.02182082
+## NivVieMed  0.0270722 0.83084335 0.62748806</code></pre>
+<p><strong>Dépendance du modèle spatiale SDM?</strong></p>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="sect071.html#cb490-1" tabindex="-1"></a><span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.DurbinSpatial), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span></code></pre></div>
+<pre><code>## 
+##  Monte-Carlo simulation of Moran I
+## 
+## data:  resid(Modele.DurbinSpatial) 
+## weights: W.Rook  
+## number of simulations + 1: 1000 
+## 
+## statistic = -0.0046127, observed rank = 470, p-value = 0.53
+## alternative hypothesis: greater</code></pre>
+</div>
+<div id="sect07125" class="section level4 hasAnchor" number="7.1.2.5">
+<h4><span class="header-section-number">7.1.2.5</span> Modèle SDEM : autocorrélation spatiale sur les variables indépendantes et sur le terme d’erreur<a href="sect071.html#sect07125" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Le modèle SDEM (<em>Spatial Durbin Error Model</em> en anglais) est un autre modèle mixte qui intègre à la fois l’autocorrélation spatiale sur les valeurs indépendantes (<span class="math inline">\(WX\)</span>, <strong>externalités</strong>) et sur le terme d’erreur (<span class="math inline">\(u = \lambda Wu + \epsilon\)</span>). Il s’écrit alors :</p>
+<p><span class="math display" id="eq:SDEM">\[\begin{equation}
+y = X\beta + WX\theta + u \textrm{, } u = \lambda Wu + \epsilon
+\tag{7.7}
+\end{equation}\]</span>
+</p>
+<p>avec :</p>
+<ul>
+<li><span class="math inline">\(y\)</span>, la variable dépendante.</li>
+<li><span class="math inline">\(W\)</span>, la matrice de pondération spatiale.</li>
+<li><span class="math inline">\(X\)</span>, les variables indépendantes.</li>
+<li><span class="math inline">\(\beta\)</span>, les coefficients des variables indépendantes.</li>
+<li><span class="math inline">\(WX\)</span>, les variables dépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\theta\)</span>, les coefficients des variables indépendantes spatiales décalées.</li>
+<li><span class="math inline">\(\lambda\)</span> (prononcez <em>lambda</em>), le coefficient sur le terme d’erreur spatialement décalé.</li>
+<li><span class="math inline">\(\epsilon\)</span>, les résidus.</li>
+</ul>
+<p><strong>Construction du modèle SDEM dans R</strong></p>
+<p>Le modèle SDEM est construit avec la fonction <code>errorsarlm</code> du <em>package</em> <code>spatialreg</code>. Notez que le paramètre <code>etype = "mixed"</code> spécifie l’utilisation d’un modèle mixte.</p>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="sect071.html#cb492-1" tabindex="-1"></a><span class="do">## Construction du modèle</span></span>
+<span id="cb492-2"><a href="sect071.html#cb492-2" tabindex="-1"></a>Modele.DurbinErreur <span class="ot">&lt;-</span> <span class="fu">errorsarlm</span>(NO2 <span class="sc">~</span> Pct0_14<span class="sc">+</span>Pct_65<span class="sc">+</span>Pct_Img<span class="sc">+</span>Pct_brevet<span class="sc">+</span>NivVieMed,</span>
+<span id="cb492-3"><a href="sect071.html#cb492-3" tabindex="-1"></a>                                  <span class="at">listw=</span>W.Rook,    <span class="co"># matrice de pondération spatiale</span></span>
+<span id="cb492-4"><a href="sect071.html#cb492-4" tabindex="-1"></a>                                  <span class="at">data =</span> LyonIris, <span class="co"># dataframe</span></span>
+<span id="cb492-5"><a href="sect071.html#cb492-5" tabindex="-1"></a>                                  <span class="at">etype =</span> <span class="st">&#39;emixed&#39;</span>)</span>
+<span id="cb492-6"><a href="sect071.html#cb492-6" tabindex="-1"></a></span>
+<span id="cb492-7"><a href="sect071.html#cb492-7" tabindex="-1"></a><span class="do">## Résultats du modèle</span></span>
+<span id="cb492-8"><a href="sect071.html#cb492-8" tabindex="-1"></a><span class="fu">summary</span>(Modele.DurbinErreur, <span class="at">Nagelkerke=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:errorsarlm(formula = NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet + 
+##     NivVieMed, data = LyonIris, listw = W.Rook, etype = &quot;emixed&quot;)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -12.99324  -1.82407  -0.45644   1.06084  18.21108 
+## 
+## Type: error 
+## Coefficients: (asymptotic standard errors) 
+##                  Estimate Std. Error z value  Pr(&gt;|z|)
+## (Intercept)    37.0610133  6.5010177  5.7008 1.192e-08
+## Pct0_14        -0.0819977  0.0416988 -1.9664   0.04925
+## Pct_65         -0.0263294  0.0347137 -0.7585   0.44817
+## Pct_Img         0.0046560  0.0310281  0.1501   0.88072
+## Pct_brevet      0.0097849  0.0238839  0.4097   0.68203
+## NivVieMed      -0.1678555  0.0680048 -2.4683   0.01358
+## lag.Pct0_14    -0.1767469  0.1023451 -1.7270   0.08417
+## lag.Pct_65      0.0105325  0.0891835  0.1181   0.90599
+## lag.Pct_Img     0.0927851  0.0797036  1.1641   0.24437
+## lag.Pct_brevet -0.0380482  0.0566883 -0.6712   0.50210
+## lag.NivVieMed  -0.1025307  0.1724055 -0.5947   0.55204
+## 
+## Lambda: 0.8976, LR test value: 464.09, p-value: &lt; 2.22e-16
+## Asymptotic standard error: 0.018242
+##     z-value: 49.204, p-value: &lt; 2.22e-16
+## Wald statistic: 2421, p-value: &lt; 2.22e-16
+## 
+## Log likelihood: -1367.25 for error model
+## ML residual variance (sigma squared): 10.046, (sigma: 3.1696)
+## Nagelkerke pseudo-R-squared: 0.78871 
+## Number of observations: 506 
+## Number of parameters estimated: 13 
+## AIC: NA (not available for weighted model), (AIC for lm: 3222.6)</code></pre>
+<p><strong>Effets directs, indirects et totaux</strong></p>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="sect071.html#cb494-1" tabindex="-1"></a><span class="do">## Effets directs, indirects et totaux (uniquement les coefficients)</span></span>
+<span id="cb494-2"><a href="sect071.html#cb494-2" tabindex="-1"></a><span class="fu">impacts</span>(Modele.DurbinErreur, <span class="at">listw =</span> W.Rook, <span class="at">R =</span> <span class="dv">999</span>)</span></code></pre></div>
+<pre><code>## Impact measures (SDEM, glht):
+##                  Direct    Indirect       Total
+## Pct0_14    -0.081997661 -0.17674688 -0.25874455
+## Pct_65     -0.026329377  0.01053246 -0.01579692
+## Pct_Img     0.004656049  0.09278514  0.09744119
+## Pct_brevet  0.009784949 -0.03804816 -0.02826321
+## NivVieMed  -0.167855503 -0.10253070 -0.27038620</code></pre>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="sect071.html#cb496-1" tabindex="-1"></a><span class="do">## Effets directs, indirects et totaux (coefficients, valeurs de z et de p)</span></span>
+<span id="cb496-2"><a href="sect071.html#cb496-2" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">impacts</span>(Modele.DurbinErreur, <span class="at">listw =</span> W.Rook, <span class="at">R =</span> <span class="dv">999</span>), <span class="at">zstats =</span> <span class="cn">TRUE</span>, <span class="at">short =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Impact measures (SDEM, glht, n):
+##                  Direct    Indirect       Total
+## Pct0_14    -0.081997661 -0.17674688 -0.25874455
+## Pct_65     -0.026329377  0.01053246 -0.01579692
+## Pct_Img     0.004656049  0.09278514  0.09744119
+## Pct_brevet  0.009784949 -0.03804816 -0.02826321
+## NivVieMed  -0.167855503 -0.10253070 -0.27038620
+## ========================================================
+## Standard errors:
+##                Direct   Indirect      Total
+## Pct0_14    0.04169878 0.10234506 0.13146452
+## Pct_65     0.03471367 0.08918350 0.11192948
+## Pct_Img    0.03102807 0.07970364 0.09949722
+## Pct_brevet 0.02388387 0.05668833 0.07344175
+## NivVieMed  0.06800483 0.17240548 0.21172909
+## ========================================================
+## Z-values:
+##                Direct   Indirect      Total
+## Pct0_14    -1.9664284 -1.7269703 -1.9681701
+## Pct_65     -0.7584729  0.1180987 -0.1411328
+## Pct_Img     0.1500592  1.1641268  0.9793358
+## Pct_brevet  0.4096885 -0.6711815 -0.3848384
+## NivVieMed  -2.4682881 -0.5947067 -1.2770386
+## 
+## p-values:
+##            Direct   Indirect Total   
+## Pct0_14    0.049249 0.084173 0.049048
+## Pct_65     0.448168 0.905989 0.887765
+## Pct_Img    0.880718 0.244373 0.327414
+## Pct_brevet 0.682034 0.502105 0.700357
+## NivVieMed  0.013576 0.552040 0.201589</code></pre>
+<p><strong>Dépendance du modèle spatiale SDEM?</strong></p>
+<p>Avec une valeur du <em>I</em> de Moran de -0,010 (<em>p</em> = 0,619), les résidus du modèle SDEM ne sont pas spatialement autocorrélés.</p>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="sect071.html#cb498-1" tabindex="-1"></a><span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.DurbinErreur), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span></code></pre></div>
+<pre><code>## 
+##  Monte-Carlo simulation of Moran I
+## 
+## data:  resid(Modele.DurbinErreur) 
+## weights: W.Rook  
+## number of simulations + 1: 1000 
+## 
+## statistic = -0.010362, observed rank = 381, p-value = 0.619
+## alternative hypothesis: greater</code></pre>
 </div>
 </div>
 <div id="sect0713" class="section level3 hasAnchor" number="7.1.3">
-<h3><span class="header-section-number">7.1.3</span> Algorithmes REDCAP<a href="sect071.html#sect0713" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Les différentes versions de l’algorithme REDCAP (<em>Regionalization with dynamically constrained agglomerative clustering and partitioning</em>) proposé par Diansheng Guo <span class="citation">(<a href="#ref-guo2008regionalization">2008</a>)</span> sont aussi basées sur la construction d’un arbre (<em>spanning tree</em>) dont l’élagage est obtenu de cinq différentes façons :</p>
+<h3><span class="header-section-number">7.1.3</span> Quel modèle choisir?<a href="sect071.html#sect0713" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sect07131" class="section level4 hasAnchor" number="7.1.3.1">
+<h4><span class="header-section-number">7.1.3.1</span> Tests du multiplicateur de Lagrange sur le modèle MCO<a href="sect071.html#sect07131" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>L’utilisation des tests du multiplicateur de Lagrange (simple et robuste) a été largement popularisée par Anselin <em>et al.</em> <span class="citation">(<a href="#ref-anselin1996simple">1996</a>)</span> pour vérifier si le recours à un modèle autorégressif est nécessaire, comparativement à un modèle de régression classique (MCO). Les tests sont calculés sur le modèle MCO avec la fonction <code>lm.LMtests</code> et une matrice de pondération spatiale. Ces tests permettent aussi de choisir entre les modèles SAR et SEM. La démarche suivante peut être utilisée pour choisir un modèle :</p>
+<ol style="list-style-type: decimal">
+<li>Si toutes les valeurs des tests (simples et robustes) sont non significatives (<em>p</em> &gt; 0,05) alors le recours à un modèle autorégressif n’est pas nécessaire. Nous pouvons conserver le modèle de régression classique (MCO).</li>
+<li>Si les valeurs de <code>LMlag</code> ou <code>RLMlag</code> sont non significatives (<em>p</em> &gt; 0,05) alors le recours au modèle SAR n’est pas nécessaire.</li>
+<li>Si les valeurs de <code>LMerr</code> ou <code>RLMerr</code> sont non significatives (<em>p</em> &gt; 0,05) alors le recours au modèle SEM n’est pas nécessaire.</li>
+<li>Si les valeurs de <code>RLMlag</code> et <code>RLMerr</code> sont significatives (<em>p</em> &lt; 0,001), nous choisissons le modèle ayant la plus forte statistique.</li>
+</ol>
+<p>Dans les résultats ci-dessous, nous ne retenons pas le modèle SEM car la valeur de 0,740 pour le <code>RLMerr</code> n’est pas significative (<em>p</em> = 0,3898). Par contre, les valeurs de <code>LMlag</code> et de <code>RLMlag</code> (555 et 123) sont significatives, ce que justifie la sélection du modèle SAR.</p>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="sect071.html#cb500-1" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm.LMtests</span>(<span class="at">model =</span> Modele.MCO,</span>
+<span id="cb500-2"><a href="sect071.html#cb500-2" tabindex="-1"></a>                   <span class="at">listw =</span> W.Rook,</span>
+<span id="cb500-3"><a href="sect071.html#cb500-3" tabindex="-1"></a>                   <span class="at">test =</span> <span class="fu">c</span>(<span class="st">&quot;LMlag&quot;</span>,<span class="st">&quot;LMerr&quot;</span>,<span class="st">&quot;RLMlag&quot;</span>,<span class="st">&quot;RLMerr&quot;</span>)))</span></code></pre></div>
+<pre><code>##  Lagrange multiplier diagnostics for spatial dependence
+## data:  
+## model: lm(formula = NO2 ~ Pct0_14 + Pct_65 + Pct_Img + Pct_brevet +
+## NivVieMed, data = LyonIris)
+## weights: W.Rook
+##  
+##        statistic parameter p.value    
+## LMlag  554.65778         1  &lt;2e-16 ***
+## LMerr  432.83282         1  &lt;2e-16 ***
+## RLMlag 122.56452         1  &lt;2e-16 ***
+## RLMerr   0.73955         1  0.3898    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="sect07132" class="section level4 hasAnchor" number="7.1.3.2">
+<h4><span class="header-section-number">7.1.3.2</span> Comparaison des modèles mixtes et non mixtes<a href="sect071.html#sect07132" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Nous avons vu qu’il existe deux modèles mixtes (SDM et SDEM). Il convient alors de vérifier si le recours d’un modèle mixte est justifié comparativement à un modèle non mixte. Dans le code ci-dessous, nous vérifions si le modèle SDM est statistiquement différent du modèle SAR avec les fonctions <code>LR.Sarlm</code> et <code>anova</code>. Les résultats signalent un écart significatif des valeurs du log-vraisemblance (26,101, <em>p</em> &lt; 0,001). Par conséquent, ce modèle mixte a un apport significatif.</p>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="sect071.html#cb502-1" tabindex="-1"></a><span class="do">## SDM et SEM sont-ils significativement différents?</span></span>
+<span id="cb502-2"><a href="sect071.html#cb502-2" tabindex="-1"></a><span class="fu">LR.Sarlm</span>(Modele.DurbinSpatial, Modele.SAR)</span></code></pre></div>
+<pre><code>## 
+##  Likelihood ratio for spatial linear models
+## 
+## data:  
+## Likelihood ratio = 26.101, df = 5, p-value = 8.528e-05
+## sample estimates:
+## Log likelihood of Modele.DurbinSpatial           Log likelihood of Modele.SAR 
+##                              -1353.106                              -1366.157</code></pre>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="sect071.html#cb504-1" tabindex="-1"></a><span class="fu">anova</span>(Modele.DurbinSpatial, Modele.SAR)</span></code></pre></div>
+<pre><code>##                      Model df    AIC  logLik Test L.Ratio    p-value
+## Modele.DurbinSpatial     1 13 2732.2 -1353.1    1                   
+## Modele.SAR               2  8 2748.3 -1366.2    2  26.101 8.5283e-05</code></pre>
+<p>À l’inverse, la différence entre les valeurs du log-vraisemblance des modèles SDEM et SEM n’est pas significative (4,9728, <em>p</em> = 0,42), signalant que l’utilisation d’un modèle SDEM comparativement à un modèle SEM n’est pas nécessaire.</p>
+<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="sect071.html#cb506-1" tabindex="-1"></a><span class="do">## SDEM et SEM sont-ils significativement différents?</span></span>
+<span id="cb506-2"><a href="sect071.html#cb506-2" tabindex="-1"></a><span class="fu">LR.Sarlm</span>(Modele.DurbinErreur, Modele.SEM)</span></code></pre></div>
+<pre><code>## 
+##  Likelihood ratio for spatial linear models
+## 
+## data:  
+## Likelihood ratio = 4.9728, df = 5, p-value = 0.4192
+## sample estimates:
+## Log likelihood of Modele.DurbinErreur          Log likelihood of Modele.SEM 
+##                             -1367.250                             -1369.737</code></pre>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="sect071.html#cb508-1" tabindex="-1"></a><span class="fu">anova</span>(Modele.DurbinErreur, Modele.SEM)</span></code></pre></div>
+<pre><code>##                     Model df    AIC  logLik Test L.Ratio p-value
+## Modele.DurbinErreur     1 13 2760.5 -1367.2    1                
+## Modele.SEM              2  8 2755.5 -1369.7    2  4.9728  0.4192</code></pre>
+</div>
+<div id="sect07133" class="section level4 hasAnchor" number="7.1.3.3">
+<h4><span class="header-section-number">7.1.3.3</span> Mesures AIC et BIC et dépendance spatiale<a href="sect071.html#sect07133" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Les mesures AIC et BIC sont largement utilisées pour évaluer la qualité d’ajustement du modèle. Plus leurs valeurs sont faibles, meilleur est le modèle. Il est donc possible de comparer leurs valeurs pour les différents modèles (MCO, SLX, SAR, SEM, SDM et SDEM). Nous pouvons aussi comparer l’autocorrélation spatiale des résidus des modèles avec le <em>I</em> de Moran.</p>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="sect071.html#cb510-1" tabindex="-1"></a><span class="do">## Valeurs d&#39;AIC et de BIC</span></span>
+<span id="cb510-2"><a href="sect071.html#cb510-2" tabindex="-1"></a>AICs <span class="ot">&lt;-</span> <span class="fu">AIC</span>(Modele.MCO, Modele.SLX, Modele.SAR, Modele.SEM, </span>
+<span id="cb510-3"><a href="sect071.html#cb510-3" tabindex="-1"></a>            Modele.DurbinSpatial, Modele.DurbinErreur)</span>
+<span id="cb510-4"><a href="sect071.html#cb510-4" tabindex="-1"></a>BICs <span class="ot">&lt;-</span> <span class="fu">BIC</span>(Modele.MCO, Modele.SLX, Modele.SAR, Modele.SEM, </span>
+<span id="cb510-5"><a href="sect071.html#cb510-5" tabindex="-1"></a>            Modele.DurbinSpatial, Modele.DurbinErreur)</span>
+<span id="cb510-6"><a href="sect071.html#cb510-6" tabindex="-1"></a><span class="do">## AUtocorrélation spatiale des résidus</span></span>
+<span id="cb510-7"><a href="sect071.html#cb510-7" tabindex="-1"></a>IMoran.MCO <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.MCO), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb510-8"><a href="sect071.html#cb510-8" tabindex="-1"></a>IMoran.SLX <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.SLX), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb510-9"><a href="sect071.html#cb510-9" tabindex="-1"></a>IMoran.SLM <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.SAR), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb510-10"><a href="sect071.html#cb510-10" tabindex="-1"></a>IMoran.SEM <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.SEM), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb510-11"><a href="sect071.html#cb510-11" tabindex="-1"></a>IMoran.DurbinS <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.DurbinSpatial), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb510-12"><a href="sect071.html#cb510-12" tabindex="-1"></a>IMoran.DurbinE <span class="ot">&lt;-</span> <span class="fu">moran.mc</span>(<span class="fu">resid</span>(Modele.DurbinErreur), W.Rook, <span class="at">nsim=</span><span class="dv">999</span>)</span>
+<span id="cb510-13"><a href="sect071.html#cb510-13" tabindex="-1"></a>MoranI.s <span class="ot">&lt;-</span> <span class="fu">c</span>(IMoran.MCO<span class="sc">$</span>statistic, IMoran.SLX<span class="sc">$</span>statistic,</span>
+<span id="cb510-14"><a href="sect071.html#cb510-14" tabindex="-1"></a>             IMoran.SLM<span class="sc">$</span>statistic, IMoran.SEM<span class="sc">$</span>statistic,</span>
+<span id="cb510-15"><a href="sect071.html#cb510-15" tabindex="-1"></a>             IMoran.DurbinS<span class="sc">$</span>statistic, IMoran.DurbinE<span class="sc">$</span>statistic)</span>
+<span id="cb510-16"><a href="sect071.html#cb510-16" tabindex="-1"></a>MoranI.p <span class="ot">&lt;-</span> <span class="fu">c</span>(IMoran.MCO<span class="sc">$</span>p.value, IMoran.SLX<span class="sc">$</span>p.value,</span>
+<span id="cb510-17"><a href="sect071.html#cb510-17" tabindex="-1"></a>             IMoran.SLM<span class="sc">$</span>p.value, IMoran.SEM<span class="sc">$</span>p.value,</span>
+<span id="cb510-18"><a href="sect071.html#cb510-18" tabindex="-1"></a>             IMoran.DurbinS<span class="sc">$</span>p.value, IMoran.DurbinE<span class="sc">$</span>p.value)</span>
+<span id="cb510-19"><a href="sect071.html#cb510-19" tabindex="-1"></a><span class="do">## Tableau</span></span>
+<span id="cb510-20"><a href="sect071.html#cb510-20" tabindex="-1"></a>Comparaison <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Modele =</span> <span class="fu">c</span>(<span class="st">&quot;MCO&quot;</span>, <span class="st">&quot;SLX&quot;</span>, <span class="st">&quot;SAR&quot;</span>, <span class="st">&quot;SEM&quot;</span>, <span class="st">&quot;Durbin S&quot;</span>, <span class="st">&quot;Durbin E&quot;</span>),</span>
+<span id="cb510-21"><a href="sect071.html#cb510-21" tabindex="-1"></a>                          <span class="at">AIC =</span> AICs<span class="sc">$</span>AIC,</span>
+<span id="cb510-22"><a href="sect071.html#cb510-22" tabindex="-1"></a>                          <span class="at">BIC =</span> BICs<span class="sc">$</span>BIC,</span>
+<span id="cb510-23"><a href="sect071.html#cb510-23" tabindex="-1"></a>                          <span class="at">dl =</span> AICs<span class="sc">$</span>df,</span>
+<span id="cb510-24"><a href="sect071.html#cb510-24" tabindex="-1"></a>                          <span class="at">MoranI =</span> MoranI.s,</span>
+<span id="cb510-25"><a href="sect071.html#cb510-25" tabindex="-1"></a>                          <span class="at">MoranIp =</span> MoranI.p)</span>
+<span id="cb510-26"><a href="sect071.html#cb510-26" tabindex="-1"></a>Comparaison</span></code></pre></div>
+<pre><code>##     Modele      AIC      BIC dl       MoranI MoranIp
+## 1      MCO 3366.626 3396.212  7  0.587312061   0.001
+## 2      SLX 3222.594 3273.313 12  0.604660275   0.001
+## 3      SAR 2748.314 2782.126  8 -0.014281059   0.640
+## 4      SEM 2755.474 2789.286  8 -0.011826630   0.618
+## 5 Durbin S 2732.212 2787.157 13 -0.004612686   0.514
+## 6 Durbin E 2760.501 2815.446 13 -0.010361614   0.621</code></pre>
+<p>Quelques lignes de code suffissent pour créer deux graphiques permettant de comparer visuellement les résultats des différents modèles (figure <a href="sect071.html#fig:GraphComparaison">7.5</a>). Les résultats démontrent que :</p>
 <ul>
-<li>Premier ordre et saut minimal (<em>First-order and Single-linkage</em>) qui fournit un résultats identique à l’algorithme SKATER.</li>
-<li>Ordre complet et saut maximal (<em>Full-order and Complete-linkage</em>).</li>
-<li>Ordre complet et saut moyen (<em>Full-order and Average-linkage</em>).</li>
-<li>Ordre complet et saut minimal (<em>Full-order and Single-linkage</em>).</li>
-<li>Ordre complet et critère de Ward (<em>Full-order and Ward-linkage</em>).</li>
+<li>les modèles MCO et SLX ont un problème de dépendance spatiale puisque leur résidus sont significativement autocorrélés.
+spatialement. Ils ne devraient donc pas être retenus.</li>
+<li>Les modèle mixte SDM et non mixte SEM sont les plus performants avec les valeurs d’AIC les plus faibles.</li>
 </ul>
-<p>Le code ci-dessous permet de calculer les cinq versions de l’algorithmes REDCAP avec cinq régions et de comparer leurs résultats à partir du ratio (entre les variances interrégionale et totale) et du nombre d’observations par région.</p>
-<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="sect071.html#cb557-1" tabindex="-1"></a><span class="fu">library</span>(rgeoda)</span>
-<span id="cb557-2"><a href="sect071.html#cb557-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb557-3"><a href="sect071.html#cb557-3" tabindex="-1"></a><span class="do">## Préparation des données </span></span>
-<span id="cb557-4"><a href="sect071.html#cb557-4" tabindex="-1"></a>Data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(LyonIris[VarsEnv])</span>
-<span id="cb557-5"><a href="sect071.html#cb557-5" tabindex="-1"></a>queen_w <span class="ot">&lt;-</span> <span class="fu">queen_weights</span>(LyonIris)</span>
-<span id="cb557-6"><a href="sect071.html#cb557-6" tabindex="-1"></a><span class="do">## Algorithmes REDCAP</span></span>
-<span id="cb557-7"><a href="sect071.html#cb557-7" tabindex="-1"></a>redcap5.A <span class="ot">&lt;-</span> <span class="fu">redcap</span>(<span class="at">k =</span> <span class="dv">5</span>, <span class="at">w =</span> queen_w, <span class="at">scale_method =</span> <span class="st">&quot;standardize&quot;</span>, <span class="at">df =</span> Data,</span>
-<span id="cb557-8"><a href="sect071.html#cb557-8" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">&quot;firstorder-singlelinkage&quot;</span>)</span>
-<span id="cb557-9"><a href="sect071.html#cb557-9" tabindex="-1"></a>redcap5.B <span class="ot">&lt;-</span> <span class="fu">redcap</span>(<span class="at">k =</span> <span class="dv">5</span>, <span class="at">w =</span> queen_w, <span class="at">scale_method =</span> <span class="st">&quot;standardize&quot;</span>, <span class="at">df =</span> Data,</span>
-<span id="cb557-10"><a href="sect071.html#cb557-10" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">&quot;fullorder-completelinkage&quot;</span>)</span>
-<span id="cb557-11"><a href="sect071.html#cb557-11" tabindex="-1"></a>redcap5.C <span class="ot">&lt;-</span> <span class="fu">redcap</span>(<span class="at">k =</span> <span class="dv">5</span>, <span class="at">w =</span> queen_w, <span class="at">scale_method =</span> <span class="st">&quot;standardize&quot;</span>, <span class="at">df =</span> Data,</span>
-<span id="cb557-12"><a href="sect071.html#cb557-12" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">&quot;fullorder-averagelinkage&quot;</span>)</span>
-<span id="cb557-13"><a href="sect071.html#cb557-13" tabindex="-1"></a>redcap5.D <span class="ot">&lt;-</span> <span class="fu">redcap</span>(<span class="at">k =</span> <span class="dv">5</span>, <span class="at">w =</span> queen_w, <span class="at">scale_method =</span> <span class="st">&quot;standardize&quot;</span>, <span class="at">df =</span> Data,</span>
-<span id="cb557-14"><a href="sect071.html#cb557-14" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">&quot;fullorder-singlelinkage&quot;</span>)</span>
-<span id="cb557-15"><a href="sect071.html#cb557-15" tabindex="-1"></a>redcap5.E <span class="ot">&lt;-</span> <span class="fu">redcap</span>(<span class="at">k =</span> <span class="dv">5</span>, <span class="at">w =</span> queen_w, <span class="at">scale_method =</span> <span class="st">&quot;standardize&quot;</span>, <span class="at">df =</span> Data,</span>
-<span id="cb557-16"><a href="sect071.html#cb557-16" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">&quot;fullorder-wardlinkage&quot;</span>)</span>
-<span id="cb557-17"><a href="sect071.html#cb557-17" tabindex="-1"></a><span class="do">## Comparaison des résultats</span></span>
-<span id="cb557-18"><a href="sect071.html#cb557-18" tabindex="-1"></a>Ratios <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Methode =</span> <span class="fu">c</span>(<span class="st">&quot;firstorder-singlelinkage&quot;</span>, </span>
-<span id="cb557-19"><a href="sect071.html#cb557-19" tabindex="-1"></a>                                  <span class="st">&quot;fullorder-completelinkage&quot;</span>, </span>
-<span id="cb557-20"><a href="sect071.html#cb557-20" tabindex="-1"></a>                                  <span class="st">&quot;fullorder-averagelinkage&quot;</span>,</span>
-<span id="cb557-21"><a href="sect071.html#cb557-21" tabindex="-1"></a>                                  <span class="st">&quot;fullorder-singlelinkage&quot;</span>, </span>
-<span id="cb557-22"><a href="sect071.html#cb557-22" tabindex="-1"></a>                                  <span class="st">&quot;fullorder-wardlinkage&quot;</span>),</span>
-<span id="cb557-23"><a href="sect071.html#cb557-23" tabindex="-1"></a>                      <span class="at">ratio =</span> <span class="fu">c</span>(redcap5.A<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>,</span>
-<span id="cb557-24"><a href="sect071.html#cb557-24" tabindex="-1"></a>                                redcap5.B<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>,</span>
-<span id="cb557-25"><a href="sect071.html#cb557-25" tabindex="-1"></a>                                redcap5.C<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>,</span>
-<span id="cb557-26"><a href="sect071.html#cb557-26" tabindex="-1"></a>                                redcap5.D<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>,</span>
-<span id="cb557-27"><a href="sect071.html#cb557-27" tabindex="-1"></a>                                redcap5.E<span class="sc">$</span><span class="st">`</span><span class="at">The ratio of between to total sum of squares</span><span class="st">`</span>)</span>
-<span id="cb557-28"><a href="sect071.html#cb557-28" tabindex="-1"></a>                      )</span>
-<span id="cb557-29"><a href="sect071.html#cb557-29" tabindex="-1"></a>Nobs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">rbind</span>(<span class="fu">table</span>(redcap5.A<span class="sc">$</span>Clusters), </span>
-<span id="cb557-30"><a href="sect071.html#cb557-30" tabindex="-1"></a>              <span class="fu">table</span>(redcap5.B<span class="sc">$</span>Clusters), </span>
-<span id="cb557-31"><a href="sect071.html#cb557-31" tabindex="-1"></a>              <span class="fu">table</span>(redcap5.C<span class="sc">$</span>Clusters), </span>
-<span id="cb557-32"><a href="sect071.html#cb557-32" tabindex="-1"></a>              <span class="fu">table</span>(redcap5.D<span class="sc">$</span>Clusters), </span>
-<span id="cb557-33"><a href="sect071.html#cb557-33" tabindex="-1"></a>              <span class="fu">table</span>(redcap5.E<span class="sc">$</span>Clusters))</span>
-<span id="cb557-34"><a href="sect071.html#cb557-34" tabindex="-1"></a>              )</span>
-<span id="cb557-35"><a href="sect071.html#cb557-35" tabindex="-1"></a><span class="fu">names</span>(Nobs) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;C1&quot;</span>, <span class="st">&quot;C2&quot;</span>, <span class="st">&quot;C3&quot;</span>, <span class="st">&quot;C4&quot;</span>, <span class="st">&quot;C5&quot;</span>)</span>
-<span id="cb557-36"><a href="sect071.html#cb557-36" tabindex="-1"></a>Ratios <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Ratios, Nobs)</span>
-<span id="cb557-37"><a href="sect071.html#cb557-37" tabindex="-1"></a>Ratios</span></code></pre></div>
-<pre><code>##                     Methode     ratio  C1  C2  C3 C4 C5
-## 1  firstorder-singlelinkage 0.4081577 248 125  51 48 34
-## 2 fullorder-completelinkage 0.4728026 173 156 115 47 15
-## 3  fullorder-averagelinkage 0.4993184 148 141 106 63 48
-## 4   fullorder-singlelinkage 0.3976055 227 102  73 53 51
-## 5     fullorder-wardlinkage 0.5185455 166 134 120 51 35</code></pre>
-<p>À la lecture des valeurs du ratio ci-dessous, la meilleure classification serait celle obtenue avec un ordre complet et le critère de Ward. Cartographions les résultats des quatre versions de l’algorithme RECAP avec un ordre complet (figure <a href="sect071.html#fig:CartoREDCAP">7.8</a>).</p>
-<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="sect071.html#cb559-1" tabindex="-1"></a><span class="do">## Ajout des champs dans la couche</span></span>
-<span id="cb559-2"><a href="sect071.html#cb559-2" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOcompletelinkage  <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.B<span class="sc">$</span>Clusters)</span>
-<span id="cb559-3"><a href="sect071.html#cb559-3" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOaveragelinkage   <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.C<span class="sc">$</span>Clusters)</span>
-<span id="cb559-4"><a href="sect071.html#cb559-4" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOsinglelinkage    <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.D<span class="sc">$</span>Clusters)</span>
-<span id="cb559-5"><a href="sect071.html#cb559-5" tabindex="-1"></a>LyonIris<span class="sc">$</span>RC5.FOwardlinkage      <span class="ot">&lt;-</span> <span class="fu">as.character</span>(redcap5.E<span class="sc">$</span>Clusters)</span>
-<span id="cb559-6"><a href="sect071.html#cb559-6" tabindex="-1"></a><span class="do">## Cartographie des résultats</span></span>
-<span id="cb559-7"><a href="sect071.html#cb559-7" tabindex="-1"></a>Carte.RCb <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb559-8"><a href="sect071.html#cb559-8" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;RC5.FOcompletelinkage&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb559-9"><a href="sect071.html#cb559-9" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb559-10"><a href="sect071.html#cb559-10" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;a. Saut maximal&quot;</span>, </span>
-<span id="cb559-11"><a href="sect071.html#cb559-11" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb559-12"><a href="sect071.html#cb559-12" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb559-13"><a href="sect071.html#cb559-13" tabindex="-1"></a>Carte.RCc <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb559-14"><a href="sect071.html#cb559-14" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;RC5.FOaveragelinkage&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb559-15"><a href="sect071.html#cb559-15" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb559-16"><a href="sect071.html#cb559-16" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;b. Saut moyen&quot;</span>, </span>
-<span id="cb559-17"><a href="sect071.html#cb559-17" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb559-18"><a href="sect071.html#cb559-18" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb559-19"><a href="sect071.html#cb559-19" tabindex="-1"></a>Carte.RCd <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb559-20"><a href="sect071.html#cb559-20" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;RC5.FOsinglelinkage&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb559-21"><a href="sect071.html#cb559-21" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb559-22"><a href="sect071.html#cb559-22" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;c. Saut minimal&quot;</span>, </span>
-<span id="cb559-23"><a href="sect071.html#cb559-23" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb559-24"><a href="sect071.html#cb559-24" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb559-25"><a href="sect071.html#cb559-25" tabindex="-1"></a>Carte.RCe <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(LyonIris)<span class="sc">+</span><span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb559-26"><a href="sect071.html#cb559-26" tabindex="-1"></a>              <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">&quot;RC5.FOwardlinkage&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>, <span class="at">title =</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb559-27"><a href="sect071.html#cb559-27" tabindex="-1"></a>              <span class="fu">tm_layout</span>(<span class="at">frame=</span><span class="cn">FALSE</span>, </span>
-<span id="cb559-28"><a href="sect071.html#cb559-28" tabindex="-1"></a>                <span class="at">main.title =</span> <span class="st">&quot;d. Critère de Ward&quot;</span>, </span>
-<span id="cb559-29"><a href="sect071.html#cb559-29" tabindex="-1"></a>                <span class="at">main.title.position =</span> <span class="st">&quot;center&quot;</span>, </span>
-<span id="cb559-30"><a href="sect071.html#cb559-30" tabindex="-1"></a>                <span class="at">main.title.size =</span> <span class="dv">1</span>)</span>
-<span id="cb559-31"><a href="sect071.html#cb559-31" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte.RCb, Carte.RCc, Carte.RCd, Carte.RCe, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoREDCAP"></span>
-<img src="GMQ405_files/figure-html/CartoREDCAP-1.png" alt="Regroupements des 505 IRIS en cinq régions selon les quatre versions de l'algorithme REDCAP avec un lien complet" width="100%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GraphComparaison"></span>
+<img src="GMQ405_files/figure-html/GraphComparaison-1.png" alt="Comparaison des différents modèles" width="100%" />
 <p class="caption">
-Figure 7.8: Regroupements des 505 IRIS en cinq régions selon les quatre versions de l’algorithme REDCAP avec un lien complet
+Figure 7.5: Comparaison des différents modèles
 </p>
 </div>
 </div>
-<div id="sect0714" class="section level3 hasAnchor" number="7.1.4">
-<h3><span class="header-section-number">7.1.4</span> Algorithme du <em>max-p-regions problem</em><a href="sect071.html#sect0714" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Cet algorithme, proposé par Duque <em>et al.</em> <span class="citation">(<a href="#ref-duque2012max">2012</a>)</span>, n’est pas abordé dans le cours. Il peut être calculé avec trois fonctions du package <code>rgeoda</code>, soit <code>maxp_greedy</code>, <code>maxp_sa</code> et <code>maxp_tabu</code>.</p>
 </div>
 </div>
-<h3>References</h3>
+<h3>Références</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-anselin1996simple" class="csl-entry">
+Anselin, Luc, Anil K Bera, Raymond Florax et Mann J Yoon. 1996. <span>« Simple diagnostic tests for spatial dependence. »</span> <em>Regional science and urban economics</em> 26 (1): 77‑104. <a href="https://doi.org/10.1016/0166-0462(95)02111-6">https://doi.org/10.1016/0166-0462(95)02111-6</a>.
+</div>
+<div id="ref-anselin2014modern" class="csl-entry">
+Anselin, Luc et Sergio J Rey. 2014. <em>Modern spatial econometrics in practice: A guide to GeoDa, GeoDaSpace and PySAL</em>. GeoDa Press LLC.
+</div>
 <div id="ref-RBoldAir" class="csl-entry">
 Apparicio, Philippe et Jérémy Gelb. 2022. <em>Méthodes quantitatives en sciences sociales : un grand bol d’R</em>. FabriqueREL, Licence CC BY-SA. <a href="https://laeq.github.io/LivreMethoQuantBolR/">https://laeq.github.io/LivreMethoQuantBolR/</a>.
 </div>
-<div id="ref-assunccao2006efficient" class="csl-entry">
-Assunção, Renato M, Marcos Corrêa Neves, Gilberto Câmara et Corina da Costa Freitas. 2006. <span>« Efficient regionalization techniques for socio-economic geographical units using minimum spanning trees. »</span> <em>International Journal of Geographical Information Science</em> 20 (7): 797‑811. <a href="https://doi.org/10.1080/13658810600665111">https://doi.org/10.1080/13658810600665111</a>.
+<div id="ref-bivand2021review" class="csl-entry">
+Bivand, Roger, Giovanni Millo et Gianfranco Piras. 2021. <span>« A review of software for spatial econometrics in R. »</span> <em>Mathematics</em> 9 (11): 1276. <a href="https://doi.org/10.3390/math9111276">https://doi.org/10.3390/math9111276</a>.
 </div>
-<div id="ref-duque2012max" class="csl-entry">
-Duque, Juan C, Luc Anselin et Sergio J Rey. 2012. <span>« The max-p-regions problem. »</span> <em>Journal of Regional Science</em> 52 (3): 397‑419. <a href="https://doi.org/10.1111/j.1467-9787.2011.00743.x">https://doi.org/10.1111/j.1467-9787.2011.00743.x</a>.
+<div id="ref-bivand2008applied" class="csl-entry">
+Bivand, Roger, Edzer J Pebesma, Virgilio Gómez-Rubio et Edzer Jan Pebesma. 2008. <em>Applied spatial data analysis with R</em>. Vol. 747248717. Springer.
 </div>
-<div id="ref-ClassificationFloue" class="csl-entry">
-Gelb, Jérémy et Philippe Apparicio. 2021. <span>« Apport de la classification floue c-means spatiale en géographie: essai de taxinomie socio-résidentielle et environnementale à Lyon. »</span> <em>Cybergeo: European Journal of Geography</em>. <a href="https://doi.org/10.4000/cybergeo.36414">https://doi.org/10.4000/cybergeo.36414</a>.
+<div id="ref-dube2014econometrie" class="csl-entry">
+Dubé, Jean et Diègo Legros. 2014. <em>Econom<span>é</span>trie spatiale appliqu<span>é</span>e des microdonn<span>é</span>es</em>. ISTE Group.
 </div>
-<div id="ref-guo2008regionalization" class="csl-entry">
-Guo, Diansheng. 2008. <span>« Regionalization with dynamically constrained agglomerative clustering and partitioning (REDCAP). »</span> <em>International Journal of Geographical Information Science</em> 22 (7): 801‑823. <a href="https://doi.org/10.1080/13658810600665111">https://doi.org/10.1080/13658810600665111</a>.
-</div>
-<div id="ref-packagergeoda" class="csl-entry">
-Li, Xun et Luc Anselin. 2023. <em>rgeoda: R Library for Spatial Data Analysis</em>. s.n. <a href="https://CRAN.R-project.org/package=rgeoda">https://CRAN.R-project.org/package=rgeoda</a>.
-</div>
-<div id="ref-openshaw1977geographical" class="csl-entry">
-Openshaw, Stan. 1977. <span>« A geographical solution to scale and aggregation problems in region-building, partitioning and spatial modelling. »</span> <em>Transactions of the institute of british geographers</em>: 459‑472. <a href="https://doi.org/10.2307/622300">https://doi.org/10.2307/622300</a>.
-</div>
-<div id="ref-openshaw1995algorithms" class="csl-entry">
-Openshaw, Stan et Liang Rao. 1995. <span>« Algorithms for reengineering 1991 Census geography. »</span> <em>Environment and planning A</em> 27 (3): 425‑446. <a href="https://doi.org/10.1068/a270425">https://doi.org/10.1068/a270425</a>.
+<div id="ref-lesage2008introduction" class="csl-entry">
+LeSage, James P et R. Kelly Pace. 2008. <em>An introduction to spatial econometrics</em>. 123. CRC Press.
 </div>
 </div>
             </section>

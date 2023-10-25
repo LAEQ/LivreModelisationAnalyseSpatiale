@@ -198,7 +198,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.2.6" data-path="sect012.html"><a href="sect012.html#sect0126"><i class="fa fa-check"></i><b>1.2.6</b> Requêtes spatiales</a></li>
 <li class="chapter" data-level="1.2.7" data-path="sect012.html"><a href="sect012.html#sect0127"><i class="fa fa-check"></i><b>1.2.7</b> Manipulation des données attributaires</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données <em>raster</em></a>
+<li class="chapter" data-level="1.3" data-path="sect013.html"><a href="sect013.html"><i class="fa fa-check"></i><b>1.3</b> Manipulation de données matricielles (<em>raster</em>)</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="sect013.html"><a href="sect013.html#sect0131"><i class="fa fa-check"></i><b>1.3.1</b> Mosaïquage et découpage d’images</a></li>
 <li class="chapter" data-level="1.3.2" data-path="sect013.html"><a href="sect013.html#sect0132"><i class="fa fa-check"></i><b>1.3.2</b> Requêtes attributaires sur des images</a></li>
@@ -232,13 +232,18 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="sect023.html"><a href="sect023.html"><i class="fa fa-check"></i><b>2.3</b> Autocorrélation spatiale globale</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="sect023.html"><a href="sect023.html#sect0231"><i class="fa fa-check"></i><b>2.3.1</b> Statistique du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Mise en œuvre dans R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect023.html"><a href="sect023.html#sect0232"><i class="fa fa-check"></i><b>2.3.2</b> Statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sect023.html"><a href="sect023.html#sect0233"><i class="fa fa-check"></i><b>2.3.3</b> Indice de Lee : autocorrélation spatiale dans un contexte bivariée</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="sect024.html"><a href="sect024.html"><i class="fa fa-check"></i><b>2.4</b> Autocorrélation spatiale locale</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids</a></li>
+<li class="chapter" data-level="2.4.1" data-path="sect024.html"><a href="sect024.html#sect0241"><i class="fa fa-check"></i><b>2.4.1</b> Statistiques locales de Getis et Ord : repérer les points chauds et froids pour une variable continue</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sect024.html"><a href="sect024.html#sect0242"><i class="fa fa-check"></i><b>2.4.2</b> Version locale du <em>I</em> de Moran</a></li>
-<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Nuage de points du <em>I</em> de Moran d’Anselin</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sect024.html"><a href="sect024.html#sect0243"><i class="fa fa-check"></i><b>2.4.3</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sect024.html"><a href="sect024.html#sect0244"><i class="fa fa-check"></i><b>2.4.4</b> Version locale des statistiques de comptage de jointure (<em>Join Count Statistics</em>)</a></li>
+<li class="chapter" data-level="2.4.5" data-path="sect024.html"><a href="sect024.html#sect0245"><i class="fa fa-check"></i><b>2.4.5</b> Version locale de l’indice de Lee</a></li>
+<li class="chapter" data-level="2.4.6" data-path="sect024.html"><a href="sect024.html#sect0246"><i class="fa fa-check"></i><b>2.4.6</b> Typologie basée sur le diagramme de Moran dans un contexte bivarié</a></li>
+<li class="chapter" data-level="2.4.7" data-path="sect024.html"><a href="sect024.html#sect0247"><i class="fa fa-check"></i><b>2.4.7</b> Autocorrélation locale pour une variable qualitative (catégorielle) : l’indicateur ELSA</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sect025.html"><a href="sect025.html"><i class="fa fa-check"></i><b>2.5</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="2.6" data-path="sect026.html"><a href="sect026.html"><i class="fa fa-check"></i><b>2.6</b> Exercices de révision</a></li>
@@ -309,92 +314,83 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="sect055.html"><a href="sect055.html"><i class="fa fa-check"></i><b>5.5</b> Quiz de révision du chapitre</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Introduction aux modèles de régression spatiale</a>
+<li class="chapter" data-level="6" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>6</b> Analyses d’évènements localisés sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Modèles économétriques spatiaux</a>
+<li class="chapter" data-level="6.1" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>6.1</b> Cartographie de la densité d’évènements sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
-<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
-<li class="chapter" data-level="6.1.3" data-path="sect061.html"><a href="sect061.html#sect0613"><i class="fa fa-check"></i><b>6.1.3</b> Quel modèle choisir?</a></li>
+<li class="chapter" data-level="6.1.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>6.1.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>6.1.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
+<li class="chapter" data-level="6.2" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>6.2</b> Mesure d’autocorrélation spatiale sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
-<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Construction d’un modèle GAM dans R</a></li>
+<li class="chapter" data-level="6.2.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>6.2.1</b> Getis et Ord</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>6.2.2</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="6.2.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>6.2.3</b> Mise en œuvre dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> Régression géographiquement pondérée</a>
+<li class="chapter" data-level="6.3" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>6.3</b> DBSCAN sur un réseau</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Principe de base</a></li>
-<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
+<li class="chapter" data-level="6.3.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>6.3.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>6.3.2</b> Mise en œuvre dans R</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="sect064.html"><a href="sect064.html"><i class="fa fa-check"></i><b>6.4</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="6.5" data-path="sect065.html"><a href="sect065.html"><i class="fa fa-check"></i><b>6.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Méthodes de classification non supervisée spatiale</a>
+<li class="chapter" data-level="7" data-path="chap07.html"><a href="chap07.html"><i class="fa fa-check"></i><b>7</b> Introduction aux modèles de régression spatiale</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<li class="chapter" data-level="7.1" data-path="sect071.html"><a href="sect071.html"><i class="fa fa-check"></i><b>7.1</b> Modèles économétriques spatiaux</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Algorithmes AZP</a></li>
-<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Algorithme SKATER</a></li>
-<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Algorithmes REDCAP</a></li>
-<li class="chapter" data-level="7.1.4" data-path="sect071.html"><a href="sect071.html#sect0714"><i class="fa fa-check"></i><b>7.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+<li class="chapter" data-level="7.1.1" data-path="sect071.html"><a href="sect071.html#sect0711"><i class="fa fa-check"></i><b>7.1.1</b> Bref retour sur la régression linéaire multiple</a></li>
+<li class="chapter" data-level="7.1.2" data-path="sect071.html"><a href="sect071.html#sect0712"><i class="fa fa-check"></i><b>7.1.2</b> Les différents modèles spatiaux autorégressifs</a></li>
+<li class="chapter" data-level="7.1.3" data-path="sect071.html"><a href="sect071.html#sect0713"><i class="fa fa-check"></i><b>7.1.3</b> Quel modèle choisir?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<li class="chapter" data-level="7.2" data-path="sect072.html"><a href="sect072.html"><i class="fa fa-check"></i><b>7.2</b> Modèles généralisés additifs (GAM) avec une <em>spline</em> bivariée sur les coordonnées géographiques</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
+<li class="chapter" data-level="7.2.1" data-path="sect072.html"><a href="sect072.html#sect0721"><i class="fa fa-check"></i><b>7.2.1</b> Principe de base d’un GAM intégrant l’espace</a></li>
+<li class="chapter" data-level="7.2.2" data-path="sect072.html"><a href="sect072.html#sect0722"><i class="fa fa-check"></i><b>7.2.2</b> Construction d’un modèle GAM dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Exercices de révision</a></li>
+<li class="chapter" data-level="7.3" data-path="sect073.html"><a href="sect073.html"><i class="fa fa-check"></i><b>7.3</b> Régression géographiquement pondérée</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="sect073.html"><a href="sect073.html#sect0731"><i class="fa fa-check"></i><b>7.3.1</b> Principe de base</a></li>
+<li class="chapter" data-level="7.3.2" data-path="sect073.html"><a href="sect073.html#sect0732"><i class="fa fa-check"></i><b>7.3.2</b> Construction et analyse du modèle GWR dans R</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes d’interpolation spatiale</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes déterministes</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Interpolation polynomiale locale</a></li>
-<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Interpolation de l’inverse à la distance - <em>IDW</em></a></li>
+<li class="chapter" data-level="7.4" data-path="sect074.html"><a href="sect074.html"><i class="fa fa-check"></i><b>7.4</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="7.5" data-path="sect075.html"><a href="sect075.html"><i class="fa fa-check"></i><b>7.5</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes géostatistiques</a>
+<li class="chapter" data-level="8" data-path="chap08.html"><a href="chap08.html"><i class="fa fa-check"></i><b>8</b> Méthodes de classification non supervisée spatiale</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Krigeage simple</a></li>
-<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> Krigeage universel</a></li>
-<li class="chapter" data-level="8.2.3" data-path="sect082.html"><a href="sect082.html#sect0823"><i class="fa fa-check"></i><b>8.2.3</b> Co-krigeage</a></li>
-<li class="chapter" data-level="8.2.4" data-path="sect082.html"><a href="sect082.html#sect0824"><i class="fa fa-check"></i><b>8.2.4</b> Krigeage résiduel</a></li>
+<li class="chapter" data-level="8.1" data-path="sect081.html"><a href="sect081.html"><i class="fa fa-check"></i><b>8.1</b> Méthodes de classification non supervisée avec contrainte spatiale</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sect081.html"><a href="sect081.html#sect0811"><i class="fa fa-check"></i><b>8.1.1</b> Algorithmes AZP</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sect081.html"><a href="sect081.html#sect0812"><i class="fa fa-check"></i><b>8.1.2</b> Algorithme SKATER</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sect081.html"><a href="sect081.html#sect0813"><i class="fa fa-check"></i><b>8.1.3</b> Algorithmes REDCAP</a></li>
+<li class="chapter" data-level="8.1.4" data-path="sect081.html"><a href="sect081.html#sect0814"><i class="fa fa-check"></i><b>8.1.4</b> Algorithme du <em>max-p-regions problem</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sect082.html"><a href="sect082.html"><i class="fa fa-check"></i><b>8.2</b> Méthodes de classification non supervisée avec une dimension spatiale</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sect082.html"><a href="sect082.html#sect0821"><i class="fa fa-check"></i><b>8.2.1</b> Classification ascendante hiérarchique spatiale (<em>ClustGeo</em>)</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sect082.html"><a href="sect082.html#sect0822"><i class="fa fa-check"></i><b>8.2.2</b> <em>Spatial fuzzy c-means</em></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="sect083.html"><a href="sect083.html"><i class="fa fa-check"></i><b>8.3</b> Quiz de révision du chapitre</a></li>
 <li class="chapter" data-level="8.4" data-path="sect084.html"><a href="sect084.html"><i class="fa fa-check"></i><b>8.4</b> Exercices de révision</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Analyse spatiale par l’analyse d’images</a>
+<li class="chapter" data-level="9" data-path="chap09.html"><a href="chap09.html"><i class="fa fa-check"></i><b>9</b> Méthodes d’interpolation spatiale</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Fonctions mathématiques, booléennes, relationnelles et conditionnelles sur les images</a>
+<li class="chapter" data-level="9.1" data-path="sect091.html"><a href="sect091.html"><i class="fa fa-check"></i><b>9.1</b> Méthodes déterministes</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Fonctions mathématiques</a></li>
-<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Fonctions booléennes</a></li>
+<li class="chapter" data-level="9.1.1" data-path="sect091.html"><a href="sect091.html#sect0911"><i class="fa fa-check"></i><b>9.1.1</b> Interpolation polynomiale locale</a></li>
+<li class="chapter" data-level="9.1.2" data-path="sect091.html"><a href="sect091.html#sect0912"><i class="fa fa-check"></i><b>9.1.2</b> Interpolation de l’inverse à la distance (<em>IDW</em>)</a></li>
 <li class="chapter" data-level="9.1.3" data-path="sect091.html"><a href="sect091.html#sect0913"><i class="fa fa-check"></i><b>9.1.3</b> Fonctions relationnelles</a></li>
 <li class="chapter" data-level="9.1.4" data-path="sect091.html"><a href="sect091.html#sect0914"><i class="fa fa-check"></i><b>9.1.4</b> Fonctions conditionnelles</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Fonctions locales, focales, zonales et globales sur les images</a>
+<li class="chapter" data-level="9.2" data-path="sect092.html"><a href="sect092.html"><i class="fa fa-check"></i><b>9.2</b> Méthodes géostatistiques</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Fonctions locales</a></li>
-<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Fonctions focales</a></li>
-<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Fonctions zonales</a></li>
-<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Fonctions globales</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sect092.html"><a href="sect092.html#sect0921"><i class="fa fa-check"></i><b>9.2.1</b> Krigeage simple</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sect092.html"><a href="sect092.html#sect0922"><i class="fa fa-check"></i><b>9.2.2</b> Krigeage universel</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sect092.html"><a href="sect092.html#sect0923"><i class="fa fa-check"></i><b>9.2.3</b> Co-krigeage</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sect092.html"><a href="sect092.html#sect0924"><i class="fa fa-check"></i><b>9.2.4</b> Krigeage résiduel</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Fonctions de surface</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="sect093.html"><a href="sect093.html#sect0931"><i class="fa fa-check"></i><b>9.3.1</b> Élevation</a></li>
-<li class="chapter" data-level="9.3.2" data-path="sect093.html"><a href="sect093.html#sect0932"><i class="fa fa-check"></i><b>9.3.2</b> Pente</a></li>
-<li class="chapter" data-level="9.3.3" data-path="sect093.html"><a href="sect093.html#sect0933"><i class="fa fa-check"></i><b>9.3.3</b> Ombrage</a></li>
-<li class="chapter" data-level="9.3.4" data-path="sect093.html"><a href="sect093.html#sect0934"><i class="fa fa-check"></i><b>9.3.4</b> Visibilité</a></li>
-<li class="chapter" data-level="9.3.5" data-path="sect093.html"><a href="sect093.html#sect0935"><i class="fa fa-check"></i><b>9.3.5</b> Sky-view factor Index</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Données spatiotemporelles en mode image</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="sect094.html"><a href="sect094.html#fichier-netcdf"><i class="fa fa-check"></i><b>9.4.1</b> Fichier <em>netCDF</em></a></li>
-<li class="chapter" data-level="9.4.2" data-path="sect094.html"><a href="sect094.html#exemples-applicatifs"><i class="fa fa-check"></i><b>9.4.2</b> Exemples applicatifs</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="sect095.html"><a href="sect095.html"><i class="fa fa-check"></i><b>9.5</b> Quiz de révision du chapitre</a></li>
-<li class="chapter" data-level="9.6" data-path="sect096.html"><a href="sect096.html"><i class="fa fa-check"></i><b>9.6</b> Exercices de révision</a></li>
+<li class="chapter" data-level="9.3" data-path="sect093.html"><a href="sect093.html"><i class="fa fa-check"></i><b>9.3</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="9.4" data-path="sect094.html"><a href="sect094.html"><i class="fa fa-check"></i><b>9.4</b> Exercices de révision</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>10</b> Correction des exercices</a>
 <ul>
@@ -424,20 +420,18 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>10.4.2</b> Exercice 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>10.5</b> Exercices du chapitre 5</a></li>
-<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a>
-<ul>
-<li class="chapter" data-level="10.6.1" data-path="sect1006.html"><a href="sect1006.html#sect10061"><i class="fa fa-check"></i><b>10.6.1</b> Exercice 1</a></li>
-<li class="chapter" data-level="10.6.2" data-path="sect1006.html"><a href="sect1006.html#sect10062"><i class="fa fa-check"></i><b>10.6.2</b> Exercice 2</a></li>
-<li class="chapter" data-level="10.6.3" data-path="sect1006.html"><a href="sect1006.html#sect10063"><i class="fa fa-check"></i><b>10.6.3</b> Exercice 3</a></li>
-</ul></li>
+<li class="chapter" data-level="10.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>10.6</b> Exercices du chapitre 6</a></li>
 <li class="chapter" data-level="10.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>10.7</b> Exercices du chapitre 7</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sect1007.html"><a href="sect1007.html#sect10071"><i class="fa fa-check"></i><b>10.7.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sect1007.html"><a href="sect1007.html#sect10072"><i class="fa fa-check"></i><b>10.7.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="10.7.3" data-path="sect1007.html"><a href="sect1007.html#sect10073"><i class="fa fa-check"></i><b>10.7.3</b> Exercice 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a></li>
+<li class="chapter" data-level="10.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>10.8</b> Exercices du chapitre 8</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="sect1008.html"><a href="sect1008.html#sect10081"><i class="fa fa-check"></i><b>10.8.1</b> Exercice 1</a></li>
+</ul></li>
 <li class="chapter" data-level="10.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>10.9</b> Exercices du chapitre 9</a></li>
-<li class="chapter" data-level="10.10" data-path="sect1011.html"><a href="sect1011.html"><i class="fa fa-check"></i><b>10.10</b> Exercices du chapitre 11</a></li>
-<li class="chapter" data-level="10.11" data-path="sect1012.html"><a href="sect1012.html"><i class="fa fa-check"></i><b>10.11</b> Excercice du chapitre 12</a></li>
 </ul></li>
 </ul>
 
@@ -465,26 +459,26 @@ Modélisation et analyse spatiale</a>
 <p>Une maille irrégulière est habituellement un découpage administratif comme les MRC du Québec ou les arrondissements d’une ville.</p>
 <p>À la figure <a href="sect034.html#fig:figDensiteIrreguliere">3.15</a>, nous avons compté le nombre de méfaits par secteurs de recensement pour l’année 2021, puis calculer la densité, soit le nombre de méfaits pour 1000 habitants. Les cercles proportionnels permettent ainsi de repérer les secteurs comprenant le plus de méfaits. Toutefois, la population totale variant d’un SR à l’autre, il est préférable de cartographier la densité, soit le nombre de méfaits pour 1000 habitants. Notez que pour d’autres jeux de données, il serait plus judicieux d’utiliser la superficie comme dénominateur pour calculer la densité (par exemple, le nombre d’arbres au kilomètre carré ou à l’hectare).</p>
 <p>En quelques lignes de code, il est très facile de calculer et de cartographier la densité dans un maillage irrégulier.</p>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="sect034.html#cb320-1" tabindex="-1"></a><span class="do">## Secteurs de recensement (SR) de la ville de Sherbrooke en 2021</span></span>
-<span id="cb320-2"><a href="sect034.html#cb320-2" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
-<span id="cb320-3"><a href="sect034.html#cb320-3" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbSRDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb320-4"><a href="sect034.html#cb320-4" tabindex="-1"></a><span class="do">## Sélection des méfaits pour l&#39;année 2021</span></span>
-<span id="cb320-5"><a href="sect034.html#cb320-5" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/IncidentsSecuritePublique.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb320-6"><a href="sect034.html#cb320-6" tabindex="-1"></a>M2021 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Incidents, DESCRIPTIO <span class="sc">==</span> <span class="st">&quot;Méfait&quot;</span> <span class="sc">&amp;</span> ANNEE<span class="sc">==</span><span class="dv">2021</span>)</span>
-<span id="cb320-7"><a href="sect034.html#cb320-7" tabindex="-1"></a><span class="do">## Nous nous assurons que les deux couches ont la même projection cartographique</span></span>
-<span id="cb320-8"><a href="sect034.html#cb320-8" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(SR, <span class="fu">st_crs</span>(M2021))</span>
-<span id="cb320-9"><a href="sect034.html#cb320-9" tabindex="-1"></a><span class="do">## Calcul du nombre d&#39;incidents par SR </span></span>
-<span id="cb320-10"><a href="sect034.html#cb320-10" tabindex="-1"></a>SR<span class="sc">$</span>Mefaits2021 <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(SR, M2021))</span>
-<span id="cb320-11"><a href="sect034.html#cb320-11" tabindex="-1"></a><span class="do">## Calcul du nombre de méfaits pour 1000 habitants</span></span>
-<span id="cb320-12"><a href="sect034.html#cb320-12" tabindex="-1"></a>SR<span class="sc">$</span>DensiteM21Hab <span class="ot">&lt;-</span> SR<span class="sc">$</span>Mefaits2021 <span class="sc">/</span> (SR<span class="sc">$</span>SRpop_2021 <span class="sc">/</span> <span class="dv">1000</span>)</span>
-<span id="cb320-13"><a href="sect034.html#cb320-13" tabindex="-1"></a><span class="do">## Cartographie</span></span>
-<span id="cb320-14"><a href="sect034.html#cb320-14" tabindex="-1"></a><span class="fu">tm_shape</span>(SR)<span class="sc">+</span></span>
-<span id="cb320-15"><a href="sect034.html#cb320-15" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;Mefaits2021&quot;</span>, <span class="at">style=</span><span class="st">&quot;pretty&quot;</span>, </span>
-<span id="cb320-16"><a href="sect034.html#cb320-16" tabindex="-1"></a>              <span class="at">title=</span><span class="st">&quot;Nombre pour 1000 habitants&quot;</span>,</span>
-<span id="cb320-17"><a href="sect034.html#cb320-17" tabindex="-1"></a>              <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb320-18"><a href="sect034.html#cb320-18" tabindex="-1"></a>  <span class="fu">tm_bubbles</span>(<span class="at">size =</span> <span class="st">&quot;DensiteM21Hab&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
-<span id="cb320-19"><a href="sect034.html#cb320-19" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;aquamarine3&quot;</span>, <span class="at">title.size =</span> <span class="st">&quot;Nombre&quot;</span>, <span class="at">scale =</span> <span class="fl">1.5</span>)<span class="sc">+</span> </span>
-<span id="cb320-20"><a href="sect034.html#cb320-20" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">tm_scale_bar</span>(<span class="at">text.size =</span> .<span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="sect034.html#cb348-1" tabindex="-1"></a><span class="do">## Secteurs de recensement (SR) de la ville de Sherbrooke en 2021</span></span>
+<span id="cb348-2"><a href="sect034.html#cb348-2" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Recen2021Sherbrooke.gpkg&quot;</span>,</span>
+<span id="cb348-3"><a href="sect034.html#cb348-3" tabindex="-1"></a>              <span class="at">layer =</span> <span class="st">&quot;DR_SherbSRDonnees2021&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb348-4"><a href="sect034.html#cb348-4" tabindex="-1"></a><span class="do">## Sélection des méfaits pour l&#39;année 2021</span></span>
+<span id="cb348-5"><a href="sect034.html#cb348-5" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/IncidentsSecuritePublique.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb348-6"><a href="sect034.html#cb348-6" tabindex="-1"></a>M2021 <span class="ot">&lt;-</span> <span class="fu">subset</span>(Incidents, DESCRIPTIO <span class="sc">==</span> <span class="st">&quot;Méfait&quot;</span> <span class="sc">&amp;</span> ANNEE<span class="sc">==</span><span class="dv">2021</span>)</span>
+<span id="cb348-7"><a href="sect034.html#cb348-7" tabindex="-1"></a><span class="do">## Nous nous assurons que les deux couches ont la même projection cartographique</span></span>
+<span id="cb348-8"><a href="sect034.html#cb348-8" tabindex="-1"></a>SR <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(SR, <span class="fu">st_crs</span>(M2021))</span>
+<span id="cb348-9"><a href="sect034.html#cb348-9" tabindex="-1"></a><span class="do">## Calcul du nombre d&#39;incidents par SR </span></span>
+<span id="cb348-10"><a href="sect034.html#cb348-10" tabindex="-1"></a>SR<span class="sc">$</span>Mefaits2021 <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(SR, M2021))</span>
+<span id="cb348-11"><a href="sect034.html#cb348-11" tabindex="-1"></a><span class="do">## Calcul du nombre de méfaits pour 1000 habitants</span></span>
+<span id="cb348-12"><a href="sect034.html#cb348-12" tabindex="-1"></a>SR<span class="sc">$</span>DensiteM21Hab <span class="ot">&lt;-</span> SR<span class="sc">$</span>Mefaits2021 <span class="sc">/</span> (SR<span class="sc">$</span>SRpop_2021 <span class="sc">/</span> <span class="dv">1000</span>)</span>
+<span id="cb348-13"><a href="sect034.html#cb348-13" tabindex="-1"></a><span class="do">## Cartographie</span></span>
+<span id="cb348-14"><a href="sect034.html#cb348-14" tabindex="-1"></a><span class="fu">tm_shape</span>(SR)<span class="sc">+</span></span>
+<span id="cb348-15"><a href="sect034.html#cb348-15" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&quot;Mefaits2021&quot;</span>, <span class="at">style=</span><span class="st">&quot;pretty&quot;</span>, </span>
+<span id="cb348-16"><a href="sect034.html#cb348-16" tabindex="-1"></a>              <span class="at">title=</span><span class="st">&quot;Nombre pour 1000 habitants&quot;</span>,</span>
+<span id="cb348-17"><a href="sect034.html#cb348-17" tabindex="-1"></a>              <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb348-18"><a href="sect034.html#cb348-18" tabindex="-1"></a>  <span class="fu">tm_bubbles</span>(<span class="at">size =</span> <span class="st">&quot;DensiteM21Hab&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
+<span id="cb348-19"><a href="sect034.html#cb348-19" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;aquamarine3&quot;</span>, <span class="at">title.size =</span> <span class="st">&quot;Nombre&quot;</span>, <span class="at">scale =</span> <span class="fl">1.5</span>)<span class="sc">+</span> </span>
+<span id="cb348-20"><a href="sect034.html#cb348-20" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">tm_scale_bar</span>(<span class="at">text.size =</span> .<span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:figDensiteIrreguliere"></span>
 <img src="GMQ405_files/figure-html/figDensiteIrreguliere-1.png" alt="Densité des méfaits par secteurs de recensement, ville de Sherbrooke, 2021" width="85%" />
 <p class="caption">
@@ -667,51 +661,51 @@ X
 <li><code>spatstat</code>, soit le <em>package</em> le plus complet pour réaliser des analyses de répartition ponctuelle <span class="citation">(<a href="#ref-spatstatPackage">Baddeley et Turner 2005</a>; <a href="#ref-baddeley2015spatial">Baddeley, Rubak et Turner 2015</a>)</span>. Par conséquent, nous privilégions son utilisation dans les exemples ci-dessous.</li>
 </ol>
 <p>Afin d’expliquer comment réaliser un KDE dans R, nous utilisons les accidents survenus dans l’arrondissement des Nations. Notez que nous retenons uniquement cet arrondissement et non l’ensemble de la ville afin d’accélérer les temps de calculs.</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="sect034.html#cb321-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb321-2"><a href="sect034.html#cb321-2" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
-<span id="cb321-3"><a href="sect034.html#cb321-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb321-4"><a href="sect034.html#cb321-4" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
-<span id="cb321-5"><a href="sect034.html#cb321-5" tabindex="-1"></a><span class="do">## Importation des données </span></span>
-<span id="cb321-6"><a href="sect034.html#cb321-6" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span>  <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Arrondissements.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb321-7"><a href="sect034.html#cb321-7" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/IncidentsSecuritePublique.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb321-8"><a href="sect034.html#cb321-8" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Arrondissements, <span class="at">crs =</span> <span class="dv">3798</span>) </span>
-<span id="cb321-9"><a href="sect034.html#cb321-9" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Incidents, <span class="at">crs =</span> <span class="dv">3798</span>)</span>
-<span id="cb321-10"><a href="sect034.html#cb321-10" tabindex="-1"></a><span class="do">## Couche pour les accidents</span></span>
-<span id="cb321-11"><a href="sect034.html#cb321-11" tabindex="-1"></a>Accidents <span class="ot">&lt;-</span> <span class="fu">subset</span>(Incidents, Incidents<span class="sc">$</span>DESCRIPTIO <span class="sc">%in%</span> </span>
-<span id="cb321-12"><a href="sect034.html#cb321-12" tabindex="-1"></a>                      <span class="fu">c</span>(<span class="st">&quot;Accident avec blessés&quot;</span>, <span class="st">&quot;Accident mortel&quot;</span>))</span>
-<span id="cb321-13"><a href="sect034.html#cb321-13" tabindex="-1"></a><span class="do">## Pour accélérer les calculs, nous retenons uniquement l&#39;arrondissement des Nations</span></span>
-<span id="cb321-14"><a href="sect034.html#cb321-14" tabindex="-1"></a><span class="co"># Couche pour l&#39;arrondissement des Nations</span></span>
-<span id="cb321-15"><a href="sect034.html#cb321-15" tabindex="-1"></a>ArrDesNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(Arrondissements, NOM <span class="sc">==</span> <span class="st">&quot;Arrondissement des Nations&quot;</span>)</span>
-<span id="cb321-16"><a href="sect034.html#cb321-16" tabindex="-1"></a><span class="co"># Sélection des accidents localisés dans l&#39;arrondissement des Nations</span></span>
-<span id="cb321-17"><a href="sect034.html#cb321-17" tabindex="-1"></a>RequeteSpatiale <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(Accidents, ArrDesNations, <span class="at">sparse =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb321-18"><a href="sect034.html#cb321-18" tabindex="-1"></a>Accidents<span class="sc">$</span>Nations <span class="ot">&lt;-</span> RequeteSpatiale[, <span class="dv">1</span>]</span>
-<span id="cb321-19"><a href="sect034.html#cb321-19" tabindex="-1"></a>AccNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(Accidents, Accidents<span class="sc">$</span>Nations <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
-<span id="cb321-20"><a href="sect034.html#cb321-20" tabindex="-1"></a><span class="co"># Une couche par année</span></span>
-<span id="cb321-21"><a href="sect034.html#cb321-21" tabindex="-1"></a>AccNations2019 <span class="ot">&lt;-</span> <span class="fu">subset</span>(AccNations, AccNations<span class="sc">$</span>AN <span class="sc">==</span> <span class="dv">2019</span>)</span>
-<span id="cb321-22"><a href="sect034.html#cb321-22" tabindex="-1"></a>AccNations2020 <span class="ot">&lt;-</span> <span class="fu">subset</span>(AccNations, AccNations<span class="sc">$</span>AN <span class="sc">==</span> <span class="dv">2020</span>)</span>
-<span id="cb321-23"><a href="sect034.html#cb321-23" tabindex="-1"></a>AccNations2021 <span class="ot">&lt;-</span> <span class="fu">subset</span>(AccNations, AccNations<span class="sc">$</span>AN <span class="sc">==</span> <span class="dv">2021</span>)</span>
-<span id="cb321-24"><a href="sect034.html#cb321-24" tabindex="-1"></a>AccNations2022 <span class="ot">&lt;-</span> <span class="fu">subset</span>(AccNations, AccNations<span class="sc">$</span>AN <span class="sc">==</span> <span class="dv">2022</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="sect034.html#cb349-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb349-2"><a href="sect034.html#cb349-2" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
+<span id="cb349-3"><a href="sect034.html#cb349-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb349-4"><a href="sect034.html#cb349-4" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb349-5"><a href="sect034.html#cb349-5" tabindex="-1"></a><span class="do">## Importation des données </span></span>
+<span id="cb349-6"><a href="sect034.html#cb349-6" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span>  <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/Arrondissements.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb349-7"><a href="sect034.html#cb349-7" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">&quot;data/chap03/IncidentsSecuritePublique.shp&quot;</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb349-8"><a href="sect034.html#cb349-8" tabindex="-1"></a>Arrondissements <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Arrondissements, <span class="at">crs =</span> <span class="dv">3798</span>) </span>
+<span id="cb349-9"><a href="sect034.html#cb349-9" tabindex="-1"></a>Incidents <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(Incidents, <span class="at">crs =</span> <span class="dv">3798</span>)</span>
+<span id="cb349-10"><a href="sect034.html#cb349-10" tabindex="-1"></a><span class="do">## Couche pour les accidents</span></span>
+<span id="cb349-11"><a href="sect034.html#cb349-11" tabindex="-1"></a>Accidents <span class="ot">&lt;-</span> <span class="fu">subset</span>(Incidents, Incidents<span class="sc">$</span>DESCRIPTIO <span class="sc">%in%</span> </span>
+<span id="cb349-12"><a href="sect034.html#cb349-12" tabindex="-1"></a>                      <span class="fu">c</span>(<span class="st">&quot;Accident avec blessés&quot;</span>, <span class="st">&quot;Accident mortel&quot;</span>))</span>
+<span id="cb349-13"><a href="sect034.html#cb349-13" tabindex="-1"></a><span class="do">## Pour accélérer les calculs, nous retenons uniquement l&#39;arrondissement des Nations</span></span>
+<span id="cb349-14"><a href="sect034.html#cb349-14" tabindex="-1"></a><span class="co"># Couche pour l&#39;arrondissement des Nations</span></span>
+<span id="cb349-15"><a href="sect034.html#cb349-15" tabindex="-1"></a>ArrDesNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(Arrondissements, NOM <span class="sc">==</span> <span class="st">&quot;Arrondissement des Nations&quot;</span>)</span>
+<span id="cb349-16"><a href="sect034.html#cb349-16" tabindex="-1"></a><span class="co"># Sélection des accidents localisés dans l&#39;arrondissement des Nations</span></span>
+<span id="cb349-17"><a href="sect034.html#cb349-17" tabindex="-1"></a>RequeteSpatiale <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(Accidents, ArrDesNations, <span class="at">sparse =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb349-18"><a href="sect034.html#cb349-18" tabindex="-1"></a>Accidents<span class="sc">$</span>Nations <span class="ot">&lt;-</span> RequeteSpatiale[, <span class="dv">1</span>]</span>
+<span id="cb349-19"><a href="sect034.html#cb349-19" tabindex="-1"></a>AccNations <span class="ot">&lt;-</span> <span class="fu">subset</span>(Accidents, Accidents<span class="sc">$</span>Nations <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb349-20"><a href="sect034.html#cb349-20" tabindex="-1"></a><span class="co"># Une couche par année</span></span>
+<span id="cb349-21"><a href="sect034.html#cb349-21" tabindex="-1"></a>AccNations2019 <span class="ot">&lt;-</span> <span class="fu">subset</span>(AccNations, AccNations<span class="sc">$</span>AN <span class="sc">==</span> <span class="dv">2019</span>)</span>
+<span id="cb349-22"><a href="sect034.html#cb349-22" tabindex="-1"></a>AccNations2020 <span class="ot">&lt;-</span> <span class="fu">subset</span>(AccNations, AccNations<span class="sc">$</span>AN <span class="sc">==</span> <span class="dv">2020</span>)</span>
+<span id="cb349-23"><a href="sect034.html#cb349-23" tabindex="-1"></a>AccNations2021 <span class="ot">&lt;-</span> <span class="fu">subset</span>(AccNations, AccNations<span class="sc">$</span>AN <span class="sc">==</span> <span class="dv">2021</span>)</span>
+<span id="cb349-24"><a href="sect034.html#cb349-24" tabindex="-1"></a>AccNations2022 <span class="ot">&lt;-</span> <span class="fu">subset</span>(AccNations, AccNations<span class="sc">$</span>AN <span class="sc">==</span> <span class="dv">2022</span>)</span></code></pre></div>
 <p>Nous convertissons les points dans le format <code>ppp</code> utilisé par le <em>package</em> <code>spatstat</code>.</p>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="sect034.html#cb322-1" tabindex="-1"></a><span class="do">## Conversion des données sf dans le format de spatstat</span></span>
-<span id="cb322-2"><a href="sect034.html#cb322-2" tabindex="-1"></a><span class="co"># la fonction as.owin est utilisée pour définir la fenêtre de travail</span></span>
-<span id="cb322-3"><a href="sect034.html#cb322-3" tabindex="-1"></a>fenetre <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(ArrDesNations)</span>
-<span id="cb322-4"><a href="sect034.html#cb322-4" tabindex="-1"></a><span class="do">## Conversion des points au format ppp pour les différentes années</span></span>
-<span id="cb322-5"><a href="sect034.html#cb322-5" tabindex="-1"></a><span class="co"># 2019 </span></span>
-<span id="cb322-6"><a href="sect034.html#cb322-6" tabindex="-1"></a>AccN2019.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(AccNations2019)[,<span class="dv">1</span>],</span>
-<span id="cb322-7"><a href="sect034.html#cb322-7" tabindex="-1"></a>                    <span class="at">y =</span> <span class="fu">st_coordinates</span>(AccNations2019)[,<span class="dv">2</span>],</span>
-<span id="cb322-8"><a href="sect034.html#cb322-8" tabindex="-1"></a>                    <span class="at">window =</span> fenetre, <span class="at">check =</span> T)</span>
-<span id="cb322-9"><a href="sect034.html#cb322-9" tabindex="-1"></a><span class="co"># 2020 </span></span>
-<span id="cb322-10"><a href="sect034.html#cb322-10" tabindex="-1"></a>AccN2020.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(AccNations2020)[,<span class="dv">1</span>],</span>
-<span id="cb322-11"><a href="sect034.html#cb322-11" tabindex="-1"></a>                    <span class="at">y =</span> <span class="fu">st_coordinates</span>(AccNations2020)[,<span class="dv">2</span>],</span>
-<span id="cb322-12"><a href="sect034.html#cb322-12" tabindex="-1"></a>                    <span class="at">window =</span> fenetre, <span class="at">check =</span> T) </span>
-<span id="cb322-13"><a href="sect034.html#cb322-13" tabindex="-1"></a><span class="co"># 2021 </span></span>
-<span id="cb322-14"><a href="sect034.html#cb322-14" tabindex="-1"></a>AccN2021.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(AccNations2021)[,<span class="dv">1</span>],</span>
-<span id="cb322-15"><a href="sect034.html#cb322-15" tabindex="-1"></a>                    <span class="at">y =</span> <span class="fu">st_coordinates</span>(AccNations2021)[,<span class="dv">2</span>],</span>
-<span id="cb322-16"><a href="sect034.html#cb322-16" tabindex="-1"></a>                    <span class="at">window =</span> fenetre, <span class="at">check =</span> T)</span>
-<span id="cb322-17"><a href="sect034.html#cb322-17" tabindex="-1"></a><span class="co"># 2022</span></span>
-<span id="cb322-18"><a href="sect034.html#cb322-18" tabindex="-1"></a>AccN2022.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(AccNations2022)[,<span class="dv">1</span>],</span>
-<span id="cb322-19"><a href="sect034.html#cb322-19" tabindex="-1"></a>                    <span class="at">y =</span> <span class="fu">st_coordinates</span>(AccNations2022)[,<span class="dv">2</span>],</span>
-<span id="cb322-20"><a href="sect034.html#cb322-20" tabindex="-1"></a>                    <span class="at">window =</span> fenetre, <span class="at">check =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="sect034.html#cb350-1" tabindex="-1"></a><span class="do">## Conversion des données sf dans le format de spatstat</span></span>
+<span id="cb350-2"><a href="sect034.html#cb350-2" tabindex="-1"></a><span class="co"># la fonction as.owin est utilisée pour définir la fenêtre de travail</span></span>
+<span id="cb350-3"><a href="sect034.html#cb350-3" tabindex="-1"></a>fenetre <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(ArrDesNations)</span>
+<span id="cb350-4"><a href="sect034.html#cb350-4" tabindex="-1"></a><span class="do">## Conversion des points au format ppp pour les différentes années</span></span>
+<span id="cb350-5"><a href="sect034.html#cb350-5" tabindex="-1"></a><span class="co"># 2019 </span></span>
+<span id="cb350-6"><a href="sect034.html#cb350-6" tabindex="-1"></a>AccN2019.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(AccNations2019)[,<span class="dv">1</span>],</span>
+<span id="cb350-7"><a href="sect034.html#cb350-7" tabindex="-1"></a>                    <span class="at">y =</span> <span class="fu">st_coordinates</span>(AccNations2019)[,<span class="dv">2</span>],</span>
+<span id="cb350-8"><a href="sect034.html#cb350-8" tabindex="-1"></a>                    <span class="at">window =</span> fenetre, <span class="at">check =</span> T)</span>
+<span id="cb350-9"><a href="sect034.html#cb350-9" tabindex="-1"></a><span class="co"># 2020 </span></span>
+<span id="cb350-10"><a href="sect034.html#cb350-10" tabindex="-1"></a>AccN2020.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(AccNations2020)[,<span class="dv">1</span>],</span>
+<span id="cb350-11"><a href="sect034.html#cb350-11" tabindex="-1"></a>                    <span class="at">y =</span> <span class="fu">st_coordinates</span>(AccNations2020)[,<span class="dv">2</span>],</span>
+<span id="cb350-12"><a href="sect034.html#cb350-12" tabindex="-1"></a>                    <span class="at">window =</span> fenetre, <span class="at">check =</span> T) </span>
+<span id="cb350-13"><a href="sect034.html#cb350-13" tabindex="-1"></a><span class="co"># 2021 </span></span>
+<span id="cb350-14"><a href="sect034.html#cb350-14" tabindex="-1"></a>AccN2021.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(AccNations2021)[,<span class="dv">1</span>],</span>
+<span id="cb350-15"><a href="sect034.html#cb350-15" tabindex="-1"></a>                    <span class="at">y =</span> <span class="fu">st_coordinates</span>(AccNations2021)[,<span class="dv">2</span>],</span>
+<span id="cb350-16"><a href="sect034.html#cb350-16" tabindex="-1"></a>                    <span class="at">window =</span> fenetre, <span class="at">check =</span> T)</span>
+<span id="cb350-17"><a href="sect034.html#cb350-17" tabindex="-1"></a><span class="co"># 2022</span></span>
+<span id="cb350-18"><a href="sect034.html#cb350-18" tabindex="-1"></a>AccN2022.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(AccNations2022)[,<span class="dv">1</span>],</span>
+<span id="cb350-19"><a href="sect034.html#cb350-19" tabindex="-1"></a>                    <span class="at">y =</span> <span class="fu">st_coordinates</span>(AccNations2022)[,<span class="dv">2</span>],</span>
+<span id="cb350-20"><a href="sect034.html#cb350-20" tabindex="-1"></a>                    <span class="at">window =</span> fenetre, <span class="at">check =</span> T)</span></code></pre></div>
 <p>Puis, il faut définir la taille des pixels et le rayon d’influence (<em>bandwidth</em> en anglais) :</p>
 <ul>
 <li>Plus la taille des pixels est réduite, plus la taille de l’image résultante est grande et les calculs longs à réaliser.</li>
@@ -722,69 +716,69 @@ X
 <p>Assurez-vous que la taille du pixel soit bien inférieure (au moins dix fois plus petite) à celle du rayon d’influence afin d’obtenir des résultats précis. À notre connaissance, il n’existe pas de règle pour optimiser la valeur ratio entre la taille du pixel et la taille du rayon d’influence.</p>
 </div>
 <p>Plusieurs algorithmes permettant de sélectionner la valeur optimale du rayon d’influence sont implémentés dans le <em>package</em> <code>spatstat</code> avec les fonctions <code>bw.diggle</code>, <code>bw.ppl</code>, <code>bw.scott</code> et <code>bw.CvL</code>. À la lecture des résultats ci-dessous, la valeur du rayon proposée par l’algorithme de Diggle semble bien trop petite et celle du critère de Cronie et van Lieshout bien trop grande. Le rayon optimal est certainement compris entre 700 et 750 mètres. Par conséquent, nous retenons une taille de pixel de 50 mètres et la valeur du rayon optimisée par la fonction <code>bw.ppl</code>.</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="sect034.html#cb323-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Diggle :&quot;</span>, <span class="fu">bw.diggle</span>(AccN2020.ppp),</span>
-<span id="cb323-2"><a href="sect034.html#cb323-2" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Maximum de vraissemblance :&quot;</span>, <span class="fu">bw.ppl</span>(AccN2020.ppp),</span>
-<span id="cb323-3"><a href="sect034.html#cb323-3" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Critère de Scott 1 :&quot;</span>, <span class="fu">bw.scott</span>(AccN2020.ppp)[<span class="dv">1</span>],</span>
-<span id="cb323-4"><a href="sect034.html#cb323-4" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Critère  de Scott 2 :&quot;</span>, <span class="fu">bw.scott</span>(AccN2020.ppp)[<span class="dv">2</span>],</span>
-<span id="cb323-5"><a href="sect034.html#cb323-5" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Critère de Cronie et van Lieshout :&quot;</span>, <span class="fu">bw.CvL</span>(AccN2020.ppp))</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="sect034.html#cb351-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Diggle :&quot;</span>, <span class="fu">bw.diggle</span>(AccN2020.ppp),</span>
+<span id="cb351-2"><a href="sect034.html#cb351-2" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Maximum de vraissemblance :&quot;</span>, <span class="fu">bw.ppl</span>(AccN2020.ppp),</span>
+<span id="cb351-3"><a href="sect034.html#cb351-3" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Critère de Scott 1 :&quot;</span>, <span class="fu">bw.scott</span>(AccN2020.ppp)[<span class="dv">1</span>],</span>
+<span id="cb351-4"><a href="sect034.html#cb351-4" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Critère  de Scott 2 :&quot;</span>, <span class="fu">bw.scott</span>(AccN2020.ppp)[<span class="dv">2</span>],</span>
+<span id="cb351-5"><a href="sect034.html#cb351-5" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Critère de Cronie et van Lieshout :&quot;</span>, <span class="fu">bw.CvL</span>(AccN2020.ppp))</span></code></pre></div>
 <pre><code>## 
 ## Diggle : 124.196 
 ## Maximum de vraissemblance : 494.5408 
 ## Critère de Scott 1 : 971.3489 
 ## Critère  de Scott 2 : 514.2688 
 ## Critère de Cronie et van Lieshout : 1644.489</code></pre>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="sect034.html#cb325-1" tabindex="-1"></a><span class="do">## Taille des pixels et du rayon en mètres</span></span>
-<span id="cb325-2"><a href="sect034.html#cb325-2" tabindex="-1"></a>pixel_m <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb325-3"><a href="sect034.html#cb325-3" tabindex="-1"></a>RayonOpt <span class="ot">&lt;-</span> <span class="fu">bw.ppl</span>(AccN2020.ppp)</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="sect034.html#cb353-1" tabindex="-1"></a><span class="do">## Taille des pixels et du rayon en mètres</span></span>
+<span id="cb353-2"><a href="sect034.html#cb353-2" tabindex="-1"></a>pixel_m <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb353-3"><a href="sect034.html#cb353-3" tabindex="-1"></a>RayonOpt <span class="ot">&lt;-</span> <span class="fu">bw.ppl</span>(AccN2020.ppp)</span></code></pre></div>
 <div id="sect034221" class="section level5 hasAnchor" number="3.4.2.2.1">
 <h5><span class="header-section-number">3.4.2.2.1</span> Comparaison des fonctions <em>kernel</em><a href="sect034.html#sect034221" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Le paramètre <code>kernel</code> de la fonction <code>density.ppp</code> permet de sélectionner l’une des quatre fonctions <em>kernel</em> (<code>gaussian</code>, <code>quartic</code>, <code>epanechnikov</code> et <code>disc</code>). Pour la dernière, le même poids est attribué aux points compris dans le rayon d’influence; elle correspond ainsi à un <em>kernel</em> uniforme ou simple. Excepté ce dernier <em>kernel</em>, la figure <a href="sect034.html#fig:CartoQuatreKernels">3.17</a> démontre que les résultats sont très semblables d’une <em>kernel</em> à l’autre.</p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="sect034.html#cb326-1" tabindex="-1"></a><span class="do">## Calcul du KDE avec différentes fonctions kernel</span></span>
-<span id="cb326-2"><a href="sect034.html#cb326-2" tabindex="-1"></a><span class="co"># kernel gaussien</span></span>
-<span id="cb326-3"><a href="sect034.html#cb326-3" tabindex="-1"></a>kdeG <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>)</span>
-<span id="cb326-4"><a href="sect034.html#cb326-4" tabindex="-1"></a><span class="co"># kernel quadratique</span></span>
-<span id="cb326-5"><a href="sect034.html#cb326-5" tabindex="-1"></a>kdeQ <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb326-6"><a href="sect034.html#cb326-6" tabindex="-1"></a><span class="co"># kernel Epanechnikov</span></span>
-<span id="cb326-7"><a href="sect034.html#cb326-7" tabindex="-1"></a>kdeE <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;epanechnikov&quot;</span>)</span>
-<span id="cb326-8"><a href="sect034.html#cb326-8" tabindex="-1"></a><span class="co"># kernel disc (uniforme ou simple)</span></span>
-<span id="cb326-9"><a href="sect034.html#cb326-9" tabindex="-1"></a><span class="co"># le même poids est accordé à chaque point dans le rayon</span></span>
-<span id="cb326-10"><a href="sect034.html#cb326-10" tabindex="-1"></a>kdeD <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;disc&quot;</span>)</span>
-<span id="cb326-11"><a href="sect034.html#cb326-11" tabindex="-1"></a><span class="do">## Conversion en raster </span></span>
-<span id="cb326-12"><a href="sect034.html#cb326-12" tabindex="-1"></a><span class="co"># étant donné que les valeurs sont exprimées en nombre de points par m2,</span></span>
-<span id="cb326-13"><a href="sect034.html#cb326-13" tabindex="-1"></a><span class="co"># nous les multiplions par 1 000 000 pour obtenir une densité au km2.</span></span>
-<span id="cb326-14"><a href="sect034.html#cb326-14" tabindex="-1"></a>RkdeG <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeG)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb326-15"><a href="sect034.html#cb326-15" tabindex="-1"></a>RkdeQ <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb326-16"><a href="sect034.html#cb326-16" tabindex="-1"></a>RkdeE <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeE)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb326-17"><a href="sect034.html#cb326-17" tabindex="-1"></a>RkdeD <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeD)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb326-18"><a href="sect034.html#cb326-18" tabindex="-1"></a><span class="do">## Projection cartographique</span></span>
-<span id="cb326-19"><a href="sect034.html#cb326-19" tabindex="-1"></a><span class="fu">crs</span>(RkdeG) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span></span>
-<span id="cb326-20"><a href="sect034.html#cb326-20" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span> </span>
-<span id="cb326-21"><a href="sect034.html#cb326-21" tabindex="-1"></a><span class="fu">crs</span>(RkdeE) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span> </span>
-<span id="cb326-22"><a href="sect034.html#cb326-22" tabindex="-1"></a><span class="fu">crs</span>(RkdeD) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span></span>
-<span id="cb326-23"><a href="sect034.html#cb326-23" tabindex="-1"></a><span class="do">## Visualisation des résultats</span></span>
-<span id="cb326-24"><a href="sect034.html#cb326-24" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb326-25"><a href="sect034.html#cb326-25" tabindex="-1"></a>Carte1 <span class="ot">&lt;-</span></span>
-<span id="cb326-26"><a href="sect034.html#cb326-26" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeG) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Gaussien&quot;</span>)<span class="sc">+</span></span>
-<span id="cb326-27"><a href="sect034.html#cb326-27" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb326-28"><a href="sect034.html#cb326-28" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb326-29"><a href="sect034.html#cb326-29" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb326-30"><a href="sect034.html#cb326-30" tabindex="-1"></a>Carte2 <span class="ot">&lt;-</span></span>
-<span id="cb326-31"><a href="sect034.html#cb326-31" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Quadratique&quot;</span>)<span class="sc">+</span></span>
-<span id="cb326-32"><a href="sect034.html#cb326-32" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb326-33"><a href="sect034.html#cb326-33" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb326-34"><a href="sect034.html#cb326-34" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb326-35"><a href="sect034.html#cb326-35" tabindex="-1"></a>Carte3 <span class="ot">&lt;-</span></span>
-<span id="cb326-36"><a href="sect034.html#cb326-36" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeE) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Epanechnikov&quot;</span>)<span class="sc">+</span></span>
-<span id="cb326-37"><a href="sect034.html#cb326-37" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb326-38"><a href="sect034.html#cb326-38" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb326-39"><a href="sect034.html#cb326-39" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb326-40"><a href="sect034.html#cb326-40" tabindex="-1"></a>Carte4 <span class="ot">&lt;-</span></span>
-<span id="cb326-41"><a href="sect034.html#cb326-41" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeD) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Uniforme&quot;</span>)<span class="sc">+</span></span>
-<span id="cb326-42"><a href="sect034.html#cb326-42" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb326-43"><a href="sect034.html#cb326-43" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb326-44"><a href="sect034.html#cb326-44" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks  =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))<span class="sc">+</span><span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb326-45"><a href="sect034.html#cb326-45" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte1, Carte2, Carte3, Carte4,</span>
-<span id="cb326-46"><a href="sect034.html#cb326-46" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="sect034.html#cb354-1" tabindex="-1"></a><span class="do">## Calcul du KDE avec différentes fonctions kernel</span></span>
+<span id="cb354-2"><a href="sect034.html#cb354-2" tabindex="-1"></a><span class="co"># kernel gaussien</span></span>
+<span id="cb354-3"><a href="sect034.html#cb354-3" tabindex="-1"></a>kdeG <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>)</span>
+<span id="cb354-4"><a href="sect034.html#cb354-4" tabindex="-1"></a><span class="co"># kernel quadratique</span></span>
+<span id="cb354-5"><a href="sect034.html#cb354-5" tabindex="-1"></a>kdeQ <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb354-6"><a href="sect034.html#cb354-6" tabindex="-1"></a><span class="co"># kernel Epanechnikov</span></span>
+<span id="cb354-7"><a href="sect034.html#cb354-7" tabindex="-1"></a>kdeE <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;epanechnikov&quot;</span>)</span>
+<span id="cb354-8"><a href="sect034.html#cb354-8" tabindex="-1"></a><span class="co"># kernel disc (uniforme ou simple)</span></span>
+<span id="cb354-9"><a href="sect034.html#cb354-9" tabindex="-1"></a><span class="co"># le même poids est accordé à chaque point dans le rayon</span></span>
+<span id="cb354-10"><a href="sect034.html#cb354-10" tabindex="-1"></a>kdeD <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span>RayonOpt, <span class="at">eps=</span>pixel_m, <span class="at">kernel=</span><span class="st">&quot;disc&quot;</span>)</span>
+<span id="cb354-11"><a href="sect034.html#cb354-11" tabindex="-1"></a><span class="do">## Conversion en raster </span></span>
+<span id="cb354-12"><a href="sect034.html#cb354-12" tabindex="-1"></a><span class="co"># étant donné que les valeurs sont exprimées en nombre de points par m2,</span></span>
+<span id="cb354-13"><a href="sect034.html#cb354-13" tabindex="-1"></a><span class="co"># nous les multiplions par 1 000 000 pour obtenir une densité au km2.</span></span>
+<span id="cb354-14"><a href="sect034.html#cb354-14" tabindex="-1"></a>RkdeG <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeG)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb354-15"><a href="sect034.html#cb354-15" tabindex="-1"></a>RkdeQ <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb354-16"><a href="sect034.html#cb354-16" tabindex="-1"></a>RkdeE <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeE)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb354-17"><a href="sect034.html#cb354-17" tabindex="-1"></a>RkdeD <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeD)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb354-18"><a href="sect034.html#cb354-18" tabindex="-1"></a><span class="do">## Projection cartographique</span></span>
+<span id="cb354-19"><a href="sect034.html#cb354-19" tabindex="-1"></a><span class="fu">crs</span>(RkdeG) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span></span>
+<span id="cb354-20"><a href="sect034.html#cb354-20" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span> </span>
+<span id="cb354-21"><a href="sect034.html#cb354-21" tabindex="-1"></a><span class="fu">crs</span>(RkdeE) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span> </span>
+<span id="cb354-22"><a href="sect034.html#cb354-22" tabindex="-1"></a><span class="fu">crs</span>(RkdeD) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span></span>
+<span id="cb354-23"><a href="sect034.html#cb354-23" tabindex="-1"></a><span class="do">## Visualisation des résultats</span></span>
+<span id="cb354-24"><a href="sect034.html#cb354-24" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb354-25"><a href="sect034.html#cb354-25" tabindex="-1"></a>Carte1 <span class="ot">&lt;-</span></span>
+<span id="cb354-26"><a href="sect034.html#cb354-26" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeG) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Gaussien&quot;</span>)<span class="sc">+</span></span>
+<span id="cb354-27"><a href="sect034.html#cb354-27" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb354-28"><a href="sect034.html#cb354-28" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb354-29"><a href="sect034.html#cb354-29" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb354-30"><a href="sect034.html#cb354-30" tabindex="-1"></a>Carte2 <span class="ot">&lt;-</span></span>
+<span id="cb354-31"><a href="sect034.html#cb354-31" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Quadratique&quot;</span>)<span class="sc">+</span></span>
+<span id="cb354-32"><a href="sect034.html#cb354-32" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb354-33"><a href="sect034.html#cb354-33" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb354-34"><a href="sect034.html#cb354-34" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb354-35"><a href="sect034.html#cb354-35" tabindex="-1"></a>Carte3 <span class="ot">&lt;-</span></span>
+<span id="cb354-36"><a href="sect034.html#cb354-36" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeE) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Epanechnikov&quot;</span>)<span class="sc">+</span></span>
+<span id="cb354-37"><a href="sect034.html#cb354-37" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb354-38"><a href="sect034.html#cb354-38" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb354-39"><a href="sect034.html#cb354-39" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb354-40"><a href="sect034.html#cb354-40" tabindex="-1"></a>Carte4 <span class="ot">&lt;-</span></span>
+<span id="cb354-41"><a href="sect034.html#cb354-41" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeD) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Uniforme&quot;</span>)<span class="sc">+</span></span>
+<span id="cb354-42"><a href="sect034.html#cb354-42" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb354-43"><a href="sect034.html#cb354-43" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb354-44"><a href="sect034.html#cb354-44" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks  =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))<span class="sc">+</span><span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb354-45"><a href="sect034.html#cb354-45" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte1, Carte2, Carte3, Carte4,</span>
+<span id="cb354-46"><a href="sect034.html#cb354-46" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoQuatreKernels"></span>
 <img src="GMQ405_files/figure-html/CartoQuatreKernels-1.png" alt="Comparaison des résultats du KDE pour différents kernels" width="85%" />
 <p class="caption">
@@ -795,42 +789,42 @@ Figure 3.17: Comparaison des résultats du KDE pour différents kernels
 <div id="sect034222" class="section level5 hasAnchor" number="3.4.2.2.2">
 <h5><span class="header-section-number">3.4.2.2.2</span> Évaluation de l’impact du rayon d’influence<a href="sect034.html#sect034222" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Le code R permet de réaliser des KDE avec des rayons de 250, 500, 750 et 1000 mètres. La figure <a href="sect034.html#fig:CartoQuatreKernels">3.17</a> démontre bien que plus le rayon est grand, plus la carte est lissée.</p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="sect034.html#cb327-1" tabindex="-1"></a>kdeQ250  <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">250</span>,  <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb327-2"><a href="sect034.html#cb327-2" tabindex="-1"></a>kdeQ500  <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">500</span>,  <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb327-3"><a href="sect034.html#cb327-3" tabindex="-1"></a>kdeQ750  <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">750</span>,  <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb327-4"><a href="sect034.html#cb327-4" tabindex="-1"></a>kdeQ1000 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">1000</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb327-5"><a href="sect034.html#cb327-5" tabindex="-1"></a>RkdeQ250  <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ250)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb327-6"><a href="sect034.html#cb327-6" tabindex="-1"></a>RkdeQ500  <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ500)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb327-7"><a href="sect034.html#cb327-7" tabindex="-1"></a>RkdeQ750  <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ750)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb327-8"><a href="sect034.html#cb327-8" tabindex="-1"></a>RkdeQ1000 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ1000)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb327-9"><a href="sect034.html#cb327-9" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ250) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3857&quot;</span></span>
-<span id="cb327-10"><a href="sect034.html#cb327-10" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ500) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3857&quot;</span> </span>
-<span id="cb327-11"><a href="sect034.html#cb327-11" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ750) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3857&quot;</span> </span>
-<span id="cb327-12"><a href="sect034.html#cb327-12" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ1000) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3857&quot;</span></span>
-<span id="cb327-13"><a href="sect034.html#cb327-13" tabindex="-1"></a><span class="do">## Visualisation des résultats</span></span>
-<span id="cb327-14"><a href="sect034.html#cb327-14" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb327-15"><a href="sect034.html#cb327-15" tabindex="-1"></a>Carte1 <span class="ot">&lt;-</span></span>
-<span id="cb327-16"><a href="sect034.html#cb327-16" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ250) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;r = 250 m&quot;</span>)<span class="sc">+</span></span>
-<span id="cb327-17"><a href="sect034.html#cb327-17" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb327-18"><a href="sect034.html#cb327-18" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb327-19"><a href="sect034.html#cb327-19" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb327-20"><a href="sect034.html#cb327-20" tabindex="-1"></a>Carte2 <span class="ot">&lt;-</span></span>
-<span id="cb327-21"><a href="sect034.html#cb327-21" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ500) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;r = 500 m&quot;</span>)<span class="sc">+</span></span>
-<span id="cb327-22"><a href="sect034.html#cb327-22" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb327-23"><a href="sect034.html#cb327-23" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb327-24"><a href="sect034.html#cb327-24" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb327-25"><a href="sect034.html#cb327-25" tabindex="-1"></a>Carte3 <span class="ot">&lt;-</span></span>
-<span id="cb327-26"><a href="sect034.html#cb327-26" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ750) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;r = 750 m&quot;</span>)<span class="sc">+</span></span>
-<span id="cb327-27"><a href="sect034.html#cb327-27" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb327-28"><a href="sect034.html#cb327-28" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb327-29"><a href="sect034.html#cb327-29" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb327-30"><a href="sect034.html#cb327-30" tabindex="-1"></a>Carte4 <span class="ot">&lt;-</span></span>
-<span id="cb327-31"><a href="sect034.html#cb327-31" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ1000) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;r = 1000 m&quot;</span>)<span class="sc">+</span></span>
-<span id="cb327-32"><a href="sect034.html#cb327-32" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb327-33"><a href="sect034.html#cb327-33" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb327-34"><a href="sect034.html#cb327-34" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks  =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))<span class="sc">+</span><span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb327-35"><a href="sect034.html#cb327-35" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte1, Carte2, Carte3, Carte4,</span>
-<span id="cb327-36"><a href="sect034.html#cb327-36" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="sect034.html#cb355-1" tabindex="-1"></a>kdeQ250  <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">250</span>,  <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb355-2"><a href="sect034.html#cb355-2" tabindex="-1"></a>kdeQ500  <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">500</span>,  <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb355-3"><a href="sect034.html#cb355-3" tabindex="-1"></a>kdeQ750  <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">750</span>,  <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb355-4"><a href="sect034.html#cb355-4" tabindex="-1"></a>kdeQ1000 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">1000</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb355-5"><a href="sect034.html#cb355-5" tabindex="-1"></a>RkdeQ250  <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ250)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb355-6"><a href="sect034.html#cb355-6" tabindex="-1"></a>RkdeQ500  <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ500)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb355-7"><a href="sect034.html#cb355-7" tabindex="-1"></a>RkdeQ750  <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ750)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb355-8"><a href="sect034.html#cb355-8" tabindex="-1"></a>RkdeQ1000 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kdeQ1000)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb355-9"><a href="sect034.html#cb355-9" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ250) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3857&quot;</span></span>
+<span id="cb355-10"><a href="sect034.html#cb355-10" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ500) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3857&quot;</span> </span>
+<span id="cb355-11"><a href="sect034.html#cb355-11" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ750) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3857&quot;</span> </span>
+<span id="cb355-12"><a href="sect034.html#cb355-12" tabindex="-1"></a><span class="fu">crs</span>(RkdeQ1000) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3857&quot;</span></span>
+<span id="cb355-13"><a href="sect034.html#cb355-13" tabindex="-1"></a><span class="do">## Visualisation des résultats</span></span>
+<span id="cb355-14"><a href="sect034.html#cb355-14" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb355-15"><a href="sect034.html#cb355-15" tabindex="-1"></a>Carte1 <span class="ot">&lt;-</span></span>
+<span id="cb355-16"><a href="sect034.html#cb355-16" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ250) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;r = 250 m&quot;</span>)<span class="sc">+</span></span>
+<span id="cb355-17"><a href="sect034.html#cb355-17" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb355-18"><a href="sect034.html#cb355-18" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb355-19"><a href="sect034.html#cb355-19" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb355-20"><a href="sect034.html#cb355-20" tabindex="-1"></a>Carte2 <span class="ot">&lt;-</span></span>
+<span id="cb355-21"><a href="sect034.html#cb355-21" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ500) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;r = 500 m&quot;</span>)<span class="sc">+</span></span>
+<span id="cb355-22"><a href="sect034.html#cb355-22" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb355-23"><a href="sect034.html#cb355-23" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb355-24"><a href="sect034.html#cb355-24" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb355-25"><a href="sect034.html#cb355-25" tabindex="-1"></a>Carte3 <span class="ot">&lt;-</span></span>
+<span id="cb355-26"><a href="sect034.html#cb355-26" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ750) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;r = 750 m&quot;</span>)<span class="sc">+</span></span>
+<span id="cb355-27"><a href="sect034.html#cb355-27" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb355-28"><a href="sect034.html#cb355-28" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb355-29"><a href="sect034.html#cb355-29" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb355-30"><a href="sect034.html#cb355-30" tabindex="-1"></a>Carte4 <span class="ot">&lt;-</span></span>
+<span id="cb355-31"><a href="sect034.html#cb355-31" tabindex="-1"></a>  <span class="fu">tm_shape</span>(RkdeQ1000) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;r = 1000 m&quot;</span>)<span class="sc">+</span></span>
+<span id="cb355-32"><a href="sect034.html#cb355-32" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb355-33"><a href="sect034.html#cb355-33" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb355-34"><a href="sect034.html#cb355-34" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks  =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))<span class="sc">+</span><span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb355-35"><a href="sect034.html#cb355-35" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte1, Carte2, Carte3, Carte4,</span>
+<span id="cb355-36"><a href="sect034.html#cb355-36" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoDistKernels"></span>
 <img src="GMQ405_files/figure-html/CartoDistKernels-1.png" alt="Comparaison des résultats du KDE selon le rayon d'influence" width="85%" />
 <p class="caption">
@@ -841,41 +835,41 @@ Figure 3.18: Comparaison des résultats du KDE selon le rayon d’influence
 <div id="sect034223" class="section level5 hasAnchor" number="3.4.2.2.3">
 <h5><span class="header-section-number">3.4.2.2.3</span> Comparaison entre différentes années<a href="sect034.html#sect034223" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Bien entendu, pour un même jeu de données, il est possible de représenter la densité pour différentes années (figure <a href="sect034.html#fig:CartoTemporelleKernels">3.19</a>).</p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="sect034.html#cb328-1" tabindex="-1"></a>kde2019 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2019.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb328-2"><a href="sect034.html#cb328-2" tabindex="-1"></a>kde2020 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb328-3"><a href="sect034.html#cb328-3" tabindex="-1"></a>kde2021 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2021.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb328-4"><a href="sect034.html#cb328-4" tabindex="-1"></a>kde2022 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2022.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
-<span id="cb328-5"><a href="sect034.html#cb328-5" tabindex="-1"></a>Rkde2019 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kde2019)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb328-6"><a href="sect034.html#cb328-6" tabindex="-1"></a>Rkde2020 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kde2020)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb328-7"><a href="sect034.html#cb328-7" tabindex="-1"></a>Rkde2021 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kde2020)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb328-8"><a href="sect034.html#cb328-8" tabindex="-1"></a>Rkde2022 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kde2021)<span class="sc">*</span><span class="dv">1000000</span></span>
-<span id="cb328-9"><a href="sect034.html#cb328-9" tabindex="-1"></a><span class="fu">crs</span>(Rkde2019) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span></span>
-<span id="cb328-10"><a href="sect034.html#cb328-10" tabindex="-1"></a><span class="fu">crs</span>(Rkde2020) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span> </span>
-<span id="cb328-11"><a href="sect034.html#cb328-11" tabindex="-1"></a><span class="fu">crs</span>(Rkde2021) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span> </span>
-<span id="cb328-12"><a href="sect034.html#cb328-12" tabindex="-1"></a><span class="fu">crs</span>(Rkde2022) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span></span>
-<span id="cb328-13"><a href="sect034.html#cb328-13" tabindex="-1"></a></span>
-<span id="cb328-14"><a href="sect034.html#cb328-14" tabindex="-1"></a>Carte1 <span class="ot">&lt;-</span></span>
-<span id="cb328-15"><a href="sect034.html#cb328-15" tabindex="-1"></a>  <span class="fu">tm_shape</span>(Rkde2019) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;2019&quot;</span>)<span class="sc">+</span></span>
-<span id="cb328-16"><a href="sect034.html#cb328-16" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2019) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb328-17"><a href="sect034.html#cb328-17" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb328-18"><a href="sect034.html#cb328-18" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb328-19"><a href="sect034.html#cb328-19" tabindex="-1"></a>Carte2 <span class="ot">&lt;-</span></span>
-<span id="cb328-20"><a href="sect034.html#cb328-20" tabindex="-1"></a>  <span class="fu">tm_shape</span>(Rkde2020) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;2021&quot;</span>)<span class="sc">+</span></span>
-<span id="cb328-21"><a href="sect034.html#cb328-21" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb328-22"><a href="sect034.html#cb328-22" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb328-23"><a href="sect034.html#cb328-23" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb328-24"><a href="sect034.html#cb328-24" tabindex="-1"></a>Carte3 <span class="ot">&lt;-</span></span>
-<span id="cb328-25"><a href="sect034.html#cb328-25" tabindex="-1"></a>  <span class="fu">tm_shape</span>(Rkde2021) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;2022&quot;</span>)<span class="sc">+</span></span>
-<span id="cb328-26"><a href="sect034.html#cb328-26" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2021) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb328-27"><a href="sect034.html#cb328-27" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb328-28"><a href="sect034.html#cb328-28" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb328-29"><a href="sect034.html#cb328-29" tabindex="-1"></a>Carte4 <span class="ot">&lt;-</span></span>
-<span id="cb328-30"><a href="sect034.html#cb328-30" tabindex="-1"></a>  <span class="fu">tm_shape</span>(Rkde2022) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;2023&quot;</span>)<span class="sc">+</span></span>
-<span id="cb328-31"><a href="sect034.html#cb328-31" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2022) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
-<span id="cb328-32"><a href="sect034.html#cb328-32" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb328-33"><a href="sect034.html#cb328-33" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks  =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))<span class="sc">+</span><span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
-<span id="cb328-34"><a href="sect034.html#cb328-34" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte1, Carte2, Carte3, Carte4,</span>
-<span id="cb328-35"><a href="sect034.html#cb328-35" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="sect034.html#cb356-1" tabindex="-1"></a>kde2019 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2019.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb356-2"><a href="sect034.html#cb356-2" tabindex="-1"></a>kde2020 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2020.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb356-3"><a href="sect034.html#cb356-3" tabindex="-1"></a>kde2021 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2021.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb356-4"><a href="sect034.html#cb356-4" tabindex="-1"></a>kde2022 <span class="ot">&lt;-</span> <span class="fu">density.ppp</span>(AccN2022.ppp, <span class="at">sigma=</span><span class="dv">500</span>, <span class="at">eps=</span><span class="dv">50</span>, <span class="at">kernel=</span><span class="st">&quot;quartic&quot;</span>)</span>
+<span id="cb356-5"><a href="sect034.html#cb356-5" tabindex="-1"></a>Rkde2019 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kde2019)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb356-6"><a href="sect034.html#cb356-6" tabindex="-1"></a>Rkde2020 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kde2020)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb356-7"><a href="sect034.html#cb356-7" tabindex="-1"></a>Rkde2021 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kde2020)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb356-8"><a href="sect034.html#cb356-8" tabindex="-1"></a>Rkde2022 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(kde2021)<span class="sc">*</span><span class="dv">1000000</span></span>
+<span id="cb356-9"><a href="sect034.html#cb356-9" tabindex="-1"></a><span class="fu">crs</span>(Rkde2019) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span></span>
+<span id="cb356-10"><a href="sect034.html#cb356-10" tabindex="-1"></a><span class="fu">crs</span>(Rkde2020) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span> </span>
+<span id="cb356-11"><a href="sect034.html#cb356-11" tabindex="-1"></a><span class="fu">crs</span>(Rkde2021) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span> </span>
+<span id="cb356-12"><a href="sect034.html#cb356-12" tabindex="-1"></a><span class="fu">crs</span>(Rkde2022) <span class="ot">&lt;-</span> <span class="st">&quot;epsg:3798&quot;</span></span>
+<span id="cb356-13"><a href="sect034.html#cb356-13" tabindex="-1"></a></span>
+<span id="cb356-14"><a href="sect034.html#cb356-14" tabindex="-1"></a>Carte1 <span class="ot">&lt;-</span></span>
+<span id="cb356-15"><a href="sect034.html#cb356-15" tabindex="-1"></a>  <span class="fu">tm_shape</span>(Rkde2019) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;2019&quot;</span>)<span class="sc">+</span></span>
+<span id="cb356-16"><a href="sect034.html#cb356-16" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2019) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb356-17"><a href="sect034.html#cb356-17" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb356-18"><a href="sect034.html#cb356-18" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb356-19"><a href="sect034.html#cb356-19" tabindex="-1"></a>Carte2 <span class="ot">&lt;-</span></span>
+<span id="cb356-20"><a href="sect034.html#cb356-20" tabindex="-1"></a>  <span class="fu">tm_shape</span>(Rkde2020) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;2021&quot;</span>)<span class="sc">+</span></span>
+<span id="cb356-21"><a href="sect034.html#cb356-21" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2020) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb356-22"><a href="sect034.html#cb356-22" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb356-23"><a href="sect034.html#cb356-23" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb356-24"><a href="sect034.html#cb356-24" tabindex="-1"></a>Carte3 <span class="ot">&lt;-</span></span>
+<span id="cb356-25"><a href="sect034.html#cb356-25" tabindex="-1"></a>  <span class="fu">tm_shape</span>(Rkde2021) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;2022&quot;</span>)<span class="sc">+</span></span>
+<span id="cb356-26"><a href="sect034.html#cb356-26" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2021) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb356-27"><a href="sect034.html#cb356-27" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb356-28"><a href="sect034.html#cb356-28" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb356-29"><a href="sect034.html#cb356-29" tabindex="-1"></a>Carte4 <span class="ot">&lt;-</span></span>
+<span id="cb356-30"><a href="sect034.html#cb356-30" tabindex="-1"></a>  <span class="fu">tm_shape</span>(Rkde2022) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">title =</span> <span class="st">&quot;2023&quot;</span>)<span class="sc">+</span></span>
+<span id="cb356-31"><a href="sect034.html#cb356-31" tabindex="-1"></a>  <span class="fu">tm_shape</span>(AccNations2022) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.01</span>)<span class="sc">+</span></span>
+<span id="cb356-32"><a href="sect034.html#cb356-32" tabindex="-1"></a>  <span class="fu">tm_shape</span>(ArrDesNations) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb356-33"><a href="sect034.html#cb356-33" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks  =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))<span class="sc">+</span><span class="fu">tm_layout</span>(<span class="at">frame =</span> F)</span>
+<span id="cb356-34"><a href="sect034.html#cb356-34" tabindex="-1"></a><span class="fu">tmap_arrange</span>(Carte1, Carte2, Carte3, Carte4,</span>
+<span id="cb356-35"><a href="sect034.html#cb356-35" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:CartoTemporelleKernels"></span>
 <img src="GMQ405_files/figure-html/CartoTemporelleKernels-1.png" alt="Comparaison des résultats du KDE pour différentes années" width="85%" />
 <p class="caption">
@@ -886,7 +880,7 @@ Figure 3.19: Comparaison des résultats du KDE pour différentes années
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>Références</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-baddeley2015spatial" class="csl-entry">
 Baddeley, Adrian, Ege Rubak et Rolf Turner. 2015. <em>Spatial point patterns: methodology and applications with R</em>. CRC press.
