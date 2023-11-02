@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.1 Introduction | Notes de cours GMQ405 : Modélisation et analyse spatiale</title>
+  <meta name="description" content="Mettre le description du cours." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.1 Introduction | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/images/introduction/ImageCouverture.png" />
+  <meta property="og:description" content="Mettre le description du cours." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.1 Introduction | Notes de cours GMQ405 : Modélisation et analyse spatiale" />
+  
+  <meta name="twitter:description" content="Mettre le description du cours." />
+  <meta name="twitter:image" content="/images/introduction/ImageCouverture.png" />
+
+<meta name="author" content="Philippe Apparicio, département de géomatique appliquée, Université de Sherbrooke" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chap06.html"/>
+<link rel="next" href="sect061.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/quizlib.min.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GMQ405 : modélisation et analyse spatiale</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bienvenue</a></li>
+<li class="chapter" data-level="" data-path="préface.html"><a href="préface.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="sect001.html"><a href="sect001.html"><i class="fa fa-check"></i>Un manuel sous la forme d’une ressource éducative libre</a></li>
+<li class="chapter" data-level="" data-path="sect002.html"><a href="sect002.html"><i class="fa fa-check"></i>Comment lire ce manuel?</a></li>
+<li class="chapter" data-level="" data-path="sect003.html"><a href="sect003.html"><i class="fa fa-check"></i>Comment utiliser les données du livre pour reproduire les exemples?</a></li>
+<li class="chapter" data-level="" data-path="sect004.html"><a href="sect004.html"><i class="fa fa-check"></i>Structure du livre</a></li>
+<li class="chapter" data-level="" data-path="sect005.html"><a href="sect005.html"><i class="fa fa-check"></i>Pourquoi faut-il programmer en géomatique appliquée et utiliser R?</a></li>
+<li class="chapter" data-level="" data-path="sect006.html"><a href="sect006.html"><i class="fa fa-check"></i>Remerciements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="chap03.html"><a href="chap03.html"><i class="fa fa-check"></i><b>1</b> Méthodes de répartition ponctuelle</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="sect031.html"><a href="sect031.html"><i class="fa fa-check"></i><b>1.1</b> Fréquence et densité des points dans l’espace d’étude</a></li>
+<li class="chapter" data-level="1.2" data-path="sect032.html"><a href="sect032.html"><i class="fa fa-check"></i><b>1.2</b> Analyse centrographique</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="sect032.html"><a href="sect032.html#sect0311"><i class="fa fa-check"></i><b>1.2.1</b> Paramètres de tendance centrale d’un semis de points</a></li>
+<li class="chapter" data-level="1.2.2" data-path="sect032.html"><a href="sect032.html#sect0312"><i class="fa fa-check"></i><b>1.2.2</b> Paramètres de dispersion d’un semis de points</a></li>
+<li class="chapter" data-level="1.2.3" data-path="sect032.html"><a href="sect032.html#sect0313"><i class="fa fa-check"></i><b>1.2.3</b> Mise en œuvre de l’analyse centrographique dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="sect033.html"><a href="sect033.html"><i class="fa fa-check"></i><b>1.3</b> Forme d’un semis de points</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="sect033.html"><a href="sect033.html#sect0331"><i class="fa fa-check"></i><b>1.3.1</b> Méthode du plus proche voisin</a></li>
+<li class="chapter" data-level="1.3.2" data-path="sect033.html"><a href="sect033.html#sect0332"><i class="fa fa-check"></i><b>1.3.2</b> Méthode des quadrats</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="sect034.html"><a href="sect034.html"><i class="fa fa-check"></i><b>1.4</b> Identification des agrégats spatiaux</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="sect034.html"><a href="sect034.html#sect0341"><i class="fa fa-check"></i><b>1.4.1</b> Cartographie de la densité dans une maille irrégulière</a></li>
+<li class="chapter" data-level="1.4.2" data-path="sect034.html"><a href="sect034.html#sect0342"><i class="fa fa-check"></i><b>1.4.2</b> Cartographie de la densité dans une maille régulière</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="sect035.html"><a href="sect035.html"><i class="fa fa-check"></i><b>1.5</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="1.6" data-path="sect036.html"><a href="sect036.html"><i class="fa fa-check"></i><b>1.6</b> Exercices de révision</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap06.html"><a href="chap06.html"><i class="fa fa-check"></i><b>2</b> Analyses d’évènements localisés sur un réseau</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="sect061.html"><a href="sect061.html"><i class="fa fa-check"></i><b>2.2</b> Cartographie de la densité d’évènements sur un réseau</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="sect061.html"><a href="sect061.html#sect0611"><i class="fa fa-check"></i><b>2.2.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="2.2.2" data-path="sect061.html"><a href="sect061.html#sect0612"><i class="fa fa-check"></i><b>2.2.2</b> Mise en œuvre dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="sect062.html"><a href="sect062.html"><i class="fa fa-check"></i><b>2.3</b> Mesure d’autocorrélation spatiale sur un réseau</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="sect062.html"><a href="sect062.html#sect0621"><i class="fa fa-check"></i><b>2.3.1</b> Getis et Ord</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sect062.html"><a href="sect062.html#sect0622"><i class="fa fa-check"></i><b>2.3.2</b> Typologie basée sur le diagramme de Moran</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sect062.html"><a href="sect062.html#sect0623"><i class="fa fa-check"></i><b>2.3.3</b> Mise en œuvre dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="sect063.html"><a href="sect063.html"><i class="fa fa-check"></i><b>2.4</b> DBSCAN sur un réseau</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="sect063.html"><a href="sect063.html#sect0631"><i class="fa fa-check"></i><b>2.4.1</b> Explication du NKDE et du TNKDE</a></li>
+<li class="chapter" data-level="2.4.2" data-path="sect063.html"><a href="sect063.html#sect0632"><i class="fa fa-check"></i><b>2.4.2</b> Mise en œuvre dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="sect064.html"><a href="sect064.html"><i class="fa fa-check"></i><b>2.5</b> Quiz de révision du chapitre</a></li>
+<li class="chapter" data-level="2.6" data-path="sect065.html"><a href="sect065.html"><i class="fa fa-check"></i><b>2.6</b> Exercices de révision</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap10.html"><a href="chap10.html"><i class="fa fa-check"></i><b>3</b> Correction des exercices</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sect1001.html"><a href="sect1001.html"><i class="fa fa-check"></i><b>3.1</b> Exercices du chapitre 1</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sect1001.html"><a href="sect1001.html#sect10011"><i class="fa fa-check"></i><b>3.1.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="3.1.2" data-path="sect1001.html"><a href="sect1001.html#sect10012"><i class="fa fa-check"></i><b>3.1.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="3.1.3" data-path="sect1001.html"><a href="sect1001.html#sect10013"><i class="fa fa-check"></i><b>3.1.3</b> Exercice 3</a></li>
+<li class="chapter" data-level="3.1.4" data-path="sect1001.html"><a href="sect1001.html#sect10014"><i class="fa fa-check"></i><b>3.1.4</b> Exercice 4</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sect1002.html"><a href="sect1002.html"><i class="fa fa-check"></i><b>3.2</b> Exercices du chapitre 2</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sect1002.html"><a href="sect1002.html#sect10021"><i class="fa fa-check"></i><b>3.2.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sect1002.html"><a href="sect1002.html#sect10022"><i class="fa fa-check"></i><b>3.2.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sect1002.html"><a href="sect1002.html#sect10023"><i class="fa fa-check"></i><b>3.2.3</b> Exercice 3</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sect1002.html"><a href="sect1002.html#sect10024"><i class="fa fa-check"></i><b>3.2.4</b> Exercice 4</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sect1003.html"><a href="sect1003.html"><i class="fa fa-check"></i><b>3.3</b> Exercices du chapitre 3</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sect1003.html"><a href="sect1003.html#sect10031"><i class="fa fa-check"></i><b>3.3.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sect1003.html"><a href="sect1003.html#sect10032"><i class="fa fa-check"></i><b>3.3.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="3.3.3" data-path="sect1003.html"><a href="sect1003.html#sect10033"><i class="fa fa-check"></i><b>3.3.3</b> Exercice 3</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="sect1004.html"><a href="sect1004.html"><i class="fa fa-check"></i><b>3.4</b> Exercices du chapitre 4</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="sect1004.html"><a href="sect1004.html#sect10041"><i class="fa fa-check"></i><b>3.4.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="3.4.2" data-path="sect1004.html"><a href="sect1004.html#sect10042"><i class="fa fa-check"></i><b>3.4.2</b> Exercice 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="sect1005.html"><a href="sect1005.html"><i class="fa fa-check"></i><b>3.5</b> Exercices du chapitre 5</a></li>
+<li class="chapter" data-level="3.6" data-path="sect1006.html"><a href="sect1006.html"><i class="fa fa-check"></i><b>3.6</b> Exercices du chapitre 6</a></li>
+<li class="chapter" data-level="3.7" data-path="sect1007.html"><a href="sect1007.html"><i class="fa fa-check"></i><b>3.7</b> Exercices du chapitre 7</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="sect1007.html"><a href="sect1007.html#sect10071"><i class="fa fa-check"></i><b>3.7.1</b> Exercice 1</a></li>
+<li class="chapter" data-level="3.7.2" data-path="sect1007.html"><a href="sect1007.html#sect10072"><i class="fa fa-check"></i><b>3.7.2</b> Exercice 2</a></li>
+<li class="chapter" data-level="3.7.3" data-path="sect1007.html"><a href="sect1007.html#sect10073"><i class="fa fa-check"></i><b>3.7.3</b> Exercice 3</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="sect1008.html"><a href="sect1008.html"><i class="fa fa-check"></i><b>3.8</b> Exercices du chapitre 8</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="sect1008.html"><a href="sect1008.html#sect10081"><i class="fa fa-check"></i><b>3.8.1</b> Exercice 1</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="sect1009.html"><a href="sect1009.html"><i class="fa fa-check"></i><b>3.9</b> Exercices du chapitre 9</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes de cours GMQ405 :
+Modélisation et analyse spatiale</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Les méthodes classiques d’analyse de répartition ponctuelle postulent que l’espace analysé est (le plus souvent) en deux dimensions, homogène et sans limite dans toutes les directions. Il existe cependant des phénomènes se produisant dans des espaces dans lesquels ces hypothèses sont totalement invalidées, menant à la production de résultats biaisés, voire incohérents.</p>
+<p>Les évènements se produisant le long des axes d’un réseau sont un cas concret et sont très nombreux. Par exemple :</p>
+<ul>
+<li>des accidents de la route se produisent nécessairement le long des axes routiers;</li>
+<li>des fuites d’eau se produisent le long des canalisations d’une ville;</li>
+<li>des interruptions de services se produisent le long de lignes de transport collectif;</li>
+<li>certaines espèces d’oiseaux nichent systématiquement le long de cours d’eau;</li>
+<li>etc.</li>
+</ul>
+<p>Contrairement à un espace géographique classique en deux dimensions, il est possible de considérer qu’un réseau géographique (c’est à dire un réseau dont les nœuds et les lignes ont des coordonnées spatiales) est un espace en 1,5 dimensions puisqu’il n’est possible de se déplacer que le long des lignes et de ne changer de direction qu’au niveau d’un nœud <span class="citation">(<a href="#ref-steenberghen2010spatial">Steenberghen, Aerts et Thomas 2010</a>)</span>. Cette distinction semble anecdotique mais elle pose trois problèmes principaux si l’on utilise les méthodes de répartition ponctuelle classiques :</p>
+<ol style="list-style-type: decimal">
+<li>la distance euclidienne (à vol d’oiseau), tend à systèmatiquement sous-estimer la distance réelle entre deux points. Parcourir le réseau est systématiquement plus long ou égal à la distance euclidenne. La figure <a href="introduction.html#fig:illusAnalyseReseauA">2.1</a> illustre ce premier problème dans un cas simple avec trois points sur un réseau.</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:illusAnalyseReseauA"></span>
+<img src="GMQ405_files/figure-html/illusAnalyseReseauA-1.png" alt="Spécificité de l'analyse sur réseau" width="85%" />
+<p class="caption">
+Figure 2.1: Spécificité de l’analyse sur réseau
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>la non prise en compte des lignes du réseau peut mener à analyser des secteurs dans lesquels les évènements ne peuvent pas se produire. La figure <a href="introduction.html#fig:illusAnalyseReseauB">2.2</a> illustre ici un cas où l’on tenterait de produire un nouveau jeu de points distribué aléatoirement mais respectant la densité initiale des points réels. Ce type de méthode est notamment utilisé pour déterminer si un ensembles de points sont plus ou moins concentrés que ce que le hasard pourrait produire. Comparer des points sur le réseau à des points hors du réseau conduirait à surévaluer la concentration des points sur le réseau, car il y a plus d’espace en dehors du réseau que sur le réseau.</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:illusAnalyseReseauB"></span>
+<img src="GMQ405_files/figure-html/illusAnalyseReseauB-1.png" alt="Spécificité de l'analyse sur réseau" width="100%" />
+<p class="caption">
+Figure 2.2: Spécificité de l’analyse sur réseau
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>la masse des évènements ne se propage pas dans un espace en 2D comme dans un espace en 1,5D. Dans un réseau, la masse des évènements doit être divisée aux intersections. Si cette division n’est pas prise en compte, alors la masse des évènements est duppliquée aux intersections. Cette problématique se pose particulièrement pour les méthodes d’estimation de densité par noyeau que nous détaillerons plus tard dans ce chapitre.</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:illusAnalyseReseauC"></span>
+<img src="GMQ405_files/figure-html/illusAnalyseReseauC-1.png" alt="Spécificité de l'analyse sur réseau" width="100%" />
+<p class="caption">
+Figure 2.3: Spécificité de l’analyse sur réseau
+</p>
+</div>
+<p>De nombreuses méthodes d’analyse de répartition ponctuelle ont donc été adaptées pour pouvoir être appliquées dans des réseaux géographiques <span class="citation">(<a href="#ref-okabe2012spatial">Okabe et Sugihara 2012</a>)</span>. Nous couvrons dans ce chapitre les méthodes de densité par noyeau sur réseau (NKDE), les fonctions <em>k</em> et <em>g</em>, et la création de matrice de pondération spatiale avec des distances réseau.</p>
+</div>
+<h3>Références</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-okabe2012spatial" class="csl-entry">
+Okabe, Atsuyuki et Kokichi Sugihara. 2012. <em>Spatial analysis along networks: statistical and computational methods</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-steenberghen2010spatial" class="csl-entry">
+Steenberghen, Thérèse, Koen Aerts et Isabelle Thomas. 2010. <span>« Spatial clustering of events on a network. »</span> <em>Journal of Transport Geography</em> 18 (3). Elsevier: 411‑418.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap06.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sect061.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["GMQ405.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
